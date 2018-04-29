@@ -52,9 +52,41 @@ vol. COM-25, pp. 1004-1009, Sept 1977.
 */
 
 #include "chenidct.h"
+#include "decode.h"
 
-// Giorgio counters
-// int chen_counter = 0;
+#define CHUNK_SIZE      32
+#define N_CHUNKS        DCTSIZE2/CHUNK_SIZE    // =2
+
+void ChenIDct_f2r_vectorBody_s2e_forEnd212(int y[DCTSIZE2]){
+#pragma HLS INTERFACE m_axi depth=64 port=y offset=slave bundle=BUS_SRC_DST
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+
+  register int i;
+  int inp1_buf[CHUNK_SIZE];
+  int out1_buf[CHUNK_SIZE];
+
+
+  for (i = 0; i < N_CHUNKS; i++){
+  //#pragma HLS DATAFLOW
+
+    // Load data
+    for (int j=0; j < CHUNK_SIZE; j++)
+    #pragma HLS UNROLL skip_exit_check factor=16
+      inp1_buf[j] = y[i*CHUNK_SIZE+j];
+
+
+      // Computation
+    for (int k=0; k < CHUNK_SIZE; k++)
+    #pragma HLS UNROLL skip_exit_check factor=16
+      out1_buf[k] = (((inp1_buf[k] < 0) ? (inp1_buf[k] - 8) : (inp1_buf[k] + 8)) / 16);
+
+
+      // Store Data
+    for (int l=0; l < CHUNK_SIZE; l++)
+    #pragma HLS UNROLL skip_exit_check factor=16
+      y[i*CHUNK_SIZE+l] = out1_buf[l];
+  }
+}
 
 
 /*
@@ -212,8 +244,9 @@ ChenIDct (int *x, int *y)
      of 16 that must be removed.
    */
 
-  for (i = 0, aptr = y; i < 64; i++, aptr++)
-    *aptr = (((*aptr < 0) ? (*aptr - 8) : (*aptr + 8)) / 16);
+  // for (i = 0, aptr = y; i < 64; i++, aptr++)
+  //   *aptr = (((*aptr < 0) ? (*aptr - 8) : (*aptr + 8)) / 16);
+  Reg_1:ChenIDct_f2r_vectorBody_s2e_forEnd212(y);
 }
 
  /*END*/
