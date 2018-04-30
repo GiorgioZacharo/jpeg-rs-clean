@@ -1,0 +1,236 @@
+#pragma line 1 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: -10
+#pragma line 1 "<built-in>" ::: -9
+#pragma line 1 "<command-line>" ::: -8
+#pragma line 1 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: -7
+#pragma line 52 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: -6
+#pragma line 1 "../../../inc/decode.h" 1 ::: -5
+#pragma line 46 "../../../inc/decode.h" ::: -4
+#pragma line 1 "../../../inc/global.h" 1 ::: -3
+#pragma line 45 "../../../inc/global.h" ::: -2
+#pragma line 1 "/usr/include/stdlib.h" 1 3 4 ::: -1
+#pragma line 24 "/usr/include/stdlib.h" 3 4 ::: 0
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 1 3 4 ::: 1
+#pragma line 339 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 3 4 ::: 2
+#pragma line 1 "/usr/include/sys/cdefs.h" 1 3 4 ::: 3
+#pragma line 392 "/usr/include/sys/cdefs.h" 3 4 ::: 4
+#pragma line 1 "/usr/include/bits/wordsize.h" 1 3 4 ::: 5
+#pragma line 393 "/usr/include/sys/cdefs.h" 2 3 4 ::: 6
+#pragma line 340 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 2 3 4 ::: 7
+#pragma line 362 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 3 4 ::: 8
+#pragma line 1 "/usr/include/gnu/stubs.h" 1 3 4 ::: 9
+#pragma line 10 "/usr/include/gnu/stubs.h" 3 4 ::: 10
+#pragma line 1 "/usr/include/gnu/stubs-64.h" 1 3 4 ::: 11
+#pragma line 11 "/usr/include/gnu/stubs.h" 2 3 4 ::: 12
+#pragma line 363 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 2 3 4 ::: 13
+#pragma line 25 "/usr/include/stdlib.h" 2 3 4 ::: 14
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4 ::: 22
+#pragma line 212 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 3 4 ::: 23
+#pragma line 324 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 3 4 ::: 25
+#pragma line 33 "/usr/include/stdlib.h" 2 3 4 ::: 27
+#pragma line 1 "/usr/include/bits/waitflags.h" 1 3 4 ::: 36
+#pragma line 42 "/usr/include/stdlib.h" 2 3 4 ::: 37
+#pragma line 1 "/usr/include/bits/waitstatus.h" 1 3 4 ::: 38
+#pragma line 64 "/usr/include/bits/waitstatus.h" 3 4 ::: 39
+#pragma line 1 "/usr/include/endian.h" 1 3 4 ::: 40
+#pragma line 36 "/usr/include/endian.h" 3 4 ::: 41
+#pragma line 1 "/usr/include/bits/endian.h" 1 3 4 ::: 42
+#pragma line 37 "/usr/include/endian.h" 2 3 4 ::: 43
+#pragma line 60 "/usr/include/endian.h" 3 4 ::: 44
+#pragma line 1 "/usr/include/bits/byteswap.h" 1 3 4 ::: 45
+#pragma line 27 "/usr/include/bits/byteswap.h" 3 4 ::: 46
+#pragma line 1 "/usr/include/bits/types.h" 1 3 4 ::: 47
+#pragma line 27 "/usr/include/bits/types.h" 3 4 ::: 48
+#pragma line 1 "/usr/include/bits/wordsize.h" 1 3 4 ::: 49
+#pragma line 28 "/usr/include/bits/types.h" 2 3 4 ::: 50
+#pragma line 130 "/usr/include/bits/types.h" 3 4 ::: 77
+#pragma line 1 "/usr/include/bits/typesizes.h" 1 3 4 ::: 78
+#pragma line 131 "/usr/include/bits/types.h" 2 3 4 ::: 79
+#pragma line 28 "/usr/include/bits/byteswap.h" 2 3 4 ::: 148
+#pragma line 1 "/usr/include/bits/wordsize.h" 1 3 4 ::: 149
+#pragma line 29 "/usr/include/bits/byteswap.h" 2 3 4 ::: 150
+#pragma line 1 "/usr/include/bits/byteswap-16.h" 1 3 4 ::: 157
+#pragma line 36 "/usr/include/bits/byteswap.h" 2 3 4 ::: 158
+#pragma line 44 "/usr/include/bits/byteswap.h" 3 4 ::: 159
+#pragma line 108 "/usr/include/bits/byteswap.h" 3 4 ::: 165
+#pragma line 61 "/usr/include/endian.h" 2 3 4 ::: 171
+#pragma line 65 "/usr/include/bits/waitstatus.h" 2 3 4 ::: 172
+#pragma line 43 "/usr/include/stdlib.h" 2 3 4 ::: 206
+#pragma line 67 "/usr/include/stdlib.h" 3 4 ::: 207
+#pragma line 95 "/usr/include/stdlib.h" 3 4 ::: 213
+#pragma line 139 "/usr/include/stdlib.h" 3 4 ::: 232
+#pragma line 181 "/usr/include/stdlib.h" 3 4 ::: 262
+#pragma line 305 "/usr/include/stdlib.h" 3 4 ::: 300
+#pragma line 1 "/usr/include/sys/types.h" 1 3 4 ::: 310
+#pragma line 27 "/usr/include/sys/types.h" 3 4 ::: 311
+#pragma line 60 "/usr/include/sys/types.h" 3 4 ::: 334
+#pragma line 98 "/usr/include/sys/types.h" 3 4 ::: 362
+#pragma line 132 "/usr/include/sys/types.h" 3 4 ::: 388
+#pragma line 1 "/usr/include/time.h" 1 3 4 ::: 389
+#pragma line 57 "/usr/include/time.h" 3 4 ::: 390
+#pragma line 73 "/usr/include/time.h" 3 4 ::: 397
+#pragma line 91 "/usr/include/time.h" 3 4 ::: 404
+#pragma line 103 "/usr/include/time.h" 3 4 ::: 406
+#pragma line 133 "/usr/include/sys/types.h" 2 3 4 ::: 408
+#pragma line 146 "/usr/include/sys/types.h" 3 4 ::: 409
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4 ::: 410
+#pragma line 147 "/usr/include/sys/types.h" 2 3 4 ::: 411
+#pragma line 194 "/usr/include/sys/types.h" 3 4 ::: 418
+#pragma line 219 "/usr/include/sys/types.h" 3 4 ::: 431
+#pragma line 1 "/usr/include/sys/select.h" 1 3 4 ::: 432
+#pragma line 30 "/usr/include/sys/select.h" 3 4 ::: 433
+#pragma line 1 "/usr/include/bits/select.h" 1 3 4 ::: 434
+#pragma line 22 "/usr/include/bits/select.h" 3 4 ::: 435
+#pragma line 1 "/usr/include/bits/wordsize.h" 1 3 4 ::: 436
+#pragma line 23 "/usr/include/bits/select.h" 2 3 4 ::: 437
+#pragma line 31 "/usr/include/sys/select.h" 2 3 4 ::: 438
+#pragma line 1 "/usr/include/bits/sigset.h" 1 3 4 ::: 441
+#pragma line 23 "/usr/include/bits/sigset.h" 3 4 ::: 442
+#pragma line 34 "/usr/include/sys/select.h" 2 3 4 ::: 452
+#pragma line 1 "/usr/include/time.h" 1 3 4 ::: 462
+#pragma line 120 "/usr/include/time.h" 3 4 ::: 463
+#pragma line 44 "/usr/include/sys/select.h" 2 3 4 ::: 469
+#pragma line 1 "/usr/include/bits/time.h" 1 3 4 ::: 471
+#pragma line 30 "/usr/include/bits/time.h" 3 4 ::: 472
+#pragma line 46 "/usr/include/sys/select.h" 2 3 4 ::: 478
+#pragma line 64 "/usr/include/sys/select.h" 3 4 ::: 488
+#pragma line 96 "/usr/include/sys/select.h" 3 4 ::: 508
+#pragma line 106 "/usr/include/sys/select.h" 3 4 ::: 510
+#pragma line 118 "/usr/include/sys/select.h" 3 4 ::: 515
+#pragma line 131 "/usr/include/sys/select.h" 3 4 ::: 521
+#pragma line 220 "/usr/include/sys/types.h" 2 3 4 ::: 523
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/sys/sysmacros.h" 1 3 4 ::: 526
+#pragma line 38 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/sys/sysmacros.h" 3 4 ::: 527
+#pragma line 223 "/usr/include/sys/types.h" 2 3 4 ::: 559
+#pragma line 270 "/usr/include/sys/types.h" 3 4 ::: 581
+#pragma line 1 "/usr/include/bits/pthreadtypes.h" 1 3 4 ::: 582
+#pragma line 21 "/usr/include/bits/pthreadtypes.h" 3 4 ::: 583
+#pragma line 1 "/usr/include/bits/wordsize.h" 1 3 4 ::: 584
+#pragma line 22 "/usr/include/bits/pthreadtypes.h" 2 3 4 ::: 585
+#pragma line 60 "/usr/include/bits/pthreadtypes.h" 3 4 ::: 586
+#pragma line 90 "/usr/include/bits/pthreadtypes.h" 3 4 ::: 607
+#pragma line 124 "/usr/include/bits/pthreadtypes.h" 3 4 ::: 625
+#pragma line 211 "/usr/include/bits/pthreadtypes.h" 3 4 ::: 695
+#pragma line 271 "/usr/include/sys/types.h" 2 3 4 ::: 726
+#pragma line 315 "/usr/include/stdlib.h" 2 3 4 ::: 730
+#pragma line 1 "/usr/include/alloca.h" 1 3 4 ::: 907
+#pragma line 24 "/usr/include/alloca.h" 3 4 ::: 908
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4 ::: 909
+#pragma line 25 "/usr/include/alloca.h" 2 3 4 ::: 910
+#pragma line 492 "/usr/include/stdlib.h" 2 3 4 ::: 925
+#pragma line 512 "/usr/include/stdlib.h" 3 4 ::: 938
+#pragma line 529 "/usr/include/stdlib.h" 3 4 ::: 946
+#pragma line 561 "/usr/include/stdlib.h" 3 4 ::: 969
+#pragma line 577 "/usr/include/stdlib.h" 3 4 ::: 974
+#pragma line 605 "/usr/include/stdlib.h" 3 4 ::: 993
+#pragma line 619 "/usr/include/stdlib.h" 3 4 ::: 995
+#pragma line 641 "/usr/include/stdlib.h" 3 4 ::: 997
+#pragma line 662 "/usr/include/stdlib.h" 3 4 ::: 999
+#pragma line 711 "/usr/include/stdlib.h" 3 4 ::: 1001
+#pragma line 733 "/usr/include/stdlib.h" 3 4 ::: 1009
+#pragma line 751 "/usr/include/stdlib.h" 3 4 ::: 1019
+#pragma line 770 "/usr/include/stdlib.h" 3 4 ::: 1031
+#pragma line 807 "/usr/include/stdlib.h" 3 4 ::: 1051
+#pragma line 895 "/usr/include/stdlib.h" 3 4 ::: 1130
+#pragma line 947 "/usr/include/stdlib.h" 3 4 ::: 1135
+#pragma line 1 "/usr/include/bits/stdlib-float.h" 1 3 4 ::: 1140
+#pragma line 952 "/usr/include/stdlib.h" 2 3 4 ::: 1141
+#pragma line 964 "/usr/include/stdlib.h" 3 4 ::: 1142
+#pragma line 46 "../../../inc/global.h" 2 ::: 1144
+#pragma line 47 "../../../inc/decode.h" 2 ::: 1145
+#pragma line 72 "../../../inc/decode.h" ::: 1146
+#pragma line 53 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" 2 ::: 1218
+#pragma line 1 "../../../inc/huffman.h" 1 ::: 1219
+#pragma line 41 "../../../inc/huffman.h" ::: 1220
+#pragma line 54 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" 2 ::: 1235
+#pragma line 1 "../../../inc/init.h" 1 ::: 1236
+#pragma line 24 "../../../inc/init.h" ::: 1237
+#pragma line 1 "../../../inc/decode.h" 1 ::: 1238
+#pragma line 25 "../../../inc/init.h" 2 ::: 1239
+#pragma line 44 "../../../inc/init.h" ::: 1240
+#pragma line 66 "../../../inc/init.h" ::: 1251
+#pragma line 55 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" 2 ::: 1258
+#pragma line 1 "/usr/include/stdio.h" 1 3 4 ::: 1260
+#pragma line 29 "/usr/include/stdio.h" 3 4 ::: 1261
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4 ::: 1266
+#pragma line 34 "/usr/include/stdio.h" 2 3 4 ::: 1267
+#pragma line 44 "/usr/include/stdio.h" 3 4 ::: 1268
+#pragma line 64 "/usr/include/stdio.h" 3 4 ::: 1279
+#pragma line 74 "/usr/include/stdio.h" 3 4 ::: 1281
+#pragma line 1 "/usr/include/libio.h" 1 3 4 ::: 1282
+#pragma line 32 "/usr/include/libio.h" 3 4 ::: 1283
+#pragma line 1 "/usr/include/_G_config.h" 1 3 4 ::: 1284
+#pragma line 15 "/usr/include/_G_config.h" 3 4 ::: 1285
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4 ::: 1286
+#pragma line 16 "/usr/include/_G_config.h" 2 3 4 ::: 1287
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 1 3 4 ::: 1292
+#pragma line 57 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4 ::: 1293
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4 ::: 1294
+#pragma line 353 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 3 4 ::: 1295
+#pragma line 58 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 2 3 4 ::: 1297
+#pragma line 1 "/usr/include/bits/wchar.h" 1 3 4 ::: 1299
+#pragma line 22 "/usr/include/bits/wchar.h" 3 4 ::: 1300
+#pragma line 1 "/usr/include/bits/wordsize.h" 1 3 4 ::: 1301
+#pragma line 23 "/usr/include/bits/wchar.h" 2 3 4 ::: 1302
+#pragma line 60 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 2 3 4 ::: 1303
+#pragma line 85 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4 ::: 1304
+#pragma line 21 "/usr/include/_G_config.h" 2 3 4 ::: 1314
+#pragma line 33 "/usr/include/libio.h" 2 3 4 ::: 1325
+#pragma line 50 "/usr/include/libio.h" 3 4 ::: 1326
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdarg.h" 1 3 4 ::: 1327
+#pragma line 40 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdarg.h" 3 4 ::: 1328
+#pragma line 51 "/usr/include/libio.h" 2 3 4 ::: 1330
+#pragma line 145 "/usr/include/libio.h" 3 4 ::: 1331
+#pragma line 155 "/usr/include/libio.h" 3 4 ::: 1333
+#pragma line 178 "/usr/include/libio.h" 3 4 ::: 1347
+#pragma line 246 "/usr/include/libio.h" 3 4 ::: 1358
+#pragma line 294 "/usr/include/libio.h" 3 4 ::: 1399
+#pragma line 303 "/usr/include/libio.h" 3 4 ::: 1401
+#pragma line 339 "/usr/include/libio.h" 3 4 ::: 1423
+#pragma line 391 "/usr/include/libio.h" 3 4 ::: 1445
+#pragma line 435 "/usr/include/libio.h" 3 4 ::: 1449
+#pragma line 465 "/usr/include/libio.h" 3 4 ::: 1464
+#pragma line 75 "/usr/include/stdio.h" 2 3 4 ::: 1476
+#pragma line 108 "/usr/include/stdio.h" 3 4 ::: 1482
+#pragma line 164 "/usr/include/stdio.h" 3 4 ::: 1490
+#pragma line 1 "/usr/include/bits/stdio_lim.h" 1 3 4 ::: 1491
+#pragma line 165 "/usr/include/stdio.h" 2 3 4 ::: 1492
+#pragma line 209 "/usr/include/stdio.h" 3 4 ::: 1524
+#pragma line 227 "/usr/include/stdio.h" 3 4 ::: 1532
+#pragma line 252 "/usr/include/stdio.h" 3 4 ::: 1550
+#pragma line 266 "/usr/include/stdio.h" 3 4 ::: 1552
+#pragma line 295 "/usr/include/stdio.h" 3 4 ::: 1568
+#pragma line 306 "/usr/include/stdio.h" 3 4 ::: 1570
+#pragma line 319 "/usr/include/stdio.h" 3 4 ::: 1572
+#pragma line 412 "/usr/include/stdio.h" 3 4 ::: 1648
+#pragma line 463 "/usr/include/stdio.h" 3 4 ::: 1672
+#pragma line 526 "/usr/include/stdio.h" 3 4 ::: 1674
+#pragma line 550 "/usr/include/stdio.h" 3 4 ::: 1689
+#pragma line 561 "/usr/include/stdio.h" 3 4 ::: 1692
+#pragma line 594 "/usr/include/stdio.h" 3 4 ::: 1714
+#pragma line 638 "/usr/include/stdio.h" 3 4 ::: 1745
+#pragma line 665 "/usr/include/stdio.h" 3 4 ::: 1749
+#pragma line 737 "/usr/include/stdio.h" 3 4 ::: 1803
+#pragma line 773 "/usr/include/stdio.h" 3 4 ::: 1828
+#pragma line 792 "/usr/include/stdio.h" 3 4 ::: 1835
+#pragma line 815 "/usr/include/stdio.h" 3 4 ::: 1848
+#pragma line 824 "/usr/include/stdio.h" 3 4 ::: 1850
+#pragma line 1 "/usr/include/bits/sys_errlist.h" 1 3 4 ::: 1880
+#pragma line 26 "/usr/include/bits/sys_errlist.h" 3 4 ::: 1881
+#pragma line 854 "/usr/include/stdio.h" 2 3 4 ::: 1884
+#pragma line 873 "/usr/include/stdio.h" 3 4 ::: 1895
+#pragma line 913 "/usr/include/stdio.h" 3 4 ::: 1909
+#pragma line 943 "/usr/include/stdio.h" 3 4 ::: 1918
+#pragma line 57 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" 2 ::: 1920
+#pragma line 66 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 1921
+#pragma line 86 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 1925
+#pragma line 234 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2066
+#pragma line 379 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2198
+#pragma line 420 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2229
+#pragma line 475 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2271
+#pragma line 516 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2302
+#pragma line 534 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2326
+#pragma line 549 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2347
+#pragma line 549 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2353
+#pragma line 549 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2356
+#pragma line 549 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2359
+#pragma line 656 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" ::: 2458

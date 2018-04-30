@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/decode.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1378" content="In file included from ../src/decode.c:1:
+../src/decode.c:380:9: warning: implicitly declaring library function &apos;memcpy&apos; with type &apos;void *(void *, const void *, unsigned long)&apos;
+        memcpy(inp1_buf, y_buf + offset, 32 * sizeof(int));
+        ^
+../src/decode.c:380:9: note: please include the header &lt;string.h&gt; or explicitly provide a declaration for &apos;memcpy&apos;
+1 warning generated." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/chenidct.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1378" content="In file included from ../src/chenidct.c:1:
+../src/chenidct.c:82:9: warning: implicitly declaring library function &apos;memcpy&apos; with type &apos;void *(void *, const void *, unsigned long)&apos;
+        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        ^
+../src/chenidct.c:82:9: note: please include the header &lt;string.h&gt; or explicitly provide a declaration for &apos;memcpy&apos;
+1 warning generated." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 456.145 ; gain = 19.516 ; free physical = 2786 ; free virtual = 16053" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 456.145 ; gain = 19.516 ; free physical = 2785 ; free virtual = 16053" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.160 ; gain = 19.531 ; free physical = 2784 ; free virtual = 16051" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.160 ; gain = 19.531 ; free physical = 2784 ; free virtual = 16052" tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="876" content="Unrolling loop &apos;Loop-3.2&apos; (../src/chenidct.c:292) in function &apos;ChenIDct&apos; partially with a factor of 16." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="685" content="Partitioning array &apos;inp1_buf&apos; (../src/chenidct.c:270) in dimension 1 with a cyclic factor 16." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="685" content="Partitioning array &apos;out1_buf&apos; (../src/chenidct.c:271) in dimension 1 with a cyclic factor 16." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.0&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.1&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.2&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.3&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.4&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.5&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.6&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.7&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.8&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.9&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.10&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.11&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.12&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.13&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.14&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.15&apos; (../src/chenidct.c:270) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.0&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.1&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.2&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.3&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.4&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.5&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.6&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.7&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.8&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.9&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.10&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.11&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.12&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.13&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.14&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;out1_buf.15&apos; (../src/chenidct.c:271) completely based on array size." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.0&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.1&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.2&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.3&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.4&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.5&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.6&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.7&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.8&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.9&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.10&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.11&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.12&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.13&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.14&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp1_buf.15&apos; (../src/chenidct.c:270) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.0&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.1&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.2&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.3&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.4&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.5&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.6&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.7&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.8&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.9&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.10&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.11&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.12&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.13&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.14&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;out1_buf.15&apos; (../src/chenidct.c:271) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock to (../src/chenidct.c:292:27) in function &apos;ChenIDct&apos;... converting 49 basic blocks." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 584.141 ; gain = 147.512 ; free physical = 2761 ; free virtual = 16028" tag=""/>
+	<Message prefix="[XFORM 203-542]" severity="WARNING" keynum="790" content="Cannot flatten a loop nest &apos;Loop-3&apos; (../src/chenidct.c:276:7) in function &apos;ChenIDct&apos; : 
+
+more than one sub loop." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst read of length 64 on port &apos;BUS_SRC_DST&apos; (../src/chenidct.c:287:9)." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst write of length 64 on port &apos;BUS_SRC_DST&apos; (../src/chenidct.c:304:7)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 584.141 ; gain = 147.512 ; free physical = 2765 ; free virtual = 16033" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;ChenIDct&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;ChenIDct&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;memcpy.inp1_buf.y&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;memcpy.y.out1_buf.gep&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 12.84 seconds; current allocated memory: 73.204 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.74 seconds; current allocated memory: 77.125 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;ChenIDct&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;ChenIDct/BUS_SRC_DST&apos; to &apos;m_axi&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;ChenIDct/x&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;ChenIDct/y&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;ChenIDct&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos; and &apos;y&apos; to AXI-Lite port BUS_CTRL." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;ChenIDct_mul_8ns_32s_40_2_1&apos; to &apos;ChenIDct_mul_8ns_bkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;ChenIDct_mul_10s_32s_41_2_1&apos; to &apos;ChenIDct_mul_10s_cud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;ChenIDct_mul_10ns_32s_41_2_1&apos; to &apos;ChenIDct_mul_10nsdEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;ChenIDct_mul_9ns_32s_41_2_1&apos; to &apos;ChenIDct_mul_9ns_eOg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;ChenIDct_mux_326_32_1_1&apos; to &apos;ChenIDct_mux_326_fYi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;ChenIDct_mul_10nsdEe&apos;: 18 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;ChenIDct_mul_10s_cud&apos;: 6 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;ChenIDct_mul_8ns_bkb&apos;: 4 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;ChenIDct_mul_9ns_eOg&apos;: 4 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;ChenIDct_mux_326_fYi&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;ChenIDct&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.96 seconds; current allocated memory: 83.856 MB." tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;ChenIDct_mul_8ns_bkb_MulnS_0&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;ChenIDct_mul_10s_cud_MulnS_1&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;ChenIDct_mul_10nsdEe_MulnS_2&apos;" tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;ChenIDct_mul_9ns_eOg_MulnS_3&apos;" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 584.141 ; gain = 147.512 ; free physical = 2716 ; free virtual = 15997" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for ChenIDct." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for ChenIDct." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for ChenIDct." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 17.8 seconds; peak allocated memory: 83.856 MB." tag=""/>
+</Messages>

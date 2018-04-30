@@ -1,0 +1,74 @@
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_ChenIDct_top glbl -prj ChenIDct.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver --initfile /home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s ChenIDct 
+Multi-threading is on. Using 6 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_ChenIDct_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/AESL_axi_master_BUS_SRC_DST.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_BUS_SRC_DST
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/AESL_axi_slave_BUS_CTRL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_BUS_CTRL
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_mul_8ns_bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_8ns_bkb_MulnS_0
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_8ns_bkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_mul_10s_cud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_10s_cud_MulnS_1
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_10s_cud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_mul_10nsdEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_10nsdEe_MulnS_2
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_10nsdEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_mul_9ns_eOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_9ns_eOg_MulnS_3
+INFO: [VRFC 10-311] analyzing module ChenIDct_mul_9ns_eOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_mux_326_fYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct_mux_326_fYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_BUS_CTRL_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_CTRL_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_BUS_SRC_DST_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi_buffer
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi_decoder
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi_throttl
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi_read
+INFO: [VRFC 10-311] analyzing module ChenIDct_BUS_SRC_DST_m_axi_write
+INFO: [VRFC 10-2458] undeclared symbol data_valid, assumed default net type wire [/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/sim/verilog/ChenIDct_BUS_SRC_DST_m_axi.v:2075]
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ChenIDct_BUS_CTRL_s_axi
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_throt...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_reg_s...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_fifo(...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_buffe...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_fifo(...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_fifo(...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_fifo(...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_write...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_buffe...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_reg_s...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi_read(...
+Compiling module xil_defaultlib.ChenIDct_BUS_SRC_DST_m_axi(NUM_R...
+Compiling module xil_defaultlib.ChenIDct_mul_8ns_bkb_MulnS_0
+Compiling module xil_defaultlib.ChenIDct_mul_8ns_bkb(ID=1,NUM_ST...
+Compiling module xil_defaultlib.ChenIDct_mul_10s_cud_MulnS_1
+Compiling module xil_defaultlib.ChenIDct_mul_10s_cud(ID=1,NUM_ST...
+Compiling module xil_defaultlib.ChenIDct_mul_10nsdEe_MulnS_2
+Compiling module xil_defaultlib.ChenIDct_mul_10nsdEe(ID=1,NUM_ST...
+Compiling module xil_defaultlib.ChenIDct_mul_9ns_eOg_MulnS_3
+Compiling module xil_defaultlib.ChenIDct_mul_9ns_eOg(ID=1,NUM_ST...
+Compiling module xil_defaultlib.ChenIDct_mux_326_fYi(ID=1,din32_...
+Compiling module xil_defaultlib.ChenIDct
+Compiling module xil_defaultlib.AESL_axi_master_BUS_SRC_DST
+Compiling module xil_defaultlib.AESL_axi_slave_BUS_CTRL
+Compiling module xil_defaultlib.apatb_ChenIDct_top
+Compiling module work.glbl
+Built simulation snapshot ChenIDct

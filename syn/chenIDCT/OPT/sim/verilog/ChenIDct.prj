@@ -1,0 +1,13 @@
+sv work "glbl.v"
+sv xil_defaultlib "ChenIDct.autotb.v"
+sv xil_defaultlib "AESL_axi_master_BUS_SRC_DST.v"
+sv xil_defaultlib "AESL_axi_slave_BUS_CTRL.v"
+sv xil_defaultlib "ChenIDct.v"
+sv xil_defaultlib "ChenIDct_mul_8ns_bkb.v"
+sv xil_defaultlib "ChenIDct_mul_10s_cud.v"
+sv xil_defaultlib "ChenIDct_mul_10nsdEe.v"
+sv xil_defaultlib "ChenIDct_mul_9ns_eOg.v"
+sv xil_defaultlib "ChenIDct_mux_326_fYi.v"
+sv xil_defaultlib "ChenIDct_BUS_CTRL_s_axi.v"
+sv xil_defaultlib "ChenIDct_BUS_SRC_DST_m_axi.v"
+

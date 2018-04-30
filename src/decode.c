@@ -377,9 +377,9 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[DCTSIZE2], int u_buf[DCTSIZE
 #else
         /* BURST_MODE */
         unsigned offset = i*CHUNK_SIZE ;
-        memcpy(inp1_buf, y_buf + offset, CHUNK_SIZE  * sizeof(float));
-        memcpy(inp2_buf, u_buf + offset, CHUNK_SIZE  * sizeof(float));
-        memcpy(inp3_buf, v_buf + offset, CHUNK_SIZE  * sizeof(float));
+        memcpy(inp1_buf, y_buf + offset, CHUNK_SIZE  * sizeof(int));
+        memcpy(inp2_buf, u_buf + offset, CHUNK_SIZE  * sizeof(int));
+        memcpy(inp3_buf, v_buf + offset, CHUNK_SIZE  * sizeof(int));
 #endif
 
       // Computation
@@ -418,9 +418,9 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[DCTSIZE2], int u_buf[DCTSIZE
       }
 #else /* BURST_MODE */
         offset = i*CHUNK_SIZE ;
-        memcpy(rgb_buf[p][0] + offset, out1_buf, CHUNK_SIZE  * sizeof(float));
-        memcpy(rgb_buf[p][1] + offset, out2_buf, CHUNK_SIZE  * sizeof(float));
-        memcpy(rgb_buf[p][2] + offset, out3_buf, CHUNK_SIZE  * sizeof(float));
+        memcpy(rgb_buf[p][0] + offset, out1_buf, CHUNK_SIZE  * sizeof(int));
+        memcpy(rgb_buf[p][1] + offset, out2_buf, CHUNK_SIZE  * sizeof(int));
+        memcpy(rgb_buf[p][2] + offset, out3_buf, CHUNK_SIZE  * sizeof(int));
 #endif
 
 
@@ -473,9 +473,9 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][DCTSIZE2], i
     #else
         /* BURST_MODE */
         unsigned offset = i*CHUNK_SIZE;
-        memcpy(inp1_buf, y_buf[p] + offset, CHUNK_SIZE * sizeof(float));
-        memcpy(inp2_buf, u_buf + offset, CHUNK_SIZE * sizeof(float));
-        memcpy(inp3_buf, v_buf + offset, CHUNK_SIZE * sizeof(float));
+        memcpy(inp1_buf, y_buf[p] + offset, CHUNK_SIZE * sizeof(int));
+        memcpy(inp2_buf, u_buf + offset, CHUNK_SIZE * sizeof(int));
+        memcpy(inp3_buf, v_buf + offset, CHUNK_SIZE * sizeof(int));
     #endif
 
         // Computation
@@ -514,9 +514,9 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][DCTSIZE2], i
         }
     #else /* BURST_MODE */
         offset = i*CHUNK_SIZE;
-        memcpy(rgb_buf[p][0] + offset, out1_buf, CHUNK_SIZE * sizeof(float));
-        memcpy(rgb_buf[p][1] + offset, out2_buf, CHUNK_SIZE * sizeof(float));
-        memcpy(rgb_buf[p][2] + offset, out3_buf, CHUNK_SIZE * sizeof(float));
+        memcpy(rgb_buf[p][0] + offset, out1_buf, CHUNK_SIZE * sizeof(int));
+        memcpy(rgb_buf[p][1] + offset, out2_buf, CHUNK_SIZE * sizeof(int));
+        memcpy(rgb_buf[p][2] + offset, out3_buf, CHUNK_SIZE * sizeof(int));
     #endif
 
 
@@ -661,7 +661,6 @@ decode_start (int *out_data_image_width, int *out_data_image_height,
 
 	  for (i = 0; i < RGB_NUM; i++)
 	    {
-          //printf("+++++ Write4Blocks: %d\n", i);
 
 	      Write4Blocks (&rgb_buf[0][i][0],
 			    &rgb_buf[1][i][0],

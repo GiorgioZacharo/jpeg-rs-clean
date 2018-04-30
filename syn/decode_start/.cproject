@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.2051635265">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.2051635265" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="a.out" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.debug.2051635265" name="Debug" parent="cdt.managedbuild.config.gnu.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.1959381590" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.PE;org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.target.gnu.platform.exe.debug.331853482" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
+							<builder buildPath="${workspace_loc:/decode_start}/Debug" id="cdt.managedbuild.target.gnu.builder.exe.debug.1108711654" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.2066215304" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.508489633" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
+								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1521124492" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1908746153" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.1095541686" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1800126601" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="AESL_TB"/>
+									<listOptionValue builtIn="false" value="__llvm__"/>
+									<listOptionValue builtIn="false" value="__llvm__"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.450662448" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.759084399" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1728898795" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1324438453" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1807522138" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="AESL_TB"/>
+									<listOptionValue builtIn="false" value="__llvm__"/>
+									<listOptionValue builtIn="false" value="__llvm__"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.799122353" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1833071273" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
+								<option id="gnu.c.link.option.paths.535799955" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/lib"/>
+								</option>
+								<option id="gnu.c.link.option.libs.1065357336" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
+								<option id="gnu.c.link.option.ldflags.1267089891" name="Linker flags" superClass="gnu.c.link.option.ldflags"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.539890226" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
+								<option id="gnu.cpp.link.option.paths.539332620" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/lib"/>
+								</option>
+								<option id="gnu.cpp.link.option.libs.197984729" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
+								<option id="gnu.cpp.link.option.flags.757508122" name="Linker flags" superClass="gnu.cpp.link.option.flags"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.588254695" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.334510589" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.270784435" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.802554398" name="jfif_read.c" rcbsApplicability="disable" resourcePath="testbench/jfif_read.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1293373706">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1293373706" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1975569603" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1021989358" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.284055619" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2066929532" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.253008139" name="main.c" rcbsApplicability="disable" resourcePath="testbench/main.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.2128171500">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.2128171500" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.672390454" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.966123980" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.858690577" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.842294437" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.378260985" name="marker.c" rcbsApplicability="disable" resourcePath="testbench/marker.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1132661366">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1132661366" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1325669725" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.137562343" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.1904928759" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1403884231" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.684085276" name="init.c" rcbsApplicability="disable" resourcePath="testbench/init.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1078608565">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1078608565" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1273009413" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1691278755" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.1710265011" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.665208240" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.547016687" name="jpeg2bmp.c" rcbsApplicability="disable" resourcePath="testbench/jpeg2bmp.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.157731411">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.157731411" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.237300746" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1401162136" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.862075660" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.534051976" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.2008339580" name="huffman.c" rcbsApplicability="disable" resourcePath="testbench/huffman.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.2053943003">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.2053943003" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.390645761" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1806837778" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.953524177" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.482436842" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.585474212" name="decode.c" rcbsApplicability="disable" resourcePath="source/decode.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1520739820">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.1520739820" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1529572883" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.2080393794" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.181412200" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.79778624" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.2051635265.988581788" name="chenidct.c" rcbsApplicability="disable" resourcePath="source/chenidct.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.656046508">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392.656046508" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1359355677" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.583195107" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.804076766" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.84019805" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<sourceEntries>
+						<entry excluding="OPT|source/decode.h|source/global.h|source/chenidct.h|source/init.h|source/marker.h|source/jpeg2bmp.h|source/huffman.h|source/jfif_read.h|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.exe.release.833974412">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.release.833974412" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="a.out" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.release.833974412" name="Release" parent="cdt.managedbuild.config.gnu.exe.release">
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.release.833974412." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.release.1130754133" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.release">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.PE;org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.target.gnu.platform.exe.release.13042462" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.release"/>
+							<builder buildPath="${workspace_loc:/decode_start}/Release" id="cdt.managedbuild.target.gnu.builder.exe.release.758835791" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.release"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1741529340" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.212327723" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release">
+								<option id="gnu.cpp.compiler.exe.release.option.optimization.level.1815837017" name="Optimization Level" superClass="gnu.cpp.compiler.exe.release.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.186983144" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.44950115" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.835231666" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.exe.release.option.optimization.level.597830376" name="Optimization Level" superClass="gnu.c.compiler.exe.release.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.exe.release.option.debugging.level.577524197" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1552764824" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1449933132" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.374350569" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release">
+								<option id="gnu.c.link.option.paths.448174903" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/lib"/>
+								</option>
+								<option id="gnu.c.link.option.libs.802102210" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
+								<option id="gnu.c.link.option.ldflags.281246989" name="Linker flags" superClass="gnu.c.link.option.ldflags"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.1884559952" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
+								<option id="gnu.cpp.link.option.paths.735238588" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/lib"/>
+								</option>
+								<option id="gnu.cpp.link.option.libs.1682304948" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
+								<option id="gnu.cpp.link.option.flags.1639437581" name="Linker flags" superClass="gnu.cpp.link.option.flags"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.175427616" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.release.1010646237" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.release">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1872036940" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.1515377692" name="jfif_read.c" rcbsApplicability="disable" resourcePath="testbench/jfif_read.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.2100475313">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.2100475313" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1796170350" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1718627702" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.565779440" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.20249890" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.1522901157" name="main.c" rcbsApplicability="disable" resourcePath="testbench/main.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1527899322">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1527899322" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.443665135" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1420320131" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.1925409078" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1893661789" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.153523492" name="marker.c" rcbsApplicability="disable" resourcePath="testbench/marker.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.462542090">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.462542090" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1005077088" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1334371683" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.622736135" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1812535962" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.1973729723" name="init.c" rcbsApplicability="disable" resourcePath="testbench/init.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.783066187">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.783066187" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.454394256" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1225936979" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.1995000792" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2011684419" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.54483896" name="jpeg2bmp.c" rcbsApplicability="disable" resourcePath="testbench/jpeg2bmp.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1812690627">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1812690627" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.549668843" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.2007465857" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.178962547" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1295703183" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.1577295638" name="huffman.c" rcbsApplicability="disable" resourcePath="testbench/huffman.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1712137600">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1712137600" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.1254095742" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1049507620" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../../../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.836464081" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1194792668" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.205622560" name="decode.c" rcbsApplicability="disable" resourcePath="source/decode.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1191895642">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.1191895642" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.356945046" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.1918275718" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.2031454634" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.177306324" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.833974412.341360466" name="chenidct.c" rcbsApplicability="disable" resourcePath="source/chenidct.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.63114640">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572.63114640" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572">
+							<option id="gnu.c.compiler.option.preprocessor.def.symbols.882281268" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols"/>
+							<option id="gnu.c.compiler.option.include.paths.287239328" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="../inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/etc"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/syn"/>
+								<listOptionValue builtIn="false" value="/home/giorgio/workspace/jpeg-rs-clean/inc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/home/tools/Xilinx/Vivado/2017.4/include"/>
+							</option>
+							<option id="gnu.c.compiler.option.misc.other.511035513" name="Other flags" superClass="gnu.c.compiler.option.misc.other"/>
+							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.835296609" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+						</tool>
+					</fileInfo>
+					<sourceEntries>
+						<entry excluding="OPT|source/decode.h|source/global.h|source/chenidct.h|source/init.h|source/marker.h|source/jpeg2bmp.h|source/huffman.h|source/jfif_read.h|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="decode_start.cdt.managedbuild.target.gnu.exe.89718562" name="Executable" projectType="cdt.managedbuild.target.gnu.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.833974412;cdt.managedbuild.config.gnu.exe.release.833974412.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.212327723;cdt.managedbuild.tool.gnu.cpp.compiler.input.835231666">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.2051635265;cdt.managedbuild.config.gnu.exe.debug.2051635265.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1677175392;cdt.managedbuild.tool.gnu.c.compiler.input.799122353">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.833974412;cdt.managedbuild.config.gnu.exe.release.833974412.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.2046324572;cdt.managedbuild.tool.gnu.c.compiler.input.1449933132">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.2051635265;cdt.managedbuild.config.gnu.exe.debug.2051635265.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.508489633;cdt.managedbuild.tool.gnu.cpp.compiler.input.450662448">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+</cproject>

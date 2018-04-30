@@ -1,0 +1,1 @@
+xsim {decode_start_f2r_vectorPh_s2e_forBody96Preheader} -autoloadwcfg -tclbatch {decode_start_f2r_vectorPh_s2e_forBody96Preheader.tcl}
