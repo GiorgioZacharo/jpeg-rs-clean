@@ -3996,3 +3996,4 @@ con
 ----------------End of Script----------------
 
 20:04:03 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg-rs.elf_on_espdev.cs.columbia.edu.tcl'
+12:42:29 WARN  : channel "tcfchan#83" closed

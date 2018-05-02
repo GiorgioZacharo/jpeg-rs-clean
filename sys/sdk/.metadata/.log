@@ -5595,3 +5595,9 @@ Created Time: 2018-05-01 19:45:52.636
 
 !ENTRY com.xilinx.sdk.utils 0 0 2018-05-01 20:04:03.674
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-60
+
+!ENTRY com.xilinx.sdk.utils 0 0 2018-05-02 12:42:29.591
+!MESSAGE XSCT Command: [disconnect tcfchan#83], Thread: Thread-5714
+
+!ENTRY com.xilinx.sdk.utils 0 0 2018-05-02 12:42:29.688
+!MESSAGE XSCT command with result: [disconnect tcfchan#83], Result: [{Format=channel "tcfchan#83" closed, Time=1525279349687, Code=1}, ]. Thread: Thread-5714

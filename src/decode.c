@@ -54,6 +54,7 @@ algorithms.
 #include "init.h"
 
 #include <stdio.h>
+#include <string.h>
 
 // Giorgio counters
 //int yuv_counter = 0;
@@ -62,6 +63,9 @@ algorithms.
 // #define STANDARD_MODE
 #define CHUNK_SIZE      32
 #define N_CHUNKS        DCTSIZE2/CHUNK_SIZE    // =2
+
+#define CHUNK_SIZE2      8
+//#define N_CHUNKS2        2  // =2
 
 void ChenIDct (int *x, int *y);
 
@@ -224,6 +228,85 @@ WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
 
 }
 
+// Modified size of out_buf from DCTSIZE2 to 5310 (Out of bounds bug)
+void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[DCTSIZE2], unsigned char out_buf[5310], int width, int height,
+        int voffs, int hoffs){
+
+#pragma HLS INTERFACE m_axi depth=8 port=store offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=5310 port=out_buf offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=height bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=width bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=voffs bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=hoffs bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+
+    int i=0;
+    int l=0;
+
+    int *inp1_buf; // CHUNK SIZE=32
+    int out1_buf[CHUNK_SIZE2];
+
+//#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
+//#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
+
+//    for (i = 0; i < N_CHUNKS2; i++) {
+
+       // Load data
+//      #ifdef STANDARD_MODE
+//          for (int j=0; j < CHUNK_SIZE2; j++){
+//            #pragma HLS UNROLL skip_exit_check factor=4
+//            unsigned offset = i*CHUNK_SIZE2+j;
+//            inp1_buf[j] = store[offset];
+//          }
+
+//      #else
+//          /* BURST_MODE */
+//          unsigned offset = i*CHUNK_SIZE2;
+//          memcpy(inp1_buf, store + offset, CHUNK_SIZE2 * sizeof(int));
+//      #endif
+
+
+	  // Computation
+
+		/* Find vertical buffer offs. */
+		for (int k = voffs; k < voffs + CHUNK_SIZE2; k++) {
+		#pragma HLS UNROLL skip_exit_check factor=2
+
+			if (k < height) {
+				int diff;
+				diff = width * k;
+
+				for (int e = hoffs; e < hoffs + CHUNK_SIZE2; e++) {
+				#pragma HLS UNROLL skip_exit_check factor=2
+					if (e < width){
+//						out_buf[diff + e] =  inp1_buf[l];
+//						l++;
+						out_buf[diff + e] = (unsigned char) (*(inp1_buf++));
+						}
+					else
+						break;
+				}
+			}
+			else
+				break;
+		}
+
+      // Store Data
+//         #ifdef STANDARD_MODE
+//             for (int l=0; l < CHUNK_SIZE2; l++) {
+//               #pragma HLS UNROLL skip_exit_check factor=4
+//               unsigned offset = i*CHUNK_SIZE2+l;
+//               out_buf[offset] = out1_buf[l];
+//             }
+//         #else /* BURST_MODE */
+//             offset = i*CHUNK_SIZE2;
+//             memcpy(out_buf + offset, out1_buf, CHUNK_SIZE2 * sizeof(int));
+//         #endif
+
+
+   // }
+}
+
 /*
  * WriteBlock() writes an array of data in the integer array pointed to
  * by store out to the driver specified by the IOB.  The integer array is
@@ -247,7 +330,7 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
   /*
    * Write block
    */
-  WriteOneBlock (store,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store,
 		 p_out_buf,
 		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
@@ -285,7 +368,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
   // printf("******** Hoffs is : %d\n\n\n", hoffs);
 
-  WriteOneBlock (store1, p_out_buf,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store1, p_out_buf,
 		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
   /*
@@ -293,7 +376,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
    * XX
    */
   hoffs += DCTSIZE;
-  WriteOneBlock (store2, p_out_buf,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store2, p_out_buf,
 		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
   /*
@@ -302,7 +385,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
    */
   voffs += DCTSIZE;
   hoffs -= DCTSIZE;
-  WriteOneBlock (store3, p_out_buf,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store3, p_out_buf,
 		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
 
@@ -311,7 +394,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
    * XO
    */
   hoffs += DCTSIZE;
-  WriteOneBlock (store4,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store4,
 		 p_out_buf, p_jinfo_image_width, p_jinfo_image_height,
 		 voffs, hoffs);
 
