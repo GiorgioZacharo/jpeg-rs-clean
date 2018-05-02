@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:49 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:15:05 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
 ../../../../../src/decode.c:380:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
@@ -12,5 +12,5 @@ INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenI
         ^
 ../../../../../src/decode.c:380:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
 1 warning generated.
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/306751525127689494179
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/279351525216505733982
 INFO: [APCC 202-1] APCC is done.

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# 
+# Start of session at: Tue May  1 19:50:30 2018
+# Process ID: 507
+# Current directory: /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_acp/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_acp/webtalk/webtalk.log
+# Journal file: /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_acp/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

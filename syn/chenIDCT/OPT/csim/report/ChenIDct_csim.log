@@ -2,49 +2,49 @@ INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling(apcc) ../../../../../tb/huffman.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:23 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:38 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/300841525127663816978
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/273071525216478371068
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/init.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:27 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:43 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/301671525127667505441
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/273911525216483556229
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/jfif_read.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:31 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:47 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/302511525127671214062
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/274761525216487142800
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/jpeg2bmp.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:34 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:50 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/303341525127674774455
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/275921525216490727067
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/main.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:38 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:54 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/304171525127678303307
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/276821525216494313354
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/marker.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:41 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:57 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/305011525127681753431
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/277681525216497950571
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../src/chenidct.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:45 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:15:01 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
 ../../../../../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
@@ -57,11 +57,11 @@ INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenI
         ^
 ../../../../../src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
 1 warning generated.
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/305841525127685620002
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/278521525216501812237
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../src/decode.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 18:34:49 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:15:05 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build'
 ../../../../../src/decode.c:380:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
@@ -74,7 +74,7 @@ INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/chenI
         ^
 ../../../../../src/decode.c:380:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
 1 warning generated.
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/306751525127689494179
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/279351525216505733982
 INFO: [APCC 202-1] APCC is done.
    Generating csim.exe
 

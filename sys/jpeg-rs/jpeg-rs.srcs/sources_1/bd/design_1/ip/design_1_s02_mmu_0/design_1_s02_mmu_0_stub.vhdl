@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Mon Apr 30 19:13:59 2018
+-- Date        : Mon Apr 30 19:13:58 2018
 -- Host        : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
--- Command     : write_vhdl -force -mode synth_stub
---               /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s02_mmu_0/design_1_s02_mmu_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_s02_mmu_0 -prefix
+--               design_1_s02_mmu_0_ design_1_s02_mmu_0_stub.vhdl
 -- Design      : design_1_s02_mmu_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xczu9eg-ffvb1156-2-e

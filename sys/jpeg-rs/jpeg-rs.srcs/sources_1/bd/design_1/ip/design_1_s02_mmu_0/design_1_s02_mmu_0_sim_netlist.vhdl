@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Mon Apr 30 19:13:59 2018
+-- Date        : Mon Apr 30 19:13:58 2018
 -- Host        : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
--- Command     : write_vhdl -force -mode funcsim
---               /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s02_mmu_0/design_1_s02_mmu_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_s02_mmu_0 -prefix
+--               design_1_s02_mmu_0_ design_1_s02_mmu_0_sim_netlist.vhdl
 -- Design      : design_1_s02_mmu_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -59,8 +59,6 @@ entity design_1_s02_mmu_0_axi_mmu_v2_1_13_decerr_slave is
     \m_payload_i_reg[84]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \gen_axi.gen_read.read_cs_reg[0]_0\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_s02_mmu_0_axi_mmu_v2_1_13_decerr_slave : entity is "axi_mmu_v2_1_13_decerr_slave";
 end design_1_s02_mmu_0_axi_mmu_v2_1_13_decerr_slave;
 
 architecture STRUCTURE of design_1_s02_mmu_0_axi_mmu_v2_1_13_decerr_slave is
@@ -800,8 +798,6 @@ entity design_1_s02_mmu_0_axi_register_slice_v2_1_15_axic_register_slice is
     aresetn : in STD_LOGIC;
     err_rid : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_s02_mmu_0_axi_register_slice_v2_1_15_axic_register_slice : entity is "axi_register_slice_v2_1_15_axic_register_slice";
 end design_1_s02_mmu_0_axi_register_slice_v2_1_15_axic_register_slice;
 
 architecture STRUCTURE of design_1_s02_mmu_0_axi_register_slice_v2_1_15_axic_register_slice is
@@ -3211,8 +3207,6 @@ entity design_1_s02_mmu_0_axi_register_slice_v2_1_15_axi_register_slice is
     aresetn : in STD_LOGIC;
     err_rid : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_s02_mmu_0_axi_register_slice_v2_1_15_axi_register_slice : entity is "axi_register_slice_v2_1_15_axi_register_slice";
 end design_1_s02_mmu_0_axi_register_slice_v2_1_15_axi_register_slice;
 
 architecture STRUCTURE of design_1_s02_mmu_0_axi_register_slice_v2_1_15_axi_register_slice is
@@ -3445,8 +3439,6 @@ entity design_1_s02_mmu_0_axi_mmu_v2_1_13_top is
   attribute C_USES_DEST of design_1_s02_mmu_0_axi_mmu_v2_1_13_top : entity is 0;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_1_s02_mmu_0_axi_mmu_v2_1_13_top : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_s02_mmu_0_axi_mmu_v2_1_13_top : entity is "axi_mmu_v2_1_13_top";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of design_1_s02_mmu_0_axi_mmu_v2_1_13_top : entity is 1;
   attribute P_AXI4 : integer;

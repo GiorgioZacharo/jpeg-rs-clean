@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Mon Apr 30 19:29:35 2018
+| Date             : Tue May  1 18:17:47 2018
 | Host             : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 4.096        |
+| Total On-Chip Power (W)  | 4.086        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.370        |
+| Dynamic (W)              | 3.359        |
 | Device Static (W)        | 0.726        |
 | Effective TJA (C/W)      | 1.0          |
 | Max Ambient (C)          | 96.0         |
@@ -52,24 +52,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.046 |        3 |       --- |             --- |
-| CLB Logic                |     0.034 |    49564 |       --- |             --- |
-|   LUT as Logic           |     0.026 |    17393 |    274080 |            6.35 |
-|   Register               |     0.004 |    26742 |    548160 |            4.88 |
+| Clocks                   |     0.043 |        3 |       --- |             --- |
+| CLB Logic                |     0.033 |    49459 |       --- |             --- |
+|   LUT as Logic           |     0.025 |    17343 |    274080 |            6.33 |
+|   Register               |     0.004 |    26700 |    548160 |            4.87 |
 |   CARRY8                 |     0.002 |     1021 |     34260 |            2.98 |
 |   LUT as Shift Register  |     0.001 |      292 |    144000 |            0.20 |
 |   LUT as Distributed RAM |    <0.001 |       56 |    144000 |            0.04 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
-|   Others                 |     0.000 |      481 |       --- |             --- |
+|   Others                 |     0.000 |      479 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |      407 |    274080 |            0.15 |
-| Signals                  |     0.058 |    47379 |       --- |             --- |
+| Signals                  |     0.055 |    47317 |       --- |             --- |
 | Block RAM                |     0.007 |        2 |       912 |            0.22 |
-| DSPs                     |     0.035 |      192 |      2520 |            7.62 |
-| PS8                      |     3.190 |        1 |       --- |             --- |
+| DSPs                     |     0.034 |      192 |      2520 |            7.62 |
+| PS8                      |     3.188 |        1 |       --- |             --- |
 | Static Power             |     0.726 |          |           |                 |
 |   PS Static              |     0.099 |          |           |                 |
 |   PL Static              |     0.627 |          |           |                 |
-| Total                    |     4.096 |          |           |                 |
+| Total                    |     4.086 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,7 +79,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------------+-------------+-----------+-------------+------------+
-| Vccint          |       0.850 |     0.414 |       0.210 |      0.204 |
+| Vccint          |       0.850 |     0.404 |       0.200 |      0.204 |
 | Vccint_io       |       0.850 |     0.034 |       0.000 |      0.034 |
 | Vccint_xiphy    |       0.850 |     0.002 |       0.000 |      0.002 |
 | Vccbram         |       0.850 |     0.004 |       0.001 |      0.003 |
@@ -93,7 +93,7 @@ Table of Contents
 | Vcco12          |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vcco10          |       1.000 |     0.000 |       0.000 |      0.000 |
 | Vccadc          |       1.800 |     0.008 |       0.000 |      0.008 |
-| VCC_PSINTFP     |       0.850 |     1.482 |       1.447 |      0.035 |
+| VCC_PSINTFP     |       0.850 |     1.480 |       1.444 |      0.035 |
 | VCC_PSINTLP     |       0.850 |     0.336 |       0.329 |      0.007 |
 | VPS_MGTRAVCC    |       0.850 |     0.190 |       0.189 |      0.001 |
 | VCC_PSINTFP_DDR |       0.850 |     0.701 |       0.696 |      0.004 |
@@ -167,13 +167,13 @@ Table of Contents
 +-----------------------------------------------------------------------------------+-----------+
 | Name                                                                              | Power (W) |
 +-----------------------------------------------------------------------------------+-----------+
-| design_1_wrapper                                                                  |     3.370 |
-|   design_1_i                                                                      |     3.370 |
-|     ChenIDct_0                                                                    |     0.070 |
-|       inst                                                                        |     0.070 |
+| design_1_wrapper                                                                  |     3.359 |
+|   design_1_i                                                                      |     3.359 |
+|     ChenIDct_0                                                                    |     0.066 |
+|       inst                                                                        |     0.066 |
 |         ChenIDct_BUS_CTRL_s_axi_U                                                 |    <0.001 |
-|         ChenIDct_BUS_SRC_DST_m_axi_U                                              |     0.016 |
-|           bus_read                                                                |     0.009 |
+|         ChenIDct_BUS_SRC_DST_m_axi_U                                              |     0.015 |
+|           bus_read                                                                |     0.008 |
 |             buff_rdata                                                            |     0.003 |
 |             fifo_rctl                                                             |    <0.001 |
 |             fifo_rreq                                                             |    <0.001 |
@@ -183,7 +183,7 @@ Table of Contents
 |             buff_wdata                                                            |     0.003 |
 |             bus_equal_gen.fifo_burst                                              |    <0.001 |
 |             fifo_resp                                                             |    <0.001 |
-|             fifo_resp_to_user                                                     |    <0.001 |
+|             fifo_resp_to_user                                                     |     0.001 |
 |             fifo_wreq                                                             |    <0.001 |
 |             rs_wreq                                                               |    <0.001 |
 |           wreq_throttl                                                            |    <0.001 |
@@ -251,7 +251,7 @@ Table of Contents
 |           ChenIDct_mul_9ns_eOg_MulnS_3_U                                          |    <0.001 |
 |         ChenIDct_mul_9ns_eOg_U9                                                   |    <0.001 |
 |           ChenIDct_mul_9ns_eOg_MulnS_3_U                                          |    <0.001 |
-|         ChenIDct_mux_326_fYi_U33                                                  |     0.003 |
+|         ChenIDct_mux_326_fYi_U33                                                  |     0.002 |
 |     axi_interconnect_master                                                       |     0.007 |
 |       s00_couplers                                                                |     0.006 |
 |         auto_ds                                                                   |     0.004 |
@@ -352,7 +352,7 @@ Table of Contents
 |             reg_slice_r                                                           |    <0.001 |
 |             splitter_ar                                                           |    <0.001 |
 |             splitter_aw                                                           |    <0.001 |
-|     axi_interconnect_slave                                                        |     0.012 |
+|     axi_interconnect_slave                                                        |     0.011 |
 |       s00_couplers                                                                |     0.002 |
 |         auto_us                                                                   |     0.002 |
 |           inst                                                                    |     0.002 |
@@ -456,8 +456,8 @@ Table of Contents
 |               wrouter_aw_fifo                                                     |    <0.001 |
 |                 gen_srls[0].gen_rep[0].srl_nx1                                    |    <0.001 |
 |             splitter_aw_mi                                                        |    <0.001 |
-|     decode_start_f2r_vectorPh_s2e_forBody96Preheader_0                            |     0.088 |
-|       inst                                                                        |     0.088 |
+|     decode_start_f2r_vectorPh_s2e_forBody96Preheader_0                            |     0.086 |
+|       inst                                                                        |     0.086 |
 |         decode_start_f2r_bkb_U1                                                   |    <0.001 |
 |           decode_start_f2r_bkb_MulnS_0_U                                          |    <0.001 |
 |         decode_start_f2r_bkb_U12                                                  |    <0.001 |
@@ -588,14 +588,14 @@ Table of Contents
 |           decode_start_f2r_dEe_MulnS_2_U                                          |    <0.001 |
 |         decode_start_f2r_eOg_U65                                                  |    <0.001 |
 |         decode_start_f2r_eOg_U66                                                  |    <0.001 |
-|         decode_start_f2r_eOg_U67                                                  |     0.001 |
+|         decode_start_f2r_eOg_U67                                                  |    <0.001 |
 |         decode_start_f2r_vectorPh_s2e_forBody96Preheader_BUS_CTRL_s_axi_U         |     0.001 |
 |         decode_start_f2r_vectorPh_s2e_forBody96Preheader_BUS_DST_m_axi_U          |     0.005 |
 |           bus_read                                                                |    <0.001 |
 |             buff_rdata                                                            |    <0.001 |
 |             rs_rdata                                                              |    <0.001 |
 |           bus_write                                                               |     0.005 |
-|             buff_wdata                                                            |     0.003 |
+|             buff_wdata                                                            |     0.002 |
 |             bus_equal_gen.fifo_burst                                              |    <0.001 |
 |             fifo_resp                                                             |    <0.001 |
 |             fifo_resp_to_user                                                     |    <0.001 |
@@ -604,7 +604,7 @@ Table of Contents
 |           wreq_throttl                                                            |    <0.001 |
 |         decode_start_f2r_vectorPh_s2e_forBody96Preheader_BUS_SRC_m_axi_U          |     0.005 |
 |           bus_read                                                                |     0.005 |
-|             buff_rdata                                                            |     0.003 |
+|             buff_rdata                                                            |     0.002 |
 |             fifo_rctl                                                             |    <0.001 |
 |             fifo_rreq                                                             |    <0.001 |
 |             rs_rdata                                                              |    <0.001 |
@@ -617,8 +617,8 @@ Table of Contents
 |         SEQ                                                                       |    <0.001 |
 |           SEQ_COUNTER                                                             |    <0.001 |
 |     xlconcat_0                                                                    |     0.000 |
-|     zynq_ultra_ps_e_0                                                             |     3.192 |
-|       inst                                                                        |     3.192 |
+|     zynq_ultra_ps_e_0                                                             |     3.190 |
+|       inst                                                                        |     3.190 |
 +-----------------------------------------------------------------------------------+-----------+
 
 

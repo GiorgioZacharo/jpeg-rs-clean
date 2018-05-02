@@ -1,0 +1,32 @@
+#ifdef REG_7
+
+#include <xchenidct.h>
+
+
+// Peripheral configuration
+XChenidct Chenidct;
+XChenidct_Config *Chenidct_cfg;
+
+int initPeripherals7()
+{
+	int status;
+
+	// Initialize Chenidct core
+	Chenidct_cfg = XChenidct_LookupConfig(XPAR_XCHENIDCT_0_DEVICE_ID);
+
+	if (Chenidct_cfg == NULL)
+	{
+		printf("ERROR: configuration not found for Chenidct core (id %d)\n", XPAR_XCHENIDCT_0_DEVICE_ID);
+		return XST_FAILURE;
+	}
+
+	status  = XChenidct_CfgInitialize(&Chenidct, Chenidct_cfg);
+	if (status != XST_SUCCESS)
+	{
+		printf("ERROR: initialization failed for Chenidct core (status %d)\n", status);
+		return XST_FAILURE;
+	}
+
+	return(XST_SUCCESS);
+}
+#endif

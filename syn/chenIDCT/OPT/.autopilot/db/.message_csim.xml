@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[SIM 211-2]" severity="INFO" keynum="SIM_2_1569" content="*************** CSIM start ***************" tag=""/>
+	<Message prefix="[SIM 211-4]" severity="INFO" keynum="SIM_4_1577" content="CSIM will launch GCC as the compiler." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:38 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/273071525216478371068" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:43 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/273911525216483556229" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:47 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/274761525216487142800" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:50 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/275921525216490727067" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:54 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/276821525216494313354" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:14:57 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/277681525216497950571" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:15:01 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/278521525216501812237" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1427" content="Running &apos;/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1428" content="For user &apos;giorgio&apos; on host &apos;legolas.cs.columbia.edu&apos; (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 01 19:15:05 EDT 2018" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1429" content="On os &quot;CentOS Linux release 7.3.1611 (Core) &quot;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1430" content="In directory &apos;/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/csim/build&apos;" tag=""/>
+	<Message prefix="[APCC 202-3]" severity="INFO" keynum="APCC_3_1610" content="Tmp directory is /tmp/apcc_db_giorgio/279351525216505733982" tag=""/>
+	<Message prefix="[APCC 202-1]" severity="INFO" keynum="APCC_1_1611" content="APCC is done." tag=""/>
+	<Message prefix="[SIM 211-1]" severity="INFO" keynum="SIM_1_1586" content="CSim done with 0 errors." tag=""/>
+	<Message prefix="[SIM 211-3]" severity="INFO" keynum="SIM_3_1588" content="*************** CSIM finish ***************" tag=""/>
+</Messages>
