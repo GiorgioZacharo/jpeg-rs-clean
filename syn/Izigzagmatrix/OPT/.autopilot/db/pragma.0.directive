@@ -1,0 +1,354 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="imatrix"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="omatrix"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_DST"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="BUS_CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="in1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="DATAFLOW"/>
+</directive>
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="16"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="IZigzagMatrix_f2r_forBody_s2e_forEnd" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="16"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="store"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="5310"/>
+<option name="port" positionalBoolean="4" value="out_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_DST"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="height"/>
+<option name="bundle" value="CTRL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="width"/>
+<option name="bundle" value="CTRL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="voffs"/>
+<option name="bundle" value="CTRL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="hoffs"/>
+<option name="bundle" value="CTRL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="BUS_CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="4"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="4"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="4"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="4"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="4"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="4"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="y_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="u_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="v_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="768"/>
+<option name="port" positionalBoolean="4" value="rgb_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_DST"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="p"/>
+<option name="bundle" value="CTRL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="BUS_CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp2_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp3_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out2_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out3_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="YuvToRgb_f2r_entry_s2e_forEnd" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="16"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="384"/>
+<option name="port" positionalBoolean="4" value="y_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="u_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="v_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="768"/>
+<option name="port" positionalBoolean="4" value="rgb_buf"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_DST"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="BUS_CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp2_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp3_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out2_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out3_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="decode_start_f2r_vectorPh_s2e_forBody96Preheader" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="16"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

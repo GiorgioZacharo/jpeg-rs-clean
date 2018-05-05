@@ -36,5 +36,5 @@ config_interface -m_axi_addr64 -m_axi_offset off -register_io off
 #source "./WriteOneBlock/OPT/directives.tcl"
 csim_design -clean -compiler gcc
 csynth_design
-cosim_design
-export_design -format ip_catalog
+cosim_design -compiler gcc
+export_design -rtl verilog -format ip_catalog

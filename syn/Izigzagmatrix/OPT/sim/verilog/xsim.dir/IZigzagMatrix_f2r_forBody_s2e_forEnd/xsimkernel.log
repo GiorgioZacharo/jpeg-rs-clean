@@ -1,0 +1,7 @@
+Running: xsim.dir/IZigzagMatrix_f2r_forBody_s2e_forEnd/xsimk -simmode gui -wdb IZigzagMatrix_f2r_forBody_s2e_forEnd.wdb -simrunnum 0 -socket 49177
+Design successfully loaded
+Design Loading Memory Usage: 42444 KB (Peak: 42444 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 128740 KB (Peak: 181716 KB)
+Simulation CPU Usage: 3230 ms

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri May  4 19:55:08 2018
+# Process ID: 25688
+# Current directory: /home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/verilog
+# Command line: wbtcv -mode batch -source /home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/verilog/xsim.dir/IZigzagMatrix_f2r_forBody_s2e_forEnd/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/verilog/webtalk.log
+# Journal file: /home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/verilog/webtalk.jou
+#-----------------------------------------------------------
+source /home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/verilog/xsim.dir/IZigzagMatrix_f2r_forBody_s2e_forEnd/webtalk/xsim_webtalk.tcl -notrace

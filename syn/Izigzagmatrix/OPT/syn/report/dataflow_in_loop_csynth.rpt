@@ -1,0 +1,423 @@
+
+
+================================================================
+== Vivado HLS Report for 'dataflow_in_loop'
+================================================================
+* Date:           Fri May  4 19:53:20 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        Izigzagmatrix
+* Solution:       OPT
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.00|      2.62|        0.38|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  100|  100|   54|   54| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                         |                      |  Latency  |  Interval | Pipeline|
+        |         Instance        |        Module        | min | max | min | max |   Type  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |Loop_1_proc_U0           |Loop_1_proc           |   53|   53|   53|   53|   none  |
+        |memcpy_omatrix_out_b_U0  |memcpy_omatrix_out_b  |   40|   40|   40|   40|   none  |
+        |Loop_0_proc19_U0         |Loop_0_proc19         |    5|    5|    5|    5|   none  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|     675|    -|
+|FIFO             |        0|      -|      15|     100|    -|
+|Instance         |        0|      -|    1286|    1530|    -|
+|Memory           |        0|      -|    1216|      32|    -|
+|Multiplexer      |        -|      -|       -|     324|    -|
+|Register         |        -|      -|      38|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|    2555|    2661|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |     1824|   2520|  548160|  274080|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+------+-----+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  | LUT |
+    +-------------------------+----------------------+---------+-------+------+-----+
+    |Loop_0_proc19_U0         |Loop_0_proc19         |        0|      0|   116|  302|
+    |Loop_1_proc_U0           |Loop_1_proc           |        0|      0|  1081|  911|
+    |memcpy_omatrix_out_b_U0  |memcpy_omatrix_out_b  |        0|      0|    89|  317|
+    +-------------------------+----------------------+---------+-------+------+-----+
+    |Total                    |                      |        0|      0|  1286| 1530|
+    +-------------------------+----------------------+---------+-------+------+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +--------------+----------------------+---------+----+----+------+-----+------+-------------+
+    |    Memory    |        Module        | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
+    +--------------+----------------------+---------+----+----+------+-----+------+-------------+
+    |in1_buf_0_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_1_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_2_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_3_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_4_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_5_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_6_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_7_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_8_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_9_U   |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_10_U  |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_11_U  |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_12_U  |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_13_U  |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_14_U  |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |in1_buf_15_U  |dataflow_in_loop_dEe  |        0|  12|   1|     2|    6|     2|           24|
+    |out_buf_0_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_1_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_2_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_3_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_4_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_5_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_6_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_7_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_8_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_9_U   |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_10_U  |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_11_U  |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_12_U  |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_13_U  |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_14_U  |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    |out_buf_15_U  |dataflow_in_loop_tde  |        0|  64|   1|     2|   32|     2|          128|
+    +--------------+----------------------+---------+----+----+------+-----+------+-------------+
+    |Total         |                      |        0|1216|  32|    64|  608|    64|         2432|
+    +--------------+----------------------+---------+----+----+------+-----+------+-------------+
+
+    * FIFO: 
+    +--------------------+---------+---+----+------+-----+---------+
+    |        Name        | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +--------------------+---------+---+----+------+-----+---------+
+    |i_0_i_i_c_U         |        0|  5|  16|     2|    1|        2|
+    |imatrix_offset_c_U  |        0|  5|  42|     1|   30|       30|
+    |omatrix_offset_c_U  |        0|  5|  42|     2|   30|       60|
+    +--------------------+---------+---+----+------+-----+---------+
+    |Total               |        0| 15| 100|     5|   61|       92|
+    +--------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Loop_0_proc19_U0_ap_ready_count    |     +    |      0|  0|   9|           2|           1|
+    |Loop_1_proc_U0_ap_ready_count      |     +    |      0|  0|   9|           2|           1|
+    |Loop_0_proc19_U0_ap_continue       |    and   |      0|  0|   9|           1|           1|
+    |Loop_0_proc19_U0_ap_start          |    and   |      0|  0|   9|           1|           1|
+    |Loop_1_proc_U0_ap_continue         |    and   |      0|  0|   9|           1|           1|
+    |Loop_1_proc_U0_ap_start            |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_0          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_1          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_10         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_11         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_12         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_13         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_14         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_15         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_2          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_3          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_4          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_5          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_6          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_7          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_8          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_in1_buf_9          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_0          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_1          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_10         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_11         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_12         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_13         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_14         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_15         |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_2          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_3          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_4          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_5          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_6          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_7          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_8          |    and   |      0|  0|   9|           1|           1|
+    |ap_channel_done_out_buf_9          |    and   |      0|  0|   9|           1|           1|
+    |ap_idle                            |    and   |      0|  0|   9|           1|           1|
+    |ap_sync_ready                      |    and   |      0|  0|   9|           1|           1|
+    |memcpy_omatrix_out_b_U0_ap_start   |    and   |      0|  0|   9|           1|           1|
+    |ap_sync_Loop_0_proc19_U0_ap_ready  |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_Loop_1_proc_U0_ap_ready    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_0    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_1    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_10   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_11   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_12   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_13   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_14   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_15   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_2    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_3    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_4    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_5    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_6    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_7    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_8    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_in1_buf_9    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_0    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_1    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_10   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_11   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_12   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_13   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_14   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_15   |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_2    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_3    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_4    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_5    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_6    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_7    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_8    |    or    |      0|  0|   9|           1|           1|
+    |ap_sync_channel_write_out_buf_9    |    or    |      0|  0|   9|           1|           1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                              |          |      0|  0| 675|          77|          75|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Loop_0_proc19_U0_ap_ready_count        |   9|          2|    2|          4|
+    |Loop_1_proc_U0_ap_ready_count          |   9|          2|    2|          4|
+    |ap_sync_reg_Loop_0_proc19_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_Loop_1_proc_U0_ap_ready    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_0    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_1    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_10   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_11   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_12   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_13   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_14   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_15   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_2    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_3    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_4    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_5    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_6    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_7    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_8    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_in1_buf_9    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_0    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_1    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_10   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_11   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_12   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_13   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_14   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_15   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_2    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_3    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_4    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_5    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_6    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_7    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_8    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_out_buf_9    |   9|          2|    1|          2|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  | 324|         72|   38|         76|
+    +---------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------+---+----+-----+-----------+
+    |                  Name                 | FF| LUT| Bits| Const Bits|
+    +---------------------------------------+---+----+-----+-----------+
+    |Loop_0_proc19_U0_ap_ready_count        |  2|   0|    2|          0|
+    |Loop_1_proc_U0_ap_ready_count          |  2|   0|    2|          0|
+    |ap_sync_reg_Loop_0_proc19_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_Loop_1_proc_U0_ap_ready    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_0    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_1    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_10   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_11   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_12   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_13   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_14   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_15   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_2    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_3    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_4    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_5    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_6    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_7    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_8    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_in1_buf_9    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_0    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_1    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_10   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_11   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_12   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_13   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_14   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_15   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_2    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_3    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_4    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_5    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_6    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_7    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_8    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_out_buf_9    |  1|   0|    1|          0|
+    +---------------------------------------+---+----+-----+-----------+
+    |Total                                  | 38|   0|   38|          0|
+    +---------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++------------------------+-----+-----+------------+------------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs | dataflow_in_loop | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs | dataflow_in_loop | return value |
+|ap_done                 | out |    1| ap_ctrl_hs | dataflow_in_loop | return value |
+|ap_start                |  in |    1| ap_ctrl_hs | dataflow_in_loop | return value |
+|ap_ready                | out |    1| ap_ctrl_hs | dataflow_in_loop | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs | dataflow_in_loop | return value |
+|ap_continue             |  in |    1| ap_ctrl_hs | dataflow_in_loop | return value |
+|i_0_i_i                 |  in |    2|   ap_none  |      i_0_i_i     |    scalar    |
+|i_0_i_i_ap_vld          |  in |    1|   ap_none  |      i_0_i_i     |    scalar    |
+|m_axi_imatrix_AWVALID   | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWREADY   |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWADDR    | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWID      | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWLEN     | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWSIZE    | out |    3|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWBURST   | out |    2|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWLOCK    | out |    2|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWCACHE   | out |    4|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWPROT    | out |    3|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWQOS     | out |    4|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWREGION  | out |    4|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWUSER    | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_WVALID    | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_WREADY    |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_WDATA     | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_WSTRB     | out |    4|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_WLAST     | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_WID       | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_WUSER     | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARVALID   | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARREADY   |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARADDR    | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARID      | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARLEN     | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARSIZE    | out |    3|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARBURST   | out |    2|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARLOCK    | out |    2|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARCACHE   | out |    4|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARPROT    | out |    3|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARQOS     | out |    4|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARREGION  | out |    4|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARUSER    | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_RVALID    |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_RREADY    | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_RDATA     |  in |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_RLAST     |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_RID       |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_RUSER     |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_RRESP     |  in |    2|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_BVALID    |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_BREADY    | out |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_BRESP     |  in |    2|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_BID       |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_BUSER     |  in |    1|    m_axi   |      imatrix     |    pointer   |
+|imatrix_offset          |  in |   30|   ap_none  |  imatrix_offset  |    scalar    |
+|imatrix_offset_ap_vld   |  in |    1|   ap_none  |  imatrix_offset  |    scalar    |
+|m_axi_omatrix_AWVALID   | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWREADY   |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWADDR    | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWID      | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWLEN     | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWSIZE    | out |    3|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWBURST   | out |    2|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWLOCK    | out |    2|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWCACHE   | out |    4|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWPROT    | out |    3|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWQOS     | out |    4|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWREGION  | out |    4|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWUSER    | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_WVALID    | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_WREADY    |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_WDATA     | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_WSTRB     | out |    4|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_WLAST     | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_WID       | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_WUSER     | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARVALID   | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARREADY   |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARADDR    | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARID      | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARLEN     | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARSIZE    | out |    3|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARBURST   | out |    2|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARLOCK    | out |    2|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARCACHE   | out |    4|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARPROT    | out |    3|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARQOS     | out |    4|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARREGION  | out |    4|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARUSER    | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_RVALID    |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_RREADY    | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_RDATA     |  in |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_RLAST     |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_RID       |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_RUSER     |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_RRESP     |  in |    2|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_BVALID    |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_BREADY    | out |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_BRESP     |  in |    2|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_BID       |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_BUSER     |  in |    1|    m_axi   |      omatrix     |    pointer   |
+|omatrix_offset          |  in |   30|   ap_none  |  omatrix_offset  |    scalar    |
+|omatrix_offset_ap_vld   |  in |    1|   ap_none  |  omatrix_offset  |    scalar    |
++------------------------+-----+-----+------------+------------------+--------------+
+

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/decode.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/chenidct.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1378" content="In file included from ../src/chenidct.c:1:
+../src/chenidct.c:82:9: warning: implicitly declaring library function &apos;memcpy&apos; with type &apos;void *(void *, const void *, unsigned long)&apos;
+        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        ^
+../src/chenidct.c:82:9: note: please include the header &lt;string.h&gt; or explicitly provide a declaration for &apos;memcpy&apos;
+1 warning generated." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 7707 ; free virtual = 18197" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 7707 ; free virtual = 18198" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 7705 ; free virtual = 18195" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 7705 ; free virtual = 18195" tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="876" content="Unrolling loop &apos;Loop-1.1&apos; (../src/decode.c:112) in function &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos; partially with a factor of 16." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="876" content="Unrolling loop &apos;Loop-1.2&apos; (../src/decode.c:125) in function &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos; partially with a factor of 16." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="685" content="Partitioning array &apos;in1_buf&apos; (../src/decode.c:101) in dimension 1 with a cyclic factor 16." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="685" content="Partitioning array &apos;out_buf&apos; (../src/decode.c:102) in dimension 1 with a cyclic factor 16." tag=""/>
+	<Message prefix="[XFORM 203-721]" severity="INFO" keynum="1018" content="Changing loop &apos;Loop_0&apos; (../src/decode.c:112)  to a process function for dataflow in function &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos;." tag=""/>
+	<Message prefix="[XFORM 203-721]" severity="INFO" keynum="1018" content="Changing loop &apos;Loop_1&apos; (../src/decode.c:125)  to a process function for dataflow in function &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos;." tag=""/>
+	<Message prefix="[XFORM 203-721]" severity="INFO" keynum="1018" content="Changing loop &apos;memcpy.omatrix.out_buf.gep&apos;  to a process function for dataflow in function &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos;." tag=""/>
+	<Message prefix="[XFORM 203-721]" severity="INFO" keynum="1017" content="Extract dataflow region from loop  (../src/decode.c:107)  of function &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos;." tag=""/>
+	<Message prefix="[XFORM 203-713]" severity="WARNING" keynum="768" content="All the elements of global array &apos;omatrix&apos; should be updated in process function &apos;memcpy.omatrix.out_buf.gep_proc&apos; (../src/decode.c:107:9), otherwise it may not be synthesized correctly." tag=""/>
+	<Message prefix="[XFORM 203-712]" severity="INFO" keynum="801" content="Applying dataflow to function &apos;dataflow_in_loop&apos; (../src/decode.c:101:1), detected/extracted 3 process function(s): 
+	 &apos;Loop_0_proc&apos;
+	 &apos;Loop_1_proc&apos;
+	 &apos;memcpy.omatrix.out_buf.gep_proc&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 584.137 ; gain = 147.512 ; free physical = 7684 ; free virtual = 18174" tag=""/>
+	<Message prefix="[XFORM 203-631]" severity="WARNING" keynum="902" content="Renaming function &apos;memcpy.omatrix.out_buf.gep_proc&apos; to &apos;memcpy.omatrix.out_b&apos; (../src/decode.c:114:9)" tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst write of length 32 on port &apos;omatrix&apos; (../src/decode.c:139:9)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 584.137 ; gain = 147.512 ; free physical = 7657 ; free virtual = 18148" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos; ..." tag=""/>
+	<Message prefix="[SYN 201-103]" severity="WARNING" keynum="534" content="Legalizing function name &apos;memcpy.omatrix.out_b&apos; to &apos;memcpy_omatrix_out_b&apos;." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;Loop_0_proc19&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 11.51 seconds; current allocated memory: 103.346 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.08 seconds; current allocated memory: 103.901 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;Loop_1_proc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.17 seconds; current allocated memory: 104.608 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.12 seconds; current allocated memory: 105.500 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;memcpy_omatrix_out_b&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;memcpy.omatrix.out_buf.gep&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.22 seconds; current allocated memory: 105.761 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.07 seconds; current allocated memory: 106.094 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;dataflow_in_loop&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.07 seconds; current allocated memory: 106.267 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.19 seconds; current allocated memory: 106.576 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.13 seconds; current allocated memory: 106.664 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.06 seconds; current allocated memory: 106.792 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;Loop_0_proc19&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;Loop_0_proc19_zigzag_index&apos; to &apos;Loop_0_proc19_zigbkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;Loop_0_proc19&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.21 seconds; current allocated memory: 107.628 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;Loop_1_proc&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;Loop_1_proc&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.21 seconds; current allocated memory: 110.687 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;memcpy_omatrix_out_b&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd_mux_164_32_1_1&apos; to &apos;IZigzagMatrix_f2rcud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;IZigzagMatrix_f2rcud&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;memcpy_omatrix_out_b&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.28 seconds; current allocated memory: 113.860 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;dataflow_in_loop&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_0&apos; to &apos;dataflow_in_loop_dEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_1&apos; to &apos;dataflow_in_loop_eOg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_2&apos; to &apos;dataflow_in_loop_fYi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_3&apos; to &apos;dataflow_in_loop_g8j&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_4&apos; to &apos;dataflow_in_loop_hbi&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_5&apos; to &apos;dataflow_in_loop_ibs&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_6&apos; to &apos;dataflow_in_loop_jbC&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_7&apos; to &apos;dataflow_in_loop_kbM&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_8&apos; to &apos;dataflow_in_loop_lbW&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_9&apos; to &apos;dataflow_in_loop_mb6&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_10&apos; to &apos;dataflow_in_loop_ncg&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_11&apos; to &apos;dataflow_in_loop_ocq&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_12&apos; to &apos;dataflow_in_loop_pcA&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_13&apos; to &apos;dataflow_in_loop_qcK&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_14&apos; to &apos;dataflow_in_loop_rcU&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_in1_buf_15&apos; to &apos;dataflow_in_loop_sc4&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_0&apos; to &apos;dataflow_in_loop_tde&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_1&apos; to &apos;dataflow_in_loop_udo&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_2&apos; to &apos;dataflow_in_loop_vdy&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_3&apos; to &apos;dataflow_in_loop_wdI&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_4&apos; to &apos;dataflow_in_loop_xdS&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_5&apos; to &apos;dataflow_in_loop_yd2&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_6&apos; to &apos;dataflow_in_loop_zec&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_7&apos; to &apos;dataflow_in_loop_Aem&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_8&apos; to &apos;dataflow_in_loop_Bew&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_9&apos; to &apos;dataflow_in_loop_CeG&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_10&apos; to &apos;dataflow_in_loop_DeQ&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_11&apos; to &apos;dataflow_in_loop_Ee0&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_12&apos; to &apos;dataflow_in_loop_Ffa&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_13&apos; to &apos;dataflow_in_loop_Gfk&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_14&apos; to &apos;dataflow_in_loop_Hfu&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;dataflow_in_loop_out_buf_15&apos; to &apos;dataflow_in_loop_IfE&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWVALID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWADDR&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWLEN&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWSIZE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWBURST&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWLOCK&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWCACHE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWPROT&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWQOS&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWREGION&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_AWUSER&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_WVALID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_WDATA&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_WSTRB&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_WLAST&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_WID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_WUSER&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_imatrix_BREADY&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARVALID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARADDR&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARLEN&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARSIZE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARBURST&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARLOCK&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARCACHE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARPROT&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARQOS&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARREGION&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_ARUSER&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="252" content="Setting dangling out port &apos;dataflow_in_loop/m_axi_omatrix_RREADY&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;dataflow_in_loop&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.45 seconds; current allocated memory: 118.680 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd/BUS_SRC&apos; to &apos;m_axi&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd/BUS_DST&apos; to &apos;m_axi&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd/imatrix&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd/omatrix&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos;, &apos;imatrix&apos; and &apos;omatrix&apos; to AXI-Lite port BUS_CTRL." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;IZigzagMatrix_f2r_forBody_s2e_forEnd&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.55 seconds; current allocated memory: 121.289 MB." tag=""/>
+	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;Loop_0_proc19_zigbkb_rom&apos; using distributed ROMs." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;dataflow_in_loop_dEe_memcore_ram (RAM)&apos; using distributed RAMs." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;dataflow_in_loop_tde_memcore_ram (RAM)&apos; using distributed RAMs." tag=""/>
+	<Message prefix="[RTMG 210-285]" severity="INFO" keynum="RTMG_285_1799" content="Implementing FIFO &apos;fifo_w1_d2_A&apos; using Shift Registers." tag=""/>
+	<Message prefix="[RTMG 210-285]" severity="INFO" keynum="RTMG_285_1799" content="Implementing FIFO &apos;fifo_w30_d2_A&apos; using Shift Registers." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 648.141 ; gain = 211.516 ; free physical = 7625 ; free virtual = 18118" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for IZigzagMatrix_f2r_forBody_s2e_forEnd." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for IZigzagMatrix_f2r_forBody_s2e_forEnd." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for IZigzagMatrix_f2r_forBody_s2e_forEnd." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 15.63 seconds; peak allocated memory: 121.289 MB." tag=""/>
+</Messages>

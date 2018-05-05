@@ -1,0 +1,250 @@
+
+
+================================================================
+== Vivado HLS Report for 'IZigzagMatrix_f2r_forBody_s2e_forEnd'
+================================================================
+* Date:           Fri May  4 19:53:21 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        Izigzagmatrix
+* Solution:       OPT
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.00|      2.62|        0.38|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  156|  156|  156|  156|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------+------------------+-----+-----+-----+-----+----------+
+        |                     |                  |  Latency  |  Interval | Pipeline |
+        |       Instance      |      Module      | min | max | min | max |   Type   |
+        +---------------------+------------------+-----+-----+-----+-----+----------+
+        |dataflow_in_loop_U0  |dataflow_in_loop  |  100|  100|   54|   54| dataflow |
+        +---------------------+------------------+-----+-----+-----+-----+----------+
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  155|  155|       102|          -|          -|     2|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      18|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        4|      -|    3691|    3989|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      18|    -|
+|Register         |        -|      -|       6|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        4|      0|    3697|    4025|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |     1824|   2520|  548160|  274080|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |    ~0   |      0|   ~0   |       1|    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
+    |                        Instance                       |                        Module                       | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
+    |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi_U  |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi  |        0|      0|   112|   168|
+    |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi_U   |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi   |        2|      0|   512|   580|
+    |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi_U   |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi   |        2|      0|   512|   580|
+    |dataflow_in_loop_U0                                    |dataflow_in_loop                                     |        0|      0|  2555|  2661|
+    +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
+    |Total                                                  |                                                     |        4|      0|  3691|  3989|
+    +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |        Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |loop_dataflow_input_count   |     +    |      0|  0|   9|           2|           1|
+    |loop_dataflow_output_count  |     +    |      0|  0|   9|           2|           1|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |Total                       |          |      0|  0|  18|           4|           2|
+    +----------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |loop_dataflow_input_count   |   9|          2|    2|          4|
+    |loop_dataflow_output_count  |   9|          2|    2|          4|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  18|          4|    4|          8|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+---+----+-----+-----------+
+    |            Name            | FF| LUT| Bits| Const Bits|
+    +----------------------------+---+----+-----+-----------+
+    |loop_dataflow_busy          |  1|   0|    1|          0|
+    |loop_dataflow_enable        |  1|   0|    1|          0|
+    |loop_dataflow_input_count   |  2|   0|    2|          0|
+    |loop_dataflow_output_count  |  2|   0|    2|          0|
+    +----------------------------+---+----+-----+-----------+
+    |Total                       |  6|   0|    6|          0|
+    +----------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+--------------------------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |             Source Object            |    C Type    |
++------------------------+-----+-----+------------+--------------------------------------+--------------+
+|s_axi_BUS_CTRL_AWVALID  |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_AWREADY  | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_AWADDR   |  in |    5|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_WVALID   |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_WREADY   | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_WDATA    |  in |   32|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_WSTRB    |  in |    4|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_ARVALID  |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_ARREADY  | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_ARADDR   |  in |    5|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_RVALID   | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_RREADY   |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_RDATA    | out |   32|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_RRESP    | out |    2|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_BVALID   | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_BREADY   |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_BRESP    | out |    2|    s_axi   |               BUS_CTRL               |    scalar    |
+|ap_clk                  |  in |    1| ap_ctrl_hs | IZigzagMatrix_f2r_forBody_s2e_forEnd | return value |
+|ap_rst_n                |  in |    1| ap_ctrl_hs | IZigzagMatrix_f2r_forBody_s2e_forEnd | return value |
+|interrupt               | out |    1| ap_ctrl_hs | IZigzagMatrix_f2r_forBody_s2e_forEnd | return value |
+|m_axi_BUS_SRC_AWVALID   | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWREADY   |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWADDR    | out |   32|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWID      | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWLEN     | out |    8|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWSIZE    | out |    3|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWBURST   | out |    2|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWLOCK    | out |    2|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWCACHE   | out |    4|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWPROT    | out |    3|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWQOS     | out |    4|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWREGION  | out |    4|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWUSER    | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_WVALID    | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_WREADY    |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_WDATA     | out |   32|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_WSTRB     | out |    4|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_WLAST     | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_WID       | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_WUSER     | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARVALID   | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARREADY   |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARADDR    | out |   32|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARID      | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARLEN     | out |    8|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARSIZE    | out |    3|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARBURST   | out |    2|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARLOCK    | out |    2|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARCACHE   | out |    4|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARPROT    | out |    3|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARQOS     | out |    4|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARREGION  | out |    4|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARUSER    | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_RVALID    |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_RREADY    | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_RDATA     |  in |   32|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_RLAST     |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_RID       |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_RUSER     |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_RRESP     |  in |    2|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_BVALID    |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_BREADY    | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_BRESP     |  in |    2|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_BID       |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_BUSER     |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_DST_AWVALID   | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWREADY   |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWADDR    | out |   32|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWID      | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWLEN     | out |    8|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWSIZE    | out |    3|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWBURST   | out |    2|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWLOCK    | out |    2|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWCACHE   | out |    4|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWPROT    | out |    3|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWQOS     | out |    4|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWREGION  | out |    4|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWUSER    | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_WVALID    | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_WREADY    |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_WDATA     | out |   32|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_WSTRB     | out |    4|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_WLAST     | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_WID       | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_WUSER     | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARVALID   | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARREADY   |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARADDR    | out |   32|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARID      | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARLEN     | out |    8|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARSIZE    | out |    3|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARBURST   | out |    2|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARLOCK    | out |    2|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARCACHE   | out |    4|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARPROT    | out |    3|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARQOS     | out |    4|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARREGION  | out |    4|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARUSER    | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_RVALID    |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_RREADY    | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_RDATA     |  in |   32|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_RLAST     |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_RID       |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_RUSER     |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_RRESP     |  in |    2|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_BVALID    |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_BREADY    | out |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_BRESP     |  in |    2|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_BID       |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_BUSER     |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
++------------------------+-----+-----+------------+--------------------------------------+--------------+
+

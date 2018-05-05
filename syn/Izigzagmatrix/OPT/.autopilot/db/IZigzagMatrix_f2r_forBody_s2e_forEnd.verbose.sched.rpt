@@ -1,0 +1,152 @@
+
+
+================================================================
+== Vivado HLS Report for 'IZigzagMatrix_f2r_forBody_s2e_forEnd'
+================================================================
+* Date:           Fri May  4 19:53:19 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        Izigzagmatrix
+* Solution:       OPT
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.00|      2.62|        0.38|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  156|  156|  156|  156|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  155|  155|       102|          -|          -|     2|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 2, States = { 2 3 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond2_i_i)
+3 --> 
+	2  / (!exitcond2_i_i)
+
+* FSM state operations: 
+
+ <State 1> : 1.00ns
+ST_1 : Operation 4 [1/1] (1.00ns)   --->   "%omatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %omatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 5 [1/1] (1.00ns)   --->   "%imatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %imatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%omatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %omatrix_read, i32 2, i32 31)"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%imatrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %imatrix_read, i32 2, i32 31)"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_DST), !map !278"
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_SRC), !map !283"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([37 x i8]* @IZigzagMatrix_f2r_fo) nounwind"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %imatrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %omatrix, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle10, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:88]
+ST_1 : Operation 16 [1/1] (0.65ns)   --->   "br label %0"
+
+ <State 2> : 0.55ns
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%i_0_i_i = phi i2 [ 0, %codeRepl ], [ %i, %codeRepl1035 ]"
+ST_2 : Operation 18 [1/1] (0.44ns)   --->   "%exitcond2_i_i = icmp eq i2 %i_0_i_i, -2" [../src/decode.c:107]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [21 x i8]* @dataflow_parent_loop, i2 %i_0_i_i, i2 -2)" [../src/decode.c:107]
+ST_2 : Operation 21 [1/1] (0.54ns)   --->   "%i = add i2 %i_0_i_i, 1" [../src/decode.c:107]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "br i1 %exitcond2_i_i, label %IZigzagMatrix_f2r_forBody_s2e_forEnd_.exit, label %codeRepl1035" [../src/decode.c:107]
+ST_2 : Operation 23 [2/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i30 %imatrix1, i32* %BUS_DST, i30 %omatrix3)" [../src/decode.c:107]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "ret void" [../src/decode.c:144]
+
+ <State 3> : 0.00ns
+ST_3 : Operation 25 [1/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i30 %imatrix1, i32* %BUS_DST, i30 %omatrix3)" [../src/decode.c:107]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br label %0" [../src/decode.c:107]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3ns, clock uncertainty: 0.375ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'omatrix' [6]  (1 ns)
+
+ <State 2>: 0.548ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/decode.c:107) [20]  (0 ns)
+	'add' operation ('i', ../src/decode.c:107) [24]  (0.548 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

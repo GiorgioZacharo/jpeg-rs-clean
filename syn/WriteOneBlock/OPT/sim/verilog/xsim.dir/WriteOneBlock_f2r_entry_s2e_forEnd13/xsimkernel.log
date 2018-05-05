@@ -1,0 +1,7 @@
+Running: xsim.dir/WriteOneBlock_f2r_entry_s2e_forEnd13/xsimk -simmode gui -wdb WriteOneBlock_f2r_entry_s2e_forEnd13.wdb -simrunnum 0 -socket 48334
+Design successfully loaded
+Design Loading Memory Usage: 42084 KB (Peak: 42084 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 128380 KB (Peak: 181356 KB)
+Simulation CPU Usage: 20950 ms

@@ -1,0 +1,80 @@
+   Build using "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/g++"
+   Compiling apatb_IZigzagMatrix_f2r_forBody_s2e_forEnd.cpp
+   Compiling (apcc) jpeg2bmp.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:27 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/247821525478067367501
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) huffman.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:30 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/248631525478070228146
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) decode.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:33 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/249461525478073229500
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) init.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:36 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/250281525478076421840
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) chenidct.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:39 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+/home/giorgio/workspace/jpeg-rs-clean/src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        ^
+/home/giorgio/workspace/jpeg-rs-clean/src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/251091525478079345800
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) main.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:42 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/251901525478082500886
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) jfif_read.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:45 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/252721525478085329716
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) marker.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 19:54:48 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/253531525478088229160
+INFO: [APCC 202-1] APCC is done.
+   Generating cosim.tv.exe

@@ -1,0 +1,3747 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+WARNING: [COSIM-369] AXI_master port 'BUS_SRC' has a depth of '64'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM-369] AXI_master port 'BUS_DST' has a depth of '5310'. Insufficient depth may result in simulation mismatch or freeze.
+   Build using "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/g++"
+   Compiling apatb_WriteOneBlock_f2r_entry_s2e_forEnd13.cpp
+   Compiling (apcc) jpeg2bmp.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:19 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/146631525471939739763
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) huffman.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:22 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/147441525471942581779
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) decode.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:25 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/148251525471945481523
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) init.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:28 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/149071525471948635072
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) chenidct.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:31 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+/home/giorgio/workspace/jpeg-rs-clean/src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        ^
+/home/giorgio/workspace/jpeg-rs-clean/src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/149911525471951572662
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) main.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:34 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/150731525471954777266
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) jfif_read.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:37 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/151561525471957645275
+INFO: [APCC 202-1] APCC is done.
+   Compiling (apcc) marker.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 04 18:12:40 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/152371525471960585425
+INFO: [APCC 202-1] APCC is done.
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+
+marker = 0xd8
+
+marker = 0xe0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 1
+
+marker = 0xc0
+length         = 17
+data_precision = 8
+image_height   = 59
+image_width    = 90
+num_components = 3
+ index         = 0
+ id            = 1
+ h_samp_factor = 2
+ v_samp_factor = 2
+ quant_tbl_no  = 0
+
+ index         = 1
+ id            = 2
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+ index         = 2
+ id            = 3
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+
+Sampling Factor is 4:1:1
+
+marker = 0xc4
+ length = 29
+ index = 0x0
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x10
+ count = 162
+
+marker = 0xc4
+ length = 29
+ index = 0x1
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x11
+ count = 162
+
+marker = 0xda
+ length = 12
+ num_comp = 3
+ comp_id       = 1
+ dc_tbl_no     = 0
+ ac_tbl_no     = 0
+ comp_id       = 2
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+ comp_id       = 3
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+Decode 4:1:1 NumMCU = 96
+RGB_BUF 0  188
+RGB_BUF 1  209
+RGB_BUF 2  190
+RGB_BUF 3  153
+RGB_BUF 4  143
+RGB_BUF 5  103
+RGB_BUF 6  149
+RGB_BUF 7  192
+RGB_BUF 8  166
+RGB_BUF 9  193
+RGB_BUF 10  101
+RGB_BUF 11  90
+RGB_BUF 12  170
+RGB_BUF 13  129
+RGB_BUF 14  146
+RGB_BUF 15  213
+RGB_BUF 16  145
+RGB_BUF 17  132
+RGB_BUF 18  46
+RGB_BUF 19  181
+RGB_BUF 20  205
+RGB_BUF 21  209
+RGB_BUF 22  187
+RGB_BUF 23  170
+RGB_BUF 24  111
+RGB_BUF 25  15
+RGB_BUF 26  62
+RGB_BUF 27  226
+RGB_BUF 28  207
+RGB_BUF 29  187
+RGB_BUF 30  205
+RGB_BUF 31  188
+RGB_BUF 32  139
+RGB_BUF 33  140
+RGB_BUF 34  129
+RGB_BUF 35  156
+RGB_BUF 36  113
+RGB_BUF 37  177
+RGB_BUF 38  215
+RGB_BUF 39  174
+RGB_BUF 40  179
+RGB_BUF 41  196
+RGB_BUF 42  217
+RGB_BUF 43  132
+RGB_BUF 44  55
+RGB_BUF 45  121
+RGB_BUF 46  213
+RGB_BUF 47  180
+RGB_BUF 48  136
+RGB_BUF 49  134
+RGB_BUF 50  175
+RGB_BUF 51  214
+RGB_BUF 52  134
+RGB_BUF 53  161
+RGB_BUF 54  190
+RGB_BUF 55  141
+RGB_BUF 56  41
+RGB_BUF 57  114
+RGB_BUF 58  196
+RGB_BUF 59  195
+RGB_BUF 60  208
+RGB_BUF 61  197
+RGB_BUF 62  186
+RGB_BUF 63  176
+RGB_BUF 0  193
+RGB_BUF 1  167
+RGB_BUF 2  188
+RGB_BUF 3  210
+RGB_BUF 4  177
+RGB_BUF 5  142
+RGB_BUF 6  37
+RGB_BUF 7  10
+RGB_BUF 8  201
+RGB_BUF 9  155
+RGB_BUF 10  139
+RGB_BUF 11  209
+RGB_BUF 12  191
+RGB_BUF 13  201
+RGB_BUF 14  171
+RGB_BUF 15  103
+RGB_BUF 16  154
+RGB_BUF 17  215
+RGB_BUF 18  200
+RGB_BUF 19  209
+RGB_BUF 20  184
+RGB_BUF 21  164
+RGB_BUF 22  196
+RGB_BUF 23  174
+RGB_BUF 24  24
+RGB_BUF 25  191
+RGB_BUF 26  209
+RGB_BUF 27  198
+RGB_BUF 28  186
+RGB_BUF 29  184
+RGB_BUF 30  147
+RGB_BUF 31  117
+RGB_BUF 32  81
+RGB_BUF 33  37
+RGB_BUF 34  97
+RGB_BUF 35  223
+RGB_BUF 36  200
+RGB_BUF 37  217
+RGB_BUF 38  149
+RGB_BUF 39  153
+RGB_BUF 40  197
+RGB_BUF 41  206
+RGB_BUF 42  164
+RGB_BUF 43  214
+RGB_BUF 44  217
+RGB_BUF 45  175
+RGB_BUF 46  40
+RGB_BUF 47  141
+RGB_BUF 48  73
+RGB_BUF 49  141
+RGB_BUF 50  206
+RGB_BUF 51  148
+RGB_BUF 52  181
+RGB_BUF 53  192
+RGB_BUF 54  113
+RGB_BUF 55  69
+RGB_BUF 56  12
+RGB_BUF 57  190
+RGB_BUF 58  180
+RGB_BUF 59  177
+RGB_BUF 60  148
+RGB_BUF 61  178
+RGB_BUF 62  221
+RGB_BUF 63  145
+RGB_BUF 0  10
+RGB_BUF 1  18
+RGB_BUF 2  14
+RGB_BUF 3  26
+RGB_BUF 4  7
+RGB_BUF 5  108
+RGB_BUF 6  181
+RGB_BUF 7  190
+RGB_BUF 8  24
+RGB_BUF 9  14
+RGB_BUF 10  24
+RGB_BUF 11  24
+RGB_BUF 12  4
+RGB_BUF 13  108
+RGB_BUF 14  185
+RGB_BUF 15  180
+RGB_BUF 16  35
+RGB_BUF 17  27
+RGB_BUF 18  39
+RGB_BUF 19  31
+RGB_BUF 20  16
+RGB_BUF 21  58
+RGB_BUF 22  116
+RGB_BUF 23  137
+RGB_BUF 24  23
+RGB_BUF 25  20
+RGB_BUF 26  34
+RGB_BUF 27  28
+RGB_BUF 28  26
+RGB_BUF 29  10
+RGB_BUF 30  42
+RGB_BUF 31  112
+RGB_BUF 32  13
+RGB_BUF 33  17
+RGB_BUF 34  43
+RGB_BUF 35  16
+RGB_BUF 36  18
+RGB_BUF 37  20
+RGB_BUF 38  24
+RGB_BUF 39  98
+RGB_BUF 40  49
+RGB_BUF 41  21
+RGB_BUF 42  39
+RGB_BUF 43  17
+RGB_BUF 44  23
+RGB_BUF 45  28
+RGB_BUF 46  14
+RGB_BUF 47  123
+RGB_BUF 48  79
+RGB_BUF 49  31
+RGB_BUF 50  25
+RGB_BUF 51  40
+RGB_BUF 52  30
+RGB_BUF 53  26
+RGB_BUF 54  12
+RGB_BUF 55  98
+RGB_BUF 56  167
+RGB_BUF 57  57
+RGB_BUF 58  47
+RGB_BUF 59  168
+RGB_BUF 60  124
+RGB_BUF 61  33
+RGB_BUF 62  5
+RGB_BUF 63  54
+RGB_BUF 0  66
+RGB_BUF 1  93
+RGB_BUF 2  90
+RGB_BUF 3  65
+RGB_BUF 4  51
+RGB_BUF 5  32
+RGB_BUF 6  36
+RGB_BUF 7  35
+RGB_BUF 8  103
+RGB_BUF 9  85
+RGB_BUF 10  69
+RGB_BUF 11  49
+RGB_BUF 12  46
+RGB_BUF 13  55
+RGB_BUF 14  44
+RGB_BUF 15  42
+RGB_BUF 16  97
+RGB_BUF 17  84
+RGB_BUF 18  32
+RGB_BUF 19  36
+RGB_BUF 20  62
+RGB_BUF 21  58
+RGB_BUF 22  40
+RGB_BUF 23  41
+RGB_BUF 24  96
+RGB_BUF 25  46
+RGB_BUF 26  19
+RGB_BUF 27  32
+RGB_BUF 28  53
+RGB_BUF 29  58
+RGB_BUF 30  40
+RGB_BUF 31  40
+RGB_BUF 32  68
+RGB_BUF 33  29
+RGB_BUF 34  39
+RGB_BUF 35  56
+RGB_BUF 36  59
+RGB_BUF 37  49
+RGB_BUF 38  40
+RGB_BUF 39  41
+RGB_BUF 40  59
+RGB_BUF 41  50
+RGB_BUF 42  48
+RGB_BUF 43  55
+RGB_BUF 44  58
+RGB_BUF 45  42
+RGB_BUF 46  48
+RGB_BUF 47  54
+RGB_BUF 48  64
+RGB_BUF 49  46
+RGB_BUF 50  68
+RGB_BUF 51  65
+RGB_BUF 52  67
+RGB_BUF 53  80
+RGB_BUF 54  56
+RGB_BUF 55  36
+RGB_BUF 56  50
+RGB_BUF 57  78
+RGB_BUF 58  83
+RGB_BUF 59  74
+RGB_BUF 60  80
+RGB_BUF 61  90
+RGB_BUF 62  58
+RGB_BUF 63  44
+RGB_BUF 0  41
+RGB_BUF 1  54
+RGB_BUF 2  32
+RGB_BUF 3  31
+RGB_BUF 4  31
+RGB_BUF 5  34
+RGB_BUF 6  24
+RGB_BUF 7  25
+RGB_BUF 8  48
+RGB_BUF 9  54
+RGB_BUF 10  34
+RGB_BUF 11  40
+RGB_BUF 12  38
+RGB_BUF 13  36
+RGB_BUF 14  31
+RGB_BUF 15  28
+RGB_BUF 16  24
+RGB_BUF 17  36
+RGB_BUF 18  40
+RGB_BUF 19  16
+RGB_BUF 20  34
+RGB_BUF 21  24
+RGB_BUF 22  22
+RGB_BUF 23  33
+RGB_BUF 24  101
+RGB_BUF 25  14
+RGB_BUF 26  18
+RGB_BUF 27  7
+RGB_BUF 28  15
+RGB_BUF 29  27
+RGB_BUF 30  7
+RGB_BUF 31  27
+RGB_BUF 32  186
+RGB_BUF 33  96
+RGB_BUF 34  0
+RGB_BUF 35  37
+RGB_BUF 36  15
+RGB_BUF 37  21
+RGB_BUF 38  20
+RGB_BUF 39  27
+RGB_BUF 40  187
+RGB_BUF 41  137
+RGB_BUF 42  25
+RGB_BUF 43  54
+RGB_BUF 44  58
+RGB_BUF 45  55
+RGB_BUF 46  18
+RGB_BUF 47  19
+RGB_BUF 48  178
+RGB_BUF 49  156
+RGB_BUF 50  114
+RGB_BUF 51  126
+RGB_BUF 52  107
+RGB_BUF 53  61
+RGB_BUF 54  46
+RGB_BUF 55  50
+RGB_BUF 56  203
+RGB_BUF 57  196
+RGB_BUF 58  175
+RGB_BUF 59  142
+RGB_BUF 60  107
+RGB_BUF 61  61
+RGB_BUF 62  44
+RGB_BUF 63  61
+RGB_BUF 0  23
+RGB_BUF 1  17
+RGB_BUF 2  16
+RGB_BUF 3  18
+RGB_BUF 4  30
+RGB_BUF 5  25
+RGB_BUF 6  33
+RGB_BUF 7  45
+RGB_BUF 8  15
+RGB_BUF 9  11
+RGB_BUF 10  17
+RGB_BUF 11  25
+RGB_BUF 12  31
+RGB_BUF 13  26
+RGB_BUF 14  44
+RGB_BUF 15  73
+RGB_BUF 16  18
+RGB_BUF 17  15
+RGB_BUF 18  21
+RGB_BUF 19  28
+RGB_BUF 20  33
+RGB_BUF 21  29
+RGB_BUF 22  48
+RGB_BUF 23  75
+RGB_BUF 24  8
+RGB_BUF 25  10
+RGB_BUF 26  18
+RGB_BUF 27  20
+RGB_BUF 28  26
+RGB_BUF 29  27
+RGB_BUF 30  43
+RGB_BUF 31  58
+RGB_BUF 32  13
+RGB_BUF 33  12
+RGB_BUF 34  19
+RGB_BUF 35  16
+RGB_BUF 36  16
+RGB_BUF 37  14
+RGB_BUF 38  28
+RGB_BUF 39  38
+RGB_BUF 40  34
+RGB_BUF 41  18
+RGB_BUF 42  13
+RGB_BUF 43  13
+RGB_BUF 44  12
+RGB_BUF 45  5
+RGB_BUF 46  12
+RGB_BUF 47  18
+RGB_BUF 48  45
+RGB_BUF 49  25
+RGB_BUF 50  20
+RGB_BUF 51  22
+RGB_BUF 52  26
+RGB_BUF 53  19
+RGB_BUF 54  19
+RGB_BUF 55  15
+RGB_BUF 56  63
+RGB_BUF 57  55
+RGB_BUF 58  57
+RGB_BUF 59  52
+RGB_BUF 60  49
+RGB_BUF 61  39
+RGB_BUF 62  36
+RGB_BUF 63  24
+RGB_BUF 0  13
+RGB_BUF 1  77
+RGB_BUF 2  23
+RGB_BUF 3  18
+RGB_BUF 4  15
+RGB_BUF 5  16
+RGB_BUF 6  16
+RGB_BUF 7  34
+RGB_BUF 8  43
+RGB_BUF 9  30
+RGB_BUF 10  32
+RGB_BUF 11  20
+RGB_BUF 12  50
+RGB_BUF 13  70
+RGB_BUF 14  49
+RGB_BUF 15  19
+RGB_BUF 16  26
+RGB_BUF 17  29
+RGB_BUF 18  25
+RGB_BUF 19  14
+RGB_BUF 20  37
+RGB_BUF 21  75
+RGB_BUF 22  35
+RGB_BUF 23  59
+RGB_BUF 24  5
+RGB_BUF 25  22
+RGB_BUF 26  29
+RGB_BUF 27  29
+RGB_BUF 28  7
+RGB_BUF 29  99
+RGB_BUF 30  30
+RGB_BUF 31  139
+RGB_BUF 32  53
+RGB_BUF 33  20
+RGB_BUF 34  12
+RGB_BUF 35  18
+RGB_BUF 36  33
+RGB_BUF 37  96
+RGB_BUF 38  56
+RGB_BUF 39  156
+RGB_BUF 40  31
+RGB_BUF 41  43
+RGB_BUF 42  10
+RGB_BUF 43  71
+RGB_BUF 44  177
+RGB_BUF 45  146
+RGB_BUF 46  45
+RGB_BUF 47  153
+RGB_BUF 48  37
+RGB_BUF 49  33
+RGB_BUF 50  13
+RGB_BUF 51  26
+RGB_BUF 52  201
+RGB_BUF 53  191
+RGB_BUF 54  52
+RGB_BUF 55  170
+RGB_BUF 56  34
+RGB_BUF 57  51
+RGB_BUF 58  57
+RGB_BUF 59  48
+RGB_BUF 60  36
+RGB_BUF 61  137
+RGB_BUF 62  24
+RGB_BUF 63  122
+RGB_BUF 0  179
+RGB_BUF 1  225
+RGB_BUF 2  187
+RGB_BUF 3  206
+RGB_BUF 4  209
+RGB_BUF 5  141
+RGB_BUF 6  149
+RGB_BUF 7  78
+RGB_BUF 8  100
+RGB_BUF 9  192
+RGB_BUF 10  104
+RGB_BUF 11  100
+RGB_BUF 12  105
+RGB_BUF 13  118
+RGB_BUF 14  131
+RGB_BUF 15  129
+RGB_BUF 16  48
+RGB_BUF 17  86
+RGB_BUF 18  109
+RGB_BUF 19  81
+RGB_BUF 20  66
+RGB_BUF 21  187
+RGB_BUF 22  143
+RGB_BUF 23  182
+RGB_BUF 24  36
+RGB_BUF 25  51
+RGB_BUF 26  54
+RGB_BUF 27  87
+RGB_BUF 28  111
+RGB_BUF 29  147
+RGB_BUF 30  240
+RGB_BUF 31  186
+RGB_BUF 32  27
+RGB_BUF 33  5
+RGB_BUF 34  63
+RGB_BUF 35  166
+RGB_BUF 36  123
+RGB_BUF 37  21
+RGB_BUF 38  163
+RGB_BUF 39  207
+RGB_BUF 40  30
+RGB_BUF 41  72
+RGB_BUF 42  145
+RGB_BUF 43  159
+RGB_BUF 44  90
+RGB_BUF 45  88
+RGB_BUF 46  168
+RGB_BUF 47  142
+RGB_BUF 48  10
+RGB_BUF 49  148
+RGB_BUF 50  169
+RGB_BUF 51  162
+RGB_BUF 52  153
+RGB_BUF 53  134
+RGB_BUF 54  204
+RGB_BUF 55  203
+RGB_BUF 56  18
+RGB_BUF 57  149
+RGB_BUF 58  211
+RGB_BUF 59  159
+RGB_BUF 60  39
+RGB_BUF 61  123
+RGB_BUF 62  172
+RGB_BUF 63  96
+RGB_BUF 0  115
+RGB_BUF 1  31
+RGB_BUF 2  36
+RGB_BUF 3  91
+RGB_BUF 4  25
+RGB_BUF 5  93
+RGB_BUF 6  215
+RGB_BUF 7  108
+RGB_BUF 8  28
+RGB_BUF 9  75
+RGB_BUF 10  98
+RGB_BUF 11  197
+RGB_BUF 12  166
+RGB_BUF 13  177
+RGB_BUF 14  212
+RGB_BUF 15  201
+RGB_BUF 16  34
+RGB_BUF 17  84
+RGB_BUF 18  27
+RGB_BUF 19  93
+RGB_BUF 20  253
+RGB_BUF 21  169
+RGB_BUF 22  242
+RGB_BUF 23  93
+RGB_BUF 24  37
+RGB_BUF 25  45
+RGB_BUF 26  26
+RGB_BUF 27  0
+RGB_BUF 28  46
+RGB_BUF 29  194
+RGB_BUF 30  186
+RGB_BUF 31  60
+RGB_BUF 32  20
+RGB_BUF 33  51
+RGB_BUF 34  23
+RGB_BUF 35  27
+RGB_BUF 36  17
+RGB_BUF 37  48
+RGB_BUF 38  240
+RGB_BUF 39  52
+RGB_BUF 40  33
+RGB_BUF 41  49
+RGB_BUF 42  21
+RGB_BUF 43  9
+RGB_BUF 44  0
+RGB_BUF 45  125
+RGB_BUF 46  190
+RGB_BUF 47  61
+RGB_BUF 48  44
+RGB_BUF 49  54
+RGB_BUF 50  19
+RGB_BUF 51  12
+RGB_BUF 52  0
+RGB_BUF 53  36
+RGB_BUF 54  167
+RGB_BUF 55  82
+RGB_BUF 56  53
+RGB_BUF 57  52
+RGB_BUF 58  30
+RGB_BUF 59  0
+RGB_BUF 60  43
+RGB_BUF 61  189
+RGB_BUF 62  117
+RGB_BUF 63  94
+RGB_BUF 0  194
+RGB_BUF 1  149
+RGB_BUF 2  185
+RGB_BUF 3  179
+RGB_BUF 4  131
+RGB_BUF 5  72
+RGB_BUF 6  131
+RGB_BUF 7  75
+RGB_BUF 8  189
+RGB_BUF 9  193
+RGB_BUF 10  209
+RGB_BUF 11  185
+RGB_BUF 12  188
+RGB_BUF 13  126
+RGB_BUF 14  126
+RGB_BUF 15  92
+RGB_BUF 16  205
+RGB_BUF 17  204
+RGB_BUF 18  226
+RGB_BUF 19  184
+RGB_BUF 20  223
+RGB_BUF 21  234
+RGB_BUF 22  190
+RGB_BUF 23  112
+RGB_BUF 24  94
+RGB_BUF 25  183
+RGB_BUF 26  67
+RGB_BUF 27  87
+RGB_BUF 28  194
+RGB_BUF 29  194
+RGB_BUF 30  196
+RGB_BUF 31  190
+RGB_BUF 32  204
+RGB_BUF 33  211
+RGB_BUF 34  213
+RGB_BUF 35  101
+RGB_BUF 36  187
+RGB_BUF 37  198
+RGB_BUF 38  150
+RGB_BUF 39  58
+RGB_BUF 40  214
+RGB_BUF 41  180
+RGB_BUF 42  229
+RGB_BUF 43  218
+RGB_BUF 44  186
+RGB_BUF 45  185
+RGB_BUF 46  223
+RGB_BUF 47  72
+RGB_BUF 48  47
+RGB_BUF 49  0
+RGB_BUF 50  195
+RGB_BUF 51  194
+RGB_BUF 52  188
+RGB_BUF 53  172
+RGB_BUF 54  176
+RGB_BUF 55  174
+RGB_BUF 56  58
+RGB_BUF 57  60
+RGB_BUF 58  44
+RGB_BUF 59  67
+RGB_BUF 60  100
+RGB_BUF 61  168
+RGB_BUF 62  163
+RGB_BUF 63  179
+RGB_BUF 0  182
+RGB_BUF 1  121
+RGB_BUF 2  87
+RGB_BUF 3  81
+RGB_BUF 4  6
+RGB_BUF 5  5
+RGB_BUF 6  20
+RGB_BUF 7  38
+RGB_BUF 8  180
+RGB_BUF 9  166
+RGB_BUF 10  136
+RGB_BUF 11  86
+RGB_BUF 12  16
+RGB_BUF 13  1
+RGB_BUF 14  0
+RGB_BUF 15  6
+RGB_BUF 16  174
+RGB_BUF 17  138
+RGB_BUF 18  58
+RGB_BUF 19  7
+RGB_BUF 20  0
+RGB_BUF 21  26
+RGB_BUF 22  102
+RGB_BUF 23  110
+RGB_BUF 24  206
+RGB_BUF 25  153
+RGB_BUF 26  61
+RGB_BUF 27  1
+RGB_BUF 28  6
+RGB_BUF 29  64
+RGB_BUF 30  161
+RGB_BUF 31  198
+RGB_BUF 32  146
+RGB_BUF 33  154
+RGB_BUF 34  99
+RGB_BUF 35  53
+RGB_BUF 36  48
+RGB_BUF 37  28
+RGB_BUF 38  87
+RGB_BUF 39  179
+RGB_BUF 40  111
+RGB_BUF 41  113
+RGB_BUF 42  90
+RGB_BUF 43  73
+RGB_BUF 44  82
+RGB_BUF 45  74
+RGB_BUF 46  3
+RGB_BUF 47  66
+RGB_BUF 48  146
+RGB_BUF 49  147
+RGB_BUF 50  128
+RGB_BUF 51  77
+RGB_BUF 52  97
+RGB_BUF 53  113
+RGB_BUF 54  83
+RGB_BUF 55  54
+RGB_BUF 56  141
+RGB_BUF 57  165
+RGB_BUF 58  121
+RGB_BUF 59  126
+RGB_BUF 60  87
+RGB_BUF 61  146
+RGB_BUF 62  124
+RGB_BUF 63  95
+RGB_BUF 0  86
+RGB_BUF 1  32
+RGB_BUF 2  65
+RGB_BUF 3  51
+RGB_BUF 4  59
+RGB_BUF 5  57
+RGB_BUF 6  59
+RGB_BUF 7  52
+RGB_BUF 8  173
+RGB_BUF 9  35
+RGB_BUF 10  16
+RGB_BUF 11  42
+RGB_BUF 12  51
+RGB_BUF 13  40
+RGB_BUF 14  38
+RGB_BUF 15  58
+RGB_BUF 16  217
+RGB_BUF 17  176
+RGB_BUF 18  82
+RGB_BUF 19  77
+RGB_BUF 20  68
+RGB_BUF 21  51
+RGB_BUF 22  22
+RGB_BUF 23  38
+RGB_BUF 24  185
+RGB_BUF 25  181
+RGB_BUF 26  136
+RGB_BUF 27  90
+RGB_BUF 28  86
+RGB_BUF 29  57
+RGB_BUF 30  29
+RGB_BUF 31  27
+RGB_BUF 32  193
+RGB_BUF 33  180
+RGB_BUF 34  148
+RGB_BUF 35  125
+RGB_BUF 36  85
+RGB_BUF 37  28
+RGB_BUF 38  20
+RGB_BUF 39  18
+RGB_BUF 40  125
+RGB_BUF 41  171
+RGB_BUF 42  122
+RGB_BUF 43  132
+RGB_BUF 44  66
+RGB_BUF 45  21
+RGB_BUF 46  25
+RGB_BUF 47  27
+RGB_BUF 48  33
+RGB_BUF 49  45
+RGB_BUF 50  63
+RGB_BUF 51  60
+RGB_BUF 52  33
+RGB_BUF 53  21
+RGB_BUF 54  19
+RGB_BUF 55  16
+RGB_BUF 56  41
+RGB_BUF 57  17
+RGB_BUF 58  40
+RGB_BUF 59  30
+RGB_BUF 60  29
+RGB_BUF 61  23
+RGB_BUF 62  19
+RGB_BUF 63  18
+RGB_BUF 0  85
+RGB_BUF 1  32
+RGB_BUF 2  62
+RGB_BUF 3  0
+RGB_BUF 4  20
+RGB_BUF 5  17
+RGB_BUF 6  35
+RGB_BUF 7  44
+RGB_BUF 8  81
+RGB_BUF 9  66
+RGB_BUF 10  12
+RGB_BUF 11  40
+RGB_BUF 12  0
+RGB_BUF 13  13
+RGB_BUF 14  90
+RGB_BUF 15  24
+RGB_BUF 16  57
+RGB_BUF 17  113
+RGB_BUF 18  7
+RGB_BUF 19  33
+RGB_BUF 20  10
+RGB_BUF 21  31
+RGB_BUF 22  69
+RGB_BUF 23  23
+RGB_BUF 24  64
+RGB_BUF 25  114
+RGB_BUF 26  97
+RGB_BUF 27  0
+RGB_BUF 28  24
+RGB_BUF 29  88
+RGB_BUF 30  149
+RGB_BUF 31  28
+RGB_BUF 32  94
+RGB_BUF 33  73
+RGB_BUF 34  75
+RGB_BUF 35  134
+RGB_BUF 36  13
+RGB_BUF 37  34
+RGB_BUF 38  80
+RGB_BUF 39  74
+RGB_BUF 40  87
+RGB_BUF 41  83
+RGB_BUF 42  0
+RGB_BUF 43  92
+RGB_BUF 44  127
+RGB_BUF 45  20
+RGB_BUF 46  44
+RGB_BUF 47  15
+RGB_BUF 48  88
+RGB_BUF 49  18
+RGB_BUF 50  27
+RGB_BUF 51  0
+RGB_BUF 52  111
+RGB_BUF 53  124
+RGB_BUF 54  23
+RGB_BUF 55  34
+RGB_BUF 56  135
+RGB_BUF 57  13
+RGB_BUF 58  25
+RGB_BUF 59  41
+RGB_BUF 60  24
+RGB_BUF 61  142
+RGB_BUF 62  45
+RGB_BUF 63  28
+RGB_BUF 0  70
+RGB_BUF 1  9
+RGB_BUF 2  36
+RGB_BUF 3  37
+RGB_BUF 4  58
+RGB_BUF 5  78
+RGB_BUF 6  23
+RGB_BUF 7  47
+RGB_BUF 8  68
+RGB_BUF 9  10
+RGB_BUF 10  44
+RGB_BUF 11  28
+RGB_BUF 12  28
+RGB_BUF 13  95
+RGB_BUF 14  0
+RGB_BUF 15  160
+RGB_BUF 16  61
+RGB_BUF 17  27
+RGB_BUF 18  41
+RGB_BUF 19  33
+RGB_BUF 20  13
+RGB_BUF 21  37
+RGB_BUF 22  40
+RGB_BUF 23  132
+RGB_BUF 24  110
+RGB_BUF 25  63
+RGB_BUF 26  16
+RGB_BUF 27  27
+RGB_BUF 28  33
+RGB_BUF 29  56
+RGB_BUF 30  23
+RGB_BUF 31  17
+RGB_BUF 32  213
+RGB_BUF 33  122
+RGB_BUF 34  17
+RGB_BUF 35  25
+RGB_BUF 36  25
+RGB_BUF 37  11
+RGB_BUF 38  110
+RGB_BUF 39  115
+RGB_BUF 40  182
+RGB_BUF 41  65
+RGB_BUF 42  17
+RGB_BUF 43  26
+RGB_BUF 44  49
+RGB_BUF 45  65
+RGB_BUF 46  102
+RGB_BUF 47  186
+RGB_BUF 48  161
+RGB_BUF 49  64
+RGB_BUF 50  22
+RGB_BUF 51  15
+RGB_BUF 52  59
+RGB_BUF 53  66
+RGB_BUF 54  65
+RGB_BUF 55  78
+RGB_BUF 56  140
+RGB_BUF 57  80
+RGB_BUF 58  44
+RGB_BUF 59  8
+RGB_BUF 60  35
+RGB_BUF 61  21
+RGB_BUF 62  100
+RGB_BUF 63  20
+RGB_BUF 0  197
+RGB_BUF 1  134
+RGB_BUF 2  111
+RGB_BUF 3  192
+RGB_BUF 4  223
+RGB_BUF 5  186
+RGB_BUF 6  160
+RGB_BUF 7  127
+RGB_BUF 8  191
+RGB_BUF 9  122
+RGB_BUF 10  195
+RGB_BUF 11  229
+RGB_BUF 12  209
+RGB_BUF 13  207
+RGB_BUF 14  155
+RGB_BUF 15  97
+RGB_BUF 16  152
+RGB_BUF 17  168
+RGB_BUF 18  172
+RGB_BUF 19  193
+RGB_BUF 20  147
+RGB_BUF 21  201
+RGB_BUF 22  178
+RGB_BUF 23  101
+RGB_BUF 24  189
+RGB_BUF 25  57
+RGB_BUF 26  251
+RGB_BUF 27  227
+RGB_BUF 28  122
+RGB_BUF 29  2
+RGB_BUF 30  0
+RGB_BUF 31  7
+RGB_BUF 32  133
+RGB_BUF 33  57
+RGB_BUF 34  74
+RGB_BUF 35  244
+RGB_BUF 36  130
+RGB_BUF 37  0
+RGB_BUF 38  35
+RGB_BUF 39  16
+RGB_BUF 40  24
+RGB_BUF 41  101
+RGB_BUF 42  10
+RGB_BUF 43  28
+RGB_BUF 44  130
+RGB_BUF 45  2
+RGB_BUF 46  21
+RGB_BUF 47  46
+RGB_BUF 48  33
+RGB_BUF 49  119
+RGB_BUF 50  83
+RGB_BUF 51  43
+RGB_BUF 52  0
+RGB_BUF 53  18
+RGB_BUF 54  32
+RGB_BUF 55  54
+RGB_BUF 56  103
+RGB_BUF 57  142
+RGB_BUF 58  100
+RGB_BUF 59  0
+RGB_BUF 60  12
+RGB_BUF 61  86
+RGB_BUF 62  40
+RGB_BUF 63  104
+RGB_BUF 0  144
+RGB_BUF 1  191
+RGB_BUF 2  0
+RGB_BUF 3  148
+RGB_BUF 4  120
+RGB_BUF 5  35
+RGB_BUF 6  66
+RGB_BUF 7  29
+RGB_BUF 8  94
+RGB_BUF 9  107
+RGB_BUF 10  115
+RGB_BUF 11  66
+RGB_BUF 12  102
+RGB_BUF 13  138
+RGB_BUF 14  13
+RGB_BUF 15  16
+RGB_BUF 16  60
+RGB_BUF 17  78
+RGB_BUF 18  33
+RGB_BUF 19  159
+RGB_BUF 20  143
+RGB_BUF 21  212
+RGB_BUF 22  0
+RGB_BUF 23  50
+RGB_BUF 24  111
+RGB_BUF 25  62
+RGB_BUF 26  219
+RGB_BUF 27  50
+RGB_BUF 28  127
+RGB_BUF 29  43
+RGB_BUF 30  83
+RGB_BUF 31  56
+RGB_BUF 32  235
+RGB_BUF 33  139
+RGB_BUF 34  147
+RGB_BUF 35  46
+RGB_BUF 36  10
+RGB_BUF 37  122
+RGB_BUF 38  117
+RGB_BUF 39  111
+RGB_BUF 40  180
+RGB_BUF 41  212
+RGB_BUF 42  101
+RGB_BUF 43  6
+RGB_BUF 44  55
+RGB_BUF 45  92
+RGB_BUF 46  62
+RGB_BUF 47  125
+RGB_BUF 48  11
+RGB_BUF 49  146
+RGB_BUF 50  22
+RGB_BUF 51  66
+RGB_BUF 52  99
+RGB_BUF 53  68
+RGB_BUF 54  92
+RGB_BUF 55  78
+RGB_BUF 56  142
+RGB_BUF 57  19
+RGB_BUF 58  60
+RGB_BUF 59  84
+RGB_BUF 60  100
+RGB_BUF 61  67
+RGB_BUF 62  63
+RGB_BUF 63  93
+RGB_BUF 0  166
+RGB_BUF 1  191
+RGB_BUF 2  147
+RGB_BUF 3  96
+RGB_BUF 4  24
+RGB_BUF 5  20
+RGB_BUF 6  47
+RGB_BUF 7  31
+RGB_BUF 8  155
+RGB_BUF 9  165
+RGB_BUF 10  167
+RGB_BUF 11  172
+RGB_BUF 12  88
+RGB_BUF 13  3
+RGB_BUF 14  35
+RGB_BUF 15  31
+RGB_BUF 16  200
+RGB_BUF 17  145
+RGB_BUF 18  56
+RGB_BUF 19  82
+RGB_BUF 20  79
+RGB_BUF 21  20
+RGB_BUF 22  50
+RGB_BUF 23  83
+RGB_BUF 24  127
+RGB_BUF 25  175
+RGB_BUF 26  187
+RGB_BUF 27  84
+RGB_BUF 28  96
+RGB_BUF 29  95
+RGB_BUF 30  15
+RGB_BUF 31  33
+RGB_BUF 32  145
+RGB_BUF 33  158
+RGB_BUF 34  210
+RGB_BUF 35  103
+RGB_BUF 36  18
+RGB_BUF 37  37
+RGB_BUF 38  48
+RGB_BUF 39  35
+RGB_BUF 40  86
+RGB_BUF 41  119
+RGB_BUF 42  213
+RGB_BUF 43  0
+RGB_BUF 44  163
+RGB_BUF 45  93
+RGB_BUF 46  17
+RGB_BUF 47  25
+RGB_BUF 48  5
+RGB_BUF 49  87
+RGB_BUF 50  144
+RGB_BUF 51  52
+RGB_BUF 52  194
+RGB_BUF 53  170
+RGB_BUF 54  85
+RGB_BUF 55  25
+RGB_BUF 56  40
+RGB_BUF 57  44
+RGB_BUF 58  35
+RGB_BUF 59  86
+RGB_BUF 60  120
+RGB_BUF 61  139
+RGB_BUF 62  119
+RGB_BUF 63  57
+RGB_BUF 0  17
+RGB_BUF 1  12
+RGB_BUF 2  29
+RGB_BUF 3  51
+RGB_BUF 4  65
+RGB_BUF 5  74
+RGB_BUF 6  44
+RGB_BUF 7  15
+RGB_BUF 8  9
+RGB_BUF 9  17
+RGB_BUF 10  28
+RGB_BUF 11  53
+RGB_BUF 12  75
+RGB_BUF 13  78
+RGB_BUF 14  70
+RGB_BUF 15  55
+RGB_BUF 16  57
+RGB_BUF 17  15
+RGB_BUF 18  25
+RGB_BUF 19  41
+RGB_BUF 20  59
+RGB_BUF 21  72
+RGB_BUF 22  80
+RGB_BUF 23  112
+RGB_BUF 24  144
+RGB_BUF 25  45
+RGB_BUF 26  43
+RGB_BUF 27  27
+RGB_BUF 28  24
+RGB_BUF 29  75
+RGB_BUF 30  110
+RGB_BUF 31  122
+RGB_BUF 32  121
+RGB_BUF 33  68
+RGB_BUF 34  46
+RGB_BUF 35  14
+RGB_BUF 36  22
+RGB_BUF 37  56
+RGB_BUF 38  103
+RGB_BUF 39  122
+RGB_BUF 40  125
+RGB_BUF 41  50
+RGB_BUF 42  24
+RGB_BUF 43  2
+RGB_BUF 44  16
+RGB_BUF 45  43
+RGB_BUF 46  82
+RGB_BUF 47  78
+RGB_BUF 48  126
+RGB_BUF 49  82
+RGB_BUF 50  54
+RGB_BUF 51  12
+RGB_BUF 52  28
+RGB_BUF 53  36
+RGB_BUF 54  56
+RGB_BUF 55  61
+RGB_BUF 56  51
+RGB_BUF 57  67
+RGB_BUF 58  58
+RGB_BUF 59  60
+RGB_BUF 60  91
+RGB_BUF 61  38
+RGB_BUF 62  48
+RGB_BUF 63  71
+RGB_BUF 0  87
+RGB_BUF 1  72
+RGB_BUF 2  120
+RGB_BUF 3  89
+RGB_BUF 4  74
+RGB_BUF 5  222
+RGB_BUF 6  221
+RGB_BUF 7  175
+RGB_BUF 8  54
+RGB_BUF 9  124
+RGB_BUF 10  103
+RGB_BUF 11  96
+RGB_BUF 12  95
+RGB_BUF 13  185
+RGB_BUF 14  18
+RGB_BUF 15  147
+RGB_BUF 16  109
+RGB_BUF 17  105
+RGB_BUF 18  81
+RGB_BUF 19  84
+RGB_BUF 20  22
+RGB_BUF 21  72
+RGB_BUF 22  65
+RGB_BUF 23  148
+RGB_BUF 24  47
+RGB_BUF 25  28
+RGB_BUF 26  35
+RGB_BUF 27  91
+RGB_BUF 28  70
+RGB_BUF 29  35
+RGB_BUF 30  16
+RGB_BUF 31  22
+RGB_BUF 32  59
+RGB_BUF 33  23
+RGB_BUF 34  8
+RGB_BUF 35  87
+RGB_BUF 36  110
+RGB_BUF 37  0
+RGB_BUF 38  23
+RGB_BUF 39  2
+RGB_BUF 40  68
+RGB_BUF 41  0
+RGB_BUF 42  1
+RGB_BUF 43  0
+RGB_BUF 44  91
+RGB_BUF 45  65
+RGB_BUF 46  7
+RGB_BUF 47  10
+RGB_BUF 48  19
+RGB_BUF 49  24
+RGB_BUF 50  6
+RGB_BUF 51  0
+RGB_BUF 52  2
+RGB_BUF 53  47
+RGB_BUF 54  4
+RGB_BUF 55  19
+RGB_BUF 56  26
+RGB_BUF 57  11
+RGB_BUF 58  15
+RGB_BUF 59  10
+RGB_BUF 60  12
+RGB_BUF 61  12
+RGB_BUF 62  10
+RGB_BUF 63  25
+RGB_BUF 0  12
+RGB_BUF 1  11
+RGB_BUF 2  15
+RGB_BUF 3  0
+RGB_BUF 4  13
+RGB_BUF 5  1
+RGB_BUF 6  82
+RGB_BUF 7  25
+RGB_BUF 8  22
+RGB_BUF 9  7
+RGB_BUF 10  21
+RGB_BUF 11  26
+RGB_BUF 12  27
+RGB_BUF 13  21
+RGB_BUF 14  4
+RGB_BUF 15  30
+RGB_BUF 16  14
+RGB_BUF 17  32
+RGB_BUF 18  46
+RGB_BUF 19  47
+RGB_BUF 20  44
+RGB_BUF 21  25
+RGB_BUF 22  35
+RGB_BUF 23  29
+RGB_BUF 24  37
+RGB_BUF 25  21
+RGB_BUF 26  6
+RGB_BUF 27  29
+RGB_BUF 28  5
+RGB_BUF 29  30
+RGB_BUF 30  15
+RGB_BUF 31  17
+RGB_BUF 32  3
+RGB_BUF 33  11
+RGB_BUF 34  17
+RGB_BUF 35  21
+RGB_BUF 36  21
+RGB_BUF 37  11
+RGB_BUF 38  21
+RGB_BUF 39  4
+RGB_BUF 40  0
+RGB_BUF 41  10
+RGB_BUF 42  47
+RGB_BUF 43  12
+RGB_BUF 44  22
+RGB_BUF 45  25
+RGB_BUF 46  16
+RGB_BUF 47  16
+RGB_BUF 48  83
+RGB_BUF 49  0
+RGB_BUF 50  18
+RGB_BUF 51  18
+RGB_BUF 52  8
+RGB_BUF 53  20
+RGB_BUF 54  27
+RGB_BUF 55  12
+RGB_BUF 56  21
+RGB_BUF 57  17
+RGB_BUF 58  12
+RGB_BUF 59  15
+RGB_BUF 60  40
+RGB_BUF 61  14
+RGB_BUF 62  18
+RGB_BUF 63  13
+RGB_BUF 0  133
+RGB_BUF 1  0
+RGB_BUF 2  141
+RGB_BUF 3  172
+RGB_BUF 4  192
+RGB_BUF 5  200
+RGB_BUF 6  71
+RGB_BUF 7  146
+RGB_BUF 8  143
+RGB_BUF 9  180
+RGB_BUF 10  186
+RGB_BUF 11  193
+RGB_BUF 12  231
+RGB_BUF 13  164
+RGB_BUF 14  68
+RGB_BUF 15  8
+RGB_BUF 16  44
+RGB_BUF 17  139
+RGB_BUF 18  165
+RGB_BUF 19  190
+RGB_BUF 20  170
+RGB_BUF 21  202
+RGB_BUF 22  89
+RGB_BUF 23  199
+RGB_BUF 24  94
+RGB_BUF 25  102
+RGB_BUF 26  178
+RGB_BUF 27  161
+RGB_BUF 28  156
+RGB_BUF 29  146
+RGB_BUF 30  235
+RGB_BUF 31  173
+RGB_BUF 32  0
+RGB_BUF 33  13
+RGB_BUF 34  254
+RGB_BUF 35  233
+RGB_BUF 36  184
+RGB_BUF 37  208
+RGB_BUF 38  150
+RGB_BUF 39  240
+RGB_BUF 40  18
+RGB_BUF 41  55
+RGB_BUF 42  235
+RGB_BUF 43  219
+RGB_BUF 44  255
+RGB_BUF 45  195
+RGB_BUF 46  107
+RGB_BUF 47  255
+RGB_BUF 48  25
+RGB_BUF 49  16
+RGB_BUF 50  76
+RGB_BUF 51  172
+RGB_BUF 52  85
+RGB_BUF 53  23
+RGB_BUF 54  25
+RGB_BUF 55  98
+RGB_BUF 56  46
+RGB_BUF 57  27
+RGB_BUF 58  15
+RGB_BUF 59  79
+RGB_BUF 60  32
+RGB_BUF 61  222
+RGB_BUF 62  62
+RGB_BUF 63  8
+RGB_BUF 0  2
+RGB_BUF 1  85
+RGB_BUF 2  113
+RGB_BUF 3  89
+RGB_BUF 4  26
+RGB_BUF 5  160
+RGB_BUF 6  224
+RGB_BUF 7  168
+RGB_BUF 8  126
+RGB_BUF 9  36
+RGB_BUF 10  52
+RGB_BUF 11  0
+RGB_BUF 12  160
+RGB_BUF 13  136
+RGB_BUF 14  187
+RGB_BUF 15  203
+RGB_BUF 16  234
+RGB_BUF 17  58
+RGB_BUF 18  0
+RGB_BUF 19  37
+RGB_BUF 20  72
+RGB_BUF 21  114
+RGB_BUF 22  239
+RGB_BUF 23  161
+RGB_BUF 24  212
+RGB_BUF 25  115
+RGB_BUF 26  0
+RGB_BUF 27  48
+RGB_BUF 28  63
+RGB_BUF 29  20
+RGB_BUF 30  238
+RGB_BUF 31  0
+RGB_BUF 32  184
+RGB_BUF 33  0
+RGB_BUF 34  34
+RGB_BUF 35  59
+RGB_BUF 36  52
+RGB_BUF 37  15
+RGB_BUF 38  0
+RGB_BUF 39  25
+RGB_BUF 40  76
+RGB_BUF 41  35
+RGB_BUF 42  33
+RGB_BUF 43  79
+RGB_BUF 44  25
+RGB_BUF 45  48
+RGB_BUF 46  14
+RGB_BUF 47  44
+RGB_BUF 48  91
+RGB_BUF 49  187
+RGB_BUF 50  128
+RGB_BUF 51  85
+RGB_BUF 52  107
+RGB_BUF 53  216
+RGB_BUF 54  92
+RGB_BUF 55  0
+RGB_BUF 56  85
+RGB_BUF 57  65
+RGB_BUF 58  205
+RGB_BUF 59  120
+RGB_BUF 60  55
+RGB_BUF 61  137
+RGB_BUF 62  209
+RGB_BUF 63  11
+RGB_BUF 0  190
+RGB_BUF 1  90
+RGB_BUF 2  71
+RGB_BUF 3  129
+RGB_BUF 4  89
+RGB_BUF 5  63
+RGB_BUF 6  63
+RGB_BUF 7  106
+RGB_BUF 8  152
+RGB_BUF 9  98
+RGB_BUF 10  42
+RGB_BUF 11  44
+RGB_BUF 12  79
+RGB_BUF 13  98
+RGB_BUF 14  132
+RGB_BUF 15  57
+RGB_BUF 16  150
+RGB_BUF 17  89
+RGB_BUF 18  98
+RGB_BUF 19  104
+RGB_BUF 20  102
+RGB_BUF 21  123
+RGB_BUF 22  74
+RGB_BUF 23  7
+RGB_BUF 24  62
+RGB_BUF 25  85
+RGB_BUF 26  97
+RGB_BUF 27  125
+RGB_BUF 28  154
+RGB_BUF 29  64
+RGB_BUF 30  0
+RGB_BUF 31  52
+RGB_BUF 32  27
+RGB_BUF 33  68
+RGB_BUF 34  94
+RGB_BUF 35  158
+RGB_BUF 36  130
+RGB_BUF 37  10
+RGB_BUF 38  118
+RGB_BUF 39  59
+RGB_BUF 40  27
+RGB_BUF 41  51
+RGB_BUF 42  133
+RGB_BUF 43  123
+RGB_BUF 44  0
+RGB_BUF 45  93
+RGB_BUF 46  104
+RGB_BUF 47  19
+RGB_BUF 48  23
+RGB_BUF 49  86
+RGB_BUF 50  85
+RGB_BUF 51  3
+RGB_BUF 52  88
+RGB_BUF 53  58
+RGB_BUF 54  32
+RGB_BUF 55  51
+RGB_BUF 56  41
+RGB_BUF 57  52
+RGB_BUF 58  18
+RGB_BUF 59  43
+RGB_BUF 60  91
+RGB_BUF 61  67
+RGB_BUF 62  14
+RGB_BUF 63  15
+RGB_BUF 0  11
+RGB_BUF 1  7
+RGB_BUF 2  25
+RGB_BUF 3  95
+RGB_BUF 4  96
+RGB_BUF 5  41
+RGB_BUF 6  49
+RGB_BUF 7  61
+RGB_BUF 8  63
+RGB_BUF 9  33
+RGB_BUF 10  12
+RGB_BUF 11  73
+RGB_BUF 12  56
+RGB_BUF 13  42
+RGB_BUF 14  41
+RGB_BUF 15  49
+RGB_BUF 16  117
+RGB_BUF 17  105
+RGB_BUF 18  67
+RGB_BUF 19  37
+RGB_BUF 20  28
+RGB_BUF 21  43
+RGB_BUF 22  50
+RGB_BUF 23  28
+RGB_BUF 24  214
+RGB_BUF 25  49
+RGB_BUF 26  46
+RGB_BUF 27  32
+RGB_BUF 28  55
+RGB_BUF 29  52
+RGB_BUF 30  46
+RGB_BUF 31  49
+RGB_BUF 32  96
+RGB_BUF 33  7
+RGB_BUF 34  44
+RGB_BUF 35  51
+RGB_BUF 36  51
+RGB_BUF 37  45
+RGB_BUF 38  51
+RGB_BUF 39  53
+RGB_BUF 40  6
+RGB_BUF 41  140
+RGB_BUF 42  43
+RGB_BUF 43  35
+RGB_BUF 44  32
+RGB_BUF 45  42
+RGB_BUF 46  33
+RGB_BUF 47  54
+RGB_BUF 48  97
+RGB_BUF 49  21
+RGB_BUF 50  22
+RGB_BUF 51  27
+RGB_BUF 52  29
+RGB_BUF 53  49
+RGB_BUF 54  42
+RGB_BUF 55  29
+RGB_BUF 56  32
+RGB_BUF 57  24
+RGB_BUF 58  29
+RGB_BUF 59  20
+RGB_BUF 60  32
+RGB_BUF 61  31
+RGB_BUF 62  39
+RGB_BUF 63  45
+0
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_WriteOneBlock_f2r_entry_s2e_forEnd13_top glbl -prj WriteOneBlock_f2r_entry_s2e_forEnd13.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver --initfile /home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s WriteOneBlock_f2r_entry_s2e_forEnd13 
+Multi-threading is on. Using 6 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_WriteOneBlock_f2r_entry_s2e_forEnd13_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/AESL_axi_master_BUS_SRC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_BUS_SRC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/AESL_axi_master_BUS_DST.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_BUS_DST
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/AESL_axi_slave_BUS_CTRL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_BUS_CTRL
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/AESL_axi_slave_CTRL_BUS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_CTRL_BUS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2rkbM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rkbM_MulnS_0
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rkbM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2rlbW.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rlbW
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2rbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rbkb_ram
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2rfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rfYi_ram
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rfYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2rhbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rhbi_ram
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rhbi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2rjbC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rjbC_ram
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2rjbC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_CTRL_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_CTRL_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13_CTRL_BUS_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_CTRL_BUS_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi_buffer
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi_decoder
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi_throttl
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi_read
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi_write
+INFO: [VRFC 10-2458] undeclared symbol data_valid, assumed default net type wire [/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_SRC_m_axi.v:2075]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi_buffer
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi_decoder
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi_throttl
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi_read
+INFO: [VRFC 10-311] analyzing module WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi_write
+INFO: [VRFC 10-2458] undeclared symbol data_valid, assumed default net type wire [/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13_BUS_DST_m_axi.v:2075]
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.WriteOneBlock_f2rbkb_ram
+Compiling module xil_defaultlib.WriteOneBlock_f2rbkb(DataWidth=8...
+Compiling module xil_defaultlib.WriteOneBlock_f2rfYi_ram
+Compiling module xil_defaultlib.WriteOneBlock_f2rfYi(DataWidth=8...
+Compiling module xil_defaultlib.WriteOneBlock_f2rhbi_ram
+Compiling module xil_defaultlib.WriteOneBlock_f2rhbi(DataWidth=8...
+Compiling module xil_defaultlib.WriteOneBlock_f2rjbC_ram
+Compiling module xil_defaultlib.WriteOneBlock_f2rjbC(DataWidth=3...
+Compiling module xil_defaultlib.WriteOneBlock_f2rkbM_MulnS_0
+Compiling module xil_defaultlib.WriteOneBlock_f2rkbM(ID=1,NUM_ST...
+Compiling module xil_defaultlib.WriteOneBlock_f2rlbW(ID=1,din0_W...
+Compiling module xil_defaultlib.WriteOneBlock_f2r_entry_s2e_forE...
+Compiling module xil_defaultlib.AESL_axi_master_BUS_SRC
+Compiling module xil_defaultlib.AESL_axi_master_BUS_DST
+Compiling module xil_defaultlib.AESL_axi_slave_BUS_CTRL
+Compiling module xil_defaultlib.AESL_axi_slave_CTRL_BUS
+Compiling module xil_defaultlib.apatb_WriteOneBlock_f2r_entry_s2...
+Compiling module work.glbl
+Built simulation snapshot WriteOneBlock_f2r_entry_s2e_forEnd13
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/xsim.dir/WriteOneBlock_f2r_entry_s2e_forEnd13/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/xsim.dir/WriteOneBlock_f2r_entry_s2e_forEnd13/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri May  4 18:13:00 2018. For additional details about this file, please refer to the WebTalk help file at /home/tools/Xilinx/Vivado/2017.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri May  4 18:13:00 2018...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/WriteOneBlock_f2r_entry_s2e_forEnd13/xsim_script.tcl
+# xsim {WriteOneBlock_f2r_entry_s2e_forEnd13} -autoloadwcfg -tclbatch {WriteOneBlock_f2r_entry_s2e_forEnd13.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source WriteOneBlock_f2r_entry_s2e_forEnd13.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 288 [n/a] @ "107000"
+// RTL Simulation : 1 / 288 [n/a] @ "2669000"
+// RTL Simulation : 2 / 288 [n/a] @ "5234000"
+// RTL Simulation : 3 / 288 [n/a] @ "7799000"
+// RTL Simulation : 4 / 288 [n/a] @ "10364000"
+// RTL Simulation : 5 / 288 [n/a] @ "12929000"
+// RTL Simulation : 6 / 288 [n/a] @ "15494000"
+// RTL Simulation : 7 / 288 [n/a] @ "18059000"
+// RTL Simulation : 8 / 288 [n/a] @ "20624000"
+// RTL Simulation : 9 / 288 [n/a] @ "23189000"
+// RTL Simulation : 10 / 288 [n/a] @ "25754000"
+// RTL Simulation : 11 / 288 [n/a] @ "28319000"
+// RTL Simulation : 12 / 288 [n/a] @ "30884000"
+// RTL Simulation : 13 / 288 [n/a] @ "33449000"
+// RTL Simulation : 14 / 288 [n/a] @ "36014000"
+// RTL Simulation : 15 / 288 [n/a] @ "38579000"
+// RTL Simulation : 16 / 288 [n/a] @ "41144000"
+// RTL Simulation : 17 / 288 [n/a] @ "43709000"
+// RTL Simulation : 18 / 288 [n/a] @ "46274000"
+// RTL Simulation : 19 / 288 [n/a] @ "48839000"
+// RTL Simulation : 20 / 288 [n/a] @ "51404000"
+// RTL Simulation : 21 / 288 [n/a] @ "53969000"
+// RTL Simulation : 22 / 288 [n/a] @ "56534000"
+// RTL Simulation : 23 / 288 [n/a] @ "59099000"
+// RTL Simulation : 24 / 288 [n/a] @ "61664000"
+// RTL Simulation : 25 / 288 [n/a] @ "64229000"
+// RTL Simulation : 26 / 288 [n/a] @ "66794000"
+// RTL Simulation : 27 / 288 [n/a] @ "69359000"
+// RTL Simulation : 28 / 288 [n/a] @ "71924000"
+// RTL Simulation : 29 / 288 [n/a] @ "74489000"
+// RTL Simulation : 30 / 288 [n/a] @ "77054000"
+// RTL Simulation : 31 / 288 [n/a] @ "79619000"
+// RTL Simulation : 32 / 288 [n/a] @ "82184000"
+// RTL Simulation : 33 / 288 [n/a] @ "84749000"
+// RTL Simulation : 34 / 288 [n/a] @ "87314000"
+// RTL Simulation : 35 / 288 [n/a] @ "89879000"
+// RTL Simulation : 36 / 288 [n/a] @ "92444000"
+// RTL Simulation : 37 / 288 [n/a] @ "95009000"
+// RTL Simulation : 38 / 288 [n/a] @ "97574000"
+// RTL Simulation : 39 / 288 [n/a] @ "100139000"
+// RTL Simulation : 40 / 288 [n/a] @ "102704000"
+// RTL Simulation : 41 / 288 [n/a] @ "105269000"
+// RTL Simulation : 42 / 288 [n/a] @ "107834000"
+// RTL Simulation : 43 / 288 [n/a] @ "110399000"
+// RTL Simulation : 44 / 288 [n/a] @ "112964000"
+// RTL Simulation : 45 / 288 [n/a] @ "115529000"
+// RTL Simulation : 46 / 288 [n/a] @ "118094000"
+// RTL Simulation : 47 / 288 [n/a] @ "120659000"
+// RTL Simulation : 48 / 288 [n/a] @ "123224000"
+// RTL Simulation : 49 / 288 [n/a] @ "125789000"
+// RTL Simulation : 50 / 288 [n/a] @ "128354000"
+// RTL Simulation : 51 / 288 [n/a] @ "130919000"
+// RTL Simulation : 52 / 288 [n/a] @ "133484000"
+// RTL Simulation : 53 / 288 [n/a] @ "136049000"
+// RTL Simulation : 54 / 288 [n/a] @ "138614000"
+// RTL Simulation : 55 / 288 [n/a] @ "141179000"
+// RTL Simulation : 56 / 288 [n/a] @ "143744000"
+// RTL Simulation : 57 / 288 [n/a] @ "146309000"
+// RTL Simulation : 58 / 288 [n/a] @ "148874000"
+// RTL Simulation : 59 / 288 [n/a] @ "151439000"
+// RTL Simulation : 60 / 288 [n/a] @ "154004000"
+// RTL Simulation : 61 / 288 [n/a] @ "156569000"
+// RTL Simulation : 62 / 288 [n/a] @ "158078000"
+// RTL Simulation : 63 / 288 [n/a] @ "160643000"
+// RTL Simulation : 64 / 288 [n/a] @ "162152000"
+// RTL Simulation : 65 / 288 [n/a] @ "164717000"
+// RTL Simulation : 66 / 288 [n/a] @ "166226000"
+// RTL Simulation : 67 / 288 [n/a] @ "168791000"
+// RTL Simulation : 68 / 288 [n/a] @ "170300000"
+// RTL Simulation : 69 / 288 [n/a] @ "172865000"
+// RTL Simulation : 70 / 288 [n/a] @ "174374000"
+// RTL Simulation : 71 / 288 [n/a] @ "176939000"
+// RTL Simulation : 72 / 288 [n/a] @ "178448000"
+// RTL Simulation : 73 / 288 [n/a] @ "181013000"
+// RTL Simulation : 74 / 288 [n/a] @ "183578000"
+// RTL Simulation : 75 / 288 [n/a] @ "186143000"
+// RTL Simulation : 76 / 288 [n/a] @ "188708000"
+// RTL Simulation : 77 / 288 [n/a] @ "191273000"
+// RTL Simulation : 78 / 288 [n/a] @ "193838000"
+// RTL Simulation : 79 / 288 [n/a] @ "196403000"
+// RTL Simulation : 80 / 288 [n/a] @ "198968000"
+// RTL Simulation : 81 / 288 [n/a] @ "201533000"
+// RTL Simulation : 82 / 288 [n/a] @ "204098000"
+// RTL Simulation : 83 / 288 [n/a] @ "206663000"
+// RTL Simulation : 84 / 288 [n/a] @ "209228000"
+// RTL Simulation : 85 / 288 [n/a] @ "211793000"
+// RTL Simulation : 86 / 288 [n/a] @ "214358000"
+// RTL Simulation : 87 / 288 [n/a] @ "216923000"
+// RTL Simulation : 88 / 288 [n/a] @ "219488000"
+// RTL Simulation : 89 / 288 [n/a] @ "222053000"
+// RTL Simulation : 90 / 288 [n/a] @ "224618000"
+// RTL Simulation : 91 / 288 [n/a] @ "227183000"
+// RTL Simulation : 92 / 288 [n/a] @ "229748000"
+// RTL Simulation : 93 / 288 [n/a] @ "232313000"
+// RTL Simulation : 94 / 288 [n/a] @ "234878000"
+// RTL Simulation : 95 / 288 [n/a] @ "237443000"
+// RTL Simulation : 96 / 288 [n/a] @ "240008000"
+// RTL Simulation : 97 / 288 [n/a] @ "242573000"
+// RTL Simulation : 98 / 288 [n/a] @ "245138000"
+// RTL Simulation : 99 / 288 [n/a] @ "247703000"
+// RTL Simulation : 100 / 288 [n/a] @ "250268000"
+// RTL Simulation : 101 / 288 [n/a] @ "252833000"
+// RTL Simulation : 102 / 288 [n/a] @ "255398000"
+// RTL Simulation : 103 / 288 [n/a] @ "257963000"
+// RTL Simulation : 104 / 288 [n/a] @ "260528000"
+// RTL Simulation : 105 / 288 [n/a] @ "263093000"
+// RTL Simulation : 106 / 288 [n/a] @ "265658000"
+// RTL Simulation : 107 / 288 [n/a] @ "268223000"
+// RTL Simulation : 108 / 288 [n/a] @ "270788000"
+// RTL Simulation : 109 / 288 [n/a] @ "273353000"
+// RTL Simulation : 110 / 288 [n/a] @ "275918000"
+// RTL Simulation : 111 / 288 [n/a] @ "278483000"
+// RTL Simulation : 112 / 288 [n/a] @ "281048000"
+// RTL Simulation : 113 / 288 [n/a] @ "283613000"
+// RTL Simulation : 114 / 288 [n/a] @ "286178000"
+// RTL Simulation : 115 / 288 [n/a] @ "288743000"
+// RTL Simulation : 116 / 288 [n/a] @ "291308000"
+// RTL Simulation : 117 / 288 [n/a] @ "293873000"
+// RTL Simulation : 118 / 288 [n/a] @ "296438000"
+// RTL Simulation : 119 / 288 [n/a] @ "299003000"
+// RTL Simulation : 120 / 288 [n/a] @ "301568000"
+// RTL Simulation : 121 / 288 [n/a] @ "304133000"
+// RTL Simulation : 122 / 288 [n/a] @ "306698000"
+// RTL Simulation : 123 / 288 [n/a] @ "309263000"
+// RTL Simulation : 124 / 288 [n/a] @ "311828000"
+// RTL Simulation : 125 / 288 [n/a] @ "314393000"
+// RTL Simulation : 126 / 288 [n/a] @ "316958000"
+// RTL Simulation : 127 / 288 [n/a] @ "319523000"
+// RTL Simulation : 128 / 288 [n/a] @ "322088000"
+// RTL Simulation : 129 / 288 [n/a] @ "324653000"
+// RTL Simulation : 130 / 288 [n/a] @ "327218000"
+// RTL Simulation : 131 / 288 [n/a] @ "329783000"
+// RTL Simulation : 132 / 288 [n/a] @ "332348000"
+// RTL Simulation : 133 / 288 [n/a] @ "334913000"
+// RTL Simulation : 134 / 288 [n/a] @ "336422000"
+// RTL Simulation : 135 / 288 [n/a] @ "338987000"
+// RTL Simulation : 136 / 288 [n/a] @ "340496000"
+// RTL Simulation : 137 / 288 [n/a] @ "343061000"
+// RTL Simulation : 138 / 288 [n/a] @ "344570000"
+// RTL Simulation : 139 / 288 [n/a] @ "347135000"
+// RTL Simulation : 140 / 288 [n/a] @ "348644000"
+// RTL Simulation : 141 / 288 [n/a] @ "351209000"
+// RTL Simulation : 142 / 288 [n/a] @ "352718000"
+// RTL Simulation : 143 / 288 [n/a] @ "355283000"
+// RTL Simulation : 144 / 288 [n/a] @ "356792000"
+// RTL Simulation : 145 / 288 [n/a] @ "359357000"
+// RTL Simulation : 146 / 288 [n/a] @ "361922000"
+// RTL Simulation : 147 / 288 [n/a] @ "364487000"
+// RTL Simulation : 148 / 288 [n/a] @ "367052000"
+// RTL Simulation : 149 / 288 [n/a] @ "369617000"
+// RTL Simulation : 150 / 288 [n/a] @ "372182000"
+// RTL Simulation : 151 / 288 [n/a] @ "374747000"
+// RTL Simulation : 152 / 288 [n/a] @ "377312000"
+// RTL Simulation : 153 / 288 [n/a] @ "379877000"
+// RTL Simulation : 154 / 288 [n/a] @ "382442000"
+// RTL Simulation : 155 / 288 [n/a] @ "385007000"
+// RTL Simulation : 156 / 288 [n/a] @ "387572000"
+// RTL Simulation : 157 / 288 [n/a] @ "390137000"
+// RTL Simulation : 158 / 288 [n/a] @ "392702000"
+// RTL Simulation : 159 / 288 [n/a] @ "395267000"
+// RTL Simulation : 160 / 288 [n/a] @ "397832000"
+// RTL Simulation : 161 / 288 [n/a] @ "400397000"
+// RTL Simulation : 162 / 288 [n/a] @ "402962000"
+// RTL Simulation : 163 / 288 [n/a] @ "405527000"
+// RTL Simulation : 164 / 288 [n/a] @ "408092000"
+// RTL Simulation : 165 / 288 [n/a] @ "410657000"
+// RTL Simulation : 166 / 288 [n/a] @ "413222000"
+// RTL Simulation : 167 / 288 [n/a] @ "415787000"
+// RTL Simulation : 168 / 288 [n/a] @ "418352000"
+// RTL Simulation : 169 / 288 [n/a] @ "420917000"
+// RTL Simulation : 170 / 288 [n/a] @ "423482000"
+// RTL Simulation : 171 / 288 [n/a] @ "426047000"
+// RTL Simulation : 172 / 288 [n/a] @ "428612000"
+// RTL Simulation : 173 / 288 [n/a] @ "431177000"
+// RTL Simulation : 174 / 288 [n/a] @ "433742000"
+// RTL Simulation : 175 / 288 [n/a] @ "436307000"
+// RTL Simulation : 176 / 288 [n/a] @ "438872000"
+// RTL Simulation : 177 / 288 [n/a] @ "441437000"
+// RTL Simulation : 178 / 288 [n/a] @ "444002000"
+// RTL Simulation : 179 / 288 [n/a] @ "446567000"
+// RTL Simulation : 180 / 288 [n/a] @ "449132000"
+// RTL Simulation : 181 / 288 [n/a] @ "451697000"
+// RTL Simulation : 182 / 288 [n/a] @ "454262000"
+// RTL Simulation : 183 / 288 [n/a] @ "456827000"
+// RTL Simulation : 184 / 288 [n/a] @ "459392000"
+// RTL Simulation : 185 / 288 [n/a] @ "461957000"
+// RTL Simulation : 186 / 288 [n/a] @ "464522000"
+// RTL Simulation : 187 / 288 [n/a] @ "467087000"
+// RTL Simulation : 188 / 288 [n/a] @ "469652000"
+// RTL Simulation : 189 / 288 [n/a] @ "472217000"
+// RTL Simulation : 190 / 288 [n/a] @ "474782000"
+// RTL Simulation : 191 / 288 [n/a] @ "477347000"
+// RTL Simulation : 192 / 288 [n/a] @ "479912000"
+// RTL Simulation : 193 / 288 [n/a] @ "482477000"
+// RTL Simulation : 194 / 288 [n/a] @ "485042000"
+// RTL Simulation : 195 / 288 [n/a] @ "487607000"
+// RTL Simulation : 196 / 288 [n/a] @ "490172000"
+// RTL Simulation : 197 / 288 [n/a] @ "492737000"
+// RTL Simulation : 198 / 288 [n/a] @ "495302000"
+// RTL Simulation : 199 / 288 [n/a] @ "497867000"
+// RTL Simulation : 200 / 288 [n/a] @ "500432000"
+// RTL Simulation : 201 / 288 [n/a] @ "502997000"
+// RTL Simulation : 202 / 288 [n/a] @ "505562000"
+// RTL Simulation : 203 / 288 [n/a] @ "508127000"
+// RTL Simulation : 204 / 288 [n/a] @ "510692000"
+// RTL Simulation : 205 / 288 [n/a] @ "513257000"
+// RTL Simulation : 206 / 288 [n/a] @ "514766000"
+// RTL Simulation : 207 / 288 [n/a] @ "517331000"
+// RTL Simulation : 208 / 288 [n/a] @ "518840000"
+// RTL Simulation : 209 / 288 [n/a] @ "521405000"
+// RTL Simulation : 210 / 288 [n/a] @ "522914000"
+// RTL Simulation : 211 / 288 [n/a] @ "525479000"
+// RTL Simulation : 212 / 288 [n/a] @ "526988000"
+// RTL Simulation : 213 / 288 [n/a] @ "529553000"
+// RTL Simulation : 214 / 288 [n/a] @ "531062000"
+// RTL Simulation : 215 / 288 [n/a] @ "533627000"
+// RTL Simulation : 216 / 288 [n/a] @ "535136000"
+// RTL Simulation : 217 / 288 [n/a] @ "537701000"
+// RTL Simulation : 218 / 288 [n/a] @ "540266000"
+// RTL Simulation : 219 / 288 [n/a] @ "541895000"
+// RTL Simulation : 220 / 288 [n/a] @ "543524000"
+// RTL Simulation : 221 / 288 [n/a] @ "546089000"
+// RTL Simulation : 222 / 288 [n/a] @ "548654000"
+// RTL Simulation : 223 / 288 [n/a] @ "550283000"
+// RTL Simulation : 224 / 288 [n/a] @ "551912000"
+// RTL Simulation : 225 / 288 [n/a] @ "554477000"
+// RTL Simulation : 226 / 288 [n/a] @ "557042000"
+// RTL Simulation : 227 / 288 [n/a] @ "558671000"
+// RTL Simulation : 228 / 288 [n/a] @ "560300000"
+// RTL Simulation : 229 / 288 [n/a] @ "562865000"
+// RTL Simulation : 230 / 288 [n/a] @ "565430000"
+// RTL Simulation : 231 / 288 [n/a] @ "567059000"
+// RTL Simulation : 232 / 288 [n/a] @ "568688000"
+// RTL Simulation : 233 / 288 [n/a] @ "571253000"
+// RTL Simulation : 234 / 288 [n/a] @ "573818000"
+// RTL Simulation : 235 / 288 [n/a] @ "575447000"
+// RTL Simulation : 236 / 288 [n/a] @ "577076000"
+// RTL Simulation : 237 / 288 [n/a] @ "579641000"
+// RTL Simulation : 238 / 288 [n/a] @ "582206000"
+// RTL Simulation : 239 / 288 [n/a] @ "583835000"
+// RTL Simulation : 240 / 288 [n/a] @ "585464000"
+// RTL Simulation : 241 / 288 [n/a] @ "588029000"
+// RTL Simulation : 242 / 288 [n/a] @ "590594000"
+// RTL Simulation : 243 / 288 [n/a] @ "592223000"
+// RTL Simulation : 244 / 288 [n/a] @ "593852000"
+// RTL Simulation : 245 / 288 [n/a] @ "596417000"
+// RTL Simulation : 246 / 288 [n/a] @ "598982000"
+// RTL Simulation : 247 / 288 [n/a] @ "600611000"
+// RTL Simulation : 248 / 288 [n/a] @ "602240000"
+// RTL Simulation : 249 / 288 [n/a] @ "604805000"
+// RTL Simulation : 250 / 288 [n/a] @ "607370000"
+// RTL Simulation : 251 / 288 [n/a] @ "608999000"
+// RTL Simulation : 252 / 288 [n/a] @ "610628000"
+// RTL Simulation : 253 / 288 [n/a] @ "613193000"
+// RTL Simulation : 254 / 288 [n/a] @ "615758000"
+// RTL Simulation : 255 / 288 [n/a] @ "617387000"
+// RTL Simulation : 256 / 288 [n/a] @ "619016000"
+// RTL Simulation : 257 / 288 [n/a] @ "621581000"
+// RTL Simulation : 258 / 288 [n/a] @ "624146000"
+// RTL Simulation : 259 / 288 [n/a] @ "625775000"
+// RTL Simulation : 260 / 288 [n/a] @ "627404000"
+// RTL Simulation : 261 / 288 [n/a] @ "629969000"
+// RTL Simulation : 262 / 288 [n/a] @ "632534000"
+// RTL Simulation : 263 / 288 [n/a] @ "634163000"
+// RTL Simulation : 264 / 288 [n/a] @ "635792000"
+// RTL Simulation : 265 / 288 [n/a] @ "638357000"
+// RTL Simulation : 266 / 288 [n/a] @ "640922000"
+// RTL Simulation : 267 / 288 [n/a] @ "642551000"
+// RTL Simulation : 268 / 288 [n/a] @ "644180000"
+// RTL Simulation : 269 / 288 [n/a] @ "646745000"
+// RTL Simulation : 270 / 288 [n/a] @ "649310000"
+// RTL Simulation : 271 / 288 [n/a] @ "650939000"
+// RTL Simulation : 272 / 288 [n/a] @ "652568000"
+// RTL Simulation : 273 / 288 [n/a] @ "655133000"
+// RTL Simulation : 274 / 288 [n/a] @ "657698000"
+// RTL Simulation : 275 / 288 [n/a] @ "659327000"
+// RTL Simulation : 276 / 288 [n/a] @ "660956000"
+// RTL Simulation : 277 / 288 [n/a] @ "663521000"
+// RTL Simulation : 278 / 288 [n/a] @ "665030000"
+// RTL Simulation : 279 / 288 [n/a] @ "666659000"
+// RTL Simulation : 280 / 288 [n/a] @ "667928000"
+// RTL Simulation : 281 / 288 [n/a] @ "670493000"
+// RTL Simulation : 282 / 288 [n/a] @ "672002000"
+// RTL Simulation : 283 / 288 [n/a] @ "673631000"
+// RTL Simulation : 284 / 288 [n/a] @ "674900000"
+// RTL Simulation : 285 / 288 [n/a] @ "677465000"
+// RTL Simulation : 286 / 288 [n/a] @ "678974000"
+// RTL Simulation : 287 / 288 [n/a] @ "680603000"
+// RTL Simulation : 288 / 288 [n/a] @ "681872000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 681883500 ps : File "/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock/OPT/sim/verilog/WriteOneBlock_f2r_entry_s2e_forEnd13.autotb.v" Line 664
+run: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:21 . Memory (MB): peak = 1240.266 ; gain = 0.000 ; free physical = 7738 ; free virtual = 18116
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri May  4 18:13:31 2018...
+
+marker = 0xd8
+
+marker = 0xe0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 1
+
+marker = 0xc0
+length         = 17
+data_precision = 8
+image_height   = 59
+image_width    = 90
+num_components = 3
+ index         = 0
+ id            = 1
+ h_samp_factor = 2
+ v_samp_factor = 2
+ quant_tbl_no  = 0
+
+ index         = 1
+ id            = 2
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+ index         = 2
+ id            = 3
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+
+Sampling Factor is 4:1:1
+
+marker = 0xc4
+ length = 29
+ index = 0x0
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x10
+ count = 162
+
+marker = 0xc4
+ length = 29
+ index = 0x1
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x11
+ count = 162
+
+marker = 0xda
+ length = 12
+ num_comp = 3
+ comp_id       = 1
+ dc_tbl_no     = 0
+ ac_tbl_no     = 0
+ comp_id       = 2
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+ comp_id       = 3
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+Decode 4:1:1 NumMCU = 96
+RGB_BUF 0  188
+RGB_BUF 1  209
+RGB_BUF 2  190
+RGB_BUF 3  153
+RGB_BUF 4  143
+RGB_BUF 5  103
+RGB_BUF 6  149
+RGB_BUF 7  192
+RGB_BUF 8  166
+RGB_BUF 9  193
+RGB_BUF 10  101
+RGB_BUF 11  90
+RGB_BUF 12  170
+RGB_BUF 13  129
+RGB_BUF 14  146
+RGB_BUF 15  213
+RGB_BUF 16  145
+RGB_BUF 17  132
+RGB_BUF 18  46
+RGB_BUF 19  181
+RGB_BUF 20  205
+RGB_BUF 21  209
+RGB_BUF 22  187
+RGB_BUF 23  170
+RGB_BUF 24  111
+RGB_BUF 25  15
+RGB_BUF 26  62
+RGB_BUF 27  226
+RGB_BUF 28  207
+RGB_BUF 29  187
+RGB_BUF 30  205
+RGB_BUF 31  188
+RGB_BUF 32  139
+RGB_BUF 33  140
+RGB_BUF 34  129
+RGB_BUF 35  156
+RGB_BUF 36  113
+RGB_BUF 37  177
+RGB_BUF 38  215
+RGB_BUF 39  174
+RGB_BUF 40  179
+RGB_BUF 41  196
+RGB_BUF 42  217
+RGB_BUF 43  132
+RGB_BUF 44  55
+RGB_BUF 45  121
+RGB_BUF 46  213
+RGB_BUF 47  180
+RGB_BUF 48  136
+RGB_BUF 49  134
+RGB_BUF 50  175
+RGB_BUF 51  214
+RGB_BUF 52  134
+RGB_BUF 53  161
+RGB_BUF 54  190
+RGB_BUF 55  141
+RGB_BUF 56  41
+RGB_BUF 57  114
+RGB_BUF 58  196
+RGB_BUF 59  195
+RGB_BUF 60  208
+RGB_BUF 61  197
+RGB_BUF 62  186
+RGB_BUF 63  176
+RGB_BUF 0  193
+RGB_BUF 1  167
+RGB_BUF 2  188
+RGB_BUF 3  210
+RGB_BUF 4  177
+RGB_BUF 5  142
+RGB_BUF 6  37
+RGB_BUF 7  10
+RGB_BUF 8  201
+RGB_BUF 9  155
+RGB_BUF 10  139
+RGB_BUF 11  209
+RGB_BUF 12  191
+RGB_BUF 13  201
+RGB_BUF 14  171
+RGB_BUF 15  103
+RGB_BUF 16  154
+RGB_BUF 17  215
+RGB_BUF 18  200
+RGB_BUF 19  209
+RGB_BUF 20  184
+RGB_BUF 21  164
+RGB_BUF 22  196
+RGB_BUF 23  174
+RGB_BUF 24  24
+RGB_BUF 25  191
+RGB_BUF 26  209
+RGB_BUF 27  198
+RGB_BUF 28  186
+RGB_BUF 29  184
+RGB_BUF 30  147
+RGB_BUF 31  117
+RGB_BUF 32  81
+RGB_BUF 33  37
+RGB_BUF 34  97
+RGB_BUF 35  223
+RGB_BUF 36  200
+RGB_BUF 37  217
+RGB_BUF 38  149
+RGB_BUF 39  153
+RGB_BUF 40  197
+RGB_BUF 41  206
+RGB_BUF 42  164
+RGB_BUF 43  214
+RGB_BUF 44  217
+RGB_BUF 45  175
+RGB_BUF 46  40
+RGB_BUF 47  141
+RGB_BUF 48  73
+RGB_BUF 49  141
+RGB_BUF 50  206
+RGB_BUF 51  148
+RGB_BUF 52  181
+RGB_BUF 53  192
+RGB_BUF 54  113
+RGB_BUF 55  69
+RGB_BUF 56  12
+RGB_BUF 57  190
+RGB_BUF 58  180
+RGB_BUF 59  177
+RGB_BUF 60  148
+RGB_BUF 61  178
+RGB_BUF 62  221
+RGB_BUF 63  145
+RGB_BUF 0  10
+RGB_BUF 1  18
+RGB_BUF 2  14
+RGB_BUF 3  26
+RGB_BUF 4  7
+RGB_BUF 5  108
+RGB_BUF 6  181
+RGB_BUF 7  190
+RGB_BUF 8  24
+RGB_BUF 9  14
+RGB_BUF 10  24
+RGB_BUF 11  24
+RGB_BUF 12  4
+RGB_BUF 13  108
+RGB_BUF 14  185
+RGB_BUF 15  180
+RGB_BUF 16  35
+RGB_BUF 17  27
+RGB_BUF 18  39
+RGB_BUF 19  31
+RGB_BUF 20  16
+RGB_BUF 21  58
+RGB_BUF 22  116
+RGB_BUF 23  137
+RGB_BUF 24  23
+RGB_BUF 25  20
+RGB_BUF 26  34
+RGB_BUF 27  28
+RGB_BUF 28  26
+RGB_BUF 29  10
+RGB_BUF 30  42
+RGB_BUF 31  112
+RGB_BUF 32  13
+RGB_BUF 33  17
+RGB_BUF 34  43
+RGB_BUF 35  16
+RGB_BUF 36  18
+RGB_BUF 37  20
+RGB_BUF 38  24
+RGB_BUF 39  98
+RGB_BUF 40  49
+RGB_BUF 41  21
+RGB_BUF 42  39
+RGB_BUF 43  17
+RGB_BUF 44  23
+RGB_BUF 45  28
+RGB_BUF 46  14
+RGB_BUF 47  123
+RGB_BUF 48  79
+RGB_BUF 49  31
+RGB_BUF 50  25
+RGB_BUF 51  40
+RGB_BUF 52  30
+RGB_BUF 53  26
+RGB_BUF 54  12
+RGB_BUF 55  98
+RGB_BUF 56  167
+RGB_BUF 57  57
+RGB_BUF 58  47
+RGB_BUF 59  168
+RGB_BUF 60  124
+RGB_BUF 61  33
+RGB_BUF 62  5
+RGB_BUF 63  54
+RGB_BUF 0  66
+RGB_BUF 1  93
+RGB_BUF 2  90
+RGB_BUF 3  65
+RGB_BUF 4  51
+RGB_BUF 5  32
+RGB_BUF 6  36
+RGB_BUF 7  35
+RGB_BUF 8  103
+RGB_BUF 9  85
+RGB_BUF 10  69
+RGB_BUF 11  49
+RGB_BUF 12  46
+RGB_BUF 13  55
+RGB_BUF 14  44
+RGB_BUF 15  42
+RGB_BUF 16  97
+RGB_BUF 17  84
+RGB_BUF 18  32
+RGB_BUF 19  36
+RGB_BUF 20  62
+RGB_BUF 21  58
+RGB_BUF 22  40
+RGB_BUF 23  41
+RGB_BUF 24  96
+RGB_BUF 25  46
+RGB_BUF 26  19
+RGB_BUF 27  32
+RGB_BUF 28  53
+RGB_BUF 29  58
+RGB_BUF 30  40
+RGB_BUF 31  40
+RGB_BUF 32  68
+RGB_BUF 33  29
+RGB_BUF 34  39
+RGB_BUF 35  56
+RGB_BUF 36  59
+RGB_BUF 37  49
+RGB_BUF 38  40
+RGB_BUF 39  41
+RGB_BUF 40  59
+RGB_BUF 41  50
+RGB_BUF 42  48
+RGB_BUF 43  55
+RGB_BUF 44  58
+RGB_BUF 45  42
+RGB_BUF 46  48
+RGB_BUF 47  54
+RGB_BUF 48  64
+RGB_BUF 49  46
+RGB_BUF 50  68
+RGB_BUF 51  65
+RGB_BUF 52  67
+RGB_BUF 53  80
+RGB_BUF 54  56
+RGB_BUF 55  36
+RGB_BUF 56  50
+RGB_BUF 57  78
+RGB_BUF 58  83
+RGB_BUF 59  74
+RGB_BUF 60  80
+RGB_BUF 61  90
+RGB_BUF 62  58
+RGB_BUF 63  44
+RGB_BUF 0  41
+RGB_BUF 1  54
+RGB_BUF 2  32
+RGB_BUF 3  31
+RGB_BUF 4  31
+RGB_BUF 5  34
+RGB_BUF 6  24
+RGB_BUF 7  25
+RGB_BUF 8  48
+RGB_BUF 9  54
+RGB_BUF 10  34
+RGB_BUF 11  40
+RGB_BUF 12  38
+RGB_BUF 13  36
+RGB_BUF 14  31
+RGB_BUF 15  28
+RGB_BUF 16  24
+RGB_BUF 17  36
+RGB_BUF 18  40
+RGB_BUF 19  16
+RGB_BUF 20  34
+RGB_BUF 21  24
+RGB_BUF 22  22
+RGB_BUF 23  33
+RGB_BUF 24  101
+RGB_BUF 25  14
+RGB_BUF 26  18
+RGB_BUF 27  7
+RGB_BUF 28  15
+RGB_BUF 29  27
+RGB_BUF 30  7
+RGB_BUF 31  27
+RGB_BUF 32  186
+RGB_BUF 33  96
+RGB_BUF 34  0
+RGB_BUF 35  37
+RGB_BUF 36  15
+RGB_BUF 37  21
+RGB_BUF 38  20
+RGB_BUF 39  27
+RGB_BUF 40  187
+RGB_BUF 41  137
+RGB_BUF 42  25
+RGB_BUF 43  54
+RGB_BUF 44  58
+RGB_BUF 45  55
+RGB_BUF 46  18
+RGB_BUF 47  19
+RGB_BUF 48  178
+RGB_BUF 49  156
+RGB_BUF 50  114
+RGB_BUF 51  126
+RGB_BUF 52  107
+RGB_BUF 53  61
+RGB_BUF 54  46
+RGB_BUF 55  50
+RGB_BUF 56  203
+RGB_BUF 57  196
+RGB_BUF 58  175
+RGB_BUF 59  142
+RGB_BUF 60  107
+RGB_BUF 61  61
+RGB_BUF 62  44
+RGB_BUF 63  61
+RGB_BUF 0  23
+RGB_BUF 1  17
+RGB_BUF 2  16
+RGB_BUF 3  18
+RGB_BUF 4  30
+RGB_BUF 5  25
+RGB_BUF 6  33
+RGB_BUF 7  45
+RGB_BUF 8  15
+RGB_BUF 9  11
+RGB_BUF 10  17
+RGB_BUF 11  25
+RGB_BUF 12  31
+RGB_BUF 13  26
+RGB_BUF 14  44
+RGB_BUF 15  73
+RGB_BUF 16  18
+RGB_BUF 17  15
+RGB_BUF 18  21
+RGB_BUF 19  28
+RGB_BUF 20  33
+RGB_BUF 21  29
+RGB_BUF 22  48
+RGB_BUF 23  75
+RGB_BUF 24  8
+RGB_BUF 25  10
+RGB_BUF 26  18
+RGB_BUF 27  20
+RGB_BUF 28  26
+RGB_BUF 29  27
+RGB_BUF 30  43
+RGB_BUF 31  58
+RGB_BUF 32  13
+RGB_BUF 33  12
+RGB_BUF 34  19
+RGB_BUF 35  16
+RGB_BUF 36  16
+RGB_BUF 37  14
+RGB_BUF 38  28
+RGB_BUF 39  38
+RGB_BUF 40  34
+RGB_BUF 41  18
+RGB_BUF 42  13
+RGB_BUF 43  13
+RGB_BUF 44  12
+RGB_BUF 45  5
+RGB_BUF 46  12
+RGB_BUF 47  18
+RGB_BUF 48  45
+RGB_BUF 49  25
+RGB_BUF 50  20
+RGB_BUF 51  22
+RGB_BUF 52  26
+RGB_BUF 53  19
+RGB_BUF 54  19
+RGB_BUF 55  15
+RGB_BUF 56  63
+RGB_BUF 57  55
+RGB_BUF 58  57
+RGB_BUF 59  52
+RGB_BUF 60  49
+RGB_BUF 61  39
+RGB_BUF 62  36
+RGB_BUF 63  24
+RGB_BUF 0  13
+RGB_BUF 1  77
+RGB_BUF 2  23
+RGB_BUF 3  18
+RGB_BUF 4  15
+RGB_BUF 5  16
+RGB_BUF 6  16
+RGB_BUF 7  34
+RGB_BUF 8  43
+RGB_BUF 9  30
+RGB_BUF 10  32
+RGB_BUF 11  20
+RGB_BUF 12  50
+RGB_BUF 13  70
+RGB_BUF 14  49
+RGB_BUF 15  19
+RGB_BUF 16  26
+RGB_BUF 17  29
+RGB_BUF 18  25
+RGB_BUF 19  14
+RGB_BUF 20  37
+RGB_BUF 21  75
+RGB_BUF 22  35
+RGB_BUF 23  59
+RGB_BUF 24  5
+RGB_BUF 25  22
+RGB_BUF 26  29
+RGB_BUF 27  29
+RGB_BUF 28  7
+RGB_BUF 29  99
+RGB_BUF 30  30
+RGB_BUF 31  139
+RGB_BUF 32  53
+RGB_BUF 33  20
+RGB_BUF 34  12
+RGB_BUF 35  18
+RGB_BUF 36  33
+RGB_BUF 37  96
+RGB_BUF 38  56
+RGB_BUF 39  156
+RGB_BUF 40  31
+RGB_BUF 41  43
+RGB_BUF 42  10
+RGB_BUF 43  71
+RGB_BUF 44  177
+RGB_BUF 45  146
+RGB_BUF 46  45
+RGB_BUF 47  153
+RGB_BUF 48  37
+RGB_BUF 49  33
+RGB_BUF 50  13
+RGB_BUF 51  26
+RGB_BUF 52  201
+RGB_BUF 53  191
+RGB_BUF 54  52
+RGB_BUF 55  170
+RGB_BUF 56  34
+RGB_BUF 57  51
+RGB_BUF 58  57
+RGB_BUF 59  48
+RGB_BUF 60  36
+RGB_BUF 61  137
+RGB_BUF 62  24
+RGB_BUF 63  122
+RGB_BUF 0  179
+RGB_BUF 1  225
+RGB_BUF 2  187
+RGB_BUF 3  206
+RGB_BUF 4  209
+RGB_BUF 5  141
+RGB_BUF 6  149
+RGB_BUF 7  78
+RGB_BUF 8  100
+RGB_BUF 9  192
+RGB_BUF 10  104
+RGB_BUF 11  100
+RGB_BUF 12  105
+RGB_BUF 13  118
+RGB_BUF 14  131
+RGB_BUF 15  129
+RGB_BUF 16  48
+RGB_BUF 17  86
+RGB_BUF 18  109
+RGB_BUF 19  81
+RGB_BUF 20  66
+RGB_BUF 21  187
+RGB_BUF 22  143
+RGB_BUF 23  182
+RGB_BUF 24  36
+RGB_BUF 25  51
+RGB_BUF 26  54
+RGB_BUF 27  87
+RGB_BUF 28  111
+RGB_BUF 29  147
+RGB_BUF 30  240
+RGB_BUF 31  186
+RGB_BUF 32  27
+RGB_BUF 33  5
+RGB_BUF 34  63
+RGB_BUF 35  166
+RGB_BUF 36  123
+RGB_BUF 37  21
+RGB_BUF 38  163
+RGB_BUF 39  207
+RGB_BUF 40  30
+RGB_BUF 41  72
+RGB_BUF 42  145
+RGB_BUF 43  159
+RGB_BUF 44  90
+RGB_BUF 45  88
+RGB_BUF 46  168
+RGB_BUF 47  142
+RGB_BUF 48  10
+RGB_BUF 49  148
+RGB_BUF 50  169
+RGB_BUF 51  162
+RGB_BUF 52  153
+RGB_BUF 53  134
+RGB_BUF 54  204
+RGB_BUF 55  203
+RGB_BUF 56  18
+RGB_BUF 57  149
+RGB_BUF 58  211
+RGB_BUF 59  159
+RGB_BUF 60  39
+RGB_BUF 61  123
+RGB_BUF 62  172
+RGB_BUF 63  96
+RGB_BUF 0  115
+RGB_BUF 1  31
+RGB_BUF 2  36
+RGB_BUF 3  91
+RGB_BUF 4  25
+RGB_BUF 5  93
+RGB_BUF 6  215
+RGB_BUF 7  108
+RGB_BUF 8  28
+RGB_BUF 9  75
+RGB_BUF 10  98
+RGB_BUF 11  197
+RGB_BUF 12  166
+RGB_BUF 13  177
+RGB_BUF 14  212
+RGB_BUF 15  201
+RGB_BUF 16  34
+RGB_BUF 17  84
+RGB_BUF 18  27
+RGB_BUF 19  93
+RGB_BUF 20  253
+RGB_BUF 21  169
+RGB_BUF 22  242
+RGB_BUF 23  93
+RGB_BUF 24  37
+RGB_BUF 25  45
+RGB_BUF 26  26
+RGB_BUF 27  0
+RGB_BUF 28  46
+RGB_BUF 29  194
+RGB_BUF 30  186
+RGB_BUF 31  60
+RGB_BUF 32  20
+RGB_BUF 33  51
+RGB_BUF 34  23
+RGB_BUF 35  27
+RGB_BUF 36  17
+RGB_BUF 37  48
+RGB_BUF 38  240
+RGB_BUF 39  52
+RGB_BUF 40  33
+RGB_BUF 41  49
+RGB_BUF 42  21
+RGB_BUF 43  9
+RGB_BUF 44  0
+RGB_BUF 45  125
+RGB_BUF 46  190
+RGB_BUF 47  61
+RGB_BUF 48  44
+RGB_BUF 49  54
+RGB_BUF 50  19
+RGB_BUF 51  12
+RGB_BUF 52  0
+RGB_BUF 53  36
+RGB_BUF 54  167
+RGB_BUF 55  82
+RGB_BUF 56  53
+RGB_BUF 57  52
+RGB_BUF 58  30
+RGB_BUF 59  0
+RGB_BUF 60  43
+RGB_BUF 61  189
+RGB_BUF 62  117
+RGB_BUF 63  94
+RGB_BUF 0  194
+RGB_BUF 1  149
+RGB_BUF 2  185
+RGB_BUF 3  179
+RGB_BUF 4  131
+RGB_BUF 5  72
+RGB_BUF 6  131
+RGB_BUF 7  75
+RGB_BUF 8  189
+RGB_BUF 9  193
+RGB_BUF 10  209
+RGB_BUF 11  185
+RGB_BUF 12  188
+RGB_BUF 13  126
+RGB_BUF 14  126
+RGB_BUF 15  92
+RGB_BUF 16  205
+RGB_BUF 17  204
+RGB_BUF 18  226
+RGB_BUF 19  184
+RGB_BUF 20  223
+RGB_BUF 21  234
+RGB_BUF 22  190
+RGB_BUF 23  112
+RGB_BUF 24  94
+RGB_BUF 25  183
+RGB_BUF 26  67
+RGB_BUF 27  87
+RGB_BUF 28  194
+RGB_BUF 29  194
+RGB_BUF 30  196
+RGB_BUF 31  190
+RGB_BUF 32  204
+RGB_BUF 33  211
+RGB_BUF 34  213
+RGB_BUF 35  101
+RGB_BUF 36  187
+RGB_BUF 37  198
+RGB_BUF 38  150
+RGB_BUF 39  58
+RGB_BUF 40  214
+RGB_BUF 41  180
+RGB_BUF 42  229
+RGB_BUF 43  218
+RGB_BUF 44  186
+RGB_BUF 45  185
+RGB_BUF 46  223
+RGB_BUF 47  72
+RGB_BUF 48  47
+RGB_BUF 49  0
+RGB_BUF 50  195
+RGB_BUF 51  194
+RGB_BUF 52  188
+RGB_BUF 53  172
+RGB_BUF 54  176
+RGB_BUF 55  174
+RGB_BUF 56  58
+RGB_BUF 57  60
+RGB_BUF 58  44
+RGB_BUF 59  67
+RGB_BUF 60  100
+RGB_BUF 61  168
+RGB_BUF 62  163
+RGB_BUF 63  179
+RGB_BUF 0  182
+RGB_BUF 1  121
+RGB_BUF 2  87
+RGB_BUF 3  81
+RGB_BUF 4  6
+RGB_BUF 5  5
+RGB_BUF 6  20
+RGB_BUF 7  38
+RGB_BUF 8  180
+RGB_BUF 9  166
+RGB_BUF 10  136
+RGB_BUF 11  86
+RGB_BUF 12  16
+RGB_BUF 13  1
+RGB_BUF 14  0
+RGB_BUF 15  6
+RGB_BUF 16  174
+RGB_BUF 17  138
+RGB_BUF 18  58
+RGB_BUF 19  7
+RGB_BUF 20  0
+RGB_BUF 21  26
+RGB_BUF 22  102
+RGB_BUF 23  110
+RGB_BUF 24  206
+RGB_BUF 25  153
+RGB_BUF 26  61
+RGB_BUF 27  1
+RGB_BUF 28  6
+RGB_BUF 29  64
+RGB_BUF 30  161
+RGB_BUF 31  198
+RGB_BUF 32  146
+RGB_BUF 33  154
+RGB_BUF 34  99
+RGB_BUF 35  53
+RGB_BUF 36  48
+RGB_BUF 37  28
+RGB_BUF 38  87
+RGB_BUF 39  179
+RGB_BUF 40  111
+RGB_BUF 41  113
+RGB_BUF 42  90
+RGB_BUF 43  73
+RGB_BUF 44  82
+RGB_BUF 45  74
+RGB_BUF 46  3
+RGB_BUF 47  66
+RGB_BUF 48  146
+RGB_BUF 49  147
+RGB_BUF 50  128
+RGB_BUF 51  77
+RGB_BUF 52  97
+RGB_BUF 53  113
+RGB_BUF 54  83
+RGB_BUF 55  54
+RGB_BUF 56  141
+RGB_BUF 57  165
+RGB_BUF 58  121
+RGB_BUF 59  126
+RGB_BUF 60  87
+RGB_BUF 61  146
+RGB_BUF 62  124
+RGB_BUF 63  95
+RGB_BUF 0  86
+RGB_BUF 1  32
+RGB_BUF 2  65
+RGB_BUF 3  51
+RGB_BUF 4  59
+RGB_BUF 5  57
+RGB_BUF 6  59
+RGB_BUF 7  52
+RGB_BUF 8  173
+RGB_BUF 9  35
+RGB_BUF 10  16
+RGB_BUF 11  42
+RGB_BUF 12  51
+RGB_BUF 13  40
+RGB_BUF 14  38
+RGB_BUF 15  58
+RGB_BUF 16  217
+RGB_BUF 17  176
+RGB_BUF 18  82
+RGB_BUF 19  77
+RGB_BUF 20  68
+RGB_BUF 21  51
+RGB_BUF 22  22
+RGB_BUF 23  38
+RGB_BUF 24  185
+RGB_BUF 25  181
+RGB_BUF 26  136
+RGB_BUF 27  90
+RGB_BUF 28  86
+RGB_BUF 29  57
+RGB_BUF 30  29
+RGB_BUF 31  27
+RGB_BUF 32  193
+RGB_BUF 33  180
+RGB_BUF 34  148
+RGB_BUF 35  125
+RGB_BUF 36  85
+RGB_BUF 37  28
+RGB_BUF 38  20
+RGB_BUF 39  18
+RGB_BUF 40  125
+RGB_BUF 41  171
+RGB_BUF 42  122
+RGB_BUF 43  132
+RGB_BUF 44  66
+RGB_BUF 45  21
+RGB_BUF 46  25
+RGB_BUF 47  27
+RGB_BUF 48  33
+RGB_BUF 49  45
+RGB_BUF 50  63
+RGB_BUF 51  60
+RGB_BUF 52  33
+RGB_BUF 53  21
+RGB_BUF 54  19
+RGB_BUF 55  16
+RGB_BUF 56  41
+RGB_BUF 57  17
+RGB_BUF 58  40
+RGB_BUF 59  30
+RGB_BUF 60  29
+RGB_BUF 61  23
+RGB_BUF 62  19
+RGB_BUF 63  18
+RGB_BUF 0  85
+RGB_BUF 1  32
+RGB_BUF 2  62
+RGB_BUF 3  0
+RGB_BUF 4  20
+RGB_BUF 5  17
+RGB_BUF 6  35
+RGB_BUF 7  44
+RGB_BUF 8  81
+RGB_BUF 9  66
+RGB_BUF 10  12
+RGB_BUF 11  40
+RGB_BUF 12  0
+RGB_BUF 13  13
+RGB_BUF 14  90
+RGB_BUF 15  24
+RGB_BUF 16  57
+RGB_BUF 17  113
+RGB_BUF 18  7
+RGB_BUF 19  33
+RGB_BUF 20  10
+RGB_BUF 21  31
+RGB_BUF 22  69
+RGB_BUF 23  23
+RGB_BUF 24  64
+RGB_BUF 25  114
+RGB_BUF 26  97
+RGB_BUF 27  0
+RGB_BUF 28  24
+RGB_BUF 29  88
+RGB_BUF 30  149
+RGB_BUF 31  28
+RGB_BUF 32  94
+RGB_BUF 33  73
+RGB_BUF 34  75
+RGB_BUF 35  134
+RGB_BUF 36  13
+RGB_BUF 37  34
+RGB_BUF 38  80
+RGB_BUF 39  74
+RGB_BUF 40  87
+RGB_BUF 41  83
+RGB_BUF 42  0
+RGB_BUF 43  92
+RGB_BUF 44  127
+RGB_BUF 45  20
+RGB_BUF 46  44
+RGB_BUF 47  15
+RGB_BUF 48  88
+RGB_BUF 49  18
+RGB_BUF 50  27
+RGB_BUF 51  0
+RGB_BUF 52  111
+RGB_BUF 53  124
+RGB_BUF 54  23
+RGB_BUF 55  34
+RGB_BUF 56  135
+RGB_BUF 57  13
+RGB_BUF 58  25
+RGB_BUF 59  41
+RGB_BUF 60  24
+RGB_BUF 61  142
+RGB_BUF 62  45
+RGB_BUF 63  28
+RGB_BUF 0  70
+RGB_BUF 1  9
+RGB_BUF 2  36
+RGB_BUF 3  37
+RGB_BUF 4  58
+RGB_BUF 5  78
+RGB_BUF 6  23
+RGB_BUF 7  47
+RGB_BUF 8  68
+RGB_BUF 9  10
+RGB_BUF 10  44
+RGB_BUF 11  28
+RGB_BUF 12  28
+RGB_BUF 13  95
+RGB_BUF 14  0
+RGB_BUF 15  160
+RGB_BUF 16  61
+RGB_BUF 17  27
+RGB_BUF 18  41
+RGB_BUF 19  33
+RGB_BUF 20  13
+RGB_BUF 21  37
+RGB_BUF 22  40
+RGB_BUF 23  132
+RGB_BUF 24  110
+RGB_BUF 25  63
+RGB_BUF 26  16
+RGB_BUF 27  27
+RGB_BUF 28  33
+RGB_BUF 29  56
+RGB_BUF 30  23
+RGB_BUF 31  17
+RGB_BUF 32  213
+RGB_BUF 33  122
+RGB_BUF 34  17
+RGB_BUF 35  25
+RGB_BUF 36  25
+RGB_BUF 37  11
+RGB_BUF 38  110
+RGB_BUF 39  115
+RGB_BUF 40  182
+RGB_BUF 41  65
+RGB_BUF 42  17
+RGB_BUF 43  26
+RGB_BUF 44  49
+RGB_BUF 45  65
+RGB_BUF 46  102
+RGB_BUF 47  186
+RGB_BUF 48  161
+RGB_BUF 49  64
+RGB_BUF 50  22
+RGB_BUF 51  15
+RGB_BUF 52  59
+RGB_BUF 53  66
+RGB_BUF 54  65
+RGB_BUF 55  78
+RGB_BUF 56  140
+RGB_BUF 57  80
+RGB_BUF 58  44
+RGB_BUF 59  8
+RGB_BUF 60  35
+RGB_BUF 61  21
+RGB_BUF 62  100
+RGB_BUF 63  20
+RGB_BUF 0  197
+RGB_BUF 1  134
+RGB_BUF 2  111
+RGB_BUF 3  192
+RGB_BUF 4  223
+RGB_BUF 5  186
+RGB_BUF 6  160
+RGB_BUF 7  127
+RGB_BUF 8  191
+RGB_BUF 9  122
+RGB_BUF 10  195
+RGB_BUF 11  229
+RGB_BUF 12  209
+RGB_BUF 13  207
+RGB_BUF 14  155
+RGB_BUF 15  97
+RGB_BUF 16  152
+RGB_BUF 17  168
+RGB_BUF 18  172
+RGB_BUF 19  193
+RGB_BUF 20  147
+RGB_BUF 21  201
+RGB_BUF 22  178
+RGB_BUF 23  101
+RGB_BUF 24  189
+RGB_BUF 25  57
+RGB_BUF 26  251
+RGB_BUF 27  227
+RGB_BUF 28  122
+RGB_BUF 29  2
+RGB_BUF 30  0
+RGB_BUF 31  7
+RGB_BUF 32  133
+RGB_BUF 33  57
+RGB_BUF 34  74
+RGB_BUF 35  244
+RGB_BUF 36  130
+RGB_BUF 37  0
+RGB_BUF 38  35
+RGB_BUF 39  16
+RGB_BUF 40  24
+RGB_BUF 41  101
+RGB_BUF 42  10
+RGB_BUF 43  28
+RGB_BUF 44  130
+RGB_BUF 45  2
+RGB_BUF 46  21
+RGB_BUF 47  46
+RGB_BUF 48  33
+RGB_BUF 49  119
+RGB_BUF 50  83
+RGB_BUF 51  43
+RGB_BUF 52  0
+RGB_BUF 53  18
+RGB_BUF 54  32
+RGB_BUF 55  54
+RGB_BUF 56  103
+RGB_BUF 57  142
+RGB_BUF 58  100
+RGB_BUF 59  0
+RGB_BUF 60  12
+RGB_BUF 61  86
+RGB_BUF 62  40
+RGB_BUF 63  104
+RGB_BUF 0  144
+RGB_BUF 1  191
+RGB_BUF 2  0
+RGB_BUF 3  148
+RGB_BUF 4  120
+RGB_BUF 5  35
+RGB_BUF 6  66
+RGB_BUF 7  29
+RGB_BUF 8  94
+RGB_BUF 9  107
+RGB_BUF 10  115
+RGB_BUF 11  66
+RGB_BUF 12  102
+RGB_BUF 13  138
+RGB_BUF 14  13
+RGB_BUF 15  16
+RGB_BUF 16  60
+RGB_BUF 17  78
+RGB_BUF 18  33
+RGB_BUF 19  159
+RGB_BUF 20  143
+RGB_BUF 21  212
+RGB_BUF 22  0
+RGB_BUF 23  50
+RGB_BUF 24  111
+RGB_BUF 25  62
+RGB_BUF 26  219
+RGB_BUF 27  50
+RGB_BUF 28  127
+RGB_BUF 29  43
+RGB_BUF 30  83
+RGB_BUF 31  56
+RGB_BUF 32  235
+RGB_BUF 33  139
+RGB_BUF 34  147
+RGB_BUF 35  46
+RGB_BUF 36  10
+RGB_BUF 37  122
+RGB_BUF 38  117
+RGB_BUF 39  111
+RGB_BUF 40  180
+RGB_BUF 41  212
+RGB_BUF 42  101
+RGB_BUF 43  6
+RGB_BUF 44  55
+RGB_BUF 45  92
+RGB_BUF 46  62
+RGB_BUF 47  125
+RGB_BUF 48  11
+RGB_BUF 49  146
+RGB_BUF 50  22
+RGB_BUF 51  66
+RGB_BUF 52  99
+RGB_BUF 53  68
+RGB_BUF 54  92
+RGB_BUF 55  78
+RGB_BUF 56  142
+RGB_BUF 57  19
+RGB_BUF 58  60
+RGB_BUF 59  84
+RGB_BUF 60  100
+RGB_BUF 61  67
+RGB_BUF 62  63
+RGB_BUF 63  93
+RGB_BUF 0  166
+RGB_BUF 1  191
+RGB_BUF 2  147
+RGB_BUF 3  96
+RGB_BUF 4  24
+RGB_BUF 5  20
+RGB_BUF 6  47
+RGB_BUF 7  31
+RGB_BUF 8  155
+RGB_BUF 9  165
+RGB_BUF 10  167
+RGB_BUF 11  172
+RGB_BUF 12  88
+RGB_BUF 13  3
+RGB_BUF 14  35
+RGB_BUF 15  31
+RGB_BUF 16  200
+RGB_BUF 17  145
+RGB_BUF 18  56
+RGB_BUF 19  82
+RGB_BUF 20  79
+RGB_BUF 21  20
+RGB_BUF 22  50
+RGB_BUF 23  83
+RGB_BUF 24  127
+RGB_BUF 25  175
+RGB_BUF 26  187
+RGB_BUF 27  84
+RGB_BUF 28  96
+RGB_BUF 29  95
+RGB_BUF 30  15
+RGB_BUF 31  33
+RGB_BUF 32  145
+RGB_BUF 33  158
+RGB_BUF 34  210
+RGB_BUF 35  103
+RGB_BUF 36  18
+RGB_BUF 37  37
+RGB_BUF 38  48
+RGB_BUF 39  35
+RGB_BUF 40  86
+RGB_BUF 41  119
+RGB_BUF 42  213
+RGB_BUF 43  0
+RGB_BUF 44  163
+RGB_BUF 45  93
+RGB_BUF 46  17
+RGB_BUF 47  25
+RGB_BUF 48  5
+RGB_BUF 49  87
+RGB_BUF 50  144
+RGB_BUF 51  52
+RGB_BUF 52  194
+RGB_BUF 53  170
+RGB_BUF 54  85
+RGB_BUF 55  25
+RGB_BUF 56  40
+RGB_BUF 57  44
+RGB_BUF 58  35
+RGB_BUF 59  86
+RGB_BUF 60  120
+RGB_BUF 61  139
+RGB_BUF 62  119
+RGB_BUF 63  57
+RGB_BUF 0  17
+RGB_BUF 1  12
+RGB_BUF 2  29
+RGB_BUF 3  51
+RGB_BUF 4  65
+RGB_BUF 5  74
+RGB_BUF 6  44
+RGB_BUF 7  15
+RGB_BUF 8  9
+RGB_BUF 9  17
+RGB_BUF 10  28
+RGB_BUF 11  53
+RGB_BUF 12  75
+RGB_BUF 13  78
+RGB_BUF 14  70
+RGB_BUF 15  55
+RGB_BUF 16  57
+RGB_BUF 17  15
+RGB_BUF 18  25
+RGB_BUF 19  41
+RGB_BUF 20  59
+RGB_BUF 21  72
+RGB_BUF 22  80
+RGB_BUF 23  112
+RGB_BUF 24  144
+RGB_BUF 25  45
+RGB_BUF 26  43
+RGB_BUF 27  27
+RGB_BUF 28  24
+RGB_BUF 29  75
+RGB_BUF 30  110
+RGB_BUF 31  122
+RGB_BUF 32  121
+RGB_BUF 33  68
+RGB_BUF 34  46
+RGB_BUF 35  14
+RGB_BUF 36  22
+RGB_BUF 37  56
+RGB_BUF 38  103
+RGB_BUF 39  122
+RGB_BUF 40  125
+RGB_BUF 41  50
+RGB_BUF 42  24
+RGB_BUF 43  2
+RGB_BUF 44  16
+RGB_BUF 45  43
+RGB_BUF 46  82
+RGB_BUF 47  78
+RGB_BUF 48  126
+RGB_BUF 49  82
+RGB_BUF 50  54
+RGB_BUF 51  12
+RGB_BUF 52  28
+RGB_BUF 53  36
+RGB_BUF 54  56
+RGB_BUF 55  61
+RGB_BUF 56  51
+RGB_BUF 57  67
+RGB_BUF 58  58
+RGB_BUF 59  60
+RGB_BUF 60  91
+RGB_BUF 61  38
+RGB_BUF 62  48
+RGB_BUF 63  71
+RGB_BUF 0  87
+RGB_BUF 1  72
+RGB_BUF 2  120
+RGB_BUF 3  89
+RGB_BUF 4  74
+RGB_BUF 5  222
+RGB_BUF 6  221
+RGB_BUF 7  175
+RGB_BUF 8  54
+RGB_BUF 9  124
+RGB_BUF 10  103
+RGB_BUF 11  96
+RGB_BUF 12  95
+RGB_BUF 13  185
+RGB_BUF 14  18
+RGB_BUF 15  147
+RGB_BUF 16  109
+RGB_BUF 17  105
+RGB_BUF 18  81
+RGB_BUF 19  84
+RGB_BUF 20  22
+RGB_BUF 21  72
+RGB_BUF 22  65
+RGB_BUF 23  148
+RGB_BUF 24  47
+RGB_BUF 25  28
+RGB_BUF 26  35
+RGB_BUF 27  91
+RGB_BUF 28  70
+RGB_BUF 29  35
+RGB_BUF 30  16
+RGB_BUF 31  22
+RGB_BUF 32  59
+RGB_BUF 33  23
+RGB_BUF 34  8
+RGB_BUF 35  87
+RGB_BUF 36  110
+RGB_BUF 37  0
+RGB_BUF 38  23
+RGB_BUF 39  2
+RGB_BUF 40  68
+RGB_BUF 41  0
+RGB_BUF 42  1
+RGB_BUF 43  0
+RGB_BUF 44  91
+RGB_BUF 45  65
+RGB_BUF 46  7
+RGB_BUF 47  10
+RGB_BUF 48  19
+RGB_BUF 49  24
+RGB_BUF 50  6
+RGB_BUF 51  0
+RGB_BUF 52  2
+RGB_BUF 53  47
+RGB_BUF 54  4
+RGB_BUF 55  19
+RGB_BUF 56  26
+RGB_BUF 57  11
+RGB_BUF 58  15
+RGB_BUF 59  10
+RGB_BUF 60  12
+RGB_BUF 61  12
+RGB_BUF 62  10
+RGB_BUF 63  25
+RGB_BUF 0  12
+RGB_BUF 1  11
+RGB_BUF 2  15
+RGB_BUF 3  0
+RGB_BUF 4  13
+RGB_BUF 5  1
+RGB_BUF 6  82
+RGB_BUF 7  25
+RGB_BUF 8  22
+RGB_BUF 9  7
+RGB_BUF 10  21
+RGB_BUF 11  26
+RGB_BUF 12  27
+RGB_BUF 13  21
+RGB_BUF 14  4
+RGB_BUF 15  30
+RGB_BUF 16  14
+RGB_BUF 17  32
+RGB_BUF 18  46
+RGB_BUF 19  47
+RGB_BUF 20  44
+RGB_BUF 21  25
+RGB_BUF 22  35
+RGB_BUF 23  29
+RGB_BUF 24  37
+RGB_BUF 25  21
+RGB_BUF 26  6
+RGB_BUF 27  29
+RGB_BUF 28  5
+RGB_BUF 29  30
+RGB_BUF 30  15
+RGB_BUF 31  17
+RGB_BUF 32  3
+RGB_BUF 33  11
+RGB_BUF 34  17
+RGB_BUF 35  21
+RGB_BUF 36  21
+RGB_BUF 37  11
+RGB_BUF 38  21
+RGB_BUF 39  4
+RGB_BUF 40  0
+RGB_BUF 41  10
+RGB_BUF 42  47
+RGB_BUF 43  12
+RGB_BUF 44  22
+RGB_BUF 45  25
+RGB_BUF 46  16
+RGB_BUF 47  16
+RGB_BUF 48  83
+RGB_BUF 49  0
+RGB_BUF 50  18
+RGB_BUF 51  18
+RGB_BUF 52  8
+RGB_BUF 53  20
+RGB_BUF 54  27
+RGB_BUF 55  12
+RGB_BUF 56  21
+RGB_BUF 57  17
+RGB_BUF 58  12
+RGB_BUF 59  15
+RGB_BUF 60  40
+RGB_BUF 61  14
+RGB_BUF 62  18
+RGB_BUF 63  13
+RGB_BUF 0  133
+RGB_BUF 1  0
+RGB_BUF 2  141
+RGB_BUF 3  172
+RGB_BUF 4  192
+RGB_BUF 5  200
+RGB_BUF 6  71
+RGB_BUF 7  146
+RGB_BUF 8  143
+RGB_BUF 9  180
+RGB_BUF 10  186
+RGB_BUF 11  193
+RGB_BUF 12  231
+RGB_BUF 13  164
+RGB_BUF 14  68
+RGB_BUF 15  8
+RGB_BUF 16  44
+RGB_BUF 17  139
+RGB_BUF 18  165
+RGB_BUF 19  190
+RGB_BUF 20  170
+RGB_BUF 21  202
+RGB_BUF 22  89
+RGB_BUF 23  199
+RGB_BUF 24  94
+RGB_BUF 25  102
+RGB_BUF 26  178
+RGB_BUF 27  161
+RGB_BUF 28  156
+RGB_BUF 29  146
+RGB_BUF 30  235
+RGB_BUF 31  173
+RGB_BUF 32  0
+RGB_BUF 33  13
+RGB_BUF 34  254
+RGB_BUF 35  233
+RGB_BUF 36  184
+RGB_BUF 37  208
+RGB_BUF 38  150
+RGB_BUF 39  240
+RGB_BUF 40  18
+RGB_BUF 41  55
+RGB_BUF 42  235
+RGB_BUF 43  219
+RGB_BUF 44  255
+RGB_BUF 45  195
+RGB_BUF 46  107
+RGB_BUF 47  255
+RGB_BUF 48  25
+RGB_BUF 49  16
+RGB_BUF 50  76
+RGB_BUF 51  172
+RGB_BUF 52  85
+RGB_BUF 53  23
+RGB_BUF 54  25
+RGB_BUF 55  98
+RGB_BUF 56  46
+RGB_BUF 57  27
+RGB_BUF 58  15
+RGB_BUF 59  79
+RGB_BUF 60  32
+RGB_BUF 61  222
+RGB_BUF 62  62
+RGB_BUF 63  8
+RGB_BUF 0  2
+RGB_BUF 1  85
+RGB_BUF 2  113
+RGB_BUF 3  89
+RGB_BUF 4  26
+RGB_BUF 5  160
+RGB_BUF 6  224
+RGB_BUF 7  168
+RGB_BUF 8  126
+RGB_BUF 9  36
+RGB_BUF 10  52
+RGB_BUF 11  0
+RGB_BUF 12  160
+RGB_BUF 13  136
+RGB_BUF 14  187
+RGB_BUF 15  203
+RGB_BUF 16  234
+RGB_BUF 17  58
+RGB_BUF 18  0
+RGB_BUF 19  37
+RGB_BUF 20  72
+RGB_BUF 21  114
+RGB_BUF 22  239
+RGB_BUF 23  161
+RGB_BUF 24  212
+RGB_BUF 25  115
+RGB_BUF 26  0
+RGB_BUF 27  48
+RGB_BUF 28  63
+RGB_BUF 29  20
+RGB_BUF 30  238
+RGB_BUF 31  0
+RGB_BUF 32  184
+RGB_BUF 33  0
+RGB_BUF 34  34
+RGB_BUF 35  59
+RGB_BUF 36  52
+RGB_BUF 37  15
+RGB_BUF 38  0
+RGB_BUF 39  25
+RGB_BUF 40  76
+RGB_BUF 41  35
+RGB_BUF 42  33
+RGB_BUF 43  79
+RGB_BUF 44  25
+RGB_BUF 45  48
+RGB_BUF 46  14
+RGB_BUF 47  44
+RGB_BUF 48  91
+RGB_BUF 49  187
+RGB_BUF 50  128
+RGB_BUF 51  85
+RGB_BUF 52  107
+RGB_BUF 53  216
+RGB_BUF 54  92
+RGB_BUF 55  0
+RGB_BUF 56  85
+RGB_BUF 57  65
+RGB_BUF 58  205
+RGB_BUF 59  120
+RGB_BUF 60  55
+RGB_BUF 61  137
+RGB_BUF 62  209
+RGB_BUF 63  11
+RGB_BUF 0  190
+RGB_BUF 1  90
+RGB_BUF 2  71
+RGB_BUF 3  129
+RGB_BUF 4  89
+RGB_BUF 5  63
+RGB_BUF 6  63
+RGB_BUF 7  106
+RGB_BUF 8  152
+RGB_BUF 9  98
+RGB_BUF 10  42
+RGB_BUF 11  44
+RGB_BUF 12  79
+RGB_BUF 13  98
+RGB_BUF 14  132
+RGB_BUF 15  57
+RGB_BUF 16  150
+RGB_BUF 17  89
+RGB_BUF 18  98
+RGB_BUF 19  104
+RGB_BUF 20  102
+RGB_BUF 21  123
+RGB_BUF 22  74
+RGB_BUF 23  7
+RGB_BUF 24  62
+RGB_BUF 25  85
+RGB_BUF 26  97
+RGB_BUF 27  125
+RGB_BUF 28  154
+RGB_BUF 29  64
+RGB_BUF 30  0
+RGB_BUF 31  52
+RGB_BUF 32  27
+RGB_BUF 33  68
+RGB_BUF 34  94
+RGB_BUF 35  158
+RGB_BUF 36  130
+RGB_BUF 37  10
+RGB_BUF 38  118
+RGB_BUF 39  59
+RGB_BUF 40  27
+RGB_BUF 41  51
+RGB_BUF 42  133
+RGB_BUF 43  123
+RGB_BUF 44  0
+RGB_BUF 45  93
+RGB_BUF 46  104
+RGB_BUF 47  19
+RGB_BUF 48  23
+RGB_BUF 49  86
+RGB_BUF 50  85
+RGB_BUF 51  3
+RGB_BUF 52  88
+RGB_BUF 53  58
+RGB_BUF 54  32
+RGB_BUF 55  51
+RGB_BUF 56  41
+RGB_BUF 57  52
+RGB_BUF 58  18
+RGB_BUF 59  43
+RGB_BUF 60  91
+RGB_BUF 61  67
+RGB_BUF 62  14
+RGB_BUF 63  15
+RGB_BUF 0  11
+RGB_BUF 1  7
+RGB_BUF 2  25
+RGB_BUF 3  95
+RGB_BUF 4  96
+RGB_BUF 5  41
+RGB_BUF 6  49
+RGB_BUF 7  61
+RGB_BUF 8  63
+RGB_BUF 9  33
+RGB_BUF 10  12
+RGB_BUF 11  73
+RGB_BUF 12  56
+RGB_BUF 13  42
+RGB_BUF 14  41
+RGB_BUF 15  49
+RGB_BUF 16  117
+RGB_BUF 17  105
+RGB_BUF 18  67
+RGB_BUF 19  37
+RGB_BUF 20  28
+RGB_BUF 21  43
+RGB_BUF 22  50
+RGB_BUF 23  28
+RGB_BUF 24  214
+RGB_BUF 25  49
+RGB_BUF 26  46
+RGB_BUF 27  32
+RGB_BUF 28  55
+RGB_BUF 29  52
+RGB_BUF 30  46
+RGB_BUF 31  49
+RGB_BUF 32  96
+RGB_BUF 33  7
+RGB_BUF 34  44
+RGB_BUF 35  51
+RGB_BUF 36  51
+RGB_BUF 37  45
+RGB_BUF 38  51
+RGB_BUF 39  53
+RGB_BUF 40  6
+RGB_BUF 41  140
+RGB_BUF 42  43
+RGB_BUF 43  35
+RGB_BUF 44  32
+RGB_BUF 45  42
+RGB_BUF 46  33
+RGB_BUF 47  54
+RGB_BUF 48  97
+RGB_BUF 49  21
+RGB_BUF 50  22
+RGB_BUF 51  27
+RGB_BUF 52  29
+RGB_BUF 53  49
+RGB_BUF 54  42
+RGB_BUF 55  29
+RGB_BUF 56  32
+RGB_BUF 57  24
+RGB_BUF 58  29
+RGB_BUF 59  20
+RGB_BUF 60  32
+RGB_BUF 61  31
+RGB_BUF 62  39
+RGB_BUF 63  45
+0
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***

@@ -1,0 +1,635 @@
+
+
+================================================================
+== Vivado HLS Report for 'Loop_1_proc'
+================================================================
+* Date:           Fri May  4 19:53:18 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        Izigzagmatrix
+* Solution:       OPT
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.00|      2.62|        0.38|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   53|   53|   53|   53|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   52|   52|        26|          -|          -|     2|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 27
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond_i_i_i_i)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	2  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.31ns
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str67, i32 0, i32 0, [1 x i8]* @p_str68, [1 x i8]* @p_str69, [1 x i8]* @p_str70, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str71, [1 x i8]* @p_str72)"
+ST_1 : Operation 30 [1/1] (1.31ns)   --->   "%imatrix_offset_read = call i30 @_ssdm_op_Read.ap_fifo.i30P(i30* %imatrix_offset)"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 30> <Depth = 2> <FIFO>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%sext_cast_i_i = zext i30 %imatrix_offset_read to i31"
+ST_1 : Operation 33 [1/1] (0.65ns)   --->   "br label %.preheader.i.i.0.i.i"
+
+ <State 2> : 0.78ns
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%k_0_i_i_i_i = phi i6 [ %k_i_i_i, %.preheader.i.i.1.i.i ], [ 0, %entry ]" [../src/decode.c:125]
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
+ST_2 : Operation 36 [1/1] (0.78ns)   --->   "%exitcond_i_i_i_i = icmp eq i6 %k_0_i_i_i_i, -32" [../src/decode.c:125]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %exitcond_i_i_i_i, label %.exit, label %.preheader.i.i.1.i.i" [../src/decode.c:125]
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%newIndex2_i_i = call i2 @_ssdm_op_PartSelect.i2.i6.i32.i32(i6 %k_0_i_i_i_i, i32 4, i32 5)" [../src/decode.c:125]
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%newIndex3_i_i = zext i2 %newIndex2_i_i to i64" [../src/decode.c:125]
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%in1_buf_0_addr = getelementptr [2 x i6]* %in1_buf_0, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_2 : Operation 41 [2/2] (0.67ns)   --->   "%in1_buf_0_load = load i6* %in1_buf_0_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_2 : Operation 42 [1/1] (0.78ns)   --->   "%k_i_i_i = add i6 %k_0_i_i_i_i, 16" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "ret void"
+
+ <State 3> : 1.67ns
+ST_3 : Operation 44 [1/2] (0.67ns)   --->   "%in1_buf_0_load = load i6* %in1_buf_0_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_5_i_cast_i_i = zext i6 %in1_buf_0_load to i31" [../src/decode.c:125]
+ST_3 : Operation 46 [1/1] (0.99ns)   --->   "%sum_i_i = add i31 %tmp_5_i_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%in1_buf_1_addr = getelementptr [2 x i6]* %in1_buf_1, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_3 : Operation 48 [2/2] (0.67ns)   --->   "%in1_buf_1_load = load i6* %in1_buf_1_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 4> : 2.62ns
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%sum_cast_i_i = zext i31 %sum_i_i to i64" [../src/decode.c:125]
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%imatrix_addr = getelementptr i32* %imatrix, i64 %sum_cast_i_i" [../src/decode.c:125]
+ST_4 : Operation 51 [7/7] (2.62ns)   --->   "%imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 52 [1/2] (0.67ns)   --->   "%in1_buf_1_load = load i6* %in1_buf_1_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_5_i_1_cast_i_i = zext i6 %in1_buf_1_load to i31" [../src/decode.c:125]
+ST_4 : Operation 54 [1/1] (0.99ns)   --->   "%sum2_i_i = add i31 %tmp_5_i_1_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%in1_buf_2_addr = getelementptr [2 x i6]* %in1_buf_2, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_4 : Operation 56 [2/2] (0.67ns)   --->   "%in1_buf_2_load = load i6* %in1_buf_2_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 5> : 2.62ns
+ST_5 : Operation 57 [6/7] (2.62ns)   --->   "%imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%sum2_cast_i_i = zext i31 %sum2_i_i to i64" [../src/decode.c:125]
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%imatrix_addr_1 = getelementptr i32* %imatrix, i64 %sum2_cast_i_i" [../src/decode.c:125]
+ST_5 : Operation 60 [7/7] (2.62ns)   --->   "%imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 61 [1/2] (0.67ns)   --->   "%in1_buf_2_load = load i6* %in1_buf_2_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_5_i_2_cast_i_i = zext i6 %in1_buf_2_load to i31" [../src/decode.c:125]
+ST_5 : Operation 63 [1/1] (0.99ns)   --->   "%sum4_i_i = add i31 %tmp_5_i_2_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%in1_buf_3_addr = getelementptr [2 x i6]* %in1_buf_3, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_5 : Operation 65 [2/2] (0.67ns)   --->   "%in1_buf_3_load = load i6* %in1_buf_3_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 6> : 2.62ns
+ST_6 : Operation 66 [5/7] (2.62ns)   --->   "%imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 67 [6/7] (2.62ns)   --->   "%imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%sum4_cast_i_i = zext i31 %sum4_i_i to i64" [../src/decode.c:125]
+ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%imatrix_addr_2 = getelementptr i32* %imatrix, i64 %sum4_cast_i_i" [../src/decode.c:125]
+ST_6 : Operation 70 [7/7] (2.62ns)   --->   "%imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 71 [1/2] (0.67ns)   --->   "%in1_buf_3_load = load i6* %in1_buf_3_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_5_i_3_cast_i_i = zext i6 %in1_buf_3_load to i31" [../src/decode.c:125]
+ST_6 : Operation 73 [1/1] (0.99ns)   --->   "%sum6_i_i = add i31 %tmp_5_i_3_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%in1_buf_4_addr = getelementptr [2 x i6]* %in1_buf_4, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_6 : Operation 75 [2/2] (0.67ns)   --->   "%in1_buf_4_load = load i6* %in1_buf_4_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 7> : 2.62ns
+ST_7 : Operation 76 [4/7] (2.62ns)   --->   "%imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 77 [5/7] (2.62ns)   --->   "%imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 78 [6/7] (2.62ns)   --->   "%imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 79 [1/1] (0.00ns)   --->   "%sum6_cast_i_i = zext i31 %sum6_i_i to i64" [../src/decode.c:125]
+ST_7 : Operation 80 [1/1] (0.00ns)   --->   "%imatrix_addr_3 = getelementptr i32* %imatrix, i64 %sum6_cast_i_i" [../src/decode.c:125]
+ST_7 : Operation 81 [7/7] (2.62ns)   --->   "%imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 82 [1/2] (0.67ns)   --->   "%in1_buf_4_load = load i6* %in1_buf_4_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_7 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_5_i_4_cast_i_i = zext i6 %in1_buf_4_load to i31" [../src/decode.c:125]
+ST_7 : Operation 84 [1/1] (0.99ns)   --->   "%sum8_i_i = add i31 %tmp_5_i_4_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 85 [1/1] (0.00ns)   --->   "%in1_buf_5_addr = getelementptr [2 x i6]* %in1_buf_5, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_7 : Operation 86 [2/2] (0.67ns)   --->   "%in1_buf_5_load = load i6* %in1_buf_5_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 8> : 2.62ns
+ST_8 : Operation 87 [3/7] (2.62ns)   --->   "%imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 88 [4/7] (2.62ns)   --->   "%imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 89 [5/7] (2.62ns)   --->   "%imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 90 [6/7] (2.62ns)   --->   "%imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "%sum8_cast_i_i = zext i31 %sum8_i_i to i64" [../src/decode.c:125]
+ST_8 : Operation 92 [1/1] (0.00ns)   --->   "%imatrix_addr_4 = getelementptr i32* %imatrix, i64 %sum8_cast_i_i" [../src/decode.c:125]
+ST_8 : Operation 93 [7/7] (2.62ns)   --->   "%imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 94 [1/2] (0.67ns)   --->   "%in1_buf_5_load = load i6* %in1_buf_5_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_8 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_5_i_5_cast_i_i = zext i6 %in1_buf_5_load to i31" [../src/decode.c:125]
+ST_8 : Operation 96 [1/1] (0.99ns)   --->   "%sum1_i_i = add i31 %tmp_5_i_5_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 97 [1/1] (0.00ns)   --->   "%in1_buf_6_addr = getelementptr [2 x i6]* %in1_buf_6, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_8 : Operation 98 [2/2] (0.67ns)   --->   "%in1_buf_6_load = load i6* %in1_buf_6_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 9> : 2.62ns
+ST_9 : Operation 99 [2/7] (2.62ns)   --->   "%imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 100 [3/7] (2.62ns)   --->   "%imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 101 [4/7] (2.62ns)   --->   "%imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 102 [5/7] (2.62ns)   --->   "%imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 103 [6/7] (2.62ns)   --->   "%imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 104 [1/1] (0.00ns)   --->   "%sum1_cast_i_i = zext i31 %sum1_i_i to i64" [../src/decode.c:125]
+ST_9 : Operation 105 [1/1] (0.00ns)   --->   "%imatrix_addr_5 = getelementptr i32* %imatrix, i64 %sum1_cast_i_i" [../src/decode.c:125]
+ST_9 : Operation 106 [7/7] (2.62ns)   --->   "%imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 107 [1/2] (0.67ns)   --->   "%in1_buf_6_load = load i6* %in1_buf_6_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_9 : Operation 108 [1/1] (0.00ns)   --->   "%tmp_5_i_6_cast_i_i = zext i6 %in1_buf_6_load to i31" [../src/decode.c:125]
+ST_9 : Operation 109 [1/1] (0.99ns)   --->   "%sum3_i_i = add i31 %tmp_5_i_6_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 110 [1/1] (0.00ns)   --->   "%in1_buf_7_addr = getelementptr [2 x i6]* %in1_buf_7, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_9 : Operation 111 [2/2] (0.67ns)   --->   "%in1_buf_7_load = load i6* %in1_buf_7_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 10> : 2.62ns
+ST_10 : Operation 112 [1/7] (2.62ns)   --->   "%imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 113 [2/7] (2.62ns)   --->   "%imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 114 [3/7] (2.62ns)   --->   "%imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 115 [4/7] (2.62ns)   --->   "%imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 116 [5/7] (2.62ns)   --->   "%imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 117 [6/7] (2.62ns)   --->   "%imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 118 [1/1] (0.00ns)   --->   "%sum3_cast_i_i = zext i31 %sum3_i_i to i64" [../src/decode.c:125]
+ST_10 : Operation 119 [1/1] (0.00ns)   --->   "%imatrix_addr_6 = getelementptr i32* %imatrix, i64 %sum3_cast_i_i" [../src/decode.c:125]
+ST_10 : Operation 120 [7/7] (2.62ns)   --->   "%imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 121 [1/2] (0.67ns)   --->   "%in1_buf_7_load = load i6* %in1_buf_7_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_10 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_5_i_7_cast_i_i = zext i6 %in1_buf_7_load to i31" [../src/decode.c:125]
+ST_10 : Operation 123 [1/1] (0.99ns)   --->   "%sum5_i_i = add i31 %tmp_5_i_7_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 124 [1/1] (0.00ns)   --->   "%in1_buf_8_addr = getelementptr [2 x i6]* %in1_buf_8, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_10 : Operation 125 [2/2] (0.67ns)   --->   "%in1_buf_8_load = load i6* %in1_buf_8_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 11> : 2.62ns
+ST_11 : Operation 126 [1/1] (2.62ns)   --->   "%imatrix_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 127 [1/7] (2.62ns)   --->   "%imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 128 [2/7] (2.62ns)   --->   "%imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 129 [3/7] (2.62ns)   --->   "%imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 130 [4/7] (2.62ns)   --->   "%imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 131 [5/7] (2.62ns)   --->   "%imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 132 [6/7] (2.62ns)   --->   "%imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 133 [1/1] (0.00ns)   --->   "%sum5_cast_i_i = zext i31 %sum5_i_i to i64" [../src/decode.c:125]
+ST_11 : Operation 134 [1/1] (0.00ns)   --->   "%imatrix_addr_7 = getelementptr i32* %imatrix, i64 %sum5_cast_i_i" [../src/decode.c:125]
+ST_11 : Operation 135 [7/7] (2.62ns)   --->   "%imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 136 [1/2] (0.67ns)   --->   "%in1_buf_8_load = load i6* %in1_buf_8_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_11 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_5_i_8_cast_i_i = zext i6 %in1_buf_8_load to i31" [../src/decode.c:125]
+ST_11 : Operation 138 [1/1] (0.99ns)   --->   "%sum7_i_i = add i31 %tmp_5_i_8_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 139 [1/1] (0.00ns)   --->   "%in1_buf_9_addr = getelementptr [2 x i6]* %in1_buf_9, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_11 : Operation 140 [2/2] (0.67ns)   --->   "%in1_buf_9_load = load i6* %in1_buf_9_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 12> : 2.62ns
+ST_12 : Operation 141 [1/1] (0.00ns)   --->   "%out_buf_0_addr = getelementptr [2 x i32]* %out_buf_0, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_12 : Operation 142 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_read, i32* %out_buf_0_addr, align 16" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_12 : Operation 143 [1/1] (2.62ns)   --->   "%imatrix_addr_1_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 144 [1/7] (2.62ns)   --->   "%imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 145 [2/7] (2.62ns)   --->   "%imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 146 [3/7] (2.62ns)   --->   "%imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 147 [4/7] (2.62ns)   --->   "%imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 148 [5/7] (2.62ns)   --->   "%imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 149 [6/7] (2.62ns)   --->   "%imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 150 [1/1] (0.00ns)   --->   "%sum7_cast_i_i = zext i31 %sum7_i_i to i64" [../src/decode.c:125]
+ST_12 : Operation 151 [1/1] (0.00ns)   --->   "%imatrix_addr_8 = getelementptr i32* %imatrix, i64 %sum7_cast_i_i" [../src/decode.c:125]
+ST_12 : Operation 152 [7/7] (2.62ns)   --->   "%imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 153 [1/2] (0.67ns)   --->   "%in1_buf_9_load = load i6* %in1_buf_9_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_12 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_5_i_9_cast_i_i = zext i6 %in1_buf_9_load to i31" [../src/decode.c:125]
+ST_12 : Operation 155 [1/1] (0.99ns)   --->   "%sum9_i_i = add i31 %tmp_5_i_9_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 156 [1/1] (0.00ns)   --->   "%in1_buf_10_addr = getelementptr [2 x i6]* %in1_buf_10, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_12 : Operation 157 [2/2] (0.67ns)   --->   "%in1_buf_10_load = load i6* %in1_buf_10_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 13> : 2.62ns
+ST_13 : Operation 158 [1/1] (0.00ns)   --->   "%out_buf_1_addr = getelementptr [2 x i32]* %out_buf_1, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_13 : Operation 159 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_1_read, i32* %out_buf_1_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_13 : Operation 160 [1/1] (2.62ns)   --->   "%imatrix_addr_2_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_2)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 161 [1/7] (2.62ns)   --->   "%imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 162 [2/7] (2.62ns)   --->   "%imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 163 [3/7] (2.62ns)   --->   "%imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 164 [4/7] (2.62ns)   --->   "%imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 165 [5/7] (2.62ns)   --->   "%imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 166 [6/7] (2.62ns)   --->   "%imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 167 [1/1] (0.00ns)   --->   "%sum9_cast_i_i = zext i31 %sum9_i_i to i64" [../src/decode.c:125]
+ST_13 : Operation 168 [1/1] (0.00ns)   --->   "%imatrix_addr_9 = getelementptr i32* %imatrix, i64 %sum9_cast_i_i" [../src/decode.c:125]
+ST_13 : Operation 169 [7/7] (2.62ns)   --->   "%imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 170 [1/2] (0.67ns)   --->   "%in1_buf_10_load = load i6* %in1_buf_10_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_13 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_5_i_cast_i_i_18 = zext i6 %in1_buf_10_load to i31" [../src/decode.c:125]
+ST_13 : Operation 172 [1/1] (0.99ns)   --->   "%sum10_i_i = add i31 %tmp_5_i_cast_i_i_18, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 173 [1/1] (0.00ns)   --->   "%in1_buf_11_addr = getelementptr [2 x i6]* %in1_buf_11, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_13 : Operation 174 [2/2] (0.67ns)   --->   "%in1_buf_11_load = load i6* %in1_buf_11_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 14> : 2.62ns
+ST_14 : Operation 175 [1/1] (0.00ns)   --->   "%out_buf_2_addr = getelementptr [2 x i32]* %out_buf_2, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_14 : Operation 176 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_2_read, i32* %out_buf_2_addr, align 8" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_14 : Operation 177 [1/1] (2.62ns)   --->   "%imatrix_addr_3_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_3)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 178 [1/7] (2.62ns)   --->   "%imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 179 [2/7] (2.62ns)   --->   "%imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 180 [3/7] (2.62ns)   --->   "%imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 181 [4/7] (2.62ns)   --->   "%imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 182 [5/7] (2.62ns)   --->   "%imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 183 [6/7] (2.62ns)   --->   "%imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 184 [1/1] (0.00ns)   --->   "%sum10_cast_i_i = zext i31 %sum10_i_i to i64" [../src/decode.c:125]
+ST_14 : Operation 185 [1/1] (0.00ns)   --->   "%imatrix_addr_10 = getelementptr i32* %imatrix, i64 %sum10_cast_i_i" [../src/decode.c:125]
+ST_14 : Operation 186 [7/7] (2.62ns)   --->   "%imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 187 [1/2] (0.67ns)   --->   "%in1_buf_11_load = load i6* %in1_buf_11_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_14 : Operation 188 [1/1] (0.00ns)   --->   "%tmp_5_i_10_cast_i_i = zext i6 %in1_buf_11_load to i31" [../src/decode.c:125]
+ST_14 : Operation 189 [1/1] (0.99ns)   --->   "%sum11_i_i = add i31 %tmp_5_i_10_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 190 [1/1] (0.00ns)   --->   "%in1_buf_12_addr = getelementptr [2 x i6]* %in1_buf_12, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_14 : Operation 191 [2/2] (0.67ns)   --->   "%in1_buf_12_load = load i6* %in1_buf_12_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 15> : 2.62ns
+ST_15 : Operation 192 [1/1] (0.00ns)   --->   "%out_buf_3_addr = getelementptr [2 x i32]* %out_buf_3, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_15 : Operation 193 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_3_read, i32* %out_buf_3_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_15 : Operation 194 [1/1] (2.62ns)   --->   "%imatrix_addr_4_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_4)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 195 [1/7] (2.62ns)   --->   "%imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 196 [2/7] (2.62ns)   --->   "%imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 197 [3/7] (2.62ns)   --->   "%imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 198 [4/7] (2.62ns)   --->   "%imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 199 [5/7] (2.62ns)   --->   "%imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 200 [6/7] (2.62ns)   --->   "%imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 201 [1/1] (0.00ns)   --->   "%sum11_cast_i_i = zext i31 %sum11_i_i to i64" [../src/decode.c:125]
+ST_15 : Operation 202 [1/1] (0.00ns)   --->   "%imatrix_addr_11 = getelementptr i32* %imatrix, i64 %sum11_cast_i_i" [../src/decode.c:125]
+ST_15 : Operation 203 [7/7] (2.62ns)   --->   "%imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 204 [1/2] (0.67ns)   --->   "%in1_buf_12_load = load i6* %in1_buf_12_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_15 : Operation 205 [1/1] (0.00ns)   --->   "%tmp_5_i_11_cast_i_i = zext i6 %in1_buf_12_load to i31" [../src/decode.c:125]
+ST_15 : Operation 206 [1/1] (0.99ns)   --->   "%sum12_i_i = add i31 %tmp_5_i_11_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 207 [1/1] (0.00ns)   --->   "%in1_buf_13_addr = getelementptr [2 x i6]* %in1_buf_13, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_15 : Operation 208 [2/2] (0.67ns)   --->   "%in1_buf_13_load = load i6* %in1_buf_13_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 16> : 2.62ns
+ST_16 : Operation 209 [1/1] (0.00ns)   --->   "%out_buf_4_addr = getelementptr [2 x i32]* %out_buf_4, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_16 : Operation 210 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_4_read, i32* %out_buf_4_addr, align 16" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_16 : Operation 211 [1/1] (2.62ns)   --->   "%imatrix_addr_5_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_5)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 212 [1/7] (2.62ns)   --->   "%imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 213 [2/7] (2.62ns)   --->   "%imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 214 [3/7] (2.62ns)   --->   "%imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 215 [4/7] (2.62ns)   --->   "%imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 216 [5/7] (2.62ns)   --->   "%imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 217 [6/7] (2.62ns)   --->   "%imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 218 [1/1] (0.00ns)   --->   "%sum12_cast_i_i = zext i31 %sum12_i_i to i64" [../src/decode.c:125]
+ST_16 : Operation 219 [1/1] (0.00ns)   --->   "%imatrix_addr_12 = getelementptr i32* %imatrix, i64 %sum12_cast_i_i" [../src/decode.c:125]
+ST_16 : Operation 220 [7/7] (2.62ns)   --->   "%imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 221 [1/2] (0.67ns)   --->   "%in1_buf_13_load = load i6* %in1_buf_13_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_16 : Operation 222 [1/1] (0.00ns)   --->   "%tmp_5_i_12_cast_i_i = zext i6 %in1_buf_13_load to i31" [../src/decode.c:125]
+ST_16 : Operation 223 [1/1] (0.99ns)   --->   "%sum13_i_i = add i31 %tmp_5_i_12_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 224 [1/1] (0.00ns)   --->   "%in1_buf_14_addr = getelementptr [2 x i6]* %in1_buf_14, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_16 : Operation 225 [2/2] (0.67ns)   --->   "%in1_buf_14_load = load i6* %in1_buf_14_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 17> : 2.62ns
+ST_17 : Operation 226 [1/1] (0.00ns)   --->   "%out_buf_5_addr = getelementptr [2 x i32]* %out_buf_5, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_17 : Operation 227 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_5_read, i32* %out_buf_5_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_17 : Operation 228 [1/1] (2.62ns)   --->   "%imatrix_addr_6_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_6)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 229 [1/7] (2.62ns)   --->   "%imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 230 [2/7] (2.62ns)   --->   "%imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 231 [3/7] (2.62ns)   --->   "%imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 232 [4/7] (2.62ns)   --->   "%imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 233 [5/7] (2.62ns)   --->   "%imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 234 [6/7] (2.62ns)   --->   "%imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 235 [1/1] (0.00ns)   --->   "%sum13_cast_i_i = zext i31 %sum13_i_i to i64" [../src/decode.c:125]
+ST_17 : Operation 236 [1/1] (0.00ns)   --->   "%imatrix_addr_13 = getelementptr i32* %imatrix, i64 %sum13_cast_i_i" [../src/decode.c:125]
+ST_17 : Operation 237 [7/7] (2.62ns)   --->   "%imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 238 [1/2] (0.67ns)   --->   "%in1_buf_14_load = load i6* %in1_buf_14_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_17 : Operation 239 [1/1] (0.00ns)   --->   "%tmp_5_i_13_cast_i_i = zext i6 %in1_buf_14_load to i31" [../src/decode.c:125]
+ST_17 : Operation 240 [1/1] (0.99ns)   --->   "%sum14_i_i = add i31 %tmp_5_i_13_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 241 [1/1] (0.00ns)   --->   "%in1_buf_15_addr = getelementptr [2 x i6]* %in1_buf_15, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_17 : Operation 242 [2/2] (0.67ns)   --->   "%in1_buf_15_load = load i6* %in1_buf_15_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 18> : 2.62ns
+ST_18 : Operation 243 [1/1] (0.00ns)   --->   "%out_buf_6_addr = getelementptr [2 x i32]* %out_buf_6, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_18 : Operation 244 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_6_read, i32* %out_buf_6_addr, align 8" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_18 : Operation 245 [1/1] (2.62ns)   --->   "%imatrix_addr_7_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_7)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 246 [1/7] (2.62ns)   --->   "%imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 247 [2/7] (2.62ns)   --->   "%imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 248 [3/7] (2.62ns)   --->   "%imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 249 [4/7] (2.62ns)   --->   "%imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 250 [5/7] (2.62ns)   --->   "%imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 251 [6/7] (2.62ns)   --->   "%imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 252 [1/1] (0.00ns)   --->   "%sum14_cast_i_i = zext i31 %sum14_i_i to i64" [../src/decode.c:125]
+ST_18 : Operation 253 [1/1] (0.00ns)   --->   "%imatrix_addr_14 = getelementptr i32* %imatrix, i64 %sum14_cast_i_i" [../src/decode.c:125]
+ST_18 : Operation 254 [7/7] (2.62ns)   --->   "%imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 255 [1/2] (0.67ns)   --->   "%in1_buf_15_load = load i6* %in1_buf_15_addr, align 1" [../src/decode.c:125]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_18 : Operation 256 [1/1] (0.00ns)   --->   "%tmp_5_i_14_cast_i_i = zext i6 %in1_buf_15_load to i31" [../src/decode.c:125]
+ST_18 : Operation 257 [1/1] (0.99ns)   --->   "%sum15_i_i = add i31 %tmp_5_i_14_cast_i_i, %sext_cast_i_i" [../src/decode.c:125]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 19> : 2.62ns
+ST_19 : Operation 258 [1/1] (0.00ns)   --->   "%out_buf_7_addr = getelementptr [2 x i32]* %out_buf_7, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_19 : Operation 259 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_7_read, i32* %out_buf_7_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_19 : Operation 260 [1/1] (2.62ns)   --->   "%imatrix_addr_8_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_8)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 261 [1/7] (2.62ns)   --->   "%imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 262 [2/7] (2.62ns)   --->   "%imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 263 [3/7] (2.62ns)   --->   "%imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 264 [4/7] (2.62ns)   --->   "%imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 265 [5/7] (2.62ns)   --->   "%imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 266 [6/7] (2.62ns)   --->   "%imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 267 [1/1] (0.00ns)   --->   "%sum15_cast_i_i = zext i31 %sum15_i_i to i64" [../src/decode.c:125]
+ST_19 : Operation 268 [1/1] (0.00ns)   --->   "%imatrix_addr_15 = getelementptr i32* %imatrix, i64 %sum15_cast_i_i" [../src/decode.c:125]
+ST_19 : Operation 269 [7/7] (2.62ns)   --->   "%imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 20> : 2.62ns
+ST_20 : Operation 270 [1/1] (0.00ns)   --->   "%out_buf_8_addr = getelementptr [2 x i32]* %out_buf_8, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_20 : Operation 271 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_8_read, i32* %out_buf_8_addr, align 16" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_20 : Operation 272 [1/1] (2.62ns)   --->   "%imatrix_addr_9_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_9)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 273 [1/7] (2.62ns)   --->   "%imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 274 [2/7] (2.62ns)   --->   "%imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 275 [3/7] (2.62ns)   --->   "%imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 276 [4/7] (2.62ns)   --->   "%imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 277 [5/7] (2.62ns)   --->   "%imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 278 [6/7] (2.62ns)   --->   "%imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 21> : 2.62ns
+ST_21 : Operation 279 [1/1] (0.00ns)   --->   "%out_buf_9_addr = getelementptr [2 x i32]* %out_buf_9, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_21 : Operation 280 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_9_read, i32* %out_buf_9_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_21 : Operation 281 [1/1] (2.62ns)   --->   "%imatrix_addr_10_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_10)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 282 [1/7] (2.62ns)   --->   "%imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 283 [2/7] (2.62ns)   --->   "%imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 284 [3/7] (2.62ns)   --->   "%imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 285 [4/7] (2.62ns)   --->   "%imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 286 [5/7] (2.62ns)   --->   "%imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 22> : 2.62ns
+ST_22 : Operation 287 [1/1] (0.00ns)   --->   "%out_buf_10_addr = getelementptr [2 x i32]* %out_buf_10, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_22 : Operation 288 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_10_read, i32* %out_buf_10_addr, align 8" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_22 : Operation 289 [1/1] (2.62ns)   --->   "%imatrix_addr_11_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_11)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 290 [1/7] (2.62ns)   --->   "%imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 291 [2/7] (2.62ns)   --->   "%imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 292 [3/7] (2.62ns)   --->   "%imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 293 [4/7] (2.62ns)   --->   "%imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 23> : 2.62ns
+ST_23 : Operation 294 [1/1] (0.00ns)   --->   "%out_buf_11_addr = getelementptr [2 x i32]* %out_buf_11, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_23 : Operation 295 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_11_read, i32* %out_buf_11_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_23 : Operation 296 [1/1] (2.62ns)   --->   "%imatrix_addr_12_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_12)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 297 [1/7] (2.62ns)   --->   "%imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 298 [2/7] (2.62ns)   --->   "%imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 299 [3/7] (2.62ns)   --->   "%imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 24> : 2.62ns
+ST_24 : Operation 300 [1/1] (0.00ns)   --->   "%out_buf_12_addr = getelementptr [2 x i32]* %out_buf_12, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_24 : Operation 301 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_12_read, i32* %out_buf_12_addr, align 16" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_24 : Operation 302 [1/1] (2.62ns)   --->   "%imatrix_addr_13_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_13)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 303 [1/7] (2.62ns)   --->   "%imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 304 [2/7] (2.62ns)   --->   "%imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 25> : 2.62ns
+ST_25 : Operation 305 [1/1] (0.00ns)   --->   "%out_buf_13_addr = getelementptr [2 x i32]* %out_buf_13, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_25 : Operation 306 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_13_read, i32* %out_buf_13_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_25 : Operation 307 [1/1] (2.62ns)   --->   "%imatrix_addr_14_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_14)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_25 : Operation 308 [1/7] (2.62ns)   --->   "%imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 26> : 2.62ns
+ST_26 : Operation 309 [1/1] (0.00ns)   --->   "%out_buf_14_addr = getelementptr [2 x i32]* %out_buf_14, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_26 : Operation 310 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_14_read, i32* %out_buf_14_addr, align 8" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_26 : Operation 311 [1/1] (2.62ns)   --->   "%imatrix_addr_15_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_15)" [../src/decode.c:127]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 27> : 0.68ns
+ST_27 : Operation 312 [1/1] (0.00ns)   --->   "%out_buf_15_addr = getelementptr [2 x i32]* %out_buf_15, i64 0, i64 %newIndex3_i_i" [../src/decode.c:125]
+ST_27 : Operation 313 [1/1] (0.67ns)   --->   "store i32 %imatrix_addr_15_read, i32* %out_buf_15_addr, align 4" [../src/decode.c:127]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_27 : Operation 314 [1/1] (0.00ns)   --->   "br label %.preheader.i.i.0.i.i" [../src/decode.c:125]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3ns, clock uncertainty: 0.375ns.
+
+ <State 1>: 1.31ns
+The critical path consists of the following:
+	fifo read on port 'imatrix_offset' [37]  (1.31 ns)
+
+ <State 2>: 0.785ns
+The critical path consists of the following:
+	'phi' operation ('k_0_i_i_i_i', ../src/decode.c:125) with incoming values : ('k_i_i_i', ../src/decode.c:125) [42]  (0 ns)
+	'icmp' operation ('exitcond_i_i_i_i', ../src/decode.c:125) [44]  (0.785 ns)
+
+ <State 3>: 1.67ns
+The critical path consists of the following:
+	'load' operation ('in1_buf_0_load', ../src/decode.c:125) on array 'in1_buf_0' [50]  (0.677 ns)
+	'add' operation ('sum_i_i', ../src/decode.c:125) [52]  (0.996 ns)
+
+ <State 4>: 2.62ns
+The critical path consists of the following:
+	'getelementptr' operation ('imatrix_addr', ../src/decode.c:125) [54]  (0 ns)
+	bus request on port 'imatrix' (../src/decode.c:127) [55]  (2.62 ns)
+
+ <State 5>: 2.62ns
+The critical path consists of the following:
+	bus request on port 'imatrix' (../src/decode.c:127) [55]  (2.62 ns)
+
+ <State 6>: 2.62ns
+The critical path consists of the following:
+	bus request on port 'imatrix' (../src/decode.c:127) [55]  (2.62 ns)
+
+ <State 7>: 2.62ns
+The critical path consists of the following:
+	bus request on port 'imatrix' (../src/decode.c:127) [55]  (2.62 ns)
+
+ <State 8>: 2.62ns
+The critical path consists of the following:
+	bus request on port 'imatrix' (../src/decode.c:127) [55]  (2.62 ns)
+
+ <State 9>: 2.62ns
+The critical path consists of the following:
+	bus request on port 'imatrix' (../src/decode.c:127) [55]  (2.62 ns)
+
+ <State 10>: 2.62ns
+The critical path consists of the following:
+	bus request on port 'imatrix' (../src/decode.c:127) [55]  (2.62 ns)
+
+ <State 11>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [56]  (2.62 ns)
+
+ <State 12>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [66]  (2.62 ns)
+
+ <State 13>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [76]  (2.62 ns)
+
+ <State 14>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [86]  (2.62 ns)
+
+ <State 15>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [96]  (2.62 ns)
+
+ <State 16>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [106]  (2.62 ns)
+
+ <State 17>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [116]  (2.62 ns)
+
+ <State 18>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [126]  (2.62 ns)
+
+ <State 19>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [136]  (2.62 ns)
+
+ <State 20>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [146]  (2.62 ns)
+
+ <State 21>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [156]  (2.62 ns)
+
+ <State 22>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [166]  (2.62 ns)
+
+ <State 23>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [176]  (2.62 ns)
+
+ <State 24>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [186]  (2.62 ns)
+
+ <State 25>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [196]  (2.62 ns)
+
+ <State 26>: 2.62ns
+The critical path consists of the following:
+	bus read on port 'imatrix' (../src/decode.c:127) [206]  (2.62 ns)
+
+ <State 27>: 0.677ns
+The critical path consists of the following:
+	'getelementptr' operation ('out_buf_15_addr', ../src/decode.c:125) [207]  (0 ns)
+	'store' operation (../src/decode.c:127) of variable 'imatrix_addr_15_read', ../src/decode.c:127 on array 'out_buf_15' [208]  (0.677 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

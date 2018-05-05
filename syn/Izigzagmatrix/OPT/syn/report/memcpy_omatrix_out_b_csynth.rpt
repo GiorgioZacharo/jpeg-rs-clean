@@ -1,0 +1,263 @@
+
+
+================================================================
+== Vivado HLS Report for 'memcpy_omatrix_out_b'
+================================================================
+* Date:           Fri May  4 19:53:20 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        Izigzagmatrix
+* Solution:       OPT
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.00|      2.62|        0.38|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   40|   40|   40|   40|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                              |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |           Loop Name          | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- memcpy.omatrix.out_buf.gep  |   33|   33|         3|          1|          1|    32|    yes   |
+        +------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|     109|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       0|      65|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|     143|    -|
+|Register         |        -|      -|      89|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|      89|     317|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |     1824|   2520|  548160|  274080|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------------+---------+-------+---+----+
+    |         Instance         |        Module        | BRAM_18K| DSP48E| FF| LUT|
+    +--------------------------+----------------------+---------+-------+---+----+
+    |IZigzagMatrix_f2rcud_U58  |IZigzagMatrix_f2rcud  |        0|      0|  0|  65|
+    +--------------------------+----------------------+---------+-------+---+----+
+    |Total                     |                      |        0|      0|  0|  65|
+    +--------------------------+----------------------+---------+-------+---+----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |indvar_next_i_i_i_i_s_fu_405_p2  |     +    |      0|  0|  15|           6|           1|
+    |sum_i_i_fu_383_p2                |     +    |      0|  0|  38|          31|          31|
+    |ap_block_pp0_stage0_11001        |    and   |      0|  0|   9|           1|           1|
+    |ap_block_state5_io               |    and   |      0|  0|   9|           1|           1|
+    |exitcond_i_i_i_i_i_fu_399_p2     |   icmp   |      0|  0|  11|           6|           7|
+    |ap_block_state1                  |    or    |      0|  0|   9|           1|           1|
+    |ap_enable_pp0                    |    xor   |      0|  0|   9|           1|           2|
+    |ap_enable_reg_pp0_iter1          |    xor   |      0|  0|   9|           2|           1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0| 109|          49|          45|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                             |  44|          9|    1|          9|
+    |ap_done                               |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1               |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2               |   9|          2|    1|          2|
+    |ap_sig_ioackin_m_axi_omatrix_AWREADY  |   9|          2|    1|          2|
+    |ap_sig_ioackin_m_axi_omatrix_WREADY   |   9|          2|    1|          2|
+    |i_0_i_i_c_blk_n                       |   9|          2|    1|          2|
+    |indvar_i_i_i_i_i_reg_356              |   9|          2|    6|         12|
+    |omatrix_blk_n_AW                      |   9|          2|    1|          2|
+    |omatrix_blk_n_B                       |   9|          2|    1|          2|
+    |omatrix_blk_n_W                       |   9|          2|    1|          2|
+    |omatrix_offset_blk_n                  |   9|          2|    1|          2|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 143|         31|   17|         41|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------+----+----+-----+-----------+
+    |                     Name                    | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                    |   8|   0|    8|          0|
+    |ap_done_reg                                  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0                      |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                      |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                      |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_omatrix_AWREADY         |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_omatrix_WREADY          |   1|   0|    1|          0|
+    |ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493  |   1|   0|    1|          0|
+    |exitcond_i_i_i_i_i_reg_493                   |   1|   0|    1|          0|
+    |indvar_i_i_i_i_i_reg_356                     |   6|   0|    6|          0|
+    |sum_i_i_reg_482                              |  31|   0|   31|          0|
+    |tmp_i_i_reg_587                              |  32|   0|   32|          0|
+    |tmp_reg_502                                  |   4|   0|    4|          0|
+    +---------------------------------------------+----+----+-----+-----------+
+    |Total                                        |  89|   0|   89|          0|
+    +---------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+----------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++------------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs | memcpy.omatrix.out_b | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs | memcpy.omatrix.out_b | return value |
+|ap_start                |  in |    1| ap_ctrl_hs | memcpy.omatrix.out_b | return value |
+|ap_done                 | out |    1| ap_ctrl_hs | memcpy.omatrix.out_b | return value |
+|ap_continue             |  in |    1| ap_ctrl_hs | memcpy.omatrix.out_b | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs | memcpy.omatrix.out_b | return value |
+|ap_ready                | out |    1| ap_ctrl_hs | memcpy.omatrix.out_b | return value |
+|m_axi_omatrix_AWVALID   | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWREADY   |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWADDR    | out |   32|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWID      | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWLEN     | out |   32|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWSIZE    | out |    3|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWBURST   | out |    2|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWLOCK    | out |    2|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWCACHE   | out |    4|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWPROT    | out |    3|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWQOS     | out |    4|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWREGION  | out |    4|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_AWUSER    | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_WVALID    | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_WREADY    |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_WDATA     | out |   32|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_WSTRB     | out |    4|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_WLAST     | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_WID       | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_WUSER     | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARVALID   | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARREADY   |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARADDR    | out |   32|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARID      | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARLEN     | out |   32|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARSIZE    | out |    3|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARBURST   | out |    2|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARLOCK    | out |    2|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARCACHE   | out |    4|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARPROT    | out |    3|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARQOS     | out |    4|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARREGION  | out |    4|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_ARUSER    | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_RVALID    |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_RREADY    | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_RDATA     |  in |   32|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_RLAST     |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_RID       |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_RUSER     |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_RRESP     |  in |    2|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_BVALID    |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_BREADY    | out |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_BRESP     |  in |    2|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_BID       |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|m_axi_omatrix_BUSER     |  in |    1|    m_axi   |        omatrix       |    pointer   |
+|omatrix_offset_dout     |  in |   30|   ap_fifo  |    omatrix_offset    |    pointer   |
+|omatrix_offset_empty_n  |  in |    1|   ap_fifo  |    omatrix_offset    |    pointer   |
+|omatrix_offset_read     | out |    1|   ap_fifo  |    omatrix_offset    |    pointer   |
+|i_0_i_i_c_dout          |  in |    1|   ap_fifo  |       i_0_i_i_c      |    pointer   |
+|i_0_i_i_c_empty_n       |  in |    1|   ap_fifo  |       i_0_i_i_c      |    pointer   |
+|i_0_i_i_c_read          | out |    1|   ap_fifo  |       i_0_i_i_c      |    pointer   |
+|out_buf_0_address0      | out |    1|  ap_memory |       out_buf_0      |     array    |
+|out_buf_0_ce0           | out |    1|  ap_memory |       out_buf_0      |     array    |
+|out_buf_0_q0            |  in |   32|  ap_memory |       out_buf_0      |     array    |
+|out_buf_1_address0      | out |    1|  ap_memory |       out_buf_1      |     array    |
+|out_buf_1_ce0           | out |    1|  ap_memory |       out_buf_1      |     array    |
+|out_buf_1_q0            |  in |   32|  ap_memory |       out_buf_1      |     array    |
+|out_buf_2_address0      | out |    1|  ap_memory |       out_buf_2      |     array    |
+|out_buf_2_ce0           | out |    1|  ap_memory |       out_buf_2      |     array    |
+|out_buf_2_q0            |  in |   32|  ap_memory |       out_buf_2      |     array    |
+|out_buf_3_address0      | out |    1|  ap_memory |       out_buf_3      |     array    |
+|out_buf_3_ce0           | out |    1|  ap_memory |       out_buf_3      |     array    |
+|out_buf_3_q0            |  in |   32|  ap_memory |       out_buf_3      |     array    |
+|out_buf_4_address0      | out |    1|  ap_memory |       out_buf_4      |     array    |
+|out_buf_4_ce0           | out |    1|  ap_memory |       out_buf_4      |     array    |
+|out_buf_4_q0            |  in |   32|  ap_memory |       out_buf_4      |     array    |
+|out_buf_5_address0      | out |    1|  ap_memory |       out_buf_5      |     array    |
+|out_buf_5_ce0           | out |    1|  ap_memory |       out_buf_5      |     array    |
+|out_buf_5_q0            |  in |   32|  ap_memory |       out_buf_5      |     array    |
+|out_buf_6_address0      | out |    1|  ap_memory |       out_buf_6      |     array    |
+|out_buf_6_ce0           | out |    1|  ap_memory |       out_buf_6      |     array    |
+|out_buf_6_q0            |  in |   32|  ap_memory |       out_buf_6      |     array    |
+|out_buf_7_address0      | out |    1|  ap_memory |       out_buf_7      |     array    |
+|out_buf_7_ce0           | out |    1|  ap_memory |       out_buf_7      |     array    |
+|out_buf_7_q0            |  in |   32|  ap_memory |       out_buf_7      |     array    |
+|out_buf_8_address0      | out |    1|  ap_memory |       out_buf_8      |     array    |
+|out_buf_8_ce0           | out |    1|  ap_memory |       out_buf_8      |     array    |
+|out_buf_8_q0            |  in |   32|  ap_memory |       out_buf_8      |     array    |
+|out_buf_9_address0      | out |    1|  ap_memory |       out_buf_9      |     array    |
+|out_buf_9_ce0           | out |    1|  ap_memory |       out_buf_9      |     array    |
+|out_buf_9_q0            |  in |   32|  ap_memory |       out_buf_9      |     array    |
+|out_buf_10_address0     | out |    1|  ap_memory |      out_buf_10      |     array    |
+|out_buf_10_ce0          | out |    1|  ap_memory |      out_buf_10      |     array    |
+|out_buf_10_q0           |  in |   32|  ap_memory |      out_buf_10      |     array    |
+|out_buf_11_address0     | out |    1|  ap_memory |      out_buf_11      |     array    |
+|out_buf_11_ce0          | out |    1|  ap_memory |      out_buf_11      |     array    |
+|out_buf_11_q0           |  in |   32|  ap_memory |      out_buf_11      |     array    |
+|out_buf_12_address0     | out |    1|  ap_memory |      out_buf_12      |     array    |
+|out_buf_12_ce0          | out |    1|  ap_memory |      out_buf_12      |     array    |
+|out_buf_12_q0           |  in |   32|  ap_memory |      out_buf_12      |     array    |
+|out_buf_13_address0     | out |    1|  ap_memory |      out_buf_13      |     array    |
+|out_buf_13_ce0          | out |    1|  ap_memory |      out_buf_13      |     array    |
+|out_buf_13_q0           |  in |   32|  ap_memory |      out_buf_13      |     array    |
+|out_buf_14_address0     | out |    1|  ap_memory |      out_buf_14      |     array    |
+|out_buf_14_ce0          | out |    1|  ap_memory |      out_buf_14      |     array    |
+|out_buf_14_q0           |  in |   32|  ap_memory |      out_buf_14      |     array    |
+|out_buf_15_address0     | out |    1|  ap_memory |      out_buf_15      |     array    |
+|out_buf_15_ce0          | out |    1|  ap_memory |      out_buf_15      |     array    |
+|out_buf_15_q0           |  in |   32|  ap_memory |      out_buf_15      |     array    |
++------------------------+-----+-----+------------+----------------------+--------------+
+

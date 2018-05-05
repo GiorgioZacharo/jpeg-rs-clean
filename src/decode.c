@@ -56,16 +56,11 @@ algorithms.
 #include <stdio.h>
 #include <string.h>
 
-// Giorgio counters
-//int yuv_counter = 0;
-//int zig_counter = 0;
-
 // #define STANDARD_MODE
 #define CHUNK_SIZE      32
 #define N_CHUNKS        DCTSIZE2/CHUNK_SIZE    // =2
 
 #define CHUNK_SIZE2      8
-//#define N_CHUNKS2        2  // =2
 
 void ChenIDct (int *x, int *y);
 
@@ -106,10 +101,13 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCT
   int in1_buf[CHUNK_SIZE];
   int out_buf[CHUNK_SIZE];
 
+#pragma HLS ARRAY_PARTITION variable=in1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=out_buf cyclic factor=16 dim=1
 
   for (int i = 0; i < N_CHUNKS; i++){
   #pragma HLS DATAFLOW
 
+//#ifdef STANDARD_MODE
     // Load data
     for (int j=0; j < CHUNK_SIZE; j++){
     #pragma HLS UNROLL skip_exit_check factor=16
@@ -117,17 +115,29 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCT
       in1_buf[j]= zigzag_index[offset];
     }
 
+//#else
+//	/* BURST_MODE */
+//	unsigned offset = i*CHUNK_SIZE;
+//	memcpy(in1_buf, zigzag_index + offset, CHUNK_SIZE  * sizeof(int));
+//#endif
+
     // Computation
     for (int k=0; k < CHUNK_SIZE; k++)
     #pragma HLS UNROLL skip_exit_check factor=16
         out_buf[k]= imatrix[in1_buf[k]];
 
     // Store Data
+#ifdef STANDARD_MODE
     for (int l=0; l < CHUNK_SIZE; l++) {
     #pragma HLS UNROLL skip_exit_check factor=16
       unsigned offset = i*CHUNK_SIZE+l;
       omatrix[i*CHUNK_SIZE+l]= out_buf[l];
     }
+
+#else /* BURST_MODE */
+       unsigned offset = i*CHUNK_SIZE ;
+        memcpy(omatrix + offset, out_buf, CHUNK_SIZE  * sizeof(int) );
+#endif
   
   }
 
@@ -194,6 +204,8 @@ BoundIDctMatrix (int *matrix, int Bound)
 void
 WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
 	       int voffs, int hoffs)
+//WriteOneBlock (int store[DCTSIZE2], unsigned char out_buf[5310], int width, int height,
+//int voffs, int hoffs)
 {
   int i, e;
 
@@ -232,7 +244,7 @@ WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
 void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[DCTSIZE2], unsigned char out_buf[5310], int width, int height,
         int voffs, int hoffs){
 
-#pragma HLS INTERFACE m_axi depth=8 port=store offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store offset=slave bundle=BUS_SRC
 #pragma HLS INTERFACE m_axi depth=5310 port=out_buf offset=slave bundle=BUS_DST
 #pragma HLS INTERFACE s_axilite port=height bundle=CTRL_BUS
 #pragma HLS INTERFACE s_axilite port=width bundle=CTRL_BUS
@@ -241,47 +253,41 @@ void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[DCTSIZE2], unsigned char out
 #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 
     int i=0;
-    int l=0;
+    int l=0; // counter of computation iterations
 
-    int *inp1_buf; // CHUNK SIZE=32
-    int out1_buf[CHUNK_SIZE2];
+   unsigned char inp1_buf[64];
+   unsigned char out1_buf[5310];
+   int index[64];
 
-//#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
-//#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
 
-//    for (i = 0; i < N_CHUNKS2; i++) {
+
+
 
        // Load data
-//      #ifdef STANDARD_MODE
-//          for (int j=0; j < CHUNK_SIZE2; j++){
-//            #pragma HLS UNROLL skip_exit_check factor=4
-//            unsigned offset = i*CHUNK_SIZE2+j;
-//            inp1_buf[j] = store[offset];
-//          }
-
-//      #else
-//          /* BURST_MODE */
-//          unsigned offset = i*CHUNK_SIZE2;
-//          memcpy(inp1_buf, store + offset, CHUNK_SIZE2 * sizeof(int));
-//      #endif
+          for (int j=0; j < 64; j++){
+            #pragma HLS UNROLL skip_exit_check factor=4
+            unsigned offset = i*CHUNK_SIZE+j;
+            inp1_buf[j] =(unsigned char) (*(store++));
+          }
 
 
 	  // Computation
-
 		/* Find vertical buffer offs. */
-		for (int k = voffs; k < voffs + CHUNK_SIZE2; k++) {
-		#pragma HLS UNROLL skip_exit_check factor=2
+		for (int k = voffs; k < voffs + DCTSIZE; k++) {
+		#pragma HLS UNROLL skip_exit_check factor=4
 
 			if (k < height) {
 				int diff;
 				diff = width * k;
 
-				for (int e = hoffs; e < hoffs + CHUNK_SIZE2; e++) {
-				#pragma HLS UNROLL skip_exit_check factor=2
+				for (int e = hoffs; e < hoffs + DCTSIZE; e++) {
+				#pragma HLS UNROLL skip_exit_check factor=4
 					if (e < width){
-//						out_buf[diff + e] =  inp1_buf[l];
-//						l++;
-						out_buf[diff + e] = (unsigned char) (*(inp1_buf++));
+						out1_buf[diff + e] = inp1_buf[l]; 	// Compute
+						index[l]=diff+e; 					// save index
+						l++;
 						}
 					else
 						break;
@@ -291,20 +297,13 @@ void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[DCTSIZE2], unsigned char out
 				break;
 		}
 
-      // Store Data
-//         #ifdef STANDARD_MODE
-//             for (int l=0; l < CHUNK_SIZE2; l++) {
-//               #pragma HLS UNROLL skip_exit_check factor=4
-//               unsigned offset = i*CHUNK_SIZE2+l;
-//               out_buf[offset] = out1_buf[l];
-//             }
-//         #else /* BURST_MODE */
-//             offset = i*CHUNK_SIZE2;
-//             memcpy(out_buf + offset, out1_buf, CHUNK_SIZE2 * sizeof(int));
-//         #endif
+		// Store Data
+		for (int m=0; m < l; m++) {
+		#pragma HLS UNROLL skip_exit_check factor=4
+		out_buf[index[m]] = out1_buf[index[m]];
+		}
 
 
-   // }
 }
 
 /*

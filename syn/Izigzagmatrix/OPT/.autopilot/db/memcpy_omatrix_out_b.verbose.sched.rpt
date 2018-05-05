@@ -1,0 +1,283 @@
+
+
+================================================================
+== Vivado HLS Report for 'memcpy_omatrix_out_b'
+================================================================
+* Date:           Fri May  4 19:53:19 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        Izigzagmatrix
+* Solution:       OPT
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   3.00|      2.62|        0.38|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   40|   40|   40|   40|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                              |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |           Loop Name          | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- memcpy.omatrix.out_buf.gep  |   33|   33|         3|          1|          1|    32|    yes   |
+        +------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 3 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	6  / (exitcond_i_i_i_i_i)
+	4  / (!exitcond_i_i_i_i_i)
+4 --> 
+	5  / true
+5 --> 
+	3  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+
+* FSM state operations: 
+
+ <State 1> : 2.31ns
+ST_1 : Operation 11 [1/1] (1.31ns)   --->   "%omatrix_offset_read = call i30 @_ssdm_op_Read.ap_fifo.i30P(i30* %omatrix_offset)"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_1 : Operation 12 [1/1] (1.31ns)   --->   "%i_0_i_i_c_read = call i1 @_ssdm_op_Read.ap_fifo.i1P(i1* %i_0_i_i_c)"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%offset_i_i_i = call i6 @_ssdm_op_BitConcatenate.i6.i1.i5(i1 %i_0_i_i_c_read, i5 0)" [../src/decode.c:114]
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_i_i_cast_i_i = zext i6 %offset_i_i_i to i31" [../src/decode.c:114]
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%sext_cast_i_i = zext i30 %omatrix_offset_read to i31"
+ST_1 : Operation 16 [1/1] (0.99ns)   --->   "%sum_i_i = add i31 %tmp_i_i_cast_i_i, %sext_cast_i_i" [../src/decode.c:114]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 2> : 2.62ns
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str36, i32 0, i32 0, [1 x i8]* @p_str37, [1 x i8]* @p_str38, [1 x i8]* @p_str39, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str40, [1 x i8]* @p_str41)"
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str74, i32 0, i32 0, [1 x i8]* @p_str75, [1 x i8]* @p_str76, [1 x i8]* @p_str77, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str78, [1 x i8]* @p_str79)"
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str36, i32 0, i32 0, [1 x i8]* @p_str37, [1 x i8]* @p_str38, [1 x i8]* @p_str39, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str40, [1 x i8]* @p_str41)"
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%sum_cast_i_i = zext i31 %sum_i_i to i64" [../src/decode.c:114]
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%omatrix_addr = getelementptr i32* %omatrix, i64 %sum_cast_i_i" [../src/decode.c:114]
+ST_2 : Operation 24 [1/1] (2.62ns)   --->   "%omatrix_addr_i_i_wr_s = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %omatrix_addr, i32 32)" [../src/decode.c:139]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 25 [1/1] (0.65ns)   --->   "br label %burst.wr.header.i.i.i.i.i"
+
+ <State 3> : 1.21ns
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%indvar_i_i_i_i_i = phi i6 [ 0, %entry ], [ %indvar_next_i_i_i_i_s, %burst.wr.body.i.i.i.i.i ]"
+ST_3 : Operation 27 [1/1] (0.78ns)   --->   "%exitcond_i_i_i_i_i = icmp eq i6 %indvar_i_i_i_i_i, -32"   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.78ns)   --->   "%indvar_next_i_i_i_i_s = add i6 %indvar_i_i_i_i_i, 1"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "br i1 %exitcond_i_i_i_i_i, label %.exit, label %burst.wr.body.i.i.i.i.i"
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%newIndex4_i_i_i_i = call i2 @_ssdm_op_PartSelect.i2.i6.i32.i32(i6 %indvar_i_i_i_i_i, i32 4, i32 5)"
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%newIndex5_i_i_i_i = zext i2 %newIndex4_i_i_i_i to i64"
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%tmp = trunc i6 %indvar_i_i_i_i_i to i4"
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%out_buf_0_addr = getelementptr [2 x i32]* %out_buf_0, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 34 [2/2] (0.67ns)   --->   "%out_buf_0_load = load i32* %out_buf_0_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%out_buf_1_addr = getelementptr [2 x i32]* %out_buf_1, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 36 [2/2] (0.67ns)   --->   "%out_buf_1_load = load i32* %out_buf_1_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%out_buf_2_addr = getelementptr [2 x i32]* %out_buf_2, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 38 [2/2] (0.67ns)   --->   "%out_buf_2_load = load i32* %out_buf_2_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%out_buf_3_addr = getelementptr [2 x i32]* %out_buf_3, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 40 [2/2] (0.67ns)   --->   "%out_buf_3_load = load i32* %out_buf_3_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%out_buf_4_addr = getelementptr [2 x i32]* %out_buf_4, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 42 [2/2] (0.67ns)   --->   "%out_buf_4_load = load i32* %out_buf_4_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%out_buf_5_addr = getelementptr [2 x i32]* %out_buf_5, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 44 [2/2] (0.67ns)   --->   "%out_buf_5_load = load i32* %out_buf_5_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%out_buf_6_addr = getelementptr [2 x i32]* %out_buf_6, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 46 [2/2] (0.67ns)   --->   "%out_buf_6_load = load i32* %out_buf_6_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%out_buf_7_addr = getelementptr [2 x i32]* %out_buf_7, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 48 [2/2] (0.67ns)   --->   "%out_buf_7_load = load i32* %out_buf_7_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%out_buf_8_addr = getelementptr [2 x i32]* %out_buf_8, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 50 [2/2] (0.67ns)   --->   "%out_buf_8_load = load i32* %out_buf_8_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%out_buf_9_addr = getelementptr [2 x i32]* %out_buf_9, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 52 [2/2] (0.67ns)   --->   "%out_buf_9_load = load i32* %out_buf_9_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%out_buf_10_addr = getelementptr [2 x i32]* %out_buf_10, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 54 [2/2] (0.67ns)   --->   "%out_buf_10_load = load i32* %out_buf_10_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%out_buf_11_addr = getelementptr [2 x i32]* %out_buf_11, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 56 [2/2] (0.67ns)   --->   "%out_buf_11_load = load i32* %out_buf_11_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%out_buf_12_addr = getelementptr [2 x i32]* %out_buf_12, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 58 [2/2] (0.67ns)   --->   "%out_buf_12_load = load i32* %out_buf_12_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%out_buf_13_addr = getelementptr [2 x i32]* %out_buf_13, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 60 [2/2] (0.67ns)   --->   "%out_buf_13_load = load i32* %out_buf_13_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%out_buf_14_addr = getelementptr [2 x i32]* %out_buf_14, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 62 [2/2] (0.67ns)   --->   "%out_buf_14_load = load i32* %out_buf_14_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%out_buf_15_addr = getelementptr [2 x i32]* %out_buf_15, i64 0, i64 %newIndex5_i_i_i_i"
+ST_3 : Operation 64 [2/2] (0.67ns)   --->   "%out_buf_15_load = load i32* %out_buf_15_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+ <State 4> : 1.17ns
+ST_4 : Operation 65 [1/2] (0.67ns)   --->   "%out_buf_0_load = load i32* %out_buf_0_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 66 [1/2] (0.67ns)   --->   "%out_buf_1_load = load i32* %out_buf_1_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 67 [1/2] (0.67ns)   --->   "%out_buf_2_load = load i32* %out_buf_2_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 68 [1/2] (0.67ns)   --->   "%out_buf_3_load = load i32* %out_buf_3_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 69 [1/2] (0.67ns)   --->   "%out_buf_4_load = load i32* %out_buf_4_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 70 [1/2] (0.67ns)   --->   "%out_buf_5_load = load i32* %out_buf_5_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 71 [1/2] (0.67ns)   --->   "%out_buf_6_load = load i32* %out_buf_6_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 72 [1/2] (0.67ns)   --->   "%out_buf_7_load = load i32* %out_buf_7_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 73 [1/2] (0.67ns)   --->   "%out_buf_8_load = load i32* %out_buf_8_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 74 [1/2] (0.67ns)   --->   "%out_buf_9_load = load i32* %out_buf_9_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 75 [1/2] (0.67ns)   --->   "%out_buf_10_load = load i32* %out_buf_10_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 76 [1/2] (0.67ns)   --->   "%out_buf_11_load = load i32* %out_buf_11_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 77 [1/2] (0.67ns)   --->   "%out_buf_12_load = load i32* %out_buf_12_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 78 [1/2] (0.67ns)   --->   "%out_buf_13_load = load i32* %out_buf_13_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 79 [1/2] (0.67ns)   --->   "%out_buf_14_load = load i32* %out_buf_14_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 80 [1/2] (0.67ns)   --->   "%out_buf_15_load = load i32* %out_buf_15_addr, align 4"   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_4 : Operation 81 [1/1] (0.48ns)   --->   "%tmp_i_i = call i32 @_ssdm_op_Mux.ap_auto.16i32.i4(i32 %out_buf_0_load, i32 %out_buf_1_load, i32 %out_buf_2_load, i32 %out_buf_3_load, i32 %out_buf_4_load, i32 %out_buf_5_load, i32 %out_buf_6_load, i32 %out_buf_7_load, i32 %out_buf_8_load, i32 %out_buf_9_load, i32 %out_buf_10_load, i32 %out_buf_11_load, i32 %out_buf_12_load, i32 %out_buf_13_load, i32 %out_buf_14_load, i32 %out_buf_15_load, i4 %tmp)"   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+
+ <State 5> : 2.62ns
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"
+ST_5 : Operation 83 [1/1] (0.00ns)   --->   "%burstwrite_rbegin_i_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind"
+ST_5 : Operation 84 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str11) nounwind"
+ST_5 : Operation 85 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopName([27 x i8]* @memcpy_OC_omatrix_OC) nounwind"
+ST_5 : Operation 86 [1/1] (2.62ns)   --->   "call void @_ssdm_op_Write.m_axi.i32P(i32* %omatrix_addr, i32 %tmp_i_i, i4 -1)" [../src/decode.c:139]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 87 [1/1] (0.00ns)   --->   "%burstwrite_rend_i_i_s = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin_i_s) nounwind"
+ST_5 : Operation 88 [1/1] (0.00ns)   --->   "br label %burst.wr.header.i.i.i.i.i"
+
+ <State 6> : 2.62ns
+ST_6 : Operation 89 [5/5] (2.62ns)   --->   "%omatrix_addr_i_i_wr_1 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %omatrix_addr)" [../src/decode.c:139]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 7> : 2.62ns
+ST_7 : Operation 90 [4/5] (2.62ns)   --->   "%omatrix_addr_i_i_wr_1 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %omatrix_addr)" [../src/decode.c:139]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 8> : 2.62ns
+ST_8 : Operation 91 [3/5] (2.62ns)   --->   "%omatrix_addr_i_i_wr_1 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %omatrix_addr)" [../src/decode.c:139]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 9> : 2.62ns
+ST_9 : Operation 92 [2/5] (2.62ns)   --->   "%omatrix_addr_i_i_wr_1 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %omatrix_addr)" [../src/decode.c:139]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 10> : 2.62ns
+ST_10 : Operation 93 [1/5] (2.62ns)   --->   "%omatrix_addr_i_i_wr_1 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %omatrix_addr)" [../src/decode.c:139]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 94 [1/1] (0.00ns)   --->   "ret void"
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3ns, clock uncertainty: 0.375ns.
+
+ <State 1>: 2.31ns
+The critical path consists of the following:
+	fifo read on port 'omatrix_offset' [23]  (1.31 ns)
+	'add' operation ('sum_i_i', ../src/decode.c:114) [30]  (0.996 ns)
+
+ <State 2>: 2.62ns
+The critical path consists of the following:
+	'getelementptr' operation ('omatrix_addr', ../src/decode.c:114) [32]  (0 ns)
+	bus request on port 'omatrix' (../src/decode.c:139) [33]  (2.62 ns)
+
+ <State 3>: 1.21ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond_i_i_i_i_i') [37]  (0.785 ns)
+	blocking operation 0.422 ns on control path)
+
+ <State 4>: 1.17ns
+The critical path consists of the following:
+	'load' operation ('out_buf_0_load') on array 'out_buf_0' [49]  (0.677 ns)
+	'mux' operation ('tmp_i_i') [80]  (0.489 ns)
+
+ <State 5>: 2.62ns
+The critical path consists of the following:
+	bus write on port 'omatrix' (../src/decode.c:139) [81]  (2.62 ns)
+
+ <State 6>: 2.62ns
+The critical path consists of the following:
+	bus access on port 'omatrix' (../src/decode.c:139) [85]  (2.62 ns)
+
+ <State 7>: 2.62ns
+The critical path consists of the following:
+	bus access on port 'omatrix' (../src/decode.c:139) [85]  (2.62 ns)
+
+ <State 8>: 2.62ns
+The critical path consists of the following:
+	bus access on port 'omatrix' (../src/decode.c:139) [85]  (2.62 ns)
+
+ <State 9>: 2.62ns
+The critical path consists of the following:
+	bus access on port 'omatrix' (../src/decode.c:139) [85]  (2.62 ns)
+
+ <State 10>: 2.62ns
+The critical path consists of the following:
+	bus access on port 'omatrix' (../src/decode.c:139) [85]  (2.62 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

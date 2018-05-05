@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="WriteOneBlock_f2r_entry_s2e_forEnd13" xd:componentRef="WriteOneBlock_f2r_entry_s2e_forEnd13" xd:initiationInterval="x" xd:clockPeriod="3.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="store[]" xd:originalName="store" xd:direction="inout" xd:interfaceRef="m_axi_BUS_SRC" xd:busTypeRef="aximm" xd:arraySize="64" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="out_buf[]" xd:originalName="out_buf" xd:direction="inout" xd:interfaceRef="m_axi_BUS_DST" xd:busTypeRef="aximm" xd:arraySize="5310" xd:dataWidth="8" xd:bufferDirection="out"/>
+  <xd:arg xd:name="store" xd:originalName="store" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_SRC" xd:dataWidth="64" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="out_buf" xd:originalName="out_buf" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_DST" xd:dataWidth="64" xd:offset="0x1C" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="width" xd:originalName="width" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="height" xd:originalName="height" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="voffs" xd:originalName="voffs" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x20" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="hoffs" xd:originalName="hoffs" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x28" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="8336" xd:FF="4786" xd:BRAM="10" xd:DSP="16"/>
+</xd:acceleratorMap>

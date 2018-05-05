@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="chenidct.c" path="/home/giorgio/workspace/jpeg-rs-clean/src/chenidct.c"/>
+    <originFiles name="chenidct.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/chenidct.h"/>
+    <originFiles name="decode.c" path="/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"/>
+    <originFiles name="decode.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/decode.h"/>
+    <originFiles name="global.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/global.h"/>
+    <originFiles name="huffman.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/huffman.h"/>
+    <originFiles name="init.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/init.h"/>
+    <originFiles name="jfif_read.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/jfif_read.h"/>
+    <originFiles name="jpeg2bmp.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/jpeg2bmp.h"/>
+    <originFiles name="marker.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/marker.h"/>
+  </source>
+  <testbench>
+    <originFiles name="chenidct.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/chenidct.h"/>
+    <originFiles name="decode.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/decode.h"/>
+    <originFiles name="global.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/global.h"/>
+    <originFiles name="huffman.c" path="/home/giorgio/workspace/jpeg-rs-clean/tb/huffman.c"/>
+    <originFiles name="huffman.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/huffman.h"/>
+    <originFiles name="init.c" path="/home/giorgio/workspace/jpeg-rs-clean/tb/init.c"/>
+    <originFiles name="init.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/init.h"/>
+    <originFiles name="jfif_read.c" path="/home/giorgio/workspace/jpeg-rs-clean/tb/jfif_read.c"/>
+    <originFiles name="jfif_read.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/jfif_read.h"/>
+    <originFiles name="jpeg2bmp.c" path="/home/giorgio/workspace/jpeg-rs-clean/tb/jpeg2bmp.c"/>
+    <originFiles name="jpeg2bmp.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/jpeg2bmp.h"/>
+    <originFiles name="main.c" path="/home/giorgio/workspace/jpeg-rs-clean/tb/main.c"/>
+    <originFiles name="marker.c" path="/home/giorgio/workspace/jpeg-rs-clean/tb/marker.c"/>
+    <originFiles name="marker.h" path="/home/giorgio/workspace/jpeg-rs-clean/inc/marker.h"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
