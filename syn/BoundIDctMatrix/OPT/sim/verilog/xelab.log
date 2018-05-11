@@ -1,0 +1,60 @@
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_BoundIDctMatrix_top glbl -prj BoundIDctMatrix.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver --initfile /home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s BoundIDctMatrix 
+Multi-threading is on. Using 6 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_BoundIDctMatrix_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/AESL_axi_master_BUS_DST.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_BUS_DST
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/AESL_axi_slave_BUS_CTRL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_BUS_CTRL
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/AESL_axi_slave_BUS_SRC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_BUS_SRC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_mbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_mbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_CTRL_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_CTRL_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_SRC_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_SRC_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_DST_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_buffer
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_decoder
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_throttl
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_read
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_write
+INFO: [VRFC 10-2458] undeclared symbol data_valid, assumed default net type wire [/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_DST_m_axi.v:2075]
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_CTRL_s_axi
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_SRC_s_axi
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_th...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_re...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_bu...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_wr...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_bu...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_re...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_re...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi(NU...
+Compiling module xil_defaultlib.BoundIDctMatrix_mbkb(ID=1,din32_...
+Compiling module xil_defaultlib.BoundIDctMatrix
+Compiling module xil_defaultlib.AESL_axi_master_BUS_DST
+Compiling module xil_defaultlib.AESL_axi_slave_BUS_CTRL
+Compiling module xil_defaultlib.AESL_axi_slave_BUS_SRC
+Compiling module xil_defaultlib.apatb_BoundIDctMatrix_top
+Compiling module work.glbl
+Built simulation snapshot BoundIDctMatrix

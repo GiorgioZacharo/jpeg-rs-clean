@@ -394,7 +394,15 @@
         <spirit:componentRef spirit:library="BlockDiagram/design_1_imp" spirit:name="axi_interconnect_master" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_interconnect_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="NUM_MI">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="appcore">xilinx.com:ip:axi_interconnect:2.1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>ChenIDct_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="ChenIDct" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_ChenIDct_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -404,15 +412,18 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>ChenIDct_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="ChenIDct" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_ChenIDct_0_1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD</spirit:name>
+        <spirit:activeInterface spirit:busRef="M_AXI_HPM0_FPD" spirit:componentRef="zynq_ultra_ps_e_0"/>
+        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_interconnect_master"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>axi_interconnect_slave_M00_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="S_AXI_ACP_FPD" spirit:componentRef="zynq_ultra_ps_e_0"/>
+        <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="axi_interconnect_slave"/>
+      </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_m_axi_BUS_SRC</spirit:name>
         <spirit:activeInterface spirit:busRef="m_axi_BUS_SRC" spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0"/>
@@ -430,23 +441,13 @@
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_interconnect_master_M00_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="s_axi_BUS_CTRL" spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0"/>
         <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="axi_interconnect_master"/>
-        <spirit:activeInterface spirit:busRef="s_axi_BUS_CTRL" spirit:componentRef="ChenIDct_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_interconnect_master_M01_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="s_axi_BUS_CTRL" spirit:componentRef="ChenIDct_0"/>
         <spirit:activeInterface spirit:busRef="M01_AXI" spirit:componentRef="axi_interconnect_master"/>
-        <spirit:activeInterface spirit:busRef="s_axi_BUS_CTRL" spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD</spirit:name>
-        <spirit:activeInterface spirit:busRef="M_AXI_HPM0_FPD" spirit:componentRef="zynq_ultra_ps_e_0"/>
-        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_interconnect_master"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>axi_interconnect_slave_M00_AXI</spirit:name>
-        <spirit:activeInterface spirit:busRef="S_AXI_ACP_FPD" spirit:componentRef="zynq_ultra_ps_e_0"/>
-        <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="axi_interconnect_slave"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
@@ -456,45 +457,35 @@
         <spirit:internalPortReference spirit:componentRef="zynq_ultra_ps_e_0" spirit:portRef="pl_ps_irq0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>ChenIDct_0_interrupt</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="ChenIDct_0" spirit:portRef="interrupt"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In0"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_interrupt</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0" spirit:portRef="interrupt"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>zynq_ultra_ps_e_0_pl_clk0</spirit:name>
         <spirit:internalPortReference spirit:componentRef="zynq_ultra_ps_e_0" spirit:portRef="pl_clk0"/>
         <spirit:internalPortReference spirit:componentRef="zynq_ultra_ps_e_0" spirit:portRef="maxihpm0_fpd_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="slowest_sync_clk"/>
-        <spirit:internalPortReference spirit:componentRef="ChenIDct_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="zynq_ultra_ps_e_0" spirit:portRef="saxiacp_fpd_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="S01_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="S02_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="ChenIDct_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="M01_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="zynq_ultra_ps_e_0" spirit:portRef="saxiacp_fpd_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>proc_sys_reset_0_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="peripheral_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="S00_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="ChenIDct_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="M00_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="S01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="S02_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="ChenIDct_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="M01_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>zynq_ultra_ps_e_0_pl_resetn0</spirit:name>
@@ -506,6 +497,16 @@
         <spirit:internalPortReference spirit:componentRef="proc_sys_reset_0" spirit:portRef="interconnect_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_master" spirit:portRef="ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_slave" spirit:portRef="ARESETN"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_interrupt</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="decode_start_f2r_vectorPh_s2e_forBody96Preheader_0" spirit:portRef="interrupt"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In0"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ChenIDct_0_interrupt</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="ChenIDct_0" spirit:portRef="interrupt"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
   </spirit:design>
@@ -2872,26 +2873,10 @@
         <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
       </spirit:busInterface>
       <spirit:busInterface>
-        <spirit:name>M_AXI_HPM0_LPD</spirit:name>
-        <spirit:master>
-          <spirit:addressSpaceRef spirit:addressSpaceRef="Data"/>
-        </spirit:master>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
         <spirit:name>M_AXI_HPM0_FPD</spirit:name>
         <spirit:master>
           <spirit:addressSpaceRef spirit:addressSpaceRef="Data"/>
           <spirit:baseAddress spirit:maximum="0xAFFFFFFF" spirit:minimum="0xA0000000">0xA0000000</spirit:baseAddress>
-        </spirit:master>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>M_AXI_HPM1_FPD</spirit:name>
-        <spirit:master>
-          <spirit:addressSpaceRef spirit:addressSpaceRef="Data"/>
         </spirit:master>
         <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
@@ -2906,14 +2891,54 @@
           <spirit:segment>
             <spirit:name>SEG_ChenIDct_0_Reg</spirit:name>
             <spirit:displayName>/ChenIDct_0/s_axi_BUS_CTRL/Reg</spirit:displayName>
-            <spirit:addressOffset>0x000A0010000</spirit:addressOffset>
+            <spirit:addressOffset>0x000A0000000</spirit:addressOffset>
             <spirit:range>64K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_Reg</spirit:name>
             <spirit:displayName>/decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/s_axi_BUS_CTRL/Reg</spirit:displayName>
-            <spirit:addressOffset>0x000A0000000</spirit:addressOffset>
+            <spirit:addressOffset>0x000A0010000</spirit:addressOffset>
             <spirit:range>64K</spirit:range>
+          </spirit:segment>
+        </spirit:segments>
+      </spirit:addressSpace>
+    </spirit:addressSpaces>
+  </spirit:component>
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>Addressing/ChenIDct_0</spirit:library>
+    <spirit:name>ChenIDct</spirit:name>
+    <spirit:version>1.0</spirit:version>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>s_axi_BUS_CTRL</spirit:name>
+        <spirit:slave>
+          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_BUS_CTRL"/>
+        </spirit:slave>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>m_axi_BUS_SRC_DST</spirit:name>
+        <spirit:master>
+          <spirit:addressSpaceRef spirit:addressSpaceRef="Data_m_axi_BUS_SRC_DST"/>
+        </spirit:master>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:addressSpaces>
+      <spirit:addressSpace>
+        <spirit:name>Data_m_axi_BUS_SRC_DST</spirit:name>
+        <spirit:range>16E</spirit:range>
+        <spirit:width>32</spirit:width>
+        <spirit:segments>
+          <spirit:segment>
+            <spirit:name>SEG_zynq_ultra_ps_e_0_ACP_DDR_LOW</spirit:name>
+            <spirit:displayName>/zynq_ultra_ps_e_0/SAXIACP/ACP_DDR_LOW</spirit:displayName>
+            <spirit:addressOffset>0x0000000000000000</spirit:addressOffset>
+            <spirit:range>2G</spirit:range>
           </spirit:segment>
         </spirit:segments>
       </spirit:addressSpace>
@@ -2967,46 +2992,6 @@
       </spirit:addressSpace>
       <spirit:addressSpace>
         <spirit:name>Data_m_axi_BUS_DST</spirit:name>
-        <spirit:range>16E</spirit:range>
-        <spirit:width>32</spirit:width>
-        <spirit:segments>
-          <spirit:segment>
-            <spirit:name>SEG_zynq_ultra_ps_e_0_ACP_DDR_LOW</spirit:name>
-            <spirit:displayName>/zynq_ultra_ps_e_0/SAXIACP/ACP_DDR_LOW</spirit:displayName>
-            <spirit:addressOffset>0x0000000000000000</spirit:addressOffset>
-            <spirit:range>2G</spirit:range>
-          </spirit:segment>
-        </spirit:segments>
-      </spirit:addressSpace>
-    </spirit:addressSpaces>
-  </spirit:component>
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>Addressing/ChenIDct_0</spirit:library>
-    <spirit:name>ChenIDct</spirit:name>
-    <spirit:version>1.0</spirit:version>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>s_axi_BUS_CTRL</spirit:name>
-        <spirit:slave>
-          <spirit:memoryMapRef spirit:memoryMapRef="s_axi_BUS_CTRL"/>
-        </spirit:slave>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>m_axi_BUS_SRC_DST</spirit:name>
-        <spirit:master>
-          <spirit:addressSpaceRef spirit:addressSpaceRef="Data_m_axi_BUS_SRC_DST"/>
-        </spirit:master>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:addressSpaces>
-      <spirit:addressSpace>
-        <spirit:name>Data_m_axi_BUS_SRC_DST</spirit:name>
         <spirit:range>16E</spirit:range>
         <spirit:width>32</spirit:width>
         <spirit:segments>

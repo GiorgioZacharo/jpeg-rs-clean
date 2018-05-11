@@ -1,0 +1,672 @@
+11:53:01 **** Build of project jpeg_rs_bsp ****
+make -k all 
+Running Make include in psu_cortexa53_0/libsrc/dpdma_v1_0/src
+make -C psu_cortexa53_0/libsrc/dpdma_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ipipsu_v2_3/src
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/gpiops_v3_3/src
+make -C psu_cortexa53_0/libsrc/gpiops_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/scugic_v3_8/src
+make -C psu_cortexa53_0/libsrc/scugic_v3_8/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/qspipsu_v1_6/src
+make -C psu_cortexa53_0/libsrc/qspipsu_v1_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/video_common_v4_2/src
+make -C psu_cortexa53_0/libsrc/video_common_v4_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/standalone_v6_5/src
+make -C psu_cortexa53_0/libsrc/standalone_v6_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/canps_v3_2/src
+make -C psu_cortexa53_0/libsrc/canps_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/dppsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/dppsu_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/zdma_v1_4/src
+make -C psu_cortexa53_0/libsrc/zdma_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src
+make -C psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ttcps_v3_5/src
+make -C psu_cortexa53_0/libsrc/ttcps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/wdtps_v3_0/src
+make -C psu_cortexa53_0/libsrc/wdtps_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/rtcpsu_v1_5/src
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_0/src
+make -C psu_cortexa53_0/libsrc/avbuf_v2_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/csudma_v1_1/src
+make -C psu_cortexa53_0/libsrc/csudma_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/iicps_v3_5/src
+make -C psu_cortexa53_0/libsrc/iicps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/sdps_v3_3/src
+make -C psu_cortexa53_0/libsrc/sdps_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/emacps_v3_6/src
+make -C psu_cortexa53_0/libsrc/emacps_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/axipmon_v6_6/src
+make -C psu_cortexa53_0/libsrc/axipmon_v6_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ChenIDct_v1_0/src
+make -C psu_cortexa53_0/libsrc/ChenIDct_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/usbpsu_v1_3/src
+make -C psu_cortexa53_0/libsrc/usbpsu_v1_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/uartps_v3_5/src
+make -C psu_cortexa53_0/libsrc/uartps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make libs in psu_cortexa53_0/libsrc/dpdma_v1_0/src
+make -C psu_cortexa53_0/libsrc/dpdma_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling dpdma
+aarch64-none-elf-ar: creating ../../../lib/libxil.a
+Running Make libs in psu_cortexa53_0/libsrc/ipipsu_v2_3/src
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ipipsu
+Running Make libs in psu_cortexa53_0/libsrc/gpiops_v3_3/src
+make -C psu_cortexa53_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in psu_cortexa53_0/libsrc/scugic_v3_8/src
+make -C psu_cortexa53_0/libsrc/scugic_v3_8/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling scugic
+Running Make libs in psu_cortexa53_0/libsrc/qspipsu_v1_6/src
+make -C psu_cortexa53_0/libsrc/qspipsu_v1_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling qspipsu
+Running Make libs in psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling sysmonpsu
+Running Make libs in psu_cortexa53_0/libsrc/video_common_v4_2/src
+make -C psu_cortexa53_0/libsrc/video_common_v4_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling video_common
+Running Make libs in psu_cortexa53_0/libsrc/standalone_v6_5/src
+make -C psu_cortexa53_0/libsrc/standalone_v6_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling standalone A53
+Running Make libs in psu_cortexa53_0/libsrc/canps_v3_2/src
+make -C psu_cortexa53_0/libsrc/canps_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling canps
+Running Make libs in psu_cortexa53_0/libsrc/dppsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/dppsu_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling dppsu
+Running Make libs in psu_cortexa53_0/libsrc/zdma_v1_4/src
+make -C psu_cortexa53_0/libsrc/zdma_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling zdma
+Running Make libs in psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src
+make -C psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling decode_start_f2r_vectorPh_s2e_forBody96Preheader
+Running Make libs in psu_cortexa53_0/libsrc/ttcps_v3_5/src
+make -C psu_cortexa53_0/libsrc/ttcps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ttcps
+Running Make libs in psu_cortexa53_0/libsrc/wdtps_v3_0/src
+make -C psu_cortexa53_0/libsrc/wdtps_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling wdtps
+Running Make libs in psu_cortexa53_0/libsrc/rtcpsu_v1_5/src
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling rtcpsu
+Running Make libs in psu_cortexa53_0/libsrc/avbuf_v2_0/src
+make -C psu_cortexa53_0/libsrc/avbuf_v2_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling avbuf
+Running Make libs in psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ddrcpsu
+Running Make libs in psu_cortexa53_0/libsrc/csudma_v1_1/src
+make -C psu_cortexa53_0/libsrc/csudma_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling csudma
+Running Make libs in psu_cortexa53_0/libsrc/iicps_v3_5/src
+make -C psu_cortexa53_0/libsrc/iicps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling iicps
+Running Make libs in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling cpu_cortexa53
+Running Make libs in psu_cortexa53_0/libsrc/sdps_v3_3/src
+make -C psu_cortexa53_0/libsrc/sdps_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling sdps
+Running Make libs in psu_cortexa53_0/libsrc/emacps_v3_6/src
+make -C psu_cortexa53_0/libsrc/emacps_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling emacps
+Running Make libs in psu_cortexa53_0/libsrc/axipmon_v6_6/src
+make -C psu_cortexa53_0/libsrc/axipmon_v6_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling axipmon
+Running Make libs in psu_cortexa53_0/libsrc/ChenIDct_v1_0/src
+make -C psu_cortexa53_0/libsrc/ChenIDct_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ChenIDct
+Running Make libs in psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling coresightps_dcc
+Running Make libs in psu_cortexa53_0/libsrc/usbpsu_v1_3/src
+make -C psu_cortexa53_0/libsrc/usbpsu_v1_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling usbpsu
+Running Make libs in psu_cortexa53_0/libsrc/uartps_v3_5/src
+make -C psu_cortexa53_0/libsrc/uartps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling uartps
+Finished building libraries
+
+**** Build of configuration Debug for project jpeg_rs ****
+
+Nothing to build for project jpeg_rs
+11:56:25 **** Build of project hello_bsp ****
+make -k all 
+Running Make include in psu_cortexa53_0/libsrc/dpdma_v1_0/src
+make -C psu_cortexa53_0/libsrc/dpdma_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ipipsu_v2_3/src
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/gpiops_v3_3/src
+make -C psu_cortexa53_0/libsrc/gpiops_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/scugic_v3_8/src
+make -C psu_cortexa53_0/libsrc/scugic_v3_8/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/qspipsu_v1_6/src
+make -C psu_cortexa53_0/libsrc/qspipsu_v1_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/video_common_v4_2/src
+make -C psu_cortexa53_0/libsrc/video_common_v4_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/standalone_v6_5/src
+make -C psu_cortexa53_0/libsrc/standalone_v6_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/canps_v3_2/src
+make -C psu_cortexa53_0/libsrc/canps_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/dppsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/dppsu_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/zdma_v1_4/src
+make -C psu_cortexa53_0/libsrc/zdma_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src
+make -C psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ttcps_v3_5/src
+make -C psu_cortexa53_0/libsrc/ttcps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/wdtps_v3_0/src
+make -C psu_cortexa53_0/libsrc/wdtps_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/rtcpsu_v1_5/src
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_0/src
+make -C psu_cortexa53_0/libsrc/avbuf_v2_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/csudma_v1_1/src
+make -C psu_cortexa53_0/libsrc/csudma_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/iicps_v3_5/src
+make -C psu_cortexa53_0/libsrc/iicps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/sdps_v3_3/src
+make -C psu_cortexa53_0/libsrc/sdps_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/emacps_v3_6/src
+make -C psu_cortexa53_0/libsrc/emacps_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/axipmon_v6_6/src
+make -C psu_cortexa53_0/libsrc/axipmon_v6_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/ChenIDct_v1_0/src
+make -C psu_cortexa53_0/libsrc/ChenIDct_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/usbpsu_v1_3/src
+make -C psu_cortexa53_0/libsrc/usbpsu_v1_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make include in psu_cortexa53_0/libsrc/uartps_v3_5/src
+make -C psu_cortexa53_0/libsrc/uartps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Running Make libs in psu_cortexa53_0/libsrc/dpdma_v1_0/src
+make -C psu_cortexa53_0/libsrc/dpdma_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling dpdma
+aarch64-none-elf-ar: creating ../../../lib/libxil.a
+Running Make libs in psu_cortexa53_0/libsrc/ipipsu_v2_3/src
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ipipsu
+Running Make libs in psu_cortexa53_0/libsrc/gpiops_v3_3/src
+make -C psu_cortexa53_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in psu_cortexa53_0/libsrc/scugic_v3_8/src
+make -C psu_cortexa53_0/libsrc/scugic_v3_8/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling scugic
+Running Make libs in psu_cortexa53_0/libsrc/qspipsu_v1_6/src
+make -C psu_cortexa53_0/libsrc/qspipsu_v1_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling qspipsu
+Running Make libs in psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling sysmonpsu
+Running Make libs in psu_cortexa53_0/libsrc/video_common_v4_2/src
+make -C psu_cortexa53_0/libsrc/video_common_v4_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling video_common
+Running Make libs in psu_cortexa53_0/libsrc/standalone_v6_5/src
+make -C psu_cortexa53_0/libsrc/standalone_v6_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling standalone A53
+Running Make libs in psu_cortexa53_0/libsrc/canps_v3_2/src
+make -C psu_cortexa53_0/libsrc/canps_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling canps
+Running Make libs in psu_cortexa53_0/libsrc/dppsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/dppsu_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling dppsu
+Running Make libs in psu_cortexa53_0/libsrc/zdma_v1_4/src
+make -C psu_cortexa53_0/libsrc/zdma_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling zdma
+Running Make libs in psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src
+make -C psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling decode_start_f2r_vectorPh_s2e_forBody96Preheader
+Running Make libs in psu_cortexa53_0/libsrc/ttcps_v3_5/src
+make -C psu_cortexa53_0/libsrc/ttcps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ttcps
+Running Make libs in psu_cortexa53_0/libsrc/wdtps_v3_0/src
+make -C psu_cortexa53_0/libsrc/wdtps_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling wdtps
+Running Make libs in psu_cortexa53_0/libsrc/rtcpsu_v1_5/src
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling rtcpsu
+Running Make libs in psu_cortexa53_0/libsrc/avbuf_v2_0/src
+make -C psu_cortexa53_0/libsrc/avbuf_v2_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling avbuf
+Running Make libs in psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ddrcpsu
+Running Make libs in psu_cortexa53_0/libsrc/csudma_v1_1/src
+make -C psu_cortexa53_0/libsrc/csudma_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling csudma
+Running Make libs in psu_cortexa53_0/libsrc/iicps_v3_5/src
+make -C psu_cortexa53_0/libsrc/iicps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling iicps
+Running Make libs in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling cpu_cortexa53
+Running Make libs in psu_cortexa53_0/libsrc/sdps_v3_3/src
+make -C psu_cortexa53_0/libsrc/sdps_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling sdps
+Running Make libs in psu_cortexa53_0/libsrc/emacps_v3_6/src
+make -C psu_cortexa53_0/libsrc/emacps_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling emacps
+Running Make libs in psu_cortexa53_0/libsrc/axipmon_v6_6/src
+make -C psu_cortexa53_0/libsrc/axipmon_v6_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling axipmon
+Running Make libs in psu_cortexa53_0/libsrc/ChenIDct_v1_0/src
+make -C psu_cortexa53_0/libsrc/ChenIDct_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling ChenIDct
+Running Make libs in psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling coresightps_dcc
+Running Make libs in psu_cortexa53_0/libsrc/usbpsu_v1_3/src
+make -C psu_cortexa53_0/libsrc/usbpsu_v1_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling usbpsu
+Running Make libs in psu_cortexa53_0/libsrc/uartps_v3_5/src
+make -C psu_cortexa53_0/libsrc/uartps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+Compiling uartps
+Finished building libraries
+11:56:40 **** Build of configuration Debug for project hello ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../hello_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: hello.elf
+Invoking: ARM v8 gcc linker
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../hello_bsp/psu_cortexa53_0/lib -o "hello.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: hello.elf
+ 
+Invoking: ARM v8 Print Size
+aarch64-none-elf-size hello.elf  |tee "hello.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30508	   2352	  20656	  53516	   d10c	hello.elf
+Finished building: hello.elf.size
+ 
+11:58:10 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for `all'.
+11:59:05 **** Auto Build of configuration Debug for project jpeg_rs ****
+make all 
+Building file: ../src/chenidct.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/chenidct.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/chenidct.d" -MT"src/chenidct.o" -o "src/chenidct.o" "../src/chenidct.c"
+../src/chenidct.c: In function 'ChenIDct_f2r_vectorBody_s2e_forEnd212':
+../src/chenidct.c:97:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=y offset=slave bundle=BUS_SRC_DST
+ 
+../src/chenidct.c:98:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/chenidct.c:104:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:105:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:113:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:124:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:131:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c: In function 'ChenIDct':
+../src/chenidct.c:188:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=x offset=slave bundle=BUS_SRC_DST
+ 
+../src/chenidct.c:189:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=y offset=slave bundle=BUS_SRC_DST
+ 
+../src/chenidct.c:190:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/chenidct.c:347:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:348:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:356:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:367:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:374:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+Finished building: ../src/chenidct.c
+ 
+Building file: ../src/decode.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/decode.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/decode.d" -MT"src/decode.o" -o "src/decode.o" "../src/decode.c"
+../src/decode.c: In function 'IZigzagMatrix_f2r_forBody_s2e_forEnd':
+../src/decode.c:86:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=imatrix offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:87:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=omatrix offset=slave bundle=BUS_DST
+ 
+../src/decode.c:88:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/decode.c:106:0: warning: ignoring #pragma HLS DATAFLOW [-Wunknown-pragmas]
+   #pragma HLS DATAFLOW
+ 
+../src/decode.c:110:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:117:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:122:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:123:16: warning: unused variable 'offset' [-Wunused-variable]
+       unsigned offset = i*CHUNK_SIZE+l;
+                ^~~~~~
+../src/decode.c: In function 'YuvToRgb_f2r_entry_s2e_forEnd':
+../src/decode.c:379:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=y_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:380:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:381:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=v_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:382:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
+ 
+../src/decode.c:383:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE s_axilite port=p bundle=CTRL_BUS
+ 
+../src/decode.c:384:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/decode.c:393:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:394:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:395:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:396:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:397:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:398:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:407:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:424:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:450:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c: In function 'decode_start_f2r_vectorPh_s2e_forBody96Preheader':
+../src/decode.c:535:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+     #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:536:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+     #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:537:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+     #pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:538:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+     #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:539:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+     #pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:540:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+     #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:550:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+           #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:567:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+           #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:593:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+           #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c: In function 'decode_block':
+../src/decode.c:629:3: warning: label 'Reg_2' defined but not used [-Wunused-label]
+   Reg_2:IZigzagMatrix_f2r_forBody_s2e_forEnd(HuffBuff, QuantBuff);
+   ^~~~~
+../src/decode.c: In function 'decode_start':
+../src/decode.c:744:5: warning: label 'Reg_6' defined but not used [-Wunused-label]
+     Reg_6:decode_start_f2r_vectorPh_s2e_forBody96Preheader(IDCTBuff, IDCTBuff[4], IDCTBuff[5], rgb_buf);
+     ^~~~~
+Finished building: ../src/decode.c
+ 
+Building file: ../src/huffman.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/huffman.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/huffman.d" -MT"src/huffman.o" -o "src/huffman.o" "../src/huffman.c"
+Finished building: ../src/huffman.c
+ 
+Building file: ../src/init.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/init.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/init.d" -MT"src/init.o" -o "src/init.o" "../src/init.c"
+Finished building: ../src/init.c
+ 
+Building file: ../src/jfif_read.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/jfif_read.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/jfif_read.d" -MT"src/jfif_read.o" -o "src/jfif_read.o" "../src/jfif_read.c"
+Finished building: ../src/jfif_read.c
+ 
+Building file: ../src/jpeg2bmp.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/jpeg2bmp.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/jpeg2bmp.d" -MT"src/jpeg2bmp.o" -o "src/jpeg2bmp.o" "../src/jpeg2bmp.c"
+Finished building: ../src/jpeg2bmp.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/marker.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/marker.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/marker.d" -MT"src/marker.o" -o "src/marker.o" "../src/marker.c"
+Finished building: ../src/marker.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: jpeg_rs.elf
+Invoking: ARM v8 gcc linker
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../jpeg_rs_bsp/psu_cortexa53_0/lib -o "jpeg_rs.elf"  ./src/chenidct.o ./src/decode.o ./src/huffman.o ./src/init.o ./src/jfif_read.o ./src/jpeg2bmp.o ./src/main.o ./src/marker.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: jpeg_rs.elf
+ 
+Invoking: ARM v8 Print Size
+aarch64-none-elf-size jpeg_rs.elf  |tee "jpeg_rs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 110348	   4648	  52896	 167892	  28fd4	jpeg_rs.elf
+Finished building: jpeg_rs.elf.size
+ 
+12:00:07 **** Auto Build of configuration Debug for project jpeg_rs ****
+make all 
+Building file: ../src/chenidct.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/chenidct.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/chenidct.d" -MT"src/chenidct.o" -o "src/chenidct.o" "../src/chenidct.c"
+../src/chenidct.c: In function 'ChenIDct_f2r_vectorBody_s2e_forEnd212':
+../src/chenidct.c:97:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=y offset=slave bundle=BUS_SRC_DST
+ 
+../src/chenidct.c:98:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/chenidct.c:104:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:105:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:113:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:124:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:131:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c: In function 'ChenIDct':
+../src/chenidct.c:188:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=x offset=slave bundle=BUS_SRC_DST
+ 
+../src/chenidct.c:189:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=y offset=slave bundle=BUS_SRC_DST
+ 
+../src/chenidct.c:190:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/chenidct.c:347:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:348:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:356:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:367:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:374:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+Finished building: ../src/chenidct.c
+ 
+Building file: ../src/decode.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/decode.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/decode.d" -MT"src/decode.o" -o "src/decode.o" "../src/decode.c"
+../src/decode.c: In function 'IZigzagMatrix_f2r_forBody_s2e_forEnd':
+../src/decode.c:86:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=imatrix offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:87:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=omatrix offset=slave bundle=BUS_DST
+ 
+../src/decode.c:88:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/decode.c:106:0: warning: ignoring #pragma HLS DATAFLOW [-Wunknown-pragmas]
+   #pragma HLS DATAFLOW
+ 
+../src/decode.c:110:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:117:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:122:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:123:16: warning: unused variable 'offset' [-Wunused-variable]
+       unsigned offset = i*CHUNK_SIZE+l;
+                ^~~~~~
+../src/decode.c: In function 'YuvToRgb_f2r_entry_s2e_forEnd':
+../src/decode.c:379:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=y_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:380:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:381:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=v_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:382:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
+ 
+../src/decode.c:383:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE s_axilite port=p bundle=CTRL_BUS
+ 
+../src/decode.c:384:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/decode.c:393:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:394:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:395:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:396:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:397:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:398:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:407:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:424:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:450:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c: In function 'decode_block':
+../src/decode.c:629:3: warning: label 'Reg_2' defined but not used [-Wunused-label]
+   Reg_2:IZigzagMatrix_f2r_forBody_s2e_forEnd(HuffBuff, QuantBuff);
+   ^~~~~
+../src/decode.c: In function 'decode_start':
+../src/decode.c:744:5: warning: label 'Reg_6' defined but not used [-Wunused-label]
+     Reg_6:decode_start_f2r_vectorPh_s2e_forBody96Preheader(IDCTBuff, IDCTBuff[4], IDCTBuff[5], rgb_buf);
+     ^~~~~
+Finished building: ../src/decode.c
+ 
+Building target: jpeg_rs.elf
+Invoking: ARM v8 gcc linker
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../jpeg_rs_bsp/psu_cortexa53_0/lib -o "jpeg_rs.elf"  ./src/chenidct.o ./src/decode.o ./src/huffman.o ./src/init.o ./src/jfif_read.o ./src/jpeg2bmp.o ./src/main.o ./src/marker.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: jpeg_rs.elf
+ 
+Invoking: ARM v8 Print Size
+aarch64-none-elf-size jpeg_rs.elf  |tee "jpeg_rs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 115260	   4664	  52960	 172884	  2a354	jpeg_rs.elf
+Finished building: jpeg_rs.elf.size
+ 
+12:00:11 **** Incremental Build of configuration Debug for project jpeg_rs ****
+make all 
+make: Nothing to be done for `all'.

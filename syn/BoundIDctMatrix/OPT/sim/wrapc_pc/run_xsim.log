@@ -1,0 +1,388 @@
+
+marker = 0xd8
+
+marker = 0xe0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 1
+
+marker = 0xc0
+length         = 17
+data_precision = 8
+image_height   = 59
+image_width    = 90
+num_components = 3
+ index         = 0
+ id            = 1
+ h_samp_factor = 2
+ v_samp_factor = 2
+ quant_tbl_no  = 0
+
+ index         = 1
+ id            = 2
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+ index         = 2
+ id            = 3
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+
+Sampling Factor is 4:1:1
+
+marker = 0xc4
+ length = 29
+ index = 0x0
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x10
+ count = 162
+
+marker = 0xc4
+ length = 29
+ index = 0x1
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x11
+ count = 162
+
+marker = 0xda
+ length = 12
+ num_comp = 3
+ comp_id       = 1
+ dc_tbl_no     = 0
+ ac_tbl_no     = 0
+ comp_id       = 2
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+ comp_id       = 3
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+Decode 4:1:1 NumMCU = 96
+0
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_BoundIDctMatrix_top glbl -prj BoundIDctMatrix.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver --initfile /home/tools/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s BoundIDctMatrix 
+Multi-threading is on. Using 6 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_BoundIDctMatrix_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/AESL_axi_master_BUS_DST.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_BUS_DST
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/AESL_axi_slave_BUS_CTRL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_BUS_CTRL
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/AESL_axi_slave_BUS_SRC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_BUS_SRC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_mbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_mbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_CTRL_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_CTRL_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_SRC_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_SRC_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_DST_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_buffer
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_decoder
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_throttl
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_read
+INFO: [VRFC 10-311] analyzing module BoundIDctMatrix_BUS_DST_m_axi_write
+INFO: [VRFC 10-2458] undeclared symbol data_valid, assumed default net type wire [/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix_BUS_DST_m_axi.v:2075]
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_CTRL_s_axi
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_SRC_s_axi
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_th...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_re...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_bu...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_fi...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_wr...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_bu...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_re...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi_re...
+Compiling module xil_defaultlib.BoundIDctMatrix_BUS_DST_m_axi(NU...
+Compiling module xil_defaultlib.BoundIDctMatrix_mbkb(ID=1,din32_...
+Compiling module xil_defaultlib.BoundIDctMatrix
+Compiling module xil_defaultlib.AESL_axi_master_BUS_DST
+Compiling module xil_defaultlib.AESL_axi_slave_BUS_CTRL
+Compiling module xil_defaultlib.AESL_axi_slave_BUS_SRC
+Compiling module xil_defaultlib.apatb_BoundIDctMatrix_top
+Compiling module work.glbl
+Built simulation snapshot BoundIDctMatrix
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source /home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/xsim.dir/BoundIDctMatrix/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/xsim.dir/BoundIDctMatrix/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri May 11 14:53:23 2018. For additional details about this file, please refer to the WebTalk help file at /home/tools/Xilinx/Vivado/2017.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri May 11 14:53:23 2018...
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/BoundIDctMatrix/xsim_script.tcl
+# xsim {BoundIDctMatrix} -autoloadwcfg -tclbatch {BoundIDctMatrix.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source BoundIDctMatrix.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 144 [0.00%] @ "107000"
+// RTL Simulation : 1 / 144 [0.00%] @ "704000"
+// RTL Simulation : 2 / 144 [0.00%] @ "1301000"
+// RTL Simulation : 3 / 144 [0.00%] @ "1898000"
+// RTL Simulation : 4 / 144 [0.00%] @ "2495000"
+// RTL Simulation : 5 / 144 [0.00%] @ "3092000"
+// RTL Simulation : 6 / 144 [0.00%] @ "3689000"
+// RTL Simulation : 7 / 144 [0.00%] @ "4286000"
+// RTL Simulation : 8 / 144 [0.00%] @ "4883000"
+// RTL Simulation : 9 / 144 [0.00%] @ "5480000"
+// RTL Simulation : 10 / 144 [0.00%] @ "6077000"
+// RTL Simulation : 11 / 144 [0.00%] @ "6674000"
+// RTL Simulation : 12 / 144 [0.00%] @ "7271000"
+// RTL Simulation : 13 / 144 [0.00%] @ "7868000"
+// RTL Simulation : 14 / 144 [0.00%] @ "8465000"
+// RTL Simulation : 15 / 144 [0.00%] @ "9062000"
+// RTL Simulation : 16 / 144 [0.00%] @ "9659000"
+// RTL Simulation : 17 / 144 [0.00%] @ "10256000"
+// RTL Simulation : 18 / 144 [0.00%] @ "10853000"
+// RTL Simulation : 19 / 144 [0.00%] @ "11450000"
+// RTL Simulation : 20 / 144 [0.00%] @ "12047000"
+// RTL Simulation : 21 / 144 [0.00%] @ "12644000"
+// RTL Simulation : 22 / 144 [0.00%] @ "13241000"
+// RTL Simulation : 23 / 144 [0.00%] @ "13838000"
+// RTL Simulation : 24 / 144 [0.00%] @ "14435000"
+// RTL Simulation : 25 / 144 [0.00%] @ "15032000"
+// RTL Simulation : 26 / 144 [0.00%] @ "15629000"
+// RTL Simulation : 27 / 144 [0.00%] @ "16226000"
+// RTL Simulation : 28 / 144 [0.00%] @ "16823000"
+// RTL Simulation : 29 / 144 [0.00%] @ "17420000"
+// RTL Simulation : 30 / 144 [0.00%] @ "18017000"
+// RTL Simulation : 31 / 144 [0.00%] @ "18614000"
+// RTL Simulation : 32 / 144 [0.00%] @ "19211000"
+// RTL Simulation : 33 / 144 [0.00%] @ "19808000"
+// RTL Simulation : 34 / 144 [0.00%] @ "20405000"
+// RTL Simulation : 35 / 144 [0.00%] @ "21002000"
+// RTL Simulation : 36 / 144 [0.00%] @ "21599000"
+// RTL Simulation : 37 / 144 [0.00%] @ "22196000"
+// RTL Simulation : 38 / 144 [0.00%] @ "22793000"
+// RTL Simulation : 39 / 144 [0.00%] @ "23390000"
+// RTL Simulation : 40 / 144 [0.00%] @ "23987000"
+// RTL Simulation : 41 / 144 [0.00%] @ "24584000"
+// RTL Simulation : 42 / 144 [0.00%] @ "25181000"
+// RTL Simulation : 43 / 144 [0.00%] @ "25778000"
+// RTL Simulation : 44 / 144 [0.00%] @ "26375000"
+// RTL Simulation : 45 / 144 [0.00%] @ "26972000"
+// RTL Simulation : 46 / 144 [0.00%] @ "27569000"
+// RTL Simulation : 47 / 144 [0.00%] @ "28166000"
+// RTL Simulation : 48 / 144 [0.00%] @ "28763000"
+// RTL Simulation : 49 / 144 [0.00%] @ "29360000"
+// RTL Simulation : 50 / 144 [0.00%] @ "29957000"
+// RTL Simulation : 51 / 144 [0.00%] @ "30554000"
+// RTL Simulation : 52 / 144 [0.00%] @ "31151000"
+// RTL Simulation : 53 / 144 [0.00%] @ "31748000"
+// RTL Simulation : 54 / 144 [0.00%] @ "32345000"
+// RTL Simulation : 55 / 144 [0.00%] @ "32942000"
+// RTL Simulation : 56 / 144 [0.00%] @ "33539000"
+// RTL Simulation : 57 / 144 [0.00%] @ "34136000"
+// RTL Simulation : 58 / 144 [0.00%] @ "34733000"
+// RTL Simulation : 59 / 144 [0.00%] @ "35330000"
+// RTL Simulation : 60 / 144 [0.00%] @ "35927000"
+// RTL Simulation : 61 / 144 [0.00%] @ "36524000"
+// RTL Simulation : 62 / 144 [0.00%] @ "37121000"
+// RTL Simulation : 63 / 144 [0.00%] @ "37718000"
+// RTL Simulation : 64 / 144 [0.00%] @ "38315000"
+// RTL Simulation : 65 / 144 [0.00%] @ "38912000"
+// RTL Simulation : 66 / 144 [0.00%] @ "39509000"
+// RTL Simulation : 67 / 144 [0.00%] @ "40106000"
+// RTL Simulation : 68 / 144 [0.00%] @ "40703000"
+// RTL Simulation : 69 / 144 [0.00%] @ "41300000"
+// RTL Simulation : 70 / 144 [0.00%] @ "41897000"
+// RTL Simulation : 71 / 144 [0.00%] @ "42494000"
+// RTL Simulation : 72 / 144 [0.00%] @ "43091000"
+// RTL Simulation : 73 / 144 [0.00%] @ "43688000"
+// RTL Simulation : 74 / 144 [0.00%] @ "44285000"
+// RTL Simulation : 75 / 144 [0.00%] @ "44882000"
+// RTL Simulation : 76 / 144 [0.00%] @ "45479000"
+// RTL Simulation : 77 / 144 [0.00%] @ "46076000"
+// RTL Simulation : 78 / 144 [0.00%] @ "46673000"
+// RTL Simulation : 79 / 144 [0.00%] @ "47270000"
+// RTL Simulation : 80 / 144 [0.00%] @ "47867000"
+// RTL Simulation : 81 / 144 [0.00%] @ "48464000"
+// RTL Simulation : 82 / 144 [0.00%] @ "49061000"
+// RTL Simulation : 83 / 144 [0.00%] @ "49658000"
+// RTL Simulation : 84 / 144 [0.00%] @ "50255000"
+// RTL Simulation : 85 / 144 [0.00%] @ "50852000"
+// RTL Simulation : 86 / 144 [0.00%] @ "51449000"
+// RTL Simulation : 87 / 144 [0.00%] @ "52046000"
+// RTL Simulation : 88 / 144 [0.00%] @ "52643000"
+// RTL Simulation : 89 / 144 [0.00%] @ "53240000"
+// RTL Simulation : 90 / 144 [0.00%] @ "53837000"
+// RTL Simulation : 91 / 144 [0.00%] @ "54434000"
+// RTL Simulation : 92 / 144 [0.00%] @ "55031000"
+// RTL Simulation : 93 / 144 [0.00%] @ "55628000"
+// RTL Simulation : 94 / 144 [0.00%] @ "56225000"
+// RTL Simulation : 95 / 144 [0.00%] @ "56822000"
+// RTL Simulation : 96 / 144 [0.00%] @ "57419000"
+// RTL Simulation : 97 / 144 [0.00%] @ "58016000"
+// RTL Simulation : 98 / 144 [0.00%] @ "58613000"
+// RTL Simulation : 99 / 144 [0.00%] @ "59210000"
+// RTL Simulation : 100 / 144 [0.00%] @ "59807000"
+// RTL Simulation : 101 / 144 [0.00%] @ "60404000"
+// RTL Simulation : 102 / 144 [0.00%] @ "61001000"
+// RTL Simulation : 103 / 144 [0.00%] @ "61598000"
+// RTL Simulation : 104 / 144 [0.00%] @ "62195000"
+// RTL Simulation : 105 / 144 [0.00%] @ "62792000"
+// RTL Simulation : 106 / 144 [0.00%] @ "63389000"
+// RTL Simulation : 107 / 144 [0.00%] @ "63986000"
+// RTL Simulation : 108 / 144 [0.00%] @ "64583000"
+// RTL Simulation : 109 / 144 [0.00%] @ "65180000"
+// RTL Simulation : 110 / 144 [0.00%] @ "65777000"
+// RTL Simulation : 111 / 144 [0.00%] @ "66374000"
+// RTL Simulation : 112 / 144 [0.00%] @ "66971000"
+// RTL Simulation : 113 / 144 [0.00%] @ "67568000"
+// RTL Simulation : 114 / 144 [0.00%] @ "68165000"
+// RTL Simulation : 115 / 144 [0.00%] @ "68762000"
+// RTL Simulation : 116 / 144 [0.00%] @ "69359000"
+// RTL Simulation : 117 / 144 [0.00%] @ "69956000"
+// RTL Simulation : 118 / 144 [0.00%] @ "70553000"
+// RTL Simulation : 119 / 144 [0.00%] @ "71150000"
+// RTL Simulation : 120 / 144 [0.00%] @ "71747000"
+// RTL Simulation : 121 / 144 [0.00%] @ "72344000"
+// RTL Simulation : 122 / 144 [0.00%] @ "72941000"
+// RTL Simulation : 123 / 144 [0.00%] @ "73538000"
+// RTL Simulation : 124 / 144 [0.00%] @ "74135000"
+// RTL Simulation : 125 / 144 [0.00%] @ "74732000"
+// RTL Simulation : 126 / 144 [0.00%] @ "75329000"
+// RTL Simulation : 127 / 144 [0.00%] @ "75926000"
+// RTL Simulation : 128 / 144 [0.00%] @ "76523000"
+// RTL Simulation : 129 / 144 [0.00%] @ "77120000"
+// RTL Simulation : 130 / 144 [0.00%] @ "77717000"
+// RTL Simulation : 131 / 144 [0.00%] @ "78314000"
+// RTL Simulation : 132 / 144 [0.00%] @ "78911000"
+// RTL Simulation : 133 / 144 [0.00%] @ "79508000"
+// RTL Simulation : 134 / 144 [0.00%] @ "80105000"
+// RTL Simulation : 135 / 144 [0.00%] @ "80702000"
+// RTL Simulation : 136 / 144 [0.00%] @ "81299000"
+// RTL Simulation : 137 / 144 [0.00%] @ "81896000"
+// RTL Simulation : 138 / 144 [0.00%] @ "82493000"
+// RTL Simulation : 139 / 144 [0.00%] @ "83090000"
+// RTL Simulation : 140 / 144 [0.00%] @ "83687000"
+// RTL Simulation : 141 / 144 [0.00%] @ "84284000"
+// RTL Simulation : 142 / 144 [0.00%] @ "84881000"
+// RTL Simulation : 143 / 144 [0.00%] @ "85478000"
+// RTL Simulation : 144 / 144 [100.00%] @ "86075000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 86086500 ps : File "/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/sim/verilog/BoundIDctMatrix.autotb.v" Line 493
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri May 11 14:53:34 2018...
+
+marker = 0xd8
+
+marker = 0xe0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 1
+
+marker = 0xc0
+length         = 17
+data_precision = 8
+image_height   = 59
+image_width    = 90
+num_components = 3
+ index         = 0
+ id            = 1
+ h_samp_factor = 2
+ v_samp_factor = 2
+ quant_tbl_no  = 0
+
+ index         = 1
+ id            = 2
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+ index         = 2
+ id            = 3
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+
+Sampling Factor is 4:1:1
+
+marker = 0xc4
+ length = 29
+ index = 0x0
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x10
+ count = 162
+
+marker = 0xc4
+ length = 29
+ index = 0x1
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x11
+ count = 162
+
+marker = 0xda
+ length = 12
+ num_comp = 3
+ comp_id       = 1
+ dc_tbl_no     = 0
+ ac_tbl_no     = 0
+ comp_id       = 2
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+ comp_id       = 3
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+Decode 4:1:1 NumMCU = 96
+0

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Tue May  1 18:17:47 2018
+| Date             : Wed May  9 11:44:34 2018
 | Host             : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 4.086        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.359        |
+| Dynamic (W)              | 3.360        |
 | Device Static (W)        | 0.726        |
 | Effective TJA (C/W)      | 1.0          |
 | Max Ambient (C)          | 96.0         |
@@ -52,9 +52,9 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.043 |        3 |       --- |             --- |
+| Clocks                   |     0.044 |        3 |       --- |             --- |
 | CLB Logic                |     0.033 |    49459 |       --- |             --- |
-|   LUT as Logic           |     0.025 |    17343 |    274080 |            6.33 |
+|   LUT as Logic           |     0.025 |    17347 |    274080 |            6.33 |
 |   Register               |     0.004 |    26700 |    548160 |            4.87 |
 |   CARRY8                 |     0.002 |     1021 |     34260 |            2.98 |
 |   LUT as Shift Register  |     0.001 |      292 |    144000 |            0.20 |
@@ -62,7 +62,7 @@ Table of Contents
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
 |   Others                 |     0.000 |      479 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |      407 |    274080 |            0.15 |
-| Signals                  |     0.055 |    47317 |       --- |             --- |
+| Signals                  |     0.054 |    47322 |       --- |             --- |
 | Block RAM                |     0.007 |        2 |       912 |            0.22 |
 | DSPs                     |     0.034 |      192 |      2520 |            7.62 |
 | PS8                      |     3.188 |        1 |       --- |             --- |
@@ -79,7 +79,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------------+-------------+-----------+-------------+------------+
-| Vccint          |       0.850 |     0.404 |       0.200 |      0.204 |
+| Vccint          |       0.850 |     0.405 |       0.201 |      0.204 |
 | Vccint_io       |       0.850 |     0.034 |       0.000 |      0.034 |
 | Vccint_xiphy    |       0.850 |     0.002 |       0.000 |      0.002 |
 | Vccbram         |       0.850 |     0.004 |       0.001 |      0.003 |
@@ -167,13 +167,13 @@ Table of Contents
 +-----------------------------------------------------------------------------------+-----------+
 | Name                                                                              | Power (W) |
 +-----------------------------------------------------------------------------------+-----------+
-| design_1_wrapper                                                                  |     3.359 |
-|   design_1_i                                                                      |     3.359 |
-|     ChenIDct_0                                                                    |     0.066 |
-|       inst                                                                        |     0.066 |
+| design_1_wrapper                                                                  |     3.360 |
+|   design_1_i                                                                      |     3.360 |
+|     ChenIDct_0                                                                    |     0.067 |
+|       inst                                                                        |     0.067 |
 |         ChenIDct_BUS_CTRL_s_axi_U                                                 |    <0.001 |
-|         ChenIDct_BUS_SRC_DST_m_axi_U                                              |     0.015 |
-|           bus_read                                                                |     0.008 |
+|         ChenIDct_BUS_SRC_DST_m_axi_U                                              |     0.016 |
+|           bus_read                                                                |     0.009 |
 |             buff_rdata                                                            |     0.003 |
 |             fifo_rctl                                                             |    <0.001 |
 |             fifo_rreq                                                             |    <0.001 |
@@ -251,7 +251,7 @@ Table of Contents
 |           ChenIDct_mul_9ns_eOg_MulnS_3_U                                          |    <0.001 |
 |         ChenIDct_mul_9ns_eOg_U9                                                   |    <0.001 |
 |           ChenIDct_mul_9ns_eOg_MulnS_3_U                                          |    <0.001 |
-|         ChenIDct_mux_326_fYi_U33                                                  |     0.002 |
+|         ChenIDct_mux_326_fYi_U33                                                  |     0.003 |
 |     axi_interconnect_master                                                       |     0.007 |
 |       s00_couplers                                                                |     0.006 |
 |         auto_ds                                                                   |     0.004 |
@@ -456,8 +456,8 @@ Table of Contents
 |               wrouter_aw_fifo                                                     |    <0.001 |
 |                 gen_srls[0].gen_rep[0].srl_nx1                                    |    <0.001 |
 |             splitter_aw_mi                                                        |    <0.001 |
-|     decode_start_f2r_vectorPh_s2e_forBody96Preheader_0                            |     0.086 |
-|       inst                                                                        |     0.086 |
+|     decode_start_f2r_vectorPh_s2e_forBody96Preheader_0                            |     0.085 |
+|       inst                                                                        |     0.085 |
 |         decode_start_f2r_bkb_U1                                                   |    <0.001 |
 |           decode_start_f2r_bkb_MulnS_0_U                                          |    <0.001 |
 |         decode_start_f2r_bkb_U12                                                  |    <0.001 |

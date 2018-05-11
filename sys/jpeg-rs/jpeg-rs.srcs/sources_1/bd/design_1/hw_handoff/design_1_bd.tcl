@@ -169,6 +169,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_interconnect_master, and set properties
   set axi_interconnect_master [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_master ]
+  set_property -dict [ list \
+   CONFIG.NUM_MI {2} \
+ ] $axi_interconnect_master
 
   # Create instance: axi_interconnect_slave, and set properties
   set axi_interconnect_slave [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_slave ]
@@ -824,16 +827,16 @@ proc create_root_design { parentCell } {
 
   # Create interface connections
   connect_bd_intf_net -intf_net ChenIDct_0_m_axi_BUS_SRC_DST [get_bd_intf_pins ChenIDct_0/m_axi_BUS_SRC_DST] [get_bd_intf_pins axi_interconnect_slave/S02_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_master_M00_AXI [get_bd_intf_pins ChenIDct_0/s_axi_BUS_CTRL] [get_bd_intf_pins axi_interconnect_master/M00_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_master_M01_AXI [get_bd_intf_pins axi_interconnect_master/M01_AXI] [get_bd_intf_pins decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/s_axi_BUS_CTRL]
+  connect_bd_intf_net -intf_net axi_interconnect_master_M00_AXI [get_bd_intf_pins axi_interconnect_master/M00_AXI] [get_bd_intf_pins decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/s_axi_BUS_CTRL]
+  connect_bd_intf_net -intf_net axi_interconnect_master_M01_AXI [get_bd_intf_pins ChenIDct_0/s_axi_BUS_CTRL] [get_bd_intf_pins axi_interconnect_master/M01_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_slave_M00_AXI [get_bd_intf_pins axi_interconnect_slave/M00_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/S_AXI_ACP_FPD]
   connect_bd_intf_net -intf_net decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_m_axi_BUS_DST [get_bd_intf_pins axi_interconnect_slave/S01_AXI] [get_bd_intf_pins decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/m_axi_BUS_DST]
   connect_bd_intf_net -intf_net decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_m_axi_BUS_SRC [get_bd_intf_pins axi_interconnect_slave/S00_AXI] [get_bd_intf_pins decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/m_axi_BUS_SRC]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD [get_bd_intf_pins axi_interconnect_master/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_FPD]
 
   # Create port connections
-  connect_bd_net -net ChenIDct_0_interrupt [get_bd_pins ChenIDct_0/interrupt] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_interrupt [get_bd_pins decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/interrupt] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net ChenIDct_0_interrupt [get_bd_pins ChenIDct_0/interrupt] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_interrupt [get_bd_pins decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/interrupt] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net proc_sys_reset_0_interconnect_aresetn [get_bd_pins axi_interconnect_master/ARESETN] [get_bd_pins axi_interconnect_slave/ARESETN] [get_bd_pins proc_sys_reset_0/interconnect_aresetn]
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins ChenIDct_0/ap_rst_n] [get_bd_pins axi_interconnect_master/M00_ARESETN] [get_bd_pins axi_interconnect_master/M01_ARESETN] [get_bd_pins axi_interconnect_master/S00_ARESETN] [get_bd_pins axi_interconnect_slave/M00_ARESETN] [get_bd_pins axi_interconnect_slave/S00_ARESETN] [get_bd_pins axi_interconnect_slave/S01_ARESETN] [get_bd_pins axi_interconnect_slave/S02_ARESETN] [get_bd_pins decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/ap_rst_n] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins xlconcat_0/dout] [get_bd_pins zynq_ultra_ps_e_0/pl_ps_irq0]
@@ -844,8 +847,8 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x80000000 -offset 0x00000000 [get_bd_addr_spaces ChenIDct_0/Data_m_axi_BUS_SRC_DST] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIACP/ACP_DDR_LOW] SEG_zynq_ultra_ps_e_0_ACP_DDR_LOW
   create_bd_addr_seg -range 0x80000000 -offset 0x00000000 [get_bd_addr_spaces decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/Data_m_axi_BUS_SRC] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIACP/ACP_DDR_LOW] SEG_zynq_ultra_ps_e_0_ACP_DDR_LOW
   create_bd_addr_seg -range 0x80000000 -offset 0x00000000 [get_bd_addr_spaces decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/Data_m_axi_BUS_DST] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIACP/ACP_DDR_LOW] SEG_zynq_ultra_ps_e_0_ACP_DDR_LOW
-  create_bd_addr_seg -range 0x00010000 -offset 0xA0010000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs ChenIDct_0/s_axi_BUS_CTRL/Reg] SEG_ChenIDct_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0xA0000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/s_axi_BUS_CTRL/Reg] SEG_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0xA0000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs ChenIDct_0/s_axi_BUS_CTRL/Reg] SEG_ChenIDct_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0xA0010000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs decode_start_f2r_vectorPh_s2e_forBody96Preheader_0/s_axi_BUS_CTRL/Reg] SEG_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_Reg
 
 
   # Restore current instance

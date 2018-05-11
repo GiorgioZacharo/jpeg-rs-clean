@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Tue May  1 18:00:25 2018
+//Date        : Wed May  9 11:31:54 2018
 //Host        : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=24,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=2,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_clkrst_cnt=4,da_zynq_ultra_ps_e_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=24,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=2,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_clkrst_cnt=8,da_zynq_ultra_ps_e_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    ();
 
@@ -228,7 +228,7 @@ module design_1
   wire zynq_ultra_ps_e_0_pl_clk0;
   wire zynq_ultra_ps_e_0_pl_resetn0;
 
-  design_1_ChenIDct_0_1 ChenIDct_0
+  design_1_ChenIDct_0_0 ChenIDct_0
        (.ap_clk(zynq_ultra_ps_e_0_pl_clk0),
         .ap_rst_n(proc_sys_reset_0_peripheral_aresetn),
         .interrupt(ChenIDct_0_interrupt),
@@ -265,23 +265,23 @@ module design_1
         .m_axi_BUS_SRC_DST_WREADY(ChenIDct_0_m_axi_BUS_SRC_DST_WREADY),
         .m_axi_BUS_SRC_DST_WSTRB(ChenIDct_0_m_axi_BUS_SRC_DST_WSTRB),
         .m_axi_BUS_SRC_DST_WVALID(ChenIDct_0_m_axi_BUS_SRC_DST_WVALID),
-        .s_axi_BUS_CTRL_ARADDR(axi_interconnect_master_M00_AXI_ARADDR[5:0]),
-        .s_axi_BUS_CTRL_ARREADY(axi_interconnect_master_M00_AXI_ARREADY),
-        .s_axi_BUS_CTRL_ARVALID(axi_interconnect_master_M00_AXI_ARVALID),
-        .s_axi_BUS_CTRL_AWADDR(axi_interconnect_master_M00_AXI_AWADDR[5:0]),
-        .s_axi_BUS_CTRL_AWREADY(axi_interconnect_master_M00_AXI_AWREADY),
-        .s_axi_BUS_CTRL_AWVALID(axi_interconnect_master_M00_AXI_AWVALID),
-        .s_axi_BUS_CTRL_BREADY(axi_interconnect_master_M00_AXI_BREADY),
-        .s_axi_BUS_CTRL_BRESP(axi_interconnect_master_M00_AXI_BRESP),
-        .s_axi_BUS_CTRL_BVALID(axi_interconnect_master_M00_AXI_BVALID),
-        .s_axi_BUS_CTRL_RDATA(axi_interconnect_master_M00_AXI_RDATA),
-        .s_axi_BUS_CTRL_RREADY(axi_interconnect_master_M00_AXI_RREADY),
-        .s_axi_BUS_CTRL_RRESP(axi_interconnect_master_M00_AXI_RRESP),
-        .s_axi_BUS_CTRL_RVALID(axi_interconnect_master_M00_AXI_RVALID),
-        .s_axi_BUS_CTRL_WDATA(axi_interconnect_master_M00_AXI_WDATA),
-        .s_axi_BUS_CTRL_WREADY(axi_interconnect_master_M00_AXI_WREADY),
-        .s_axi_BUS_CTRL_WSTRB(axi_interconnect_master_M00_AXI_WSTRB),
-        .s_axi_BUS_CTRL_WVALID(axi_interconnect_master_M00_AXI_WVALID));
+        .s_axi_BUS_CTRL_ARADDR(axi_interconnect_master_M01_AXI_ARADDR[5:0]),
+        .s_axi_BUS_CTRL_ARREADY(axi_interconnect_master_M01_AXI_ARREADY),
+        .s_axi_BUS_CTRL_ARVALID(axi_interconnect_master_M01_AXI_ARVALID),
+        .s_axi_BUS_CTRL_AWADDR(axi_interconnect_master_M01_AXI_AWADDR[5:0]),
+        .s_axi_BUS_CTRL_AWREADY(axi_interconnect_master_M01_AXI_AWREADY),
+        .s_axi_BUS_CTRL_AWVALID(axi_interconnect_master_M01_AXI_AWVALID),
+        .s_axi_BUS_CTRL_BREADY(axi_interconnect_master_M01_AXI_BREADY),
+        .s_axi_BUS_CTRL_BRESP(axi_interconnect_master_M01_AXI_BRESP),
+        .s_axi_BUS_CTRL_BVALID(axi_interconnect_master_M01_AXI_BVALID),
+        .s_axi_BUS_CTRL_RDATA(axi_interconnect_master_M01_AXI_RDATA),
+        .s_axi_BUS_CTRL_RREADY(axi_interconnect_master_M01_AXI_RREADY),
+        .s_axi_BUS_CTRL_RRESP(axi_interconnect_master_M01_AXI_RRESP),
+        .s_axi_BUS_CTRL_RVALID(axi_interconnect_master_M01_AXI_RVALID),
+        .s_axi_BUS_CTRL_WDATA(axi_interconnect_master_M01_AXI_WDATA),
+        .s_axi_BUS_CTRL_WREADY(axi_interconnect_master_M01_AXI_WREADY),
+        .s_axi_BUS_CTRL_WSTRB(axi_interconnect_master_M01_AXI_WSTRB),
+        .s_axi_BUS_CTRL_WVALID(axi_interconnect_master_M01_AXI_WVALID));
   design_1_axi_interconnect_0_1 axi_interconnect_master
        (.ACLK(zynq_ultra_ps_e_0_pl_clk0),
         .ARESETN(proc_sys_reset_0_interconnect_aresetn),
@@ -579,23 +579,23 @@ module design_1
         .m_axi_BUS_SRC_WREADY(decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_m_axi_BUS_SRC_WREADY),
         .m_axi_BUS_SRC_WSTRB(decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_m_axi_BUS_SRC_WSTRB),
         .m_axi_BUS_SRC_WVALID(decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_m_axi_BUS_SRC_WVALID),
-        .s_axi_BUS_CTRL_ARADDR(axi_interconnect_master_M01_AXI_ARADDR[5:0]),
-        .s_axi_BUS_CTRL_ARREADY(axi_interconnect_master_M01_AXI_ARREADY),
-        .s_axi_BUS_CTRL_ARVALID(axi_interconnect_master_M01_AXI_ARVALID),
-        .s_axi_BUS_CTRL_AWADDR(axi_interconnect_master_M01_AXI_AWADDR[5:0]),
-        .s_axi_BUS_CTRL_AWREADY(axi_interconnect_master_M01_AXI_AWREADY),
-        .s_axi_BUS_CTRL_AWVALID(axi_interconnect_master_M01_AXI_AWVALID),
-        .s_axi_BUS_CTRL_BREADY(axi_interconnect_master_M01_AXI_BREADY),
-        .s_axi_BUS_CTRL_BRESP(axi_interconnect_master_M01_AXI_BRESP),
-        .s_axi_BUS_CTRL_BVALID(axi_interconnect_master_M01_AXI_BVALID),
-        .s_axi_BUS_CTRL_RDATA(axi_interconnect_master_M01_AXI_RDATA),
-        .s_axi_BUS_CTRL_RREADY(axi_interconnect_master_M01_AXI_RREADY),
-        .s_axi_BUS_CTRL_RRESP(axi_interconnect_master_M01_AXI_RRESP),
-        .s_axi_BUS_CTRL_RVALID(axi_interconnect_master_M01_AXI_RVALID),
-        .s_axi_BUS_CTRL_WDATA(axi_interconnect_master_M01_AXI_WDATA),
-        .s_axi_BUS_CTRL_WREADY(axi_interconnect_master_M01_AXI_WREADY),
-        .s_axi_BUS_CTRL_WSTRB(axi_interconnect_master_M01_AXI_WSTRB),
-        .s_axi_BUS_CTRL_WVALID(axi_interconnect_master_M01_AXI_WVALID));
+        .s_axi_BUS_CTRL_ARADDR(axi_interconnect_master_M00_AXI_ARADDR[5:0]),
+        .s_axi_BUS_CTRL_ARREADY(axi_interconnect_master_M00_AXI_ARREADY),
+        .s_axi_BUS_CTRL_ARVALID(axi_interconnect_master_M00_AXI_ARVALID),
+        .s_axi_BUS_CTRL_AWADDR(axi_interconnect_master_M00_AXI_AWADDR[5:0]),
+        .s_axi_BUS_CTRL_AWREADY(axi_interconnect_master_M00_AXI_AWREADY),
+        .s_axi_BUS_CTRL_AWVALID(axi_interconnect_master_M00_AXI_AWVALID),
+        .s_axi_BUS_CTRL_BREADY(axi_interconnect_master_M00_AXI_BREADY),
+        .s_axi_BUS_CTRL_BRESP(axi_interconnect_master_M00_AXI_BRESP),
+        .s_axi_BUS_CTRL_BVALID(axi_interconnect_master_M00_AXI_BVALID),
+        .s_axi_BUS_CTRL_RDATA(axi_interconnect_master_M00_AXI_RDATA),
+        .s_axi_BUS_CTRL_RREADY(axi_interconnect_master_M00_AXI_RREADY),
+        .s_axi_BUS_CTRL_RRESP(axi_interconnect_master_M00_AXI_RRESP),
+        .s_axi_BUS_CTRL_RVALID(axi_interconnect_master_M00_AXI_RVALID),
+        .s_axi_BUS_CTRL_WDATA(axi_interconnect_master_M00_AXI_WDATA),
+        .s_axi_BUS_CTRL_WREADY(axi_interconnect_master_M00_AXI_WREADY),
+        .s_axi_BUS_CTRL_WSTRB(axi_interconnect_master_M00_AXI_WSTRB),
+        .s_axi_BUS_CTRL_WVALID(axi_interconnect_master_M00_AXI_WVALID));
   design_1_proc_sys_reset_0_0 proc_sys_reset_0
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -605,8 +605,8 @@ module design_1
         .peripheral_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .slowest_sync_clk(zynq_ultra_ps_e_0_pl_clk0));
   design_1_xlconcat_0_0 xlconcat_0
-       (.In0(ChenIDct_0_interrupt),
-        .In1(decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_interrupt),
+       (.In0(decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_interrupt),
+        .In1(ChenIDct_0_interrupt),
         .dout(xlconcat_0_dout));
   design_1_zynq_ultra_ps_e_0_0 zynq_ultra_ps_e_0
        (.maxigp0_araddr(zynq_ultra_ps_e_0_M_AXI_HPM0_FPD_ARADDR),

@@ -19,17 +19,17 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_in
 # IP: bd/design_1/ip/design_1_axi_interconnect_0_1/design_1_axi_interconnect_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_interconnect_0_1 || ORIG_REF_NAME==design_1_axi_interconnect_0_1} -quiet] -quiet
 
+# IP: bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xbar_0 || ORIG_REF_NAME==design_1_xbar_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_ChenIDct_0_0/design_1_ChenIDct_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_ChenIDct_0_0 || ORIG_REF_NAME==design_1_ChenIDct_0_0} -quiet] -quiet
+
 # IP: bd/design_1/ip/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_0/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_0 || ORIG_REF_NAME==design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_ChenIDct_0_1/design_1_ChenIDct_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_ChenIDct_0_1 || ORIG_REF_NAME==design_1_ChenIDct_0_1} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_xbar_1/design_1_xbar_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xbar_1 || ORIG_REF_NAME==design_1_xbar_1} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xbar_0 || ORIG_REF_NAME==design_1_xbar_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_auto_ds_0 || ORIG_REF_NAME==design_1_auto_ds_0} -quiet] -quiet

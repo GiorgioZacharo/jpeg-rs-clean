@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Tue May  1 18:04:16 2018
+-- Date        : Tue May  1 18:04:15 2018
 -- Host        : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
--- Command     : write_vhdl -force -mode funcsim
---               /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_xbar_0 -prefix
+--               design_1_xbar_0_ design_1_xbar_0_sim_netlist.vhdl
 -- Design      : design_1_xbar_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -48,8 +48,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_addr_arbiter is
     r_cmd_pop_0 : in STD_LOGIC;
     \gen_single_thread.active_target_enc_reg[0]\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_addr_arbiter : entity is "axi_crossbar_v2_1_16_addr_arbiter";
 end design_1_xbar_0_axi_crossbar_v2_1_16_addr_arbiter;
 
 architecture STRUCTURE of design_1_xbar_0_axi_crossbar_v2_1_16_addr_arbiter is
@@ -5420,8 +5418,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_decerr_slave is
     \gen_axi.read_cs_reg[0]_0\ : in STD_LOGIC;
     m_axi_awid : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_decerr_slave : entity is "axi_crossbar_v2_1_16_decerr_slave";
 end design_1_xbar_0_axi_crossbar_v2_1_16_decerr_slave;
 
 architecture STRUCTURE of design_1_xbar_0_axi_crossbar_v2_1_16_decerr_slave is
@@ -5969,8 +5965,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_si_transactor is
     s_rvalid_i0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rready : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_si_transactor : entity is "axi_crossbar_v2_1_16_si_transactor";
 end design_1_xbar_0_axi_crossbar_v2_1_16_si_transactor;
 
 architecture STRUCTURE of design_1_xbar_0_axi_crossbar_v2_1_16_si_transactor is
@@ -7120,8 +7114,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_splitter is
     D : in STD_LOGIC_VECTOR ( 1 downto 0 );
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_splitter : entity is "axi_crossbar_v2_1_16_splitter";
 end design_1_xbar_0_axi_crossbar_v2_1_16_splitter;
 
 architecture STRUCTURE of design_1_xbar_0_axi_crossbar_v2_1_16_splitter is
@@ -18759,8 +18751,6 @@ entity design_1_xbar_0_axi_data_fifo_v2_1_14_axic_reg_srl_fifo is
     s_axi_wvalid : in STD_LOGIC_VECTOR ( 0 to 0 );
     \m_ready_d_reg[1]_0\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_data_fifo_v2_1_14_axic_reg_srl_fifo : entity is "axi_data_fifo_v2_1_14_axic_reg_srl_fifo";
 end design_1_xbar_0_axi_data_fifo_v2_1_14_axic_reg_srl_fifo;
 
 architecture STRUCTURE of design_1_xbar_0_axi_data_fifo_v2_1_14_axic_reg_srl_fifo is
@@ -20833,8 +20823,6 @@ entity design_1_xbar_0_axi_register_slice_v2_1_15_axi_register_slice is
     m_axi_rvalid : in STD_LOGIC_VECTOR ( 0 to 0 );
     aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_register_slice_v2_1_15_axi_register_slice : entity is "axi_register_slice_v2_1_15_axi_register_slice";
 end design_1_xbar_0_axi_register_slice_v2_1_15_axi_register_slice;
 
 architecture STRUCTURE of design_1_xbar_0_axi_register_slice_v2_1_15_axi_register_slice is
@@ -21066,8 +21054,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_wdata_mux is
     \gen_arbiter.m_target_hot_i_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     SS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_wdata_mux : entity is "axi_crossbar_v2_1_16_wdata_mux";
 end design_1_xbar_0_axi_crossbar_v2_1_16_wdata_mux;
 
 architecture STRUCTURE of design_1_xbar_0_axi_crossbar_v2_1_16_wdata_mux is
@@ -21214,8 +21200,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_wdata_router is
     \storage_data1_reg[1]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \m_ready_d_reg[1]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_wdata_router : entity is "axi_crossbar_v2_1_16_wdata_router";
 end design_1_xbar_0_axi_crossbar_v2_1_16_wdata_router;
 
 architecture STRUCTURE of design_1_xbar_0_axi_crossbar_v2_1_16_wdata_router is
@@ -21437,8 +21421,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_crossbar is
     m_axi_rvalid : in STD_LOGIC_VECTOR ( 0 to 0 );
     aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_crossbar : entity is "axi_crossbar_v2_1_16_crossbar";
 end design_1_xbar_0_axi_crossbar_v2_1_16_crossbar;
 
 architecture STRUCTURE of design_1_xbar_0_axi_crossbar_v2_1_16_crossbar is
@@ -22407,8 +22389,6 @@ entity design_1_xbar_0_axi_crossbar_v2_1_16_axi_crossbar is
   attribute C_S_AXI_WRITE_ACCEPTANCE of design_1_xbar_0_axi_crossbar_v2_1_16_axi_crossbar : entity is "96'b000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_1_xbar_0_axi_crossbar_v2_1_16_axi_crossbar : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_xbar_0_axi_crossbar_v2_1_16_axi_crossbar : entity is "axi_crossbar_v2_1_16_axi_crossbar";
   attribute P_ADDR_DECODE : integer;
   attribute P_ADDR_DECODE of design_1_xbar_0_axi_crossbar_v2_1_16_axi_crossbar : entity is 1;
   attribute P_AXI3 : integer;

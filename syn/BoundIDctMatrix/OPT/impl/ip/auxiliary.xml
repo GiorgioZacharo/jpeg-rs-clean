@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="BoundIDctMatrix" xd:componentRef="BoundIDctMatrix" xd:initiationInterval="161" xd:clockPeriod="3.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="matrix[]" xd:originalName="matrix" xd:direction="inout" xd:interfaceRef="m_axi_BUS_DST" xd:busTypeRef="aximm" xd:arraySize="64" xd:dataWidth="32" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="matrix" xd:originalName="matrix" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_DST" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Bound" xd:originalName="Bound" xd:direction="in" xd:interfaceRef="s_axi_BUS_SRC" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="160" xd:worst-case="160" xd:average-case="160"/>
+  <xd:resourceEstimates xd:LUT="8342" xd:FF="3943" xd:BRAM="2" xd:DSP="0"/>
+</xd:acceleratorMap>

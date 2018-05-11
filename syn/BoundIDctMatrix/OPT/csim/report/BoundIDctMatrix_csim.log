@@ -1,0 +1,291 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../../tb/huffman.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:43:47 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/141261526064227179969
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/init.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:43:51 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/142121526064231096972
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/jfif_read.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:43:54 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/143041526064234885894
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/jpeg2bmp.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:43:58 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/143891526064238525459
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/main.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:44:02 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/144751526064242112337
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/marker.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:44:05 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/145611526064245664719
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../src/chenidct.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:44:09 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+../../../../../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, CHUNK_SIZE * sizeof(int));
+        ^
+../../../../../src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+../../../../../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, CHUNK_SIZE * sizeof(int));
+        ^
+../../../../../src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/146451526064249536025
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../src/decode.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:44:13 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/147291526064253593451
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+
+marker = 0xd8
+
+marker = 0xe0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 1
+
+marker = 0xc0
+length         = 17
+data_precision = 8
+image_height   = 59
+image_width    = 90
+num_components = 3
+ index         = 0
+ id            = 1
+ h_samp_factor = 2
+ v_samp_factor = 2
+ quant_tbl_no  = 0
+
+ index         = 1
+ id            = 2
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+ index         = 2
+ id            = 3
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+
+Sampling Factor is 4:1:1
+
+marker = 0xc4
+ length = 29
+ index = 0x0
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x10
+ count = 162
+
+marker = 0xc4
+ length = 29
+ index = 0x1
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x11
+ count = 162
+
+marker = 0xda
+ length = 12
+ num_comp = 3
+ comp_id       = 1
+ dc_tbl_no     = 0
+ ac_tbl_no     = 0
+ comp_id       = 2
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+ comp_id       = 3
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+Decode 4:1:1 NumMCU = 96
+ Matrix : 220 	 100 
+  Matrix : 177 	 144 
+  Matrix : 12 	 45 
+  Matrix : 78 	 70 
+  Matrix : 134 	 132 
+  Matrix : 126 	 129 
+  Matrix : 167 	 142 
+  Matrix : 126 	 20 
+  Matrix : 199 	 145 
+  Matrix : 31 	 156 
+  Matrix : 139 	 149 
+  Matrix : 126 	 126 
+  Matrix : 45 	 27 
+  Matrix : 199 	 186 
+  Matrix : 84 	 48 
+  Matrix : 92 	 190 
+  Matrix : 150 	 126 
+  Matrix : 124 	 126 
+  Matrix : 59 	 69 
+  Matrix : 23 	 41 
+  Matrix : 159 	 96 
+  Matrix : 86 	 29 
+  Matrix : 136 	 117 
+  Matrix : 120 	 128 
+  Matrix : 26 	 35 
+  Matrix : 77 	 46 
+  Matrix : 32 	 188 
+  Matrix : 45 	 95 
+  Matrix : 112 	 126 
+  Matrix : 127 	 127 
+  Matrix : 16 	 17 
+  Matrix : 29 	 52 
+  Matrix : 37 	 47 
+  Matrix : 19 	 23 
+  Matrix : 115 	 121 
+  Matrix : 126 	 128 
+  Matrix : 16 	 40 
+  Matrix : 147 	 77 
+  Matrix : 11 	 12 
+  Matrix : 65 	 55 
+  Matrix : 131 	 144 
+  Matrix : 124 	 122 
+  Matrix : 149 	 107 
+  Matrix : 90 	 38 
+  Matrix : 13 	 184 
+  Matrix : 91 	 175 
+  Matrix : 134 	 145 
+  Matrix : 125 	 126 
+  Matrix : 31 	 98 
+  Matrix : 105 	 192 
+  Matrix : 160 	 204 
+  Matrix : 99 	 101 
+  Matrix : 140 	 128 
+  Matrix : 121 	 128 
+  Matrix : 229 	 213 
+  Matrix : 129 	 39 
+  Matrix : 161 	 180 
+  Matrix : 82 	 220 
+  Matrix : 119 	 142 
+  Matrix : 128 	 125 
+  Matrix : 91 	 140 
+  Matrix : 182 	 107 
+  Matrix : 43 	 101 
+  Matrix : 86 	 61 
+  Matrix : 120 	 134 
+  Matrix : 127 	 125 
+  Matrix : 128 	 16 
+  Matrix : 55 	 59 
+  Matrix : 27 	 23 
+  Matrix : 91 	 32 
+  Matrix : 109 	 116 
+  Matrix : 124 	 128 
+  Matrix : 5 	 18 
+  Matrix : 128 	 7 
+  Matrix : 63 	 196 
+  Matrix : 183 	 205 
+  Matrix : 132 	 112 
+  Matrix : 123 	 124 
+  Matrix : 25 	 50 
+  Matrix : 138 	 35 
+  Matrix : 55 	 64 
+  Matrix : 135 	 225 
+  Matrix : 118 	 113 
+  Matrix : 122 	 124 
+  Matrix : 13 	 198 
+  Matrix : 61 	 178 
+  Matrix : 2 	 0 
+  Matrix : 106 	 39 
+  Matrix : 142 	 135 
+  Matrix : 126 	 126 
+  Matrix : 102 	 116 
+  Matrix : 40 	 48 
+  Matrix : 180 	 3 
+  Matrix : 210 	 63 
+  Matrix : 119 	 138 
+  Matrix : 127 	 127 
+  Matrix : 217 	 168 
+  Matrix : 31 	 181 
+  Matrix : 49 	 61 
+  Matrix : 111 	 94 
+  Matrix : 115 	 121 
+  Matrix : 125 	 127 
+  Matrix : 17 	 29 
+  Matrix : 57 	 99 
+  Matrix : 67 	 48 
+  Matrix : 57 	 5 
+  Matrix : 99 	 104 
+  Matrix : 133 	 127 
+  Matrix : 5 	 110 
+  Matrix : 78 	 167 
+  Matrix : 5 	 13 
+  Matrix : 133 	 177 
+  Matrix : 122 	 118 
+  Matrix : 125 	 123 
+  Matrix : 50 	 28 
+  Matrix : 8 	 172 
+  Matrix : 15 	 7 
+  Matrix : 255 	 204 
+  Matrix : 113 	 125 
+  Matrix : 126 	 123 
+  Matrix : 238 	 185 
+  Matrix : 125 	 112 
+  Matrix : 176 	 64 
+  Matrix : 196 	 112 
+  Matrix : 123 	 139 
+  Matrix : 126 	 129 
+  Matrix : 37 	 55 
+  Matrix : 23 	 85 
+  Matrix : 187 	 211 
+  Matrix : 130 	 61 
+  Matrix : 135 	 127 
+  Matrix : 125 	 126 
+  Matrix : 139 	 45 
+  Matrix : 38 	 201 
+  Matrix : 40 	 63 
+  Matrix : 37 	 82 
+  Matrix : 117 	 117 
+  Matrix : 124 	 126 
+  Matrix : 49 	 15 
+  Matrix : 17 	 139 
+  Matrix : 98 	 80 
+  Matrix : 113 	 64 
+  Matrix : 102 	 104 
+  Matrix : 124 	 126 
+ 0
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
