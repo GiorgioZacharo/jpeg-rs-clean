@@ -1,20 +1,40 @@
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 14:53:44 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Fri May 11 19:01:19 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn'
-INFO: [HLS 200-10] Opening project '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix'.
-INFO: [HLS 200-10] Opening solution '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix/OPT'.
+INFO: [HLS 200-10] Opening project '/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize'.
+INFO: [HLS 200-10] Adding design file '../src/chenidct.c' to the project
+INFO: [HLS 200-10] Adding design file '../inc/chenidct.h' to the project
+INFO: [HLS 200-10] Adding design file '../src/decode.c' to the project
+INFO: [HLS 200-10] Adding design file '../inc/decode.h' to the project
+INFO: [HLS 200-10] Adding design file '../inc/global.h' to the project
+INFO: [HLS 200-10] Adding design file '../inc/huffman.h' to the project
+INFO: [HLS 200-10] Adding design file '../inc/init.h' to the project
+INFO: [HLS 200-10] Adding design file '../inc/jfif_read.h' to the project
+INFO: [HLS 200-10] Adding design file '../inc/jpeg2bmp.h' to the project
+INFO: [HLS 200-10] Adding design file '../inc/marker.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/chenidct.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/decode.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/global.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../tb/huffman.c' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/huffman.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../tb/init.c' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/init.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../tb/jfif_read.c' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/jfif_read.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../tb/jpeg2bmp.c' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/jpeg2bmp.h' to the project
+INFO: [HLS 200-10] Adding test bench file '../tb/main.c' to the project
+INFO: [HLS 200-10] Adding test bench file '../tb/marker.c' to the project
+INFO: [HLS 200-10] Adding test bench file '../inc/marker.h' to the project
+INFO: [HLS 200-10] Opening solution '/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
 INFO: [HLS 200-10] Setting target device to 'xczu9eg-ffvb1156-2-i'
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-
-****** Vivado v2017.4 (64-bit)
-  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
-  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/tools/Xilinx/Vivado/2017.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri May 11 14:53:55 2018...
+INFO: [HLS 200-10] Analyzing design file '../src/decode.c' ...
+INFO: [HLS 200-10] Analyzing design file '../src/chenidct.c' ...
+WARNING: [HLS 200-40] In file included from ../src/chenidct.c:1:
+../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        ^
+../src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.

@@ -149,17 +149,64 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCT
  * IQuantize() takes an input matrix and does an inverse quantization
  * and puts the output int qmatrix.
  */
-void
-IQuantize (int *matrix, unsigned int *qmatrix)
-{
-  int *mptr;
+//void
+//IQuantize (int *matrix, unsigned int *qmatrix)
+//{
+//  int *mptr;
+//
+//  for (mptr = matrix; mptr < matrix + DCTSIZE2; mptr++)
+//    {
+//      *mptr = *mptr * (*qmatrix);
+//      qmatrix++;
+//    }
+//}
 
-  for (mptr = matrix; mptr < matrix + DCTSIZE2; mptr++)
-    {
-      *mptr = *mptr * (*qmatrix);
-      qmatrix++;
-    }
+void
+IQuantize (int *matrix, unsigned int *qmatrix){
+#pragma HLS INTERFACE m_axi depth=64 port=qmatrix offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=matrix offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+
+int i;
+	int inp1_buf[CHUNK_SIZE];
+	int inp2_buf[CHUNK_SIZE];
+
+	#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+	#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+
+	for (i = 0; i < N_CHUNKS; i++){
+		// Load data
+		#ifdef STANDARD_MODE
+		  for (int j=0; j < CHUNK_SIZE; j++)
+		  #pragma HLS UNROLL skip_exit_check factor=16
+			inp1_buf[j] = matrix[i*CHUNK_SIZE+j];
+		#else
+			/* BURST_MODE */
+			unsigned offset = i*CHUNK_SIZE;
+			memcpy(inp1_buf, qmatrix + offset, CHUNK_SIZE * sizeof(int));
+			memcpy(inp2_buf, matrix + offset, CHUNK_SIZE * sizeof(int));
+		#endif
+
+
+		// Computation
+			for (int k=0; k < CHUNK_SIZE; k++){
+			#pragma HLS UNROLL skip_exit_check factor=16
+				inp2_buf[k] =  inp1_buf[k] * inp2_buf[k];
+			}
+
+		// Store Data
+			#ifdef STANDARD_MODE
+			  for (int l=0; l < CHUNK_SIZE; l++)
+			  #pragma HLS UNROLL skip_exit_check factor=16
+				matrix[i*CHUNK_SIZE+l] = out1_buf[l];
+			#else
+			  offset = i*CHUNK_SIZE;
+			  memcpy(matrix + offset, inp2_buf, CHUNK_SIZE * sizeof(int));
+			#endif
+	}
+
 }
+
 
 
 /*
@@ -181,23 +228,6 @@ PostshiftIDctMatrix (int *matrix, int shift)
  * BoundIDctMatrix bounds the inverse dct matrix so that no pixel has a
  * value greater than 255 (4095) or less than 0.
  */
-//void
-//BoundIDctMatrix (int *matrix, int Bound)
-//{
-//  int *mptr;
-//
-//  for (mptr = matrix; mptr < matrix + DCTSIZE2; mptr++)
-//    {
-//      if (*mptr < 0)
-//	{
-//	  *mptr = 0;
-//	}
-//      else if (*mptr > Bound)
-//	{
-//	  *mptr = Bound;
-//	}
-//    }
-//}
 
 void
 BoundIDctMatrix (int matrix[DCTSIZE2], int Bound) {

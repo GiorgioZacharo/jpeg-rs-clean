@@ -1,0 +1,247 @@
+INFO: [HLS 200-0] Workspace /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT opened at Fri May 11 19:01:19 EDT 2018
+Execute     config_clock -quiet -name default -period 3 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
+Command     config_clock returned 0; 0 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/zynquplus/zynquplus 
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.lib 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.lib 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_old.lib 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_vivado.lib 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/zynquplus/dsp48e2.hlp 
+Command       ap_source returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 34260} {LUT 274080}   {FF 548160}  {DSP48E 2520}  {BRAM 1824} {URAM 0}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed medium 
+Command       config_chip_info returned 0; 0 sec.
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0.01 sec.
+Command     import_lib returned 0; 0.02 sec.
+Execute     source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/zynquplus/zynquplus.gen 
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/plb46.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/fsl.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/axi4.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.gen 
+Command             ap_source returned 0; 0.01 sec.
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/dds_compiler.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/util.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source returned 0; 0.07 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.09 sec.
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.09 sec.
+Command     ap_source returned 0; 0.09 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/zynquplus/zynquplus_fpv7 
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_hp.lib 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/target_info.tcl 
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/maxi.hlp 
+Command             ap_source returned 0; 0 sec.
+Execute             source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/interface/saxilite.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/zynquplus/zynquplus_hp.hlp 
+Command       ap_source returned 0; 0 sec.
+Command     import_lib returned 0; 0.01 sec.
+Execute     source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/zynquplus/zynquplus_fpv7.gen 
+Execute       source /home/tools/Xilinx/Vivado/2017.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command       ap_source returned 0; 0 sec.
+Command     ap_source returned 0; 0 sec.
+Execute     set_part xczu9eg-ffvb1156-2-i 
+Execute       add_library xilinx/zynquplus/zynquplus:xczu9eg:-ffvb1156:-2-i 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         license_isbetapart xczu9eg 
+Command         license_isbetapart returned 1; 0.01 sec.
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         config_chip_info -quiet -resource  {SLICE 34260} {LUT 274080}   {FF 548160}  {DSP48E 2520}  {BRAM 1824} {URAM 0}  
+Command         config_chip_info returned 0; 0 sec.
+Execute         config_chip_info -quiet -speed medium 
+Command         config_chip_info returned 0; 0 sec.
+Command       add_library returned 0; 0.01 sec.
+Execute       add_library xilinx/zynquplus/zynquplus_fpv7 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Command       add_library returned 0; 0 sec.
+INFO: [HLS 200-10] Setting target device to 'xczu9eg-ffvb1156-2-i'
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     set_part returned 0; 0.05 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Execute     config_chip_info -quiet -resource  {SLICE 34260} {LUT 274080}   {FF 548160}  {DSP48E 2520}  {BRAM 1824} {URAM 0}  
+Command     config_chip_info returned 0; 0 sec.
+Execute     config_chip_info -quiet -speed medium 
+Command     config_chip_info returned 0; 0 sec.
+Command   open_solution returned 0; 0.18 sec.
+Execute   set_part xczu9eg-ffvb1156-2-i -tool vivado 
+Execute     add_library xilinx/zynquplus/zynquplus:xczu9eg:-ffvb1156:-2-i 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       license_isbetapart xczu9eg 
+Command       license_isbetapart returned 1; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 34260} {LUT 274080}   {FF 548160}  {DSP48E 2520}  {BRAM 1824} {URAM 0}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed medium 
+Command       config_chip_info returned 0; 0 sec.
+Command     add_library returned 0; 0 sec.
+Execute     add_library xilinx/zynquplus/zynquplus_fpv7 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     add_library returned 0; 0 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Command   set_part returned 0; 0.04 sec.
+Execute   create_clock -period 3 -name default 
+Command   create_clock returned 0; 0 sec.
+Execute   csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -VP9_rom_infer_simplify=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+INFO: [HLS 200-10] Analyzing design file '../src/decode.c' ...
+INFO: [HLS 200-0] Compiling one TU...
+Execute       is_m_axi_addr64 
+Command       is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling ../src/decode.c as C
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       is_encrypted ../src/decode.c 
+Command       is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "../src/decode.c"   -I../inc  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  -o "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E ../src/decode.c -I../inc -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c
+Command       clang returned 0; 0.74 sec.
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -I../inc  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c"  -o "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/useless.bc"  
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -I../inc -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c -o /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/useless.bc
+Command       clang returned 0; 0.75 sec.
+INFO: [HLS 200-0] GCC PP time: 1 seconds per iteration
+Execute       list_core -type functional_unit 
+Command       list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c.ap-line.c /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c.ap-line.c.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+Execute       cdt  "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c.ap-line.c"  -m "IQuantize" -o "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c.ap-cdt.c" -c --pp --directive /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/OPT.directive --source /home/giorgio/workspace/jpeg-rs-clean/syn/../src/decode.c --error /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSP_Double_Pump_Mac16 DSP_Double_Pump_Mac8 DSP_Macro DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ca --gf --pd --p2d /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db --sd --scff /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/.systemc_flag --ad 
+Command       cdt returned 0; 0.81 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pp.0.c.ap-cdt.c /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.0.c /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.0.c.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+Execute       source /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.1.c"   -I../inc  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  -o "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.2.c" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.1.c -I../inc -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.2.c
+Command       clang returned 0; 0.74 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Processing labels
+Execute       clang  -fno-limit-debug-info -gcc-toolchain /home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.2.c"  -I../inc  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.pragma.2.c -I../inc -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/decode.g.bc
+Command       clang returned 0; 0.72 sec.
+INFO: [HLS 200-10] Analyzing design file '../src/chenidct.c' ...
+INFO: [HLS 200-0] Compiling one TU...
+Execute       is_m_axi_addr64 
+Command       is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling ../src/chenidct.c as C
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       is_encrypted ../src/chenidct.c 
+Command       is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "../src/chenidct.c"   -I../inc  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  -o "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/chenidct.pp.0.c" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E ../src/chenidct.c -I../inc -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/chenidct.pp.0.c
+Command       clang returned 0; 0.69 sec.
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc" -hls  -I../inc  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot" -I "/home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/chenidct.pp.0.c"  -o "/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/useless.bc"  
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc -hls -I../inc -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot -I /home/tools/Xilinx/Vivado/2017.4/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/chenidct.pp.0.c -o /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/useless.bc
+WARNING: [HLS 200-40] In file included from ../src/chenidct.c:1:
+../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        ^
+../src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+Command       clang returned 0; 0.76 sec.
+INFO: [HLS 200-0] GCC PP time: 1 seconds per iteration
+Execute       list_core -type functional_unit 
+Command       list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/chenidct.pp.0.c /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/chenidct.pp.0.c.ap-line.c /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize/OPT/.autopilot/db/chenidct.pp.0.c.ap-line.c.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...

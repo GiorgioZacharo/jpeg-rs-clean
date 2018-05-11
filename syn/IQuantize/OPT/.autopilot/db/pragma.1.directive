@@ -1,0 +1,89 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="ChenIDct_f2r_vectorBody_s2e_forEnd212" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="y"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC_DST"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct_f2r_vectorBody_s2e_forEnd212" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="BUS_CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct_f2r_vectorBody_s2e_forEnd212" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct_f2r_vectorBody_s2e_forEnd212" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct_f2r_vectorBody_s2e_forEnd212" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="16"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="x"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC_DST"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="64"/>
+<option name="port" positionalBoolean="4" value="y"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="BUS_SRC_DST"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="BUS_CTRL"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inp1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="out1_buf"/>
+<option name="cyclic" positionalBoolean="type" value=""/>
+<option name="factor" value="16"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ChenIDct" label="">
+<pragma name="UNROLL">
+<option name="skip_exit_check" positionalBoolean="1" value=""/>
+<option name="factor" value="16"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/decode.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/chenidct.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1378" content="In file included from ../src/chenidct.c:1:
+../src/chenidct.c:82:9: warning: implicitly declaring library function &apos;memcpy&apos; with type &apos;void *(void *, const void *, unsigned long)&apos;
+        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        ^
+../src/chenidct.c:82:9: note: please include the header &lt;string.h&gt; or explicitly provide a declaration for &apos;memcpy&apos;
+1 warning generated." tag=""/>
+</Messages>
