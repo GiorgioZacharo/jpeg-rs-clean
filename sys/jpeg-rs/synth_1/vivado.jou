@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Wed May  9 11:32:06 2018
-# Process ID: 6318
+# Start of session at: Tue May 15 20:35:56 2018
+# Process ID: 18579
 # Current directory: /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/design_1_wrapper.vds
