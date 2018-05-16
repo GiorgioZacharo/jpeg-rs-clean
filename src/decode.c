@@ -965,6 +965,105 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[DCTSIZE2], int u_buf[DCTSIZE
 
 }
 
+//void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][DCTSIZE2], int u_buf[DCTSIZE2], int v_buf[DCTSIZE2], int rgb_buf[4][RGB_NUM][DCTSIZE2]){
+//#pragma HLS INTERFACE m_axi depth=384 port=y_buf offset=slave bundle=BUS_SRC
+//#pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
+//#pragma HLS INTERFACE m_axi depth=64 port=v_buf offset=slave bundle=BUS_SRC
+//#pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
+//#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+//
+//
+//  for (int p = 0; p < 4; (p)++) {
+//
+//      int i;
+//
+//      int inp1_buf[CHUNK_SIZE]; // CHUNK SIZE=32
+//      int inp2_buf[CHUNK_SIZE];
+//      int inp3_buf[CHUNK_SIZE];
+//      int out1_buf[CHUNK_SIZE];
+//      int out2_buf[CHUNK_SIZE];
+//      int out3_buf[CHUNK_SIZE];
+//
+//    #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+//    #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+//    #pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=16 dim=1
+//    #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+//    #pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=16 dim=1
+//    #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
+//
+//
+//      for (i = 0; i < N_CHUNKS; i++)
+//      {
+//      //#pragma HLS DATAFLOW // Ping Pong Buffer
+//
+//        // Load data
+//    #ifdef STANDARD_MODE
+//        for (int j=0; j < CHUNK_SIZE; j++){
+//          #pragma HLS UNROLL skip_exit_check factor=16
+//          unsigned offset = i*CHUNK_SIZE+j;
+//          inp1_buf[j] = y_buf[p][offset];
+//          inp2_buf[j] = u_buf[offset];
+//          inp3_buf[j] = v_buf[offset];
+//        }
+//
+//    #else
+//        /* BURST_MODE */
+//        unsigned offset = i*CHUNK_SIZE;
+//        memcpy(inp1_buf, y_buf[p] + offset, CHUNK_SIZE * sizeof(int));
+//        memcpy(inp2_buf, u_buf + offset, CHUNK_SIZE * sizeof(int));
+//        memcpy(inp3_buf, v_buf + offset, CHUNK_SIZE * sizeof(int));
+//    #endif
+//
+//        // Computation
+//        for (int k=0; k < CHUNK_SIZE; k++){
+//          #pragma HLS UNROLL skip_exit_check factor=16
+//
+//            out1_buf[k] = (inp1_buf[k] * 256 + (inp3_buf[k]-128) * 359 + 128) >> 8;
+//            out2_buf[k] = (inp1_buf[k] * 256 - (inp2_buf[k]-128) * 88 - (inp3_buf[k]-128) * 182 + 128) >> 8;
+//            out3_buf[k] = (inp1_buf[k] * 256 + (inp2_buf[k]-128) * 454 + 128) >> 8;
+//
+//
+//            if (out1_buf[k] < 0)
+//              out1_buf[k] = 0;
+//            else if (out1_buf[k] > 255)
+//              out1_buf[k] = 255;
+//
+//            if (out2_buf[k] < 0)
+//              out2_buf[k] = 0;
+//            else if (out2_buf[k] > 255)
+//              out2_buf[k] = 255;
+//
+//            if (out3_buf[k] < 0)
+//              out3_buf[k] = 0;
+//            else if (out3_buf[k] > 255)
+//              out3_buf[k] = 255;
+//        }
+//
+//        // Store Data
+//    #ifdef STANDARD_MODE
+//        for (int l=0; l < CHUNK_SIZE; l++) {
+//          #pragma HLS UNROLL skip_exit_check factor=16
+//          unsigned offset = i*CHUNK_SIZE+l;
+//          rgb_buf[p][0][offset] = out1_buf[l];
+//          rgb_buf[p][1][offset] = out2_buf[l];
+//          rgb_buf[p][2][offset] = out3_buf[l];
+//        }
+//    #else /* BURST_MODE */
+//        offset = i*CHUNK_SIZE;
+//        memcpy(rgb_buf[p][0] + offset, out1_buf, CHUNK_SIZE * sizeof(int));
+//        memcpy(rgb_buf[p][1] + offset, out2_buf, CHUNK_SIZE * sizeof(int));
+//        memcpy(rgb_buf[p][2] + offset, out3_buf, CHUNK_SIZE * sizeof(int));
+//    #endif
+//
+//
+//      }
+//
+//
+//
+//    }
+//}
+
+
 void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][DCTSIZE2], int u_buf[DCTSIZE2], int v_buf[DCTSIZE2], int rgb_buf[4][RGB_NUM][DCTSIZE2]){
 #pragma HLS INTERFACE m_axi depth=384 port=y_buf offset=slave bundle=BUS_SRC
 #pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
@@ -972,29 +1071,25 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][DCTSIZE2], i
 #pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
 #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 
+	int i;
 
-  for (int p = 0; p < 4; (p)++) {
+    int inp1_buf[CHUNK_SIZE]; // CHUNK SIZE=32
+    int inp2_buf[CHUNK_SIZE];
+    int inp3_buf[CHUNK_SIZE];
+    int out1_buf[CHUNK_SIZE];
+    int out2_buf[CHUNK_SIZE];
+    int out3_buf[CHUNK_SIZE];
 
-      int i;
-
-      int inp1_buf[CHUNK_SIZE]; // CHUNK SIZE=32
-      int inp2_buf[CHUNK_SIZE];
-      int inp3_buf[CHUNK_SIZE];
-      int out1_buf[CHUNK_SIZE];
-      int out2_buf[CHUNK_SIZE];
-      int out3_buf[CHUNK_SIZE];
-
-    #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
-    #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
-    #pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=16 dim=1
-    #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
-    #pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=16 dim=1
-    #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
+  #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+  #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+  #pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=16 dim=1
+  #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+  #pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=16 dim=1
+  #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
 
 
-      for (i = 0; i < N_CHUNKS; i++)
-      {
-      //#pragma HLS DATAFLOW // Ping Pong Buffer
+	for (i = 0; i < N_CHUNKS; i++) {
+		for (int p = 0; p < 4; (p)++) {
 
         // Load data
     #ifdef STANDARD_MODE

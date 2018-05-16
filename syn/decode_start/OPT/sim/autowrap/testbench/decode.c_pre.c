@@ -1929,11 +1929,275 @@ extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)
 # 943 "/usr/include/stdio.h" 3 4
 
 # 57 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" 2
-# 66 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+# 1 "/usr/include/string.h" 1 3 4
+# 27 "/usr/include/string.h" 3 4
+
+
+
+
+
+# 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
+# 33 "/usr/include/string.h" 2 3 4
+
+
+
+
+
+
+
+
+
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 92 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+# 123 "/usr/include/string.h" 3 4
+
+
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+# 1 "/usr/include/xlocale.h" 1 3 4
+# 27 "/usr/include/xlocale.h" 3 4
+typedef struct __locale_struct
+{
+
+  struct __locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+} *__locale_t;
+
+
+typedef __locale_t locale_t;
+# 160 "/usr/include/string.h" 2 3 4
+
+
+extern int strcoll_l (const char *__s1, const char *__s2, __locale_t __l)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    __locale_t __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
+
+
+
+
+
+extern char *strdup (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern char *strndup (const char *__string, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 207 "/usr/include/string.h" 3 4
+
+# 232 "/usr/include/string.h" 3 4
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 259 "/usr/include/string.h" 3 4
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+# 278 "/usr/include/string.h" 3 4
+
+
+
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 311 "/usr/include/string.h" 3 4
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 338 "/usr/include/string.h" 3 4
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+# 393 "/usr/include/string.h" 3 4
+
+
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
+
+# 423 "/usr/include/string.h" 3 4
+extern int strerror_r (int __errnum, char *__buf, size_t __buflen) __asm__ ("" "__xpg_strerror_r") __attribute__ ((__nothrow__ , __leaf__))
+
+                        __attribute__ ((__nonnull__ (2)));
+# 441 "/usr/include/string.h" 3 4
+extern char *strerror_l (int __errnum, __locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+extern void __bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 485 "/usr/include/string.h" 3 4
+extern char *index (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 513 "/usr/include/string.h" 3 4
+extern char *rindex (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int ffs (int __i) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+# 532 "/usr/include/string.h" 3 4
+extern int strcasecmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 555 "/usr/include/string.h" 3 4
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+# 642 "/usr/include/string.h" 3 4
+
+# 58 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c" 2
+
+
+
+
+
+
+
 void ChenIDct (int *x, int *y);
 
 int rgb_buf[4][3][64];
-# 86 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+# 85 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
 void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[64], int omatrix[64]) {
 #pragma HLS INTERFACE m_axi depth=64 port=imatrix offset=slave bundle=BUS_SRC
 #pragma HLS INTERFACE m_axi depth=64 port=omatrix offset=slave bundle=BUS_DST
@@ -1953,9 +2217,12 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[64], int omatrix[64]) {
   int in1_buf[32];
   int out_buf[32];
 
+#pragma HLS ARRAY_PARTITION variable=in1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=out_buf cyclic factor=16 dim=1
 
   for (int i = 0; i < 64/32; i++){
 #pragma HLS DATAFLOW
+
 
 
     for (int j=0; j < 32; j++){
@@ -1963,40 +2230,65 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[64], int omatrix[64]) {
       unsigned offset = i*32 +j;
       in1_buf[j]= zigzag_index[offset];
     }
-
-
+# 125 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
     for (int k=0; k < 32; k++)
 #pragma HLS UNROLL skip_exit_check factor=16
         out_buf[k]= imatrix[in1_buf[k]];
+# 138 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+       unsigned offset = i*32 ;
+        memcpy(omatrix + offset, out_buf, 32 * sizeof(int) );
 
-
-    for (int l=0; l < 32; l++) {
-#pragma HLS UNROLL skip_exit_check factor=16
-      unsigned offset = i*32 +l;
-      omatrix[i*32 +l]= out_buf[l];
-    }
 
   }
 
 }
-
-
-
-
-
-
-
+# 164 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
 void
-IQuantize (int *matrix, unsigned int *qmatrix)
-{
-  int *mptr;
+IQuantize (int *matrix, unsigned int *qmatrix){
+#pragma HLS INTERFACE m_axi depth=64 port=qmatrix offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=matrix offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      *mptr = *mptr * (*qmatrix);
-      qmatrix++;
-    }
+int i;
+ int inp1_buf[32];
+ int inp2_buf[32];
+
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+
+ for (i = 0; i < 64/32; i++){
+
+
+
+
+
+
+
+   unsigned offset = i*32;
+   memcpy(inp1_buf, qmatrix + offset, 32 * sizeof(int));
+   memcpy(inp2_buf, matrix + offset, 32 * sizeof(int));
+
+
+
+
+   for (int k=0; k < 32; k++){
+#pragma HLS UNROLL skip_exit_check factor=16
+    inp2_buf[k] = inp1_buf[k] * inp2_buf[k];
+   }
+
+
+
+
+
+
+
+     offset = i*32;
+     memcpy(matrix + offset, inp2_buf, 32 * sizeof(int));
+
+ }
+
 }
+
 
 
 
@@ -2018,22 +2310,48 @@ PostshiftIDctMatrix (int *matrix, int shift)
 
 
 
-void
-BoundIDctMatrix (int *matrix, int Bound)
-{
-  int *mptr;
 
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      if (*mptr < 0)
- {
-   *mptr = 0;
+void
+BoundIDctMatrix (int matrix[64], int Bound) {
+#pragma HLS INTERFACE m_axi depth=64 port=matrix offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=Bound bundle=BUS_SRC
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+
+ int i;
+ int inp1_buf[32];
+ int out1_buf[32];
+
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+
+ for (i = 0; i < 64/32; i++){
+
+
+
+
+
+
+
+   unsigned offset = i*32;
+   memcpy(inp1_buf, matrix + offset, 32 * sizeof(int));
+
+
+
+
+  for (int k=0; k < 32; k++){
+#pragma HLS UNROLL skip_exit_check factor=16
+   if (inp1_buf[k] < 0)
+    inp1_buf[k] = 0;
+
+   else if (inp1_buf[k] > Bound)
+    inp1_buf[k] = Bound;
+  }
+# 277 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+    offset = i*32;
+    memcpy(matrix + offset, inp1_buf, 32 * sizeof(int));
+
  }
-      else if (*mptr > Bound)
- {
-   *mptr = Bound;
- }
-    }
+
 }
 
 
@@ -2041,6 +2359,8 @@ BoundIDctMatrix (int *matrix, int Bound)
 void
 WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
         int voffs, int hoffs)
+
+
 {
   int i, e;
 
@@ -2074,7 +2394,73 @@ WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
 
 
 }
-# 234 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+
+
+void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[64], unsigned char out_buf[5310], int width, int height,
+        int voffs, int hoffs){
+
+#pragma HLS INTERFACE m_axi depth=64 port=store offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=5310 port=out_buf offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=height bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=width bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=voffs bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=hoffs bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+
+    int i=0;
+    int l=0;
+
+   unsigned char inp1_buf[64];
+   unsigned char out1_buf[5310];
+   int index[64];
+
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
+
+
+
+
+
+          for (int j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+            unsigned offset = i*32 +j;
+            inp1_buf[j] =(unsigned char) (*(store++));
+          }
+
+
+
+
+  for (int k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+
+   if (k < height) {
+    int diff;
+    diff = width * k;
+
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+     if (e < width){
+      out1_buf[diff + e] = inp1_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+
+
+  for (int m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+  out_buf[index[m]] = out1_buf[index[m]];
+  }
+
+
+}
+# 398 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
 void
 WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
      unsigned char *p_out_buf)
@@ -2091,7 +2477,7 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
 
 
 
-  WriteOneBlock (store,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store,
    p_out_buf,
    p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
@@ -2110,15 +2496,23 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
       *p_out_hpos = 0;
     }
 }
-
-
-
-
+# 501 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
 void
-Write4Blocks (int *store1, int *store2, int *store3, int *store4,
-       int *p_out_vpos, int *p_out_hpos, unsigned char *p_out_buf)
-{
+Write4Blocks (int store1[64], int store2[64], int store3[64], int store4[64],
+       int *p_out_vpos, int *p_out_hpos, unsigned char p_out_buf[5310]) {
+
+#pragma HLS INTERFACE m_axi depth=64 port=store1 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store2 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store3 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store4 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=5310 port=p_out_buf offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=p_out_vpos bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=p_out_hpos bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+
   int voffs, hoffs;
+
+
 
 
 
@@ -2126,19 +2520,124 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
   voffs = *p_out_vpos * 8;
   hoffs = *p_out_hpos * 8;
+# 536 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+    int i=0;
+     int l=0;
+     int j, k, m;
+
+    unsigned char inp1_buf[64];
+    unsigned char out1_buf[5310];
+    int index[64];
+
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
 
 
 
-  WriteOneBlock (store1, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+
+
+           for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+             unsigned offset = i*32 +j;
+             inp1_buf[j] =(unsigned char) (*(store1++));
+           }
+
+
+
+
+   for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+
+    if (k < p_jinfo_image_height) {
+     int diff;
+     diff = p_jinfo_image_width * k;
+
+     for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+      if (e < p_jinfo_image_width){
+       out1_buf[diff + e] = inp1_buf[l];
+       index[l]=diff+e;
+       l++;
+       }
+      else
+       break;
+     }
+    }
+    else
+     break;
+   }
+
+
+   for ( m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+   p_out_buf[index[m]] = out1_buf[index[m]];
+   }
+
+
 
 
 
 
 
   hoffs += 8;
-  WriteOneBlock (store2, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+
+
+
+
+
+
+  i=0;
+  l=0;
+
+ unsigned char inp2_buf[64];
+ unsigned char out2_buf[5310];
+
+
+#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=4 dim=1
+
+
+
+
+
+        for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+          unsigned offset = i*32 +j;
+          inp2_buf[j] =(unsigned char) (*(store2++));
+        }
+
+
+
+
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+
+   if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+     if (e < p_jinfo_image_width){
+      out2_buf[diff + e] = inp2_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+
+
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+  p_out_buf[index[m]] = out2_buf[index[m]];
+  }
+
+
 
 
 
@@ -2146,8 +2645,58 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
   voffs += 8;
   hoffs -= 8;
-  WriteOneBlock (store3, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+# 668 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+  i=0;
+  l=0;
+
+ unsigned char inp3_buf[64];
+ unsigned char out3_buf[5310];
+
+
+#pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=4 dim=1
+
+
+
+
+
+        for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+          unsigned offset = i*32 +j;
+          inp3_buf[j] =(unsigned char) (*(store3++));
+        }
+
+
+
+
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+
+   if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+     if (e < p_jinfo_image_width){
+      out3_buf[diff + e] = inp3_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+
+
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+  p_out_buf[index[m]] = out3_buf[index[m]];
+  }
+
 
 
 
@@ -2155,9 +2704,60 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
 
   hoffs += 8;
-  WriteOneBlock (store4,
-   p_out_buf, p_jinfo_image_width, p_jinfo_image_height,
-   voffs, hoffs);
+# 737 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+  i=0;
+  l=0;
+
+ unsigned char inp4_buf[64];
+ unsigned char out4_buf[5310];
+
+
+#pragma HLS ARRAY_PARTITION variable=inp4_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out4_buf cyclic factor=4 dim=1
+
+
+
+
+
+        for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+          unsigned offset = i*32 +j;
+          inp4_buf[j] =(unsigned char) (*(store4++));
+        }
+
+
+
+
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+
+   if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+     if (e < p_jinfo_image_width){
+      out4_buf[diff + e] = inp4_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+
+
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+  p_out_buf[index[m]] = out4_buf[index[m]];
+  }
+
+
+
 
 
 
@@ -2175,12 +2775,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
       *p_out_hpos = 0;
     }
 }
-
-
-
-
-
-
+# 876 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
 void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){
 
 #pragma HLS INTERFACE m_axi depth=64 port=y_buf offset=slave bundle=BUS_SRC
@@ -2206,7 +2801,7 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
 
 
   for (int i = 0; i < 64/32; i++) {
-# 379 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+# 915 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
         unsigned offset = i*32 ;
         memcpy(inp1_buf, y_buf + offset, 32 * sizeof(int));
         memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
@@ -2237,7 +2832,7 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
         else if (out3_buf[k] > 255)
           out3_buf[k] = 255;
       }
-# 420 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+# 956 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
         offset = i*32 ;
         memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
         memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
@@ -2249,7 +2844,7 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
 
 
 }
-
+# 1067 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
 void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){
 #pragma HLS INTERFACE m_axi depth=384 port=y_buf offset=slave bundle=BUS_SRC
 #pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
@@ -2257,17 +2852,14 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
 #pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
 #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 
+ int i;
 
-  for (int p = 0; p < 4; (p)++) {
-
-      int i;
-
-      int inp1_buf[32];
-      int inp2_buf[32];
-      int inp3_buf[32];
-      int out1_buf[32];
-      int out2_buf[32];
-      int out3_buf[32];
+    int inp1_buf[32];
+    int inp2_buf[32];
+    int inp3_buf[32];
+    int out1_buf[32];
+    int out2_buf[32];
+    int out3_buf[32];
 
 #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
 #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
@@ -2277,9 +2869,9 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
 #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
 
 
-      for (i = 0; i < 64/32; i++)
-      {
-# 475 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+ for (i = 0; i < 64/32; i++) {
+  for (int p = 0; p < 4; (p)++) {
+# 1106 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
         unsigned offset = i*32;
         memcpy(inp1_buf, y_buf[p] + offset, 32 * sizeof(int));
         memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
@@ -2310,7 +2902,7 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
             else if (out3_buf[k] > 255)
               out3_buf[k] = 255;
         }
-# 516 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+# 1147 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
         offset = i*32;
         memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
         memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
@@ -2442,12 +3034,12 @@ decode_start (int *out_data_image_width, int *out_data_image_height,
 
 
    decode_block (2, IDCTBuff[5], HuffBuff[2]);
-# 656 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
+# 1287 "/home/giorgio/workspace/jpeg-rs-clean/src/decode.c"
     Reg_6:decode_start_f2r_vectorPh_s2e_forBody96Preheader(IDCTBuff, IDCTBuff[4], IDCTBuff[5], rgb_buf);
 
 
-    for ( int k = 0; k < 64; k++)
-        printf ("RGB_BUF %d  %d\n", k, rgb_buf[0][0][k]);
+
+
 
    for (i = 0; i < 3; i++)
      {

@@ -1,0 +1,6 @@
+IQuantize_mul_32sbkb
+IQuantize_mux_326cud
+IQuantize_BUS_CTRL_s_axi
+IQuantize_BUS_DST_m_axi
+IQuantize_BUS_SRC_m_axi
+IQuantize

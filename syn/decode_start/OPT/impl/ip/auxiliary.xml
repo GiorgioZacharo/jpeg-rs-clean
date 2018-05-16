@@ -10,5 +10,5 @@
   <xd:arg xd:name="v_buf" xd:originalName="v_buf" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_SRC" xd:dataWidth="64" xd:offset="0x28" xd:handshakeRef="ap_none"/>
   <xd:arg xd:name="rgb_buf" xd:originalName="rgb_buf" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_DST" xd:dataWidth="64" xd:offset="0x34" xd:handshakeRef="ap_none"/>
   <xd:latencyEstimates xd:best-case="2017" xd:worst-case="2017" xd:average-case="2017"/>
-  <xd:resourceEstimates xd:LUT="31005" xd:FF="23606" xd:BRAM="4" xd:DSP="256"/>
+  <xd:resourceEstimates xd:LUT="31005" xd:FF="23607" xd:BRAM="4" xd:DSP="256"/>
 </xd:acceleratorMap>

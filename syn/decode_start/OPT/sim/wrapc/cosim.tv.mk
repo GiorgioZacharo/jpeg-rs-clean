@@ -62,34 +62,34 @@ all : $(TARGET)
 
 AUTOCC := apcc
 
-$(ObjDir)/huffman.c_pre.c.tb.o : huffman.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) huffman.c_pre.c.tb.c" $(AVE_DIR_DLOG)
-	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
-
-$(ObjDir)/init.c_pre.c.tb.o : init.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) init.c_pre.c.tb.c" $(AVE_DIR_DLOG)
-	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
-
-$(ObjDir)/jfif_read.c_pre.c.tb.o : jfif_read.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) jfif_read.c_pre.c.tb.c" $(AVE_DIR_DLOG)
-	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
-
-$(ObjDir)/jpeg2bmp.c_pre.c.tb.o : jpeg2bmp.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) jpeg2bmp.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+$(ObjDir)/marker.c_pre.c.tb.o : marker.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling (apcc) marker.c_pre.c.tb.c" $(AVE_DIR_DLOG)
 	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
 
 $(ObjDir)/main.c_pre.c.tb.o : main.c_pre.c.tb.c $(ObjDir)/.dir
 	$(Echo) "   Compiling (apcc) main.c_pre.c.tb.c" $(AVE_DIR_DLOG)
 	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
 
-$(ObjDir)/marker.c_pre.c.tb.o : marker.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) marker.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+$(ObjDir)/jpeg2bmp.c_pre.c.tb.o : jpeg2bmp.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling (apcc) jpeg2bmp.c_pre.c.tb.c" $(AVE_DIR_DLOG)
 	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
 
-$(ObjDir)/chenidct.c_pre.c.tb.o : chenidct.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) chenidct.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+$(ObjDir)/jfif_read.c_pre.c.tb.o : jfif_read.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling (apcc) jfif_read.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
+
+$(ObjDir)/init.c_pre.c.tb.o : init.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling (apcc) init.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
+
+$(ObjDir)/huffman.c_pre.c.tb.o : huffman.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling (apcc) huffman.c_pre.c.tb.c" $(AVE_DIR_DLOG)
 	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
 
 $(ObjDir)/decode.c_pre.c.tb.o : decode.c_pre.c.tb.c $(ObjDir)/.dir
 	$(Echo) "   Compiling (apcc) decode.c_pre.c.tb.c" $(AVE_DIR_DLOG)
+	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \
+
+$(ObjDir)/chenidct.c_pre.c.tb.o : chenidct.c_pre.c.tb.c $(ObjDir)/.dir
+	$(Echo) "   Compiling (apcc) chenidct.c_pre.c.tb.c" $(AVE_DIR_DLOG)
 	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG) $< -o $@; \

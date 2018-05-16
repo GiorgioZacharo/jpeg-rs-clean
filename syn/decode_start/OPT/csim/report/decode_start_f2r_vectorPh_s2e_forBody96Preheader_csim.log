@@ -2,69 +2,69 @@ INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling(apcc) ../../../../../tb/huffman.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:01:50 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:16 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/154691525118510572100
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/147131526428996738772
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/init.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:01:54 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:20 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/155521525118514378228
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/147971526429000453886
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/jfif_read.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:01:58 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:24 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/156381525118518051085
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/148801526429004188264
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/jpeg2bmp.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:02:01 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:27 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/157221525118521540226
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/149641526429007805654
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/main.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:02:04 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:31 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/158051525118525015774
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/150551526429011387862
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../tb/marker.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:02:08 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:35 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/158881525118528632537
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/151381526429015130716
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../src/chenidct.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:02:12 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:39 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/159721525118532512100
+../../../../../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, CHUNK_SIZE * sizeof(int));
+        ^
+../../../../../src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+../../../../../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, CHUNK_SIZE * sizeof(int));
+        ^
+../../../../../src/chenidct.c:82:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/152231526429019123428
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../../src/decode.c in debug mode
 INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Mon Apr 30 16:02:16 EDT 2018
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue May 15 20:03:43 EDT 2018
 INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
 INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start/OPT/csim/build'
-../../../../../src/decode.c:380:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
-        memcpy(inp1_buf, y_buf + offset, CHUNK_SIZE  * sizeof(float));
-        ^
-../../../../../src/decode.c:380:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
-1 warning generated.
-../../../../../src/decode.c:380:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
-        memcpy(inp1_buf, y_buf + offset, CHUNK_SIZE  * sizeof(float));
-        ^
-../../../../../src/decode.c:380:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
-1 warning generated.
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/160551525118536360991
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/153071526429023237286
 INFO: [APCC 202-1] APCC is done.
    Generating csim.exe
 

@@ -1900,11 +1900,245 @@ extern int ftrylockfile (FILE *__stream) __attribute__ ((__nothrow__ )) ;
 #pragma empty_line
 extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ ));
 #pragma line 57 "../src/decode.c" 2
-#pragma line 66 "../src/decode.c"
+#pragma line 1 "/usr/include/string.h" 1 3 4
+#pragma line 32 "/usr/include/string.h" 3 4
+#pragma line 1 "/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 1 3 4
+#pragma line 33 "/usr/include/string.h" 2 3 4
+#pragma line 42 "/usr/include/string.h" 3 4
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1)));
+#pragma empty_line
+#pragma empty_line
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma line 92 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+#pragma line 125 "/usr/include/string.h" 3 4
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (2)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma line 1 "/usr/include/xlocale.h" 1 3 4
+#pragma line 27 "/usr/include/xlocale.h" 3 4
+typedef struct __locale_struct
+{
+#pragma empty_line
+  struct __locale_data *__locales[13];
+#pragma empty_line
+#pragma empty_line
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+#pragma empty_line
+#pragma empty_line
+  const char *__names[13];
+} *__locale_t;
+#pragma empty_line
+#pragma empty_line
+typedef __locale_t locale_t;
+#pragma line 160 "/usr/include/string.h" 2 3 4
+#pragma empty_line
+#pragma empty_line
+extern int strcoll_l (const char *__s1, const char *__s2, __locale_t __l)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+#pragma empty_line
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    __locale_t __l) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (2, 4)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern char *strdup (const char *__s)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern char *strndup (const char *__string, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+#pragma line 232 "/usr/include/string.h" 3 4
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+#pragma line 259 "/usr/include/string.h" 3 4
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+#pragma line 281 "/usr/include/string.h" 3 4
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma line 311 "/usr/include/string.h" 3 4
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma line 338 "/usr/include/string.h" 3 4
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (2)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (2, 3)));
+#pragma empty_line
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (2, 3)));
+#pragma line 395 "/usr/include/string.h" 3 4
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ ));
+#pragma line 423 "/usr/include/string.h" 3 4
+extern int strerror_r (int __errnum, char *__buf, size_t __buflen) __asm__ ("" "__xpg_strerror_r") __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (2)));
+#pragma line 441 "/usr/include/string.h" 3 4
+extern char *strerror_l (int __errnum, __locale_t __l) __attribute__ ((__nothrow__ ));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern void __bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+extern void bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1)));
+#pragma empty_line
+#pragma empty_line
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma line 485 "/usr/include/string.h" 3 4
+extern char *index (const char *__s, int __c)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+#pragma line 513 "/usr/include/string.h" 3 4
+extern char *rindex (const char *__s, int __c)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern int ffs (int __i) __attribute__ ((__nothrow__ )) __attribute__ ((__const__));
+#pragma line 532 "/usr/include/string.h" 3 4
+extern int strcasecmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+#pragma line 555 "/usr/include/string.h" 3 4
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern char *strsignal (int __sig) __attribute__ ((__nothrow__ ));
+#pragma empty_line
+#pragma empty_line
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ )) __attribute__ ((__nonnull__ (1, 2)));
+#pragma line 58 "../src/decode.c" 2
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
 void ChenIDct (int *x, int *y);
 #pragma empty_line
 int rgb_buf[4][3][64];
-#pragma line 86 "../src/decode.c"
+#pragma line 85 "../src/decode.c"
 void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[64], int omatrix[64]) {_ssdm_SpecArrayDimSize(imatrix,64);_ssdm_SpecArrayDimSize(omatrix,64);
 #pragma HLS INTERFACE m_axi depth=64 port=imatrix offset=slave bundle=BUS_SRC
 #pragma HLS INTERFACE m_axi depth=64 port=omatrix offset=slave bundle=BUS_DST
@@ -1921,15 +2155,18 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[64], int omatrix[64]) {_ss
         35, 36, 48, 49, 57, 58, 62, 63
     };
 _ssdm_SpecConstant(zigzag_index);
-#pragma line 100 "../src/decode.c"
+#pragma line 99 "../src/decode.c"
 
 #pragma empty_line
   int in1_buf[32];
   int out_buf[32];
 #pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=in1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=out_buf cyclic factor=16 dim=1
 #pragma empty_line
-  for (int i = 0; i < 64/32; i++){
+ for (int i = 0; i < 64/32; i++){
 #pragma HLS DATAFLOW
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
  for (int j=0; j < 32; j++){
@@ -1937,40 +2174,65 @@ _ssdm_SpecConstant(zigzag_index);
  unsigned offset = i*32 +j;
       in1_buf[j]= zigzag_index[offset];
     }
-#pragma empty_line
-#pragma empty_line
+#pragma line 125 "../src/decode.c"
     for (int k=0; k < 32; k++)
 #pragma HLS UNROLL skip_exit_check factor=16
  out_buf[k]= imatrix[in1_buf[k]];
+#pragma line 138 "../src/decode.c"
+       unsigned offset = i*32 ;
+        memcpy(omatrix + offset, out_buf, 32 * sizeof(int) );
 #pragma empty_line
-#pragma empty_line
-    for (int l=0; l < 32; l++) {
-#pragma HLS UNROLL skip_exit_check factor=16
- unsigned offset = i*32 +l;
-      omatrix[i*32 +l]= out_buf[l];
-    }
 #pragma empty_line
   }
 #pragma empty_line
 }
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
+#pragma line 164 "../src/decode.c"
 void
-IQuantize (int *matrix, unsigned int *qmatrix)
-{
-  int *mptr;
+IQuantize (int *matrix, unsigned int *qmatrix){
+#pragma HLS INTERFACE m_axi depth=64 port=qmatrix offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=matrix offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 #pragma empty_line
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      *mptr = *mptr * (*qmatrix);
-      qmatrix++;
-    }
+int i;
+ int inp1_buf[32];
+ int inp2_buf[32];
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+#pragma empty_line
+ for (i = 0; i < 64/32; i++){
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+   unsigned offset = i*32;
+   memcpy(inp1_buf, qmatrix + offset, 32 * sizeof(int));
+   memcpy(inp2_buf, matrix + offset, 32 * sizeof(int));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+   for (int k=0; k < 32; k++){
+#pragma HLS UNROLL skip_exit_check factor=16
+ inp2_buf[k] = inp1_buf[k] * inp2_buf[k];
+   }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+     offset = i*32;
+     memcpy(matrix + offset, inp2_buf, 32 * sizeof(int));
+#pragma empty_line
+ }
+#pragma empty_line
 }
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -1992,22 +2254,48 @@ PostshiftIDctMatrix (int *matrix, int shift)
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-void
-BoundIDctMatrix (int *matrix, int Bound)
-{
-  int *mptr;
 #pragma empty_line
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      if (*mptr < 0)
- {
-   *mptr = 0;
+void
+BoundIDctMatrix (int matrix[64], int Bound) {_ssdm_SpecArrayDimSize(matrix,64);
+#pragma HLS INTERFACE m_axi depth=64 port=matrix offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=Bound bundle=BUS_SRC
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+#pragma empty_line
+ int i;
+ int inp1_buf[32];
+ int out1_buf[32];
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+#pragma empty_line
+ for (i = 0; i < 64/32; i++){
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+   unsigned offset = i*32;
+   memcpy(inp1_buf, matrix + offset, 32 * sizeof(int));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for (int k=0; k < 32; k++){
+#pragma HLS UNROLL skip_exit_check factor=16
+ if (inp1_buf[k] < 0)
+    inp1_buf[k] = 0;
+#pragma empty_line
+   else if (inp1_buf[k] > Bound)
+    inp1_buf[k] = Bound;
+  }
+#pragma line 277 "../src/decode.c"
+    offset = i*32;
+    memcpy(matrix + offset, inp1_buf, 32 * sizeof(int));
+#pragma empty_line
  }
-      else if (*mptr > Bound)
- {
-   *mptr = Bound;
- }
-    }
+#pragma empty_line
 }
 #pragma empty_line
 #pragma empty_line
@@ -2015,6 +2303,8 @@ BoundIDctMatrix (int *matrix, int Bound)
 void
 WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
         int voffs, int hoffs)
+#pragma empty_line
+#pragma empty_line
 {
   int i, e;
 #pragma empty_line
@@ -2048,7 +2338,73 @@ WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
 #pragma empty_line
 #pragma empty_line
 }
-#pragma line 234 "../src/decode.c"
+#pragma empty_line
+#pragma empty_line
+void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[64], unsigned char out_buf[5310], int width, int height,
+        int voffs, int hoffs){_ssdm_SpecArrayDimSize(out_buf,5310);_ssdm_SpecArrayDimSize(store,64);
+#pragma empty_line
+#pragma HLS INTERFACE m_axi depth=64 port=store offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=5310 port=out_buf offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=height bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=width bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=voffs bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=hoffs bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+#pragma empty_line
+ int i=0;
+    int l=0;
+#pragma empty_line
+   unsigned char inp1_buf[64];
+   unsigned char out1_buf[5310];
+   int index[64];
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ for (int j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+            inp1_buf[j] =(unsigned char) (*(store++));
+          }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for (int k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < height) {
+    int diff;
+    diff = width * k;
+#pragma empty_line
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < width){
+      out1_buf[diff + e] = inp1_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+#pragma empty_line
+#pragma empty_line
+  for (int m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ out_buf[index[m]] = out1_buf[index[m]];
+  }
+#pragma empty_line
+#pragma empty_line
+}
+#pragma line 398 "../src/decode.c"
 void
 WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
      unsigned char *p_out_buf)
@@ -2065,7 +2421,7 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-  WriteOneBlock (store,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store,
    p_out_buf,
    p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 #pragma empty_line
@@ -2084,15 +2440,23 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
       *p_out_hpos = 0;
     }
 }
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
+#pragma line 501 "../src/decode.c"
 void
-Write4Blocks (int *store1, int *store2, int *store3, int *store4,
-       int *p_out_vpos, int *p_out_hpos, unsigned char *p_out_buf)
-{
-  int voffs, hoffs;
+Write4Blocks (int store1[64], int store2[64], int store3[64], int store4[64],
+       int *p_out_vpos, int *p_out_hpos, unsigned char p_out_buf[5310]) {_ssdm_SpecArrayDimSize(store1,64);_ssdm_SpecArrayDimSize(store2,64);_ssdm_SpecArrayDimSize(store3,64);_ssdm_SpecArrayDimSize(store4,64);_ssdm_SpecArrayDimSize(p_out_buf,5310);
+#pragma empty_line
+#pragma HLS INTERFACE m_axi depth=64 port=store1 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store2 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store3 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store4 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=5310 port=p_out_buf offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=p_out_vpos bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=p_out_hpos bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+#pragma empty_line
+ int voffs, hoffs;
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2100,19 +2464,124 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 #pragma empty_line
   voffs = *p_out_vpos * 8;
   hoffs = *p_out_hpos * 8;
+#pragma line 536 "../src/decode.c"
+    int i=0;
+     int l=0;
+     int j, k, m;
+#pragma empty_line
+    unsigned char inp1_buf[64];
+    unsigned char out1_buf[5310];
+    int index[64];
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-  WriteOneBlock (store1, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+             inp1_buf[j] =(unsigned char) (*(store1++));
+           }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+   for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+     int diff;
+     diff = p_jinfo_image_width * k;
+#pragma empty_line
+     for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+       out1_buf[diff + e] = inp1_buf[l];
+       index[l]=diff+e;
+       l++;
+       }
+      else
+       break;
+     }
+    }
+    else
+     break;
+   }
+#pragma empty_line
+#pragma empty_line
+   for ( m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out1_buf[index[m]];
+   }
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
   hoffs += 8;
-  WriteOneBlock (store2, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  i=0;
+  l=0;
+#pragma empty_line
+ unsigned char inp2_buf[64];
+ unsigned char out2_buf[5310];
+#pragma empty_line
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=4 dim=1
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+          inp2_buf[j] =(unsigned char) (*(store2++));
+        }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+#pragma empty_line
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+      out2_buf[diff + e] = inp2_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+#pragma empty_line
+#pragma empty_line
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out2_buf[index[m]];
+  }
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2120,8 +2589,58 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 #pragma empty_line
   voffs += 8;
   hoffs -= 8;
-  WriteOneBlock (store3, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+#pragma line 668 "../src/decode.c"
+  i=0;
+  l=0;
+#pragma empty_line
+ unsigned char inp3_buf[64];
+ unsigned char out3_buf[5310];
+#pragma empty_line
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=4 dim=1
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+          inp3_buf[j] =(unsigned char) (*(store3++));
+        }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+#pragma empty_line
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+      out3_buf[diff + e] = inp3_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+#pragma empty_line
+#pragma empty_line
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out3_buf[index[m]];
+  }
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2129,9 +2648,60 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 #pragma empty_line
 #pragma empty_line
   hoffs += 8;
-  WriteOneBlock (store4,
-   p_out_buf, p_jinfo_image_width, p_jinfo_image_height,
-   voffs, hoffs);
+#pragma line 737 "../src/decode.c"
+  i=0;
+  l=0;
+#pragma empty_line
+ unsigned char inp4_buf[64];
+ unsigned char out4_buf[5310];
+#pragma empty_line
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp4_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out4_buf cyclic factor=4 dim=1
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+          inp4_buf[j] =(unsigned char) (*(store4++));
+        }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+#pragma empty_line
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+      out4_buf[diff + e] = inp4_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+#pragma empty_line
+#pragma empty_line
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out4_buf[index[m]];
+  }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2149,12 +2719,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
       *p_out_hpos = 0;
     }
 }
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
+#pragma line 876 "../src/decode.c"
 void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){_ssdm_SpecArrayDimSize(v_buf,64);_ssdm_SpecArrayDimSize(u_buf,64);_ssdm_SpecArrayDimSize(y_buf,64);_ssdm_SpecArrayDimSize(rgb_buf,4);
 #pragma empty_line
 #pragma HLS INTERFACE m_axi depth=64 port=y_buf offset=slave bundle=BUS_SRC
@@ -2180,11 +2745,11 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
 #pragma empty_line
 #pragma empty_line
  for (int i = 0; i < 64/32; i++) {
-#pragma line 379 "../src/decode.c"
+#pragma line 915 "../src/decode.c"
         unsigned offset = i*32 ;
-        memcpy(inp1_buf, y_buf + offset, 32 * sizeof(float));
-        memcpy(inp2_buf, u_buf + offset, 32 * sizeof(float));
-        memcpy(inp3_buf, v_buf + offset, 32 * sizeof(float));
+        memcpy(inp1_buf, y_buf + offset, 32 * sizeof(int));
+        memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
+        memcpy(inp3_buf, v_buf + offset, 32 * sizeof(int));
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2211,11 +2776,11 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
         else if (out3_buf[k] > 255)
           out3_buf[k] = 255;
       }
-#pragma line 420 "../src/decode.c"
+#pragma line 956 "../src/decode.c"
         offset = i*32 ;
-        memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(float));
-        memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(float));
-        memcpy(rgb_buf[p][2] + offset, out3_buf, 32 * sizeof(float));
+        memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
+        memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
+        memcpy(rgb_buf[p][2] + offset, out3_buf, 32 * sizeof(int));
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2223,7 +2788,7 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
 #pragma empty_line
 #pragma empty_line
 }
-#pragma empty_line
+#pragma line 1067 "../src/decode.c"
 void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){_ssdm_SpecArrayDimSize(v_buf,64);_ssdm_SpecArrayDimSize(u_buf,64);_ssdm_SpecArrayDimSize(y_buf,6);_ssdm_SpecArrayDimSize(rgb_buf,4);
 #pragma HLS INTERFACE m_axi depth=384 port=y_buf offset=slave bundle=BUS_SRC
 #pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
@@ -2231,17 +2796,14 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
 #pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
 #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 #pragma empty_line
+ int i;
 #pragma empty_line
- for (int p = 0; p < 4; (p)++) {
-#pragma empty_line
-      int i;
-#pragma empty_line
-      int inp1_buf[32];
-      int inp2_buf[32];
-      int inp3_buf[32];
-      int out1_buf[32];
-      int out2_buf[32];
-      int out3_buf[32];
+    int inp1_buf[32];
+    int inp2_buf[32];
+    int inp3_buf[32];
+    int out1_buf[32];
+    int out2_buf[32];
+    int out3_buf[32];
 #pragma empty_line
 #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
 #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
@@ -2251,13 +2813,13 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
 #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
 #pragma empty_line
 #pragma empty_line
- for (i = 0; i < 64/32; i++)
-      {
-#pragma line 475 "../src/decode.c"
+ for (i = 0; i < 64/32; i++) {
+  for (int p = 0; p < 4; (p)++) {
+#pragma line 1106 "../src/decode.c"
         unsigned offset = i*32;
-        memcpy(inp1_buf, y_buf[p] + offset, 32 * sizeof(float));
-        memcpy(inp2_buf, u_buf + offset, 32 * sizeof(float));
-        memcpy(inp3_buf, v_buf + offset, 32 * sizeof(float));
+        memcpy(inp1_buf, y_buf[p] + offset, 32 * sizeof(int));
+        memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
+        memcpy(inp3_buf, v_buf + offset, 32 * sizeof(int));
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2284,11 +2846,11 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
             else if (out3_buf[k] > 255)
               out3_buf[k] = 255;
         }
-#pragma line 516 "../src/decode.c"
+#pragma line 1147 "../src/decode.c"
         offset = i*32;
-        memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(float));
-        memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(float));
-        memcpy(rgb_buf[p][2] + offset, out3_buf, 32 * sizeof(float));
+        memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
+        memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
+        memcpy(rgb_buf[p][2] + offset, out3_buf, 32 * sizeof(int));
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2416,7 +2978,7 @@ decode_start (int *out_data_image_width, int *out_data_image_height,
 #pragma empty_line
 #pragma empty_line
    decode_block (2, IDCTBuff[5], HuffBuff[2]);
-#pragma line 656 "../src/decode.c"
+#pragma line 1287 "../src/decode.c"
     Reg_6:decode_start_f2r_vectorPh_s2e_forBody96Preheader(IDCTBuff, IDCTBuff[4], IDCTBuff[5], rgb_buf);
 #pragma empty_line
 #pragma empty_line
@@ -2425,7 +2987,6 @@ decode_start (int *out_data_image_width, int *out_data_image_height,
 #pragma empty_line
    for (i = 0; i < 3; i++)
      {
-#pragma empty_line
 #pragma empty_line
        Write4Blocks (&rgb_buf[0][i][0],
        &rgb_buf[1][i][0],
