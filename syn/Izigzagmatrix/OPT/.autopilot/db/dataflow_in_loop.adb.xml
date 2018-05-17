@@ -47,9 +47,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="30" op_0_bw="30" op_1_bw="30">
+<Node id="7" bw="62" op_0_bw="62" op_1_bw="62">
 <![CDATA[
-entry:0  %omatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %omatrix_offset)
+entry:0  %omatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %omatrix_offset)
 
 ]]></Node>
 <StgValue><ssdm name="omatrix_offset_read"/></StgValue>
@@ -62,9 +62,9 @@ entry:0  %omatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %omatrix
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="30" op_0_bw="30" op_1_bw="30">
+<Node id="8" bw="62" op_0_bw="62" op_1_bw="62">
 <![CDATA[
-entry:1  %imatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %imatrix_offset)
+entry:1  %imatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %imatrix_offset)
 
 ]]></Node>
 <StgValue><ssdm name="imatrix_offset_read"/></StgValue>
@@ -92,9 +92,9 @@ entry:2  %i_0_i_i_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %i_0_i_i)
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="30" op_0_bw="64">
+<Node id="10" bw="62" op_0_bw="64">
 <![CDATA[
-entry:3  %omatrix_offset_c = alloca i30, align 4
+entry:3  %omatrix_offset_c = alloca i62, align 8
 
 ]]></Node>
 <StgValue><ssdm name="omatrix_offset_c"/></StgValue>
@@ -107,9 +107,9 @@ entry:3  %omatrix_offset_c = alloca i30, align 4
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="11" bw="30" op_0_bw="64">
+<Node id="11" bw="62" op_0_bw="64">
 <![CDATA[
-entry:4  %imatrix_offset_c = alloca i30, align 4
+entry:4  %imatrix_offset_c = alloca i62, align 8
 
 ]]></Node>
 <StgValue><ssdm name="imatrix_offset_c"/></StgValue>
@@ -649,9 +649,9 @@ entry:40  %out_buf_15 = alloca [2 x i32], align 4
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="30" op_20_bw="30" op_21_bw="30" op_22_bw="30">
+<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="62" op_20_bw="62" op_21_bw="62" op_22_bw="62">
 <![CDATA[
-entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset_read, i30 %omatrix_offset_read, i30* %imatrix_offset_c, i30* %omatrix_offset_c)
+entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset_read, i62 %omatrix_offset_read, i62* %imatrix_offset_c, i62* %omatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -667,9 +667,9 @@ entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="30" op_20_bw="30" op_21_bw="30" op_22_bw="30">
+<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="62" op_20_bw="62" op_21_bw="62" op_22_bw="62">
 <![CDATA[
-entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset_read, i30 %omatrix_offset_read, i30* %imatrix_offset_c, i30* %omatrix_offset_c)
+entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset_read, i62 %omatrix_offset_read, i62* %imatrix_offset_c, i62* %omatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -685,9 +685,9 @@ entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="30" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
+<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="62" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
 <![CDATA[
-entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
+entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -703,9 +703,9 @@ entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocap
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="30" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
+<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="62" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
 <![CDATA[
-entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
+entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -721,9 +721,9 @@ entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocap
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="62" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
+entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -741,7 +741,7 @@ entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix
 
 <Node id="12" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:5  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+entry:5  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -756,7 +756,7 @@ entry:5  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_st
 
 <Node id="13" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:6  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+entry:6  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -771,7 +771,7 @@ entry:6  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_st
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-entry:8  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind
+entry:8  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str19) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -786,7 +786,7 @@ entry:8  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_st
 
 <Node id="48" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="1" op_8_bw="1">
 <![CDATA[
-entry:41  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str28, [1 x i8]* @p_str28, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c)
+entry:41  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c)
 
 ]]></Node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -801,7 +801,7 @@ entry:41  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i
 
 <Node id="49" bw="0" op_0_bw="0" op_1_bw="1" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:42  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str29, i32 0, i32 0, [1 x i8]* @p_str30, [1 x i8]* @p_str31, [1 x i8]* @p_str32, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str33, [1 x i8]* @p_str34)
+entry:42  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -814,9 +814,9 @@ entry:42  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="30" op_8_bw="30">
+<Node id="50" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="62" op_8_bw="62">
 <![CDATA[
-entry:43  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str52, [1 x i8]* @p_str52, i32 1, i32 0, i30* %imatrix_offset_c, i30* %imatrix_offset_c)
+entry:43  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i62* %imatrix_offset_c, i62* %imatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name="empty_11"/></StgValue>
@@ -829,9 +829,9 @@ entry:43  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="0" op_0_bw="0" op_1_bw="30" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="51" bw="0" op_0_bw="0" op_1_bw="62" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:44  call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str53, i32 0, i32 0, [1 x i8]* @p_str54, [1 x i8]* @p_str55, [1 x i8]* @p_str56, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str57, [1 x i8]* @p_str58)
+entry:44  call void (...)* @_ssdm_op_SpecInterface(i62* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -844,9 +844,9 @@ entry:44  call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset_c, [8 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="30" op_8_bw="30">
+<Node id="52" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="62" op_8_bw="62">
 <![CDATA[
-entry:45  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str59, [1 x i8]* @p_str59, i32 2, i32 0, i30* %omatrix_offset_c, i30* %omatrix_offset_c)
+entry:45  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i62* %omatrix_offset_c, i62* %omatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name="empty_12"/></StgValue>
@@ -859,9 +859,9 @@ entry:45  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="0" op_0_bw="0" op_1_bw="30" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="53" bw="0" op_0_bw="0" op_1_bw="62" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:46  call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str60, i32 0, i32 0, [1 x i8]* @p_str61, [1 x i8]* @p_str62, [1 x i8]* @p_str63, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str64, [1 x i8]* @p_str65)
+entry:46  call void (...)* @_ssdm_op_SpecInterface(i62* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -874,9 +874,9 @@ entry:46  call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset_c, [8 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="62" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
+entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -924,11 +924,11 @@ entry:50  ret void
 
 
 <dataflows>
-<dataflow id="74" from="_ssdm_op_Read.ap_auto.i30" to="omatrix_offset_read" fromId="73" toId="7">
+<dataflow id="74" from="_ssdm_op_Read.ap_auto.i62" to="omatrix_offset_read" fromId="73" toId="7">
 </dataflow>
 <dataflow id="75" from="omatrix_offset" to="omatrix_offset_read" fromId="71" toId="7">
 </dataflow>
-<dataflow id="76" from="_ssdm_op_Read.ap_auto.i30" to="imatrix_offset_read" fromId="73" toId="8">
+<dataflow id="76" from="_ssdm_op_Read.ap_auto.i62" to="imatrix_offset_read" fromId="73" toId="8">
 </dataflow>
 <dataflow id="77" from="imatrix_offset" to="imatrix_offset_read" fromId="69" toId="8">
 </dataflow>
@@ -1286,23 +1286,23 @@ entry:50  ret void
 </dataflow>
 <dataflow id="260" from="omatrix" to="StgValue_50" fromId="70" toId="50">
 </dataflow>
-<dataflow id="262" from="p_str" to="StgValue_50" fromId="261" toId="50">
+<dataflow id="262" from="p_str8" to="StgValue_50" fromId="261" toId="50">
 </dataflow>
 <dataflow id="264" from="StgValue_263" to="StgValue_50" fromId="263" toId="50">
 </dataflow>
 <dataflow id="265" from="StgValue_263" to="StgValue_50" fromId="263" toId="50">
 </dataflow>
-<dataflow id="267" from="p_str1" to="StgValue_50" fromId="266" toId="50">
+<dataflow id="267" from="p_str19" to="StgValue_50" fromId="266" toId="50">
 </dataflow>
 <dataflow id="268" from="StgValue_263" to="StgValue_50" fromId="263" toId="50">
 </dataflow>
 <dataflow id="270" from="StgValue_269" to="StgValue_50" fromId="269" toId="50">
 </dataflow>
-<dataflow id="272" from="p_str4" to="StgValue_50" fromId="271" toId="50">
+<dataflow id="272" from="p_str412" to="StgValue_50" fromId="271" toId="50">
 </dataflow>
-<dataflow id="274" from="p_str3" to="StgValue_50" fromId="273" toId="50">
+<dataflow id="274" from="p_str311" to="StgValue_50" fromId="273" toId="50">
 </dataflow>
-<dataflow id="275" from="p_str1" to="StgValue_50" fromId="266" toId="50">
+<dataflow id="275" from="p_str19" to="StgValue_50" fromId="266" toId="50">
 </dataflow>
 <dataflow id="277" from="StgValue_276" to="StgValue_50" fromId="276" toId="50">
 </dataflow>
@@ -1312,31 +1312,31 @@ entry:50  ret void
 </dataflow>
 <dataflow id="280" from="StgValue_276" to="StgValue_50" fromId="276" toId="50">
 </dataflow>
-<dataflow id="281" from="p_str1" to="StgValue_50" fromId="266" toId="50">
+<dataflow id="281" from="p_str19" to="StgValue_50" fromId="266" toId="50">
 </dataflow>
-<dataflow id="282" from="p_str1" to="StgValue_50" fromId="266" toId="50">
+<dataflow id="282" from="p_str19" to="StgValue_50" fromId="266" toId="50">
 </dataflow>
 <dataflow id="283" from="_ssdm_op_SpecInterface" to="StgValue_51" fromId="258" toId="51">
 </dataflow>
 <dataflow id="284" from="imatrix" to="StgValue_51" fromId="68" toId="51">
 </dataflow>
-<dataflow id="285" from="p_str" to="StgValue_51" fromId="261" toId="51">
+<dataflow id="285" from="p_str8" to="StgValue_51" fromId="261" toId="51">
 </dataflow>
 <dataflow id="286" from="StgValue_263" to="StgValue_51" fromId="263" toId="51">
 </dataflow>
 <dataflow id="287" from="StgValue_263" to="StgValue_51" fromId="263" toId="51">
 </dataflow>
-<dataflow id="288" from="p_str1" to="StgValue_51" fromId="266" toId="51">
+<dataflow id="288" from="p_str19" to="StgValue_51" fromId="266" toId="51">
 </dataflow>
 <dataflow id="289" from="StgValue_263" to="StgValue_51" fromId="263" toId="51">
 </dataflow>
 <dataflow id="290" from="StgValue_269" to="StgValue_51" fromId="269" toId="51">
 </dataflow>
-<dataflow id="292" from="p_str2" to="StgValue_51" fromId="291" toId="51">
+<dataflow id="292" from="p_str210" to="StgValue_51" fromId="291" toId="51">
 </dataflow>
-<dataflow id="293" from="p_str3" to="StgValue_51" fromId="273" toId="51">
+<dataflow id="293" from="p_str311" to="StgValue_51" fromId="273" toId="51">
 </dataflow>
-<dataflow id="294" from="p_str1" to="StgValue_51" fromId="266" toId="51">
+<dataflow id="294" from="p_str19" to="StgValue_51" fromId="266" toId="51">
 </dataflow>
 <dataflow id="295" from="StgValue_276" to="StgValue_51" fromId="276" toId="51">
 </dataflow>
@@ -1346,15 +1346,15 @@ entry:50  ret void
 </dataflow>
 <dataflow id="298" from="StgValue_276" to="StgValue_51" fromId="276" toId="51">
 </dataflow>
-<dataflow id="299" from="p_str1" to="StgValue_51" fromId="266" toId="51">
+<dataflow id="299" from="p_str19" to="StgValue_51" fromId="266" toId="51">
 </dataflow>
-<dataflow id="300" from="p_str1" to="StgValue_51" fromId="266" toId="51">
+<dataflow id="300" from="p_str19" to="StgValue_51" fromId="266" toId="51">
 </dataflow>
 <dataflow id="302" from="_ssdm_op_SpecDataflowPipeline" to="StgValue_52" fromId="301" toId="52">
 </dataflow>
 <dataflow id="304" from="StgValue_303" to="StgValue_52" fromId="303" toId="52">
 </dataflow>
-<dataflow id="305" from="p_str1" to="StgValue_52" fromId="266" toId="52">
+<dataflow id="305" from="p_str19" to="StgValue_52" fromId="266" toId="52">
 </dataflow>
 <dataflow id="307" from="_ssdm_op_SpecChannel" to="empty" fromId="306" toId="53">
 </dataflow>
@@ -1362,9 +1362,9 @@ entry:50  ret void
 </dataflow>
 <dataflow id="311" from="StgValue_310" to="empty" fromId="310" toId="53">
 </dataflow>
-<dataflow id="313" from="p_str28" to="empty" fromId="312" toId="53">
+<dataflow id="313" from="p_str" to="empty" fromId="312" toId="53">
 </dataflow>
-<dataflow id="314" from="p_str28" to="empty" fromId="312" toId="53">
+<dataflow id="314" from="p_str" to="empty" fromId="312" toId="53">
 </dataflow>
 <dataflow id="316" from="StgValue_315" to="empty" fromId="315" toId="53">
 </dataflow>
@@ -1384,173 +1384,173 @@ entry:50  ret void
 </dataflow>
 <dataflow id="325" from="StgValue_263" to="StgValue_54" fromId="263" toId="54">
 </dataflow>
-<dataflow id="327" from="p_str29" to="StgValue_54" fromId="326" toId="54">
+<dataflow id="326" from="p_str" to="StgValue_54" fromId="312" toId="54">
+</dataflow>
+<dataflow id="327" from="StgValue_263" to="StgValue_54" fromId="263" toId="54">
 </dataflow>
 <dataflow id="328" from="StgValue_263" to="StgValue_54" fromId="263" toId="54">
 </dataflow>
-<dataflow id="329" from="StgValue_263" to="StgValue_54" fromId="263" toId="54">
+<dataflow id="329" from="p_str" to="StgValue_54" fromId="312" toId="54">
 </dataflow>
-<dataflow id="331" from="p_str30" to="StgValue_54" fromId="330" toId="54">
+<dataflow id="330" from="p_str" to="StgValue_54" fromId="312" toId="54">
 </dataflow>
-<dataflow id="333" from="p_str31" to="StgValue_54" fromId="332" toId="54">
+<dataflow id="331" from="p_str" to="StgValue_54" fromId="312" toId="54">
 </dataflow>
-<dataflow id="335" from="p_str32" to="StgValue_54" fromId="334" toId="54">
+<dataflow id="332" from="StgValue_315" to="StgValue_54" fromId="315" toId="54">
 </dataflow>
-<dataflow id="336" from="StgValue_315" to="StgValue_54" fromId="315" toId="54">
+<dataflow id="333" from="StgValue_315" to="StgValue_54" fromId="315" toId="54">
 </dataflow>
-<dataflow id="337" from="StgValue_315" to="StgValue_54" fromId="315" toId="54">
+<dataflow id="334" from="StgValue_276" to="StgValue_54" fromId="276" toId="54">
 </dataflow>
-<dataflow id="338" from="StgValue_276" to="StgValue_54" fromId="276" toId="54">
+<dataflow id="335" from="StgValue_276" to="StgValue_54" fromId="276" toId="54">
 </dataflow>
-<dataflow id="339" from="StgValue_276" to="StgValue_54" fromId="276" toId="54">
+<dataflow id="336" from="p_str" to="StgValue_54" fromId="312" toId="54">
 </dataflow>
-<dataflow id="341" from="p_str33" to="StgValue_54" fromId="340" toId="54">
+<dataflow id="337" from="p_str" to="StgValue_54" fromId="312" toId="54">
 </dataflow>
-<dataflow id="343" from="p_str34" to="StgValue_54" fromId="342" toId="54">
+<dataflow id="338" from="_ssdm_op_SpecChannel" to="empty_11" fromId="306" toId="55">
 </dataflow>
-<dataflow id="344" from="_ssdm_op_SpecChannel" to="empty_11" fromId="306" toId="55">
+<dataflow id="340" from="imatrix_OC_offset_c_s" to="empty_11" fromId="339" toId="55">
 </dataflow>
-<dataflow id="346" from="imatrix_OC_offset_c_s" to="empty_11" fromId="345" toId="55">
+<dataflow id="341" from="StgValue_310" to="empty_11" fromId="310" toId="55">
 </dataflow>
-<dataflow id="347" from="StgValue_310" to="empty_11" fromId="310" toId="55">
+<dataflow id="342" from="p_str" to="empty_11" fromId="312" toId="55">
 </dataflow>
-<dataflow id="349" from="p_str52" to="empty_11" fromId="348" toId="55">
+<dataflow id="343" from="p_str" to="empty_11" fromId="312" toId="55">
 </dataflow>
-<dataflow id="350" from="p_str52" to="empty_11" fromId="348" toId="55">
+<dataflow id="344" from="StgValue_310" to="empty_11" fromId="310" toId="55">
 </dataflow>
-<dataflow id="351" from="StgValue_310" to="empty_11" fromId="310" toId="55">
+<dataflow id="345" from="StgValue_263" to="empty_11" fromId="263" toId="55">
 </dataflow>
-<dataflow id="352" from="StgValue_263" to="empty_11" fromId="263" toId="55">
+<dataflow id="346" from="imatrix_offset_c" to="empty_11" fromId="11" toId="55">
 </dataflow>
-<dataflow id="353" from="imatrix_offset_c" to="empty_11" fromId="11" toId="55">
+<dataflow id="347" from="imatrix_offset_c" to="empty_11" fromId="11" toId="55">
 </dataflow>
-<dataflow id="354" from="imatrix_offset_c" to="empty_11" fromId="11" toId="55">
+<dataflow id="348" from="_ssdm_op_SpecInterface" to="StgValue_56" fromId="258" toId="56">
 </dataflow>
-<dataflow id="355" from="_ssdm_op_SpecInterface" to="StgValue_56" fromId="258" toId="56">
+<dataflow id="349" from="imatrix_offset_c" to="StgValue_56" fromId="11" toId="56">
 </dataflow>
-<dataflow id="356" from="imatrix_offset_c" to="StgValue_56" fromId="11" toId="56">
+<dataflow id="350" from="ap_fifo_str" to="StgValue_56" fromId="322" toId="56">
 </dataflow>
-<dataflow id="357" from="ap_fifo_str" to="StgValue_56" fromId="322" toId="56">
+<dataflow id="351" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
 </dataflow>
-<dataflow id="358" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
+<dataflow id="352" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
 </dataflow>
-<dataflow id="359" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
+<dataflow id="353" from="p_str" to="StgValue_56" fromId="312" toId="56">
 </dataflow>
-<dataflow id="361" from="p_str53" to="StgValue_56" fromId="360" toId="56">
+<dataflow id="354" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
 </dataflow>
-<dataflow id="362" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
+<dataflow id="355" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
 </dataflow>
-<dataflow id="363" from="StgValue_263" to="StgValue_56" fromId="263" toId="56">
+<dataflow id="356" from="p_str" to="StgValue_56" fromId="312" toId="56">
 </dataflow>
-<dataflow id="365" from="p_str54" to="StgValue_56" fromId="364" toId="56">
+<dataflow id="357" from="p_str" to="StgValue_56" fromId="312" toId="56">
 </dataflow>
-<dataflow id="367" from="p_str55" to="StgValue_56" fromId="366" toId="56">
+<dataflow id="358" from="p_str" to="StgValue_56" fromId="312" toId="56">
 </dataflow>
-<dataflow id="369" from="p_str56" to="StgValue_56" fromId="368" toId="56">
+<dataflow id="359" from="StgValue_315" to="StgValue_56" fromId="315" toId="56">
 </dataflow>
-<dataflow id="370" from="StgValue_315" to="StgValue_56" fromId="315" toId="56">
+<dataflow id="360" from="StgValue_315" to="StgValue_56" fromId="315" toId="56">
 </dataflow>
-<dataflow id="371" from="StgValue_315" to="StgValue_56" fromId="315" toId="56">
+<dataflow id="361" from="StgValue_276" to="StgValue_56" fromId="276" toId="56">
 </dataflow>
-<dataflow id="372" from="StgValue_276" to="StgValue_56" fromId="276" toId="56">
+<dataflow id="362" from="StgValue_276" to="StgValue_56" fromId="276" toId="56">
 </dataflow>
-<dataflow id="373" from="StgValue_276" to="StgValue_56" fromId="276" toId="56">
+<dataflow id="363" from="p_str" to="StgValue_56" fromId="312" toId="56">
 </dataflow>
-<dataflow id="375" from="p_str57" to="StgValue_56" fromId="374" toId="56">
+<dataflow id="364" from="p_str" to="StgValue_56" fromId="312" toId="56">
 </dataflow>
-<dataflow id="377" from="p_str58" to="StgValue_56" fromId="376" toId="56">
+<dataflow id="365" from="_ssdm_op_SpecChannel" to="empty_12" fromId="306" toId="57">
 </dataflow>
-<dataflow id="378" from="_ssdm_op_SpecChannel" to="empty_12" fromId="306" toId="57">
+<dataflow id="367" from="omatrix_OC_offset_c_s" to="empty_12" fromId="366" toId="57">
 </dataflow>
-<dataflow id="380" from="omatrix_OC_offset_c_s" to="empty_12" fromId="379" toId="57">
+<dataflow id="368" from="StgValue_310" to="empty_12" fromId="310" toId="57">
 </dataflow>
-<dataflow id="381" from="StgValue_310" to="empty_12" fromId="310" toId="57">
+<dataflow id="369" from="p_str" to="empty_12" fromId="312" toId="57">
 </dataflow>
-<dataflow id="383" from="p_str59" to="empty_12" fromId="382" toId="57">
+<dataflow id="370" from="p_str" to="empty_12" fromId="312" toId="57">
 </dataflow>
-<dataflow id="384" from="p_str59" to="empty_12" fromId="382" toId="57">
+<dataflow id="371" from="StgValue_315" to="empty_12" fromId="315" toId="57">
 </dataflow>
-<dataflow id="385" from="StgValue_315" to="empty_12" fromId="315" toId="57">
+<dataflow id="372" from="StgValue_263" to="empty_12" fromId="263" toId="57">
 </dataflow>
-<dataflow id="386" from="StgValue_263" to="empty_12" fromId="263" toId="57">
+<dataflow id="373" from="omatrix_offset_c" to="empty_12" fromId="10" toId="57">
 </dataflow>
-<dataflow id="387" from="omatrix_offset_c" to="empty_12" fromId="10" toId="57">
+<dataflow id="374" from="omatrix_offset_c" to="empty_12" fromId="10" toId="57">
 </dataflow>
-<dataflow id="388" from="omatrix_offset_c" to="empty_12" fromId="10" toId="57">
+<dataflow id="375" from="_ssdm_op_SpecInterface" to="StgValue_58" fromId="258" toId="58">
 </dataflow>
-<dataflow id="389" from="_ssdm_op_SpecInterface" to="StgValue_58" fromId="258" toId="58">
+<dataflow id="376" from="omatrix_offset_c" to="StgValue_58" fromId="10" toId="58">
 </dataflow>
-<dataflow id="390" from="omatrix_offset_c" to="StgValue_58" fromId="10" toId="58">
+<dataflow id="377" from="ap_fifo_str" to="StgValue_58" fromId="322" toId="58">
 </dataflow>
-<dataflow id="391" from="ap_fifo_str" to="StgValue_58" fromId="322" toId="58">
+<dataflow id="378" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
 </dataflow>
-<dataflow id="392" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
+<dataflow id="379" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
 </dataflow>
-<dataflow id="393" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
+<dataflow id="380" from="p_str" to="StgValue_58" fromId="312" toId="58">
 </dataflow>
-<dataflow id="395" from="p_str60" to="StgValue_58" fromId="394" toId="58">
+<dataflow id="381" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
 </dataflow>
-<dataflow id="396" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
+<dataflow id="382" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
 </dataflow>
-<dataflow id="397" from="StgValue_263" to="StgValue_58" fromId="263" toId="58">
+<dataflow id="383" from="p_str" to="StgValue_58" fromId="312" toId="58">
 </dataflow>
-<dataflow id="399" from="p_str61" to="StgValue_58" fromId="398" toId="58">
+<dataflow id="384" from="p_str" to="StgValue_58" fromId="312" toId="58">
 </dataflow>
-<dataflow id="401" from="p_str62" to="StgValue_58" fromId="400" toId="58">
+<dataflow id="385" from="p_str" to="StgValue_58" fromId="312" toId="58">
 </dataflow>
-<dataflow id="403" from="p_str63" to="StgValue_58" fromId="402" toId="58">
+<dataflow id="386" from="StgValue_315" to="StgValue_58" fromId="315" toId="58">
 </dataflow>
-<dataflow id="404" from="StgValue_315" to="StgValue_58" fromId="315" toId="58">
+<dataflow id="387" from="StgValue_315" to="StgValue_58" fromId="315" toId="58">
 </dataflow>
-<dataflow id="405" from="StgValue_315" to="StgValue_58" fromId="315" toId="58">
+<dataflow id="388" from="StgValue_276" to="StgValue_58" fromId="276" toId="58">
 </dataflow>
-<dataflow id="406" from="StgValue_276" to="StgValue_58" fromId="276" toId="58">
+<dataflow id="389" from="StgValue_276" to="StgValue_58" fromId="276" toId="58">
 </dataflow>
-<dataflow id="407" from="StgValue_276" to="StgValue_58" fromId="276" toId="58">
+<dataflow id="390" from="p_str" to="StgValue_58" fromId="312" toId="58">
 </dataflow>
-<dataflow id="409" from="p_str64" to="StgValue_58" fromId="408" toId="58">
+<dataflow id="391" from="p_str" to="StgValue_58" fromId="312" toId="58">
 </dataflow>
-<dataflow id="411" from="p_str65" to="StgValue_58" fromId="410" toId="58">
+<dataflow id="392" from="memcpy.omatrix.out_b" to="StgValue_59" fromId="237" toId="59">
 </dataflow>
-<dataflow id="412" from="memcpy.omatrix.out_b" to="StgValue_59" fromId="237" toId="59">
+<dataflow id="393" from="omatrix" to="StgValue_59" fromId="70" toId="59">
 </dataflow>
-<dataflow id="413" from="omatrix" to="StgValue_59" fromId="70" toId="59">
+<dataflow id="394" from="omatrix_offset_c" to="StgValue_59" fromId="10" toId="59">
 </dataflow>
-<dataflow id="414" from="omatrix_offset_c" to="StgValue_59" fromId="10" toId="59">
+<dataflow id="395" from="i_0_i_i_c" to="StgValue_59" fromId="12" toId="59">
 </dataflow>
-<dataflow id="415" from="i_0_i_i_c" to="StgValue_59" fromId="12" toId="59">
+<dataflow id="396" from="out_buf_0" to="StgValue_59" fromId="29" toId="59">
 </dataflow>
-<dataflow id="416" from="out_buf_0" to="StgValue_59" fromId="29" toId="59">
+<dataflow id="397" from="out_buf_1" to="StgValue_59" fromId="30" toId="59">
 </dataflow>
-<dataflow id="417" from="out_buf_1" to="StgValue_59" fromId="30" toId="59">
+<dataflow id="398" from="out_buf_2" to="StgValue_59" fromId="31" toId="59">
 </dataflow>
-<dataflow id="418" from="out_buf_2" to="StgValue_59" fromId="31" toId="59">
+<dataflow id="399" from="out_buf_3" to="StgValue_59" fromId="32" toId="59">
 </dataflow>
-<dataflow id="419" from="out_buf_3" to="StgValue_59" fromId="32" toId="59">
+<dataflow id="400" from="out_buf_4" to="StgValue_59" fromId="33" toId="59">
 </dataflow>
-<dataflow id="420" from="out_buf_4" to="StgValue_59" fromId="33" toId="59">
+<dataflow id="401" from="out_buf_5" to="StgValue_59" fromId="34" toId="59">
 </dataflow>
-<dataflow id="421" from="out_buf_5" to="StgValue_59" fromId="34" toId="59">
+<dataflow id="402" from="out_buf_6" to="StgValue_59" fromId="35" toId="59">
 </dataflow>
-<dataflow id="422" from="out_buf_6" to="StgValue_59" fromId="35" toId="59">
+<dataflow id="403" from="out_buf_7" to="StgValue_59" fromId="36" toId="59">
 </dataflow>
-<dataflow id="423" from="out_buf_7" to="StgValue_59" fromId="36" toId="59">
+<dataflow id="404" from="out_buf_8" to="StgValue_59" fromId="37" toId="59">
 </dataflow>
-<dataflow id="424" from="out_buf_8" to="StgValue_59" fromId="37" toId="59">
+<dataflow id="405" from="out_buf_9" to="StgValue_59" fromId="38" toId="59">
 </dataflow>
-<dataflow id="425" from="out_buf_9" to="StgValue_59" fromId="38" toId="59">
+<dataflow id="406" from="out_buf_10" to="StgValue_59" fromId="39" toId="59">
 </dataflow>
-<dataflow id="426" from="out_buf_10" to="StgValue_59" fromId="39" toId="59">
+<dataflow id="407" from="out_buf_11" to="StgValue_59" fromId="40" toId="59">
 </dataflow>
-<dataflow id="427" from="out_buf_11" to="StgValue_59" fromId="40" toId="59">
+<dataflow id="408" from="out_buf_12" to="StgValue_59" fromId="41" toId="59">
 </dataflow>
-<dataflow id="428" from="out_buf_12" to="StgValue_59" fromId="41" toId="59">
+<dataflow id="409" from="out_buf_13" to="StgValue_59" fromId="42" toId="59">
 </dataflow>
-<dataflow id="429" from="out_buf_13" to="StgValue_59" fromId="42" toId="59">
+<dataflow id="410" from="out_buf_14" to="StgValue_59" fromId="43" toId="59">
 </dataflow>
-<dataflow id="430" from="out_buf_14" to="StgValue_59" fromId="43" toId="59">
-</dataflow>
-<dataflow id="431" from="out_buf_15" to="StgValue_59" fromId="44" toId="59">
+<dataflow id="411" from="out_buf_15" to="StgValue_59" fromId="44" toId="59">
 </dataflow>
 </dataflows>
 

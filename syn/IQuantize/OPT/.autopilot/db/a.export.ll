@@ -49,18 +49,16 @@ target triple = "x86_64-unknown-linux-gnu"
 @OutData_comp_buf = common global [15930 x i8] zeroinitializer
 @IQuantize_str = internal unnamed_addr constant [10 x i8] c"IQuantize\00"
 @CurHuffReadBuf = common global i8* null, align 8
-@p_str9 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str8 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str6 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1
-@p_str5 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
-@p_str4 = private unnamed_addr constant [8 x i8] c"BUS_DST\00", align 1
-@p_str3 = private unnamed_addr constant [6 x i8] c"slave\00", align 1
-@p_str2 = private unnamed_addr constant [8 x i8] c"BUS_SRC\00", align 1
-@p_str10 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
-@p_str = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
+@p_str8 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
+@p_str614 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1
+@p_str513 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
+@p_str412 = private unnamed_addr constant [8 x i8] c"BUS_DST\00", align 1
+@p_str311 = private unnamed_addr constant [6 x i8] c"slave\00", align 1
+@p_str210 = private unnamed_addr constant [8 x i8] c"BUS_SRC\00", align 1
+@p_str19 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
+@p_str = internal unnamed_addr constant [1 x i8] zeroinitializer
 
-declare i32 @llvm.part.select.i32(i32, i32, i32) nounwind readnone
+declare i64 @llvm.part.select.i64(i64, i32, i32) nounwind readnone
 
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
@@ -126,9 +124,9 @@ entry:
   ret i1 true
 }
 
-define weak i32 @_ssdm_op_Read.s_axilite.i32(i32) {
+define weak i64 @_ssdm_op_Read.s_axilite.i64(i64) {
 entry:
-  ret i32 %0
+  ret i64 %0
 }
 
 define weak i32 @_ssdm_op_Read.m_axi.i32P(i32*) {
@@ -137,14 +135,14 @@ entry:
   ret i32 %empty
 }
 
-declare i4 @_ssdm_op_PartSelect.i4.i6.i32.i32(i6, i32, i32) nounwind readnone
-
-define weak i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32, i32, i32) nounwind readnone {
+define weak i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64, i32, i32) nounwind readnone {
 entry:
-  %empty = call i32 @llvm.part.select.i32(i32 %0, i32 %1, i32 %2)
-  %empty_5 = trunc i32 %empty to i30
-  ret i30 %empty_5
+  %empty = call i64 @llvm.part.select.i64(i64 %0, i32 %1, i32 %2)
+  %empty_5 = trunc i64 %empty to i62
+  ret i62 %empty_5
 }
+
+declare i4 @_ssdm_op_PartSelect.i4.i6.i32.i32(i6, i32, i32) nounwind readnone
 
 define weak i32 @_ssdm_op_Mux.ap_auto.32i32.i6(i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i6) {
 entry:
@@ -298,7 +296,7 @@ entry:
   ret i5 %empty_11
 }
 
-define void @IQuantize(i32* %BUS_DST, i32* %BUS_SRC, i32 %matrix, i32 %qmatrix) {
+define void @IQuantize(i32* %BUS_DST, i32* %BUS_SRC, i64 %matrix, i64 %qmatrix) {
   %inp1_buf_0_1_2 = alloca i32
   %inp1_buf_0_1_33 = alloca i32
   %inp1_buf_0_1_34 = alloca i32
@@ -331,22 +329,22 @@ define void @IQuantize(i32* %BUS_DST, i32* %BUS_SRC, i32 %matrix, i32 %qmatrix) 
   %inp1_buf_0_1_61 = alloca i32
   %inp1_buf_0_1_62 = alloca i32
   %inp1_buf_0_1_63 = alloca i32
-  %qmatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %qmatrix)
-  %matrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %matrix)
-  %qmatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %qmatrix_read, i32 2, i32 31)
-  %tmp = zext i30 %qmatrix3 to i64
+  %qmatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %qmatrix)
+  %matrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %matrix)
+  %qmatrix3 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %qmatrix_read, i32 2, i32 63)
+  %tmp = zext i62 %qmatrix3 to i64
   %BUS_SRC_addr = getelementptr i32* %BUS_SRC, i64 %tmp
-  %matrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %matrix_read, i32 2, i32 31)
-  %tmp_2 = zext i30 %matrix1 to i64
+  %matrix1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %matrix_read, i32 2, i32 63)
+  %tmp_2 = zext i62 %matrix1 to i64
   %BUS_DST_addr = getelementptr i32* %BUS_DST, i64 %tmp_2
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_SRC), !map !278
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_DST), !map !283
   call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @IQuantize_str) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32 %qmatrix, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i64 %qmatrix, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle2, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i64 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [9 x i8]* @p_str614, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
   %BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)
   %BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)
   %BUS_DST_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)
@@ -409,7 +407,7 @@ burst.rd.header6.preheader:                       ; preds = %burst.rd.header
 burst.rd.body:                                    ; preds = %burst.rd.header
   %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
   %burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind
-  %empty_13 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str8) nounwind
+  %empty_13 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
   %empty_14 = call i32 (...)* @_ssdm_op_SpecLoopName([24 x i8]* @memcpy_OC_inp1_buf_O) nounwind
   %inp1_buf_0_0 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_addr)
   %tmp_1 = trunc i6 %indvar to i4
@@ -480,7 +478,7 @@ burst.rd.end5.0.preheader:                        ; preds = %burst.rd.header6
 burst.rd.body7:                                   ; preds = %burst.rd.header6
   %empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
   %burstread_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind
-  %empty_16 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str9) nounwind
+  %empty_16 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
   %empty_17 = call i32 (...)* @_ssdm_op_SpecLoopName([23 x i8]* @memcpy_OC_inp2_buf_O) nounwind
   %inp2_buf_0_1_10 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_DST_addr)
   %tmp_4 = trunc i6 %indvar8 to i4
@@ -706,7 +704,7 @@ burst.wr.header:                                  ; preds = %burst.wr.header.pre
 burst.wr.body:                                    ; preds = %burst.wr.header
   %empty_19 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
   %burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind
-  %empty_20 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str10) nounwind
+  %empty_20 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
   %empty_21 = call i32 (...)* @_ssdm_op_SpecLoopName([27 x i8]* @memcpy_OC_matrix_OC_s) nounwind
   %tmp_10 = trunc i6 %indvar1 to i4
   %tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar1, i32 4)
@@ -946,72 +944,72 @@ branch31_ifconv:                                  ; preds = %burst.rd.body7
   br label %burst.rd.body7683
 }
 
-!opencl.kernels = !{!0, !7, !10, !14, !16, !16, !22, !28, !34, !40, !43, !49, !52, !58}
+!opencl.kernels = !{!0, !7, !13, !15, !18, !22, !24, !24, !30, !36, !42, !48, !51, !57}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!60, !69, !76, !82, !87, !92, !97, !102, !110, !117, !122, !128, !133, !138, !143, !149, !154, !159, !164, !169, !174, !179, !184, !189, !194, !199, !204, !209, !214, !219, !224, !229, !234, !239, !244, !249, !256, !261, !262, !263, !264, !265, !266, !267, !268, !269, !270, !271, !272, !273}
 !axi4.master.portmap = !{!274, !275}
 !axi4.slave.bundlemap = !{!276, !277}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"imatrix", metadata !"omatrix"}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1}
+!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"y"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
-!7 = metadata !{null, metadata !1, metadata !2, metadata !8, metadata !4, metadata !9, metadata !6}
-!8 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uint*"}
-!9 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"qmatrix"}
-!10 = metadata !{null, metadata !11, metadata !2, metadata !12, metadata !4, metadata !13, metadata !6}
-!11 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
-!12 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int"}
-!13 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"shift"}
-!14 = metadata !{null, metadata !11, metadata !2, metadata !12, metadata !4, metadata !15, metadata !6}
-!15 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"Bound"}
-!16 = metadata !{null, metadata !17, metadata !18, metadata !19, metadata !20, metadata !21, metadata !6}
-!17 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0, i32 0}
-!18 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!19 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uchar*", metadata !"int", metadata !"int", metadata !"int", metadata !"int"}
-!20 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!21 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"out_buf", metadata !"width", metadata !"height", metadata !"voffs", metadata !"hoffs"}
-!22 = metadata !{null, metadata !23, metadata !24, metadata !25, metadata !26, metadata !27, metadata !6}
-!23 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1}
-!24 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!25 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
-!26 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !""}
-!27 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
-!28 = metadata !{null, metadata !29, metadata !30, metadata !31, metadata !32, metadata !33, metadata !6}
-!29 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1}
-!30 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!31 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
-!32 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!33 = metadata !{metadata !"kernel_arg_name", metadata !"store1", metadata !"store2", metadata !"store3", metadata !"store4", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
-!34 = metadata !{null, metadata !35, metadata !36, metadata !37, metadata !38, metadata !39, metadata !6}
-!35 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1, i32 1, i32 1}
-!36 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!37 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
-!38 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!39 = metadata !{metadata !"kernel_arg_name", metadata !"p", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
-!40 = metadata !{null, metadata !23, metadata !24, metadata !41, metadata !26, metadata !42, metadata !6}
-!41 = metadata !{metadata !"kernel_arg_type", metadata !"int [64]*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
-!42 = metadata !{metadata !"kernel_arg_name", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
-!43 = metadata !{null, metadata !44, metadata !45, metadata !46, metadata !47, metadata !48, metadata !6}
-!44 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1}
-!45 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none"}
-!46 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*"}
-!47 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !""}
-!48 = metadata !{metadata !"kernel_arg_name", metadata !"comp_no", metadata !"out_buf", metadata !"HuffBuff"}
-!49 = metadata !{null, metadata !23, metadata !24, metadata !50, metadata !26, metadata !51, metadata !6}
-!50 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*"}
-!51 = metadata !{metadata !"kernel_arg_name", metadata !"out_data_image_width", metadata !"out_data_image_height", metadata !"out_data_comp_vpos", metadata !"out_data_comp_hpos"}
-!52 = metadata !{null, metadata !53, metadata !54, metadata !55, metadata !56, metadata !57, metadata !6}
-!53 = metadata !{metadata !"kernel_arg_addr_space", i32 1}
-!54 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
-!55 = metadata !{metadata !"kernel_arg_type", metadata !"int*"}
-!56 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
-!57 = metadata !{metadata !"kernel_arg_name", metadata !"y"}
-!58 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !59, metadata !6}
-!59 = metadata !{metadata !"kernel_arg_name", metadata !"x", metadata !"y"}
+!7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
+!8 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
+!9 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
+!10 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*"}
+!11 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
+!12 = metadata !{metadata !"kernel_arg_name", metadata !"x", metadata !"y"}
+!13 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !14, metadata !6}
+!14 = metadata !{metadata !"kernel_arg_name", metadata !"imatrix", metadata !"omatrix"}
+!15 = metadata !{null, metadata !8, metadata !9, metadata !16, metadata !11, metadata !17, metadata !6}
+!16 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uint*"}
+!17 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"qmatrix"}
+!18 = metadata !{null, metadata !19, metadata !9, metadata !20, metadata !11, metadata !21, metadata !6}
+!19 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
+!20 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int"}
+!21 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"shift"}
+!22 = metadata !{null, metadata !19, metadata !9, metadata !20, metadata !11, metadata !23, metadata !6}
+!23 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"Bound"}
+!24 = metadata !{null, metadata !25, metadata !26, metadata !27, metadata !28, metadata !29, metadata !6}
+!25 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0, i32 0}
+!26 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!27 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uchar*", metadata !"int", metadata !"int", metadata !"int", metadata !"int"}
+!28 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!29 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"out_buf", metadata !"width", metadata !"height", metadata !"voffs", metadata !"hoffs"}
+!30 = metadata !{null, metadata !31, metadata !32, metadata !33, metadata !34, metadata !35, metadata !6}
+!31 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1}
+!32 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!33 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
+!34 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !""}
+!35 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
+!36 = metadata !{null, metadata !37, metadata !38, metadata !39, metadata !40, metadata !41, metadata !6}
+!37 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1}
+!38 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!39 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
+!40 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!41 = metadata !{metadata !"kernel_arg_name", metadata !"store1", metadata !"store2", metadata !"store3", metadata !"store4", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
+!42 = metadata !{null, metadata !43, metadata !44, metadata !45, metadata !46, metadata !47, metadata !6}
+!43 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1, i32 1, i32 1}
+!44 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!45 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
+!46 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!47 = metadata !{metadata !"kernel_arg_name", metadata !"p", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
+!48 = metadata !{null, metadata !31, metadata !32, metadata !49, metadata !34, metadata !50, metadata !6}
+!49 = metadata !{metadata !"kernel_arg_type", metadata !"int [64]*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
+!50 = metadata !{metadata !"kernel_arg_name", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
+!51 = metadata !{null, metadata !52, metadata !53, metadata !54, metadata !55, metadata !56, metadata !6}
+!52 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1}
+!53 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none"}
+!54 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*"}
+!55 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !""}
+!56 = metadata !{metadata !"kernel_arg_name", metadata !"comp_no", metadata !"out_buf", metadata !"HuffBuff"}
+!57 = metadata !{null, metadata !31, metadata !32, metadata !58, metadata !34, metadata !59, metadata !6}
+!58 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*"}
+!59 = metadata !{metadata !"kernel_arg_name", metadata !"out_data_image_width", metadata !"out_data_image_height", metadata !"out_data_comp_vpos", metadata !"out_data_comp_hpos"}
 !60 = metadata !{metadata !61, null}
 !61 = metadata !{metadata !62}
 !62 = metadata !{i32 0, i32 31, metadata !63}

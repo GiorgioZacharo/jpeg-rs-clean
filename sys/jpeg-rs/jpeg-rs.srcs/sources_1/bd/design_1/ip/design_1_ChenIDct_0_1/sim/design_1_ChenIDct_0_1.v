@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:ChenIDct:1.0
-// IP Revision: 1804301855
+// IP Revision: 1805161614
 
 `timescale 1ns/1ps
 

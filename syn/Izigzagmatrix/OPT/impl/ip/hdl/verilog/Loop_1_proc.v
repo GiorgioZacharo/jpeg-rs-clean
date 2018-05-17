@@ -217,7 +217,7 @@ output   in1_buf_0_ce0;
 input  [5:0] in1_buf_0_q0;
 output   m_axi_imatrix_AWVALID;
 input   m_axi_imatrix_AWREADY;
-output  [31:0] m_axi_imatrix_AWADDR;
+output  [63:0] m_axi_imatrix_AWADDR;
 output  [0:0] m_axi_imatrix_AWID;
 output  [31:0] m_axi_imatrix_AWLEN;
 output  [2:0] m_axi_imatrix_AWSIZE;
@@ -237,7 +237,7 @@ output  [0:0] m_axi_imatrix_WID;
 output  [0:0] m_axi_imatrix_WUSER;
 output   m_axi_imatrix_ARVALID;
 input   m_axi_imatrix_ARREADY;
-output  [31:0] m_axi_imatrix_ARADDR;
+output  [63:0] m_axi_imatrix_ARADDR;
 output  [0:0] m_axi_imatrix_ARID;
 output  [31:0] m_axi_imatrix_ARLEN;
 output  [2:0] m_axi_imatrix_ARSIZE;
@@ -260,7 +260,7 @@ output   m_axi_imatrix_BREADY;
 input  [1:0] m_axi_imatrix_BRESP;
 input  [0:0] m_axi_imatrix_BID;
 input  [0:0] m_axi_imatrix_BUSER;
-input  [29:0] imatrix_offset_dout;
+input  [61:0] imatrix_offset_dout;
 input   imatrix_offset_empty_n;
 output   imatrix_offset_read;
 output  [0:0] out_buf_0_address0;
@@ -378,7 +378,7 @@ reg ap_idle;
 reg ap_ready;
 reg in1_buf_0_ce0;
 reg m_axi_imatrix_ARVALID;
-reg[31:0] m_axi_imatrix_ARADDR;
+reg[63:0] m_axi_imatrix_ARADDR;
 reg m_axi_imatrix_RREADY;
 reg imatrix_offset_read;
 reg out_buf_0_ce0;
@@ -458,101 +458,102 @@ wire    ap_CS_fsm_state24;
 wire    ap_CS_fsm_state25;
 wire    ap_CS_fsm_state26;
 reg    imatrix_offset_blk_n;
-wire   [30:0] sext_cast_i_i_fu_719_p1;
-reg   [30:0] sext_cast_i_i_reg_1054;
+reg   [61:0] imatrix_offset_read_reg_1044;
 reg    ap_block_state1;
-wire   [63:0] newIndex3_i_i_fu_739_p1;
-reg   [63:0] newIndex3_i_i_reg_1077;
+wire   [63:0] newIndex3_i_i_fu_725_p1;
+reg   [63:0] newIndex3_i_i_reg_1052;
 wire    ap_CS_fsm_state2;
-wire   [0:0] exitcond_i_i_i_i_fu_723_p2;
-wire   [5:0] k_i_i_i_fu_744_p2;
-reg   [5:0] k_i_i_i_reg_1117;
-wire   [30:0] sum_i_i_fu_754_p2;
-reg   [30:0] sum_i_i_reg_1122;
+wire   [0:0] exitcond_i_i_i_i_fu_709_p2;
+wire   [5:0] k_i_i_i_fu_730_p2;
+reg   [5:0] k_i_i_i_reg_1092;
+wire   [62:0] imatrix_offset_cast2_fu_740_p1;
+reg   [62:0] imatrix_offset_cast2_reg_1097;
 wire    ap_CS_fsm_state3;
+reg   [63:0] imatrix_addr_reg_1116;
+reg   [63:0] imatrix_addr_1_reg_1127;
 reg    ap_sig_ioackin_m_axi_imatrix_ARREADY;
-wire   [30:0] sum2_i_i_fu_773_p2;
-reg   [30:0] sum2_i_i_reg_1138;
-wire   [30:0] sum4_i_i_fu_792_p2;
-reg   [30:0] sum4_i_i_reg_1154;
-wire   [30:0] sum6_i_i_fu_811_p2;
-reg   [30:0] sum6_i_i_reg_1170;
-wire   [30:0] sum8_i_i_fu_830_p2;
-reg   [30:0] sum8_i_i_reg_1186;
-wire   [30:0] sum1_i_i_fu_849_p2;
-reg   [30:0] sum1_i_i_reg_1202;
-wire   [30:0] sum3_i_i_fu_868_p2;
-reg   [30:0] sum3_i_i_reg_1218;
-wire   [30:0] sum5_i_i_fu_887_p2;
-reg   [30:0] sum5_i_i_reg_1234;
-reg   [31:0] imatrix_addr_read_reg_1244;
-wire   [30:0] sum7_i_i_fu_906_p2;
-reg   [30:0] sum7_i_i_reg_1255;
-reg   [31:0] imatrix_addr_1_read_reg_1265;
-wire   [30:0] sum9_i_i_fu_925_p2;
-reg   [30:0] sum9_i_i_reg_1276;
-reg   [31:0] imatrix_addr_2_read_reg_1286;
-wire   [30:0] sum10_i_i_fu_944_p2;
-reg   [30:0] sum10_i_i_reg_1297;
-reg   [31:0] imatrix_addr_3_read_reg_1307;
-wire   [30:0] sum11_i_i_fu_963_p2;
-reg   [30:0] sum11_i_i_reg_1318;
-reg   [31:0] imatrix_addr_4_read_reg_1328;
-wire   [30:0] sum12_i_i_fu_982_p2;
-reg   [30:0] sum12_i_i_reg_1339;
-reg   [31:0] imatrix_addr_5_read_reg_1349;
-wire   [30:0] sum13_i_i_fu_1001_p2;
-reg   [30:0] sum13_i_i_reg_1360;
-reg   [31:0] imatrix_addr_6_read_reg_1370;
-wire   [30:0] sum14_i_i_fu_1020_p2;
-reg   [30:0] sum14_i_i_reg_1381;
-reg   [31:0] imatrix_addr_7_read_reg_1391;
-wire   [30:0] sum15_i_i_fu_1039_p2;
-reg   [30:0] sum15_i_i_reg_1402;
-reg   [31:0] imatrix_addr_8_read_reg_1407;
-reg   [31:0] imatrix_addr_9_read_reg_1418;
-reg   [31:0] imatrix_addr_10_read_reg_1423;
-reg   [31:0] imatrix_addr_11_read_reg_1428;
-reg   [31:0] imatrix_addr_12_read_reg_1433;
-reg   [31:0] imatrix_addr_13_read_reg_1438;
-reg   [31:0] imatrix_addr_14_read_reg_1443;
-reg   [31:0] imatrix_addr_15_read_reg_1448;
-reg   [5:0] k_0_i_i_i_i_reg_708;
+reg   [63:0] imatrix_addr_2_reg_1138;
+reg   [63:0] imatrix_addr_3_reg_1149;
+reg   [63:0] imatrix_addr_4_reg_1160;
+reg   [63:0] imatrix_addr_5_reg_1171;
+reg   [63:0] imatrix_addr_6_reg_1182;
+reg   [63:0] imatrix_addr_7_reg_1193;
+reg   [31:0] imatrix_addr_read_reg_1204;
+reg   [63:0] imatrix_addr_8_reg_1209;
+reg   [31:0] imatrix_addr_1_read_reg_1220;
+reg   [63:0] imatrix_addr_9_reg_1225;
+reg   [31:0] imatrix_addr_2_read_reg_1236;
+reg   [63:0] imatrix_addr_10_reg_1241;
+reg   [31:0] imatrix_addr_3_read_reg_1252;
+reg   [63:0] imatrix_addr_11_reg_1257;
+reg   [31:0] imatrix_addr_4_read_reg_1268;
+reg   [63:0] imatrix_addr_12_reg_1273;
+reg   [31:0] imatrix_addr_5_read_reg_1284;
+reg   [63:0] imatrix_addr_13_reg_1289;
+reg   [31:0] imatrix_addr_6_read_reg_1305;
+reg   [63:0] imatrix_addr_14_reg_1310;
+reg   [63:0] imatrix_addr_15_reg_1316;
+reg   [31:0] imatrix_addr_7_read_reg_1322;
+reg   [31:0] imatrix_addr_8_read_reg_1327;
+reg   [31:0] imatrix_addr_9_read_reg_1332;
+reg   [31:0] imatrix_addr_10_read_reg_1337;
+reg   [31:0] imatrix_addr_11_read_reg_1342;
+reg   [31:0] imatrix_addr_12_read_reg_1347;
+reg   [31:0] imatrix_addr_13_read_reg_1352;
+reg   [31:0] imatrix_addr_14_read_reg_1357;
+reg   [31:0] imatrix_addr_15_read_reg_1362;
+reg   [5:0] k_0_i_i_i_i_reg_698;
 wire    ap_CS_fsm_state27;
-wire   [63:0] sum_cast_i_i_fu_759_p1;
-wire   [63:0] sum2_cast_i_i_fu_778_p1;
-wire   [63:0] sum4_cast_i_i_fu_797_p1;
-wire   [63:0] sum6_cast_i_i_fu_816_p1;
-wire   [63:0] sum8_cast_i_i_fu_835_p1;
-wire   [63:0] sum1_cast_i_i_fu_854_p1;
-wire   [63:0] sum3_cast_i_i_fu_873_p1;
-wire   [63:0] sum5_cast_i_i_fu_892_p1;
-wire   [63:0] sum7_cast_i_i_fu_911_p1;
-wire   [63:0] sum9_cast_i_i_fu_930_p1;
-wire   [63:0] sum10_cast_i_i_fu_949_p1;
-wire   [63:0] sum11_cast_i_i_fu_968_p1;
-wire   [63:0] sum12_cast_i_i_fu_987_p1;
-wire   [63:0] sum13_cast_i_i_fu_1006_p1;
-wire   [63:0] sum14_cast_i_i_fu_1025_p1;
-wire   [63:0] sum15_cast_i_i_fu_1044_p1;
+wire   [63:0] sum_cast_i_i_fu_749_p1;
+wire   [63:0] sum1_cast_i_i_fu_768_p1;
+wire   [63:0] sum2_cast_i_i_fu_787_p1;
+wire   [63:0] sum3_cast_i_i_fu_806_p1;
+wire   [63:0] sum4_cast_i_i_fu_825_p1;
+wire   [63:0] sum5_cast_i_i_fu_844_p1;
+wire   [63:0] sum6_cast_i_i_fu_863_p1;
+wire   [63:0] sum7_cast_i_i_fu_882_p1;
+wire   [63:0] sum8_cast_i_i_fu_901_p1;
+wire   [63:0] sum9_cast_i_i_fu_920_p1;
+wire   [63:0] sum10_cast_i_i_fu_939_p1;
+wire   [63:0] sum11_cast_i_i_fu_958_p1;
+wire   [63:0] sum12_cast_i_i_fu_977_p1;
+wire   [63:0] sum13_cast_i_i_fu_996_p1;
+wire   [63:0] sum14_cast_i_i_fu_1015_p1;
+wire   [63:0] sum15_cast_i_i_fu_1034_p1;
 reg    ap_reg_ioackin_m_axi_imatrix_ARREADY;
-wire   [1:0] newIndex2_i_i_fu_729_p4;
-wire   [30:0] tmp_5_i_cast_i_i_fu_750_p1;
-wire   [30:0] tmp_5_i_1_cast_i_i_fu_769_p1;
-wire   [30:0] tmp_5_i_2_cast_i_i_fu_788_p1;
-wire   [30:0] tmp_5_i_3_cast_i_i_fu_807_p1;
-wire   [30:0] tmp_5_i_4_cast_i_i_fu_826_p1;
-wire   [30:0] tmp_5_i_5_cast_i_i_fu_845_p1;
-wire   [30:0] tmp_5_i_6_cast_i_i_fu_864_p1;
-wire   [30:0] tmp_5_i_7_cast_i_i_fu_883_p1;
-wire   [30:0] tmp_5_i_8_cast_i_i_fu_902_p1;
-wire   [30:0] tmp_5_i_9_cast_i_i_fu_921_p1;
-wire   [30:0] tmp_5_i_cast_i_i_18_fu_940_p1;
-wire   [30:0] tmp_5_i_10_cast_i_i_fu_959_p1;
-wire   [30:0] tmp_5_i_11_cast_i_i_fu_978_p1;
-wire   [30:0] tmp_5_i_12_cast_i_i_fu_997_p1;
-wire   [30:0] tmp_5_i_13_cast_i_i_fu_1016_p1;
-wire   [30:0] tmp_5_i_14_cast_i_i_fu_1035_p1;
+wire   [1:0] newIndex2_i_i_fu_715_p4;
+wire   [62:0] tmp_5_i_cast_i_i_fu_736_p1;
+wire   [62:0] sum_i_i_fu_743_p2;
+wire   [62:0] tmp_5_i_1_cast_i_i_fu_759_p1;
+wire   [62:0] sum1_i_i_fu_763_p2;
+wire   [62:0] tmp_5_i_2_cast_i_i_fu_778_p1;
+wire   [62:0] sum2_i_i_fu_782_p2;
+wire   [62:0] tmp_5_i_3_cast_i_i_fu_797_p1;
+wire   [62:0] sum3_i_i_fu_801_p2;
+wire   [62:0] tmp_5_i_4_cast_i_i_fu_816_p1;
+wire   [62:0] sum4_i_i_fu_820_p2;
+wire   [62:0] tmp_5_i_5_cast_i_i_fu_835_p1;
+wire   [62:0] sum5_i_i_fu_839_p2;
+wire   [62:0] tmp_5_i_6_cast_i_i_fu_854_p1;
+wire   [62:0] sum6_i_i_fu_858_p2;
+wire   [62:0] tmp_5_i_7_cast_i_i_fu_873_p1;
+wire   [62:0] sum7_i_i_fu_877_p2;
+wire   [62:0] tmp_5_i_8_cast_i_i_fu_892_p1;
+wire   [62:0] sum8_i_i_fu_896_p2;
+wire   [62:0] tmp_5_i_9_cast_i_i_fu_911_p1;
+wire   [62:0] sum9_i_i_fu_915_p2;
+wire   [62:0] tmp_5_i_cast_i_i_18_fu_930_p1;
+wire   [62:0] sum10_i_i_fu_934_p2;
+wire   [62:0] tmp_5_i_10_cast_i_i_fu_949_p1;
+wire   [62:0] sum11_i_i_fu_953_p2;
+wire   [62:0] tmp_5_i_11_cast_i_i_fu_968_p1;
+wire   [62:0] sum12_i_i_fu_972_p2;
+wire   [62:0] tmp_5_i_12_cast_i_i_fu_987_p1;
+wire   [62:0] sum13_i_i_fu_991_p2;
+wire   [62:0] tmp_5_i_13_cast_i_i_fu_1006_p1;
+wire   [62:0] sum14_i_i_fu_1010_p2;
+wire   [62:0] tmp_5_i_14_cast_i_i_fu_1025_p1;
+wire   [62:0] sum15_i_i_fu_1029_p2;
 reg   [26:0] ap_NS_fsm;
 
 // power-on initialization
@@ -576,7 +577,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((exitcond_i_i_i_i_fu_723_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+        end else if (((exitcond_i_i_i_i_fu_709_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -596,179 +597,180 @@ end
 
 always @ (posedge ap_clk) begin
     if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0) | (imatrix_offset_empty_n == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
-        k_0_i_i_i_i_reg_708 <= 6'd0;
+        k_0_i_i_i_i_reg_698 <= 6'd0;
     end else if ((1'b1 == ap_CS_fsm_state27)) begin
-        k_0_i_i_i_i_reg_708 <= k_i_i_i_reg_1117;
+        k_0_i_i_i_i_reg_698 <= k_i_i_i_reg_1092;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state21))) begin
-        imatrix_addr_10_read_reg_1423 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state22))) begin
-        imatrix_addr_11_read_reg_1428 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state23))) begin
-        imatrix_addr_12_read_reg_1433 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state24))) begin
-        imatrix_addr_13_read_reg_1438 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state25))) begin
-        imatrix_addr_14_read_reg_1443 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state26))) begin
-        imatrix_addr_15_read_reg_1448 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state12))) begin
-        imatrix_addr_1_read_reg_1265 <= m_axi_imatrix_RDATA;
-        sum9_i_i_reg_1276 <= sum9_i_i_fu_925_p2;
+        imatrix_addr_10_read_reg_1337 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state13))) begin
-        imatrix_addr_2_read_reg_1286 <= m_axi_imatrix_RDATA;
-        sum10_i_i_reg_1297 <= sum10_i_i_fu_944_p2;
+        imatrix_addr_10_reg_1241[62 : 0] <= sum10_cast_i_i_fu_939_p1[62 : 0];
+        imatrix_addr_2_read_reg_1236 <= m_axi_imatrix_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state22))) begin
+        imatrix_addr_11_read_reg_1342 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state14))) begin
-        imatrix_addr_3_read_reg_1307 <= m_axi_imatrix_RDATA;
-        sum11_i_i_reg_1318 <= sum11_i_i_fu_963_p2;
+        imatrix_addr_11_reg_1257[62 : 0] <= sum11_cast_i_i_fu_958_p1[62 : 0];
+        imatrix_addr_3_read_reg_1252 <= m_axi_imatrix_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state23))) begin
+        imatrix_addr_12_read_reg_1347 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state15))) begin
-        imatrix_addr_4_read_reg_1328 <= m_axi_imatrix_RDATA;
-        sum12_i_i_reg_1339 <= sum12_i_i_fu_982_p2;
+        imatrix_addr_12_reg_1273[62 : 0] <= sum12_cast_i_i_fu_977_p1[62 : 0];
+        imatrix_addr_4_read_reg_1268 <= m_axi_imatrix_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state24))) begin
+        imatrix_addr_13_read_reg_1352 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state16))) begin
-        imatrix_addr_5_read_reg_1349 <= m_axi_imatrix_RDATA;
-        sum13_i_i_reg_1360 <= sum13_i_i_fu_1001_p2;
+        imatrix_addr_13_reg_1289[62 : 0] <= sum13_cast_i_i_fu_996_p1[62 : 0];
+        imatrix_addr_5_read_reg_1284 <= m_axi_imatrix_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state25))) begin
+        imatrix_addr_14_read_reg_1357 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state17))) begin
-        imatrix_addr_6_read_reg_1370 <= m_axi_imatrix_RDATA;
-        sum14_i_i_reg_1381 <= sum14_i_i_fu_1020_p2;
+        imatrix_addr_14_reg_1310[62 : 0] <= sum14_cast_i_i_fu_1015_p1[62 : 0];
+        imatrix_addr_15_reg_1316[62 : 0] <= sum15_cast_i_i_fu_1034_p1[62 : 0];
+        imatrix_addr_6_read_reg_1305 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state18))) begin
-        imatrix_addr_7_read_reg_1391 <= m_axi_imatrix_RDATA;
-        sum15_i_i_reg_1402 <= sum15_i_i_fu_1039_p2;
+    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state26))) begin
+        imatrix_addr_15_read_reg_1362 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state19))) begin
-        imatrix_addr_8_read_reg_1407 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state20))) begin
-        imatrix_addr_9_read_reg_1418 <= m_axi_imatrix_RDATA;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state11))) begin
-        imatrix_addr_read_reg_1244 <= m_axi_imatrix_RDATA;
-        sum7_i_i_reg_1255 <= sum7_i_i_fu_906_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state2) & (exitcond_i_i_i_i_fu_723_p2 == 1'd0))) begin
-        k_i_i_i_reg_1117 <= k_i_i_i_fu_744_p2;
-        newIndex3_i_i_reg_1077[1 : 0] <= newIndex3_i_i_fu_739_p1[1 : 0];
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0) | (imatrix_offset_empty_n == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
-        sext_cast_i_i_reg_1054[29 : 0] <= sext_cast_i_i_fu_719_p1[29 : 0];
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
-        sum1_i_i_reg_1202 <= sum1_i_i_fu_849_p2;
+    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state12))) begin
+        imatrix_addr_1_read_reg_1220 <= m_axi_imatrix_RDATA;
+        imatrix_addr_9_reg_1225[62 : 0] <= sum9_cast_i_i_fu_920_p1[62 : 0];
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
-        sum2_i_i_reg_1138 <= sum2_i_i_fu_773_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state9))) begin
-        sum3_i_i_reg_1218 <= sum3_i_i_fu_868_p2;
+        imatrix_addr_1_reg_1127[62 : 0] <= sum1_cast_i_i_fu_768_p1[62 : 0];
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
-        sum4_i_i_reg_1154 <= sum4_i_i_fu_792_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
-        sum5_i_i_reg_1234 <= sum5_i_i_fu_887_p2;
+        imatrix_addr_2_reg_1138[62 : 0] <= sum2_cast_i_i_fu_787_p1[62 : 0];
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-        sum6_i_i_reg_1170 <= sum6_i_i_fu_811_p2;
+        imatrix_addr_3_reg_1149[62 : 0] <= sum3_cast_i_i_fu_806_p1[62 : 0];
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state7))) begin
-        sum8_i_i_reg_1186 <= sum8_i_i_fu_830_p2;
+        imatrix_addr_4_reg_1160[62 : 0] <= sum4_cast_i_i_fu_825_p1[62 : 0];
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
+        imatrix_addr_5_reg_1171[62 : 0] <= sum5_cast_i_i_fu_844_p1[62 : 0];
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state9))) begin
+        imatrix_addr_6_reg_1182[62 : 0] <= sum6_cast_i_i_fu_863_p1[62 : 0];
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state18))) begin
+        imatrix_addr_7_read_reg_1322 <= m_axi_imatrix_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
+        imatrix_addr_7_reg_1193[62 : 0] <= sum7_cast_i_i_fu_882_p1[62 : 0];
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state19))) begin
+        imatrix_addr_8_read_reg_1327 <= m_axi_imatrix_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state11))) begin
+        imatrix_addr_8_reg_1209[62 : 0] <= sum8_cast_i_i_fu_901_p1[62 : 0];
+        imatrix_addr_read_reg_1204 <= m_axi_imatrix_RDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state20))) begin
+        imatrix_addr_9_read_reg_1332 <= m_axi_imatrix_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        sum_i_i_reg_1122 <= sum_i_i_fu_754_p2;
+        imatrix_addr_reg_1116[62 : 0] <= sum_cast_i_i_fu_749_p1[62 : 0];
+        imatrix_offset_cast2_reg_1097[61 : 0] <= imatrix_offset_cast2_fu_740_p1[61 : 0];
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0) | (imatrix_offset_empty_n == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
+        imatrix_offset_read_reg_1044 <= imatrix_offset_dout;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b1 == ap_CS_fsm_state2) & (exitcond_i_i_i_i_fu_709_p2 == 1'd0))) begin
+        k_i_i_i_reg_1092 <= k_i_i_i_fu_730_p2;
+        newIndex3_i_i_reg_1052[1 : 0] <= newIndex3_i_i_fu_725_p1[1 : 0];
     end
 end
 
 always @ (*) begin
-    if (((exitcond_i_i_i_i_fu_723_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((exitcond_i_i_i_i_fu_709_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -784,7 +786,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond_i_i_i_i_fu_723_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((exitcond_i_i_i_i_fu_709_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -880,7 +882,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state17))) begin
+    if ((~((m_axi_imatrix_RVALID == 1'b0) | (ap_sig_ioackin_m_axi_imatrix_ARREADY == 1'b0)) & (1'b1 == ap_CS_fsm_state16))) begin
         in1_buf_15_ce0 = 1'b1;
     end else begin
         in1_buf_15_ce0 = 1'b0;
@@ -962,37 +964,37 @@ end
 always @ (*) begin
     if ((ap_reg_ioackin_m_axi_imatrix_ARREADY == 1'b0)) begin
         if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state19))) begin
-            m_axi_imatrix_ARADDR = sum15_cast_i_i_fu_1044_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_15_reg_1316;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state18))) begin
-            m_axi_imatrix_ARADDR = sum14_cast_i_i_fu_1025_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_14_reg_1310;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state17))) begin
-            m_axi_imatrix_ARADDR = sum13_cast_i_i_fu_1006_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_13_reg_1289;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state16))) begin
-            m_axi_imatrix_ARADDR = sum12_cast_i_i_fu_987_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_12_reg_1273;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state15))) begin
-            m_axi_imatrix_ARADDR = sum11_cast_i_i_fu_968_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_11_reg_1257;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state14))) begin
-            m_axi_imatrix_ARADDR = sum10_cast_i_i_fu_949_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_10_reg_1241;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state13))) begin
-            m_axi_imatrix_ARADDR = sum9_cast_i_i_fu_930_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_9_reg_1225;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state12))) begin
-            m_axi_imatrix_ARADDR = sum7_cast_i_i_fu_911_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_8_reg_1209;
         end else if (((m_axi_imatrix_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
-            m_axi_imatrix_ARADDR = sum5_cast_i_i_fu_892_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_7_reg_1193;
         end else if ((1'b1 == ap_CS_fsm_state10)) begin
-            m_axi_imatrix_ARADDR = sum3_cast_i_i_fu_873_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_6_reg_1182;
         end else if ((1'b1 == ap_CS_fsm_state9)) begin
-            m_axi_imatrix_ARADDR = sum1_cast_i_i_fu_854_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_5_reg_1171;
         end else if ((1'b1 == ap_CS_fsm_state8)) begin
-            m_axi_imatrix_ARADDR = sum8_cast_i_i_fu_835_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_4_reg_1160;
         end else if ((1'b1 == ap_CS_fsm_state7)) begin
-            m_axi_imatrix_ARADDR = sum6_cast_i_i_fu_816_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_3_reg_1149;
         end else if ((1'b1 == ap_CS_fsm_state6)) begin
-            m_axi_imatrix_ARADDR = sum4_cast_i_i_fu_797_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_2_reg_1138;
         end else if ((1'b1 == ap_CS_fsm_state5)) begin
-            m_axi_imatrix_ARADDR = sum2_cast_i_i_fu_778_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_1_reg_1127;
         end else if ((1'b1 == ap_CS_fsm_state4)) begin
-            m_axi_imatrix_ARADDR = sum_cast_i_i_fu_759_p1;
+            m_axi_imatrix_ARADDR = imatrix_addr_reg_1116;
         end else begin
             m_axi_imatrix_ARADDR = 'bx;
         end
@@ -1283,7 +1285,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((exitcond_i_i_i_i_fu_723_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if (((exitcond_i_i_i_i_fu_709_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -1520,41 +1522,43 @@ always @ (*) begin
     ap_block_state1 = ((ap_done_reg == 1'b1) | (ap_start == 1'b0) | (imatrix_offset_empty_n == 1'b0));
 end
 
-assign exitcond_i_i_i_i_fu_723_p2 = ((k_0_i_i_i_i_reg_708 == 6'd32) ? 1'b1 : 1'b0);
+assign exitcond_i_i_i_i_fu_709_p2 = ((k_0_i_i_i_i_reg_698 == 6'd32) ? 1'b1 : 1'b0);
 
-assign in1_buf_0_address0 = newIndex3_i_i_fu_739_p1;
+assign imatrix_offset_cast2_fu_740_p1 = imatrix_offset_read_reg_1044;
 
-assign in1_buf_10_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_0_address0 = newIndex3_i_i_fu_725_p1;
 
-assign in1_buf_11_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_10_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_12_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_11_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_13_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_12_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_14_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_13_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_15_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_14_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_1_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_15_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_2_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_1_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_3_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_2_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_4_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_3_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_5_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_4_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_6_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_5_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_7_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_6_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_8_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_7_address0 = newIndex3_i_i_reg_1052;
 
-assign in1_buf_9_address0 = newIndex3_i_i_reg_1077;
+assign in1_buf_8_address0 = newIndex3_i_i_reg_1052;
 
-assign k_i_i_i_fu_744_p2 = (k_0_i_i_i_i_reg_708 + 6'd16);
+assign in1_buf_9_address0 = newIndex3_i_i_reg_1052;
+
+assign k_i_i_i_fu_730_p2 = (k_0_i_i_i_i_reg_698 + 6'd16);
 
 assign m_axi_imatrix_ARBURST = 2'd0;
 
@@ -1576,7 +1580,7 @@ assign m_axi_imatrix_ARSIZE = 3'd0;
 
 assign m_axi_imatrix_ARUSER = 1'd0;
 
-assign m_axi_imatrix_AWADDR = 32'd0;
+assign m_axi_imatrix_AWADDR = 64'd0;
 
 assign m_axi_imatrix_AWBURST = 2'd0;
 
@@ -1614,175 +1618,189 @@ assign m_axi_imatrix_WUSER = 1'd0;
 
 assign m_axi_imatrix_WVALID = 1'b0;
 
-assign newIndex2_i_i_fu_729_p4 = {{k_0_i_i_i_i_reg_708[5:4]}};
+assign newIndex2_i_i_fu_715_p4 = {{k_0_i_i_i_i_reg_698[5:4]}};
 
-assign newIndex3_i_i_fu_739_p1 = newIndex2_i_i_fu_729_p4;
+assign newIndex3_i_i_fu_725_p1 = newIndex2_i_i_fu_715_p4;
 
-assign out_buf_0_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_0_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_0_d0 = imatrix_addr_read_reg_1244;
+assign out_buf_0_d0 = imatrix_addr_read_reg_1204;
 
-assign out_buf_10_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_10_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_10_d0 = imatrix_addr_10_read_reg_1423;
+assign out_buf_10_d0 = imatrix_addr_10_read_reg_1337;
 
-assign out_buf_11_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_11_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_11_d0 = imatrix_addr_11_read_reg_1428;
+assign out_buf_11_d0 = imatrix_addr_11_read_reg_1342;
 
-assign out_buf_12_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_12_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_12_d0 = imatrix_addr_12_read_reg_1433;
+assign out_buf_12_d0 = imatrix_addr_12_read_reg_1347;
 
-assign out_buf_13_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_13_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_13_d0 = imatrix_addr_13_read_reg_1438;
+assign out_buf_13_d0 = imatrix_addr_13_read_reg_1352;
 
-assign out_buf_14_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_14_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_14_d0 = imatrix_addr_14_read_reg_1443;
+assign out_buf_14_d0 = imatrix_addr_14_read_reg_1357;
 
-assign out_buf_15_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_15_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_15_d0 = imatrix_addr_15_read_reg_1448;
+assign out_buf_15_d0 = imatrix_addr_15_read_reg_1362;
 
-assign out_buf_1_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_1_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_1_d0 = imatrix_addr_1_read_reg_1265;
+assign out_buf_1_d0 = imatrix_addr_1_read_reg_1220;
 
-assign out_buf_2_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_2_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_2_d0 = imatrix_addr_2_read_reg_1286;
+assign out_buf_2_d0 = imatrix_addr_2_read_reg_1236;
 
-assign out_buf_3_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_3_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_3_d0 = imatrix_addr_3_read_reg_1307;
+assign out_buf_3_d0 = imatrix_addr_3_read_reg_1252;
 
-assign out_buf_4_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_4_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_4_d0 = imatrix_addr_4_read_reg_1328;
+assign out_buf_4_d0 = imatrix_addr_4_read_reg_1268;
 
-assign out_buf_5_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_5_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_5_d0 = imatrix_addr_5_read_reg_1349;
+assign out_buf_5_d0 = imatrix_addr_5_read_reg_1284;
 
-assign out_buf_6_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_6_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_6_d0 = imatrix_addr_6_read_reg_1370;
+assign out_buf_6_d0 = imatrix_addr_6_read_reg_1305;
 
-assign out_buf_7_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_7_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_7_d0 = imatrix_addr_7_read_reg_1391;
+assign out_buf_7_d0 = imatrix_addr_7_read_reg_1322;
 
-assign out_buf_8_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_8_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_8_d0 = imatrix_addr_8_read_reg_1407;
+assign out_buf_8_d0 = imatrix_addr_8_read_reg_1327;
 
-assign out_buf_9_address0 = newIndex3_i_i_reg_1077;
+assign out_buf_9_address0 = newIndex3_i_i_reg_1052;
 
-assign out_buf_9_d0 = imatrix_addr_9_read_reg_1418;
+assign out_buf_9_d0 = imatrix_addr_9_read_reg_1332;
 
-assign sext_cast_i_i_fu_719_p1 = imatrix_offset_dout;
+assign sum10_cast_i_i_fu_939_p1 = sum10_i_i_fu_934_p2;
 
-assign sum10_cast_i_i_fu_949_p1 = sum10_i_i_reg_1297;
+assign sum10_i_i_fu_934_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_cast_i_i_18_fu_930_p1);
 
-assign sum10_i_i_fu_944_p2 = (tmp_5_i_cast_i_i_18_fu_940_p1 + sext_cast_i_i_reg_1054);
+assign sum11_cast_i_i_fu_958_p1 = sum11_i_i_fu_953_p2;
 
-assign sum11_cast_i_i_fu_968_p1 = sum11_i_i_reg_1318;
+assign sum11_i_i_fu_953_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_10_cast_i_i_fu_949_p1);
 
-assign sum11_i_i_fu_963_p2 = (tmp_5_i_10_cast_i_i_fu_959_p1 + sext_cast_i_i_reg_1054);
+assign sum12_cast_i_i_fu_977_p1 = sum12_i_i_fu_972_p2;
 
-assign sum12_cast_i_i_fu_987_p1 = sum12_i_i_reg_1339;
+assign sum12_i_i_fu_972_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_11_cast_i_i_fu_968_p1);
 
-assign sum12_i_i_fu_982_p2 = (tmp_5_i_11_cast_i_i_fu_978_p1 + sext_cast_i_i_reg_1054);
+assign sum13_cast_i_i_fu_996_p1 = sum13_i_i_fu_991_p2;
 
-assign sum13_cast_i_i_fu_1006_p1 = sum13_i_i_reg_1360;
+assign sum13_i_i_fu_991_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_12_cast_i_i_fu_987_p1);
 
-assign sum13_i_i_fu_1001_p2 = (tmp_5_i_12_cast_i_i_fu_997_p1 + sext_cast_i_i_reg_1054);
+assign sum14_cast_i_i_fu_1015_p1 = sum14_i_i_fu_1010_p2;
 
-assign sum14_cast_i_i_fu_1025_p1 = sum14_i_i_reg_1381;
+assign sum14_i_i_fu_1010_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_13_cast_i_i_fu_1006_p1);
 
-assign sum14_i_i_fu_1020_p2 = (tmp_5_i_13_cast_i_i_fu_1016_p1 + sext_cast_i_i_reg_1054);
+assign sum15_cast_i_i_fu_1034_p1 = sum15_i_i_fu_1029_p2;
 
-assign sum15_cast_i_i_fu_1044_p1 = sum15_i_i_reg_1402;
+assign sum15_i_i_fu_1029_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_14_cast_i_i_fu_1025_p1);
 
-assign sum15_i_i_fu_1039_p2 = (tmp_5_i_14_cast_i_i_fu_1035_p1 + sext_cast_i_i_reg_1054);
+assign sum1_cast_i_i_fu_768_p1 = sum1_i_i_fu_763_p2;
 
-assign sum1_cast_i_i_fu_854_p1 = sum1_i_i_reg_1202;
+assign sum1_i_i_fu_763_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_1_cast_i_i_fu_759_p1);
 
-assign sum1_i_i_fu_849_p2 = (tmp_5_i_5_cast_i_i_fu_845_p1 + sext_cast_i_i_reg_1054);
+assign sum2_cast_i_i_fu_787_p1 = sum2_i_i_fu_782_p2;
 
-assign sum2_cast_i_i_fu_778_p1 = sum2_i_i_reg_1138;
+assign sum2_i_i_fu_782_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_2_cast_i_i_fu_778_p1);
 
-assign sum2_i_i_fu_773_p2 = (tmp_5_i_1_cast_i_i_fu_769_p1 + sext_cast_i_i_reg_1054);
+assign sum3_cast_i_i_fu_806_p1 = sum3_i_i_fu_801_p2;
 
-assign sum3_cast_i_i_fu_873_p1 = sum3_i_i_reg_1218;
+assign sum3_i_i_fu_801_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_3_cast_i_i_fu_797_p1);
 
-assign sum3_i_i_fu_868_p2 = (tmp_5_i_6_cast_i_i_fu_864_p1 + sext_cast_i_i_reg_1054);
+assign sum4_cast_i_i_fu_825_p1 = sum4_i_i_fu_820_p2;
 
-assign sum4_cast_i_i_fu_797_p1 = sum4_i_i_reg_1154;
+assign sum4_i_i_fu_820_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_4_cast_i_i_fu_816_p1);
 
-assign sum4_i_i_fu_792_p2 = (tmp_5_i_2_cast_i_i_fu_788_p1 + sext_cast_i_i_reg_1054);
+assign sum5_cast_i_i_fu_844_p1 = sum5_i_i_fu_839_p2;
 
-assign sum5_cast_i_i_fu_892_p1 = sum5_i_i_reg_1234;
+assign sum5_i_i_fu_839_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_5_cast_i_i_fu_835_p1);
 
-assign sum5_i_i_fu_887_p2 = (tmp_5_i_7_cast_i_i_fu_883_p1 + sext_cast_i_i_reg_1054);
+assign sum6_cast_i_i_fu_863_p1 = sum6_i_i_fu_858_p2;
 
-assign sum6_cast_i_i_fu_816_p1 = sum6_i_i_reg_1170;
+assign sum6_i_i_fu_858_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_6_cast_i_i_fu_854_p1);
 
-assign sum6_i_i_fu_811_p2 = (tmp_5_i_3_cast_i_i_fu_807_p1 + sext_cast_i_i_reg_1054);
+assign sum7_cast_i_i_fu_882_p1 = sum7_i_i_fu_877_p2;
 
-assign sum7_cast_i_i_fu_911_p1 = sum7_i_i_reg_1255;
+assign sum7_i_i_fu_877_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_7_cast_i_i_fu_873_p1);
 
-assign sum7_i_i_fu_906_p2 = (tmp_5_i_8_cast_i_i_fu_902_p1 + sext_cast_i_i_reg_1054);
+assign sum8_cast_i_i_fu_901_p1 = sum8_i_i_fu_896_p2;
 
-assign sum8_cast_i_i_fu_835_p1 = sum8_i_i_reg_1186;
+assign sum8_i_i_fu_896_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_8_cast_i_i_fu_892_p1);
 
-assign sum8_i_i_fu_830_p2 = (tmp_5_i_4_cast_i_i_fu_826_p1 + sext_cast_i_i_reg_1054);
+assign sum9_cast_i_i_fu_920_p1 = sum9_i_i_fu_915_p2;
 
-assign sum9_cast_i_i_fu_930_p1 = sum9_i_i_reg_1276;
+assign sum9_i_i_fu_915_p2 = (imatrix_offset_cast2_reg_1097 + tmp_5_i_9_cast_i_i_fu_911_p1);
 
-assign sum9_i_i_fu_925_p2 = (tmp_5_i_9_cast_i_i_fu_921_p1 + sext_cast_i_i_reg_1054);
+assign sum_cast_i_i_fu_749_p1 = sum_i_i_fu_743_p2;
 
-assign sum_cast_i_i_fu_759_p1 = sum_i_i_reg_1122;
+assign sum_i_i_fu_743_p2 = (imatrix_offset_cast2_fu_740_p1 + tmp_5_i_cast_i_i_fu_736_p1);
 
-assign sum_i_i_fu_754_p2 = (tmp_5_i_cast_i_i_fu_750_p1 + sext_cast_i_i_reg_1054);
+assign tmp_5_i_10_cast_i_i_fu_949_p1 = in1_buf_11_q0;
 
-assign tmp_5_i_10_cast_i_i_fu_959_p1 = in1_buf_11_q0;
+assign tmp_5_i_11_cast_i_i_fu_968_p1 = in1_buf_12_q0;
 
-assign tmp_5_i_11_cast_i_i_fu_978_p1 = in1_buf_12_q0;
+assign tmp_5_i_12_cast_i_i_fu_987_p1 = in1_buf_13_q0;
 
-assign tmp_5_i_12_cast_i_i_fu_997_p1 = in1_buf_13_q0;
+assign tmp_5_i_13_cast_i_i_fu_1006_p1 = in1_buf_14_q0;
 
-assign tmp_5_i_13_cast_i_i_fu_1016_p1 = in1_buf_14_q0;
+assign tmp_5_i_14_cast_i_i_fu_1025_p1 = in1_buf_15_q0;
 
-assign tmp_5_i_14_cast_i_i_fu_1035_p1 = in1_buf_15_q0;
+assign tmp_5_i_1_cast_i_i_fu_759_p1 = in1_buf_1_q0;
 
-assign tmp_5_i_1_cast_i_i_fu_769_p1 = in1_buf_1_q0;
+assign tmp_5_i_2_cast_i_i_fu_778_p1 = in1_buf_2_q0;
 
-assign tmp_5_i_2_cast_i_i_fu_788_p1 = in1_buf_2_q0;
+assign tmp_5_i_3_cast_i_i_fu_797_p1 = in1_buf_3_q0;
 
-assign tmp_5_i_3_cast_i_i_fu_807_p1 = in1_buf_3_q0;
+assign tmp_5_i_4_cast_i_i_fu_816_p1 = in1_buf_4_q0;
 
-assign tmp_5_i_4_cast_i_i_fu_826_p1 = in1_buf_4_q0;
+assign tmp_5_i_5_cast_i_i_fu_835_p1 = in1_buf_5_q0;
 
-assign tmp_5_i_5_cast_i_i_fu_845_p1 = in1_buf_5_q0;
+assign tmp_5_i_6_cast_i_i_fu_854_p1 = in1_buf_6_q0;
 
-assign tmp_5_i_6_cast_i_i_fu_864_p1 = in1_buf_6_q0;
+assign tmp_5_i_7_cast_i_i_fu_873_p1 = in1_buf_7_q0;
 
-assign tmp_5_i_7_cast_i_i_fu_883_p1 = in1_buf_7_q0;
+assign tmp_5_i_8_cast_i_i_fu_892_p1 = in1_buf_8_q0;
 
-assign tmp_5_i_8_cast_i_i_fu_902_p1 = in1_buf_8_q0;
+assign tmp_5_i_9_cast_i_i_fu_911_p1 = in1_buf_9_q0;
 
-assign tmp_5_i_9_cast_i_i_fu_921_p1 = in1_buf_9_q0;
+assign tmp_5_i_cast_i_i_18_fu_930_p1 = in1_buf_10_q0;
 
-assign tmp_5_i_cast_i_i_18_fu_940_p1 = in1_buf_10_q0;
-
-assign tmp_5_i_cast_i_i_fu_750_p1 = in1_buf_0_q0;
+assign tmp_5_i_cast_i_i_fu_736_p1 = in1_buf_0_q0;
 
 always @ (posedge ap_clk) begin
-    sext_cast_i_i_reg_1054[30] <= 1'b0;
-    newIndex3_i_i_reg_1077[63:2] <= 62'b00000000000000000000000000000000000000000000000000000000000000;
+    newIndex3_i_i_reg_1052[63:2] <= 62'b00000000000000000000000000000000000000000000000000000000000000;
+    imatrix_offset_cast2_reg_1097[62] <= 1'b0;
+    imatrix_addr_reg_1116[63] <= 1'b0;
+    imatrix_addr_1_reg_1127[63] <= 1'b0;
+    imatrix_addr_2_reg_1138[63] <= 1'b0;
+    imatrix_addr_3_reg_1149[63] <= 1'b0;
+    imatrix_addr_4_reg_1160[63] <= 1'b0;
+    imatrix_addr_5_reg_1171[63] <= 1'b0;
+    imatrix_addr_6_reg_1182[63] <= 1'b0;
+    imatrix_addr_7_reg_1193[63] <= 1'b0;
+    imatrix_addr_8_reg_1209[63] <= 1'b0;
+    imatrix_addr_9_reg_1225[63] <= 1'b0;
+    imatrix_addr_10_reg_1241[63] <= 1'b0;
+    imatrix_addr_11_reg_1257[63] <= 1'b0;
+    imatrix_addr_12_reg_1273[63] <= 1'b0;
+    imatrix_addr_13_reg_1289[63] <= 1'b0;
+    imatrix_addr_14_reg_1310[63] <= 1'b0;
+    imatrix_addr_15_reg_1316[63] <= 1'b0;
 end
 
 endmodule //Loop_1_proc

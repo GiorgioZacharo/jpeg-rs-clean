@@ -10,6 +10,7 @@
     </clockList>
     <config>
         <schedule model="IQuantize"/>
+        <config_interface clock_enable="0" expose_global="0" m_axi_addr64="1" m_axi_offset="off" register_io="off" trim_dangling_port="0"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf boardInfo="ZYNQ UltraScale+ ZCU102 Evaluation Platform (xczu9eg-ffvb1156-2-i) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
@@ -51,7 +52,7 @@
         <Format formatName="pcore" use_netlist="none"/>
     </ExportDesign>
     <Simulation>
-        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" dumpTrace="none" name="cosim" optimizeCompile="false" reduce_diskspace="false" setup="false" toolName="Auto">
+        <SimFlow askAgain="true" clangSanitizer="false" compile="true" compileChoice="gcc" dumpTrace="none" name="cosim" optimizeCompile="false" reduce_diskspace="false" setup="false" toolName="Auto">
             <Rtl active="false" name="systemc"/>
             <Rtl active="true" name="verilog"/>
             <Rtl active="false" name="vhdl"/>

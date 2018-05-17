@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix/OPT/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="19c2ad9ab33140e2afb54933cd4c7c12"/>
+    <Option Name="Id" Val="7079704d48884bfc92237f276ee1241e"/>
     <Option Name="Part" Val="xczu9eg-ffvb1156-2-i"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -73,13 +73,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/fifo_w30_d1_A.vhd">
+      <File Path="$PPRDIR/fifo_w62_d1_A.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/fifo_w30_d2_A.vhd">
+      <File Path="$PPRDIR/fifo_w62_d2_A.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

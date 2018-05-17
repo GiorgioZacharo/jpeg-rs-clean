@@ -28,10 +28,10 @@ set C_modelArgList {
 	{ in1_buf_14 int 6 regular {array 2 { 0 3 } 0 1 }  }
 	{ in1_buf_15 int 6 regular {array 2 { 0 3 } 0 1 }  }
 	{ i_0_i_i_c int 1 regular {fifo 1}  }
-	{ imatrix_offset int 30 regular  }
-	{ omatrix_offset int 30 regular  }
-	{ imatrix_offset_out int 30 regular {fifo 1}  }
-	{ omatrix_offset_out int 30 regular {fifo 1}  }
+	{ imatrix_offset int 62 regular  }
+	{ omatrix_offset int 62 regular  }
+	{ imatrix_offset_out int 62 regular {fifo 1}  }
+	{ omatrix_offset_out int 62 regular {fifo 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "i_0_i_i", "interface" : "wire", "bitwidth" : 2, "direction" : "READONLY"} , 
@@ -52,10 +52,10 @@ set C_modelArgMapList {[
  	{ "Name" : "in1_buf_14", "interface" : "memory", "bitwidth" : 6, "direction" : "WRITEONLY"} , 
  	{ "Name" : "in1_buf_15", "interface" : "memory", "bitwidth" : 6, "direction" : "WRITEONLY"} , 
  	{ "Name" : "i_0_i_i_c", "interface" : "fifo", "bitwidth" : 1, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "imatrix_offset", "interface" : "wire", "bitwidth" : 30, "direction" : "READONLY"} , 
- 	{ "Name" : "omatrix_offset", "interface" : "wire", "bitwidth" : 30, "direction" : "READONLY"} , 
- 	{ "Name" : "imatrix_offset_out", "interface" : "fifo", "bitwidth" : 30, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "omatrix_offset_out", "interface" : "fifo", "bitwidth" : 30, "direction" : "WRITEONLY"} ]}
+ 	{ "Name" : "imatrix_offset", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
+ 	{ "Name" : "omatrix_offset", "interface" : "wire", "bitwidth" : 62, "direction" : "READONLY"} , 
+ 	{ "Name" : "imatrix_offset_out", "interface" : "fifo", "bitwidth" : 62, "direction" : "WRITEONLY"} , 
+ 	{ "Name" : "omatrix_offset_out", "interface" : "fifo", "bitwidth" : 62, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 83
 set portList { 
@@ -134,12 +134,12 @@ set portList {
 	{ i_0_i_i_c_din sc_out sc_lv 1 signal 17 } 
 	{ i_0_i_i_c_full_n sc_in sc_logic 1 signal 17 } 
 	{ i_0_i_i_c_write sc_out sc_logic 1 signal 17 } 
-	{ imatrix_offset sc_in sc_lv 30 signal 18 } 
-	{ omatrix_offset sc_in sc_lv 30 signal 19 } 
-	{ imatrix_offset_out_din sc_out sc_lv 30 signal 20 } 
+	{ imatrix_offset sc_in sc_lv 62 signal 18 } 
+	{ omatrix_offset sc_in sc_lv 62 signal 19 } 
+	{ imatrix_offset_out_din sc_out sc_lv 62 signal 20 } 
 	{ imatrix_offset_out_full_n sc_in sc_logic 1 signal 20 } 
 	{ imatrix_offset_out_write sc_out sc_logic 1 signal 20 } 
-	{ omatrix_offset_out_din sc_out sc_lv 30 signal 21 } 
+	{ omatrix_offset_out_din sc_out sc_lv 62 signal 21 } 
 	{ omatrix_offset_out_full_n sc_in sc_logic 1 signal 21 } 
 	{ omatrix_offset_out_write sc_out sc_logic 1 signal 21 } 
 }
@@ -219,12 +219,12 @@ set NewPortList {[
  	{ "name": "i_0_i_i_c_din", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "i_0_i_i_c", "role": "din" }} , 
  	{ "name": "i_0_i_i_c_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "i_0_i_i_c", "role": "full_n" }} , 
  	{ "name": "i_0_i_i_c_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "i_0_i_i_c", "role": "write" }} , 
- 	{ "name": "imatrix_offset", "direction": "in", "datatype": "sc_lv", "bitwidth":30, "type": "signal", "bundle":{"name": "imatrix_offset", "role": "default" }} , 
- 	{ "name": "omatrix_offset", "direction": "in", "datatype": "sc_lv", "bitwidth":30, "type": "signal", "bundle":{"name": "omatrix_offset", "role": "default" }} , 
- 	{ "name": "imatrix_offset_out_din", "direction": "out", "datatype": "sc_lv", "bitwidth":30, "type": "signal", "bundle":{"name": "imatrix_offset_out", "role": "din" }} , 
+ 	{ "name": "imatrix_offset", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "imatrix_offset", "role": "default" }} , 
+ 	{ "name": "omatrix_offset", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "omatrix_offset", "role": "default" }} , 
+ 	{ "name": "imatrix_offset_out_din", "direction": "out", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "imatrix_offset_out", "role": "din" }} , 
  	{ "name": "imatrix_offset_out_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix_offset_out", "role": "full_n" }} , 
  	{ "name": "imatrix_offset_out_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix_offset_out", "role": "write" }} , 
- 	{ "name": "omatrix_offset_out_din", "direction": "out", "datatype": "sc_lv", "bitwidth":30, "type": "signal", "bundle":{"name": "omatrix_offset_out", "role": "din" }} , 
+ 	{ "name": "omatrix_offset_out_din", "direction": "out", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "omatrix_offset_out", "role": "din" }} , 
  	{ "name": "omatrix_offset_out_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "omatrix_offset_out", "role": "full_n" }} , 
  	{ "name": "omatrix_offset_out_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "omatrix_offset_out", "role": "write" }}  ]}
 
@@ -325,8 +325,8 @@ set Spec2ImplPortList {
 	in1_buf_14 { ap_memory {  { in1_buf_14_address0 mem_address 1 1 }  { in1_buf_14_ce0 mem_ce 1 1 }  { in1_buf_14_we0 mem_we 1 1 }  { in1_buf_14_d0 mem_din 1 6 } } }
 	in1_buf_15 { ap_memory {  { in1_buf_15_address0 mem_address 1 1 }  { in1_buf_15_ce0 mem_ce 1 1 }  { in1_buf_15_we0 mem_we 1 1 }  { in1_buf_15_d0 mem_din 1 6 } } }
 	i_0_i_i_c { ap_fifo {  { i_0_i_i_c_din fifo_data 1 1 }  { i_0_i_i_c_full_n fifo_status 0 1 }  { i_0_i_i_c_write fifo_update 1 1 } } }
-	imatrix_offset { ap_none {  { imatrix_offset in_data 0 30 } } }
-	omatrix_offset { ap_none {  { omatrix_offset in_data 0 30 } } }
-	imatrix_offset_out { ap_fifo {  { imatrix_offset_out_din fifo_data 1 30 }  { imatrix_offset_out_full_n fifo_status 0 1 }  { imatrix_offset_out_write fifo_update 1 1 } } }
-	omatrix_offset_out { ap_fifo {  { omatrix_offset_out_din fifo_data 1 30 }  { omatrix_offset_out_full_n fifo_status 0 1 }  { omatrix_offset_out_write fifo_update 1 1 } } }
+	imatrix_offset { ap_none {  { imatrix_offset in_data 0 62 } } }
+	omatrix_offset { ap_none {  { omatrix_offset in_data 0 62 } } }
+	imatrix_offset_out { ap_fifo {  { imatrix_offset_out_din fifo_data 1 62 }  { imatrix_offset_out_full_n fifo_status 0 1 }  { imatrix_offset_out_write fifo_update 1 1 } } }
+	omatrix_offset_out { ap_fifo {  { omatrix_offset_out_din fifo_data 1 62 }  { omatrix_offset_out_full_n fifo_status 0 1 }  { omatrix_offset_out_write fifo_update 1 1 } } }
 }

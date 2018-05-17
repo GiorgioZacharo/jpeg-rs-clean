@@ -1522,11 +1522,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 30 23:03:44 UTC 2018</spirit:value>
+            <spirit:value>Wed May 16 20:19:14 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:b91baf75</spirit:value>
+            <spirit:value>7:63fdfaa8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1541,11 +1541,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 30 23:03:44 UTC 2018</spirit:value>
+            <spirit:value>Wed May 16 20:19:14 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:b91baf75</spirit:value>
+            <spirit:value>7:63fdfaa8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1560,11 +1560,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 30 23:03:44 UTC 2018</spirit:value>
+            <spirit:value>Wed May 16 20:19:14 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:8754531c</spirit:value>
+            <spirit:value>7:e24ad6bd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1579,11 +1579,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 30 23:03:44 UTC 2018</spirit:value>
+            <spirit:value>Wed May 16 20:19:14 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:8754531c</spirit:value>
+            <spirit:value>7:e24ad6bd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1597,11 +1597,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 30 23:10:50 UTC 2018</spirit:value>
+            <spirit:value>Wed May 16 20:22:52 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:b91baf75</spirit:value>
+            <spirit:value>7:63fdfaa8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2813,35 +2813,43 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_8ns_bkb.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_8ns_bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_10s_cud.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_10s_cud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_10nsdEe.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_10nsdEe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_9ns_eOg.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_9ns_eOg.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mux_326_fYi.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mux_326_fYi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_BUS_CTRL_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_inp1_buf.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_BUS_SRC_DST_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_inp2_buf.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_BUS_CTRL_s_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_BUS_SRC_DST_m_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2856,42 +2864,52 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_8ns_bkb.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_8ns_bkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_10s_cud.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_10s_cud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_10nsdEe.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_10nsdEe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mul_9ns_eOg.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mul_9ns_eOg.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_mux_326_fYi.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_mux_326_fYi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_BUS_CTRL_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_inp1_buf.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct_BUS_SRC_DST_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_inp2_buf.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/92fa/hdl/verilog/ChenIDct.v</spirit:name>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_BUS_CTRL_s_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct_BUS_SRC_DST_m_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/5d6d/hdl/verilog/ChenIDct.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3091,7 +3109,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="17">723</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="17">584</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3115,10 +3133,10 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Chenidct</xilinx:displayName>
-      <xilinx:coreRevision>1804301855</xilinx:coreRevision>
+      <xilinx:coreRevision>1805161614</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.LAYERED_METADATA" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_RST_N.LAYERED_METADATA" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT.LAYERED_METADATA" xilinx:valueSource="constant"/>
@@ -3169,10 +3187,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9f88c8e3"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="45d90b0e"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="63125879"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="e513d8c6"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="21b73ae9"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="1033d807"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="5bd7cfc0"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="0f60965e"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="34c0aa11"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

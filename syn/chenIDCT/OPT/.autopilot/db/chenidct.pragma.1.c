@@ -1293,6 +1293,7 @@ decode_start (int *out_data_image_width, int *out_data_image_height,
 
 
 
+
 void ChenIDct_f2r_vectorBody_s2e_forEnd212(int y[64]){_ssdm_SpecArrayDimSize(y,64);
 _ssdm_op_SpecInterface(y, "m_axi", 0, 0, "", 0, 64, "BUS_SRC_DST", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0, 0, 0, "", "");
@@ -1305,7 +1306,7 @@ _ssdm_SpecArrayPartition( inp1_buf, 1, "CYCLIC", 16, "");
 _ssdm_SpecArrayPartition( out1_buf, 1, "CYCLIC", 16, "");
 
  for (i = 0; i < 64/32; i++){
-#81 "../src/chenidct.c"
+#82 "../src/chenidct.c"
         unsigned offset = i*32;
         memcpy(inp1_buf, y + offset, 32 * sizeof(int));
 
@@ -1315,14 +1316,14 @@ _ssdm_SpecArrayPartition( out1_buf, 1, "CYCLIC", 16, "");
     for (int k=0; k < 32; k++)
 _ssdm_Unroll(1, 4, 16, "");
  out1_buf[k] = (((inp1_buf[k] < 0) ? (inp1_buf[k] - 8) : (inp1_buf[k] + 8)) / 16);
-#98 "../src/chenidct.c"
+#99 "../src/chenidct.c"
       offset = i*32;
       memcpy(y + offset, out1_buf, 32 * sizeof(int));
 
 
   }
 }
-#112 "../src/chenidct.c"
+#113 "../src/chenidct.c"
 void
 ChenIDct (int x[64], int y[64]) {_ssdm_SpecArrayDimSize(x,64);_ssdm_SpecArrayDimSize(y,64);
 _ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 64, "BUS_SRC_DST", "slave", "", 16, 16, 16, 16, "", "");
@@ -1330,91 +1331,101 @@ _ssdm_op_SpecInterface(y, "m_axi", 0, 0, "", 0, 64, "BUS_SRC_DST", "slave", "", 
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0, 0, 0, "", "");
 
  register int i;
+  int k;
   register int *aptr;
   register int a0, a1, a2, a3;
   register int b0, b1, b2, b3;
   register int c0, c1, c2, c3;
 
+  int inp1_buf[64];
+  int inp2_buf[64];
+  int inp3_buf[32];
 
 
 
-    for (i = 0; i < 8; i++)
-    {
-      aptr = x + i;
-      b0 = ((*aptr) << (2));
-      aptr += 8;
-      a0 = ((*aptr) << (2));
-      aptr += 8;
-      b2 = ((*aptr) << (2));
-      aptr += 8;
-      a1 = ((*aptr) << (2));
-      aptr += 8;
-      b1 = ((*aptr) << (2));
-      aptr += 8;
-      a2 = ((*aptr) << (2));
-      aptr += 8;
-      b3 = ((*aptr) << (2));
-      aptr += 8;
-      a3 = ((*aptr) << (2));
+    memcpy(inp1_buf, x, 64 * sizeof(int));
+    memcpy(inp2_buf, y, 64 * sizeof(int));
 
 
 
 
 
-      c0 = ((((100L * a0) - (502L * a3))) >> (9));
-      c1 = ((((426L * a2) - (284L * a1))) >> (9));
-      c2 = ((((426L * a1) + (284L * a2))) >> (9));
-      c3 = ((((502L * a0) + (100L * a3))) >> (9));
+  for (i = 0; i < 8; i++)
+  {
+
+    b0 = ((inp1_buf[i]) << (2));
+
+    a0 = ((inp1_buf[i+8]) << (2));
+
+    b2 = ((inp1_buf[i+16]) << (2));
+
+    a1 = ((inp1_buf[i+24]) << (2));
+
+    b1 = ((inp1_buf[i+32]) << (2));
+
+    a2 = ((inp1_buf[i+40]) << (2));
+
+    b3 = ((inp1_buf[i+48]) << (2));
+
+    a3 = ((inp1_buf[i+56]) << (2));
 
 
 
-      a0 = (((362L * (b0 + b1))) >> (9));
-      a1 = (((362L * (b0 - b1))) >> (9));
 
-      a2 = ((((196L * b2) - (473L * b3))) >> (9));
-      a3 = ((((473L * b2) + (196L * b3))) >> (9));
 
-      b0 = a0 + a3;
-      b1 = a1 + a2;
-      b2 = a1 - a2;
-      b3 = a0 - a3;
+    c0 = ((((100L * a0) - (502L * a3))) >> (9));
+    c1 = ((((426L * a2) - (284L * a1))) >> (9));
+    c2 = ((((426L * a1) + (284L * a2))) >> (9));
+    c3 = ((((502L * a0) + (100L * a3))) >> (9));
 
 
 
-      a0 = c0 + c1;
-      a1 = c0 - c1;
-      a2 = c3 - c2;
-      a3 = c3 + c2;
+    a0 = (((362L * (b0 + b1))) >> (9));
+    a1 = (((362L * (b0 - b1))) >> (9));
 
-      c0 = a0;
-      c1 = (((362L * (a2 - a1))) >> (9));
-      c2 = (((362L * (a2 + a1))) >> (9));
-      c3 = a3;
+    a2 = ((((196L * b2) - (473L * b3))) >> (9));
+    a3 = ((((473L * b2) + (196L * b3))) >> (9));
 
-      aptr = y + i;
-      *aptr = b0 + c3;
-      aptr += 8;
-      *aptr = b1 + c2;
-      aptr += 8;
-      *aptr = b2 + c1;
-      aptr += 8;
-      *aptr = b3 + c0;
-      aptr += 8;
-      *aptr = b3 - c0;
-      aptr += 8;
-      *aptr = b2 - c1;
-      aptr += 8;
-      *aptr = b1 - c2;
-      aptr += 8;
-      *aptr = b0 - c3;
-    }
+    b0 = a0 + a3;
+    b1 = a1 + a2;
+    b2 = a1 - a2;
+    b3 = a0 - a3;
 
+
+
+    a0 = c0 + c1;
+    a1 = c0 - c1;
+    a2 = c3 - c2;
+    a3 = c3 + c2;
+
+    c0 = a0;
+    c1 = (((362L * (a2 - a1))) >> (9));
+    c2 = (((362L * (a2 + a1))) >> (9));
+    c3 = a3;
+
+
+    inp2_buf[i] = b0 + c3;
+
+    inp2_buf[i+8] = b1 + c2;
+
+    inp2_buf[i+16] = b2 + c1;
+
+    inp2_buf[i+24] = b3 + c0;
+
+    inp2_buf[i+32] = b3 - c0;
+
+    inp2_buf[i+40] = b2 - c1;
+
+    inp2_buf[i+48] = b1 - c2;
+
+    inp2_buf[i+56] = b0 - c3;
+  }
 
 
 
     for (i = 0; i < 8; i++)
       {
-        aptr = y + ((i) << (3));
+        aptr = inp2_buf + ((i) << (3));
         b0 = *(aptr++);
         a0 = *(aptr++);
         b2 = *(aptr++);
@@ -1461,7 +1472,7 @@ _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0,
         c2 = (((362L * (a2 + a1))) >> (9));
         c3 = a3;
 
-        aptr = y + ((i) << (3));
+        aptr = inp2_buf + ((i) << (3));
         *(aptr++) = b0 + c3;
         *(aptr++) = b1 + c2;
         *(aptr++) = b2 + c1;
@@ -1471,27 +1482,25 @@ _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0,
         *(aptr++) = b1 - c2;
         *(aptr) = b0 - c3;
       }
-#270 "../src/chenidct.c"
-  int inp1_buf[32];
-  int out1_buf[32];
 
-_ssdm_SpecArrayPartition( inp1_buf, 1, "CYCLIC", 16, "");
-_ssdm_SpecArrayPartition( out1_buf, 1, "CYCLIC", 16, "");
+    memcpy(y , inp2_buf, 64 * sizeof(int));
+#285 "../src/chenidct.c"
+_ssdm_SpecArrayPartition( inp3_buf, 1, "CYCLIC", 16, "");
 
  for (i = 0; i < 64/32; i++){
-#286 "../src/chenidct.c"
+#296 "../src/chenidct.c"
         unsigned offset = i*32;
-        memcpy(inp1_buf, y + offset, 32 * sizeof(int));
+        memcpy(inp3_buf, y + offset, 32 * sizeof(int));
 
 
 
 
     for (int k=0; k < 32; k++)
 _ssdm_Unroll(1, 4, 16, "");
- out1_buf[k] = (((inp1_buf[k] < 0) ? (inp1_buf[k] - 8) : (inp1_buf[k] + 8)) / 16);
-#303 "../src/chenidct.c"
+ inp3_buf[k] = (((inp3_buf[k] < 0) ? (inp3_buf[k] - 8) : (inp3_buf[k] + 8)) / 16);
+#313 "../src/chenidct.c"
       offset = i*32;
-      memcpy(y + offset, out1_buf, 32 * sizeof(int));
+      memcpy(y + offset, inp3_buf, 32 * sizeof(int));
 
 
   }

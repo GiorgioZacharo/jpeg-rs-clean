@@ -532,7 +532,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>30</bitwidth>
+					<bitwidth>62</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -560,7 +560,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>30</bitwidth>
+					<bitwidth>62</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -588,7 +588,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>30</bitwidth>
+					<bitwidth>62</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>3</if_type>
@@ -616,7 +616,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>30</bitwidth>
+					<bitwidth>62</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>3</if_type>
@@ -648,7 +648,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>30</bitwidth>
+					<bitwidth>62</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -677,7 +677,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>30</bitwidth>
+					<bitwidth>62</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -8316,25 +8316,25 @@
 				<sink_obj>160</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_430">
-				<id>598</id>
+				<id>581</id>
 				<edge_type>2</edge_type>
 				<source_obj>39</source_obj>
 				<sink_obj>44</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_431">
-				<id>599</id>
+				<id>582</id>
 				<edge_type>2</edge_type>
 				<source_obj>44</source_obj>
 				<sink_obj>163</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_432">
-				<id>600</id>
+				<id>583</id>
 				<edge_type>2</edge_type>
 				<source_obj>44</source_obj>
 				<sink_obj>161</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_433">
-				<id>601</id>
+				<id>584</id>
 				<edge_type>2</edge_type>
 				<source_obj>161</source_obj>
 				<sink_obj>44</sink_obj>

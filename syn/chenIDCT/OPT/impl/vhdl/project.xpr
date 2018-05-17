@@ -6,7 +6,7 @@
 <Project Version="7" Minor="35" Path="/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT/OPT/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="d87f628389264a9db7fbc45909bd6ee0"/>
+    <Option Name="Id" Val="db2bda33374d444bb07301c16ea6049c"/>
     <Option Name="Part" Val="xczu9eg-ffvb1156-2-i"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -80,6 +80,18 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/ChenIDct_mux_326_fYi.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/ChenIDct_inp1_buf.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/ChenIDct_inp2_buf.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

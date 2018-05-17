@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="ChenIDct" xd:componentRef="ChenIDct" xd:initiationInterval="724" xd:clockPeriod="3.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="ChenIDct" xd:componentRef="ChenIDct" xd:initiationInterval="585" xd:clockPeriod="3.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="x[]" xd:originalName="x" xd:direction="inout" xd:interfaceRef="m_axi_BUS_SRC_DST" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="64" xd:dataWidth="32" xd:bufferDirection="in"/>
   <xd:arg xd:name="y[]" xd:originalName="y" xd:direction="inout" xd:interfaceRef="m_axi_BUS_SRC_DST" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="64" xd:dataWidth="32" xd:bufferDirection="inout"/>
   <xd:arg xd:name="x" xd:originalName="x" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_SRC_DST" xd:dataWidth="64" xd:offset="0x10" xd:handshakeRef="ap_none"/>
   <xd:arg xd:name="y" xd:originalName="y" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_SRC_DST" xd:dataWidth="64" xd:offset="0x1C" xd:handshakeRef="ap_none"/>
-  <xd:latencyEstimates xd:best-case="723" xd:worst-case="723" xd:average-case="723"/>
-  <xd:resourceEstimates xd:LUT="12544" xd:FF="13950" xd:BRAM="2" xd:DSP="128"/>
+  <xd:latencyEstimates xd:best-case="584" xd:worst-case="584" xd:average-case="584"/>
+  <xd:resourceEstimates xd:LUT="12141" xd:FF="13222" xd:BRAM="6" xd:DSP="128"/>
 </xd:acceleratorMap>

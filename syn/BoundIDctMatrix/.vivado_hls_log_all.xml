@@ -12,12 +12,10 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (../src/decode.c:215:7) in function 'BoundIDctMatrix' : &#xA;&#xA;&#xA;more than one sub loop." projectName="BoundIDctMatrix" solutionName="OPT" date="2018-05-11T14:46:47.062-0400" type="Warning"/>
-        <logs message="WARNING: [HLS 200-40] In file included from ../src/chenidct.c:1:&#xA;../src/chenidct.c:82:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'&#xA;        memcpy(inp1_buf, y + offset, 32 * sizeof(int));&#xA;        ^&#xA;../src/chenidct.c:82:9: note: please include the header &lt;string.h> or explicitly provide a declaration for 'memcpy'&#xA;1 warning generated." projectName="BoundIDctMatrix" solutionName="OPT" date="2018-05-11T14:46:44.377-0400" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (../src/decode.c:246:7) in function 'BoundIDctMatrix' : &#xA;&#xA;&#xA;more than one sub loop." projectName="BoundIDctMatrix" solutionName="OPT" date="2018-05-17T17:38:57.954-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] In file included from ../src/chenidct.c:1:&#xA;../src/chenidct.c:83:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'&#xA;        memcpy(inp1_buf, y + offset, 32 * sizeof(int));&#xA;        ^&#xA;../src/chenidct.c:83:9: note: please include the header &lt;string.h> or explicitly provide a declaration for 'memcpy'&#xA;1 warning generated." projectName="BoundIDctMatrix" solutionName="OPT" date="2018-05-17T17:38:50.376-0400" type="Warning"/>
       </synLog>
-      <simLog>
-        <logs message="WARNING: [COSIM 212-369] AXI_master port 'BUS_DST' has a depth of '64'. Insufficient depth may result in simulation mismatch or freeze.&#xA;   Build using &quot;/home/tools/Xilinx/Vivado/2017.4/lnx64/tools/gcc/bin/g++&quot;&#xA;   Compiling apatb_BoundIDctMatrix.cpp&#xA;   Compiling (apcc) jpeg2bmp.c_pre.c.tb.c" projectName="BoundIDctMatrix" solutionName="OPT" date="2018-05-11T14:53:17.788-0400" type="Warning"/>
-      </simLog>
+      <simLog/>
       <mgLog/>
       <packageLog/>
       <csimLog/>

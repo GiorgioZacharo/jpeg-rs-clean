@@ -226,13 +226,13 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 82
-set FifoName fifo_w30_d1_A
+set FifoName fifo_w62_d1_A
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set RegisteredInput 0
 set DualClock 0
 set Depth 1
-set DataWd 30
+set DataWd 62
 set AddrWd 1
 set FullThresh 0
 set impl_style auto
@@ -290,13 +290,13 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 83
-set FifoName fifo_w30_d2_A
+set FifoName fifo_w62_d2_A
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set RegisteredInput 0
 set DualClock 0
 set Depth 2
-set DataWd 30
+set DataWd 62
 set AddrWd 1
 set FullThresh 0
 set impl_style auto
@@ -385,7 +385,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_imatrix \
     op interface \
-    ports { m_axi_imatrix_AWVALID { O 1 bit } m_axi_imatrix_AWREADY { I 1 bit } m_axi_imatrix_AWADDR { O 32 vector } m_axi_imatrix_AWID { O 1 vector } m_axi_imatrix_AWLEN { O 32 vector } m_axi_imatrix_AWSIZE { O 3 vector } m_axi_imatrix_AWBURST { O 2 vector } m_axi_imatrix_AWLOCK { O 2 vector } m_axi_imatrix_AWCACHE { O 4 vector } m_axi_imatrix_AWPROT { O 3 vector } m_axi_imatrix_AWQOS { O 4 vector } m_axi_imatrix_AWREGION { O 4 vector } m_axi_imatrix_AWUSER { O 1 vector } m_axi_imatrix_WVALID { O 1 bit } m_axi_imatrix_WREADY { I 1 bit } m_axi_imatrix_WDATA { O 32 vector } m_axi_imatrix_WSTRB { O 4 vector } m_axi_imatrix_WLAST { O 1 bit } m_axi_imatrix_WID { O 1 vector } m_axi_imatrix_WUSER { O 1 vector } m_axi_imatrix_ARVALID { O 1 bit } m_axi_imatrix_ARREADY { I 1 bit } m_axi_imatrix_ARADDR { O 32 vector } m_axi_imatrix_ARID { O 1 vector } m_axi_imatrix_ARLEN { O 32 vector } m_axi_imatrix_ARSIZE { O 3 vector } m_axi_imatrix_ARBURST { O 2 vector } m_axi_imatrix_ARLOCK { O 2 vector } m_axi_imatrix_ARCACHE { O 4 vector } m_axi_imatrix_ARPROT { O 3 vector } m_axi_imatrix_ARQOS { O 4 vector } m_axi_imatrix_ARREGION { O 4 vector } m_axi_imatrix_ARUSER { O 1 vector } m_axi_imatrix_RVALID { I 1 bit } m_axi_imatrix_RREADY { O 1 bit } m_axi_imatrix_RDATA { I 32 vector } m_axi_imatrix_RLAST { I 1 bit } m_axi_imatrix_RID { I 1 vector } m_axi_imatrix_RUSER { I 1 vector } m_axi_imatrix_RRESP { I 2 vector } m_axi_imatrix_BVALID { I 1 bit } m_axi_imatrix_BREADY { O 1 bit } m_axi_imatrix_BRESP { I 2 vector } m_axi_imatrix_BID { I 1 vector } m_axi_imatrix_BUSER { I 1 vector } } \
+    ports { m_axi_imatrix_AWVALID { O 1 bit } m_axi_imatrix_AWREADY { I 1 bit } m_axi_imatrix_AWADDR { O 64 vector } m_axi_imatrix_AWID { O 1 vector } m_axi_imatrix_AWLEN { O 32 vector } m_axi_imatrix_AWSIZE { O 3 vector } m_axi_imatrix_AWBURST { O 2 vector } m_axi_imatrix_AWLOCK { O 2 vector } m_axi_imatrix_AWCACHE { O 4 vector } m_axi_imatrix_AWPROT { O 3 vector } m_axi_imatrix_AWQOS { O 4 vector } m_axi_imatrix_AWREGION { O 4 vector } m_axi_imatrix_AWUSER { O 1 vector } m_axi_imatrix_WVALID { O 1 bit } m_axi_imatrix_WREADY { I 1 bit } m_axi_imatrix_WDATA { O 32 vector } m_axi_imatrix_WSTRB { O 4 vector } m_axi_imatrix_WLAST { O 1 bit } m_axi_imatrix_WID { O 1 vector } m_axi_imatrix_WUSER { O 1 vector } m_axi_imatrix_ARVALID { O 1 bit } m_axi_imatrix_ARREADY { I 1 bit } m_axi_imatrix_ARADDR { O 64 vector } m_axi_imatrix_ARID { O 1 vector } m_axi_imatrix_ARLEN { O 32 vector } m_axi_imatrix_ARSIZE { O 3 vector } m_axi_imatrix_ARBURST { O 2 vector } m_axi_imatrix_ARLOCK { O 2 vector } m_axi_imatrix_ARCACHE { O 4 vector } m_axi_imatrix_ARPROT { O 3 vector } m_axi_imatrix_ARQOS { O 4 vector } m_axi_imatrix_ARREGION { O 4 vector } m_axi_imatrix_ARUSER { O 1 vector } m_axi_imatrix_RVALID { I 1 bit } m_axi_imatrix_RREADY { O 1 bit } m_axi_imatrix_RDATA { I 32 vector } m_axi_imatrix_RLAST { I 1 bit } m_axi_imatrix_RID { I 1 vector } m_axi_imatrix_RUSER { I 1 vector } m_axi_imatrix_RRESP { I 2 vector } m_axi_imatrix_BVALID { I 1 bit } m_axi_imatrix_BREADY { O 1 bit } m_axi_imatrix_BRESP { I 2 vector } m_axi_imatrix_BID { I 1 vector } m_axi_imatrix_BUSER { I 1 vector } } \
 } "
 }
 
@@ -400,7 +400,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_imatrix_offset \
     op interface \
-    ports { imatrix_offset { I 30 vector } imatrix_offset_ap_vld { I 1 bit } } \
+    ports { imatrix_offset { I 62 vector } imatrix_offset_ap_vld { I 1 bit } } \
 } "
 }
 
@@ -415,7 +415,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_omatrix \
     op interface \
-    ports { m_axi_omatrix_AWVALID { O 1 bit } m_axi_omatrix_AWREADY { I 1 bit } m_axi_omatrix_AWADDR { O 32 vector } m_axi_omatrix_AWID { O 1 vector } m_axi_omatrix_AWLEN { O 32 vector } m_axi_omatrix_AWSIZE { O 3 vector } m_axi_omatrix_AWBURST { O 2 vector } m_axi_omatrix_AWLOCK { O 2 vector } m_axi_omatrix_AWCACHE { O 4 vector } m_axi_omatrix_AWPROT { O 3 vector } m_axi_omatrix_AWQOS { O 4 vector } m_axi_omatrix_AWREGION { O 4 vector } m_axi_omatrix_AWUSER { O 1 vector } m_axi_omatrix_WVALID { O 1 bit } m_axi_omatrix_WREADY { I 1 bit } m_axi_omatrix_WDATA { O 32 vector } m_axi_omatrix_WSTRB { O 4 vector } m_axi_omatrix_WLAST { O 1 bit } m_axi_omatrix_WID { O 1 vector } m_axi_omatrix_WUSER { O 1 vector } m_axi_omatrix_ARVALID { O 1 bit } m_axi_omatrix_ARREADY { I 1 bit } m_axi_omatrix_ARADDR { O 32 vector } m_axi_omatrix_ARID { O 1 vector } m_axi_omatrix_ARLEN { O 32 vector } m_axi_omatrix_ARSIZE { O 3 vector } m_axi_omatrix_ARBURST { O 2 vector } m_axi_omatrix_ARLOCK { O 2 vector } m_axi_omatrix_ARCACHE { O 4 vector } m_axi_omatrix_ARPROT { O 3 vector } m_axi_omatrix_ARQOS { O 4 vector } m_axi_omatrix_ARREGION { O 4 vector } m_axi_omatrix_ARUSER { O 1 vector } m_axi_omatrix_RVALID { I 1 bit } m_axi_omatrix_RREADY { O 1 bit } m_axi_omatrix_RDATA { I 32 vector } m_axi_omatrix_RLAST { I 1 bit } m_axi_omatrix_RID { I 1 vector } m_axi_omatrix_RUSER { I 1 vector } m_axi_omatrix_RRESP { I 2 vector } m_axi_omatrix_BVALID { I 1 bit } m_axi_omatrix_BREADY { O 1 bit } m_axi_omatrix_BRESP { I 2 vector } m_axi_omatrix_BID { I 1 vector } m_axi_omatrix_BUSER { I 1 vector } } \
+    ports { m_axi_omatrix_AWVALID { O 1 bit } m_axi_omatrix_AWREADY { I 1 bit } m_axi_omatrix_AWADDR { O 64 vector } m_axi_omatrix_AWID { O 1 vector } m_axi_omatrix_AWLEN { O 32 vector } m_axi_omatrix_AWSIZE { O 3 vector } m_axi_omatrix_AWBURST { O 2 vector } m_axi_omatrix_AWLOCK { O 2 vector } m_axi_omatrix_AWCACHE { O 4 vector } m_axi_omatrix_AWPROT { O 3 vector } m_axi_omatrix_AWQOS { O 4 vector } m_axi_omatrix_AWREGION { O 4 vector } m_axi_omatrix_AWUSER { O 1 vector } m_axi_omatrix_WVALID { O 1 bit } m_axi_omatrix_WREADY { I 1 bit } m_axi_omatrix_WDATA { O 32 vector } m_axi_omatrix_WSTRB { O 4 vector } m_axi_omatrix_WLAST { O 1 bit } m_axi_omatrix_WID { O 1 vector } m_axi_omatrix_WUSER { O 1 vector } m_axi_omatrix_ARVALID { O 1 bit } m_axi_omatrix_ARREADY { I 1 bit } m_axi_omatrix_ARADDR { O 64 vector } m_axi_omatrix_ARID { O 1 vector } m_axi_omatrix_ARLEN { O 32 vector } m_axi_omatrix_ARSIZE { O 3 vector } m_axi_omatrix_ARBURST { O 2 vector } m_axi_omatrix_ARLOCK { O 2 vector } m_axi_omatrix_ARCACHE { O 4 vector } m_axi_omatrix_ARPROT { O 3 vector } m_axi_omatrix_ARQOS { O 4 vector } m_axi_omatrix_ARREGION { O 4 vector } m_axi_omatrix_ARUSER { O 1 vector } m_axi_omatrix_RVALID { I 1 bit } m_axi_omatrix_RREADY { O 1 bit } m_axi_omatrix_RDATA { I 32 vector } m_axi_omatrix_RLAST { I 1 bit } m_axi_omatrix_RID { I 1 vector } m_axi_omatrix_RUSER { I 1 vector } m_axi_omatrix_RRESP { I 2 vector } m_axi_omatrix_BVALID { I 1 bit } m_axi_omatrix_BREADY { O 1 bit } m_axi_omatrix_BRESP { I 2 vector } m_axi_omatrix_BID { I 1 vector } m_axi_omatrix_BUSER { I 1 vector } } \
 } "
 }
 
@@ -430,7 +430,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_omatrix_offset \
     op interface \
-    ports { omatrix_offset { I 30 vector } omatrix_offset_ap_vld { I 1 bit } } \
+    ports { omatrix_offset { I 62 vector } omatrix_offset_ap_vld { I 1 bit } } \
 } "
 }
 

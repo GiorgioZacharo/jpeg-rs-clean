@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'IQuantize'
 ================================================================
-* Date:           Fri May 11 19:01:31 2018
+* Date:           Thu May 17 17:22:27 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        IQuantize
@@ -183,93 +183,93 @@ ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_60 = alloca i32"
 ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_61 = alloca i32"
 ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_62 = alloca i32"
 ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_63 = alloca i32"
-ST_1 : Operation 61 [1/1] (1.00ns)   --->   "%qmatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %qmatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 62 [1/1] (1.00ns)   --->   "%matrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %matrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%qmatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %qmatrix_read, i32 2, i32 31)"
-ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%matrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %matrix_read, i32 2, i32 31)"
+ST_1 : Operation 61 [1/1] (1.00ns)   --->   "%qmatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %qmatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 62 [1/1] (1.00ns)   --->   "%matrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %matrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%qmatrix3 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %qmatrix_read, i32 2, i32 63)"
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%tmp = zext i62 %qmatrix3 to i64"
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%BUS_SRC_addr = getelementptr i32* %BUS_SRC, i64 %tmp"
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%matrix1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %matrix_read, i32 2, i32 63)"
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_2 = zext i62 %matrix1 to i64"
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%BUS_DST_addr = getelementptr i32* %BUS_DST, i64 %tmp_2"
 
  <State 2> : 2.62ns
-ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%tmp = zext i30 %qmatrix3 to i64"
-ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%BUS_SRC_addr = getelementptr i32* %BUS_SRC, i64 %tmp"
-ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_2 = zext i30 %matrix1 to i64"
-ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%BUS_DST_addr = getelementptr i32* %BUS_DST, i64 %tmp_2"
-ST_2 : Operation 69 [7/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_2 : Operation 70 [7/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 69 [7/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 70 [7/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 3> : 2.62ns
-ST_3 : Operation 71 [6/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_3 : Operation 72 [6/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 71 [6/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 72 [6/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 4> : 2.62ns
-ST_4 : Operation 73 [5/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_4 : Operation 74 [5/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 73 [5/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 74 [5/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 5> : 2.62ns
-ST_5 : Operation 75 [4/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_5 : Operation 76 [4/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 75 [4/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 76 [4/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 6> : 2.62ns
-ST_6 : Operation 77 [3/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_6 : Operation 78 [3/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 77 [3/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 78 [3/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 7> : 2.62ns
-ST_7 : Operation 79 [2/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_7 : Operation 80 [2/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 79 [2/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 80 [2/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 8> : 2.62ns
 ST_8 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_SRC), !map !278"
 ST_8 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_DST), !map !283"
 ST_8 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @IQuantize_str) nounwind"
-ST_8 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:166]
-ST_8 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %qmatrix, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:166]
-ST_8 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:167]
-ST_8 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:167]
-ST_8 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:168]
-ST_8 : Operation 89 [1/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_8 : Operation 90 [1/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_8 : Operation 91 [1/1] (2.62ns)   --->   "%BUS_DST_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:204]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind" [../src/decode.c:166]
+ST_8 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64 %qmatrix, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle2, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind" [../src/decode.c:166]
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind" [../src/decode.c:167]
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind" [../src/decode.c:167]
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [9 x i8]* @p_str614, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind" [../src/decode.c:168]
+ST_8 : Operation 89 [1/7] (2.62ns)   --->   "%BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 90 [1/7] (2.62ns)   --->   "%BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 91 [1/1] (2.62ns)   --->   "%BUS_DST_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64)" [../src/decode.c:205]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_8 : Operation 92 [1/1] (0.65ns)   --->   "br label %memcpy.tail" [../src/decode.c:177]
 
  <State 9> : 2.62ns
-ST_9 : Operation 93 [1/1] (0.00ns)   --->   "%inp2_buf_15_1 = phi i32 [ undef, %0 ], [ %inp2_buf_15_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 94 [1/1] (0.00ns)   --->   "%inp2_buf_15_0 = phi i32 [ undef, %0 ], [ %inp2_buf_15_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 95 [1/1] (0.00ns)   --->   "%inp2_buf_14_1 = phi i32 [ undef, %0 ], [ %inp2_buf_14_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 96 [1/1] (0.00ns)   --->   "%inp2_buf_14_0 = phi i32 [ undef, %0 ], [ %inp2_buf_14_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 97 [1/1] (0.00ns)   --->   "%inp2_buf_13_1 = phi i32 [ undef, %0 ], [ %inp2_buf_13_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 98 [1/1] (0.00ns)   --->   "%inp2_buf_13_0 = phi i32 [ undef, %0 ], [ %inp2_buf_13_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 99 [1/1] (0.00ns)   --->   "%inp2_buf_12_1 = phi i32 [ undef, %0 ], [ %inp2_buf_12_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 100 [1/1] (0.00ns)   --->   "%inp2_buf_12_0 = phi i32 [ undef, %0 ], [ %inp2_buf_12_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 101 [1/1] (0.00ns)   --->   "%inp2_buf_11_1 = phi i32 [ undef, %0 ], [ %inp2_buf_11_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 102 [1/1] (0.00ns)   --->   "%inp2_buf_11_0 = phi i32 [ undef, %0 ], [ %inp2_buf_11_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 103 [1/1] (0.00ns)   --->   "%inp2_buf_10_1 = phi i32 [ undef, %0 ], [ %inp2_buf_10_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 104 [1/1] (0.00ns)   --->   "%inp2_buf_10_0 = phi i32 [ undef, %0 ], [ %inp2_buf_10_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 105 [1/1] (0.00ns)   --->   "%inp2_buf_9_1 = phi i32 [ undef, %0 ], [ %inp2_buf_9_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 106 [1/1] (0.00ns)   --->   "%inp2_buf_9_0 = phi i32 [ undef, %0 ], [ %inp2_buf_9_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 107 [1/1] (0.00ns)   --->   "%inp2_buf_8_1 = phi i32 [ undef, %0 ], [ %inp2_buf_8_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 108 [1/1] (0.00ns)   --->   "%inp2_buf_8_0 = phi i32 [ undef, %0 ], [ %inp2_buf_8_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 109 [1/1] (0.00ns)   --->   "%inp2_buf_7_1 = phi i32 [ undef, %0 ], [ %inp2_buf_7_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 110 [1/1] (0.00ns)   --->   "%inp2_buf_7_0 = phi i32 [ undef, %0 ], [ %inp2_buf_7_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 111 [1/1] (0.00ns)   --->   "%inp2_buf_6_1 = phi i32 [ undef, %0 ], [ %inp2_buf_6_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 112 [1/1] (0.00ns)   --->   "%inp2_buf_6_0 = phi i32 [ undef, %0 ], [ %inp2_buf_6_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 113 [1/1] (0.00ns)   --->   "%inp2_buf_5_1 = phi i32 [ undef, %0 ], [ %inp2_buf_5_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 114 [1/1] (0.00ns)   --->   "%inp2_buf_5_0 = phi i32 [ undef, %0 ], [ %inp2_buf_5_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 115 [1/1] (0.00ns)   --->   "%inp2_buf_4_1 = phi i32 [ undef, %0 ], [ %inp2_buf_4_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 116 [1/1] (0.00ns)   --->   "%inp2_buf_4_0 = phi i32 [ undef, %0 ], [ %inp2_buf_4_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 117 [1/1] (0.00ns)   --->   "%inp2_buf_3_1 = phi i32 [ undef, %0 ], [ %inp2_buf_3_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 118 [1/1] (0.00ns)   --->   "%inp2_buf_3_0 = phi i32 [ undef, %0 ], [ %inp2_buf_3_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 119 [1/1] (0.00ns)   --->   "%inp2_buf_2_1 = phi i32 [ undef, %0 ], [ %inp2_buf_2_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 120 [1/1] (0.00ns)   --->   "%inp2_buf_2_0 = phi i32 [ undef, %0 ], [ %inp2_buf_2_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 121 [1/1] (0.00ns)   --->   "%inp2_buf_1_1 = phi i32 [ undef, %0 ], [ %inp2_buf_1_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 122 [1/1] (0.00ns)   --->   "%inp2_buf_1_0 = phi i32 [ undef, %0 ], [ %inp2_buf_1_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 123 [1/1] (0.00ns)   --->   "%inp2_buf_0_1 = phi i32 [ undef, %0 ], [ %inp2_buf_0_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:192]
-ST_9 : Operation 124 [1/1] (0.00ns)   --->   "%inp2_buf_0_0 = phi i32 [ undef, %0 ], [ %inp2_buf_0_0_s, %memcpy.tail.loopexit ]" [../src/decode.c:192]
+ST_9 : Operation 93 [1/1] (0.00ns)   --->   "%inp2_buf_15_1 = phi i32 [ undef, %0 ], [ %inp2_buf_15_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 94 [1/1] (0.00ns)   --->   "%inp2_buf_15_0 = phi i32 [ undef, %0 ], [ %inp2_buf_15_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 95 [1/1] (0.00ns)   --->   "%inp2_buf_14_1 = phi i32 [ undef, %0 ], [ %inp2_buf_14_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 96 [1/1] (0.00ns)   --->   "%inp2_buf_14_0 = phi i32 [ undef, %0 ], [ %inp2_buf_14_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 97 [1/1] (0.00ns)   --->   "%inp2_buf_13_1 = phi i32 [ undef, %0 ], [ %inp2_buf_13_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 98 [1/1] (0.00ns)   --->   "%inp2_buf_13_0 = phi i32 [ undef, %0 ], [ %inp2_buf_13_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 99 [1/1] (0.00ns)   --->   "%inp2_buf_12_1 = phi i32 [ undef, %0 ], [ %inp2_buf_12_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 100 [1/1] (0.00ns)   --->   "%inp2_buf_12_0 = phi i32 [ undef, %0 ], [ %inp2_buf_12_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 101 [1/1] (0.00ns)   --->   "%inp2_buf_11_1 = phi i32 [ undef, %0 ], [ %inp2_buf_11_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 102 [1/1] (0.00ns)   --->   "%inp2_buf_11_0 = phi i32 [ undef, %0 ], [ %inp2_buf_11_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 103 [1/1] (0.00ns)   --->   "%inp2_buf_10_1 = phi i32 [ undef, %0 ], [ %inp2_buf_10_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 104 [1/1] (0.00ns)   --->   "%inp2_buf_10_0 = phi i32 [ undef, %0 ], [ %inp2_buf_10_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 105 [1/1] (0.00ns)   --->   "%inp2_buf_9_1 = phi i32 [ undef, %0 ], [ %inp2_buf_9_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 106 [1/1] (0.00ns)   --->   "%inp2_buf_9_0 = phi i32 [ undef, %0 ], [ %inp2_buf_9_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 107 [1/1] (0.00ns)   --->   "%inp2_buf_8_1 = phi i32 [ undef, %0 ], [ %inp2_buf_8_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 108 [1/1] (0.00ns)   --->   "%inp2_buf_8_0 = phi i32 [ undef, %0 ], [ %inp2_buf_8_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 109 [1/1] (0.00ns)   --->   "%inp2_buf_7_1 = phi i32 [ undef, %0 ], [ %inp2_buf_7_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 110 [1/1] (0.00ns)   --->   "%inp2_buf_7_0 = phi i32 [ undef, %0 ], [ %inp2_buf_7_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 111 [1/1] (0.00ns)   --->   "%inp2_buf_6_1 = phi i32 [ undef, %0 ], [ %inp2_buf_6_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 112 [1/1] (0.00ns)   --->   "%inp2_buf_6_0 = phi i32 [ undef, %0 ], [ %inp2_buf_6_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 113 [1/1] (0.00ns)   --->   "%inp2_buf_5_1 = phi i32 [ undef, %0 ], [ %inp2_buf_5_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 114 [1/1] (0.00ns)   --->   "%inp2_buf_5_0 = phi i32 [ undef, %0 ], [ %inp2_buf_5_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 115 [1/1] (0.00ns)   --->   "%inp2_buf_4_1 = phi i32 [ undef, %0 ], [ %inp2_buf_4_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 116 [1/1] (0.00ns)   --->   "%inp2_buf_4_0 = phi i32 [ undef, %0 ], [ %inp2_buf_4_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 117 [1/1] (0.00ns)   --->   "%inp2_buf_3_1 = phi i32 [ undef, %0 ], [ %inp2_buf_3_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 118 [1/1] (0.00ns)   --->   "%inp2_buf_3_0 = phi i32 [ undef, %0 ], [ %inp2_buf_3_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 119 [1/1] (0.00ns)   --->   "%inp2_buf_2_1 = phi i32 [ undef, %0 ], [ %inp2_buf_2_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 120 [1/1] (0.00ns)   --->   "%inp2_buf_2_0 = phi i32 [ undef, %0 ], [ %inp2_buf_2_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 121 [1/1] (0.00ns)   --->   "%inp2_buf_1_1 = phi i32 [ undef, %0 ], [ %inp2_buf_1_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 122 [1/1] (0.00ns)   --->   "%inp2_buf_1_0 = phi i32 [ undef, %0 ], [ %inp2_buf_1_0_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 123 [1/1] (0.00ns)   --->   "%inp2_buf_0_1 = phi i32 [ undef, %0 ], [ %inp2_buf_0_1_3, %memcpy.tail.loopexit ]" [../src/decode.c:193]
+ST_9 : Operation 124 [1/1] (0.00ns)   --->   "%inp2_buf_0_0 = phi i32 [ undef, %0 ], [ %inp2_buf_0_0_s, %memcpy.tail.loopexit ]" [../src/decode.c:193]
 ST_9 : Operation 125 [1/1] (0.00ns)   --->   "%i = phi i2 [ 0, %0 ], [ %i_1, %memcpy.tail.loopexit ]"
 ST_9 : Operation 126 [1/1] (0.44ns)   --->   "%exitcond1 = icmp eq i2 %i, -2" [../src/decode.c:177]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_9 : Operation 127 [1/1] (0.54ns)   --->   "%i_1 = add i2 %i, 1" [../src/decode.c:177]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_9 : Operation 128 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %2, label %1" [../src/decode.c:177]
 ST_9 : Operation 129 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
 ST_9 : Operation 130 [1/1] (0.65ns)   --->   "br label %burst.rd.header"
-ST_9 : Operation 131 [5/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:204]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 131 [5/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:205]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 10> : 1.21ns
 ST_10 : Operation 132 [1/1] (0.00ns)   --->   "%indvar = phi i6 [ 0, %1 ], [ %indvar_next, %burst.rd.body340 ]"
@@ -294,128 +294,128 @@ ST_10 : Operation 138 [1/1] (0.78ns)   --->   "switch i4 %tmp_1, label %branch15
     i4 -4, label %branch12
     i4 -3, label %branch13
     i4 -2, label %branch14
-  ]" [../src/decode.c:186]
+  ]" [../src/decode.c:187]
 
  <State 11> : 2.62ns
 ST_11 : Operation 139 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"
 ST_11 : Operation 140 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind"
-ST_11 : Operation 141 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str8) nounwind"
+ST_11 : Operation 141 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind"
 ST_11 : Operation 142 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopName([24 x i8]* @memcpy_OC_inp1_buf_O) nounwind"
-ST_11 : Operation 143 [1/1] (2.62ns)   --->   "%inp1_buf_0_0 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_addr)" [../src/decode.c:186]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_11 : Operation 144 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 145 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 146 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 147 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 148 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 149 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 150 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 151 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 152 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 153 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 154 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 155 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 156 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 157 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 158 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
-ST_11 : Operation 159 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:186]
+ST_11 : Operation 143 [1/1] (2.62ns)   --->   "%inp1_buf_0_0 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_addr)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 144 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 145 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 146 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 147 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 148 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 149 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 150 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 151 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 152 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 153 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 154 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 155 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 156 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 157 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 158 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
+ST_11 : Operation 159 [1/1] (0.00ns)   --->   "br label %burst.rd.body340" [../src/decode.c:187]
 
  <State 12> : 0.48ns
-ST_12 : Operation 160 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_60_lo_1 = load i32* %inp1_buf_0_1_60" [../src/decode.c:186]
-ST_12 : Operation 161 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_61_lo_1 = load i32* %inp1_buf_0_1_61" [../src/decode.c:186]
-ST_12 : Operation 162 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_86 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_61_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 163 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_87 = select i1 %tmp_3, i32 %inp1_buf_0_1_60_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 164 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_86, i32* %inp1_buf_0_1_61" [../src/decode.c:186]
-ST_12 : Operation 165 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_87, i32* %inp1_buf_0_1_60" [../src/decode.c:186]
-ST_12 : Operation 166 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_58_lo_1 = load i32* %inp1_buf_0_1_58" [../src/decode.c:186]
-ST_12 : Operation 167 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_59_lo_1 = load i32* %inp1_buf_0_1_59" [../src/decode.c:186]
-ST_12 : Operation 168 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_84 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_59_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 169 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_85 = select i1 %tmp_3, i32 %inp1_buf_0_1_58_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 170 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_84, i32* %inp1_buf_0_1_59" [../src/decode.c:186]
-ST_12 : Operation 171 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_85, i32* %inp1_buf_0_1_58" [../src/decode.c:186]
-ST_12 : Operation 172 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_56_lo_1 = load i32* %inp1_buf_0_1_56" [../src/decode.c:186]
-ST_12 : Operation 173 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_57_lo_1 = load i32* %inp1_buf_0_1_57" [../src/decode.c:186]
-ST_12 : Operation 174 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_82 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_57_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 175 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_83 = select i1 %tmp_3, i32 %inp1_buf_0_1_56_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 176 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_82, i32* %inp1_buf_0_1_57" [../src/decode.c:186]
-ST_12 : Operation 177 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_83, i32* %inp1_buf_0_1_56" [../src/decode.c:186]
-ST_12 : Operation 178 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_54_lo_1 = load i32* %inp1_buf_0_1_54" [../src/decode.c:186]
-ST_12 : Operation 179 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_55_lo_1 = load i32* %inp1_buf_0_1_55" [../src/decode.c:186]
-ST_12 : Operation 180 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_80 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_55_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 181 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_81 = select i1 %tmp_3, i32 %inp1_buf_0_1_54_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 182 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_80, i32* %inp1_buf_0_1_55" [../src/decode.c:186]
-ST_12 : Operation 183 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_81, i32* %inp1_buf_0_1_54" [../src/decode.c:186]
-ST_12 : Operation 184 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_52_lo_1 = load i32* %inp1_buf_0_1_52" [../src/decode.c:186]
-ST_12 : Operation 185 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_53_lo_1 = load i32* %inp1_buf_0_1_53" [../src/decode.c:186]
-ST_12 : Operation 186 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_78 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_53_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 187 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_79 = select i1 %tmp_3, i32 %inp1_buf_0_1_52_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 188 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_78, i32* %inp1_buf_0_1_53" [../src/decode.c:186]
-ST_12 : Operation 189 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_79, i32* %inp1_buf_0_1_52" [../src/decode.c:186]
-ST_12 : Operation 190 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_50_lo_1 = load i32* %inp1_buf_0_1_50" [../src/decode.c:186]
-ST_12 : Operation 191 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_51_lo_1 = load i32* %inp1_buf_0_1_51" [../src/decode.c:186]
-ST_12 : Operation 192 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_76 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_51_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 193 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_77 = select i1 %tmp_3, i32 %inp1_buf_0_1_50_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 194 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_76, i32* %inp1_buf_0_1_51" [../src/decode.c:186]
-ST_12 : Operation 195 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_77, i32* %inp1_buf_0_1_50" [../src/decode.c:186]
-ST_12 : Operation 196 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_48_lo_1 = load i32* %inp1_buf_0_1_48" [../src/decode.c:186]
-ST_12 : Operation 197 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_49_lo_1 = load i32* %inp1_buf_0_1_49" [../src/decode.c:186]
-ST_12 : Operation 198 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_74 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_49_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 199 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_75 = select i1 %tmp_3, i32 %inp1_buf_0_1_48_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 200 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_74, i32* %inp1_buf_0_1_49" [../src/decode.c:186]
-ST_12 : Operation 201 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_75, i32* %inp1_buf_0_1_48" [../src/decode.c:186]
-ST_12 : Operation 202 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_46_lo_1 = load i32* %inp1_buf_0_1_46" [../src/decode.c:186]
-ST_12 : Operation 203 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_47_lo_1 = load i32* %inp1_buf_0_1_47" [../src/decode.c:186]
-ST_12 : Operation 204 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_72 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_47_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 205 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_73 = select i1 %tmp_3, i32 %inp1_buf_0_1_46_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 206 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_72, i32* %inp1_buf_0_1_47" [../src/decode.c:186]
-ST_12 : Operation 207 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_73, i32* %inp1_buf_0_1_46" [../src/decode.c:186]
-ST_12 : Operation 208 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_44_lo_1 = load i32* %inp1_buf_0_1_44" [../src/decode.c:186]
-ST_12 : Operation 209 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_45_lo_1 = load i32* %inp1_buf_0_1_45" [../src/decode.c:186]
-ST_12 : Operation 210 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_70 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_45_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 211 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_71 = select i1 %tmp_3, i32 %inp1_buf_0_1_44_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 212 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_70, i32* %inp1_buf_0_1_45" [../src/decode.c:186]
-ST_12 : Operation 213 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_71, i32* %inp1_buf_0_1_44" [../src/decode.c:186]
-ST_12 : Operation 214 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_42_lo_1 = load i32* %inp1_buf_0_1_42" [../src/decode.c:186]
-ST_12 : Operation 215 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_43_lo_1 = load i32* %inp1_buf_0_1_43" [../src/decode.c:186]
-ST_12 : Operation 216 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_68 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_43_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 217 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_69 = select i1 %tmp_3, i32 %inp1_buf_0_1_42_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 218 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_68, i32* %inp1_buf_0_1_43" [../src/decode.c:186]
-ST_12 : Operation 219 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_69, i32* %inp1_buf_0_1_42" [../src/decode.c:186]
-ST_12 : Operation 220 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_40_lo_1 = load i32* %inp1_buf_0_1_40" [../src/decode.c:186]
-ST_12 : Operation 221 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_41_lo_1 = load i32* %inp1_buf_0_1_41" [../src/decode.c:186]
-ST_12 : Operation 222 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_66 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_41_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 223 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_67 = select i1 %tmp_3, i32 %inp1_buf_0_1_40_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 224 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_66, i32* %inp1_buf_0_1_41" [../src/decode.c:186]
-ST_12 : Operation 225 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_67, i32* %inp1_buf_0_1_40" [../src/decode.c:186]
-ST_12 : Operation 226 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_38_lo_1 = load i32* %inp1_buf_0_1_38" [../src/decode.c:186]
-ST_12 : Operation 227 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_39_lo_1 = load i32* %inp1_buf_0_1_39" [../src/decode.c:186]
-ST_12 : Operation 228 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_9 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_39_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 229 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_65 = select i1 %tmp_3, i32 %inp1_buf_0_1_38_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 230 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_9, i32* %inp1_buf_0_1_39" [../src/decode.c:186]
-ST_12 : Operation 231 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_65, i32* %inp1_buf_0_1_38" [../src/decode.c:186]
-ST_12 : Operation 232 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_36_lo_1 = load i32* %inp1_buf_0_1_36" [../src/decode.c:186]
-ST_12 : Operation 233 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_37_lo_1 = load i32* %inp1_buf_0_1_37" [../src/decode.c:186]
-ST_12 : Operation 234 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_7 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_37_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 235 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_8 = select i1 %tmp_3, i32 %inp1_buf_0_1_36_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 236 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_7, i32* %inp1_buf_0_1_37" [../src/decode.c:186]
-ST_12 : Operation 237 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_8, i32* %inp1_buf_0_1_36" [../src/decode.c:186]
-ST_12 : Operation 238 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_34_lo_1 = load i32* %inp1_buf_0_1_34" [../src/decode.c:186]
-ST_12 : Operation 239 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_35_lo_1 = load i32* %inp1_buf_0_1_35" [../src/decode.c:186]
-ST_12 : Operation 240 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_5 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_35_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 241 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_6 = select i1 %tmp_3, i32 %inp1_buf_0_1_34_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 242 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_5, i32* %inp1_buf_0_1_35" [../src/decode.c:186]
-ST_12 : Operation 243 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_6, i32* %inp1_buf_0_1_34" [../src/decode.c:186]
-ST_12 : Operation 244 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_2_loa_1 = load i32* %inp1_buf_0_1_2" [../src/decode.c:186]
-ST_12 : Operation 245 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_33_lo_1 = load i32* %inp1_buf_0_1_33" [../src/decode.c:186]
-ST_12 : Operation 246 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_3 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_33_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 247 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_4 = select i1 %tmp_3, i32 %inp1_buf_0_1_2_loa_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 248 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_3, i32* %inp1_buf_0_1_33" [../src/decode.c:186]
-ST_12 : Operation 249 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_4, i32* %inp1_buf_0_1_2" [../src/decode.c:186]
-ST_12 : Operation 250 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_62_lo_1 = load i32* %inp1_buf_0_1_62" [../src/decode.c:186]
-ST_12 : Operation 251 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_63_lo_1 = load i32* %inp1_buf_0_1_63" [../src/decode.c:186]
-ST_12 : Operation 252 [1/1] (0.48ns)   --->   "%inp1_buf_0_1 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_63_lo_1" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 253 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_1 = select i1 %tmp_3, i32 %inp1_buf_0_1_62_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:186]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_12 : Operation 254 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1, i32* %inp1_buf_0_1_63" [../src/decode.c:186]
-ST_12 : Operation 255 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_1, i32* %inp1_buf_0_1_62" [../src/decode.c:186]
+ST_12 : Operation 160 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_60_lo_1 = load i32* %inp1_buf_0_1_60" [../src/decode.c:187]
+ST_12 : Operation 161 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_61_lo_1 = load i32* %inp1_buf_0_1_61" [../src/decode.c:187]
+ST_12 : Operation 162 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_86 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_61_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 163 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_87 = select i1 %tmp_3, i32 %inp1_buf_0_1_60_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 164 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_86, i32* %inp1_buf_0_1_61" [../src/decode.c:187]
+ST_12 : Operation 165 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_87, i32* %inp1_buf_0_1_60" [../src/decode.c:187]
+ST_12 : Operation 166 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_58_lo_1 = load i32* %inp1_buf_0_1_58" [../src/decode.c:187]
+ST_12 : Operation 167 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_59_lo_1 = load i32* %inp1_buf_0_1_59" [../src/decode.c:187]
+ST_12 : Operation 168 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_84 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_59_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 169 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_85 = select i1 %tmp_3, i32 %inp1_buf_0_1_58_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 170 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_84, i32* %inp1_buf_0_1_59" [../src/decode.c:187]
+ST_12 : Operation 171 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_85, i32* %inp1_buf_0_1_58" [../src/decode.c:187]
+ST_12 : Operation 172 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_56_lo_1 = load i32* %inp1_buf_0_1_56" [../src/decode.c:187]
+ST_12 : Operation 173 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_57_lo_1 = load i32* %inp1_buf_0_1_57" [../src/decode.c:187]
+ST_12 : Operation 174 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_82 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_57_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 175 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_83 = select i1 %tmp_3, i32 %inp1_buf_0_1_56_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 176 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_82, i32* %inp1_buf_0_1_57" [../src/decode.c:187]
+ST_12 : Operation 177 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_83, i32* %inp1_buf_0_1_56" [../src/decode.c:187]
+ST_12 : Operation 178 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_54_lo_1 = load i32* %inp1_buf_0_1_54" [../src/decode.c:187]
+ST_12 : Operation 179 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_55_lo_1 = load i32* %inp1_buf_0_1_55" [../src/decode.c:187]
+ST_12 : Operation 180 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_80 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_55_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 181 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_81 = select i1 %tmp_3, i32 %inp1_buf_0_1_54_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 182 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_80, i32* %inp1_buf_0_1_55" [../src/decode.c:187]
+ST_12 : Operation 183 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_81, i32* %inp1_buf_0_1_54" [../src/decode.c:187]
+ST_12 : Operation 184 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_52_lo_1 = load i32* %inp1_buf_0_1_52" [../src/decode.c:187]
+ST_12 : Operation 185 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_53_lo_1 = load i32* %inp1_buf_0_1_53" [../src/decode.c:187]
+ST_12 : Operation 186 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_78 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_53_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 187 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_79 = select i1 %tmp_3, i32 %inp1_buf_0_1_52_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 188 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_78, i32* %inp1_buf_0_1_53" [../src/decode.c:187]
+ST_12 : Operation 189 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_79, i32* %inp1_buf_0_1_52" [../src/decode.c:187]
+ST_12 : Operation 190 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_50_lo_1 = load i32* %inp1_buf_0_1_50" [../src/decode.c:187]
+ST_12 : Operation 191 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_51_lo_1 = load i32* %inp1_buf_0_1_51" [../src/decode.c:187]
+ST_12 : Operation 192 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_76 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_51_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 193 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_77 = select i1 %tmp_3, i32 %inp1_buf_0_1_50_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 194 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_76, i32* %inp1_buf_0_1_51" [../src/decode.c:187]
+ST_12 : Operation 195 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_77, i32* %inp1_buf_0_1_50" [../src/decode.c:187]
+ST_12 : Operation 196 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_48_lo_1 = load i32* %inp1_buf_0_1_48" [../src/decode.c:187]
+ST_12 : Operation 197 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_49_lo_1 = load i32* %inp1_buf_0_1_49" [../src/decode.c:187]
+ST_12 : Operation 198 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_74 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_49_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 199 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_75 = select i1 %tmp_3, i32 %inp1_buf_0_1_48_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 200 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_74, i32* %inp1_buf_0_1_49" [../src/decode.c:187]
+ST_12 : Operation 201 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_75, i32* %inp1_buf_0_1_48" [../src/decode.c:187]
+ST_12 : Operation 202 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_46_lo_1 = load i32* %inp1_buf_0_1_46" [../src/decode.c:187]
+ST_12 : Operation 203 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_47_lo_1 = load i32* %inp1_buf_0_1_47" [../src/decode.c:187]
+ST_12 : Operation 204 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_72 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_47_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 205 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_73 = select i1 %tmp_3, i32 %inp1_buf_0_1_46_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 206 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_72, i32* %inp1_buf_0_1_47" [../src/decode.c:187]
+ST_12 : Operation 207 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_73, i32* %inp1_buf_0_1_46" [../src/decode.c:187]
+ST_12 : Operation 208 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_44_lo_1 = load i32* %inp1_buf_0_1_44" [../src/decode.c:187]
+ST_12 : Operation 209 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_45_lo_1 = load i32* %inp1_buf_0_1_45" [../src/decode.c:187]
+ST_12 : Operation 210 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_70 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_45_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 211 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_71 = select i1 %tmp_3, i32 %inp1_buf_0_1_44_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 212 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_70, i32* %inp1_buf_0_1_45" [../src/decode.c:187]
+ST_12 : Operation 213 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_71, i32* %inp1_buf_0_1_44" [../src/decode.c:187]
+ST_12 : Operation 214 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_42_lo_1 = load i32* %inp1_buf_0_1_42" [../src/decode.c:187]
+ST_12 : Operation 215 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_43_lo_1 = load i32* %inp1_buf_0_1_43" [../src/decode.c:187]
+ST_12 : Operation 216 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_68 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_43_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 217 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_69 = select i1 %tmp_3, i32 %inp1_buf_0_1_42_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 218 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_68, i32* %inp1_buf_0_1_43" [../src/decode.c:187]
+ST_12 : Operation 219 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_69, i32* %inp1_buf_0_1_42" [../src/decode.c:187]
+ST_12 : Operation 220 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_40_lo_1 = load i32* %inp1_buf_0_1_40" [../src/decode.c:187]
+ST_12 : Operation 221 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_41_lo_1 = load i32* %inp1_buf_0_1_41" [../src/decode.c:187]
+ST_12 : Operation 222 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_66 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_41_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 223 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_67 = select i1 %tmp_3, i32 %inp1_buf_0_1_40_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 224 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_66, i32* %inp1_buf_0_1_41" [../src/decode.c:187]
+ST_12 : Operation 225 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_67, i32* %inp1_buf_0_1_40" [../src/decode.c:187]
+ST_12 : Operation 226 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_38_lo_1 = load i32* %inp1_buf_0_1_38" [../src/decode.c:187]
+ST_12 : Operation 227 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_39_lo_1 = load i32* %inp1_buf_0_1_39" [../src/decode.c:187]
+ST_12 : Operation 228 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_9 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_39_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 229 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_65 = select i1 %tmp_3, i32 %inp1_buf_0_1_38_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 230 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_9, i32* %inp1_buf_0_1_39" [../src/decode.c:187]
+ST_12 : Operation 231 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_65, i32* %inp1_buf_0_1_38" [../src/decode.c:187]
+ST_12 : Operation 232 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_36_lo_1 = load i32* %inp1_buf_0_1_36" [../src/decode.c:187]
+ST_12 : Operation 233 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_37_lo_1 = load i32* %inp1_buf_0_1_37" [../src/decode.c:187]
+ST_12 : Operation 234 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_7 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_37_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 235 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_8 = select i1 %tmp_3, i32 %inp1_buf_0_1_36_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 236 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_7, i32* %inp1_buf_0_1_37" [../src/decode.c:187]
+ST_12 : Operation 237 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_8, i32* %inp1_buf_0_1_36" [../src/decode.c:187]
+ST_12 : Operation 238 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_34_lo_1 = load i32* %inp1_buf_0_1_34" [../src/decode.c:187]
+ST_12 : Operation 239 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_35_lo_1 = load i32* %inp1_buf_0_1_35" [../src/decode.c:187]
+ST_12 : Operation 240 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_5 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_35_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 241 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_6 = select i1 %tmp_3, i32 %inp1_buf_0_1_34_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 242 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_5, i32* %inp1_buf_0_1_35" [../src/decode.c:187]
+ST_12 : Operation 243 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_6, i32* %inp1_buf_0_1_34" [../src/decode.c:187]
+ST_12 : Operation 244 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_2_loa_1 = load i32* %inp1_buf_0_1_2" [../src/decode.c:187]
+ST_12 : Operation 245 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_33_lo_1 = load i32* %inp1_buf_0_1_33" [../src/decode.c:187]
+ST_12 : Operation 246 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_3 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_33_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 247 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_4 = select i1 %tmp_3, i32 %inp1_buf_0_1_2_loa_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 248 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_3, i32* %inp1_buf_0_1_33" [../src/decode.c:187]
+ST_12 : Operation 249 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_4, i32* %inp1_buf_0_1_2" [../src/decode.c:187]
+ST_12 : Operation 250 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_62_lo_1 = load i32* %inp1_buf_0_1_62" [../src/decode.c:187]
+ST_12 : Operation 251 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_63_lo_1 = load i32* %inp1_buf_0_1_63" [../src/decode.c:187]
+ST_12 : Operation 252 [1/1] (0.48ns)   --->   "%inp1_buf_0_1 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_63_lo_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 253 [1/1] (0.48ns)   --->   "%inp1_buf_0_1_1 = select i1 %tmp_3, i32 %inp1_buf_0_1_62_lo_1, i32 %inp1_buf_0_0" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 254 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1, i32* %inp1_buf_0_1_63" [../src/decode.c:187]
+ST_12 : Operation 255 [1/1] (0.00ns)   --->   "store i32 %inp1_buf_0_1_1, i32* %inp1_buf_0_1_62" [../src/decode.c:187]
 ST_12 : Operation 256 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind"
 ST_12 : Operation 257 [1/1] (0.00ns)   --->   "br label %burst.rd.header"
 
@@ -444,97 +444,97 @@ ST_14 : Operation 264 [1/1] (0.78ns)   --->   "switch i4 %tmp_4, label %branch31
     i4 -4, label %branch28_ifconv
     i4 -3, label %branch29_ifconv
     i4 -2, label %branch30_ifconv
-  ]" [../src/decode.c:187]
+  ]" [../src/decode.c:188]
 
  <State 15> : 2.62ns
 ST_15 : Operation 265 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"
 ST_15 : Operation 266 [1/1] (0.00ns)   --->   "%burstread_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind"
-ST_15 : Operation 267 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str9) nounwind"
+ST_15 : Operation 267 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind"
 ST_15 : Operation 268 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecLoopName([23 x i8]* @memcpy_OC_inp2_buf_O) nounwind"
-ST_15 : Operation 269 [1/1] (2.62ns)   --->   "%inp2_buf_0_1_10 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:187]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 269 [1/1] (2.62ns)   --->   "%inp2_buf_0_1_10 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:188]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 16> : 1.14ns
-ST_16 : Operation 270 [1/1] (0.00ns)   --->   "%inp2_buf_15_1_1 = phi i32 [ %inp2_buf_15_1_2, %burst.rd.body7683 ], [ %inp2_buf_15_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 271 [1/1] (0.00ns)   --->   "%inp2_buf_15_0_1 = phi i32 [ %inp2_buf_15_0_s, %burst.rd.body7683 ], [ %inp2_buf_15_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 272 [1/1] (0.00ns)   --->   "%inp2_buf_14_1_1 = phi i32 [ %inp2_buf_14_1_2, %burst.rd.body7683 ], [ %inp2_buf_14_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 273 [1/1] (0.00ns)   --->   "%inp2_buf_14_0_1 = phi i32 [ %inp2_buf_14_0_s, %burst.rd.body7683 ], [ %inp2_buf_14_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 274 [1/1] (0.00ns)   --->   "%inp2_buf_13_1_1 = phi i32 [ %inp2_buf_13_1_2, %burst.rd.body7683 ], [ %inp2_buf_13_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 275 [1/1] (0.00ns)   --->   "%inp2_buf_13_0_1 = phi i32 [ %inp2_buf_13_0_s, %burst.rd.body7683 ], [ %inp2_buf_13_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 276 [1/1] (0.00ns)   --->   "%inp2_buf_12_1_1 = phi i32 [ %inp2_buf_12_1_2, %burst.rd.body7683 ], [ %inp2_buf_12_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 277 [1/1] (0.00ns)   --->   "%inp2_buf_12_0_1 = phi i32 [ %inp2_buf_12_0_s, %burst.rd.body7683 ], [ %inp2_buf_12_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 278 [1/1] (0.00ns)   --->   "%inp2_buf_11_1_1 = phi i32 [ %inp2_buf_11_1_2, %burst.rd.body7683 ], [ %inp2_buf_11_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 279 [1/1] (0.00ns)   --->   "%inp2_buf_11_0_1 = phi i32 [ %inp2_buf_11_0_s, %burst.rd.body7683 ], [ %inp2_buf_11_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 280 [1/1] (0.00ns)   --->   "%inp2_buf_10_1_1 = phi i32 [ %inp2_buf_10_1_2, %burst.rd.body7683 ], [ %inp2_buf_10_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 281 [1/1] (0.00ns)   --->   "%inp2_buf_10_0_1 = phi i32 [ %inp2_buf_10_0_s, %burst.rd.body7683 ], [ %inp2_buf_10_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 282 [1/1] (0.00ns)   --->   "%inp2_buf_9_1_1 = phi i32 [ %inp2_buf_9_1_2, %burst.rd.body7683 ], [ %inp2_buf_9_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 283 [1/1] (0.00ns)   --->   "%inp2_buf_9_0_1 = phi i32 [ %inp2_buf_9_0_s, %burst.rd.body7683 ], [ %inp2_buf_9_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 284 [1/1] (0.00ns)   --->   "%inp2_buf_8_1_1 = phi i32 [ %inp2_buf_8_1_2, %burst.rd.body7683 ], [ %inp2_buf_8_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 285 [1/1] (0.00ns)   --->   "%inp2_buf_8_0_1 = phi i32 [ %inp2_buf_8_0_s, %burst.rd.body7683 ], [ %inp2_buf_8_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 286 [1/1] (0.00ns)   --->   "%inp2_buf_7_1_1 = phi i32 [ %inp2_buf_7_1_2, %burst.rd.body7683 ], [ %inp2_buf_7_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 287 [1/1] (0.00ns)   --->   "%inp2_buf_7_0_1 = phi i32 [ %inp2_buf_7_0_s, %burst.rd.body7683 ], [ %inp2_buf_7_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 288 [1/1] (0.00ns)   --->   "%inp2_buf_6_1_1 = phi i32 [ %inp2_buf_6_1_2, %burst.rd.body7683 ], [ %inp2_buf_6_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 289 [1/1] (0.00ns)   --->   "%inp2_buf_6_0_1 = phi i32 [ %inp2_buf_6_0_s, %burst.rd.body7683 ], [ %inp2_buf_6_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 290 [1/1] (0.00ns)   --->   "%inp2_buf_5_1_1 = phi i32 [ %inp2_buf_5_1_2, %burst.rd.body7683 ], [ %inp2_buf_5_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 291 [1/1] (0.00ns)   --->   "%inp2_buf_5_0_1 = phi i32 [ %inp2_buf_5_0_s, %burst.rd.body7683 ], [ %inp2_buf_5_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 292 [1/1] (0.00ns)   --->   "%inp2_buf_4_1_1 = phi i32 [ %inp2_buf_4_1_2, %burst.rd.body7683 ], [ %inp2_buf_4_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 293 [1/1] (0.00ns)   --->   "%inp2_buf_4_0_1 = phi i32 [ %inp2_buf_4_0_s, %burst.rd.body7683 ], [ %inp2_buf_4_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 294 [1/1] (0.00ns)   --->   "%inp2_buf_3_1_1 = phi i32 [ %inp2_buf_3_1_2, %burst.rd.body7683 ], [ %inp2_buf_3_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 295 [1/1] (0.00ns)   --->   "%inp2_buf_3_0_1 = phi i32 [ %inp2_buf_3_0_s, %burst.rd.body7683 ], [ %inp2_buf_3_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 296 [1/1] (0.00ns)   --->   "%inp2_buf_2_1_1 = phi i32 [ %inp2_buf_2_1_2, %burst.rd.body7683 ], [ %inp2_buf_2_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 297 [1/1] (0.00ns)   --->   "%inp2_buf_2_0_1 = phi i32 [ %inp2_buf_2_0_s, %burst.rd.body7683 ], [ %inp2_buf_2_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 298 [1/1] (0.00ns)   --->   "%inp2_buf_1_1_1 = phi i32 [ %inp2_buf_1_1_2, %burst.rd.body7683 ], [ %inp2_buf_1_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 299 [1/1] (0.00ns)   --->   "%inp2_buf_1_0_1 = phi i32 [ %inp2_buf_1_0_s, %burst.rd.body7683 ], [ %inp2_buf_1_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 300 [1/1] (0.00ns)   --->   "%inp2_buf_0_1_1 = phi i32 [ %inp2_buf_0_1_2, %burst.rd.body7683 ], [ %inp2_buf_0_1, %burst.rd.header6.preheader ]" [../src/decode.c:187]
-ST_16 : Operation 301 [1/1] (0.00ns)   --->   "%inp2_buf_0_0_1 = phi i32 [ %inp2_buf_0_0_2, %burst.rd.body7683 ], [ %inp2_buf_0_0, %burst.rd.header6.preheader ]" [../src/decode.c:187]
+ST_16 : Operation 270 [1/1] (0.00ns)   --->   "%inp2_buf_15_1_1 = phi i32 [ %inp2_buf_15_1_2, %burst.rd.body7683 ], [ %inp2_buf_15_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 271 [1/1] (0.00ns)   --->   "%inp2_buf_15_0_1 = phi i32 [ %inp2_buf_15_0_s, %burst.rd.body7683 ], [ %inp2_buf_15_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 272 [1/1] (0.00ns)   --->   "%inp2_buf_14_1_1 = phi i32 [ %inp2_buf_14_1_2, %burst.rd.body7683 ], [ %inp2_buf_14_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 273 [1/1] (0.00ns)   --->   "%inp2_buf_14_0_1 = phi i32 [ %inp2_buf_14_0_s, %burst.rd.body7683 ], [ %inp2_buf_14_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 274 [1/1] (0.00ns)   --->   "%inp2_buf_13_1_1 = phi i32 [ %inp2_buf_13_1_2, %burst.rd.body7683 ], [ %inp2_buf_13_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 275 [1/1] (0.00ns)   --->   "%inp2_buf_13_0_1 = phi i32 [ %inp2_buf_13_0_s, %burst.rd.body7683 ], [ %inp2_buf_13_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 276 [1/1] (0.00ns)   --->   "%inp2_buf_12_1_1 = phi i32 [ %inp2_buf_12_1_2, %burst.rd.body7683 ], [ %inp2_buf_12_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 277 [1/1] (0.00ns)   --->   "%inp2_buf_12_0_1 = phi i32 [ %inp2_buf_12_0_s, %burst.rd.body7683 ], [ %inp2_buf_12_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 278 [1/1] (0.00ns)   --->   "%inp2_buf_11_1_1 = phi i32 [ %inp2_buf_11_1_2, %burst.rd.body7683 ], [ %inp2_buf_11_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 279 [1/1] (0.00ns)   --->   "%inp2_buf_11_0_1 = phi i32 [ %inp2_buf_11_0_s, %burst.rd.body7683 ], [ %inp2_buf_11_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 280 [1/1] (0.00ns)   --->   "%inp2_buf_10_1_1 = phi i32 [ %inp2_buf_10_1_2, %burst.rd.body7683 ], [ %inp2_buf_10_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 281 [1/1] (0.00ns)   --->   "%inp2_buf_10_0_1 = phi i32 [ %inp2_buf_10_0_s, %burst.rd.body7683 ], [ %inp2_buf_10_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 282 [1/1] (0.00ns)   --->   "%inp2_buf_9_1_1 = phi i32 [ %inp2_buf_9_1_2, %burst.rd.body7683 ], [ %inp2_buf_9_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 283 [1/1] (0.00ns)   --->   "%inp2_buf_9_0_1 = phi i32 [ %inp2_buf_9_0_s, %burst.rd.body7683 ], [ %inp2_buf_9_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 284 [1/1] (0.00ns)   --->   "%inp2_buf_8_1_1 = phi i32 [ %inp2_buf_8_1_2, %burst.rd.body7683 ], [ %inp2_buf_8_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 285 [1/1] (0.00ns)   --->   "%inp2_buf_8_0_1 = phi i32 [ %inp2_buf_8_0_s, %burst.rd.body7683 ], [ %inp2_buf_8_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 286 [1/1] (0.00ns)   --->   "%inp2_buf_7_1_1 = phi i32 [ %inp2_buf_7_1_2, %burst.rd.body7683 ], [ %inp2_buf_7_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 287 [1/1] (0.00ns)   --->   "%inp2_buf_7_0_1 = phi i32 [ %inp2_buf_7_0_s, %burst.rd.body7683 ], [ %inp2_buf_7_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 288 [1/1] (0.00ns)   --->   "%inp2_buf_6_1_1 = phi i32 [ %inp2_buf_6_1_2, %burst.rd.body7683 ], [ %inp2_buf_6_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 289 [1/1] (0.00ns)   --->   "%inp2_buf_6_0_1 = phi i32 [ %inp2_buf_6_0_s, %burst.rd.body7683 ], [ %inp2_buf_6_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 290 [1/1] (0.00ns)   --->   "%inp2_buf_5_1_1 = phi i32 [ %inp2_buf_5_1_2, %burst.rd.body7683 ], [ %inp2_buf_5_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 291 [1/1] (0.00ns)   --->   "%inp2_buf_5_0_1 = phi i32 [ %inp2_buf_5_0_s, %burst.rd.body7683 ], [ %inp2_buf_5_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 292 [1/1] (0.00ns)   --->   "%inp2_buf_4_1_1 = phi i32 [ %inp2_buf_4_1_2, %burst.rd.body7683 ], [ %inp2_buf_4_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 293 [1/1] (0.00ns)   --->   "%inp2_buf_4_0_1 = phi i32 [ %inp2_buf_4_0_s, %burst.rd.body7683 ], [ %inp2_buf_4_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 294 [1/1] (0.00ns)   --->   "%inp2_buf_3_1_1 = phi i32 [ %inp2_buf_3_1_2, %burst.rd.body7683 ], [ %inp2_buf_3_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 295 [1/1] (0.00ns)   --->   "%inp2_buf_3_0_1 = phi i32 [ %inp2_buf_3_0_s, %burst.rd.body7683 ], [ %inp2_buf_3_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 296 [1/1] (0.00ns)   --->   "%inp2_buf_2_1_1 = phi i32 [ %inp2_buf_2_1_2, %burst.rd.body7683 ], [ %inp2_buf_2_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 297 [1/1] (0.00ns)   --->   "%inp2_buf_2_0_1 = phi i32 [ %inp2_buf_2_0_s, %burst.rd.body7683 ], [ %inp2_buf_2_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 298 [1/1] (0.00ns)   --->   "%inp2_buf_1_1_1 = phi i32 [ %inp2_buf_1_1_2, %burst.rd.body7683 ], [ %inp2_buf_1_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 299 [1/1] (0.00ns)   --->   "%inp2_buf_1_0_1 = phi i32 [ %inp2_buf_1_0_s, %burst.rd.body7683 ], [ %inp2_buf_1_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 300 [1/1] (0.00ns)   --->   "%inp2_buf_0_1_1 = phi i32 [ %inp2_buf_0_1_2, %burst.rd.body7683 ], [ %inp2_buf_0_1, %burst.rd.header6.preheader ]" [../src/decode.c:188]
+ST_16 : Operation 301 [1/1] (0.00ns)   --->   "%inp2_buf_0_0_1 = phi i32 [ %inp2_buf_0_0_2, %burst.rd.body7683 ], [ %inp2_buf_0_0, %burst.rd.header6.preheader ]" [../src/decode.c:188]
 ST_16 : Operation 302 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %burst.rd.end5.0.preheader, label %burst.rd.body7"
-ST_16 : Operation 303 [1/1] (0.48ns)   --->   "%inp2_buf_14_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_14_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 304 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_22 = select i1 %tmp_6, i32 %inp2_buf_14_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 305 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 306 [1/1] (0.48ns)   --->   "%inp2_buf_13_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_13_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 307 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_21 = select i1 %tmp_6, i32 %inp2_buf_13_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 308 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 309 [1/1] (0.48ns)   --->   "%inp2_buf_12_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_12_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 310 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_20 = select i1 %tmp_6, i32 %inp2_buf_12_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 311 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 312 [1/1] (0.48ns)   --->   "%inp2_buf_11_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_11_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 313 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_19 = select i1 %tmp_6, i32 %inp2_buf_11_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 314 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 315 [1/1] (0.48ns)   --->   "%inp2_buf_10_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_10_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 316 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_18 = select i1 %tmp_6, i32 %inp2_buf_10_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 317 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 318 [1/1] (0.48ns)   --->   "%inp2_buf_9_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_9_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 319 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_17 = select i1 %tmp_6, i32 %inp2_buf_9_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 320 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 321 [1/1] (0.48ns)   --->   "%inp2_buf_8_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_8_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 322 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_16 = select i1 %tmp_6, i32 %inp2_buf_8_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 323 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 324 [1/1] (0.48ns)   --->   "%inp2_buf_7_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_7_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 325 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_15 = select i1 %tmp_6, i32 %inp2_buf_7_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 326 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 327 [1/1] (0.48ns)   --->   "%inp2_buf_6_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_6_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 328 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_14 = select i1 %tmp_6, i32 %inp2_buf_6_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 329 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 330 [1/1] (0.48ns)   --->   "%inp2_buf_5_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_5_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 331 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_13 = select i1 %tmp_6, i32 %inp2_buf_5_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 332 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 333 [1/1] (0.48ns)   --->   "%inp2_buf_4_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_4_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 334 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_12 = select i1 %tmp_6, i32 %inp2_buf_4_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 335 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 336 [1/1] (0.48ns)   --->   "%inp2_buf_3_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_3_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 337 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_11 = select i1 %tmp_6, i32 %inp2_buf_3_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 338 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 339 [1/1] (0.48ns)   --->   "%inp2_buf_2_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_2_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 340 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_10 = select i1 %tmp_6, i32 %inp2_buf_2_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 341 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 342 [1/1] (0.48ns)   --->   "%inp2_buf_1_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_1_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 343 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_9 = select i1 %tmp_6, i32 %inp2_buf_1_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 344 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 345 [1/1] (0.48ns)   --->   "%inp2_buf_0_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_0_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 346 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_8 = select i1 %tmp_6, i32 %inp2_buf_0_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 347 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
-ST_16 : Operation 348 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_15_1_1" [../src/decode.c:187]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 349 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_7 = select i1 %tmp_6, i32 %inp2_buf_15_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_16 : Operation 350 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:187]
+ST_16 : Operation 303 [1/1] (0.48ns)   --->   "%inp2_buf_14_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_14_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 304 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_22 = select i1 %tmp_6, i32 %inp2_buf_14_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 305 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 306 [1/1] (0.48ns)   --->   "%inp2_buf_13_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_13_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 307 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_21 = select i1 %tmp_6, i32 %inp2_buf_13_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 308 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 309 [1/1] (0.48ns)   --->   "%inp2_buf_12_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_12_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 310 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_20 = select i1 %tmp_6, i32 %inp2_buf_12_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 311 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 312 [1/1] (0.48ns)   --->   "%inp2_buf_11_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_11_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 313 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_19 = select i1 %tmp_6, i32 %inp2_buf_11_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 314 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 315 [1/1] (0.48ns)   --->   "%inp2_buf_10_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_10_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 316 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_18 = select i1 %tmp_6, i32 %inp2_buf_10_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 317 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 318 [1/1] (0.48ns)   --->   "%inp2_buf_9_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_9_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 319 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_17 = select i1 %tmp_6, i32 %inp2_buf_9_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 320 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 321 [1/1] (0.48ns)   --->   "%inp2_buf_8_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_8_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 322 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_16 = select i1 %tmp_6, i32 %inp2_buf_8_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 323 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 324 [1/1] (0.48ns)   --->   "%inp2_buf_7_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_7_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 325 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_15 = select i1 %tmp_6, i32 %inp2_buf_7_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 326 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 327 [1/1] (0.48ns)   --->   "%inp2_buf_6_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_6_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 328 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_14 = select i1 %tmp_6, i32 %inp2_buf_6_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 329 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 330 [1/1] (0.48ns)   --->   "%inp2_buf_5_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_5_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 331 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_13 = select i1 %tmp_6, i32 %inp2_buf_5_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 332 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 333 [1/1] (0.48ns)   --->   "%inp2_buf_4_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_4_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 334 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_12 = select i1 %tmp_6, i32 %inp2_buf_4_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 335 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 336 [1/1] (0.48ns)   --->   "%inp2_buf_3_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_3_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 337 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_11 = select i1 %tmp_6, i32 %inp2_buf_3_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 338 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 339 [1/1] (0.48ns)   --->   "%inp2_buf_2_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_2_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 340 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_10 = select i1 %tmp_6, i32 %inp2_buf_2_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 341 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 342 [1/1] (0.48ns)   --->   "%inp2_buf_1_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_1_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 343 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_9 = select i1 %tmp_6, i32 %inp2_buf_1_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 344 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 345 [1/1] (0.48ns)   --->   "%inp2_buf_0_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_0_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 346 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_8 = select i1 %tmp_6, i32 %inp2_buf_0_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 347 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
+ST_16 : Operation 348 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_15_1_1" [../src/decode.c:188]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 349 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_7 = select i1 %tmp_6, i32 %inp2_buf_15_0_1, i32 %inp2_buf_0_1_10" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 350 [1/1] (0.65ns)   --->   "br label %burst.rd.body7683" [../src/decode.c:188]
 ST_16 : Operation 351 [1/1] (0.00ns)   --->   "%inp2_buf_15_1_2 = phi i32 [ %inp2_buf_15_1_5, %branch31_ifconv ], [ %inp2_buf_15_1_1, %branch30_ifconv ], [ %inp2_buf_15_1_1, %branch29_ifconv ], [ %inp2_buf_15_1_1, %branch28_ifconv ], [ %inp2_buf_15_1_1, %branch27_ifconv ], [ %inp2_buf_15_1_1, %branch26_ifconv ], [ %inp2_buf_15_1_1, %branch25_ifconv ], [ %inp2_buf_15_1_1, %branch24_ifconv ], [ %inp2_buf_15_1_1, %branch23_ifconv ], [ %inp2_buf_15_1_1, %branch22_ifconv ], [ %inp2_buf_15_1_1, %branch21_ifconv ], [ %inp2_buf_15_1_1, %branch20_ifconv ], [ %inp2_buf_15_1_1, %branch19_ifconv ], [ %inp2_buf_15_1_1, %branch18_ifconv ], [ %inp2_buf_15_1_1, %branch17_ifconv ], [ %inp2_buf_15_1_1, %branch16_ifconv ]"
 ST_16 : Operation 352 [1/1] (0.00ns)   --->   "%inp2_buf_15_0_s = phi i32 [ %inp2_buf_15_1_7, %branch31_ifconv ], [ %inp2_buf_15_0_1, %branch30_ifconv ], [ %inp2_buf_15_0_1, %branch29_ifconv ], [ %inp2_buf_15_0_1, %branch28_ifconv ], [ %inp2_buf_15_0_1, %branch27_ifconv ], [ %inp2_buf_15_0_1, %branch26_ifconv ], [ %inp2_buf_15_0_1, %branch25_ifconv ], [ %inp2_buf_15_0_1, %branch24_ifconv ], [ %inp2_buf_15_0_1, %branch23_ifconv ], [ %inp2_buf_15_0_1, %branch22_ifconv ], [ %inp2_buf_15_0_1, %branch21_ifconv ], [ %inp2_buf_15_0_1, %branch20_ifconv ], [ %inp2_buf_15_0_1, %branch19_ifconv ], [ %inp2_buf_15_0_1, %branch18_ifconv ], [ %inp2_buf_15_0_1, %branch17_ifconv ], [ %inp2_buf_15_0_1, %branch16_ifconv ]"
 ST_16 : Operation 353 [1/1] (0.00ns)   --->   "%inp2_buf_14_1_2 = phi i32 [ %inp2_buf_14_1_1, %branch31_ifconv ], [ %inp2_buf_14_1_5, %branch30_ifconv ], [ %inp2_buf_14_1_1, %branch29_ifconv ], [ %inp2_buf_14_1_1, %branch28_ifconv ], [ %inp2_buf_14_1_1, %branch27_ifconv ], [ %inp2_buf_14_1_1, %branch26_ifconv ], [ %inp2_buf_14_1_1, %branch25_ifconv ], [ %inp2_buf_14_1_1, %branch24_ifconv ], [ %inp2_buf_14_1_1, %branch23_ifconv ], [ %inp2_buf_14_1_1, %branch22_ifconv ], [ %inp2_buf_14_1_1, %branch21_ifconv ], [ %inp2_buf_14_1_1, %branch20_ifconv ], [ %inp2_buf_14_1_1, %branch19_ifconv ], [ %inp2_buf_14_1_1, %branch18_ifconv ], [ %inp2_buf_14_1_1, %branch17_ifconv ], [ %inp2_buf_14_1_1, %branch16_ifconv ]"
@@ -606,148 +606,148 @@ ST_18 : Operation 414 [1/1] (0.00ns)   --->   "%inp2_buf_1_1_3 = phi i32 [ %inp2
 ST_18 : Operation 415 [1/1] (0.00ns)   --->   "%inp2_buf_1_0_3 = phi i32 [ %inp2_buf_1_1_8, %burst.rd.end5.1_ifconv ], [ %inp2_buf_1_0_1, %burst.rd.end5.0.preheader ]"
 ST_18 : Operation 416 [1/1] (0.00ns)   --->   "%inp2_buf_0_1_3 = phi i32 [ %inp2_buf_0_1_4, %burst.rd.end5.1_ifconv ], [ %inp2_buf_0_1_1, %burst.rd.end5.0.preheader ]"
 ST_18 : Operation 417 [1/1] (0.00ns)   --->   "%inp2_buf_0_0_s = phi i32 [ %inp2_buf_0_1_8, %burst.rd.end5.1_ifconv ], [ %inp2_buf_0_0_1, %burst.rd.end5.0.preheader ]"
-ST_18 : Operation 418 [1/1] (0.00ns)   --->   "%k = phi i6 [ %k_1_s, %burst.rd.end5.1_ifconv ], [ 0, %burst.rd.end5.0.preheader ]" [../src/decode.c:192]
+ST_18 : Operation 418 [1/1] (0.00ns)   --->   "%k = phi i6 [ %k_1_s, %burst.rd.end5.1_ifconv ], [ 0, %burst.rd.end5.0.preheader ]" [../src/decode.c:193]
 ST_18 : Operation 419 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
-ST_18 : Operation 420 [1/1] (0.78ns)   --->   "%exitcond = icmp eq i6 %k, -32" [../src/decode.c:192]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_18 : Operation 421 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %burst.wr.header.preheader, label %burst.rd.end5.1_ifconv" [../src/decode.c:192]
-ST_18 : Operation 422 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_2_loa = load i32* %inp1_buf_0_1_2" [../src/decode.c:194]
-ST_18 : Operation 423 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_33_lo = load i32* %inp1_buf_0_1_33" [../src/decode.c:194]
-ST_18 : Operation 424 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_34_lo = load i32* %inp1_buf_0_1_34" [../src/decode.c:194]
-ST_18 : Operation 425 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_35_lo = load i32* %inp1_buf_0_1_35" [../src/decode.c:194]
-ST_18 : Operation 426 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_36_lo = load i32* %inp1_buf_0_1_36" [../src/decode.c:194]
-ST_18 : Operation 427 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_37_lo = load i32* %inp1_buf_0_1_37" [../src/decode.c:194]
-ST_18 : Operation 428 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_38_lo = load i32* %inp1_buf_0_1_38" [../src/decode.c:194]
-ST_18 : Operation 429 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_39_lo = load i32* %inp1_buf_0_1_39" [../src/decode.c:194]
-ST_18 : Operation 430 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_40_lo = load i32* %inp1_buf_0_1_40" [../src/decode.c:194]
-ST_18 : Operation 431 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_41_lo = load i32* %inp1_buf_0_1_41" [../src/decode.c:194]
-ST_18 : Operation 432 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_42_lo = load i32* %inp1_buf_0_1_42" [../src/decode.c:194]
-ST_18 : Operation 433 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_43_lo = load i32* %inp1_buf_0_1_43" [../src/decode.c:194]
-ST_18 : Operation 434 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_44_lo = load i32* %inp1_buf_0_1_44" [../src/decode.c:194]
-ST_18 : Operation 435 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_45_lo = load i32* %inp1_buf_0_1_45" [../src/decode.c:194]
-ST_18 : Operation 436 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_46_lo = load i32* %inp1_buf_0_1_46" [../src/decode.c:194]
-ST_18 : Operation 437 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_47_lo = load i32* %inp1_buf_0_1_47" [../src/decode.c:194]
-ST_18 : Operation 438 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_48_lo = load i32* %inp1_buf_0_1_48" [../src/decode.c:194]
-ST_18 : Operation 439 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_49_lo = load i32* %inp1_buf_0_1_49" [../src/decode.c:194]
-ST_18 : Operation 440 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_50_lo = load i32* %inp1_buf_0_1_50" [../src/decode.c:194]
-ST_18 : Operation 441 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_51_lo = load i32* %inp1_buf_0_1_51" [../src/decode.c:194]
-ST_18 : Operation 442 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_52_lo = load i32* %inp1_buf_0_1_52" [../src/decode.c:194]
-ST_18 : Operation 443 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_53_lo = load i32* %inp1_buf_0_1_53" [../src/decode.c:194]
-ST_18 : Operation 444 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_54_lo = load i32* %inp1_buf_0_1_54" [../src/decode.c:194]
-ST_18 : Operation 445 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_55_lo = load i32* %inp1_buf_0_1_55" [../src/decode.c:194]
-ST_18 : Operation 446 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_56_lo = load i32* %inp1_buf_0_1_56" [../src/decode.c:194]
-ST_18 : Operation 447 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_57_lo = load i32* %inp1_buf_0_1_57" [../src/decode.c:194]
-ST_18 : Operation 448 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_58_lo = load i32* %inp1_buf_0_1_58" [../src/decode.c:194]
-ST_18 : Operation 449 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_59_lo = load i32* %inp1_buf_0_1_59" [../src/decode.c:194]
-ST_18 : Operation 450 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_60_lo = load i32* %inp1_buf_0_1_60" [../src/decode.c:194]
-ST_18 : Operation 451 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_61_lo = load i32* %inp1_buf_0_1_61" [../src/decode.c:194]
-ST_18 : Operation 452 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_62_lo = load i32* %inp1_buf_0_1_62" [../src/decode.c:194]
-ST_18 : Operation 453 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_63_lo = load i32* %inp1_buf_0_1_63" [../src/decode.c:194]
-ST_18 : Operation 454 [1/1] (0.00ns)   --->   "%tmp_7 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %k, i32 4)" [../src/decode.c:192]
-ST_18 : Operation 455 [1/1] (0.48ns)   --->   "%inp1_buf_load_0_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_33_lo, i32 %inp1_buf_0_1_2_loa" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 456 [1/1] (0.48ns)   --->   "%inp2_buf_load_0_phi = select i1 %tmp_7, i32 %inp2_buf_0_1_3, i32 %inp2_buf_0_0_s" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 457 [1/1] (0.48ns)   --->   "%inp1_buf_load_1_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_35_lo, i32 %inp1_buf_0_1_34_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 458 [1/1] (0.48ns)   --->   "%inp2_buf_load_12_phi = select i1 %tmp_7, i32 %inp2_buf_1_1_3, i32 %inp2_buf_1_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 459 [1/1] (0.48ns)   --->   "%inp1_buf_load_2_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_37_lo, i32 %inp1_buf_0_1_36_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 460 [1/1] (0.48ns)   --->   "%inp2_buf_load_2_phi = select i1 %tmp_7, i32 %inp2_buf_2_1_3, i32 %inp2_buf_2_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 461 [1/1] (0.48ns)   --->   "%inp1_buf_load_3_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_39_lo, i32 %inp1_buf_0_1_38_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 462 [1/1] (0.48ns)   --->   "%inp2_buf_load_3_phi = select i1 %tmp_7, i32 %inp2_buf_3_1_3, i32 %inp2_buf_3_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 463 [1/1] (0.48ns)   --->   "%inp1_buf_load_4_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_41_lo, i32 %inp1_buf_0_1_40_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 464 [1/1] (0.48ns)   --->   "%inp2_buf_load_4_phi = select i1 %tmp_7, i32 %inp2_buf_4_1_3, i32 %inp2_buf_4_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 465 [1/1] (0.48ns)   --->   "%inp1_buf_load_5_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_43_lo, i32 %inp1_buf_0_1_42_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 466 [1/1] (0.48ns)   --->   "%inp2_buf_load_5_phi = select i1 %tmp_7, i32 %inp2_buf_5_1_3, i32 %inp2_buf_5_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 467 [1/1] (0.48ns)   --->   "%inp1_buf_load_6_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_45_lo, i32 %inp1_buf_0_1_44_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 468 [1/1] (0.48ns)   --->   "%inp2_buf_load_6_phi = select i1 %tmp_7, i32 %inp2_buf_6_1_3, i32 %inp2_buf_6_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 469 [1/1] (0.48ns)   --->   "%inp1_buf_load_7_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_47_lo, i32 %inp1_buf_0_1_46_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 470 [1/1] (0.48ns)   --->   "%inp2_buf_load_7_phi = select i1 %tmp_7, i32 %inp2_buf_7_1_3, i32 %inp2_buf_7_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 471 [1/1] (0.48ns)   --->   "%inp1_buf_load_8_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_49_lo, i32 %inp1_buf_0_1_48_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 472 [1/1] (0.48ns)   --->   "%inp2_buf_load_8_phi = select i1 %tmp_7, i32 %inp2_buf_8_1_3, i32 %inp2_buf_8_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 473 [1/1] (0.48ns)   --->   "%inp1_buf_load_9_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_51_lo, i32 %inp1_buf_0_1_50_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 474 [1/1] (0.48ns)   --->   "%inp2_buf_load_9_phi = select i1 %tmp_7, i32 %inp2_buf_9_1_3, i32 %inp2_buf_9_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 475 [1/1] (0.48ns)   --->   "%inp1_buf_load_10_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_53_lo, i32 %inp1_buf_0_1_52_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 476 [1/1] (0.48ns)   --->   "%inp2_buf_load_10_phi = select i1 %tmp_7, i32 %inp2_buf_10_1_3, i32 %inp2_buf_10_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 477 [1/1] (0.48ns)   --->   "%inp1_buf_load_11_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_55_lo, i32 %inp1_buf_0_1_54_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 478 [1/1] (0.48ns)   --->   "%inp2_buf_load_11_phi = select i1 %tmp_7, i32 %inp2_buf_11_1_3, i32 %inp2_buf_11_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 479 [1/1] (0.48ns)   --->   "%inp1_buf_load_12_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_57_lo, i32 %inp1_buf_0_1_56_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 480 [1/1] (0.48ns)   --->   "%inp2_buf_load_124_ph = select i1 %tmp_7, i32 %inp2_buf_12_1_3, i32 %inp2_buf_12_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 481 [1/1] (0.48ns)   --->   "%inp1_buf_load_13_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_59_lo, i32 %inp1_buf_0_1_58_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 482 [1/1] (0.48ns)   --->   "%inp2_buf_load_13_phi = select i1 %tmp_7, i32 %inp2_buf_13_1_3, i32 %inp2_buf_13_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 483 [1/1] (0.48ns)   --->   "%inp1_buf_load_14_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_61_lo, i32 %inp1_buf_0_1_60_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 484 [1/1] (0.48ns)   --->   "%inp2_buf_load_14_phi = select i1 %tmp_7, i32 %inp2_buf_14_1_3, i32 %inp2_buf_14_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 485 [1/1] (0.48ns)   --->   "%inp1_buf_load_15_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_63_lo, i32 %inp1_buf_0_1_62_lo" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 486 [1/1] (0.48ns)   --->   "%inp2_buf_load_15_phi = select i1 %tmp_7, i32 %inp2_buf_15_1_3, i32 %inp2_buf_15_0_3" [../src/decode.c:194]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_18 : Operation 487 [1/1] (0.78ns)   --->   "%k_1_s = add i6 %k, 16" [../src/decode.c:192]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 420 [1/1] (0.78ns)   --->   "%exitcond = icmp eq i6 %k, -32" [../src/decode.c:193]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 421 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %burst.wr.header.preheader, label %burst.rd.end5.1_ifconv" [../src/decode.c:193]
+ST_18 : Operation 422 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_2_loa = load i32* %inp1_buf_0_1_2" [../src/decode.c:195]
+ST_18 : Operation 423 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_33_lo = load i32* %inp1_buf_0_1_33" [../src/decode.c:195]
+ST_18 : Operation 424 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_34_lo = load i32* %inp1_buf_0_1_34" [../src/decode.c:195]
+ST_18 : Operation 425 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_35_lo = load i32* %inp1_buf_0_1_35" [../src/decode.c:195]
+ST_18 : Operation 426 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_36_lo = load i32* %inp1_buf_0_1_36" [../src/decode.c:195]
+ST_18 : Operation 427 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_37_lo = load i32* %inp1_buf_0_1_37" [../src/decode.c:195]
+ST_18 : Operation 428 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_38_lo = load i32* %inp1_buf_0_1_38" [../src/decode.c:195]
+ST_18 : Operation 429 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_39_lo = load i32* %inp1_buf_0_1_39" [../src/decode.c:195]
+ST_18 : Operation 430 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_40_lo = load i32* %inp1_buf_0_1_40" [../src/decode.c:195]
+ST_18 : Operation 431 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_41_lo = load i32* %inp1_buf_0_1_41" [../src/decode.c:195]
+ST_18 : Operation 432 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_42_lo = load i32* %inp1_buf_0_1_42" [../src/decode.c:195]
+ST_18 : Operation 433 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_43_lo = load i32* %inp1_buf_0_1_43" [../src/decode.c:195]
+ST_18 : Operation 434 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_44_lo = load i32* %inp1_buf_0_1_44" [../src/decode.c:195]
+ST_18 : Operation 435 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_45_lo = load i32* %inp1_buf_0_1_45" [../src/decode.c:195]
+ST_18 : Operation 436 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_46_lo = load i32* %inp1_buf_0_1_46" [../src/decode.c:195]
+ST_18 : Operation 437 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_47_lo = load i32* %inp1_buf_0_1_47" [../src/decode.c:195]
+ST_18 : Operation 438 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_48_lo = load i32* %inp1_buf_0_1_48" [../src/decode.c:195]
+ST_18 : Operation 439 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_49_lo = load i32* %inp1_buf_0_1_49" [../src/decode.c:195]
+ST_18 : Operation 440 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_50_lo = load i32* %inp1_buf_0_1_50" [../src/decode.c:195]
+ST_18 : Operation 441 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_51_lo = load i32* %inp1_buf_0_1_51" [../src/decode.c:195]
+ST_18 : Operation 442 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_52_lo = load i32* %inp1_buf_0_1_52" [../src/decode.c:195]
+ST_18 : Operation 443 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_53_lo = load i32* %inp1_buf_0_1_53" [../src/decode.c:195]
+ST_18 : Operation 444 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_54_lo = load i32* %inp1_buf_0_1_54" [../src/decode.c:195]
+ST_18 : Operation 445 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_55_lo = load i32* %inp1_buf_0_1_55" [../src/decode.c:195]
+ST_18 : Operation 446 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_56_lo = load i32* %inp1_buf_0_1_56" [../src/decode.c:195]
+ST_18 : Operation 447 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_57_lo = load i32* %inp1_buf_0_1_57" [../src/decode.c:195]
+ST_18 : Operation 448 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_58_lo = load i32* %inp1_buf_0_1_58" [../src/decode.c:195]
+ST_18 : Operation 449 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_59_lo = load i32* %inp1_buf_0_1_59" [../src/decode.c:195]
+ST_18 : Operation 450 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_60_lo = load i32* %inp1_buf_0_1_60" [../src/decode.c:195]
+ST_18 : Operation 451 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_61_lo = load i32* %inp1_buf_0_1_61" [../src/decode.c:195]
+ST_18 : Operation 452 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_62_lo = load i32* %inp1_buf_0_1_62" [../src/decode.c:195]
+ST_18 : Operation 453 [1/1] (0.00ns)   --->   "%inp1_buf_0_1_63_lo = load i32* %inp1_buf_0_1_63" [../src/decode.c:195]
+ST_18 : Operation 454 [1/1] (0.00ns)   --->   "%tmp_7 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %k, i32 4)" [../src/decode.c:193]
+ST_18 : Operation 455 [1/1] (0.48ns)   --->   "%inp1_buf_load_0_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_33_lo, i32 %inp1_buf_0_1_2_loa" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 456 [1/1] (0.48ns)   --->   "%inp2_buf_load_0_phi = select i1 %tmp_7, i32 %inp2_buf_0_1_3, i32 %inp2_buf_0_0_s" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 457 [1/1] (0.48ns)   --->   "%inp1_buf_load_1_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_35_lo, i32 %inp1_buf_0_1_34_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 458 [1/1] (0.48ns)   --->   "%inp2_buf_load_12_phi = select i1 %tmp_7, i32 %inp2_buf_1_1_3, i32 %inp2_buf_1_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 459 [1/1] (0.48ns)   --->   "%inp1_buf_load_2_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_37_lo, i32 %inp1_buf_0_1_36_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 460 [1/1] (0.48ns)   --->   "%inp2_buf_load_2_phi = select i1 %tmp_7, i32 %inp2_buf_2_1_3, i32 %inp2_buf_2_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 461 [1/1] (0.48ns)   --->   "%inp1_buf_load_3_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_39_lo, i32 %inp1_buf_0_1_38_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 462 [1/1] (0.48ns)   --->   "%inp2_buf_load_3_phi = select i1 %tmp_7, i32 %inp2_buf_3_1_3, i32 %inp2_buf_3_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 463 [1/1] (0.48ns)   --->   "%inp1_buf_load_4_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_41_lo, i32 %inp1_buf_0_1_40_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 464 [1/1] (0.48ns)   --->   "%inp2_buf_load_4_phi = select i1 %tmp_7, i32 %inp2_buf_4_1_3, i32 %inp2_buf_4_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 465 [1/1] (0.48ns)   --->   "%inp1_buf_load_5_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_43_lo, i32 %inp1_buf_0_1_42_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 466 [1/1] (0.48ns)   --->   "%inp2_buf_load_5_phi = select i1 %tmp_7, i32 %inp2_buf_5_1_3, i32 %inp2_buf_5_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 467 [1/1] (0.48ns)   --->   "%inp1_buf_load_6_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_45_lo, i32 %inp1_buf_0_1_44_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 468 [1/1] (0.48ns)   --->   "%inp2_buf_load_6_phi = select i1 %tmp_7, i32 %inp2_buf_6_1_3, i32 %inp2_buf_6_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 469 [1/1] (0.48ns)   --->   "%inp1_buf_load_7_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_47_lo, i32 %inp1_buf_0_1_46_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 470 [1/1] (0.48ns)   --->   "%inp2_buf_load_7_phi = select i1 %tmp_7, i32 %inp2_buf_7_1_3, i32 %inp2_buf_7_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 471 [1/1] (0.48ns)   --->   "%inp1_buf_load_8_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_49_lo, i32 %inp1_buf_0_1_48_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 472 [1/1] (0.48ns)   --->   "%inp2_buf_load_8_phi = select i1 %tmp_7, i32 %inp2_buf_8_1_3, i32 %inp2_buf_8_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 473 [1/1] (0.48ns)   --->   "%inp1_buf_load_9_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_51_lo, i32 %inp1_buf_0_1_50_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 474 [1/1] (0.48ns)   --->   "%inp2_buf_load_9_phi = select i1 %tmp_7, i32 %inp2_buf_9_1_3, i32 %inp2_buf_9_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 475 [1/1] (0.48ns)   --->   "%inp1_buf_load_10_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_53_lo, i32 %inp1_buf_0_1_52_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 476 [1/1] (0.48ns)   --->   "%inp2_buf_load_10_phi = select i1 %tmp_7, i32 %inp2_buf_10_1_3, i32 %inp2_buf_10_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 477 [1/1] (0.48ns)   --->   "%inp1_buf_load_11_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_55_lo, i32 %inp1_buf_0_1_54_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 478 [1/1] (0.48ns)   --->   "%inp2_buf_load_11_phi = select i1 %tmp_7, i32 %inp2_buf_11_1_3, i32 %inp2_buf_11_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 479 [1/1] (0.48ns)   --->   "%inp1_buf_load_12_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_57_lo, i32 %inp1_buf_0_1_56_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 480 [1/1] (0.48ns)   --->   "%inp2_buf_load_124_ph = select i1 %tmp_7, i32 %inp2_buf_12_1_3, i32 %inp2_buf_12_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 481 [1/1] (0.48ns)   --->   "%inp1_buf_load_13_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_59_lo, i32 %inp1_buf_0_1_58_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 482 [1/1] (0.48ns)   --->   "%inp2_buf_load_13_phi = select i1 %tmp_7, i32 %inp2_buf_13_1_3, i32 %inp2_buf_13_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 483 [1/1] (0.48ns)   --->   "%inp1_buf_load_14_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_61_lo, i32 %inp1_buf_0_1_60_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 484 [1/1] (0.48ns)   --->   "%inp2_buf_load_14_phi = select i1 %tmp_7, i32 %inp2_buf_14_1_3, i32 %inp2_buf_14_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 485 [1/1] (0.48ns)   --->   "%inp1_buf_load_15_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_63_lo, i32 %inp1_buf_0_1_62_lo" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 486 [1/1] (0.48ns)   --->   "%inp2_buf_load_15_phi = select i1 %tmp_7, i32 %inp2_buf_15_1_3, i32 %inp2_buf_15_0_3" [../src/decode.c:195]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 487 [1/1] (0.78ns)   --->   "%k_1_s = add i6 %k, 16" [../src/decode.c:193]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_18 : Operation 488 [1/1] (0.65ns)   --->   "br label %burst.wr.header"
 
  <State 19> : 2.37ns
-ST_19 : Operation 489 [2/2] (2.36ns)   --->   "%inp2_buf_0_1_9 = mul nsw i32 %inp1_buf_load_0_phi, %inp2_buf_load_0_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 490 [2/2] (2.36ns)   --->   "%inp2_buf_1_1_9 = mul nsw i32 %inp1_buf_load_1_phi, %inp2_buf_load_12_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 491 [2/2] (2.36ns)   --->   "%inp2_buf_2_1_9 = mul nsw i32 %inp1_buf_load_2_phi, %inp2_buf_load_2_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 492 [2/2] (2.36ns)   --->   "%inp2_buf_3_1_9 = mul nsw i32 %inp1_buf_load_3_phi, %inp2_buf_load_3_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 493 [2/2] (2.36ns)   --->   "%inp2_buf_4_1_9 = mul nsw i32 %inp1_buf_load_4_phi, %inp2_buf_load_4_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 494 [2/2] (2.36ns)   --->   "%inp2_buf_5_1_9 = mul nsw i32 %inp1_buf_load_5_phi, %inp2_buf_load_5_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 495 [2/2] (2.36ns)   --->   "%inp2_buf_6_1_9 = mul nsw i32 %inp1_buf_load_6_phi, %inp2_buf_load_6_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 496 [2/2] (2.36ns)   --->   "%inp2_buf_7_1_9 = mul nsw i32 %inp1_buf_load_7_phi, %inp2_buf_load_7_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 497 [2/2] (2.36ns)   --->   "%inp2_buf_8_1_9 = mul nsw i32 %inp1_buf_load_8_phi, %inp2_buf_load_8_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 498 [2/2] (2.36ns)   --->   "%inp2_buf_9_1_9 = mul nsw i32 %inp1_buf_load_9_phi, %inp2_buf_load_9_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 499 [2/2] (2.36ns)   --->   "%inp2_buf_10_1_9 = mul nsw i32 %inp1_buf_load_10_phi, %inp2_buf_load_10_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 500 [2/2] (2.36ns)   --->   "%inp2_buf_11_1_9 = mul nsw i32 %inp1_buf_load_11_phi, %inp2_buf_load_11_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 501 [2/2] (2.36ns)   --->   "%inp2_buf_12_1_9 = mul nsw i32 %inp1_buf_load_12_phi, %inp2_buf_load_124_ph" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 502 [2/2] (2.36ns)   --->   "%inp2_buf_13_1_9 = mul nsw i32 %inp1_buf_load_13_phi, %inp2_buf_load_13_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 503 [2/2] (2.36ns)   --->   "%inp2_buf_14_1_9 = mul nsw i32 %inp1_buf_load_14_phi, %inp2_buf_load_14_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_19 : Operation 504 [2/2] (2.36ns)   --->   "%inp2_buf_15_1_25 = mul nsw i32 %inp1_buf_load_15_phi, %inp2_buf_load_15_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 489 [2/2] (2.36ns)   --->   "%inp2_buf_0_1_9 = mul nsw i32 %inp1_buf_load_0_phi, %inp2_buf_load_0_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 490 [2/2] (2.36ns)   --->   "%inp2_buf_1_1_9 = mul nsw i32 %inp1_buf_load_1_phi, %inp2_buf_load_12_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 491 [2/2] (2.36ns)   --->   "%inp2_buf_2_1_9 = mul nsw i32 %inp1_buf_load_2_phi, %inp2_buf_load_2_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 492 [2/2] (2.36ns)   --->   "%inp2_buf_3_1_9 = mul nsw i32 %inp1_buf_load_3_phi, %inp2_buf_load_3_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 493 [2/2] (2.36ns)   --->   "%inp2_buf_4_1_9 = mul nsw i32 %inp1_buf_load_4_phi, %inp2_buf_load_4_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 494 [2/2] (2.36ns)   --->   "%inp2_buf_5_1_9 = mul nsw i32 %inp1_buf_load_5_phi, %inp2_buf_load_5_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 495 [2/2] (2.36ns)   --->   "%inp2_buf_6_1_9 = mul nsw i32 %inp1_buf_load_6_phi, %inp2_buf_load_6_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 496 [2/2] (2.36ns)   --->   "%inp2_buf_7_1_9 = mul nsw i32 %inp1_buf_load_7_phi, %inp2_buf_load_7_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 497 [2/2] (2.36ns)   --->   "%inp2_buf_8_1_9 = mul nsw i32 %inp1_buf_load_8_phi, %inp2_buf_load_8_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 498 [2/2] (2.36ns)   --->   "%inp2_buf_9_1_9 = mul nsw i32 %inp1_buf_load_9_phi, %inp2_buf_load_9_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 499 [2/2] (2.36ns)   --->   "%inp2_buf_10_1_9 = mul nsw i32 %inp1_buf_load_10_phi, %inp2_buf_load_10_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 500 [2/2] (2.36ns)   --->   "%inp2_buf_11_1_9 = mul nsw i32 %inp1_buf_load_11_phi, %inp2_buf_load_11_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 501 [2/2] (2.36ns)   --->   "%inp2_buf_12_1_9 = mul nsw i32 %inp1_buf_load_12_phi, %inp2_buf_load_124_ph" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 502 [2/2] (2.36ns)   --->   "%inp2_buf_13_1_9 = mul nsw i32 %inp1_buf_load_13_phi, %inp2_buf_load_13_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 503 [2/2] (2.36ns)   --->   "%inp2_buf_14_1_9 = mul nsw i32 %inp1_buf_load_14_phi, %inp2_buf_load_14_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 504 [2/2] (2.36ns)   --->   "%inp2_buf_15_1_25 = mul nsw i32 %inp1_buf_load_15_phi, %inp2_buf_load_15_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
 
  <State 20> : 2.37ns
-ST_20 : Operation 505 [1/2] (2.36ns)   --->   "%inp2_buf_0_1_9 = mul nsw i32 %inp1_buf_load_0_phi, %inp2_buf_load_0_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 506 [1/2] (2.36ns)   --->   "%inp2_buf_1_1_9 = mul nsw i32 %inp1_buf_load_1_phi, %inp2_buf_load_12_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 507 [1/2] (2.36ns)   --->   "%inp2_buf_2_1_9 = mul nsw i32 %inp1_buf_load_2_phi, %inp2_buf_load_2_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 508 [1/2] (2.36ns)   --->   "%inp2_buf_3_1_9 = mul nsw i32 %inp1_buf_load_3_phi, %inp2_buf_load_3_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 509 [1/2] (2.36ns)   --->   "%inp2_buf_4_1_9 = mul nsw i32 %inp1_buf_load_4_phi, %inp2_buf_load_4_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 510 [1/2] (2.36ns)   --->   "%inp2_buf_5_1_9 = mul nsw i32 %inp1_buf_load_5_phi, %inp2_buf_load_5_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 511 [1/2] (2.36ns)   --->   "%inp2_buf_6_1_9 = mul nsw i32 %inp1_buf_load_6_phi, %inp2_buf_load_6_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 512 [1/2] (2.36ns)   --->   "%inp2_buf_7_1_9 = mul nsw i32 %inp1_buf_load_7_phi, %inp2_buf_load_7_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 513 [1/2] (2.36ns)   --->   "%inp2_buf_8_1_9 = mul nsw i32 %inp1_buf_load_8_phi, %inp2_buf_load_8_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 514 [1/2] (2.36ns)   --->   "%inp2_buf_9_1_9 = mul nsw i32 %inp1_buf_load_9_phi, %inp2_buf_load_9_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 515 [1/2] (2.36ns)   --->   "%inp2_buf_10_1_9 = mul nsw i32 %inp1_buf_load_10_phi, %inp2_buf_load_10_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 516 [1/2] (2.36ns)   --->   "%inp2_buf_11_1_9 = mul nsw i32 %inp1_buf_load_11_phi, %inp2_buf_load_11_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 517 [1/2] (2.36ns)   --->   "%inp2_buf_12_1_9 = mul nsw i32 %inp1_buf_load_12_phi, %inp2_buf_load_124_ph" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 518 [1/2] (2.36ns)   --->   "%inp2_buf_13_1_9 = mul nsw i32 %inp1_buf_load_13_phi, %inp2_buf_load_13_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 519 [1/2] (2.36ns)   --->   "%inp2_buf_14_1_9 = mul nsw i32 %inp1_buf_load_14_phi, %inp2_buf_load_14_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_20 : Operation 520 [1/2] (2.36ns)   --->   "%inp2_buf_15_1_25 = mul nsw i32 %inp1_buf_load_15_phi, %inp2_buf_load_15_phi" [../src/decode.c:194]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 505 [1/2] (2.36ns)   --->   "%inp2_buf_0_1_9 = mul nsw i32 %inp1_buf_load_0_phi, %inp2_buf_load_0_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 506 [1/2] (2.36ns)   --->   "%inp2_buf_1_1_9 = mul nsw i32 %inp1_buf_load_1_phi, %inp2_buf_load_12_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 507 [1/2] (2.36ns)   --->   "%inp2_buf_2_1_9 = mul nsw i32 %inp1_buf_load_2_phi, %inp2_buf_load_2_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 508 [1/2] (2.36ns)   --->   "%inp2_buf_3_1_9 = mul nsw i32 %inp1_buf_load_3_phi, %inp2_buf_load_3_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 509 [1/2] (2.36ns)   --->   "%inp2_buf_4_1_9 = mul nsw i32 %inp1_buf_load_4_phi, %inp2_buf_load_4_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 510 [1/2] (2.36ns)   --->   "%inp2_buf_5_1_9 = mul nsw i32 %inp1_buf_load_5_phi, %inp2_buf_load_5_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 511 [1/2] (2.36ns)   --->   "%inp2_buf_6_1_9 = mul nsw i32 %inp1_buf_load_6_phi, %inp2_buf_load_6_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 512 [1/2] (2.36ns)   --->   "%inp2_buf_7_1_9 = mul nsw i32 %inp1_buf_load_7_phi, %inp2_buf_load_7_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 513 [1/2] (2.36ns)   --->   "%inp2_buf_8_1_9 = mul nsw i32 %inp1_buf_load_8_phi, %inp2_buf_load_8_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 514 [1/2] (2.36ns)   --->   "%inp2_buf_9_1_9 = mul nsw i32 %inp1_buf_load_9_phi, %inp2_buf_load_9_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 515 [1/2] (2.36ns)   --->   "%inp2_buf_10_1_9 = mul nsw i32 %inp1_buf_load_10_phi, %inp2_buf_load_10_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 516 [1/2] (2.36ns)   --->   "%inp2_buf_11_1_9 = mul nsw i32 %inp1_buf_load_11_phi, %inp2_buf_load_11_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 517 [1/2] (2.36ns)   --->   "%inp2_buf_12_1_9 = mul nsw i32 %inp1_buf_load_12_phi, %inp2_buf_load_124_ph" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 518 [1/2] (2.36ns)   --->   "%inp2_buf_13_1_9 = mul nsw i32 %inp1_buf_load_13_phi, %inp2_buf_load_13_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 519 [1/2] (2.36ns)   --->   "%inp2_buf_14_1_9 = mul nsw i32 %inp1_buf_load_14_phi, %inp2_buf_load_14_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 520 [1/2] (2.36ns)   --->   "%inp2_buf_15_1_25 = mul nsw i32 %inp1_buf_load_15_phi, %inp2_buf_load_15_phi" [../src/decode.c:195]   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 2.36> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
 
  <State 21> : 0.48ns
-ST_21 : Operation 521 [1/1] (0.48ns)   --->   "%inp2_buf_0_1_4 = select i1 %tmp_7, i32 %inp2_buf_0_1_9, i32 %inp2_buf_0_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 522 [1/1] (0.48ns)   --->   "%inp2_buf_0_1_8 = select i1 %tmp_7, i32 %inp2_buf_0_0_s, i32 %inp2_buf_0_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 523 [1/1] (0.48ns)   --->   "%inp2_buf_1_1_4 = select i1 %tmp_7, i32 %inp2_buf_1_1_9, i32 %inp2_buf_1_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 524 [1/1] (0.48ns)   --->   "%inp2_buf_1_1_8 = select i1 %tmp_7, i32 %inp2_buf_1_0_3, i32 %inp2_buf_1_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 525 [1/1] (0.48ns)   --->   "%inp2_buf_2_1_4 = select i1 %tmp_7, i32 %inp2_buf_2_1_9, i32 %inp2_buf_2_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 526 [1/1] (0.48ns)   --->   "%inp2_buf_2_1_8 = select i1 %tmp_7, i32 %inp2_buf_2_0_3, i32 %inp2_buf_2_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 527 [1/1] (0.48ns)   --->   "%inp2_buf_3_1_4 = select i1 %tmp_7, i32 %inp2_buf_3_1_9, i32 %inp2_buf_3_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 528 [1/1] (0.48ns)   --->   "%inp2_buf_3_1_8 = select i1 %tmp_7, i32 %inp2_buf_3_0_3, i32 %inp2_buf_3_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 529 [1/1] (0.48ns)   --->   "%inp2_buf_4_1_4 = select i1 %tmp_7, i32 %inp2_buf_4_1_9, i32 %inp2_buf_4_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 530 [1/1] (0.48ns)   --->   "%inp2_buf_4_1_8 = select i1 %tmp_7, i32 %inp2_buf_4_0_3, i32 %inp2_buf_4_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 531 [1/1] (0.48ns)   --->   "%inp2_buf_5_1_4 = select i1 %tmp_7, i32 %inp2_buf_5_1_9, i32 %inp2_buf_5_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 532 [1/1] (0.48ns)   --->   "%inp2_buf_5_1_8 = select i1 %tmp_7, i32 %inp2_buf_5_0_3, i32 %inp2_buf_5_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 533 [1/1] (0.48ns)   --->   "%inp2_buf_6_1_4 = select i1 %tmp_7, i32 %inp2_buf_6_1_9, i32 %inp2_buf_6_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 534 [1/1] (0.48ns)   --->   "%inp2_buf_6_1_8 = select i1 %tmp_7, i32 %inp2_buf_6_0_3, i32 %inp2_buf_6_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 535 [1/1] (0.48ns)   --->   "%inp2_buf_7_1_4 = select i1 %tmp_7, i32 %inp2_buf_7_1_9, i32 %inp2_buf_7_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 536 [1/1] (0.48ns)   --->   "%inp2_buf_7_1_8 = select i1 %tmp_7, i32 %inp2_buf_7_0_3, i32 %inp2_buf_7_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 537 [1/1] (0.48ns)   --->   "%inp2_buf_8_1_4 = select i1 %tmp_7, i32 %inp2_buf_8_1_9, i32 %inp2_buf_8_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 538 [1/1] (0.48ns)   --->   "%inp2_buf_8_1_8 = select i1 %tmp_7, i32 %inp2_buf_8_0_3, i32 %inp2_buf_8_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 539 [1/1] (0.48ns)   --->   "%inp2_buf_9_1_4 = select i1 %tmp_7, i32 %inp2_buf_9_1_9, i32 %inp2_buf_9_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 540 [1/1] (0.48ns)   --->   "%inp2_buf_9_1_8 = select i1 %tmp_7, i32 %inp2_buf_9_0_3, i32 %inp2_buf_9_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 541 [1/1] (0.48ns)   --->   "%inp2_buf_10_1_4 = select i1 %tmp_7, i32 %inp2_buf_10_1_9, i32 %inp2_buf_10_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 542 [1/1] (0.48ns)   --->   "%inp2_buf_10_1_8 = select i1 %tmp_7, i32 %inp2_buf_10_0_3, i32 %inp2_buf_10_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 543 [1/1] (0.48ns)   --->   "%inp2_buf_11_1_4 = select i1 %tmp_7, i32 %inp2_buf_11_1_9, i32 %inp2_buf_11_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 544 [1/1] (0.48ns)   --->   "%inp2_buf_11_1_8 = select i1 %tmp_7, i32 %inp2_buf_11_0_3, i32 %inp2_buf_11_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 545 [1/1] (0.48ns)   --->   "%inp2_buf_12_1_4 = select i1 %tmp_7, i32 %inp2_buf_12_1_9, i32 %inp2_buf_12_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 546 [1/1] (0.48ns)   --->   "%inp2_buf_12_1_8 = select i1 %tmp_7, i32 %inp2_buf_12_0_3, i32 %inp2_buf_12_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 547 [1/1] (0.48ns)   --->   "%inp2_buf_13_1_4 = select i1 %tmp_7, i32 %inp2_buf_13_1_9, i32 %inp2_buf_13_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 548 [1/1] (0.48ns)   --->   "%inp2_buf_13_1_8 = select i1 %tmp_7, i32 %inp2_buf_13_0_3, i32 %inp2_buf_13_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 549 [1/1] (0.48ns)   --->   "%inp2_buf_14_1_4 = select i1 %tmp_7, i32 %inp2_buf_14_1_9, i32 %inp2_buf_14_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 550 [1/1] (0.48ns)   --->   "%inp2_buf_14_1_8 = select i1 %tmp_7, i32 %inp2_buf_14_0_3, i32 %inp2_buf_14_1_9" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 551 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_4 = select i1 %tmp_7, i32 %inp2_buf_15_1_25, i32 %inp2_buf_15_1_3" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 552 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_24 = select i1 %tmp_7, i32 %inp2_buf_15_0_3, i32 %inp2_buf_15_1_25" [../src/decode.c:192]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_21 : Operation 553 [1/1] (0.00ns)   --->   "br label %burst.rd.end5.0" [../src/decode.c:192]
+ST_21 : Operation 521 [1/1] (0.48ns)   --->   "%inp2_buf_0_1_4 = select i1 %tmp_7, i32 %inp2_buf_0_1_9, i32 %inp2_buf_0_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 522 [1/1] (0.48ns)   --->   "%inp2_buf_0_1_8 = select i1 %tmp_7, i32 %inp2_buf_0_0_s, i32 %inp2_buf_0_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 523 [1/1] (0.48ns)   --->   "%inp2_buf_1_1_4 = select i1 %tmp_7, i32 %inp2_buf_1_1_9, i32 %inp2_buf_1_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 524 [1/1] (0.48ns)   --->   "%inp2_buf_1_1_8 = select i1 %tmp_7, i32 %inp2_buf_1_0_3, i32 %inp2_buf_1_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 525 [1/1] (0.48ns)   --->   "%inp2_buf_2_1_4 = select i1 %tmp_7, i32 %inp2_buf_2_1_9, i32 %inp2_buf_2_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 526 [1/1] (0.48ns)   --->   "%inp2_buf_2_1_8 = select i1 %tmp_7, i32 %inp2_buf_2_0_3, i32 %inp2_buf_2_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 527 [1/1] (0.48ns)   --->   "%inp2_buf_3_1_4 = select i1 %tmp_7, i32 %inp2_buf_3_1_9, i32 %inp2_buf_3_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 528 [1/1] (0.48ns)   --->   "%inp2_buf_3_1_8 = select i1 %tmp_7, i32 %inp2_buf_3_0_3, i32 %inp2_buf_3_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 529 [1/1] (0.48ns)   --->   "%inp2_buf_4_1_4 = select i1 %tmp_7, i32 %inp2_buf_4_1_9, i32 %inp2_buf_4_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 530 [1/1] (0.48ns)   --->   "%inp2_buf_4_1_8 = select i1 %tmp_7, i32 %inp2_buf_4_0_3, i32 %inp2_buf_4_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 531 [1/1] (0.48ns)   --->   "%inp2_buf_5_1_4 = select i1 %tmp_7, i32 %inp2_buf_5_1_9, i32 %inp2_buf_5_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 532 [1/1] (0.48ns)   --->   "%inp2_buf_5_1_8 = select i1 %tmp_7, i32 %inp2_buf_5_0_3, i32 %inp2_buf_5_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 533 [1/1] (0.48ns)   --->   "%inp2_buf_6_1_4 = select i1 %tmp_7, i32 %inp2_buf_6_1_9, i32 %inp2_buf_6_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 534 [1/1] (0.48ns)   --->   "%inp2_buf_6_1_8 = select i1 %tmp_7, i32 %inp2_buf_6_0_3, i32 %inp2_buf_6_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 535 [1/1] (0.48ns)   --->   "%inp2_buf_7_1_4 = select i1 %tmp_7, i32 %inp2_buf_7_1_9, i32 %inp2_buf_7_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 536 [1/1] (0.48ns)   --->   "%inp2_buf_7_1_8 = select i1 %tmp_7, i32 %inp2_buf_7_0_3, i32 %inp2_buf_7_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 537 [1/1] (0.48ns)   --->   "%inp2_buf_8_1_4 = select i1 %tmp_7, i32 %inp2_buf_8_1_9, i32 %inp2_buf_8_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 538 [1/1] (0.48ns)   --->   "%inp2_buf_8_1_8 = select i1 %tmp_7, i32 %inp2_buf_8_0_3, i32 %inp2_buf_8_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 539 [1/1] (0.48ns)   --->   "%inp2_buf_9_1_4 = select i1 %tmp_7, i32 %inp2_buf_9_1_9, i32 %inp2_buf_9_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 540 [1/1] (0.48ns)   --->   "%inp2_buf_9_1_8 = select i1 %tmp_7, i32 %inp2_buf_9_0_3, i32 %inp2_buf_9_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 541 [1/1] (0.48ns)   --->   "%inp2_buf_10_1_4 = select i1 %tmp_7, i32 %inp2_buf_10_1_9, i32 %inp2_buf_10_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 542 [1/1] (0.48ns)   --->   "%inp2_buf_10_1_8 = select i1 %tmp_7, i32 %inp2_buf_10_0_3, i32 %inp2_buf_10_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 543 [1/1] (0.48ns)   --->   "%inp2_buf_11_1_4 = select i1 %tmp_7, i32 %inp2_buf_11_1_9, i32 %inp2_buf_11_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 544 [1/1] (0.48ns)   --->   "%inp2_buf_11_1_8 = select i1 %tmp_7, i32 %inp2_buf_11_0_3, i32 %inp2_buf_11_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 545 [1/1] (0.48ns)   --->   "%inp2_buf_12_1_4 = select i1 %tmp_7, i32 %inp2_buf_12_1_9, i32 %inp2_buf_12_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 546 [1/1] (0.48ns)   --->   "%inp2_buf_12_1_8 = select i1 %tmp_7, i32 %inp2_buf_12_0_3, i32 %inp2_buf_12_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 547 [1/1] (0.48ns)   --->   "%inp2_buf_13_1_4 = select i1 %tmp_7, i32 %inp2_buf_13_1_9, i32 %inp2_buf_13_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 548 [1/1] (0.48ns)   --->   "%inp2_buf_13_1_8 = select i1 %tmp_7, i32 %inp2_buf_13_0_3, i32 %inp2_buf_13_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 549 [1/1] (0.48ns)   --->   "%inp2_buf_14_1_4 = select i1 %tmp_7, i32 %inp2_buf_14_1_9, i32 %inp2_buf_14_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 550 [1/1] (0.48ns)   --->   "%inp2_buf_14_1_8 = select i1 %tmp_7, i32 %inp2_buf_14_0_3, i32 %inp2_buf_14_1_9" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 551 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_4 = select i1 %tmp_7, i32 %inp2_buf_15_1_25, i32 %inp2_buf_15_1_3" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 552 [1/1] (0.48ns)   --->   "%inp2_buf_15_1_24 = select i1 %tmp_7, i32 %inp2_buf_15_0_3, i32 %inp2_buf_15_1_25" [../src/decode.c:193]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 553 [1/1] (0.00ns)   --->   "br label %burst.rd.end5.0" [../src/decode.c:193]
 
  <State 22> : 1.21ns
 ST_22 : Operation 554 [1/1] (0.00ns)   --->   "%indvar1 = phi i6 [ %indvar_next1, %burst.wr.body ], [ 0, %burst.wr.header.preheader ]"
@@ -758,14 +758,14 @@ ST_22 : Operation 558 [1/1] (0.00ns)   --->   "%tmp_10 = trunc i6 %indvar1 to i4
 ST_22 : Operation 559 [1/1] (0.00ns)   --->   "%tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar1, i32 4)"
 ST_22 : Operation 560 [1/1] (0.00ns)   --->   "%tmp_8 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_10, i1 %tmp_11)"
 ST_22 : Operation 561 [1/1] (0.00ns)   --->   "%tmp_9 = zext i5 %tmp_8 to i6"
-ST_22 : Operation 562 [1/1] (0.78ns)   --->   "%tmp_5 = call i32 @_ssdm_op_Mux.ap_auto.32i32.i6(i32 %inp2_buf_0_0_s, i32 %inp2_buf_0_1_3, i32 %inp2_buf_1_0_3, i32 %inp2_buf_1_1_3, i32 %inp2_buf_2_0_3, i32 %inp2_buf_2_1_3, i32 %inp2_buf_3_0_3, i32 %inp2_buf_3_1_3, i32 %inp2_buf_4_0_3, i32 %inp2_buf_4_1_3, i32 %inp2_buf_5_0_3, i32 %inp2_buf_5_1_3, i32 %inp2_buf_6_0_3, i32 %inp2_buf_6_1_3, i32 %inp2_buf_7_0_3, i32 %inp2_buf_7_1_3, i32 %inp2_buf_8_0_3, i32 %inp2_buf_8_1_3, i32 %inp2_buf_9_0_3, i32 %inp2_buf_9_1_3, i32 %inp2_buf_10_0_3, i32 %inp2_buf_10_1_3, i32 %inp2_buf_11_0_3, i32 %inp2_buf_11_1_3, i32 %inp2_buf_12_0_3, i32 %inp2_buf_12_1_3, i32 %inp2_buf_13_0_3, i32 %inp2_buf_13_1_3, i32 %inp2_buf_14_0_3, i32 %inp2_buf_14_1_3, i32 %inp2_buf_15_0_3, i32 %inp2_buf_15_1_3, i6 %tmp_9) nounwind" [../src/decode.c:192]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 562 [1/1] (0.78ns)   --->   "%tmp_5 = call i32 @_ssdm_op_Mux.ap_auto.32i32.i6(i32 %inp2_buf_0_0_s, i32 %inp2_buf_0_1_3, i32 %inp2_buf_1_0_3, i32 %inp2_buf_1_1_3, i32 %inp2_buf_2_0_3, i32 %inp2_buf_2_1_3, i32 %inp2_buf_3_0_3, i32 %inp2_buf_3_1_3, i32 %inp2_buf_4_0_3, i32 %inp2_buf_4_1_3, i32 %inp2_buf_5_0_3, i32 %inp2_buf_5_1_3, i32 %inp2_buf_6_0_3, i32 %inp2_buf_6_1_3, i32 %inp2_buf_7_0_3, i32 %inp2_buf_7_1_3, i32 %inp2_buf_8_0_3, i32 %inp2_buf_8_1_3, i32 %inp2_buf_9_0_3, i32 %inp2_buf_9_1_3, i32 %inp2_buf_10_0_3, i32 %inp2_buf_10_1_3, i32 %inp2_buf_11_0_3, i32 %inp2_buf_11_1_3, i32 %inp2_buf_12_0_3, i32 %inp2_buf_12_1_3, i32 %inp2_buf_13_0_3, i32 %inp2_buf_13_1_3, i32 %inp2_buf_14_0_3, i32 %inp2_buf_14_1_3, i32 %inp2_buf_15_0_3, i32 %inp2_buf_15_1_3, i6 %tmp_9) nounwind" [../src/decode.c:193]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 0.78> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
 
  <State 23> : 2.62ns
 ST_23 : Operation 563 [1/1] (0.00ns)   --->   "%empty_19 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"
 ST_23 : Operation 564 [1/1] (0.00ns)   --->   "%burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind"
-ST_23 : Operation 565 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str10) nounwind"
+ST_23 : Operation 565 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind"
 ST_23 : Operation 566 [1/1] (0.00ns)   --->   "%empty_21 = call i32 (...)* @_ssdm_op_SpecLoopName([27 x i8]* @memcpy_OC_matrix_OC_s) nounwind"
-ST_23 : Operation 567 [1/1] (2.62ns)   --->   "call void @_ssdm_op_Write.m_axi.i32P(i32* %BUS_DST_addr, i32 %tmp_5, i4 -1)" [../src/decode.c:204]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 567 [1/1] (2.62ns)   --->   "call void @_ssdm_op_Write.m_axi.i32P(i32* %BUS_DST_addr, i32 %tmp_5, i4 -1)" [../src/decode.c:205]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_23 : Operation 568 [1/1] (0.00ns)   --->   "%burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin) nounwind"
 ST_23 : Operation 569 [1/1] (0.00ns)   --->   "br label %burst.wr.header"
 
@@ -773,17 +773,17 @@ ST_23 : Operation 569 [1/1] (0.00ns)   --->   "br label %burst.wr.header"
 ST_24 : Operation 570 [1/1] (0.00ns)   --->   "br label %memcpy.tail"
 
  <State 25> : 2.62ns
-ST_25 : Operation 571 [4/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:204]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_25 : Operation 571 [4/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:205]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 26> : 2.62ns
-ST_26 : Operation 572 [3/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:204]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_26 : Operation 572 [3/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:205]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 27> : 2.62ns
-ST_27 : Operation 573 [2/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:204]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_27 : Operation 573 [2/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:205]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
  <State 28> : 2.62ns
-ST_28 : Operation 574 [1/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:204]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_28 : Operation 575 [1/1] (0.00ns)   --->   "ret void" [../src/decode.c:208]
+ST_28 : Operation 574 [1/5] (2.62ns)   --->   "%BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr)" [../src/decode.c:205]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_28 : Operation 575 [1/1] (0.00ns)   --->   "ret void" [../src/decode.c:209]
 
 
 ============================================================
@@ -797,36 +797,35 @@ The critical path consists of the following:
 
  <State 2>: 2.62ns
 The critical path consists of the following:
-	'getelementptr' operation ('BUS_SRC_addr') [41]  (0 ns)
-	bus request on port 'BUS_SRC' (../src/decode.c:186) [53]  (2.62 ns)
+	bus request on port 'BUS_SRC' (../src/decode.c:187) [53]  (2.62 ns)
 
  <State 3>: 2.62ns
 The critical path consists of the following:
-	bus request on port 'BUS_SRC' (../src/decode.c:186) [53]  (2.62 ns)
+	bus request on port 'BUS_SRC' (../src/decode.c:187) [53]  (2.62 ns)
 
  <State 4>: 2.62ns
 The critical path consists of the following:
-	bus request on port 'BUS_SRC' (../src/decode.c:186) [53]  (2.62 ns)
+	bus request on port 'BUS_SRC' (../src/decode.c:187) [53]  (2.62 ns)
 
  <State 5>: 2.62ns
 The critical path consists of the following:
-	bus request on port 'BUS_SRC' (../src/decode.c:186) [53]  (2.62 ns)
+	bus request on port 'BUS_SRC' (../src/decode.c:187) [53]  (2.62 ns)
 
  <State 6>: 2.62ns
 The critical path consists of the following:
-	bus request on port 'BUS_SRC' (../src/decode.c:186) [53]  (2.62 ns)
+	bus request on port 'BUS_SRC' (../src/decode.c:187) [53]  (2.62 ns)
 
  <State 7>: 2.62ns
 The critical path consists of the following:
-	bus request on port 'BUS_SRC' (../src/decode.c:186) [53]  (2.62 ns)
+	bus request on port 'BUS_SRC' (../src/decode.c:187) [53]  (2.62 ns)
 
  <State 8>: 2.62ns
 The critical path consists of the following:
-	bus request on port 'BUS_SRC' (../src/decode.c:186) [53]  (2.62 ns)
+	bus request on port 'BUS_SRC' (../src/decode.c:187) [53]  (2.62 ns)
 
  <State 9>: 2.62ns
 The critical path consists of the following:
-	bus access on port 'BUS_DST' (../src/decode.c:204) [567]  (2.62 ns)
+	bus access on port 'BUS_DST' (../src/decode.c:205) [567]  (2.62 ns)
 
  <State 10>: 1.21ns
 The critical path consists of the following:
@@ -835,16 +834,16 @@ The critical path consists of the following:
 
  <State 11>: 2.62ns
 The critical path consists of the following:
-	bus read on port 'BUS_SRC' (../src/decode.c:186) [107]  (2.62 ns)
+	bus read on port 'BUS_SRC' (../src/decode.c:187) [107]  (2.62 ns)
 
  <State 12>: 0.48ns
 The critical path consists of the following:
-	'load' operation ('inp1_buf_0_1_60_lo_1', ../src/decode.c:186) on local variable 'inp1_buf[0][1]' [112]  (0 ns)
-	'select' operation ('inp1_buf[0][1]', ../src/decode.c:186) [115]  (0.48 ns)
+	'load' operation ('inp1_buf_0_1_60_lo_1', ../src/decode.c:187) on local variable 'inp1_buf[0][1]' [112]  (0 ns)
+	'select' operation ('inp1_buf[0][1]', ../src/decode.c:187) [115]  (0.48 ns)
 
  <State 13>: 0.656ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('inp2_buf_15_1_1', ../src/decode.c:187) with incoming values : ('inp2_buf[15][1]', ../src/decode.c:187) ('inp2_buf[15][1]', ../src/decode.c:192) [245]  (0.656 ns)
+	multiplexor before 'phi' operation ('inp2_buf_15_1_1', ../src/decode.c:188) with incoming values : ('inp2_buf[15][1]', ../src/decode.c:188) ('inp2_buf[15][1]', ../src/decode.c:193) [245]  (0.656 ns)
 
  <State 14>: 1.21ns
 The critical path consists of the following:
@@ -853,35 +852,35 @@ The critical path consists of the following:
 
  <State 15>: 2.62ns
 The critical path consists of the following:
-	bus read on port 'BUS_DST' (../src/decode.c:187) [286]  (2.62 ns)
+	bus read on port 'BUS_DST' (../src/decode.c:188) [286]  (2.62 ns)
 
  <State 16>: 1.14ns
 The critical path consists of the following:
-	'phi' operation ('inp2_buf_15_1_1', ../src/decode.c:187) with incoming values : ('inp2_buf[15][1]', ../src/decode.c:187) ('inp2_buf[15][1]', ../src/decode.c:192) [245]  (0 ns)
-	'select' operation ('inp2_buf[15][1]', ../src/decode.c:187) [351]  (0.48 ns)
-	multiplexor before 'phi' operation ('inp2_buf[1][1]') with incoming values : ('inp2_buf[1][1]', ../src/decode.c:187) ('inp2_buf[1][1]', ../src/decode.c:192) [383]  (0.656 ns)
-	'phi' operation ('inp2_buf[1][1]') with incoming values : ('inp2_buf[1][1]', ../src/decode.c:187) ('inp2_buf[1][1]', ../src/decode.c:192) [383]  (0 ns)
+	'phi' operation ('inp2_buf_15_1_1', ../src/decode.c:188) with incoming values : ('inp2_buf[15][1]', ../src/decode.c:188) ('inp2_buf[15][1]', ../src/decode.c:193) [245]  (0 ns)
+	'select' operation ('inp2_buf[15][1]', ../src/decode.c:188) [351]  (0.48 ns)
+	multiplexor before 'phi' operation ('inp2_buf[15][1]') with incoming values : ('inp2_buf[15][1]', ../src/decode.c:193) ('inp2_buf[10][1]', ../src/decode.c:193) [366]  (0.656 ns)
+	'phi' operation ('inp2_buf[15][1]') with incoming values : ('inp2_buf[15][1]', ../src/decode.c:193) ('inp2_buf[10][1]', ../src/decode.c:193) [366]  (0 ns)
 
  <State 17>: 0.656ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('inp2_buf[15][1]') with incoming values : ('inp2_buf[15][1]', ../src/decode.c:187) ('inp2_buf[15][1]', ../src/decode.c:192) [392]  (0.656 ns)
+	multiplexor before 'phi' operation ('inp2_buf[15][1]') with incoming values : ('inp2_buf[15][1]', ../src/decode.c:188) ('inp2_buf[15][1]', ../src/decode.c:193) [392]  (0.656 ns)
 
  <State 18>: 1.21ns
 The critical path consists of the following:
-	'icmp' operation ('exitcond', ../src/decode.c:192) [426]  (0.785 ns)
+	'icmp' operation ('exitcond', ../src/decode.c:193) [426]  (0.785 ns)
 	blocking operation 0.422 ns on control path)
 
  <State 19>: 2.37ns
 The critical path consists of the following:
-	'mul' operation ('inp2_buf[0][1]', ../src/decode.c:194) [464]  (2.37 ns)
+	'mul' operation ('inp2_buf[0][1]', ../src/decode.c:195) [464]  (2.37 ns)
 
  <State 20>: 2.37ns
 The critical path consists of the following:
-	'mul' operation ('inp2_buf[0][1]', ../src/decode.c:194) [464]  (2.37 ns)
+	'mul' operation ('inp2_buf[0][1]', ../src/decode.c:195) [464]  (2.37 ns)
 
  <State 21>: 0.48ns
 The critical path consists of the following:
-	'select' operation ('inp2_buf[0][1]', ../src/decode.c:192) [465]  (0.48 ns)
+	'select' operation ('inp2_buf[0][1]', ../src/decode.c:193) [465]  (0.48 ns)
 
  <State 22>: 1.21ns
 The critical path consists of the following:
@@ -890,26 +889,26 @@ The critical path consists of the following:
 
  <State 23>: 2.62ns
 The critical path consists of the following:
-	bus write on port 'BUS_DST' (../src/decode.c:204) [561]  (2.62 ns)
+	bus write on port 'BUS_DST' (../src/decode.c:205) [561]  (2.62 ns)
 
  <State 24>: 0ns
 The critical path consists of the following:
 
  <State 25>: 2.62ns
 The critical path consists of the following:
-	bus access on port 'BUS_DST' (../src/decode.c:204) [567]  (2.62 ns)
+	bus access on port 'BUS_DST' (../src/decode.c:205) [567]  (2.62 ns)
 
  <State 26>: 2.62ns
 The critical path consists of the following:
-	bus access on port 'BUS_DST' (../src/decode.c:204) [567]  (2.62 ns)
+	bus access on port 'BUS_DST' (../src/decode.c:205) [567]  (2.62 ns)
 
  <State 27>: 2.62ns
 The critical path consists of the following:
-	bus access on port 'BUS_DST' (../src/decode.c:204) [567]  (2.62 ns)
+	bus access on port 'BUS_DST' (../src/decode.c:205) [567]  (2.62 ns)
 
  <State 28>: 2.62ns
 The critical path consists of the following:
-	bus access on port 'BUS_DST' (../src/decode.c:204) [567]  (2.62 ns)
+	bus access on port 'BUS_DST' (../src/decode.c:205) [567]  (2.62 ns)
 
 
 ============================================================

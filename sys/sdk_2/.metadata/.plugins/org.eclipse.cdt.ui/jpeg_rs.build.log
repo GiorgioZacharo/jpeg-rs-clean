@@ -1,6 +1,8 @@
-12:00:11 **** Incremental Build of configuration Debug for project jpeg_rs ****
+17:01:12 **** Incremental Build of configuration Debug for project jpeg_rs ****
 make all 
-make: Nothing to be done for `all'.
+make[1]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug'
 
-12:00:11 Build Finished (took 61ms)
+17:01:12 Build Finished (took 61ms)
 

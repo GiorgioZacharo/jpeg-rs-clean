@@ -16,9 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param power.enableLutRouteBelPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableUnconnectedCarry8PinPower 1
 create_project -in_memory -part xczu9eg-ffvb1156-2-e
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,8 +29,13 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:zcu102:part0:3.1 [current_project]
 set_property ip_repo_paths {
-  /home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT
   /home/giorgio/workspace/jpeg-rs-clean/syn/decode_start
+  /home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT
+  /home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix
+  /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize
+  /home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock
+  /home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix
+  /home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1
 } [current_project]
 set_property ip_output_repo /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -45,9 +47,14 @@ set_property used_in_implementation false [get_files -all /home/giorgio/workspac
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_ChenIDct_0_0/constraints/ChenIDct_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0/constraints/decode_start_f2r_vectorPh_s2e_forBody96Preheader_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_ChenIDct_0_1/constraints/ChenIDct_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0/constraints/WriteOneBlock_f2r_entry_s2e_forEnd13_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1/constraints/IZigzagMatrix_f2r_forBody_s2e_forEnd_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_IQuantize_0_1/constraints/IQuantize_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_BoundIDctMatrix_0_1/constraints/BoundIDctMatrix_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1/constraints/ChenIDct_f2r_vectorBody_s2e_forEnd212_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_ooc.xdc]
@@ -55,6 +62,38 @@ set_property used_in_implementation false [get_files -all /home/giorgio/workspac
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s00_mmu_0/design_1_s00_mmu_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s01_mmu_0/design_1_s01_mmu_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s02_mmu_0/design_1_s02_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s03_mmu_0/design_1_s03_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s04_mmu_0/design_1_s04_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s05_mmu_0/design_1_s05_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s06_mmu_0/design_1_s06_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s07_mmu_0/design_1_s07_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s08_mmu_0/design_1_s08_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s09_mmu_0/design_1_s09_mmu_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_s10_mmu_0/design_1_s10_mmu_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_10/design_1_auto_us_10_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_10/design_1_auto_us_10_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_10/design_1_auto_us_10_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_9/design_1_auto_us_9_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_9/design_1_auto_us_9_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_9/design_1_auto_us_9_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_8/design_1_auto_us_8_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_8/design_1_auto_us_8_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_8/design_1_auto_us_8_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_7/design_1_auto_us_7_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_7/design_1_auto_us_7_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_7/design_1_auto_us_7_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_6/design_1_auto_us_6_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_6/design_1_auto_us_6_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_6/design_1_auto_us_6_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_5/design_1_auto_us_5_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_5/design_1_auto_us_5_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_5/design_1_auto_us_5_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_4/design_1_auto_us_4_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_4/design_1_auto_us_4_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_4/design_1_auto_us_4_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_3/design_1_auto_us_3_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_3/design_1_auto_us_3_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_3/design_1_auto_us_3_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_ooc.xdc]

@@ -22,6 +22,7 @@ const bool dataflow_in_loop::ap_const_boolean_1 = true;
 const sc_lv<1> dataflow_in_loop::ap_const_lv1_0 = "0";
 const sc_lv<1> dataflow_in_loop::ap_const_lv1_1 = "1";
 const sc_lv<32> dataflow_in_loop::ap_const_lv32_1 = "1";
+const sc_lv<64> dataflow_in_loop::ap_const_lv64_0 = "0000000000000000000000000000000000000000000000000000000000000000";
 const sc_lv<3> dataflow_in_loop::ap_const_lv3_0 = "000";
 const sc_lv<4> dataflow_in_loop::ap_const_lv4_0 = "0000";
 
@@ -1004,7 +1005,7 @@ dataflow_in_loop::dataflow_in_loop(sc_module_name name) : sc_module(name), mVcdF
     i_0_i_i_c_U->if_dout(i_0_i_i_c_dout);
     i_0_i_i_c_U->if_empty_n(i_0_i_i_c_empty_n);
     i_0_i_i_c_U->if_read(memcpy_omatrix_out_b_U0_i_0_i_i_c_read);
-    imatrix_offset_c_U = new fifo_w30_d1_A("imatrix_offset_c_U");
+    imatrix_offset_c_U = new fifo_w62_d1_A("imatrix_offset_c_U");
     imatrix_offset_c_U->clk(ap_clk);
     imatrix_offset_c_U->reset(ap_rst);
     imatrix_offset_c_U->if_read_ce(ap_var_for_const2);
@@ -1015,7 +1016,7 @@ dataflow_in_loop::dataflow_in_loop(sc_module_name name) : sc_module(name), mVcdF
     imatrix_offset_c_U->if_dout(imatrix_offset_c_dout);
     imatrix_offset_c_U->if_empty_n(imatrix_offset_c_empty_n);
     imatrix_offset_c_U->if_read(Loop_1_proc_U0_imatrix_offset_read);
-    omatrix_offset_c_U = new fifo_w30_d2_A("omatrix_offset_c_U");
+    omatrix_offset_c_U = new fifo_w62_d2_A("omatrix_offset_c_U");
     omatrix_offset_c_U->clk(ap_clk);
     omatrix_offset_c_U->reset(ap_rst);
     omatrix_offset_c_U->if_read_ce(ap_var_for_const2);
@@ -3475,7 +3476,7 @@ void dataflow_in_loop::thread_m_axi_imatrix_ARVALID() {
 }
 
 void dataflow_in_loop::thread_m_axi_imatrix_AWADDR() {
-    m_axi_imatrix_AWADDR = ap_const_lv32_0;
+    m_axi_imatrix_AWADDR = ap_const_lv64_0;
 }
 
 void dataflow_in_loop::thread_m_axi_imatrix_AWBURST() {
@@ -3555,7 +3556,7 @@ void dataflow_in_loop::thread_m_axi_imatrix_WVALID() {
 }
 
 void dataflow_in_loop::thread_m_axi_omatrix_ARADDR() {
-    m_axi_omatrix_ARADDR = ap_const_lv32_0;
+    m_axi_omatrix_ARADDR = ap_const_lv64_0;
 }
 
 void dataflow_in_loop::thread_m_axi_omatrix_ARBURST() {

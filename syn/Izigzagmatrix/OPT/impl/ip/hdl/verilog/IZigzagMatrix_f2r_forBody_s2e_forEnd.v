@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="IZigzagMatrix_f2r_forBody_s2e_forEnd,hls_ip_2017_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu9eg-ffvb1156-2-i,HLS_INPUT_CLOCK=3.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.625000,HLS_SYN_LAT=156,HLS_SYN_TPT=none,HLS_SYN_MEM=4,HLS_SYN_DSP=0,HLS_SYN_FF=3697,HLS_SYN_LUT=4025}" *)
+(* CORE_GENERATION_INFO="IZigzagMatrix_f2r_forBody_s2e_forEnd,hls_ip_2017_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu9eg-ffvb1156-2-i,HLS_INPUT_CLOCK=3.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.625000,HLS_SYN_LAT=156,HLS_SYN_TPT=none,HLS_SYN_MEM=4,HLS_SYN_DSP=0,HLS_SYN_FF=4399,HLS_SYN_LUT=4761}" *)
 
 module IZigzagMatrix_f2r_forBody_s2e_forEnd (
         s_axi_BUS_CTRL_AWVALID,
@@ -123,11 +123,11 @@ module IZigzagMatrix_f2r_forBody_s2e_forEnd (
 );
 
 parameter    C_S_AXI_BUS_CTRL_DATA_WIDTH = 32;
-parameter    C_S_AXI_BUS_CTRL_ADDR_WIDTH = 5;
+parameter    C_S_AXI_BUS_CTRL_ADDR_WIDTH = 6;
 parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_S_AXI_ADDR_WIDTH = 32;
 parameter    C_M_AXI_BUS_SRC_ID_WIDTH = 1;
-parameter    C_M_AXI_BUS_SRC_ADDR_WIDTH = 32;
+parameter    C_M_AXI_BUS_SRC_ADDR_WIDTH = 64;
 parameter    C_M_AXI_BUS_SRC_DATA_WIDTH = 32;
 parameter    C_M_AXI_BUS_SRC_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_BUS_SRC_ARUSER_WIDTH = 1;
@@ -138,7 +138,7 @@ parameter    C_M_AXI_BUS_SRC_USER_VALUE = 0;
 parameter    C_M_AXI_BUS_SRC_PROT_VALUE = 0;
 parameter    C_M_AXI_BUS_SRC_CACHE_VALUE = 3;
 parameter    C_M_AXI_ID_WIDTH = 1;
-parameter    C_M_AXI_ADDR_WIDTH = 32;
+parameter    C_M_AXI_ADDR_WIDTH = 64;
 parameter    C_M_AXI_DATA_WIDTH = 32;
 parameter    C_M_AXI_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_ARUSER_WIDTH = 1;
@@ -146,7 +146,7 @@ parameter    C_M_AXI_WUSER_WIDTH = 1;
 parameter    C_M_AXI_RUSER_WIDTH = 1;
 parameter    C_M_AXI_BUSER_WIDTH = 1;
 parameter    C_M_AXI_BUS_DST_ID_WIDTH = 1;
-parameter    C_M_AXI_BUS_DST_ADDR_WIDTH = 32;
+parameter    C_M_AXI_BUS_DST_ADDR_WIDTH = 64;
 parameter    C_M_AXI_BUS_DST_DATA_WIDTH = 32;
 parameter    C_M_AXI_BUS_DST_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_BUS_DST_ARUSER_WIDTH = 1;
@@ -279,8 +279,8 @@ wire    ap_start;
 reg    ap_ready;
 reg    ap_done;
 wire    ap_idle;
-wire   [31:0] imatrix;
-wire   [31:0] omatrix;
+wire   [63:0] imatrix;
+wire   [63:0] omatrix;
 wire    BUS_SRC_AWREADY;
 wire    BUS_SRC_WREADY;
 wire    BUS_SRC_ARREADY;
@@ -308,7 +308,7 @@ wire   [1:0] BUS_DST_BRESP;
 wire   [0:0] BUS_DST_BID;
 wire   [0:0] BUS_DST_BUSER;
 wire    dataflow_in_loop_U0_m_axi_imatrix_AWVALID;
-wire   [31:0] dataflow_in_loop_U0_m_axi_imatrix_AWADDR;
+wire   [63:0] dataflow_in_loop_U0_m_axi_imatrix_AWADDR;
 wire   [0:0] dataflow_in_loop_U0_m_axi_imatrix_AWID;
 wire   [31:0] dataflow_in_loop_U0_m_axi_imatrix_AWLEN;
 wire   [2:0] dataflow_in_loop_U0_m_axi_imatrix_AWSIZE;
@@ -326,7 +326,7 @@ wire    dataflow_in_loop_U0_m_axi_imatrix_WLAST;
 wire   [0:0] dataflow_in_loop_U0_m_axi_imatrix_WID;
 wire   [0:0] dataflow_in_loop_U0_m_axi_imatrix_WUSER;
 wire    dataflow_in_loop_U0_m_axi_imatrix_ARVALID;
-wire   [31:0] dataflow_in_loop_U0_m_axi_imatrix_ARADDR;
+wire   [63:0] dataflow_in_loop_U0_m_axi_imatrix_ARADDR;
 wire   [0:0] dataflow_in_loop_U0_m_axi_imatrix_ARID;
 wire   [31:0] dataflow_in_loop_U0_m_axi_imatrix_ARLEN;
 wire   [2:0] dataflow_in_loop_U0_m_axi_imatrix_ARSIZE;
@@ -339,9 +339,9 @@ wire   [3:0] dataflow_in_loop_U0_m_axi_imatrix_ARREGION;
 wire   [0:0] dataflow_in_loop_U0_m_axi_imatrix_ARUSER;
 wire    dataflow_in_loop_U0_m_axi_imatrix_RREADY;
 wire    dataflow_in_loop_U0_m_axi_imatrix_BREADY;
-wire   [29:0] dataflow_in_loop_U0_imatrix_offset;
+wire   [61:0] dataflow_in_loop_U0_imatrix_offset;
 wire    dataflow_in_loop_U0_m_axi_omatrix_AWVALID;
-wire   [31:0] dataflow_in_loop_U0_m_axi_omatrix_AWADDR;
+wire   [63:0] dataflow_in_loop_U0_m_axi_omatrix_AWADDR;
 wire   [0:0] dataflow_in_loop_U0_m_axi_omatrix_AWID;
 wire   [31:0] dataflow_in_loop_U0_m_axi_omatrix_AWLEN;
 wire   [2:0] dataflow_in_loop_U0_m_axi_omatrix_AWSIZE;
@@ -359,7 +359,7 @@ wire    dataflow_in_loop_U0_m_axi_omatrix_WLAST;
 wire   [0:0] dataflow_in_loop_U0_m_axi_omatrix_WID;
 wire   [0:0] dataflow_in_loop_U0_m_axi_omatrix_WUSER;
 wire    dataflow_in_loop_U0_m_axi_omatrix_ARVALID;
-wire   [31:0] dataflow_in_loop_U0_m_axi_omatrix_ARADDR;
+wire   [63:0] dataflow_in_loop_U0_m_axi_omatrix_ARADDR;
 wire   [0:0] dataflow_in_loop_U0_m_axi_omatrix_ARID;
 wire   [31:0] dataflow_in_loop_U0_m_axi_omatrix_ARLEN;
 wire   [2:0] dataflow_in_loop_U0_m_axi_omatrix_ARSIZE;
@@ -372,7 +372,7 @@ wire   [3:0] dataflow_in_loop_U0_m_axi_omatrix_ARREGION;
 wire   [0:0] dataflow_in_loop_U0_m_axi_omatrix_ARUSER;
 wire    dataflow_in_loop_U0_m_axi_omatrix_RREADY;
 wire    dataflow_in_loop_U0_m_axi_omatrix_BREADY;
-wire   [29:0] dataflow_in_loop_U0_omatrix_offset;
+wire   [61:0] dataflow_in_loop_U0_omatrix_offset;
 wire    dataflow_in_loop_U0_ap_done;
 reg    dataflow_in_loop_U0_ap_start;
 wire    dataflow_in_loop_U0_ap_ready;
@@ -431,7 +431,7 @@ IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi_U(
 
 IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi #(
     .USER_DW( 32 ),
-    .USER_AW( 32 ),
+    .USER_AW( 64 ),
     .USER_MAXREQS( 5 ),
     .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 16 ),
@@ -519,7 +519,7 @@ IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi_U(
     .I_RLAST(BUS_SRC_RLAST),
     .I_AWVALID(1'b0),
     .I_AWREADY(BUS_SRC_AWREADY),
-    .I_AWADDR(32'd0),
+    .I_AWADDR(64'd0),
     .I_AWID(1'd0),
     .I_AWLEN(32'd0),
     .I_AWSIZE(3'd0),
@@ -546,7 +546,7 @@ IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi_U(
 
 IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi #(
     .USER_DW( 32 ),
-    .USER_AW( 32 ),
+    .USER_AW( 64 ),
     .USER_MAXREQS( 5 ),
     .NUM_READ_OUTSTANDING( 16 ),
     .NUM_WRITE_OUTSTANDING( 16 ),
@@ -614,7 +614,7 @@ IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi_U(
     .ACLK_EN(1'b1),
     .I_ARVALID(1'b0),
     .I_ARREADY(BUS_DST_ARREADY),
-    .I_ARADDR(32'd0),
+    .I_ARADDR(64'd0),
     .I_ARID(1'd0),
     .I_ARLEN(32'd0),
     .I_ARSIZE(3'd0),
@@ -851,9 +851,9 @@ assign ap_sync_ready = dataflow_in_loop_U0_ap_ready;
 
 assign dataflow_in_loop_U0_ap_continue = 1'b1;
 
-assign dataflow_in_loop_U0_imatrix_offset = {{imatrix[31:2]}};
+assign dataflow_in_loop_U0_imatrix_offset = {{imatrix[63:2]}};
 
-assign dataflow_in_loop_U0_omatrix_offset = {{omatrix[31:2]}};
+assign dataflow_in_loop_U0_omatrix_offset = {{omatrix[63:2]}};
 
 assign dataflow_in_loop_U0_start_full_n = 1'b1;
 

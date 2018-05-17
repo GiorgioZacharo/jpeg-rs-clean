@@ -25,12 +25,6 @@ BEGIN DRIVER
 END
 
 BEGIN DRIVER
- PARAMETER DRIVER_NAME = decode_start_f2r_vectorPh_s2e_forBody96Preheader
- PARAMETER DRIVER_VER = 1.0
- PARAMETER HW_INSTANCE = decode_start_f2r_vectorPh_s2e_forBody96Preheader_0
-END
-
-BEGIN DRIVER
  PARAMETER DRIVER_NAME = scugic
  PARAMETER DRIVER_VER = 3.8
  PARAMETER HW_INSTANCE = psu_acpu_gic
@@ -688,6 +682,12 @@ BEGIN DRIVER
  PARAMETER DRIVER_NAME = wdtps
  PARAMETER DRIVER_VER = 3.0
  PARAMETER HW_INSTANCE = psu_wdt_1
+END
+
+BEGIN DRIVER
+ PARAMETER DRIVER_NAME = decode_start_f2r_vectorPh_s2e_forBody96Preheader
+ PARAMETER DRIVER_VER = 1.0
+ PARAMETER HW_INSTANCE = decode_start_f2r_vectorPh_s2e_forBody96Preheader_1
 END
 
 

@@ -11,9 +11,9 @@ use IEEE.numeric_std.all;
 
 entity IZigzagMatrix_f2r_forBody_s2e_forEnd is
 generic (
-    C_S_AXI_BUS_CTRL_ADDR_WIDTH : INTEGER := 5;
+    C_S_AXI_BUS_CTRL_ADDR_WIDTH : INTEGER := 6;
     C_S_AXI_BUS_CTRL_DATA_WIDTH : INTEGER := 32;
-    C_M_AXI_BUS_SRC_ADDR_WIDTH : INTEGER := 32;
+    C_M_AXI_BUS_SRC_ADDR_WIDTH : INTEGER := 64;
     C_M_AXI_BUS_SRC_ID_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_SRC_AWUSER_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_SRC_DATA_WIDTH : INTEGER := 32;
@@ -21,7 +21,7 @@ generic (
     C_M_AXI_BUS_SRC_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_SRC_RUSER_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_SRC_BUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_BUS_DST_ADDR_WIDTH : INTEGER := 32;
+    C_M_AXI_BUS_DST_ADDR_WIDTH : INTEGER := 64;
     C_M_AXI_BUS_DST_ID_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_DST_AWUSER_WIDTH : INTEGER := 1;
     C_M_AXI_BUS_DST_DATA_WIDTH : INTEGER := 32;
@@ -152,13 +152,13 @@ end;
 architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "IZigzagMatrix_f2r_forBody_s2e_forEnd,hls_ip_2017_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu9eg-ffvb1156-2-i,HLS_INPUT_CLOCK=3.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.625000,HLS_SYN_LAT=156,HLS_SYN_TPT=none,HLS_SYN_MEM=4,HLS_SYN_DSP=0,HLS_SYN_FF=3697,HLS_SYN_LUT=4025}";
+    "IZigzagMatrix_f2r_forBody_s2e_forEnd,hls_ip_2017_4,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu9eg-ffvb1156-2-i,HLS_INPUT_CLOCK=3.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.625000,HLS_SYN_LAT=156,HLS_SYN_TPT=none,HLS_SYN_MEM=4,HLS_SYN_DSP=0,HLS_SYN_FF=4399,HLS_SYN_LUT=4761}";
     constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
     constant C_S_AXI_WSTRB_WIDTH : INTEGER range 63 downto 0 := 4;
     constant C_S_AXI_ADDR_WIDTH : INTEGER range 63 downto 0 := 20;
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_M_AXI_ID_WIDTH : INTEGER range 63 downto 0 := 1;
-    constant C_M_AXI_ADDR_WIDTH : INTEGER range 63 downto 0 := 20;
+    constant C_M_AXI_ADDR_WIDTH : INTEGER range 63 downto 0 := 40;
     constant C_M_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
     constant C_M_AXI_WSTRB_WIDTH : INTEGER range 63 downto 0 := 4;
     constant C_M_AXI_AWUSER_WIDTH : INTEGER range 63 downto 0 := 1;
@@ -167,16 +167,18 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
     constant C_M_AXI_RUSER_WIDTH : INTEGER range 63 downto 0 := 1;
     constant C_M_AXI_BUSER_WIDTH : INTEGER range 63 downto 0 := 1;
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
-    constant ap_const_lv32_1F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000011111";
+    constant ap_const_lv64_2 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000010";
+    constant ap_const_lv64_3F : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000111111";
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_lv2_2 : STD_LOGIC_VECTOR (1 downto 0) := "10";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv2_1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
-    constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
+    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv64_1 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000001";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
+    constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
+    constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv3_1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
@@ -187,8 +189,8 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
     signal ap_ready : STD_LOGIC;
     signal ap_done : STD_LOGIC;
     signal ap_idle : STD_LOGIC;
-    signal imatrix : STD_LOGIC_VECTOR (31 downto 0);
-    signal omatrix : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix : STD_LOGIC_VECTOR (63 downto 0);
+    signal omatrix : STD_LOGIC_VECTOR (63 downto 0);
     signal BUS_SRC_AWREADY : STD_LOGIC;
     signal BUS_SRC_WREADY : STD_LOGIC;
     signal BUS_SRC_ARREADY : STD_LOGIC;
@@ -216,7 +218,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
     signal BUS_DST_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal BUS_DST_BUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_AWVALID : STD_LOGIC;
-    signal dataflow_in_loop_U0_m_axi_imatrix_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_U0_m_axi_imatrix_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_AWID : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -234,7 +236,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
     signal dataflow_in_loop_U0_m_axi_imatrix_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_WUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_ARVALID : STD_LOGIC;
-    signal dataflow_in_loop_U0_m_axi_imatrix_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_U0_m_axi_imatrix_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_ARID : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -247,9 +249,9 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
     signal dataflow_in_loop_U0_m_axi_imatrix_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_imatrix_RREADY : STD_LOGIC;
     signal dataflow_in_loop_U0_m_axi_imatrix_BREADY : STD_LOGIC;
-    signal dataflow_in_loop_U0_imatrix_offset : STD_LOGIC_VECTOR (29 downto 0);
+    signal dataflow_in_loop_U0_imatrix_offset : STD_LOGIC_VECTOR (61 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_AWVALID : STD_LOGIC;
-    signal dataflow_in_loop_U0_m_axi_omatrix_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_U0_m_axi_omatrix_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_AWID : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -267,7 +269,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
     signal dataflow_in_loop_U0_m_axi_omatrix_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_WUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_ARVALID : STD_LOGIC;
-    signal dataflow_in_loop_U0_m_axi_omatrix_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_U0_m_axi_omatrix_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_ARID : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -280,7 +282,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
     signal dataflow_in_loop_U0_m_axi_omatrix_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal dataflow_in_loop_U0_m_axi_omatrix_RREADY : STD_LOGIC;
     signal dataflow_in_loop_U0_m_axi_omatrix_BREADY : STD_LOGIC;
-    signal dataflow_in_loop_U0_omatrix_offset : STD_LOGIC_VECTOR (29 downto 0);
+    signal dataflow_in_loop_U0_omatrix_offset : STD_LOGIC_VECTOR (61 downto 0);
     signal dataflow_in_loop_U0_ap_done : STD_LOGIC;
     signal dataflow_in_loop_U0_ap_start : STD_LOGIC;
     signal dataflow_in_loop_U0_ap_ready : STD_LOGIC;
@@ -303,7 +305,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         i_0_i_i : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_imatrix_AWVALID : OUT STD_LOGIC;
         m_axi_imatrix_AWREADY : IN STD_LOGIC;
-        m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_imatrix_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_imatrix_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -323,7 +325,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         m_axi_imatrix_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_ARVALID : OUT STD_LOGIC;
         m_axi_imatrix_ARREADY : IN STD_LOGIC;
-        m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_imatrix_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_imatrix_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -346,10 +348,10 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         m_axi_imatrix_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_imatrix_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        imatrix_offset : IN STD_LOGIC_VECTOR (29 downto 0);
+        imatrix_offset : IN STD_LOGIC_VECTOR (61 downto 0);
         m_axi_omatrix_AWVALID : OUT STD_LOGIC;
         m_axi_omatrix_AWREADY : IN STD_LOGIC;
-        m_axi_omatrix_AWADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_omatrix_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_omatrix_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_omatrix_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -369,7 +371,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         m_axi_omatrix_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_ARVALID : OUT STD_LOGIC;
         m_axi_omatrix_ARREADY : IN STD_LOGIC;
-        m_axi_omatrix_ARADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_omatrix_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_omatrix_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_omatrix_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -392,7 +394,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         m_axi_omatrix_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_omatrix_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        omatrix_offset : IN STD_LOGIC_VECTOR (29 downto 0);
+        omatrix_offset : IN STD_LOGIC_VECTOR (61 downto 0);
         i_0_i_i_ap_vld : IN STD_LOGIC;
         imatrix_offset_ap_vld : IN STD_LOGIC;
         omatrix_offset_ap_vld : IN STD_LOGIC;
@@ -434,8 +436,8 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         ap_ready : IN STD_LOGIC;
         ap_done : IN STD_LOGIC;
         ap_idle : IN STD_LOGIC;
-        imatrix : OUT STD_LOGIC_VECTOR (31 downto 0);
-        omatrix : OUT STD_LOGIC_VECTOR (31 downto 0) );
+        imatrix : OUT STD_LOGIC_VECTOR (63 downto 0);
+        omatrix : OUT STD_LOGIC_VECTOR (63 downto 0) );
     end component;
 
 
@@ -510,7 +512,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         ACLK_EN : IN STD_LOGIC;
         I_ARVALID : IN STD_LOGIC;
         I_ARREADY : OUT STD_LOGIC;
-        I_ARADDR : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_ARADDR : IN STD_LOGIC_VECTOR (63 downto 0);
         I_ARID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
         I_ARSIZE : IN STD_LOGIC_VECTOR (2 downto 0);
@@ -530,7 +532,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         I_RLAST : OUT STD_LOGIC;
         I_AWVALID : IN STD_LOGIC;
         I_AWREADY : OUT STD_LOGIC;
-        I_AWADDR : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
         I_AWID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
         I_AWSIZE : IN STD_LOGIC_VECTOR (2 downto 0);
@@ -627,7 +629,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         ACLK_EN : IN STD_LOGIC;
         I_ARVALID : IN STD_LOGIC;
         I_ARREADY : OUT STD_LOGIC;
-        I_ARADDR : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_ARADDR : IN STD_LOGIC_VECTOR (63 downto 0);
         I_ARID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
         I_ARSIZE : IN STD_LOGIC_VECTOR (2 downto 0);
@@ -647,7 +649,7 @@ architecture behav of IZigzagMatrix_f2r_forBody_s2e_forEnd is
         I_RLAST : OUT STD_LOGIC;
         I_AWVALID : IN STD_LOGIC;
         I_AWREADY : OUT STD_LOGIC;
-        I_AWADDR : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
         I_AWID : IN STD_LOGIC_VECTOR (0 downto 0);
         I_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
         I_AWSIZE : IN STD_LOGIC_VECTOR (2 downto 0);
@@ -711,7 +713,7 @@ begin
     IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi_U : component IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi
     generic map (
         USER_DW => 32,
-        USER_AW => 32,
+        USER_AW => 64,
         USER_MAXREQS => 5,
         NUM_READ_OUTSTANDING => 16,
         NUM_WRITE_OUTSTANDING => 16,
@@ -799,7 +801,7 @@ begin
         I_RLAST => BUS_SRC_RLAST,
         I_AWVALID => ap_const_logic_0,
         I_AWREADY => BUS_SRC_AWREADY,
-        I_AWADDR => ap_const_lv32_0,
+        I_AWADDR => ap_const_lv64_0,
         I_AWID => ap_const_lv1_0,
         I_AWLEN => ap_const_lv32_0,
         I_AWSIZE => ap_const_lv3_0,
@@ -826,7 +828,7 @@ begin
     IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi_U : component IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi
     generic map (
         USER_DW => 32,
-        USER_AW => 32,
+        USER_AW => 64,
         USER_MAXREQS => 5,
         NUM_READ_OUTSTANDING => 16,
         NUM_WRITE_OUTSTANDING => 16,
@@ -894,7 +896,7 @@ begin
         ACLK_EN => ap_const_logic_1,
         I_ARVALID => ap_const_logic_0,
         I_ARREADY => BUS_DST_ARREADY,
-        I_ARADDR => ap_const_lv32_0,
+        I_ARADDR => ap_const_lv64_0,
         I_ARID => ap_const_lv1_0,
         I_ARLEN => ap_const_lv32_0,
         I_ARSIZE => ap_const_lv3_0,
@@ -1152,8 +1154,8 @@ begin
         end if; 
     end process;
 
-    dataflow_in_loop_U0_imatrix_offset <= imatrix(31 downto 2);
-    dataflow_in_loop_U0_omatrix_offset <= omatrix(31 downto 2);
+    dataflow_in_loop_U0_imatrix_offset <= imatrix(63 downto 2);
+    dataflow_in_loop_U0_omatrix_offset <= omatrix(63 downto 2);
     dataflow_in_loop_U0_start_full_n <= ap_const_logic_1;
     dataflow_in_loop_U0_start_write <= ap_const_logic_0;
 end behav;

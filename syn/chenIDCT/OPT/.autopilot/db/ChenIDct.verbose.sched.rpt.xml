@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'ChenIDct'" level="0">
-<item name = "Date">Mon Apr 30 18:37:52 2018
+<item name = "Date">Wed May 16 16:12:34 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">chenIDCT</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">723, 723, 723, 723, none</column>
+<column name="">584, 584, 584, 584, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,12 +35,15 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">280, 280, 35, -, -, 8, no</column>
-<column name="- Loop 2">280, 280, 35, -, -, 8, no</column>
-<column name="- Loop 3">150, 150, 75, -, -, 2, no</column>
-<column name=" + memcpy.inp1_buf.y">33, 33, 3, 1, 1, 32, yes</column>
-<column name=" + Loop 3.2">4, 4, 2, -, -, 2, no</column>
-<column name=" + memcpy.y.out1_buf.gep">32, 32, 2, 1, 1, 32, yes</column>
+<column name="- memcpy.inp1_buf.x">65, 65, 3, 1, 1, 64, yes</column>
+<column name="- memcpy.inp2_buf.y">65, 65, 3, 1, 1, 64, yes</column>
+<column name="- Loop 3">104, 104, 13, -, -, 8, no</column>
+<column name="- Loop 4">96, 96, 12, -, -, 8, no</column>
+<column name="- memcpy.y.inp2_buf.gep">65, 65, 3, 1, 1, 64, yes</column>
+<column name="- Loop 6">152, 152, 76, -, -, 2, no</column>
+<column name=" + memcpy.inp3_buf.y">34, 34, 3, 1, 1, 32, yes</column>
+<column name=" + Loop 6.2">4, 4, 2, -, -, 2, no</column>
+<column name=" + memcpy.y.inp3_buf.gep">32, 32, 2, 1, 1, 32, yes</column>
 </table>
 </item>
 </section>

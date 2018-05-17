@@ -18,7 +18,7 @@
     "ClockPeriod": "3",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "723",
+    "Latency": "584",
     "Uncertainty": "0.375"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 3.000 [get_ports ap_clk]"]},
@@ -39,6 +39,8 @@
     "Vhdl": [
       "impl\/vhdl\/ChenIDct_BUS_CTRL_s_axi.vhd",
       "impl\/vhdl\/ChenIDct_BUS_SRC_DST_m_axi.vhd",
+      "impl\/vhdl\/ChenIDct_inp1_buf.vhd",
+      "impl\/vhdl\/ChenIDct_inp2_buf.vhd",
       "impl\/vhdl\/ChenIDct_mul_8ns_bkb.vhd",
       "impl\/vhdl\/ChenIDct_mul_9ns_eOg.vhd",
       "impl\/vhdl\/ChenIDct_mul_10nsdEe.vhd",
@@ -49,6 +51,8 @@
     "Verilog": [
       "impl\/verilog\/ChenIDct_BUS_CTRL_s_axi.v",
       "impl\/verilog\/ChenIDct_BUS_SRC_DST_m_axi.v",
+      "impl\/verilog\/ChenIDct_inp1_buf.v",
+      "impl\/verilog\/ChenIDct_inp2_buf.v",
       "impl\/verilog\/ChenIDct_mul_8ns_bkb.v",
       "impl\/verilog\/ChenIDct_mul_9ns_eOg.v",
       "impl\/verilog\/ChenIDct_mul_10nsdEe.v",
@@ -852,10 +856,10 @@
     "Hierarchy": {"ModuleName": "ChenIDct"},
     "Metrics": {"ChenIDct": {
         "Latency": {
-          "LatencyBest": "723",
-          "LatencyAvg": "723",
-          "LatencyWorst": "723",
-          "PipelineII": "724",
+          "LatencyBest": "584",
+          "LatencyAvg": "584",
+          "LatencyWorst": "584",
+          "PipelineII": "585",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -866,42 +870,63 @@
         },
         "Loops": [
           {
-            "Name": "Loop 1",
-            "TripCount": "8",
-            "Latency": "280",
-            "PipelineII": "",
-            "PipelineDepth": "35"
+            "Name": "memcpy.inp1_buf.x",
+            "TripCount": "64",
+            "Latency": "65",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
           },
           {
-            "Name": "Loop 2",
-            "TripCount": "8",
-            "Latency": "280",
-            "PipelineII": "",
-            "PipelineDepth": "35"
+            "Name": "memcpy.inp2_buf.y",
+            "TripCount": "64",
+            "Latency": "65",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
           },
           {
             "Name": "Loop 3",
-            "TripCount": "2",
-            "Latency": "150",
+            "TripCount": "8",
+            "Latency": "104",
             "PipelineII": "",
-            "PipelineDepth": "75",
+            "PipelineDepth": "13"
+          },
+          {
+            "Name": "Loop 4",
+            "TripCount": "8",
+            "Latency": "96",
+            "PipelineII": "",
+            "PipelineDepth": "12"
+          },
+          {
+            "Name": "memcpy.y.inp2_buf.gep",
+            "TripCount": "64",
+            "Latency": "65",
+            "PipelineII": "1",
+            "PipelineDepth": "3"
+          },
+          {
+            "Name": "Loop 6",
+            "TripCount": "2",
+            "Latency": "152",
+            "PipelineII": "",
+            "PipelineDepth": "76",
             "Loops": [
               {
-                "Name": "memcpy.inp1_buf.y",
+                "Name": "memcpy.inp3_buf.y",
                 "TripCount": "32",
-                "Latency": "33",
+                "Latency": "34",
                 "PipelineII": "1",
                 "PipelineDepth": "3"
               },
               {
-                "Name": "Loop 3.2",
+                "Name": "Loop 6.2",
                 "TripCount": "2",
                 "Latency": "4",
                 "PipelineII": "",
                 "PipelineDepth": "2"
               },
               {
-                "Name": "memcpy.y.out1_buf.gep",
+                "Name": "memcpy.y.inp3_buf.gep",
                 "TripCount": "32",
                 "Latency": "32",
                 "PipelineII": "1",
@@ -911,17 +936,17 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "2",
+          "BRAM_18K": "6",
           "DSP48E": "128",
-          "FF": "13950",
-          "LUT": "12544",
+          "FF": "13222",
+          "LUT": "12141",
           "URAM": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-04-30 18:37:57 EDT",
+    "Time": "2018-05-16 16:12:39 EDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

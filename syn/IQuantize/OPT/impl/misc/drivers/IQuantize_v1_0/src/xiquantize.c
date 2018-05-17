@@ -76,37 +76,41 @@ void XIquantize_DisableAutoRestart(XIquantize *InstancePtr) {
     XIquantize_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_AP_CTRL, 0);
 }
 
-void XIquantize_Set_matrix(XIquantize *InstancePtr, u32 Data) {
+void XIquantize_Set_matrix(XIquantize *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XIquantize_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_MATRIX_DATA, Data);
+    XIquantize_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_MATRIX_DATA, (u32)(Data));
+    XIquantize_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_MATRIX_DATA + 4, (u32)(Data >> 32));
 }
 
-u32 XIquantize_Get_matrix(XIquantize *InstancePtr) {
-    u32 Data;
+u64 XIquantize_Get_matrix(XIquantize *InstancePtr) {
+    u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIquantize_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_MATRIX_DATA);
+    Data += (u64)XIquantize_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_MATRIX_DATA + 4) << 32;
     return Data;
 }
 
-void XIquantize_Set_qmatrix(XIquantize *InstancePtr, u32 Data) {
+void XIquantize_Set_qmatrix(XIquantize *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XIquantize_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_QMATRIX_DATA, Data);
+    XIquantize_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_QMATRIX_DATA, (u32)(Data));
+    XIquantize_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_QMATRIX_DATA + 4, (u32)(Data >> 32));
 }
 
-u32 XIquantize_Get_qmatrix(XIquantize *InstancePtr) {
-    u32 Data;
+u64 XIquantize_Get_qmatrix(XIquantize *InstancePtr) {
+    u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIquantize_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_QMATRIX_DATA);
+    Data += (u64)XIquantize_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIQUANTIZE_BUS_CTRL_ADDR_QMATRIX_DATA + 4) << 32;
     return Data;
 }
 

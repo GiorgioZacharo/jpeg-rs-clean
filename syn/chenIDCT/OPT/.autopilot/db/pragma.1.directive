@@ -65,15 +65,7 @@
 </directive>
 <directive functionLabel="" functionName="ChenIDct" label="">
 <pragma name="ARRAY_PARTITION">
-<option name="variable" positionalBoolean="4" value="inp1_buf"/>
-<option name="cyclic" positionalBoolean="type" value=""/>
-<option name="factor" value="16"/>
-<option name="dim" value="1"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="ChenIDct" label="">
-<pragma name="ARRAY_PARTITION">
-<option name="variable" positionalBoolean="4" value="out1_buf"/>
+<option name="variable" positionalBoolean="4" value="inp3_buf"/>
 <option name="cyclic" positionalBoolean="type" value=""/>
 <option name="factor" value="16"/>
 <option name="dim" value="1"/>

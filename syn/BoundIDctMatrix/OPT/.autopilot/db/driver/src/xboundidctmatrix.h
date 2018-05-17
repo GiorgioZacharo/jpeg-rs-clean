@@ -89,8 +89,8 @@ u32 XBoundidctmatrix_IsReady(XBoundidctmatrix *InstancePtr);
 void XBoundidctmatrix_EnableAutoRestart(XBoundidctmatrix *InstancePtr);
 void XBoundidctmatrix_DisableAutoRestart(XBoundidctmatrix *InstancePtr);
 
-void XBoundidctmatrix_Set_matrix(XBoundidctmatrix *InstancePtr, u32 Data);
-u32 XBoundidctmatrix_Get_matrix(XBoundidctmatrix *InstancePtr);
+void XBoundidctmatrix_Set_matrix(XBoundidctmatrix *InstancePtr, u64 Data);
+u64 XBoundidctmatrix_Get_matrix(XBoundidctmatrix *InstancePtr);
 void XBoundidctmatrix_Set_Bound(XBoundidctmatrix *InstancePtr, u32 Data);
 u32 XBoundidctmatrix_Get_Bound(XBoundidctmatrix *InstancePtr);
 

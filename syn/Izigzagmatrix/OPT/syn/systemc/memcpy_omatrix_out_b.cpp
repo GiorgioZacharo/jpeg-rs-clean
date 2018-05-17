@@ -24,6 +24,7 @@ const sc_lv<8> memcpy_omatrix_out_b::ap_ST_fsm_state9 = "1000000";
 const sc_lv<8> memcpy_omatrix_out_b::ap_ST_fsm_state10 = "10000000";
 const sc_lv<32> memcpy_omatrix_out_b::ap_const_lv32_0 = "00000000000000000000000000000000";
 const bool memcpy_omatrix_out_b::ap_const_boolean_1 = true;
+const sc_lv<64> memcpy_omatrix_out_b::ap_const_lv64_0 = "0000000000000000000000000000000000000000000000000000000000000000";
 const sc_lv<1> memcpy_omatrix_out_b::ap_const_lv1_0 = "0";
 const sc_lv<3> memcpy_omatrix_out_b::ap_const_lv3_0 = "000";
 const sc_lv<2> memcpy_omatrix_out_b::ap_const_lv2_0 = "00";
@@ -60,8 +61,8 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     IZigzagMatrix_f2rcud_U58->din13(out_buf_13_q0);
     IZigzagMatrix_f2rcud_U58->din14(out_buf_14_q0);
     IZigzagMatrix_f2rcud_U58->din15(out_buf_15_q0);
-    IZigzagMatrix_f2rcud_U58->din16(tmp_reg_502);
-    IZigzagMatrix_f2rcud_U58->dout(tmp_i_i_fu_445_p18);
+    IZigzagMatrix_f2rcud_U58->din16(tmp_reg_473);
+    IZigzagMatrix_f2rcud_U58->dout(tmp_i_i_fu_421_p18);
 
     SC_METHOD(thread_ap_clk_no_reset_);
     dont_initialize();
@@ -102,13 +103,13 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     SC_METHOD(thread_ap_block_state4_pp0_stage0_iter1);
 
     SC_METHOD(thread_ap_block_state5_io);
-    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493 );
+    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464 );
     sensitive << ( ap_sig_ioackin_m_axi_omatrix_WREADY );
 
     SC_METHOD(thread_ap_block_state5_pp0_stage0_iter2);
 
     SC_METHOD(thread_ap_condition_pp0_exit_iter0_state3);
-    sensitive << ( exitcond_i_i_i_i_i_fu_399_p2 );
+    sensitive << ( exitcond_i_i_i_i_i_fu_375_p2 );
 
     SC_METHOD(thread_ap_done);
     sensitive << ( ap_done_reg );
@@ -139,8 +140,8 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( m_axi_omatrix_WREADY );
     sensitive << ( ap_reg_ioackin_m_axi_omatrix_WREADY );
 
-    SC_METHOD(thread_exitcond_i_i_i_i_i_fu_399_p2);
-    sensitive << ( indvar_i_i_i_i_i_reg_356 );
+    SC_METHOD(thread_exitcond_i_i_i_i_i_fu_375_p2);
+    sensitive << ( indvar_i_i_i_i_i_reg_332 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_block_pp0_stage0_11001 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
@@ -158,8 +159,8 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( omatrix_offset_empty_n );
     sensitive << ( i_0_i_i_c_empty_n );
 
-    SC_METHOD(thread_indvar_next_i_i_i_i_s_fu_405_p2);
-    sensitive << ( indvar_i_i_i_i_i_reg_356 );
+    SC_METHOD(thread_indvar_next_i_i_i_i_s_fu_381_p2);
+    sensitive << ( indvar_i_i_i_i_i_reg_332 );
 
     SC_METHOD(thread_m_axi_omatrix_ARADDR);
 
@@ -187,7 +188,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
 
     SC_METHOD(thread_m_axi_omatrix_AWADDR);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( sum_cast_i_i_fu_389_p1 );
+    sensitive << ( omatrix_addr_reg_458 );
     sensitive << ( ap_reg_ioackin_m_axi_omatrix_AWREADY );
 
     SC_METHOD(thread_m_axi_omatrix_AWBURST);
@@ -224,8 +225,8 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
 
     SC_METHOD(thread_m_axi_omatrix_WDATA);
     sensitive << ( ap_enable_reg_pp0_iter2 );
-    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493 );
-    sensitive << ( tmp_i_i_reg_587 );
+    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464 );
+    sensitive << ( tmp_i_i_reg_558 );
     sensitive << ( ap_reg_ioackin_m_axi_omatrix_WREADY );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
@@ -235,7 +236,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
 
     SC_METHOD(thread_m_axi_omatrix_WSTRB);
     sensitive << ( ap_enable_reg_pp0_iter2 );
-    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493 );
+    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464 );
     sensitive << ( ap_reg_ioackin_m_axi_omatrix_WREADY );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
@@ -243,17 +244,17 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
 
     SC_METHOD(thread_m_axi_omatrix_WVALID);
     sensitive << ( ap_enable_reg_pp0_iter2 );
-    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493 );
+    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464 );
     sensitive << ( ap_reg_ioackin_m_axi_omatrix_WREADY );
     sensitive << ( ap_block_pp0_stage0_01001 );
 
-    SC_METHOD(thread_newIndex4_i_i_i_i_fu_411_p4);
-    sensitive << ( indvar_i_i_i_i_i_reg_356 );
+    SC_METHOD(thread_newIndex4_i_i_i_i_fu_387_p4);
+    sensitive << ( indvar_i_i_i_i_i_reg_332 );
 
-    SC_METHOD(thread_newIndex5_i_i_i_i_fu_421_p1);
-    sensitive << ( newIndex4_i_i_i_i_fu_411_p4 );
+    SC_METHOD(thread_newIndex5_i_i_i_i_fu_397_p1);
+    sensitive << ( newIndex4_i_i_i_i_fu_387_p4 );
 
-    SC_METHOD(thread_offset_i_i_i_fu_367_p3);
+    SC_METHOD(thread_offset_i_i_i_fu_343_p3);
     sensitive << ( i_0_i_i_c_dout );
 
     SC_METHOD(thread_omatrix_blk_n_AW);
@@ -268,13 +269,16 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( m_axi_omatrix_WREADY );
     sensitive << ( ap_enable_reg_pp0_iter2 );
     sensitive << ( ap_block_pp0_stage0 );
-    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493 );
+    sensitive << ( ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464 );
 
     SC_METHOD(thread_omatrix_offset_blk_n);
     sensitive << ( ap_start );
     sensitive << ( ap_done_reg );
     sensitive << ( ap_CS_fsm_state1 );
     sensitive << ( omatrix_offset_empty_n );
+
+    SC_METHOD(thread_omatrix_offset_cast1_fu_355_p1);
+    sensitive << ( omatrix_offset_dout );
 
     SC_METHOD(thread_omatrix_offset_read);
     sensitive << ( ap_start );
@@ -287,7 +291,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_0_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -298,7 +302,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_10_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -309,7 +313,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_11_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -320,7 +324,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_12_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -331,7 +335,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_13_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -342,7 +346,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_14_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -353,7 +357,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_15_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -364,7 +368,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_1_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -375,7 +379,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_2_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -386,7 +390,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_3_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -397,7 +401,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_4_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -408,7 +412,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_5_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -419,7 +423,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_6_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -430,7 +434,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_7_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -441,7 +445,7 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_8_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
@@ -452,28 +456,25 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_block_pp0_stage0 );
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
-    sensitive << ( newIndex5_i_i_i_i_fu_421_p1 );
+    sensitive << ( newIndex5_i_i_i_i_fu_397_p1 );
 
     SC_METHOD(thread_out_buf_9_ce0);
     sensitive << ( ap_CS_fsm_pp0_stage0 );
     sensitive << ( ap_block_pp0_stage0_11001 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
 
-    SC_METHOD(thread_sext_cast_i_i_fu_379_p1);
-    sensitive << ( omatrix_offset_dout );
+    SC_METHOD(thread_sum_cast_i_i_fu_365_p1);
+    sensitive << ( sum_i_i_fu_359_p2 );
 
-    SC_METHOD(thread_sum_cast_i_i_fu_389_p1);
-    sensitive << ( sum_i_i_reg_482 );
+    SC_METHOD(thread_sum_i_i_fu_359_p2);
+    sensitive << ( omatrix_offset_cast1_fu_355_p1 );
+    sensitive << ( tmp_i_i_cast_i_i_fu_351_p1 );
 
-    SC_METHOD(thread_sum_i_i_fu_383_p2);
-    sensitive << ( tmp_i_i_cast_i_i_fu_375_p1 );
-    sensitive << ( sext_cast_i_i_fu_379_p1 );
+    SC_METHOD(thread_tmp_fu_417_p1);
+    sensitive << ( indvar_i_i_i_i_i_reg_332 );
 
-    SC_METHOD(thread_tmp_fu_441_p1);
-    sensitive << ( indvar_i_i_i_i_i_reg_356 );
-
-    SC_METHOD(thread_tmp_i_i_cast_i_i_fu_375_p1);
-    sensitive << ( offset_i_i_i_fu_367_p3 );
+    SC_METHOD(thread_tmp_i_i_cast_i_i_fu_351_p1);
+    sensitive << ( offset_i_i_i_fu_343_p3 );
 
     SC_METHOD(thread_ap_NS_fsm);
     sensitive << ( ap_start );
@@ -486,9 +487,9 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sensitive << ( ap_CS_fsm_state2 );
     sensitive << ( ap_enable_reg_pp0_iter2 );
     sensitive << ( ap_CS_fsm_state10 );
-    sensitive << ( ap_sig_ioackin_m_axi_omatrix_AWREADY );
-    sensitive << ( exitcond_i_i_i_i_i_fu_399_p2 );
+    sensitive << ( exitcond_i_i_i_i_i_fu_375_p2 );
     sensitive << ( ap_enable_reg_pp0_iter0 );
+    sensitive << ( ap_sig_ioackin_m_axi_omatrix_AWREADY );
     sensitive << ( ap_block_pp0_stage0_subdone );
     sensitive << ( ap_enable_reg_pp0_iter1 );
 
@@ -623,18 +624,16 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sc_trace(mVcdFile, omatrix_blk_n_W, "omatrix_blk_n_W");
     sc_trace(mVcdFile, ap_enable_reg_pp0_iter2, "ap_enable_reg_pp0_iter2");
     sc_trace(mVcdFile, ap_block_pp0_stage0, "ap_block_pp0_stage0");
-    sc_trace(mVcdFile, exitcond_i_i_i_i_i_reg_493, "exitcond_i_i_i_i_i_reg_493");
-    sc_trace(mVcdFile, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493, "ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493");
+    sc_trace(mVcdFile, exitcond_i_i_i_i_i_reg_464, "exitcond_i_i_i_i_i_reg_464");
+    sc_trace(mVcdFile, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464, "ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464");
     sc_trace(mVcdFile, omatrix_blk_n_B, "omatrix_blk_n_B");
     sc_trace(mVcdFile, ap_CS_fsm_state10, "ap_CS_fsm_state10");
     sc_trace(mVcdFile, omatrix_offset_blk_n, "omatrix_offset_blk_n");
     sc_trace(mVcdFile, i_0_i_i_c_blk_n, "i_0_i_i_c_blk_n");
-    sc_trace(mVcdFile, indvar_i_i_i_i_i_reg_356, "indvar_i_i_i_i_i_reg_356");
-    sc_trace(mVcdFile, sum_i_i_fu_383_p2, "sum_i_i_fu_383_p2");
-    sc_trace(mVcdFile, sum_i_i_reg_482, "sum_i_i_reg_482");
+    sc_trace(mVcdFile, indvar_i_i_i_i_i_reg_332, "indvar_i_i_i_i_i_reg_332");
+    sc_trace(mVcdFile, omatrix_addr_reg_458, "omatrix_addr_reg_458");
     sc_trace(mVcdFile, ap_block_state1, "ap_block_state1");
-    sc_trace(mVcdFile, ap_sig_ioackin_m_axi_omatrix_AWREADY, "ap_sig_ioackin_m_axi_omatrix_AWREADY");
-    sc_trace(mVcdFile, exitcond_i_i_i_i_i_fu_399_p2, "exitcond_i_i_i_i_i_fu_399_p2");
+    sc_trace(mVcdFile, exitcond_i_i_i_i_i_fu_375_p2, "exitcond_i_i_i_i_i_fu_375_p2");
     sc_trace(mVcdFile, ap_CS_fsm_pp0_stage0, "ap_CS_fsm_pp0_stage0");
     sc_trace(mVcdFile, ap_block_state3_pp0_stage0_iter0, "ap_block_state3_pp0_stage0_iter0");
     sc_trace(mVcdFile, ap_block_state4_pp0_stage0_iter1, "ap_block_state4_pp0_stage0_iter1");
@@ -642,24 +641,26 @@ memcpy_omatrix_out_b::memcpy_omatrix_out_b(sc_module_name name) : sc_module(name
     sc_trace(mVcdFile, ap_sig_ioackin_m_axi_omatrix_WREADY, "ap_sig_ioackin_m_axi_omatrix_WREADY");
     sc_trace(mVcdFile, ap_block_state5_io, "ap_block_state5_io");
     sc_trace(mVcdFile, ap_block_pp0_stage0_11001, "ap_block_pp0_stage0_11001");
-    sc_trace(mVcdFile, indvar_next_i_i_i_i_s_fu_405_p2, "indvar_next_i_i_i_i_s_fu_405_p2");
+    sc_trace(mVcdFile, indvar_next_i_i_i_i_s_fu_381_p2, "indvar_next_i_i_i_i_s_fu_381_p2");
     sc_trace(mVcdFile, ap_enable_reg_pp0_iter0, "ap_enable_reg_pp0_iter0");
-    sc_trace(mVcdFile, tmp_fu_441_p1, "tmp_fu_441_p1");
-    sc_trace(mVcdFile, tmp_reg_502, "tmp_reg_502");
-    sc_trace(mVcdFile, tmp_i_i_fu_445_p18, "tmp_i_i_fu_445_p18");
-    sc_trace(mVcdFile, tmp_i_i_reg_587, "tmp_i_i_reg_587");
+    sc_trace(mVcdFile, tmp_fu_417_p1, "tmp_fu_417_p1");
+    sc_trace(mVcdFile, tmp_reg_473, "tmp_reg_473");
+    sc_trace(mVcdFile, tmp_i_i_fu_421_p18, "tmp_i_i_fu_421_p18");
+    sc_trace(mVcdFile, tmp_i_i_reg_558, "tmp_i_i_reg_558");
+    sc_trace(mVcdFile, ap_sig_ioackin_m_axi_omatrix_AWREADY, "ap_sig_ioackin_m_axi_omatrix_AWREADY");
     sc_trace(mVcdFile, ap_block_pp0_stage0_subdone, "ap_block_pp0_stage0_subdone");
     sc_trace(mVcdFile, ap_condition_pp0_exit_iter0_state3, "ap_condition_pp0_exit_iter0_state3");
     sc_trace(mVcdFile, ap_enable_reg_pp0_iter1, "ap_enable_reg_pp0_iter1");
-    sc_trace(mVcdFile, newIndex5_i_i_i_i_fu_421_p1, "newIndex5_i_i_i_i_fu_421_p1");
-    sc_trace(mVcdFile, sum_cast_i_i_fu_389_p1, "sum_cast_i_i_fu_389_p1");
+    sc_trace(mVcdFile, newIndex5_i_i_i_i_fu_397_p1, "newIndex5_i_i_i_i_fu_397_p1");
+    sc_trace(mVcdFile, sum_cast_i_i_fu_365_p1, "sum_cast_i_i_fu_365_p1");
     sc_trace(mVcdFile, ap_reg_ioackin_m_axi_omatrix_AWREADY, "ap_reg_ioackin_m_axi_omatrix_AWREADY");
     sc_trace(mVcdFile, ap_reg_ioackin_m_axi_omatrix_WREADY, "ap_reg_ioackin_m_axi_omatrix_WREADY");
     sc_trace(mVcdFile, ap_block_pp0_stage0_01001, "ap_block_pp0_stage0_01001");
-    sc_trace(mVcdFile, offset_i_i_i_fu_367_p3, "offset_i_i_i_fu_367_p3");
-    sc_trace(mVcdFile, tmp_i_i_cast_i_i_fu_375_p1, "tmp_i_i_cast_i_i_fu_375_p1");
-    sc_trace(mVcdFile, sext_cast_i_i_fu_379_p1, "sext_cast_i_i_fu_379_p1");
-    sc_trace(mVcdFile, newIndex4_i_i_i_i_fu_411_p4, "newIndex4_i_i_i_i_fu_411_p4");
+    sc_trace(mVcdFile, offset_i_i_i_fu_343_p3, "offset_i_i_i_fu_343_p3");
+    sc_trace(mVcdFile, omatrix_offset_cast1_fu_355_p1, "omatrix_offset_cast1_fu_355_p1");
+    sc_trace(mVcdFile, tmp_i_i_cast_i_i_fu_351_p1, "tmp_i_i_cast_i_i_fu_351_p1");
+    sc_trace(mVcdFile, sum_i_i_fu_359_p2, "sum_i_i_fu_359_p2");
+    sc_trace(mVcdFile, newIndex4_i_i_i_i_fu_387_p4, "newIndex4_i_i_i_i_fu_387_p4");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
     sc_trace(mVcdFile, ap_idle_pp0, "ap_idle_pp0");
     sc_trace(mVcdFile, ap_enable_pp0, "ap_enable_pp0");
@@ -738,7 +739,7 @@ void memcpy_omatrix_out_b::thread_ap_clk_no_reset_() {
     if ( ap_rst.read() == ap_const_logic_1) {
         ap_reg_ioackin_m_axi_omatrix_WREADY = ap_const_logic_0;
     } else {
-        if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter2.read()) && esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493.read()))) {
+        if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter2.read()) && esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464.read()))) {
             if (esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0)) {
                 ap_reg_ioackin_m_axi_omatrix_WREADY = ap_const_logic_0;
             } else if ((esl_seteq<1,1,1>(ap_const_logic_1, m_axi_omatrix_WREADY.read()) && 
@@ -750,24 +751,24 @@ void memcpy_omatrix_out_b::thread_ap_clk_no_reset_() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && 
          esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0) && 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter0.read()) && 
-         esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_i_i_i_i_i_fu_399_p2.read()))) {
-        indvar_i_i_i_i_i_reg_356 = indvar_next_i_i_i_i_s_fu_405_p2.read();
+         esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_i_i_i_i_i_fu_375_p2.read()))) {
+        indvar_i_i_i_i_i_reg_332 = indvar_next_i_i_i_i_s_fu_381_p2.read();
     } else if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && 
                 esl_seteq<1,1,1>(ap_sig_ioackin_m_axi_omatrix_AWREADY.read(), ap_const_logic_1))) {
-        indvar_i_i_i_i_i_reg_356 = ap_const_lv6_0;
+        indvar_i_i_i_i_i_reg_332 = ap_const_lv6_0;
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0))) {
-        ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493 = exitcond_i_i_i_i_i_reg_493.read();
-        exitcond_i_i_i_i_i_reg_493 = exitcond_i_i_i_i_i_fu_399_p2.read();
+        ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464 = exitcond_i_i_i_i_i_reg_464.read();
+        exitcond_i_i_i_i_i_reg_464 = exitcond_i_i_i_i_i_fu_375_p2.read();
     }
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read()) && !(esl_seteq<1,1,1>(ap_const_logic_0, ap_start.read()) || esl_seteq<1,1,1>(ap_done_reg.read(), ap_const_logic_1) || esl_seteq<1,1,1>(ap_const_logic_0, omatrix_offset_empty_n.read()) || esl_seteq<1,1,1>(ap_const_logic_0, i_0_i_i_c_empty_n.read())))) {
-        sum_i_i_reg_482 = sum_i_i_fu_383_p2.read();
+        omatrix_addr_reg_458 = sum_cast_i_i_fu_365_p1.read();
     }
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_i_i_i_i_i_reg_493.read()))) {
-        tmp_i_i_reg_587 = tmp_i_i_fu_445_p18.read();
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_i_i_i_i_i_reg_464.read()))) {
+        tmp_i_i_reg_558 = tmp_i_i_fu_421_p18.read();
     }
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_i_i_i_i_i_fu_399_p2.read()))) {
-        tmp_reg_502 = tmp_fu_441_p1.read();
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_pp0_stage0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_11001.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(ap_const_lv1_0, exitcond_i_i_i_i_i_fu_375_p2.read()))) {
+        tmp_reg_473 = tmp_fu_417_p1.read();
     }
 }
 
@@ -816,7 +817,7 @@ void memcpy_omatrix_out_b::thread_ap_block_state4_pp0_stage0_iter1() {
 }
 
 void memcpy_omatrix_out_b::thread_ap_block_state5_io() {
-    ap_block_state5_io = (esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493.read()) && esl_seteq<1,1,1>(ap_const_logic_0, ap_sig_ioackin_m_axi_omatrix_WREADY.read()));
+    ap_block_state5_io = (esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464.read()) && esl_seteq<1,1,1>(ap_const_logic_0, ap_sig_ioackin_m_axi_omatrix_WREADY.read()));
 }
 
 void memcpy_omatrix_out_b::thread_ap_block_state5_pp0_stage0_iter2() {
@@ -824,7 +825,7 @@ void memcpy_omatrix_out_b::thread_ap_block_state5_pp0_stage0_iter2() {
 }
 
 void memcpy_omatrix_out_b::thread_ap_condition_pp0_exit_iter0_state3() {
-    if (esl_seteq<1,1,1>(exitcond_i_i_i_i_i_fu_399_p2.read(), ap_const_lv1_1)) {
+    if (esl_seteq<1,1,1>(exitcond_i_i_i_i_i_fu_375_p2.read(), ap_const_lv1_1)) {
         ap_condition_pp0_exit_iter0_state3 = ap_const_logic_1;
     } else {
         ap_condition_pp0_exit_iter0_state3 = ap_const_logic_0;
@@ -888,8 +889,8 @@ void memcpy_omatrix_out_b::thread_ap_sig_ioackin_m_axi_omatrix_WREADY() {
     }
 }
 
-void memcpy_omatrix_out_b::thread_exitcond_i_i_i_i_i_fu_399_p2() {
-    exitcond_i_i_i_i_i_fu_399_p2 = (!indvar_i_i_i_i_i_reg_356.read().is_01() || !ap_const_lv6_20.is_01())? sc_lv<1>(): sc_lv<1>(indvar_i_i_i_i_i_reg_356.read() == ap_const_lv6_20);
+void memcpy_omatrix_out_b::thread_exitcond_i_i_i_i_i_fu_375_p2() {
+    exitcond_i_i_i_i_i_fu_375_p2 = (!indvar_i_i_i_i_i_reg_332.read().is_01() || !ap_const_lv6_20.is_01())? sc_lv<1>(): sc_lv<1>(indvar_i_i_i_i_i_reg_332.read() == ap_const_lv6_20);
 }
 
 void memcpy_omatrix_out_b::thread_i_0_i_i_c_blk_n() {
@@ -910,12 +911,12 @@ void memcpy_omatrix_out_b::thread_i_0_i_i_c_read() {
     }
 }
 
-void memcpy_omatrix_out_b::thread_indvar_next_i_i_i_i_s_fu_405_p2() {
-    indvar_next_i_i_i_i_s_fu_405_p2 = (!indvar_i_i_i_i_i_reg_356.read().is_01() || !ap_const_lv6_1.is_01())? sc_lv<6>(): (sc_biguint<6>(indvar_i_i_i_i_i_reg_356.read()) + sc_biguint<6>(ap_const_lv6_1));
+void memcpy_omatrix_out_b::thread_indvar_next_i_i_i_i_s_fu_381_p2() {
+    indvar_next_i_i_i_i_s_fu_381_p2 = (!indvar_i_i_i_i_i_reg_332.read().is_01() || !ap_const_lv6_1.is_01())? sc_lv<6>(): (sc_biguint<6>(indvar_i_i_i_i_i_reg_332.read()) + sc_biguint<6>(ap_const_lv6_1));
 }
 
 void memcpy_omatrix_out_b::thread_m_axi_omatrix_ARADDR() {
-    m_axi_omatrix_ARADDR = ap_const_lv32_0;
+    m_axi_omatrix_ARADDR = ap_const_lv64_0;
 }
 
 void memcpy_omatrix_out_b::thread_m_axi_omatrix_ARBURST() {
@@ -963,7 +964,7 @@ void memcpy_omatrix_out_b::thread_m_axi_omatrix_ARVALID() {
 }
 
 void memcpy_omatrix_out_b::thread_m_axi_omatrix_AWADDR() {
-    m_axi_omatrix_AWADDR =  (sc_lv<32>) (sum_cast_i_i_fu_389_p1.read());
+    m_axi_omatrix_AWADDR = omatrix_addr_reg_458.read();
 }
 
 void memcpy_omatrix_out_b::thread_m_axi_omatrix_AWBURST() {
@@ -1029,7 +1030,7 @@ void memcpy_omatrix_out_b::thread_m_axi_omatrix_RREADY() {
 }
 
 void memcpy_omatrix_out_b::thread_m_axi_omatrix_WDATA() {
-    m_axi_omatrix_WDATA = tmp_i_i_reg_587.read();
+    m_axi_omatrix_WDATA = tmp_i_i_reg_558.read();
 }
 
 void memcpy_omatrix_out_b::thread_m_axi_omatrix_WID() {
@@ -1050,7 +1051,7 @@ void memcpy_omatrix_out_b::thread_m_axi_omatrix_WUSER() {
 
 void memcpy_omatrix_out_b::thread_m_axi_omatrix_WVALID() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter2.read()) && 
-         esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493.read()) && 
+         esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464.read()) && 
          esl_seteq<1,1,1>(ap_block_pp0_stage0_01001.read(), ap_const_boolean_0) && 
          esl_seteq<1,1,1>(ap_const_logic_0, ap_reg_ioackin_m_axi_omatrix_WREADY.read()))) {
         m_axi_omatrix_WVALID = ap_const_logic_1;
@@ -1059,16 +1060,16 @@ void memcpy_omatrix_out_b::thread_m_axi_omatrix_WVALID() {
     }
 }
 
-void memcpy_omatrix_out_b::thread_newIndex4_i_i_i_i_fu_411_p4() {
-    newIndex4_i_i_i_i_fu_411_p4 = indvar_i_i_i_i_i_reg_356.read().range(5, 4);
+void memcpy_omatrix_out_b::thread_newIndex4_i_i_i_i_fu_387_p4() {
+    newIndex4_i_i_i_i_fu_387_p4 = indvar_i_i_i_i_i_reg_332.read().range(5, 4);
 }
 
-void memcpy_omatrix_out_b::thread_newIndex5_i_i_i_i_fu_421_p1() {
-    newIndex5_i_i_i_i_fu_421_p1 = esl_zext<64,2>(newIndex4_i_i_i_i_fu_411_p4.read());
+void memcpy_omatrix_out_b::thread_newIndex5_i_i_i_i_fu_397_p1() {
+    newIndex5_i_i_i_i_fu_397_p1 = esl_zext<64,2>(newIndex4_i_i_i_i_fu_387_p4.read());
 }
 
-void memcpy_omatrix_out_b::thread_offset_i_i_i_fu_367_p3() {
-    offset_i_i_i_fu_367_p3 = esl_concat<1,5>(i_0_i_i_c_dout.read(), ap_const_lv5_0);
+void memcpy_omatrix_out_b::thread_offset_i_i_i_fu_343_p3() {
+    offset_i_i_i_fu_343_p3 = esl_concat<1,5>(i_0_i_i_c_dout.read(), ap_const_lv5_0);
 }
 
 void memcpy_omatrix_out_b::thread_omatrix_blk_n_AW() {
@@ -1090,7 +1091,7 @@ void memcpy_omatrix_out_b::thread_omatrix_blk_n_B() {
 void memcpy_omatrix_out_b::thread_omatrix_blk_n_W() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter2.read()) && 
          esl_seteq<1,1,1>(ap_block_pp0_stage0.read(), ap_const_boolean_0) && 
-         esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_493.read()))) {
+         esl_seteq<1,1,1>(ap_const_lv1_0, ap_reg_pp0_iter1_exitcond_i_i_i_i_i_reg_464.read()))) {
         omatrix_blk_n_W = m_axi_omatrix_WREADY.read();
     } else {
         omatrix_blk_n_W = ap_const_logic_1;
@@ -1106,6 +1107,10 @@ void memcpy_omatrix_out_b::thread_omatrix_offset_blk_n() {
     }
 }
 
+void memcpy_omatrix_out_b::thread_omatrix_offset_cast1_fu_355_p1() {
+    omatrix_offset_cast1_fu_355_p1 = esl_zext<63,62>(omatrix_offset_dout.read());
+}
+
 void memcpy_omatrix_out_b::thread_omatrix_offset_read() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read()) && 
          !(esl_seteq<1,1,1>(ap_const_logic_0, ap_start.read()) || esl_seteq<1,1,1>(ap_done_reg.read(), ap_const_logic_1) || esl_seteq<1,1,1>(ap_const_logic_0, omatrix_offset_empty_n.read()) || esl_seteq<1,1,1>(ap_const_logic_0, i_0_i_i_c_empty_n.read())))) {
@@ -1116,7 +1121,7 @@ void memcpy_omatrix_out_b::thread_omatrix_offset_read() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_0_address0() {
-    out_buf_0_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_0_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_0_ce0() {
@@ -1130,7 +1135,7 @@ void memcpy_omatrix_out_b::thread_out_buf_0_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_10_address0() {
-    out_buf_10_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_10_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_10_ce0() {
@@ -1144,7 +1149,7 @@ void memcpy_omatrix_out_b::thread_out_buf_10_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_11_address0() {
-    out_buf_11_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_11_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_11_ce0() {
@@ -1158,7 +1163,7 @@ void memcpy_omatrix_out_b::thread_out_buf_11_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_12_address0() {
-    out_buf_12_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_12_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_12_ce0() {
@@ -1172,7 +1177,7 @@ void memcpy_omatrix_out_b::thread_out_buf_12_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_13_address0() {
-    out_buf_13_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_13_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_13_ce0() {
@@ -1186,7 +1191,7 @@ void memcpy_omatrix_out_b::thread_out_buf_13_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_14_address0() {
-    out_buf_14_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_14_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_14_ce0() {
@@ -1200,7 +1205,7 @@ void memcpy_omatrix_out_b::thread_out_buf_14_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_15_address0() {
-    out_buf_15_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_15_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_15_ce0() {
@@ -1214,7 +1219,7 @@ void memcpy_omatrix_out_b::thread_out_buf_15_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_1_address0() {
-    out_buf_1_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_1_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_1_ce0() {
@@ -1228,7 +1233,7 @@ void memcpy_omatrix_out_b::thread_out_buf_1_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_2_address0() {
-    out_buf_2_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_2_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_2_ce0() {
@@ -1242,7 +1247,7 @@ void memcpy_omatrix_out_b::thread_out_buf_2_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_3_address0() {
-    out_buf_3_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_3_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_3_ce0() {
@@ -1256,7 +1261,7 @@ void memcpy_omatrix_out_b::thread_out_buf_3_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_4_address0() {
-    out_buf_4_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_4_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_4_ce0() {
@@ -1270,7 +1275,7 @@ void memcpy_omatrix_out_b::thread_out_buf_4_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_5_address0() {
-    out_buf_5_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_5_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_5_ce0() {
@@ -1284,7 +1289,7 @@ void memcpy_omatrix_out_b::thread_out_buf_5_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_6_address0() {
-    out_buf_6_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_6_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_6_ce0() {
@@ -1298,7 +1303,7 @@ void memcpy_omatrix_out_b::thread_out_buf_6_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_7_address0() {
-    out_buf_7_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_7_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_7_ce0() {
@@ -1312,7 +1317,7 @@ void memcpy_omatrix_out_b::thread_out_buf_7_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_8_address0() {
-    out_buf_8_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_8_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_8_ce0() {
@@ -1326,7 +1331,7 @@ void memcpy_omatrix_out_b::thread_out_buf_8_ce0() {
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_9_address0() {
-    out_buf_9_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_421_p1.read());
+    out_buf_9_address0 =  (sc_lv<1>) (newIndex5_i_i_i_i_fu_397_p1.read());
 }
 
 void memcpy_omatrix_out_b::thread_out_buf_9_ce0() {
@@ -1339,24 +1344,20 @@ void memcpy_omatrix_out_b::thread_out_buf_9_ce0() {
     }
 }
 
-void memcpy_omatrix_out_b::thread_sext_cast_i_i_fu_379_p1() {
-    sext_cast_i_i_fu_379_p1 = esl_zext<31,30>(omatrix_offset_dout.read());
+void memcpy_omatrix_out_b::thread_sum_cast_i_i_fu_365_p1() {
+    sum_cast_i_i_fu_365_p1 = esl_zext<64,63>(sum_i_i_fu_359_p2.read());
 }
 
-void memcpy_omatrix_out_b::thread_sum_cast_i_i_fu_389_p1() {
-    sum_cast_i_i_fu_389_p1 = esl_zext<64,31>(sum_i_i_reg_482.read());
+void memcpy_omatrix_out_b::thread_sum_i_i_fu_359_p2() {
+    sum_i_i_fu_359_p2 = (!omatrix_offset_cast1_fu_355_p1.read().is_01() || !tmp_i_i_cast_i_i_fu_351_p1.read().is_01())? sc_lv<63>(): (sc_biguint<63>(omatrix_offset_cast1_fu_355_p1.read()) + sc_biguint<63>(tmp_i_i_cast_i_i_fu_351_p1.read()));
 }
 
-void memcpy_omatrix_out_b::thread_sum_i_i_fu_383_p2() {
-    sum_i_i_fu_383_p2 = (!tmp_i_i_cast_i_i_fu_375_p1.read().is_01() || !sext_cast_i_i_fu_379_p1.read().is_01())? sc_lv<31>(): (sc_biguint<31>(tmp_i_i_cast_i_i_fu_375_p1.read()) + sc_biguint<31>(sext_cast_i_i_fu_379_p1.read()));
+void memcpy_omatrix_out_b::thread_tmp_fu_417_p1() {
+    tmp_fu_417_p1 = indvar_i_i_i_i_i_reg_332.read().range(4-1, 0);
 }
 
-void memcpy_omatrix_out_b::thread_tmp_fu_441_p1() {
-    tmp_fu_441_p1 = indvar_i_i_i_i_i_reg_356.read().range(4-1, 0);
-}
-
-void memcpy_omatrix_out_b::thread_tmp_i_i_cast_i_i_fu_375_p1() {
-    tmp_i_i_cast_i_i_fu_375_p1 = esl_zext<31,6>(offset_i_i_i_fu_367_p3.read());
+void memcpy_omatrix_out_b::thread_tmp_i_i_cast_i_i_fu_351_p1() {
+    tmp_i_i_cast_i_i_fu_351_p1 = esl_zext<63,6>(offset_i_i_i_fu_343_p3.read());
 }
 
 void memcpy_omatrix_out_b::thread_ap_NS_fsm() {
@@ -1376,13 +1377,13 @@ void memcpy_omatrix_out_b::thread_ap_NS_fsm() {
             }
             break;
         case 4 : 
-            if ((!(esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter2.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_subdone.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(ap_enable_reg_pp0_iter1.read(), ap_const_logic_0)) && !(esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_subdone.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(exitcond_i_i_i_i_i_fu_399_p2.read(), ap_const_lv1_1) && esl_seteq<1,1,1>(ap_enable_reg_pp0_iter1.read(), ap_const_logic_0)))) {
+            if ((!(esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter2.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_subdone.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(ap_enable_reg_pp0_iter1.read(), ap_const_logic_0)) && !(esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter0.read()) && esl_seteq<1,1,1>(ap_block_pp0_stage0_subdone.read(), ap_const_boolean_0) && esl_seteq<1,1,1>(exitcond_i_i_i_i_i_fu_375_p2.read(), ap_const_lv1_1) && esl_seteq<1,1,1>(ap_enable_reg_pp0_iter1.read(), ap_const_logic_0)))) {
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
             } else if (((esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter2.read()) && 
   esl_seteq<1,1,1>(ap_block_pp0_stage0_subdone.read(), ap_const_boolean_0) && 
   esl_seteq<1,1,1>(ap_enable_reg_pp0_iter1.read(), ap_const_logic_0)) || (esl_seteq<1,1,1>(ap_const_logic_1, ap_enable_reg_pp0_iter0.read()) && 
   esl_seteq<1,1,1>(ap_block_pp0_stage0_subdone.read(), ap_const_boolean_0) && 
-  esl_seteq<1,1,1>(exitcond_i_i_i_i_i_fu_399_p2.read(), ap_const_lv1_1) && 
+  esl_seteq<1,1,1>(exitcond_i_i_i_i_i_fu_375_p2.read(), ap_const_lv1_1) && 
   esl_seteq<1,1,1>(ap_enable_reg_pp0_iter1.read(), ap_const_logic_0)))) {
                 ap_NS_fsm = ap_ST_fsm_state6;
             } else {

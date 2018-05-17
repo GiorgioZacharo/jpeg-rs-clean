@@ -184,9 +184,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="5" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="5" bw="64" op_0_bw="64" op_1_bw="64">
 <![CDATA[
-:1  %matrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %matrix)
+:1  %matrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %matrix)
 
 ]]></Node>
 <StgValue><ssdm name="matrix_read"/></StgValue>
@@ -199,36 +199,33 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="6" bw="30" op_0_bw="30" op_1_bw="32" op_2_bw="32" op_3_bw="32">
+<Node id="6" bw="62" op_0_bw="62" op_1_bw="64" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-:2  %matrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %matrix_read, i32 2, i32 31)
+:2  %matrix1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %matrix_read, i32 2, i32 63)
 
 ]]></Node>
 <StgValue><ssdm name="matrix1"/></StgValue>
 </operation>
-</state>
 
-<state id="2" st_id="2">
-
-<operation id="25" st_id="2" stage="1" lat="1">
+<operation id="25" st_id="1" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
-<condition id="215">
+<condition id="214">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="64" op_0_bw="30">
+<Node id="7" bw="64" op_0_bw="62">
 <![CDATA[
-:3  %tmp = zext i30 %matrix1 to i64
+:3  %tmp = zext i62 %matrix1 to i64
 
 ]]></Node>
 <StgValue><ssdm name="tmp"/></StgValue>
 </operation>
 
-<operation id="26" st_id="2" stage="1" lat="1">
+<operation id="26" st_id="1" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
-<condition id="215">
+<condition id="214">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
@@ -239,6 +236,9 @@
 ]]></Node>
 <StgValue><ssdm name="BUS_DST_addr"/></StgValue>
 </operation>
+</state>
+
+<state id="2" st_id="2">
 
 <operation id="27" st_id="2" stage="7" lat="7">
 <core>m_axi</core>
@@ -402,7 +402,7 @@
 
 <Node id="12" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:8  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+:8  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -415,9 +415,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="13" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="13" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:9  call void (...)* @_ssdm_op_SpecInterface(i32 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+:9  call void (...)* @_ssdm_op_SpecInterface(i64 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -432,7 +432,7 @@
 
 <Node id="14" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:10  call void (...)* @_ssdm_op_SpecInterface(i32 %Bound, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+:10  call void (...)* @_ssdm_op_SpecInterface(i32 %Bound, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [8 x i8]* @p_str210, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -447,7 +447,7 @@
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:11  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+:11  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [9 x i8]* @p_str614, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -1246,7 +1246,7 @@ burst.rd.body:1  %burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([
 
 <Node id="99" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-burst.rd.body:2  %empty_14 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str8) nounwind
+burst.rd.body:2  %empty_14 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
 
 ]]></Node>
 <StgValue><ssdm name="empty_14"/></StgValue>
@@ -6771,7 +6771,7 @@ burst.wr.body:1  %burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin(
 
 <Node id="433" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-burst.wr.body:2  %empty_18 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str9) nounwind
+burst.wr.body:2  %empty_18 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
 
 ]]></Node>
 <StgValue><ssdm name="empty_18"/></StgValue>

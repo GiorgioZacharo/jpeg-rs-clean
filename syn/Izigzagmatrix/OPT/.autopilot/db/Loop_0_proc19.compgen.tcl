@@ -432,7 +432,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_imatrix_offset \
     op interface \
-    ports { imatrix_offset { I 30 vector } } \
+    ports { imatrix_offset { I 62 vector } } \
 } "
 }
 
@@ -447,7 +447,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_omatrix_offset \
     op interface \
-    ports { omatrix_offset { I 30 vector } } \
+    ports { omatrix_offset { I 62 vector } } \
 } "
 }
 
@@ -462,7 +462,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_imatrix_offset_out \
     op interface \
-    ports { imatrix_offset_out_din { O 30 vector } imatrix_offset_out_full_n { I 1 bit } imatrix_offset_out_write { O 1 bit } } \
+    ports { imatrix_offset_out_din { O 62 vector } imatrix_offset_out_full_n { I 1 bit } imatrix_offset_out_write { O 1 bit } } \
 } "
 }
 
@@ -477,7 +477,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_omatrix_offset_out \
     op interface \
-    ports { omatrix_offset_out_din { O 30 vector } omatrix_offset_out_full_n { I 1 bit } omatrix_offset_out_write { O 1 bit } } \
+    ports { omatrix_offset_out_din { O 62 vector } omatrix_offset_out_full_n { I 1 bit } omatrix_offset_out_write { O 1 bit } } \
 } "
 }
 

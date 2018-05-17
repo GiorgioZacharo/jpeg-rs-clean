@@ -59,7 +59,7 @@ main ()
 	XTime start, stop;
 
 	// No need to Flush or Invalidate the cache with ACP
-//	Xil_DCacheDisable();
+	Xil_DCacheDisable();
 
 	XTime_GetTime(&start);
 	jpeg2bmp_main ();

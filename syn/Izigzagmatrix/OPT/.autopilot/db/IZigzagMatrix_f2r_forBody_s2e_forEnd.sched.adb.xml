@@ -37,9 +37,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="6" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="6" bw="64" op_0_bw="64" op_1_bw="64">
 <![CDATA[
-codeRepl:0  %omatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %omatrix)
+codeRepl:0  %omatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %omatrix)
 
 ]]></Node>
 <StgValue><ssdm name="omatrix_read"/></StgValue>
@@ -52,9 +52,9 @@ codeRepl:0  %omatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %omatrix)
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="7" bw="64" op_0_bw="64" op_1_bw="64">
 <![CDATA[
-codeRepl:1  %imatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %imatrix)
+codeRepl:1  %imatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %imatrix)
 
 ]]></Node>
 <StgValue><ssdm name="imatrix_read"/></StgValue>
@@ -67,9 +67,9 @@ codeRepl:1  %imatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %imatrix)
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="30" op_0_bw="30" op_1_bw="32" op_2_bw="32" op_3_bw="32">
+<Node id="8" bw="62" op_0_bw="62" op_1_bw="64" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-codeRepl:2  %omatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %omatrix_read, i32 2, i32 31)
+codeRepl:2  %omatrix3 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %omatrix_read, i32 2, i32 63)
 
 ]]></Node>
 <StgValue><ssdm name="omatrix3"/></StgValue>
@@ -82,9 +82,9 @@ codeRepl:2  %omatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %omatr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="30" op_0_bw="30" op_1_bw="32" op_2_bw="32" op_3_bw="32">
+<Node id="9" bw="62" op_0_bw="62" op_1_bw="64" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-codeRepl:3  %imatrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %imatrix_read, i32 2, i32 31)
+codeRepl:3  %imatrix1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %imatrix_read, i32 2, i32 63)
 
 ]]></Node>
 <StgValue><ssdm name="imatrix1"/></StgValue>
@@ -144,7 +144,7 @@ codeRepl:6  call void (...)* @_ssdm_op_SpecTopModule([37 x i8]* @IZigzagMatrix_f
 
 <Node id="13" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:7  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+codeRepl:7  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -157,9 +157,9 @@ codeRepl:7  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i32 %imatrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i64 %imatrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -174,7 +174,7 @@ codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i32 %imatrix, [10 x i8]* @m
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:9  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+codeRepl:9  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -187,9 +187,9 @@ codeRepl:9  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="16" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="16" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:10  call void (...)* @_ssdm_op_SpecInterface(i32 %omatrix, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle10, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+codeRepl:10  call void (...)* @_ssdm_op_SpecInterface(i64 %omatrix, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle10, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -204,7 +204,7 @@ codeRepl:10  call void (...)* @_ssdm_op_SpecInterface(i32 %omatrix, [10 x i8]* @
 
 <Node id="17" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-codeRepl:11  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+codeRepl:11  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [9 x i8]* @p_str614, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -326,9 +326,9 @@ codeRepl:12  br label %0
 </and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="32" op_3_bw="30" op_4_bw="32" op_5_bw="30">
+<Node id="27" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="32" op_3_bw="62" op_4_bw="32" op_5_bw="62">
 <![CDATA[
-codeRepl1035:0  call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i30 %imatrix1, i32* %BUS_DST, i30 %omatrix3)
+codeRepl1035:0  call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i62 %imatrix1, i32* %BUS_DST, i62 %omatrix3)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -361,9 +361,9 @@ IZigzagMatrix_f2r_forBody_s2e_forEnd_.exit:0  ret void
 </and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="32" op_3_bw="30" op_4_bw="32" op_5_bw="30">
+<Node id="27" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="32" op_3_bw="62" op_4_bw="32" op_5_bw="62">
 <![CDATA[
-codeRepl1035:0  call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i30 %imatrix1, i32* %BUS_DST, i30 %omatrix3)
+codeRepl1035:0  call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i62 %imatrix1, i32* %BUS_DST, i62 %omatrix3)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>

@@ -33,8 +33,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:zcu102:part0:3.1 [current_project]
 set_property ip_repo_paths {
-  /home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT
   /home/giorgio/workspace/jpeg-rs-clean/syn/decode_start
+  /home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT
 } [current_project]
 set_property ip_output_repo /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

@@ -2186,24 +2186,47 @@ _ssdm_SpecConstant(zigzag_index);
   }
 #pragma empty_line
 }
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
+#pragma line 164 "../src/decode.c"
 void
-IQuantize (int *matrix, unsigned int *qmatrix)
-{
-  int *mptr;
+IQuantize (int *matrix, unsigned int *qmatrix){
+#pragma HLS INTERFACE m_axi depth=64 port=qmatrix offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=matrix offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 #pragma empty_line
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      *mptr = *mptr * (*qmatrix);
-      qmatrix++;
-    }
+int i;
+ int inp1_buf[32];
+ int inp2_buf[32];
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+#pragma empty_line
+ for (i = 0; i < 64/32; i++){
+#pragma line 186 "../src/decode.c"
+   unsigned offset = i*32;
+   memcpy(inp1_buf, qmatrix + offset, 32 * sizeof(int));
+   memcpy(inp2_buf, matrix + offset, 32 * sizeof(int));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+   for (int k=0; k < 32; k++){
+#pragma HLS UNROLL skip_exit_check factor=16
+ inp2_buf[k] = inp1_buf[k] * inp2_buf[k];
+   }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+     offset = i*32;
+     memcpy(matrix + offset, inp2_buf, 32 * sizeof(int));
+#pragma empty_line
+ }
+#pragma empty_line
 }
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2225,22 +2248,48 @@ PostshiftIDctMatrix (int *matrix, int shift)
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-void
-BoundIDctMatrix (int *matrix, int Bound)
-{
-  int *mptr;
 #pragma empty_line
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      if (*mptr < 0)
- {
-   *mptr = 0;
+void
+BoundIDctMatrix (int matrix[64], int Bound) {_ssdm_SpecArrayDimSize(matrix,64);
+#pragma HLS INTERFACE m_axi depth=64 port=matrix offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=Bound bundle=BUS_SRC
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+#pragma empty_line
+ int i;
+ int inp1_buf[32];
+ int out1_buf[32];
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+#pragma empty_line
+ for (i = 0; i < 64/32; i++){
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+   unsigned offset = i*32;
+   memcpy(inp1_buf, matrix + offset, 32 * sizeof(int));
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for (int k=0; k < 32; k++){
+#pragma HLS UNROLL skip_exit_check factor=16
+ if (inp1_buf[k] < 0)
+    inp1_buf[k] = 0;
+#pragma empty_line
+   else if (inp1_buf[k] > Bound)
+    inp1_buf[k] = Bound;
+  }
+#pragma line 278 "../src/decode.c"
+    offset = i*32;
+    memcpy(matrix + offset, inp1_buf, 32 * sizeof(int));
+#pragma empty_line
  }
-      else if (*mptr > Bound)
- {
-   *mptr = Bound;
- }
-    }
+#pragma empty_line
 }
 #pragma empty_line
 #pragma empty_line
@@ -2349,7 +2398,7 @@ void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[64], unsigned char out_buf[5
 #pragma empty_line
 #pragma empty_line
 }
-#pragma line 316 "../src/decode.c"
+#pragma line 399 "../src/decode.c"
 void
 WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
      unsigned char *p_out_buf)
@@ -2385,15 +2434,23 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
       *p_out_hpos = 0;
     }
 }
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
+#pragma line 502 "../src/decode.c"
 void
-Write4Blocks (int *store1, int *store2, int *store3, int *store4,
-       int *p_out_vpos, int *p_out_hpos, unsigned char *p_out_buf)
-{
-  int voffs, hoffs;
+Write4Blocks (int store1[64], int store2[64], int store3[64], int store4[64],
+       int *p_out_vpos, int *p_out_hpos, unsigned char p_out_buf[5310]) {_ssdm_SpecArrayDimSize(store1,64);_ssdm_SpecArrayDimSize(store2,64);_ssdm_SpecArrayDimSize(store3,64);_ssdm_SpecArrayDimSize(store4,64);_ssdm_SpecArrayDimSize(p_out_buf,5310);
+#pragma empty_line
+#pragma HLS INTERFACE m_axi depth=64 port=store1 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store2 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store3 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=64 port=store4 offset=slave bundle=BUS_SRC
+#pragma HLS INTERFACE m_axi depth=5310 port=p_out_buf offset=slave bundle=BUS_DST
+#pragma HLS INTERFACE s_axilite port=p_out_vpos bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=p_out_hpos bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+#pragma empty_line
+ int voffs, hoffs;
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2401,19 +2458,124 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 #pragma empty_line
   voffs = *p_out_vpos * 8;
   hoffs = *p_out_hpos * 8;
+#pragma line 537 "../src/decode.c"
+    int i=0;
+     int l=0;
+     int j, k, m;
+#pragma empty_line
+    unsigned char inp1_buf[64];
+    unsigned char out1_buf[5310];
+    int index[64];
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=4 dim=1
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store1, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+             inp1_buf[j] =(unsigned char) (*(store1++));
+           }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+   for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+     int diff;
+     diff = p_jinfo_image_width * k;
+#pragma empty_line
+     for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+       out1_buf[diff + e] = inp1_buf[l];
+       index[l]=diff+e;
+       l++;
+       }
+      else
+       break;
+     }
+    }
+    else
+     break;
+   }
+#pragma empty_line
+#pragma empty_line
+   for ( m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out1_buf[index[m]];
+   }
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
   hoffs += 8;
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store2, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  i=0;
+  l=0;
+#pragma empty_line
+ unsigned char inp2_buf[64];
+ unsigned char out2_buf[5310];
+#pragma empty_line
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=4 dim=1
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+          inp2_buf[j] =(unsigned char) (*(store2++));
+        }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+#pragma empty_line
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+      out2_buf[diff + e] = inp2_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+#pragma empty_line
+#pragma empty_line
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out2_buf[index[m]];
+  }
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2421,8 +2583,58 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 #pragma empty_line
   voffs += 8;
   hoffs -= 8;
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store3, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+#pragma line 669 "../src/decode.c"
+  i=0;
+  l=0;
+#pragma empty_line
+ unsigned char inp3_buf[64];
+ unsigned char out3_buf[5310];
+#pragma empty_line
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=4 dim=1
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+          inp3_buf[j] =(unsigned char) (*(store3++));
+        }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+#pragma empty_line
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+      out3_buf[diff + e] = inp3_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+#pragma empty_line
+#pragma empty_line
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out3_buf[index[m]];
+  }
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2430,9 +2642,60 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 #pragma empty_line
 #pragma empty_line
   hoffs += 8;
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store4,
-   p_out_buf, p_jinfo_image_width, p_jinfo_image_height,
-   voffs, hoffs);
+#pragma line 738 "../src/decode.c"
+  i=0;
+  l=0;
+#pragma empty_line
+ unsigned char inp4_buf[64];
+ unsigned char out4_buf[5310];
+#pragma empty_line
+#pragma empty_line
+#pragma HLS ARRAY_PARTITION variable=inp4_buf cyclic factor=4 dim=1
+#pragma HLS ARRAY_PARTITION variable=out4_buf cyclic factor=4 dim=1
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ for ( j=0; j < 64; j++){
+#pragma HLS UNROLL skip_exit_check factor=4
+ unsigned offset = i*32 +j;
+          inp4_buf[j] =(unsigned char) (*(store4++));
+        }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+  for ( k = voffs; k < voffs + 8; k++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+#pragma empty_line
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+#pragma empty_line
+    for (int e = hoffs; e < hoffs + 8; e++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ if (e < p_jinfo_image_width){
+      out4_buf[diff + e] = inp4_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+#pragma empty_line
+#pragma empty_line
+  for (m=0; m < l; m++) {
+#pragma HLS UNROLL skip_exit_check factor=4
+ p_out_buf[index[m]] = out4_buf[index[m]];
+  }
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -2450,12 +2713,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
       *p_out_hpos = 0;
     }
 }
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
+#pragma line 877 "../src/decode.c"
 void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){_ssdm_SpecArrayDimSize(v_buf,64);_ssdm_SpecArrayDimSize(u_buf,64);_ssdm_SpecArrayDimSize(y_buf,64);_ssdm_SpecArrayDimSize(rgb_buf,4);
 #pragma empty_line
 #pragma HLS INTERFACE m_axi depth=64 port=y_buf offset=slave bundle=BUS_SRC
@@ -2481,7 +2739,7 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
 #pragma empty_line
 #pragma empty_line
  for (int i = 0; i < 64/32; i++) {
-#pragma line 461 "../src/decode.c"
+#pragma line 916 "../src/decode.c"
         unsigned offset = i*32 ;
         memcpy(inp1_buf, y_buf + offset, 32 * sizeof(int));
         memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
@@ -2512,7 +2770,7 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
         else if (out3_buf[k] > 255)
           out3_buf[k] = 255;
       }
-#pragma line 502 "../src/decode.c"
+#pragma line 957 "../src/decode.c"
         offset = i*32 ;
         memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
         memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
@@ -2524,7 +2782,7 @@ void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_bu
 #pragma empty_line
 #pragma empty_line
 }
-#pragma empty_line
+#pragma line 1068 "../src/decode.c"
 void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){_ssdm_SpecArrayDimSize(v_buf,64);_ssdm_SpecArrayDimSize(u_buf,64);_ssdm_SpecArrayDimSize(y_buf,6);_ssdm_SpecArrayDimSize(rgb_buf,4);
 #pragma HLS INTERFACE m_axi depth=384 port=y_buf offset=slave bundle=BUS_SRC
 #pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
@@ -2532,17 +2790,14 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
 #pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
 #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
 #pragma empty_line
+ int i;
 #pragma empty_line
- for (int p = 0; p < 4; (p)++) {
-#pragma empty_line
-      int i;
-#pragma empty_line
-      int inp1_buf[32];
-      int inp2_buf[32];
-      int inp3_buf[32];
-      int out1_buf[32];
-      int out2_buf[32];
-      int out3_buf[32];
+    int inp1_buf[32];
+    int inp2_buf[32];
+    int inp3_buf[32];
+    int out1_buf[32];
+    int out2_buf[32];
+    int out3_buf[32];
 #pragma empty_line
 #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
 #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
@@ -2552,9 +2807,9 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
 #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
 #pragma empty_line
 #pragma empty_line
- for (i = 0; i < 64/32; i++)
-      {
-#pragma line 557 "../src/decode.c"
+ for (i = 0; i < 64/32; i++) {
+  for (int p = 0; p < 4; (p)++) {
+#pragma line 1107 "../src/decode.c"
         unsigned offset = i*32;
         memcpy(inp1_buf, y_buf[p] + offset, 32 * sizeof(int));
         memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
@@ -2585,7 +2840,7 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_b
             else if (out3_buf[k] > 255)
               out3_buf[k] = 255;
         }
-#pragma line 598 "../src/decode.c"
+#pragma line 1148 "../src/decode.c"
         offset = i*32;
         memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
         memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
@@ -2717,12 +2972,12 @@ decode_start (int *out_data_image_width, int *out_data_image_height,
 #pragma empty_line
 #pragma empty_line
    decode_block (2, IDCTBuff[5], HuffBuff[2]);
-#pragma line 738 "../src/decode.c"
+#pragma line 1288 "../src/decode.c"
     Reg_6:decode_start_f2r_vectorPh_s2e_forBody96Preheader(IDCTBuff, IDCTBuff[4], IDCTBuff[5], rgb_buf);
 #pragma empty_line
 #pragma empty_line
-    for ( int k = 0; k < 64; k++)
-        printf ("RGB_BUF %d  %d\n", k, rgb_buf[0][0][k]);
+#pragma empty_line
+#pragma empty_line
 #pragma empty_line
    for (i = 0; i < 3; i++)
      {

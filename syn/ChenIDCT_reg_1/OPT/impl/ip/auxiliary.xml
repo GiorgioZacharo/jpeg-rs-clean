@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="ChenIDct_f2r_vectorBody_s2e_forEnd212" xd:componentRef="ChenIDct_f2r_vectorBody_s2e_forEnd212" xd:initiationInterval="163" xd:clockPeriod="3.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="y[]" xd:originalName="y" xd:direction="inout" xd:interfaceRef="m_axi_BUS_SRC_DST" xd:busTypeRef="aximm" xd:arraySize="64" xd:dataWidth="32" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="y" xd:originalName="y" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_SRC_DST" xd:dataWidth="64" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="162" xd:worst-case="162" xd:average-case="162"/>
+  <xd:resourceEstimates xd:LUT="6235" xd:FF="3771" xd:BRAM="2" xd:DSP="0"/>
+</xd:acceleratorMap>

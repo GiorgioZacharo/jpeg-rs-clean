@@ -26,7 +26,9 @@
 //        others - reserved
 // 0x10 : Data signal of matrix
 //        bit 31~0 - matrix[31:0] (Read/Write)
-// 0x14 : reserved
+// 0x14 : Data signal of matrix
+//        bit 31~0 - matrix[63:32] (Read/Write)
+// 0x18 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_AP_CTRL     0x00
@@ -34,7 +36,7 @@
 #define XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_IER         0x08
 #define XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_ISR         0x0c
 #define XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_MATRIX_DATA 0x10
-#define XBOUNDIDCTMATRIX_BUS_CTRL_BITS_MATRIX_DATA 32
+#define XBOUNDIDCTMATRIX_BUS_CTRL_BITS_MATRIX_DATA 64
 
 // BUS_SRC
 // 0x00 : reserved

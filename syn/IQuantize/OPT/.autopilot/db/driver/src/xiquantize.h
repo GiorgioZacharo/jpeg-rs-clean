@@ -87,10 +87,10 @@ u32 XIquantize_IsReady(XIquantize *InstancePtr);
 void XIquantize_EnableAutoRestart(XIquantize *InstancePtr);
 void XIquantize_DisableAutoRestart(XIquantize *InstancePtr);
 
-void XIquantize_Set_matrix(XIquantize *InstancePtr, u32 Data);
-u32 XIquantize_Get_matrix(XIquantize *InstancePtr);
-void XIquantize_Set_qmatrix(XIquantize *InstancePtr, u32 Data);
-u32 XIquantize_Get_qmatrix(XIquantize *InstancePtr);
+void XIquantize_Set_matrix(XIquantize *InstancePtr, u64 Data);
+u64 XIquantize_Get_matrix(XIquantize *InstancePtr);
+void XIquantize_Set_qmatrix(XIquantize *InstancePtr, u64 Data);
+u64 XIquantize_Get_qmatrix(XIquantize *InstancePtr);
 
 void XIquantize_InterruptGlobalEnable(XIquantize *InstancePtr);
 void XIquantize_InterruptGlobalDisable(XIquantize *InstancePtr);

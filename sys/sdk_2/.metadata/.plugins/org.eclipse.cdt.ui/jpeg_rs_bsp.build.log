@@ -1,142 +1,256 @@
-11:53:01 **** Build of project jpeg_rs_bsp ****
+16:56:09 **** Build of project jpeg_rs_bsp ****
 make -k all 
+make[1]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp'
 Running Make include in psu_cortexa53_0/libsrc/dpdma_v1_0/src
 make -C psu_cortexa53_0/libsrc/dpdma_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dpdma_v1_0/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dpdma_v1_0/src'
 Running Make include in psu_cortexa53_0/libsrc/ipipsu_v2_3/src
 make -C psu_cortexa53_0/libsrc/ipipsu_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ipipsu_v2_3/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ipipsu_v2_3/src'
 Running Make include in psu_cortexa53_0/libsrc/gpiops_v3_3/src
 make -C psu_cortexa53_0/libsrc/gpiops_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/gpiops_v3_3/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/gpiops_v3_3/src'
 Running Make include in psu_cortexa53_0/libsrc/scugic_v3_8/src
 make -C psu_cortexa53_0/libsrc/scugic_v3_8/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/scugic_v3_8/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/scugic_v3_8/src'
 Running Make include in psu_cortexa53_0/libsrc/qspipsu_v1_6/src
 make -C psu_cortexa53_0/libsrc/qspipsu_v1_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/qspipsu_v1_6/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/qspipsu_v1_6/src'
 Running Make include in psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src
 make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src'
 Running Make include in psu_cortexa53_0/libsrc/video_common_v4_2/src
 make -C psu_cortexa53_0/libsrc/video_common_v4_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/video_common_v4_2/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/video_common_v4_2/src'
 Running Make include in psu_cortexa53_0/libsrc/standalone_v6_5/src
 make -C psu_cortexa53_0/libsrc/standalone_v6_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/standalone_v6_5/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/standalone_v6_5/src'
 Running Make include in psu_cortexa53_0/libsrc/canps_v3_2/src
 make -C psu_cortexa53_0/libsrc/canps_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/canps_v3_2/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/canps_v3_2/src'
 Running Make include in psu_cortexa53_0/libsrc/dppsu_v1_1/src
 make -C psu_cortexa53_0/libsrc/dppsu_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dppsu_v1_1/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dppsu_v1_1/src'
 Running Make include in psu_cortexa53_0/libsrc/zdma_v1_4/src
 make -C psu_cortexa53_0/libsrc/zdma_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/zdma_v1_4/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/zdma_v1_4/src'
 Running Make include in psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src
 make -C psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src'
 Running Make include in psu_cortexa53_0/libsrc/ttcps_v3_5/src
 make -C psu_cortexa53_0/libsrc/ttcps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ttcps_v3_5/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ttcps_v3_5/src'
 Running Make include in psu_cortexa53_0/libsrc/wdtps_v3_0/src
 make -C psu_cortexa53_0/libsrc/wdtps_v3_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/wdtps_v3_0/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/wdtps_v3_0/src'
 Running Make include in psu_cortexa53_0/libsrc/rtcpsu_v1_5/src
 make -C psu_cortexa53_0/libsrc/rtcpsu_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/rtcpsu_v1_5/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/rtcpsu_v1_5/src'
 Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_0/src
 make -C psu_cortexa53_0/libsrc/avbuf_v2_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/avbuf_v2_0/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/avbuf_v2_0/src'
 Running Make include in psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src
 make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src'
 Running Make include in psu_cortexa53_0/libsrc/csudma_v1_1/src
 make -C psu_cortexa53_0/libsrc/csudma_v1_1/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/csudma_v1_1/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/csudma_v1_1/src'
 Running Make include in psu_cortexa53_0/libsrc/iicps_v3_5/src
 make -C psu_cortexa53_0/libsrc/iicps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/iicps_v3_5/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/iicps_v3_5/src'
 Running Make include in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src
 make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src'
 Running Make include in psu_cortexa53_0/libsrc/sdps_v3_3/src
 make -C psu_cortexa53_0/libsrc/sdps_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sdps_v3_3/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sdps_v3_3/src'
 Running Make include in psu_cortexa53_0/libsrc/emacps_v3_6/src
 make -C psu_cortexa53_0/libsrc/emacps_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/emacps_v3_6/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/emacps_v3_6/src'
 Running Make include in psu_cortexa53_0/libsrc/axipmon_v6_6/src
 make -C psu_cortexa53_0/libsrc/axipmon_v6_6/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/axipmon_v6_6/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/axipmon_v6_6/src'
 Running Make include in psu_cortexa53_0/libsrc/ChenIDct_v1_0/src
 make -C psu_cortexa53_0/libsrc/ChenIDct_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ChenIDct_v1_0/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ChenIDct_v1_0/src'
 Running Make include in psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src
 make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src'
 Running Make include in psu_cortexa53_0/libsrc/usbpsu_v1_3/src
 make -C psu_cortexa53_0/libsrc/usbpsu_v1_3/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/usbpsu_v1_3/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/usbpsu_v1_3/src'
 Running Make include in psu_cortexa53_0/libsrc/uartps_v3_5/src
 make -C psu_cortexa53_0/libsrc/uartps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/uartps_v3_5/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/uartps_v3_5/src'
 Running Make libs in psu_cortexa53_0/libsrc/dpdma_v1_0/src
 make -C psu_cortexa53_0/libsrc/dpdma_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dpdma_v1_0/src'
 Compiling dpdma
 aarch64-none-elf-ar: creating ../../../lib/libxil.a
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dpdma_v1_0/src'
 Running Make libs in psu_cortexa53_0/libsrc/ipipsu_v2_3/src
 make -C psu_cortexa53_0/libsrc/ipipsu_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ipipsu_v2_3/src'
 Compiling ipipsu
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ipipsu_v2_3/src'
 Running Make libs in psu_cortexa53_0/libsrc/gpiops_v3_3/src
 make -C psu_cortexa53_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/gpiops_v3_3/src'
 Compiling gpiops
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/gpiops_v3_3/src'
 Running Make libs in psu_cortexa53_0/libsrc/scugic_v3_8/src
 make -C psu_cortexa53_0/libsrc/scugic_v3_8/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/scugic_v3_8/src'
 Compiling scugic
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/scugic_v3_8/src'
 Running Make libs in psu_cortexa53_0/libsrc/qspipsu_v1_6/src
 make -C psu_cortexa53_0/libsrc/qspipsu_v1_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/qspipsu_v1_6/src'
 Compiling qspipsu
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/qspipsu_v1_6/src'
 Running Make libs in psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src
 make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src'
 Compiling sysmonpsu
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sysmonpsu_v2_2/src'
 Running Make libs in psu_cortexa53_0/libsrc/video_common_v4_2/src
 make -C psu_cortexa53_0/libsrc/video_common_v4_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/video_common_v4_2/src'
 Compiling video_common
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/video_common_v4_2/src'
 Running Make libs in psu_cortexa53_0/libsrc/standalone_v6_5/src
 make -C psu_cortexa53_0/libsrc/standalone_v6_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/standalone_v6_5/src'
 Compiling standalone A53
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/standalone_v6_5/src'
 Running Make libs in psu_cortexa53_0/libsrc/canps_v3_2/src
 make -C psu_cortexa53_0/libsrc/canps_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/canps_v3_2/src'
 Compiling canps
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/canps_v3_2/src'
 Running Make libs in psu_cortexa53_0/libsrc/dppsu_v1_1/src
 make -C psu_cortexa53_0/libsrc/dppsu_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dppsu_v1_1/src'
 Compiling dppsu
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/dppsu_v1_1/src'
 Running Make libs in psu_cortexa53_0/libsrc/zdma_v1_4/src
 make -C psu_cortexa53_0/libsrc/zdma_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/zdma_v1_4/src'
 Compiling zdma
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/zdma_v1_4/src'
 Running Make libs in psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src
 make -C psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src'
 Compiling decode_start_f2r_vectorPh_s2e_forBody96Preheader
+make[3]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src'
+make[3]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/decode_start_f2r_vectorPh_s2e_forBody96Preheader_v1_0/src'
 Running Make libs in psu_cortexa53_0/libsrc/ttcps_v3_5/src
 make -C psu_cortexa53_0/libsrc/ttcps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ttcps_v3_5/src'
 Compiling ttcps
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ttcps_v3_5/src'
 Running Make libs in psu_cortexa53_0/libsrc/wdtps_v3_0/src
 make -C psu_cortexa53_0/libsrc/wdtps_v3_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/wdtps_v3_0/src'
 Compiling wdtps
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/wdtps_v3_0/src'
 Running Make libs in psu_cortexa53_0/libsrc/rtcpsu_v1_5/src
 make -C psu_cortexa53_0/libsrc/rtcpsu_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/rtcpsu_v1_5/src'
 Compiling rtcpsu
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/rtcpsu_v1_5/src'
 Running Make libs in psu_cortexa53_0/libsrc/avbuf_v2_0/src
 make -C psu_cortexa53_0/libsrc/avbuf_v2_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/avbuf_v2_0/src'
 Compiling avbuf
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/avbuf_v2_0/src'
 Running Make libs in psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src
 make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src'
 Compiling ddrcpsu
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ddrcpsu_v1_1/src'
 Running Make libs in psu_cortexa53_0/libsrc/csudma_v1_1/src
 make -C psu_cortexa53_0/libsrc/csudma_v1_1/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/csudma_v1_1/src'
 Compiling csudma
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/csudma_v1_1/src'
 Running Make libs in psu_cortexa53_0/libsrc/iicps_v3_5/src
 make -C psu_cortexa53_0/libsrc/iicps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/iicps_v3_5/src'
 Compiling iicps
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/iicps_v3_5/src'
 Running Make libs in psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src
 make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src'
 Compiling cpu_cortexa53
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/cpu_cortexa53_v1_5/src'
 Running Make libs in psu_cortexa53_0/libsrc/sdps_v3_3/src
 make -C psu_cortexa53_0/libsrc/sdps_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sdps_v3_3/src'
 Compiling sdps
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/sdps_v3_3/src'
 Running Make libs in psu_cortexa53_0/libsrc/emacps_v3_6/src
 make -C psu_cortexa53_0/libsrc/emacps_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/emacps_v3_6/src'
 Compiling emacps
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/emacps_v3_6/src'
 Running Make libs in psu_cortexa53_0/libsrc/axipmon_v6_6/src
 make -C psu_cortexa53_0/libsrc/axipmon_v6_6/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/axipmon_v6_6/src'
 Compiling axipmon
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/axipmon_v6_6/src'
 Running Make libs in psu_cortexa53_0/libsrc/ChenIDct_v1_0/src
 make -C psu_cortexa53_0/libsrc/ChenIDct_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ChenIDct_v1_0/src'
 Compiling ChenIDct
+make[3]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ChenIDct_v1_0/src'
+make[3]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ChenIDct_v1_0/src'
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/ChenIDct_v1_0/src'
 Running Make libs in psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src
 make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src'
 Compiling coresightps_dcc
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/coresightps_dcc_v1_4/src'
 Running Make libs in psu_cortexa53_0/libsrc/usbpsu_v1_3/src
 make -C psu_cortexa53_0/libsrc/usbpsu_v1_3/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/usbpsu_v1_3/src'
 Compiling usbpsu
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/usbpsu_v1_3/src'
 Running Make libs in psu_cortexa53_0/libsrc/uartps_v3_5/src
 make -C psu_cortexa53_0/libsrc/uartps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
+make[2]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/uartps_v3_5/src'
 Compiling uartps
+make[2]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp/psu_cortexa53_0/libsrc/uartps_v3_5/src'
 Finished building libraries
+make[1]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs_bsp'
 
-11:53:16 Build Finished (took 14s.987ms)
+16:56:24 Build Finished (took 15s.185ms)
 

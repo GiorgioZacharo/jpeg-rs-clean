@@ -3,8 +3,8 @@
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="imatrix[]" xd:originalName="imatrix" xd:direction="inout" xd:interfaceRef="m_axi_BUS_SRC" xd:busTypeRef="aximm" xd:arraySize="64" xd:dataWidth="32" xd:bufferDirection="in"/>
   <xd:arg xd:name="omatrix[]" xd:originalName="omatrix" xd:direction="inout" xd:interfaceRef="m_axi_BUS_DST" xd:busTypeRef="aximm" xd:arraySize="64" xd:dataWidth="32" xd:bufferDirection="out"/>
-  <xd:arg xd:name="imatrix" xd:originalName="imatrix" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_SRC" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
-  <xd:arg xd:name="omatrix" xd:originalName="omatrix" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_DST" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="imatrix" xd:originalName="imatrix" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_SRC" xd:dataWidth="64" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="omatrix" xd:originalName="omatrix" xd:direction="in" xd:interfaceRef="s_axi_BUS_CTRL" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_BUS_DST" xd:dataWidth="64" xd:offset="0x1C" xd:handshakeRef="ap_none"/>
   <xd:latencyEstimates xd:best-case="156" xd:worst-case="156" xd:average-case="156"/>
-  <xd:resourceEstimates xd:LUT="4025" xd:FF="3697" xd:BRAM="4" xd:DSP="0"/>
+  <xd:resourceEstimates xd:LUT="4761" xd:FF="4399" xd:BRAM="4" xd:DSP="0"/>
 </xd:acceleratorMap>

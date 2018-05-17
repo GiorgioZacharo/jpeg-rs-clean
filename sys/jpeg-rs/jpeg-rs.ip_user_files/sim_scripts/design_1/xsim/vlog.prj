@@ -1,0 +1,36 @@
+verilog xil_defaultlib --include "../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/02c8/hdl/verilog" --include "../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/cfaa/hdl" \
+"../../../bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim/design_1_zynq_ultra_ps_e_0_0_vip_wrapper.v" \
+"../../../bd/design_1/ip/design_1_xlconcat_0_0/sim/design_1_xlconcat_0_0.v" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct_mul_8ns_bkb.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct_mul_10s_cud.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct_mul_10nsdEe.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct_mul_9ns_eOg.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct_mux_326_fYi.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct_BUS_CTRL_s_axi.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct_BUS_SRC_DST_m_axi.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/92fa/hdl/verilog/ChenIDct.v" \
+"../../../bd/design_1/ip/design_1_ChenIDct_0_0/sim/design_1_ChenIDct_0_0.v" \
+"../../../bd/design_1/ip/design_1_xbar_1/sim/design_1_xbar_1.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_bkb.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_cud.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_dEe.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_eOg.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_vectorPh_s2e_forBody96Preheader_BUS_CTRL_s_axi.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_vectorPh_s2e_forBody96Preheader_BUS_SRC_m_axi.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_vectorPh_s2e_forBody96Preheader_BUS_DST_m_axi.v" \
+"../../../../jpeg-rs.srcs/sources_1/bd/design_1/ipshared/ae72/hdl/verilog/decode_start_f2r_vectorPh_s2e_forBody96Preheader.v" \
+"../../../bd/design_1/ip/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0/sim/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0.v" \
+"../../../bd/design_1/ip/design_1_auto_ds_0/sim/design_1_auto_ds_0.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+"../../../bd/design_1/ip/design_1_s00_mmu_0/sim/design_1_s00_mmu_0.v" \
+"../../../bd/design_1/ip/design_1_s01_mmu_0/sim/design_1_s01_mmu_0.v" \
+"../../../bd/design_1/ip/design_1_s02_mmu_0/sim/design_1_s02_mmu_0.v" \
+"../../../bd/design_1/ip/design_1_auto_us_2/sim/design_1_auto_us_2.v" \
+"../../../bd/design_1/ip/design_1_auto_us_1/sim/design_1_auto_us_1.v" \
+"../../../bd/design_1/ip/design_1_auto_us_0/sim/design_1_auto_us_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -119,7 +119,7 @@ input   ap_rst;
 input  [1:0] i_0_i_i;
 output   m_axi_imatrix_AWVALID;
 input   m_axi_imatrix_AWREADY;
-output  [31:0] m_axi_imatrix_AWADDR;
+output  [63:0] m_axi_imatrix_AWADDR;
 output  [0:0] m_axi_imatrix_AWID;
 output  [31:0] m_axi_imatrix_AWLEN;
 output  [2:0] m_axi_imatrix_AWSIZE;
@@ -139,7 +139,7 @@ output  [0:0] m_axi_imatrix_WID;
 output  [0:0] m_axi_imatrix_WUSER;
 output   m_axi_imatrix_ARVALID;
 input   m_axi_imatrix_ARREADY;
-output  [31:0] m_axi_imatrix_ARADDR;
+output  [63:0] m_axi_imatrix_ARADDR;
 output  [0:0] m_axi_imatrix_ARID;
 output  [31:0] m_axi_imatrix_ARLEN;
 output  [2:0] m_axi_imatrix_ARSIZE;
@@ -162,10 +162,10 @@ output   m_axi_imatrix_BREADY;
 input  [1:0] m_axi_imatrix_BRESP;
 input  [0:0] m_axi_imatrix_BID;
 input  [0:0] m_axi_imatrix_BUSER;
-input  [29:0] imatrix_offset;
+input  [61:0] imatrix_offset;
 output   m_axi_omatrix_AWVALID;
 input   m_axi_omatrix_AWREADY;
-output  [31:0] m_axi_omatrix_AWADDR;
+output  [63:0] m_axi_omatrix_AWADDR;
 output  [0:0] m_axi_omatrix_AWID;
 output  [31:0] m_axi_omatrix_AWLEN;
 output  [2:0] m_axi_omatrix_AWSIZE;
@@ -185,7 +185,7 @@ output  [0:0] m_axi_omatrix_WID;
 output  [0:0] m_axi_omatrix_WUSER;
 output   m_axi_omatrix_ARVALID;
 input   m_axi_omatrix_ARREADY;
-output  [31:0] m_axi_omatrix_ARADDR;
+output  [63:0] m_axi_omatrix_ARADDR;
 output  [0:0] m_axi_omatrix_ARID;
 output  [31:0] m_axi_omatrix_ARLEN;
 output  [2:0] m_axi_omatrix_ARSIZE;
@@ -208,7 +208,7 @@ output   m_axi_omatrix_BREADY;
 input  [1:0] m_axi_omatrix_BRESP;
 input  [0:0] m_axi_omatrix_BID;
 input  [0:0] m_axi_omatrix_BUSER;
-input  [29:0] omatrix_offset;
+input  [61:0] omatrix_offset;
 input   i_0_i_i_ap_vld;
 input   imatrix_offset_ap_vld;
 input   omatrix_offset_ap_vld;
@@ -353,9 +353,9 @@ wire    Loop_0_proc19_U0_in1_buf_15_we0;
 wire   [5:0] Loop_0_proc19_U0_in1_buf_15_d0;
 wire   [0:0] Loop_0_proc19_U0_i_0_i_i_c_din;
 wire    Loop_0_proc19_U0_i_0_i_i_c_write;
-wire   [29:0] Loop_0_proc19_U0_imatrix_offset_out_din;
+wire   [61:0] Loop_0_proc19_U0_imatrix_offset_out_din;
 wire    Loop_0_proc19_U0_imatrix_offset_out_write;
-wire   [29:0] Loop_0_proc19_U0_omatrix_offset_out_din;
+wire   [61:0] Loop_0_proc19_U0_omatrix_offset_out_din;
 wire    Loop_0_proc19_U0_omatrix_offset_out_write;
 wire    ap_channel_done_in1_buf_15;
 wire    Loop_0_proc19_U0_in1_buf_15_full_n;
@@ -429,7 +429,7 @@ wire    Loop_1_proc_U0_ap_ready;
 wire   [0:0] Loop_1_proc_U0_in1_buf_0_address0;
 wire    Loop_1_proc_U0_in1_buf_0_ce0;
 wire    Loop_1_proc_U0_m_axi_imatrix_AWVALID;
-wire   [31:0] Loop_1_proc_U0_m_axi_imatrix_AWADDR;
+wire   [63:0] Loop_1_proc_U0_m_axi_imatrix_AWADDR;
 wire   [0:0] Loop_1_proc_U0_m_axi_imatrix_AWID;
 wire   [31:0] Loop_1_proc_U0_m_axi_imatrix_AWLEN;
 wire   [2:0] Loop_1_proc_U0_m_axi_imatrix_AWSIZE;
@@ -447,7 +447,7 @@ wire    Loop_1_proc_U0_m_axi_imatrix_WLAST;
 wire   [0:0] Loop_1_proc_U0_m_axi_imatrix_WID;
 wire   [0:0] Loop_1_proc_U0_m_axi_imatrix_WUSER;
 wire    Loop_1_proc_U0_m_axi_imatrix_ARVALID;
-wire   [31:0] Loop_1_proc_U0_m_axi_imatrix_ARADDR;
+wire   [63:0] Loop_1_proc_U0_m_axi_imatrix_ARADDR;
 wire   [0:0] Loop_1_proc_U0_m_axi_imatrix_ARID;
 wire   [31:0] Loop_1_proc_U0_m_axi_imatrix_ARLEN;
 wire   [2:0] Loop_1_proc_U0_m_axi_imatrix_ARSIZE;
@@ -625,7 +625,7 @@ wire    memcpy_omatrix_out_b_U0_ap_continue;
 wire    memcpy_omatrix_out_b_U0_ap_idle;
 wire    memcpy_omatrix_out_b_U0_ap_ready;
 wire    memcpy_omatrix_out_b_U0_m_axi_omatrix_AWVALID;
-wire   [31:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_AWADDR;
+wire   [63:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_AWADDR;
 wire   [0:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_AWID;
 wire   [31:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_AWLEN;
 wire   [2:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_AWSIZE;
@@ -643,7 +643,7 @@ wire    memcpy_omatrix_out_b_U0_m_axi_omatrix_WLAST;
 wire   [0:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_WID;
 wire   [0:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_WUSER;
 wire    memcpy_omatrix_out_b_U0_m_axi_omatrix_ARVALID;
-wire   [31:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_ARADDR;
+wire   [63:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_ARADDR;
 wire   [0:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_ARID;
 wire   [31:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_ARLEN;
 wire   [2:0] memcpy_omatrix_out_b_U0_m_axi_omatrix_ARSIZE;
@@ -759,10 +759,10 @@ wire    i_0_i_i_c_full_n;
 wire   [0:0] i_0_i_i_c_dout;
 wire    i_0_i_i_c_empty_n;
 wire    imatrix_offset_c_full_n;
-wire   [29:0] imatrix_offset_c_dout;
+wire   [61:0] imatrix_offset_c_dout;
 wire    imatrix_offset_c_empty_n;
 wire    omatrix_offset_c_full_n;
-wire   [29:0] omatrix_offset_c_dout;
+wire   [61:0] omatrix_offset_c_dout;
 wire    omatrix_offset_c_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
@@ -1997,7 +1997,7 @@ fifo_w1_d2_A i_0_i_i_c_U(
     .if_read(memcpy_omatrix_out_b_U0_i_0_i_i_c_read)
 );
 
-fifo_w30_d1_A imatrix_offset_c_U(
+fifo_w62_d1_A imatrix_offset_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
@@ -2010,7 +2010,7 @@ fifo_w30_d1_A imatrix_offset_c_U(
     .if_read(Loop_1_proc_U0_imatrix_offset_read)
 );
 
-fifo_w30_d2_A omatrix_offset_c_U(
+fifo_w62_d2_A omatrix_offset_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
@@ -2695,7 +2695,7 @@ assign m_axi_imatrix_ARUSER = Loop_1_proc_U0_m_axi_imatrix_ARUSER;
 
 assign m_axi_imatrix_ARVALID = Loop_1_proc_U0_m_axi_imatrix_ARVALID;
 
-assign m_axi_imatrix_AWADDR = 32'd0;
+assign m_axi_imatrix_AWADDR = 64'd0;
 
 assign m_axi_imatrix_AWBURST = 2'd0;
 
@@ -2735,7 +2735,7 @@ assign m_axi_imatrix_WUSER = 1'd0;
 
 assign m_axi_imatrix_WVALID = 1'b0;
 
-assign m_axi_omatrix_ARADDR = 32'd0;
+assign m_axi_omatrix_ARADDR = 64'd0;
 
 assign m_axi_omatrix_ARBURST = 2'd0;
 

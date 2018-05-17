@@ -12,7 +12,7 @@ set C_modelType { void 0 }
 set C_modelArgList {
 	{ in1_buf_0 int 6 regular {array 2 { 1 3 } 1 1 }  }
 	{ imatrix int 32 regular {axi_master 0}  }
-	{ imatrix_offset int 30 regular {fifo 0}  }
+	{ imatrix_offset int 62 regular {fifo 0}  }
 	{ out_buf_0 int 32 regular {array 2 { 0 3 } 0 1 }  }
 	{ in1_buf_1 int 6 regular {array 2 { 1 3 } 1 1 }  }
 	{ out_buf_1 int 32 regular {array 2 { 0 3 } 0 1 }  }
@@ -48,7 +48,7 @@ set C_modelArgList {
 set C_modelArgMapList {[ 
 	{ "Name" : "in1_buf_0", "interface" : "memory", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "imatrix", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "imatrix_offset", "interface" : "fifo", "bitwidth" : 30, "direction" : "READONLY"} , 
+ 	{ "Name" : "imatrix_offset", "interface" : "fifo", "bitwidth" : 62, "direction" : "READONLY"} , 
  	{ "Name" : "out_buf_0", "interface" : "memory", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "in1_buf_1", "interface" : "memory", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "out_buf_1", "interface" : "memory", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
@@ -95,7 +95,7 @@ set portList {
 	{ in1_buf_0_q0 sc_in sc_lv 6 signal 0 } 
 	{ m_axi_imatrix_AWVALID sc_out sc_logic 1 signal 1 } 
 	{ m_axi_imatrix_AWREADY sc_in sc_logic 1 signal 1 } 
-	{ m_axi_imatrix_AWADDR sc_out sc_lv 32 signal 1 } 
+	{ m_axi_imatrix_AWADDR sc_out sc_lv 64 signal 1 } 
 	{ m_axi_imatrix_AWID sc_out sc_lv 1 signal 1 } 
 	{ m_axi_imatrix_AWLEN sc_out sc_lv 32 signal 1 } 
 	{ m_axi_imatrix_AWSIZE sc_out sc_lv 3 signal 1 } 
@@ -115,7 +115,7 @@ set portList {
 	{ m_axi_imatrix_WUSER sc_out sc_lv 1 signal 1 } 
 	{ m_axi_imatrix_ARVALID sc_out sc_logic 1 signal 1 } 
 	{ m_axi_imatrix_ARREADY sc_in sc_logic 1 signal 1 } 
-	{ m_axi_imatrix_ARADDR sc_out sc_lv 32 signal 1 } 
+	{ m_axi_imatrix_ARADDR sc_out sc_lv 64 signal 1 } 
 	{ m_axi_imatrix_ARID sc_out sc_lv 1 signal 1 } 
 	{ m_axi_imatrix_ARLEN sc_out sc_lv 32 signal 1 } 
 	{ m_axi_imatrix_ARSIZE sc_out sc_lv 3 signal 1 } 
@@ -138,7 +138,7 @@ set portList {
 	{ m_axi_imatrix_BRESP sc_in sc_lv 2 signal 1 } 
 	{ m_axi_imatrix_BID sc_in sc_lv 1 signal 1 } 
 	{ m_axi_imatrix_BUSER sc_in sc_lv 1 signal 1 } 
-	{ imatrix_offset_dout sc_in sc_lv 30 signal 2 } 
+	{ imatrix_offset_dout sc_in sc_lv 62 signal 2 } 
 	{ imatrix_offset_empty_n sc_in sc_logic 1 signal 2 } 
 	{ imatrix_offset_read sc_out sc_logic 1 signal 2 } 
 	{ out_buf_0_address0 sc_out sc_lv 1 signal 3 } 
@@ -264,7 +264,7 @@ set NewPortList {[
  	{ "name": "in1_buf_0_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "in1_buf_0", "role": "q0" }} , 
  	{ "name": "m_axi_imatrix_AWVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "AWVALID" }} , 
  	{ "name": "m_axi_imatrix_AWREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "AWREADY" }} , 
- 	{ "name": "m_axi_imatrix_AWADDR", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "imatrix", "role": "AWADDR" }} , 
+ 	{ "name": "m_axi_imatrix_AWADDR", "direction": "out", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "imatrix", "role": "AWADDR" }} , 
  	{ "name": "m_axi_imatrix_AWID", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "AWID" }} , 
  	{ "name": "m_axi_imatrix_AWLEN", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "imatrix", "role": "AWLEN" }} , 
  	{ "name": "m_axi_imatrix_AWSIZE", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "imatrix", "role": "AWSIZE" }} , 
@@ -284,7 +284,7 @@ set NewPortList {[
  	{ "name": "m_axi_imatrix_WUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "WUSER" }} , 
  	{ "name": "m_axi_imatrix_ARVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "ARVALID" }} , 
  	{ "name": "m_axi_imatrix_ARREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "ARREADY" }} , 
- 	{ "name": "m_axi_imatrix_ARADDR", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "imatrix", "role": "ARADDR" }} , 
+ 	{ "name": "m_axi_imatrix_ARADDR", "direction": "out", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "imatrix", "role": "ARADDR" }} , 
  	{ "name": "m_axi_imatrix_ARID", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "ARID" }} , 
  	{ "name": "m_axi_imatrix_ARLEN", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "imatrix", "role": "ARLEN" }} , 
  	{ "name": "m_axi_imatrix_ARSIZE", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "imatrix", "role": "ARSIZE" }} , 
@@ -307,7 +307,7 @@ set NewPortList {[
  	{ "name": "m_axi_imatrix_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "imatrix", "role": "BRESP" }} , 
  	{ "name": "m_axi_imatrix_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "BID" }} , 
  	{ "name": "m_axi_imatrix_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix", "role": "BUSER" }} , 
- 	{ "name": "imatrix_offset_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":30, "type": "signal", "bundle":{"name": "imatrix_offset", "role": "dout" }} , 
+ 	{ "name": "imatrix_offset_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":62, "type": "signal", "bundle":{"name": "imatrix_offset", "role": "dout" }} , 
  	{ "name": "imatrix_offset_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix_offset", "role": "empty_n" }} , 
  	{ "name": "imatrix_offset_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imatrix_offset", "role": "read" }} , 
  	{ "name": "out_buf_0_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "out_buf_0", "role": "address0" }} , 
@@ -505,7 +505,7 @@ set ArgLastReadFirstWriteLatency {
 		out_buf_13 {Type O LastRead -1 FirstWrite 24}
 		in1_buf_14 {Type I LastRead 15 FirstWrite -1}
 		out_buf_14 {Type O LastRead -1 FirstWrite 25}
-		in1_buf_15 {Type I LastRead 16 FirstWrite -1}
+		in1_buf_15 {Type I LastRead 15 FirstWrite -1}
 		out_buf_15 {Type O LastRead -1 FirstWrite 26}}}
 
 set hasDtUnsupportedChannel 0
@@ -520,8 +520,8 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	in1_buf_0 { ap_memory {  { in1_buf_0_address0 mem_address 1 1 }  { in1_buf_0_ce0 mem_ce 1 1 }  { in1_buf_0_q0 mem_dout 0 6 } } }
-	imatrix { m_axi {  { m_axi_imatrix_AWVALID VALID 1 1 }  { m_axi_imatrix_AWREADY READY 0 1 }  { m_axi_imatrix_AWADDR ADDR 1 32 }  { m_axi_imatrix_AWID ID 1 1 }  { m_axi_imatrix_AWLEN LEN 1 32 }  { m_axi_imatrix_AWSIZE SIZE 1 3 }  { m_axi_imatrix_AWBURST BURST 1 2 }  { m_axi_imatrix_AWLOCK LOCK 1 2 }  { m_axi_imatrix_AWCACHE CACHE 1 4 }  { m_axi_imatrix_AWPROT PROT 1 3 }  { m_axi_imatrix_AWQOS QOS 1 4 }  { m_axi_imatrix_AWREGION REGION 1 4 }  { m_axi_imatrix_AWUSER USER 1 1 }  { m_axi_imatrix_WVALID VALID 1 1 }  { m_axi_imatrix_WREADY READY 0 1 }  { m_axi_imatrix_WDATA DATA 1 32 }  { m_axi_imatrix_WSTRB STRB 1 4 }  { m_axi_imatrix_WLAST LAST 1 1 }  { m_axi_imatrix_WID ID 1 1 }  { m_axi_imatrix_WUSER USER 1 1 }  { m_axi_imatrix_ARVALID VALID 1 1 }  { m_axi_imatrix_ARREADY READY 0 1 }  { m_axi_imatrix_ARADDR ADDR 1 32 }  { m_axi_imatrix_ARID ID 1 1 }  { m_axi_imatrix_ARLEN LEN 1 32 }  { m_axi_imatrix_ARSIZE SIZE 1 3 }  { m_axi_imatrix_ARBURST BURST 1 2 }  { m_axi_imatrix_ARLOCK LOCK 1 2 }  { m_axi_imatrix_ARCACHE CACHE 1 4 }  { m_axi_imatrix_ARPROT PROT 1 3 }  { m_axi_imatrix_ARQOS QOS 1 4 }  { m_axi_imatrix_ARREGION REGION 1 4 }  { m_axi_imatrix_ARUSER USER 1 1 }  { m_axi_imatrix_RVALID VALID 0 1 }  { m_axi_imatrix_RREADY READY 1 1 }  { m_axi_imatrix_RDATA DATA 0 32 }  { m_axi_imatrix_RLAST LAST 0 1 }  { m_axi_imatrix_RID ID 0 1 }  { m_axi_imatrix_RUSER USER 0 1 }  { m_axi_imatrix_RRESP RESP 0 2 }  { m_axi_imatrix_BVALID VALID 0 1 }  { m_axi_imatrix_BREADY READY 1 1 }  { m_axi_imatrix_BRESP RESP 0 2 }  { m_axi_imatrix_BID ID 0 1 }  { m_axi_imatrix_BUSER USER 0 1 } } }
-	imatrix_offset { ap_fifo {  { imatrix_offset_dout fifo_data 0 30 }  { imatrix_offset_empty_n fifo_status 0 1 }  { imatrix_offset_read fifo_update 1 1 } } }
+	imatrix { m_axi {  { m_axi_imatrix_AWVALID VALID 1 1 }  { m_axi_imatrix_AWREADY READY 0 1 }  { m_axi_imatrix_AWADDR ADDR 1 64 }  { m_axi_imatrix_AWID ID 1 1 }  { m_axi_imatrix_AWLEN LEN 1 32 }  { m_axi_imatrix_AWSIZE SIZE 1 3 }  { m_axi_imatrix_AWBURST BURST 1 2 }  { m_axi_imatrix_AWLOCK LOCK 1 2 }  { m_axi_imatrix_AWCACHE CACHE 1 4 }  { m_axi_imatrix_AWPROT PROT 1 3 }  { m_axi_imatrix_AWQOS QOS 1 4 }  { m_axi_imatrix_AWREGION REGION 1 4 }  { m_axi_imatrix_AWUSER USER 1 1 }  { m_axi_imatrix_WVALID VALID 1 1 }  { m_axi_imatrix_WREADY READY 0 1 }  { m_axi_imatrix_WDATA DATA 1 32 }  { m_axi_imatrix_WSTRB STRB 1 4 }  { m_axi_imatrix_WLAST LAST 1 1 }  { m_axi_imatrix_WID ID 1 1 }  { m_axi_imatrix_WUSER USER 1 1 }  { m_axi_imatrix_ARVALID VALID 1 1 }  { m_axi_imatrix_ARREADY READY 0 1 }  { m_axi_imatrix_ARADDR ADDR 1 64 }  { m_axi_imatrix_ARID ID 1 1 }  { m_axi_imatrix_ARLEN LEN 1 32 }  { m_axi_imatrix_ARSIZE SIZE 1 3 }  { m_axi_imatrix_ARBURST BURST 1 2 }  { m_axi_imatrix_ARLOCK LOCK 1 2 }  { m_axi_imatrix_ARCACHE CACHE 1 4 }  { m_axi_imatrix_ARPROT PROT 1 3 }  { m_axi_imatrix_ARQOS QOS 1 4 }  { m_axi_imatrix_ARREGION REGION 1 4 }  { m_axi_imatrix_ARUSER USER 1 1 }  { m_axi_imatrix_RVALID VALID 0 1 }  { m_axi_imatrix_RREADY READY 1 1 }  { m_axi_imatrix_RDATA DATA 0 32 }  { m_axi_imatrix_RLAST LAST 0 1 }  { m_axi_imatrix_RID ID 0 1 }  { m_axi_imatrix_RUSER USER 0 1 }  { m_axi_imatrix_RRESP RESP 0 2 }  { m_axi_imatrix_BVALID VALID 0 1 }  { m_axi_imatrix_BREADY READY 1 1 }  { m_axi_imatrix_BRESP RESP 0 2 }  { m_axi_imatrix_BID ID 0 1 }  { m_axi_imatrix_BUSER USER 0 1 } } }
+	imatrix_offset { ap_fifo {  { imatrix_offset_dout fifo_data 0 62 }  { imatrix_offset_empty_n fifo_status 0 1 }  { imatrix_offset_read fifo_update 1 1 } } }
 	out_buf_0 { ap_memory {  { out_buf_0_address0 mem_address 1 1 }  { out_buf_0_ce0 mem_ce 1 1 }  { out_buf_0_we0 mem_we 1 1 }  { out_buf_0_d0 mem_din 1 32 } } }
 	in1_buf_1 { ap_memory {  { in1_buf_1_address0 mem_address 1 1 }  { in1_buf_1_ce0 mem_ce 1 1 }  { in1_buf_1_q0 mem_dout 0 6 } } }
 	out_buf_1 { ap_memory {  { out_buf_1_address0 mem_address 1 1 }  { out_buf_1_ce0 mem_ce 1 1 }  { out_buf_1_we0 mem_we 1 1 }  { out_buf_1_d0 mem_din 1 32 } } }

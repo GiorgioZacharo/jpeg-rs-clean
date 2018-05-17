@@ -34,8 +34,11 @@ target triple = "x86_64-unknown-linux-gnu"
 @p_jinfo_MCUHeight = common global i32 0, align 4
 @mode3 = internal constant [10 x i8] c"s_axilite\00"
 @mode = internal constant [10 x i8] c"s_axilite\00"
-@memcpy_OC_y_OC_out1_s = internal unnamed_addr constant [22 x i8] c"memcpy.y.out1_buf.gep\00"
-@memcpy_OC_inp1_buf_O = internal unnamed_addr constant [18 x i8] c"memcpy.inp1_buf.y\00"
+@memcpy_OC_y_OC_inp3_s = internal unnamed_addr constant [22 x i8] c"memcpy.y.inp3_buf.gep\00"
+@memcpy_OC_y_OC_inp2_s = internal unnamed_addr constant [22 x i8] c"memcpy.y.inp2_buf.gep\00"
+@memcpy_OC_inp3_buf_O = internal unnamed_addr constant [18 x i8] c"memcpy.inp3_buf.y\00"
+@memcpy_OC_inp2_buf_O = internal unnamed_addr constant [18 x i8] c"memcpy.inp2_buf.y\00"
+@memcpy_OC_inp1_buf_O = internal unnamed_addr constant [18 x i8] c"memcpy.inp1_buf.x\00"
 @main_result = common global i32 0, align 4
 @burstwrite_OC_region = internal unnamed_addr constant [18 x i8] c"burstwrite.region\00"
 @burstread_OC_region_s = internal unnamed_addr constant [17 x i8] c"burstread.region\00"
@@ -48,12 +51,12 @@ target triple = "x86_64-unknown-linux-gnu"
 @OutData_comp_buf = common global [15930 x i8] zeroinitializer
 @CurHuffReadBuf = common global i8* null, align 8
 @ChenIDct_str = internal unnamed_addr constant [9 x i8] c"ChenIDct\00"
-@p_str524 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1
-@p_str423 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
-@p_str322 = private unnamed_addr constant [6 x i8] c"slave\00", align 1
-@p_str221 = private unnamed_addr constant [12 x i8] c"BUS_SRC_DST\00", align 1
-@p_str19 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
-@p_str120 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
+@p_str543 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1
+@p_str442 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
+@p_str38 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1
+@p_str341 = private unnamed_addr constant [6 x i8] c"slave\00", align 1
+@p_str240 = private unnamed_addr constant [12 x i8] c"BUS_SRC_DST\00", align 1
+@p_str139 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
 @p_str = internal unnamed_addr constant [1 x i8] zeroinitializer
 
 declare i64 @llvm.part.select.i64(i64, i32, i32) nounwind readnone
@@ -357,1042 +360,887 @@ define void @ChenIDct(i32* %BUS_SRC_DST, i64 %x, i64 %y) {
   %y_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %y)
   %x_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %x)
   %y3 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %y_read, i32 2, i32 63)
-  %tmp_4 = zext i62 %y3 to i64
-  %tmp_4_cast = zext i62 %y3 to i63
-  %BUS_SRC_DST_addr = getelementptr i32* %BUS_SRC_DST, i64 %tmp_4
-  %tmp = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %x_read, i32 2, i32 63)
-  %tmp_5_cast1 = zext i62 %tmp to i63
+  %tmp_12 = zext i62 %y3 to i64
+  %BUS_SRC_DST_addr = getelementptr i32* %BUS_SRC_DST, i64 %tmp_12
+  %x1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %x_read, i32 2, i32 63)
+  %tmp_14 = zext i62 %x1 to i64
+  %BUS_SRC_DST_addr_1 = getelementptr i32* %BUS_SRC_DST, i64 %tmp_14
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_SRC_DST), !map !277
   call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @ChenIDct_str) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC_DST, [6 x i8]* @p_str19, i32 0, i32 0, [1 x i8]* @p_str120, i32 0, i32 64, [12 x i8]* @p_str221, [6 x i8]* @p_str322, [1 x i8]* @p_str120, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str120, [1 x i8]* @p_str120)
-  call void (...)* @_ssdm_op_SpecInterface(i64 %x, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str120, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str322, [1 x i8]* @p_str120, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str120, [1 x i8]* @p_str120)
-  call void (...)* @_ssdm_op_SpecInterface(i64 %y, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str120, i32 0, i32 64, [1 x i8]* @bundle4, [6 x i8]* @p_str322, [1 x i8]* @p_str120, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str120, [1 x i8]* @p_str120)
-  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str423, i32 0, i32 0, [1 x i8]* @p_str120, i32 0, i32 0, [9 x i8]* @p_str524, [1 x i8]* @p_str120, [1 x i8]* @p_str120, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str120, [1 x i8]* @p_str120) nounwind
-  br label %1
-
-; <label>:1                                       ; preds = %2, %0
-  %i = phi i4 [ 0, %0 ], [ %i_3, %2 ]
-  %exitcond1 = icmp eq i4 %i, -8
-  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind
-  %i_3 = add i4 %i, 1
-  br i1 %exitcond1, label %.preheader.preheader, label %2
-
-.preheader.preheader:                             ; preds = %1
-  br label %.preheader
-
-; <label>:2                                       ; preds = %1
-  %tmp_cast1 = zext i4 %i to i63
-  %tmp_cast = zext i4 %i to i6
-  %x2_sum = add i63 %tmp_5_cast1, %tmp_cast1
-  %x2_sum_cast = zext i63 %x2_sum to i64
-  %aptr = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum_cast
-  %aptr_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr, i32 1)
-  %aptr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr)
-  %b0 = shl i32 %aptr_read, 2
-  %sum2 = xor i4 %i, -8
-  %sum2_cast_cast = zext i4 %sum2 to i63
-  %x2_sum5 = add i63 %tmp_5_cast1, %sum2_cast_cast
-  %x2_sum5_cast = zext i63 %x2_sum5 to i64
-  %aptr_1 = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum5_cast
-  %aptr_1_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_1, i32 1)
-  %aptr_1_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_1)
-  %a0 = shl i32 %aptr_1_read, 2
-  %sum = call i5 @_ssdm_op_BitConcatenate.i5.i1.i4(i1 true, i4 %i)
-  %sum_cast_cast = zext i5 %sum to i63
-  %x2_sum6 = add i63 %tmp_5_cast1, %sum_cast_cast
-  %x2_sum6_cast = zext i63 %x2_sum6 to i64
-  %aptr_2 = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum6_cast
-  %aptr_2_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_2, i32 1)
-  %aptr_2_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_2)
-  %b2 = shl i32 %aptr_2_read, 2
-  %sum1_cast1 = sext i4 %sum2 to i5
-  %sum1_cast_cast = zext i5 %sum1_cast1 to i63
-  %x2_sum7 = add i63 %tmp_5_cast1, %sum1_cast_cast
-  %x2_sum7_cast = zext i63 %x2_sum7 to i64
-  %aptr_3 = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum7_cast
-  %aptr_3_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_3, i32 1)
-  %aptr_3_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_3)
-  %a1 = shl i32 %aptr_3_read, 2
-  %sum3 = call i6 @_ssdm_op_BitConcatenate.i6.i2.i4(i2 -2, i4 %i)
-  %sum3_cast_cast = zext i6 %sum3 to i63
-  %x2_sum8 = add i63 %tmp_5_cast1, %sum3_cast_cast
-  %x2_sum8_cast = zext i63 %x2_sum8 to i64
-  %aptr_4 = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum8_cast
-  %aptr_4_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_4, i32 1)
-  %aptr_4_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_4)
-  %b1 = shl i32 %aptr_4_read, 2
-  %sum4 = add i6 -24, %tmp_cast
-  %sum4_cast_cast = zext i6 %sum4 to i63
-  %x2_sum9 = add i63 %tmp_5_cast1, %sum4_cast_cast
-  %x2_sum9_cast = zext i63 %x2_sum9 to i64
-  %aptr_5 = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum9_cast
-  %aptr_5_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_5, i32 1)
-  %aptr_5_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_5)
-  %a2 = shl i32 %aptr_5_read, 2
-  %sum5_cast1 = sext i5 %sum to i6
-  %sum5_cast_cast = zext i6 %sum5_cast1 to i63
-  %x2_sum1 = add i63 %tmp_5_cast1, %sum5_cast_cast
-  %x2_sum1_cast = zext i63 %x2_sum1 to i64
-  %aptr_6 = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum1_cast
-  %aptr_6_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_6, i32 1)
-  %aptr_6_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_6)
-  %b3 = shl i32 %aptr_6_read, 2
-  %sum6_cast1 = sext i4 %sum2 to i6
-  %sum6_cast_cast = zext i6 %sum6_cast1 to i63
-  %x2_sum2 = add i63 %tmp_5_cast1, %sum6_cast_cast
-  %x2_sum2_cast = zext i63 %x2_sum2 to i64
-  %aptr_7 = getelementptr i32* %BUS_SRC_DST, i64 %x2_sum2_cast
-  %aptr_7_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_7, i32 1)
-  %aptr_7_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_7)
-  %a3 = shl i32 %aptr_7_read, 2
-  %tmp_9_cast1 = sext i32 %a0 to i41
-  %tmp_9_cast = sext i32 %a0 to i40
-  %tmp_s = mul i40 100, %tmp_9_cast
-  %tmp_cast_29 = sext i40 %tmp_s to i41
-  %tmp_1_cast1 = sext i32 %a3 to i40
-  %tmp_1_cast = sext i32 %a3 to i41
-  %tmp_2 = mul i41 -502, %tmp_1_cast
-  %tmp_3 = add i41 %tmp_cast_29, %tmp_2
-  %c0 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_3, i32 9, i32 40)
-  %tmp_5_cast = sext i32 %a2 to i41
-  %tmp_6 = mul i41 426, %tmp_5_cast
-  %tmp_7_cast = sext i32 %a1 to i41
-  %tmp_8 = mul i41 -284, %tmp_7_cast
-  %tmp_1 = add i41 %tmp_8, %tmp_6
-  %c1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_1, i32 9, i32 40)
-  %tmp_7 = mul i41 426, %tmp_7_cast
-  %tmp_9 = mul i41 284, %tmp_5_cast
-  %tmp_5 = add i41 %tmp_7, %tmp_9
-  %c2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_5, i32 9, i32 40)
-  %tmp_10 = mul i41 502, %tmp_9_cast1
-  %tmp_11 = mul i40 100, %tmp_1_cast1
-  %tmp_17_cast = sext i40 %tmp_11 to i41
-  %tmp_12 = add i41 %tmp_10, %tmp_17_cast
-  %c3 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_12, i32 9, i32 40)
-  %tmp_13 = add nsw i32 %b0, %b1
-  %tmp_21_cast = sext i32 %tmp_13 to i41
-  %tmp_14 = mul i41 362, %tmp_21_cast
-  %a0_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_14, i32 9, i32 40)
-  %tmp_15 = sub nsw i32 %b0, %b1
-  %tmp_25_cast = sext i32 %tmp_15 to i41
-  %tmp_16 = mul i41 362, %tmp_25_cast
-  %a1_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_16, i32 9, i32 40)
-  %tmp_28_cast = sext i32 %b2 to i41
-  %tmp_17 = mul i41 196, %tmp_28_cast
-  %tmp_30_cast = sext i32 %b3 to i41
-  %tmp_18 = mul i41 -473, %tmp_30_cast
-  %tmp_19 = add i41 %tmp_17, %tmp_18
-  %a2_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_19, i32 9, i32 40)
-  %tmp_20 = mul i41 473, %tmp_28_cast
-  %tmp_21 = mul i41 196, %tmp_30_cast
-  %tmp_22 = add i41 %tmp_20, %tmp_21
-  %a3_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_22, i32 9, i32 40)
-  %b0_1 = add nsw i32 %a0_1, %a3_1
-  %b1_1 = add nsw i32 %a1_1, %a2_1
-  %b2_1 = sub nsw i32 %a1_1, %a2_1
-  %b3_1 = sub nsw i32 %a0_1, %a3_1
-  %a0_6 = add nsw i32 %c1, %c0
-  %a1_2 = sub nsw i32 %c0, %c1
-  %a2_2 = sub nsw i32 %c3, %c2
-  %a3_6 = add nsw i32 %c2, %c3
-  %tmp_23 = sub nsw i32 %a2_2, %a1_2
-  %tmp_39_cast = sext i32 %tmp_23 to i41
-  %tmp_24 = mul i41 362, %tmp_39_cast
-  %c1_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_24, i32 9, i32 40)
-  %tmp_25 = add nsw i32 %a1_2, %a2_2
-  %tmp_43_cast = sext i32 %tmp_25 to i41
-  %tmp_26 = mul i41 362, %tmp_43_cast
-  %c2_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_26, i32 9, i32 40)
-  %y4_sum = add i63 %tmp_4_cast, %tmp_cast1
-  %y4_sum_cast = zext i63 %y4_sum to i64
-  %aptr_8 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum_cast
-  %tmp_27 = add nsw i32 %b0_1, %a3_6
-  %aptr_8_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_8, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_8, i32 %tmp_27, i4 -1)
-  %aptr_8_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_8)
-  %y4_sum1 = add i63 %tmp_4_cast, %sum2_cast_cast
-  %y4_sum1_cast = zext i63 %y4_sum1 to i64
-  %aptr_9 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum1_cast
-  %tmp_28 = add nsw i32 %b1_1, %c2_1
-  %aptr_9_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_9, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_9, i32 %tmp_28, i4 -1)
-  %aptr_9_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_9)
-  %y4_sum2 = add i63 %tmp_4_cast, %sum_cast_cast
-  %y4_sum2_cast = zext i63 %y4_sum2 to i64
-  %aptr_10 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum2_cast
-  %tmp_29 = add nsw i32 %b2_1, %c1_1
-  %aptr_10_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_10, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_10, i32 %tmp_29, i4 -1)
-  %aptr_10_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_10)
-  %y4_sum3 = add i63 %tmp_4_cast, %sum1_cast_cast
-  %y4_sum3_cast = zext i63 %y4_sum3 to i64
-  %aptr_11 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum3_cast
-  %tmp_30 = add nsw i32 %b3_1, %a0_6
-  %aptr_11_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_11, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_11, i32 %tmp_30, i4 -1)
-  %aptr_11_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_11)
-  %y4_sum4 = add i63 %tmp_4_cast, %sum3_cast_cast
-  %y4_sum4_cast = zext i63 %y4_sum4 to i64
-  %aptr_12 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum4_cast
-  %tmp_31 = sub nsw i32 %b3_1, %a0_6
-  %aptr_12_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_12, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_12, i32 %tmp_31, i4 -1)
-  %aptr_12_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_12)
-  %y4_sum5 = add i63 %tmp_4_cast, %sum4_cast_cast
-  %y4_sum5_cast = zext i63 %y4_sum5 to i64
-  %aptr_13 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum5_cast
-  %tmp_32 = sub nsw i32 %b2_1, %c1_1
-  %aptr_13_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_13, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_13, i32 %tmp_32, i4 -1)
-  %aptr_13_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_13)
-  %y4_sum6 = add i63 %tmp_4_cast, %sum5_cast_cast
-  %y4_sum6_cast = zext i63 %y4_sum6 to i64
-  %aptr_14 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum6_cast
-  %tmp_33 = sub nsw i32 %b1_1, %c2_1
-  %aptr_14_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_14, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_14, i32 %tmp_33, i4 -1)
-  %aptr_14_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_14)
-  %y4_sum7 = add i63 %tmp_4_cast, %sum6_cast_cast
-  %y4_sum7_cast = zext i63 %y4_sum7 to i64
-  %aptr_15 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum7_cast
-  %tmp_34 = sub nsw i32 %b0_1, %a3_6
-  %aptr_15_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_15, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_15, i32 %tmp_34, i4 -1)
-  %aptr_15_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_15)
-  br label %1
-
-.preheader:                                       ; preds = %.preheader.preheader, %3
-  %i_1 = phi i4 [ %i_4, %3 ], [ 0, %.preheader.preheader ]
-  %exitcond2 = icmp eq i4 %i_1, -8
-  %empty_30 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind
-  %i_4 = add i4 %i_1, 1
-  br i1 %exitcond2, label %.preheader1006.preheader, label %3
-
-.preheader1006.preheader:                         ; preds = %.preheader
-  %inp1_buf_0_1_2 = alloca i32
-  %inp1_buf_0_1_33 = alloca i32
-  %inp1_buf_0_1_34 = alloca i32
-  %inp1_buf_0_1_35 = alloca i32
-  %inp1_buf_0_1_36 = alloca i32
-  %inp1_buf_0_1_37 = alloca i32
-  %inp1_buf_0_1_38 = alloca i32
-  %inp1_buf_0_1_39 = alloca i32
-  %inp1_buf_0_1_40 = alloca i32
-  %inp1_buf_0_1_41 = alloca i32
-  %inp1_buf_0_1_42 = alloca i32
-  %inp1_buf_0_1_43 = alloca i32
-  %inp1_buf_0_1_44 = alloca i32
-  %inp1_buf_0_1_45 = alloca i32
-  %inp1_buf_0_1_46 = alloca i32
-  %inp1_buf_0_1_47 = alloca i32
-  %inp1_buf_0_1_48 = alloca i32
-  %inp1_buf_0_1_49 = alloca i32
-  %inp1_buf_0_1_50 = alloca i32
-  %inp1_buf_0_1_51 = alloca i32
-  %inp1_buf_0_1_52 = alloca i32
-  %inp1_buf_0_1_53 = alloca i32
-  %inp1_buf_0_1_54 = alloca i32
-  %inp1_buf_0_1_55 = alloca i32
-  %inp1_buf_0_1_56 = alloca i32
-  %inp1_buf_0_1_57 = alloca i32
-  %inp1_buf_0_1_58 = alloca i32
-  %inp1_buf_0_1_59 = alloca i32
-  %inp1_buf_0_1_60 = alloca i32
-  %inp1_buf_0_1_61 = alloca i32
-  %inp1_buf_0_1_62 = alloca i32
-  %inp1_buf_0_1_63 = alloca i32
-  %out1_buf_0_1_1 = alloca i32
-  %out1_buf_0_1_3 = alloca i32
-  %out1_buf_1_1_1 = alloca i32
-  %out1_buf_1_1_3 = alloca i32
-  %out1_buf_2_1_1 = alloca i32
-  %out1_buf_2_1_3 = alloca i32
-  %out1_buf_3_1_1 = alloca i32
-  %out1_buf_3_1_3 = alloca i32
-  %out1_buf_4_1_1 = alloca i32
-  %out1_buf_4_1_3 = alloca i32
-  %out1_buf_5_1_1 = alloca i32
-  %out1_buf_5_1_3 = alloca i32
-  %out1_buf_6_1_1 = alloca i32
-  %out1_buf_6_1_3 = alloca i32
-  %out1_buf_7_1_1 = alloca i32
-  %out1_buf_7_1_3 = alloca i32
-  %out1_buf_8_1_1 = alloca i32
-  %out1_buf_8_1_3 = alloca i32
-  %out1_buf_9_1_1 = alloca i32
-  %out1_buf_9_1_3 = alloca i32
-  %out1_buf_10_1_1 = alloca i32
-  %out1_buf_10_1_3 = alloca i32
-  %out1_buf_11_1_1 = alloca i32
-  %out1_buf_11_1_3 = alloca i32
-  %out1_buf_12_1_1 = alloca i32
-  %out1_buf_12_1_3 = alloca i32
-  %out1_buf_13_1_1 = alloca i32
-  %out1_buf_13_1_3 = alloca i32
-  %out1_buf_14_1_1 = alloca i32
-  %out1_buf_14_1_3 = alloca i32
-  %out1_buf_15_1_1 = alloca i32
-  %out1_buf_15_1_3 = alloca i32
-  %BUS_SRC_DST_addr_rd_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 64)
-  %BUS_SRC_DST_addr_wr_s = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 64)
-  br label %.preheader1006
-
-; <label>:3                                       ; preds = %.preheader
-  %tmp_35 = trunc i4 %i_1 to i3
-  %tmp_36 = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %tmp_35, i3 0)
-  %tmp_46_cast = zext i6 %tmp_36 to i63
-  %y4_sum8 = add i63 %tmp_4_cast, %tmp_46_cast
-  %y4_sum8_cast = zext i63 %y4_sum8 to i64
-  %aptr_16 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum8_cast
-  %p_sum1 = or i6 %tmp_36, 1
-  %p_sum1_cast1 = zext i6 %p_sum1 to i7
-  %p_sum1_cast_cast = zext i6 %p_sum1 to i63
-  %y4_sum9 = add i63 %tmp_4_cast, %p_sum1_cast_cast
-  %y4_sum9_cast = zext i63 %y4_sum9 to i64
-  %aptr_17 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum9_cast
-  %b0_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_16, i32 1)
-  %b0_2 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_16)
-  %sum7 = add i7 1, %p_sum1_cast1
-  %sum7_cast_cast = zext i7 %sum7 to i63
-  %y4_sum10 = add i63 %tmp_4_cast, %sum7_cast_cast
-  %y4_sum10_cast = zext i63 %y4_sum10 to i64
-  %aptr_18 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum10_cast
-  %a0_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_17, i32 1)
-  %a0_3 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_17)
-  %p_sum = or i6 %tmp_36, 3
-  %p_sum_cast1 = zext i6 %p_sum to i7
-  %p_sum_cast_cast = zext i6 %p_sum to i63
-  %y4_sum11 = add i63 %tmp_4_cast, %p_sum_cast_cast
-  %y4_sum11_cast = zext i63 %y4_sum11 to i64
-  %aptr_19 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum11_cast
-  %b2_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_18, i32 1)
-  %b2_2 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_18)
-  %sum8 = add i7 1, %p_sum_cast1
-  %sum8_cast_cast = zext i7 %sum8 to i63
-  %y4_sum12 = add i63 %tmp_4_cast, %sum8_cast_cast
-  %y4_sum12_cast = zext i63 %y4_sum12 to i64
-  %aptr_20 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum12_cast
-  %a1_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_19, i32 1)
-  %a1_3 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_19)
-  %sum9 = add i7 2, %p_sum_cast1
-  %sum9_cast_cast = zext i7 %sum9 to i63
-  %y4_sum13 = add i63 %tmp_4_cast, %sum9_cast_cast
-  %y4_sum13_cast = zext i63 %y4_sum13 to i64
-  %aptr_21 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum13_cast
-  %b1_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_20, i32 1)
-  %b1_2 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_20)
-  %sum1 = add i7 3, %p_sum_cast1
-  %sum10_cast_cast = zext i7 %sum1 to i63
-  %y4_sum14 = add i63 %tmp_4_cast, %sum10_cast_cast
-  %y4_sum14_cast = zext i63 %y4_sum14 to i64
-  %aptr_22 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum14_cast
-  %a2_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_21, i32 1)
-  %a2_3 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_21)
-  %p_sum2 = or i6 %tmp_36, 7
-  %p_sum2_cast_cast = zext i6 %p_sum2 to i63
-  %y4_sum15 = add i63 %tmp_4_cast, %p_sum2_cast_cast
-  %y4_sum15_cast = zext i63 %y4_sum15 to i64
-  %aptr_23 = getelementptr i32* %BUS_SRC_DST, i64 %y4_sum15_cast
-  %b3_2_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_22, i32 1)
-  %b3_2 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_22)
-  %a3_3_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %aptr_23, i32 1)
-  %a3_3 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %aptr_23)
-  %tmp_56_cast1 = sext i32 %a0_3 to i41
-  %tmp_56_cast = sext i32 %a0_3 to i40
-  %tmp_37 = mul i40 100, %tmp_56_cast
-  %tmp_57_cast = sext i40 %tmp_37 to i41
-  %tmp_58_cast1 = sext i32 %a3_3 to i40
-  %tmp_58_cast = sext i32 %a3_3 to i41
-  %tmp_38 = mul i41 -502, %tmp_58_cast
-  %tmp_39 = add i41 %tmp_57_cast, %tmp_38
-  %c0_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_39, i32 9, i32 40)
-  %tmp_62_cast = sext i32 %a2_3 to i41
-  %tmp_40 = mul i41 426, %tmp_62_cast
-  %tmp_64_cast = sext i32 %a1_3 to i41
-  %tmp_41 = mul i41 -284, %tmp_64_cast
-  %tmp_42 = add i41 %tmp_41, %tmp_40
-  %c1_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_42, i32 9, i32 40)
-  %tmp_43 = mul i41 426, %tmp_64_cast
-  %tmp_44 = mul i41 284, %tmp_62_cast
-  %tmp_45 = add i41 %tmp_43, %tmp_44
-  %c2_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_45, i32 9, i32 40)
-  %tmp_46 = mul i41 502, %tmp_56_cast1
-  %tmp_47 = mul i40 100, %tmp_58_cast1
-  %tmp_73_cast = sext i40 %tmp_47 to i41
-  %tmp_48 = add i41 %tmp_46, %tmp_73_cast
-  %c3_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_48, i32 9, i32 40)
-  %tmp_49 = add nsw i32 %b0_2, %b1_2
-  %tmp_77_cast = sext i32 %tmp_49 to i41
-  %tmp_50 = mul i41 362, %tmp_77_cast
-  %a0_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_50, i32 9, i32 40)
-  %tmp_51 = sub nsw i32 %b0_2, %b1_2
-  %tmp_81_cast = sext i32 %tmp_51 to i41
-  %tmp_52 = mul i41 362, %tmp_81_cast
-  %a1_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_52, i32 9, i32 40)
-  %tmp_84_cast = sext i32 %b2_2 to i41
-  %tmp_53 = mul i41 196, %tmp_84_cast
-  %tmp_86_cast = sext i32 %b3_2 to i41
-  %tmp_54 = mul i41 -473, %tmp_86_cast
-  %tmp_55 = add i41 %tmp_53, %tmp_54
-  %a2_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_55, i32 9, i32 40)
-  %tmp_56 = mul i41 473, %tmp_84_cast
-  %tmp_57 = mul i41 196, %tmp_86_cast
-  %tmp_58 = add i41 %tmp_56, %tmp_57
-  %a3_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_58, i32 9, i32 40)
-  %b0_3 = add nsw i32 %a0_4, %a3_4
-  %b1_3 = add nsw i32 %a1_4, %a2_4
-  %b2_3 = sub nsw i32 %a1_4, %a2_4
-  %b3_3 = sub nsw i32 %a0_4, %a3_4
-  %a0_7 = add nsw i32 %c1_2, %c0_2
-  %a1_5 = sub nsw i32 %c0_2, %c1_2
-  %a2_5 = sub nsw i32 %c3_2, %c2_2
-  %a3_7 = add nsw i32 %c2_2, %c3_2
-  %tmp_59 = sub nsw i32 %a2_5, %a1_5
-  %tmp_95_cast = sext i32 %tmp_59 to i41
-  %tmp_60 = mul i41 362, %tmp_95_cast
-  %c1_3 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_60, i32 9, i32 40)
-  %tmp_61 = add nsw i32 %a1_5, %a2_5
-  %tmp_99_cast = sext i32 %tmp_61 to i41
-  %tmp_62 = mul i41 362, %tmp_99_cast
-  %c2_3 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_62, i32 9, i32 40)
-  %tmp_63 = add nsw i32 %b0_3, %a3_7
-  %aptr_16_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_16, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_16, i32 %tmp_63, i4 -1)
-  %aptr_16_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_16)
-  %tmp_64 = add nsw i32 %b1_3, %c2_3
-  %aptr_17_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_17, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_17, i32 %tmp_64, i4 -1)
-  %aptr_17_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_17)
-  %tmp_65 = add nsw i32 %b2_3, %c1_3
-  %aptr_18_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_18, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_18, i32 %tmp_65, i4 -1)
-  %aptr_18_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_18)
-  %tmp_66 = add nsw i32 %b3_3, %a0_7
-  %aptr_19_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_19, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_19, i32 %tmp_66, i4 -1)
-  %aptr_19_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_19)
-  %tmp_67 = sub nsw i32 %b3_3, %a0_7
-  %aptr_20_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_20, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_20, i32 %tmp_67, i4 -1)
-  %aptr_20_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_20)
-  %tmp_68 = sub nsw i32 %b2_3, %c1_3
-  %aptr_21_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_21, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_21, i32 %tmp_68, i4 -1)
-  %aptr_21_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_21)
-  %tmp_69 = sub nsw i32 %b1_3, %c2_3
-  %aptr_22_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_22, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_22, i32 %tmp_69, i4 -1)
-  %aptr_22_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_22)
-  %tmp_70 = sub nsw i32 %b0_3, %a3_7
-  %aptr_23_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %aptr_23, i32 1)
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %aptr_23, i32 %tmp_70, i4 -1)
-  %aptr_23_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %aptr_23)
-  br label %.preheader
-
-.preheader1006.loopexit:                          ; preds = %burst.wr.header
-  br label %.preheader1006
-
-.preheader1006:                                   ; preds = %.preheader1006.loopexit, %.preheader1006.preheader
-  %i_2 = phi i2 [ 0, %.preheader1006.preheader ], [ %i_5, %.preheader1006.loopexit ]
-  %exitcond3 = icmp eq i2 %i_2, -2
-  %i_5 = add i2 %i_2, 1
-  br i1 %exitcond3, label %5, label %4
-
-; <label>:4                                       ; preds = %.preheader1006
-  %empty_31 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind
+  %inp1_buf = alloca [64 x i32], align 16
+  %inp2_buf = alloca [64 x i32], align 16
+  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC_DST, [6 x i8]* @p_str38, i32 0, i32 0, [1 x i8]* @p_str139, i32 0, i32 64, [12 x i8]* @p_str240, [6 x i8]* @p_str341, [1 x i8]* @p_str139, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str139, [1 x i8]* @p_str139)
+  call void (...)* @_ssdm_op_SpecInterface(i64 %x, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str139, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str341, [1 x i8]* @p_str139, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str139, [1 x i8]* @p_str139)
+  call void (...)* @_ssdm_op_SpecInterface(i64 %y, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str139, i32 0, i32 64, [1 x i8]* @bundle4, [6 x i8]* @p_str341, [1 x i8]* @p_str139, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str139, [1 x i8]* @p_str139)
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str442, i32 0, i32 0, [1 x i8]* @p_str139, i32 0, i32 0, [9 x i8]* @p_str543, [1 x i8]* @p_str139, [1 x i8]* @p_str139, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str139, [1 x i8]* @p_str139) nounwind
+  %BUS_SRC_DST_addr_1_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_DST_addr_1, i32 64)
   br label %burst.rd.header
 
-burst.rd.header:                                  ; preds = %burst.rd.body398, %4
-  %indvar = phi i6 [ 0, %4 ], [ %indvar_next, %burst.rd.body398 ]
-  %exitcond4 = icmp eq i6 %indvar, -32
-  %indvar_next = add i6 %indvar, 1
-  br i1 %exitcond4, label %burst.rd.end.0.preheader, label %burst.rd.body
+burst.rd.header:                                  ; preds = %burst.rd.body, %0
+  %indvar = phi i7 [ 0, %0 ], [ %indvar_next, %burst.rd.body ]
+  %exitcond1 = icmp eq i7 %indvar, -64
+  %indvar_next = add i7 %indvar, 1
+  br i1 %exitcond1, label %burst.rd.header14.preheader, label %burst.rd.body
 
-burst.rd.end.0.preheader:                         ; preds = %burst.rd.header
-  br label %burst.rd.end.0
+burst.rd.header14.preheader:                      ; preds = %burst.rd.header
+  %BUS_SRC_DST_addr_rd_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 64)
+  br label %burst.rd.header14
 
 burst.rd.body:                                    ; preds = %burst.rd.header
-  %empty_32 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
+  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind
   %burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind
-  %empty_33 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
-  %empty_34 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_inp1_buf_O) nounwind
-  %inp1_buf_0_0 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_DST_addr)
-  %tmp_71 = trunc i6 %indvar to i4
-  %tmp_72 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar, i32 4)
-  switch i4 %tmp_71, label %branch15 [
-    i4 0, label %branch0
-    i4 1, label %branch1
-    i4 2, label %branch2
-    i4 3, label %branch3
-    i4 4, label %branch4
-    i4 5, label %branch5
-    i4 6, label %branch6
-    i4 7, label %branch7
-    i4 -8, label %branch8
-    i4 -7, label %branch9
-    i4 -6, label %branch10
-    i4 -5, label %branch11
-    i4 -4, label %branch12
-    i4 -3, label %branch13
-    i4 -2, label %branch14
-  ]
-
-burst.rd.body398:                                 ; preds = %branch15, %branch14, %branch13, %branch12, %branch11, %branch10, %branch9, %branch8, %branch7, %branch6, %branch5, %branch4, %branch3, %branch2, %branch1, %branch0
+  %empty_29 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+  %empty_30 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_inp1_buf_O) nounwind
+  %tmp = zext i7 %indvar to i64
+  %BUS_SRC_DST_addr_1_r_1 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_DST_addr_1)
+  %inp1_buf_addr = getelementptr [64 x i32]* %inp1_buf, i64 0, i64 %tmp
+  store i32 %BUS_SRC_DST_addr_1_r_1, i32* %inp1_buf_addr, align 4
   %burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind
   br label %burst.rd.header
 
-burst.rd.end.0:                                   ; preds = %burst.rd.end.0.preheader, %burst.rd.end.1_ifconv
-  %k = phi i6 [ %k_1_s, %burst.rd.end.1_ifconv ], [ 0, %burst.rd.end.0.preheader ]
-  %empty_35 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind
-  %exitcond = icmp eq i6 %k, -32
-  br i1 %exitcond, label %burst.wr.header.preheader, label %burst.rd.end.1_ifconv
+burst.rd.header14:                                ; preds = %burst.rd.header14.preheader, %burst.rd.body15
+  %indvar1 = phi i7 [ %indvar_next1, %burst.rd.body15 ], [ 0, %burst.rd.header14.preheader ]
+  %exitcond2 = icmp eq i7 %indvar1, -64
+  %indvar_next1 = add i7 %indvar1, 1
+  br i1 %exitcond2, label %burst.rd.end13.preheader, label %burst.rd.body15
 
-burst.wr.header.preheader:                        ; preds = %burst.rd.end.0
+burst.rd.end13.preheader:                         ; preds = %burst.rd.header14
+  br label %burst.rd.end13
+
+burst.rd.body15:                                  ; preds = %burst.rd.header14
+  %empty_31 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind
+  %burstread_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind
+  %empty_32 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+  %empty_33 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_inp2_buf_O) nounwind
+  %tmp_1 = zext i7 %indvar1 to i64
+  %BUS_SRC_DST_addr_rea = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_DST_addr)
+  %inp2_buf_addr = getelementptr [64 x i32]* %inp2_buf, i64 0, i64 %tmp_1
+  store i32 %BUS_SRC_DST_addr_rea, i32* %inp2_buf_addr, align 4
+  %burstread_rend22 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin1) nounwind
+  br label %burst.rd.header14
+
+burst.rd.end13:                                   ; preds = %burst.rd.end13.preheader, %1
+  %i = phi i4 [ %i_3, %1 ], [ 0, %burst.rd.end13.preheader ]
+  %i_cast1 = zext i4 %i to i6
+  %exitcond9 = icmp eq i4 %i, -8
+  %empty_34 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind
+  %i_3 = add i4 %i, 1
+  br i1 %exitcond9, label %.preheader.preheader, label %1
+
+.preheader.preheader:                             ; preds = %burst.rd.end13
+  br label %.preheader
+
+; <label>:1                                       ; preds = %burst.rd.end13
+  %tmp_2 = zext i4 %i to i64
+  %inp1_buf_addr_1 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_2
+  %inp1_buf_load = load i32* %inp1_buf_addr_1, align 4
+  %b0 = shl i32 %inp1_buf_load, 2
+  %tmp_4 = xor i4 %i, -8
+  %tmp_5 = zext i4 %tmp_4 to i64
+  %inp1_buf_addr_2 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_5
+  %inp1_buf_load_1 = load i32* %inp1_buf_addr_2, align 4
+  %a0 = shl i32 %inp1_buf_load_1, 2
+  %tmp_6 = call i5 @_ssdm_op_BitConcatenate.i5.i1.i4(i1 true, i4 %i)
+  %tmp_8 = zext i5 %tmp_6 to i64
+  %inp1_buf_addr_3 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_8
+  %inp1_buf_load_2 = load i32* %inp1_buf_addr_3, align 4
+  %b2 = shl i32 %inp1_buf_load_2, 2
+  %tmp_cast = sext i4 %tmp_4 to i5
+  %tmp_3 = zext i5 %tmp_cast to i64
+  %inp1_buf_addr_4 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_3
+  %inp1_buf_load_3 = load i32* %inp1_buf_addr_4, align 4
+  %a1 = shl i32 %inp1_buf_load_3, 2
+  %tmp_7 = call i6 @_ssdm_op_BitConcatenate.i6.i2.i4(i2 -2, i4 %i)
+  %tmp_9 = zext i6 %tmp_7 to i64
+  %inp1_buf_addr_5 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_9
+  %inp1_buf_load_4 = load i32* %inp1_buf_addr_5, align 4
+  %b1 = shl i32 %inp1_buf_load_4, 2
+  %tmp_s = add i6 -24, %i_cast1
+  %tmp_10 = zext i6 %tmp_s to i64
+  %inp1_buf_addr_6 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_10
+  %inp1_buf_load_5 = load i32* %inp1_buf_addr_6, align 4
+  %a2 = shl i32 %inp1_buf_load_5, 2
+  %tmp_12_cast = sext i5 %tmp_6 to i6
+  %tmp_11 = zext i6 %tmp_12_cast to i64
+  %inp1_buf_addr_7 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_11
+  %inp1_buf_load_6 = load i32* %inp1_buf_addr_7, align 4
+  %b3 = shl i32 %inp1_buf_load_6, 2
+  %tmp_14_cast = sext i4 %tmp_4 to i6
+  %tmp_13 = zext i6 %tmp_14_cast to i64
+  %inp1_buf_addr_8 = getelementptr inbounds [64 x i32]* %inp1_buf, i64 0, i64 %tmp_13
+  %inp1_buf_load_7 = load i32* %inp1_buf_addr_8, align 4
+  %a3 = shl i32 %inp1_buf_load_7, 2
+  %tmp_16_cast1 = sext i32 %a0 to i41
+  %tmp_16_cast = sext i32 %a0 to i40
+  %tmp_15 = mul i40 100, %tmp_16_cast
+  %tmp_17_cast = sext i40 %tmp_15 to i41
+  %tmp_18_cast1 = sext i32 %a3 to i40
+  %tmp_18_cast = sext i32 %a3 to i41
+  %tmp_16 = mul i41 -502, %tmp_18_cast
+  %tmp_17 = add i41 %tmp_16, %tmp_17_cast
+  %c0 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_17, i32 9, i32 40)
+  %tmp_22_cast = sext i32 %a2 to i41
+  %tmp_18 = mul i41 426, %tmp_22_cast
+  %tmp_24_cast = sext i32 %a1 to i41
+  %tmp_19 = mul i41 -284, %tmp_24_cast
+  %tmp_20 = add i41 %tmp_18, %tmp_19
+  %c1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_20, i32 9, i32 40)
+  %tmp_21 = mul i41 426, %tmp_24_cast
+  %tmp_22 = mul i41 284, %tmp_22_cast
+  %tmp_23 = add i41 %tmp_22, %tmp_21
+  %c2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_23, i32 9, i32 40)
+  %tmp_24 = mul i41 502, %tmp_16_cast1
+  %tmp_25 = mul i40 100, %tmp_18_cast1
+  %tmp_33_cast = sext i40 %tmp_25 to i41
+  %tmp_26 = add i41 %tmp_33_cast, %tmp_24
+  %c3 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_26, i32 9, i32 40)
+  %tmp_27 = add nsw i32 %b1, %b0
+  %tmp_37_cast = sext i32 %tmp_27 to i41
+  %tmp_28 = mul i41 362, %tmp_37_cast
+  %a0_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_28, i32 9, i32 40)
+  %tmp_29 = sub nsw i32 %b0, %b1
+  %tmp_41_cast = sext i32 %tmp_29 to i41
+  %tmp_30 = mul i41 362, %tmp_41_cast
+  %a1_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_30, i32 9, i32 40)
+  %tmp_44_cast = sext i32 %b2 to i41
+  %tmp_31 = mul i41 196, %tmp_44_cast
+  %tmp_46_cast = sext i32 %b3 to i41
+  %tmp_32 = mul i41 -473, %tmp_46_cast
+  %tmp_33 = add i41 %tmp_32, %tmp_31
+  %a2_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_33, i32 9, i32 40)
+  %tmp_34 = mul i41 473, %tmp_44_cast
+  %tmp_35 = mul i41 196, %tmp_46_cast
+  %tmp_36 = add i41 %tmp_35, %tmp_34
+  %a3_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_36, i32 9, i32 40)
+  %b0_1 = add nsw i32 %a3_1, %a0_1
+  %b1_1 = add nsw i32 %a2_1, %a1_1
+  %b2_1 = sub nsw i32 %a1_1, %a2_1
+  %b3_1 = sub nsw i32 %a0_1, %a3_1
+  %a0_6 = add nsw i32 %c0, %c1
+  %a1_2 = sub nsw i32 %c0, %c1
+  %a2_2 = sub nsw i32 %c3, %c2
+  %a3_6 = add nsw i32 %c3, %c2
+  %tmp_37 = sub nsw i32 %a2_2, %a1_2
+  %tmp_55_cast = sext i32 %tmp_37 to i41
+  %tmp_38 = mul i41 362, %tmp_55_cast
+  %c1_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_38, i32 9, i32 40)
+  %tmp_39 = add nsw i32 %a2_2, %a1_2
+  %tmp_59_cast = sext i32 %tmp_39 to i41
+  %tmp_40 = mul i41 362, %tmp_59_cast
+  %c2_1 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_40, i32 9, i32 40)
+  %tmp_41 = add nsw i32 %a3_6, %b0_1
+  %inp2_buf_addr_1 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_2
+  store i32 %tmp_41, i32* %inp2_buf_addr_1, align 4
+  %tmp_42 = add nsw i32 %c2_1, %b1_1
+  %inp2_buf_addr_2 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_5
+  store i32 %tmp_42, i32* %inp2_buf_addr_2, align 4
+  %tmp_43 = add nsw i32 %c1_1, %b2_1
+  %inp2_buf_addr_3 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_8
+  store i32 %tmp_43, i32* %inp2_buf_addr_3, align 4
+  %tmp_44 = add nsw i32 %a0_6, %b3_1
+  %inp2_buf_addr_4 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_3
+  store i32 %tmp_44, i32* %inp2_buf_addr_4, align 4
+  %tmp_45 = sub nsw i32 %b3_1, %a0_6
+  %inp2_buf_addr_5 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_9
+  store i32 %tmp_45, i32* %inp2_buf_addr_5, align 4
+  %tmp_46 = sub nsw i32 %b2_1, %c1_1
+  %inp2_buf_addr_6 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_10
+  store i32 %tmp_46, i32* %inp2_buf_addr_6, align 4
+  %tmp_47 = sub nsw i32 %b1_1, %c2_1
+  %inp2_buf_addr_7 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_11
+  store i32 %tmp_47, i32* %inp2_buf_addr_7, align 4
+  %tmp_48 = sub nsw i32 %b0_1, %a3_6
+  %inp2_buf_addr_8 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_13
+  store i32 %tmp_48, i32* %inp2_buf_addr_8, align 4
+  br label %burst.rd.end13
+
+.preheader:                                       ; preds = %.preheader.preheader, %2
+  %i_1 = phi i4 [ %i_4, %2 ], [ 0, %.preheader.preheader ]
+  %exitcond8 = icmp eq i4 %i_1, -8
+  %empty_35 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind
+  %i_4 = add i4 %i_1, 1
+  br i1 %exitcond8, label %burst.wr.header.preheader, label %2
+
+burst.wr.header.preheader:                        ; preds = %.preheader
+  %BUS_SRC_DST_addr_wr_s = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 64)
   br label %burst.wr.header
 
-burst.rd.end.1_ifconv:                            ; preds = %burst.rd.end.0
-  %inp1_buf_0_1_2_loa = load i32* %inp1_buf_0_1_2
-  %inp1_buf_0_1_33_lo = load i32* %inp1_buf_0_1_33
-  %inp1_buf_0_1_34_lo = load i32* %inp1_buf_0_1_34
-  %inp1_buf_0_1_35_lo = load i32* %inp1_buf_0_1_35
-  %inp1_buf_0_1_36_lo = load i32* %inp1_buf_0_1_36
-  %inp1_buf_0_1_37_lo = load i32* %inp1_buf_0_1_37
-  %inp1_buf_0_1_38_lo = load i32* %inp1_buf_0_1_38
-  %inp1_buf_0_1_39_lo = load i32* %inp1_buf_0_1_39
-  %inp1_buf_0_1_40_lo = load i32* %inp1_buf_0_1_40
-  %inp1_buf_0_1_41_lo = load i32* %inp1_buf_0_1_41
-  %inp1_buf_0_1_42_lo = load i32* %inp1_buf_0_1_42
-  %inp1_buf_0_1_43_lo = load i32* %inp1_buf_0_1_43
-  %inp1_buf_0_1_44_lo = load i32* %inp1_buf_0_1_44
-  %inp1_buf_0_1_45_lo = load i32* %inp1_buf_0_1_45
-  %inp1_buf_0_1_46_lo = load i32* %inp1_buf_0_1_46
-  %inp1_buf_0_1_47_lo = load i32* %inp1_buf_0_1_47
-  %inp1_buf_0_1_48_lo = load i32* %inp1_buf_0_1_48
-  %inp1_buf_0_1_49_lo = load i32* %inp1_buf_0_1_49
-  %inp1_buf_0_1_50_lo = load i32* %inp1_buf_0_1_50
-  %inp1_buf_0_1_51_lo = load i32* %inp1_buf_0_1_51
-  %inp1_buf_0_1_52_lo = load i32* %inp1_buf_0_1_52
-  %inp1_buf_0_1_53_lo = load i32* %inp1_buf_0_1_53
-  %inp1_buf_0_1_54_lo = load i32* %inp1_buf_0_1_54
-  %inp1_buf_0_1_55_lo = load i32* %inp1_buf_0_1_55
-  %inp1_buf_0_1_56_lo = load i32* %inp1_buf_0_1_56
-  %inp1_buf_0_1_57_lo = load i32* %inp1_buf_0_1_57
-  %inp1_buf_0_1_58_lo = load i32* %inp1_buf_0_1_58
-  %inp1_buf_0_1_59_lo = load i32* %inp1_buf_0_1_59
-  %inp1_buf_0_1_60_lo = load i32* %inp1_buf_0_1_60
-  %inp1_buf_0_1_61_lo = load i32* %inp1_buf_0_1_61
-  %inp1_buf_0_1_62_lo = load i32* %inp1_buf_0_1_62
-  %inp1_buf_0_1_63_lo = load i32* %inp1_buf_0_1_63
-  %out1_buf_0_1_1_loa = load i32* %out1_buf_0_1_1
-  %out1_buf_0_1_3_loa = load i32* %out1_buf_0_1_3
-  %out1_buf_1_1_1_loa = load i32* %out1_buf_1_1_1
-  %out1_buf_1_1_3_loa = load i32* %out1_buf_1_1_3
-  %out1_buf_2_1_1_loa = load i32* %out1_buf_2_1_1
-  %out1_buf_2_1_3_loa = load i32* %out1_buf_2_1_3
-  %out1_buf_3_1_1_loa = load i32* %out1_buf_3_1_1
-  %out1_buf_3_1_3_loa = load i32* %out1_buf_3_1_3
-  %out1_buf_4_1_1_loa = load i32* %out1_buf_4_1_1
-  %out1_buf_4_1_3_loa = load i32* %out1_buf_4_1_3
-  %out1_buf_5_1_1_loa = load i32* %out1_buf_5_1_1
-  %out1_buf_5_1_3_loa = load i32* %out1_buf_5_1_3
-  %out1_buf_6_1_1_loa = load i32* %out1_buf_6_1_1
-  %out1_buf_6_1_3_loa = load i32* %out1_buf_6_1_3
-  %out1_buf_7_1_1_loa = load i32* %out1_buf_7_1_1
-  %out1_buf_7_1_3_loa = load i32* %out1_buf_7_1_3
-  %out1_buf_8_1_1_loa = load i32* %out1_buf_8_1_1
-  %out1_buf_8_1_3_loa = load i32* %out1_buf_8_1_3
-  %out1_buf_9_1_1_loa = load i32* %out1_buf_9_1_1
-  %out1_buf_9_1_3_loa = load i32* %out1_buf_9_1_3
-  %out1_buf_10_1_1_lo = load i32* %out1_buf_10_1_1
-  %out1_buf_10_1_3_lo = load i32* %out1_buf_10_1_3
-  %out1_buf_11_1_1_lo = load i32* %out1_buf_11_1_1
-  %out1_buf_11_1_3_lo = load i32* %out1_buf_11_1_3
-  %out1_buf_12_1_1_lo = load i32* %out1_buf_12_1_1
-  %out1_buf_12_1_3_lo = load i32* %out1_buf_12_1_3
-  %out1_buf_13_1_1_lo = load i32* %out1_buf_13_1_1
-  %out1_buf_13_1_3_lo = load i32* %out1_buf_13_1_3
-  %out1_buf_14_1_1_lo = load i32* %out1_buf_14_1_1
-  %out1_buf_14_1_3_lo = load i32* %out1_buf_14_1_3
-  %out1_buf_15_1_1_lo = load i32* %out1_buf_15_1_1
-  %out1_buf_15_1_3_lo = load i32* %out1_buf_15_1_3
-  %tmp_73 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %k, i32 4)
-  %inp1_buf_load_0_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_33_lo, i32 %inp1_buf_0_1_2_loa
-  %tmp_74 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_0_phi, i32 31)
-  %tmp_114_cast_cast = select i1 %tmp_74, i32 -8, i32 8
-  %tmp_75 = add i32 %tmp_114_cast_cast, %inp1_buf_load_0_phi
-  %tmp_76 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_75, i32 31)
-  %p_neg = sub i32 0, %tmp_75
-  %tmp_77 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg, i32 4, i32 31)
-  %p_lshr_cast = zext i28 %tmp_77 to i29
-  %p_neg_t = sub i29 0, %p_lshr_cast
-  %tmp_78 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_75, i32 4, i32 31)
-  %p_lshr_f_cast = zext i28 %tmp_78 to i29
-  %out1_buf_0_1_5 = select i1 %tmp_76, i29 %p_neg_t, i29 %p_lshr_f_cast
-  %out1_buf_0_1_0_cas = sext i29 %out1_buf_0_1_5 to i32
-  %out1_buf_0_1 = select i1 %tmp_73, i32 %out1_buf_0_1_0_cas, i32 %out1_buf_0_1_3_loa
-  %out1_buf_0_1_2 = select i1 %tmp_73, i32 %out1_buf_0_1_1_loa, i32 %out1_buf_0_1_0_cas
-  %inp1_buf_load_1_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_35_lo, i32 %inp1_buf_0_1_34_lo
-  %tmp_79 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_1_phi, i32 31)
-  %tmp_122_cast_cast = select i1 %tmp_79, i32 -8, i32 8
-  %tmp_119_1 = add i32 %tmp_122_cast_cast, %inp1_buf_load_1_phi
-  %tmp_80 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_1, i32 31)
-  %p_neg_1 = sub i32 0, %tmp_119_1
-  %tmp_81 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_1, i32 4, i32 31)
-  %p_lshr_1_cast = zext i28 %tmp_81 to i29
-  %p_neg_t_1 = sub i29 0, %p_lshr_1_cast
-  %tmp_82 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_1, i32 4, i32 31)
-  %p_lshr_f_1_cast = zext i28 %tmp_82 to i29
-  %out1_buf_1_1_5 = select i1 %tmp_80, i29 %p_neg_t_1, i29 %p_lshr_f_1_cast
-  %out1_buf_1_1_0_cas = sext i29 %out1_buf_1_1_5 to i32
-  %out1_buf_1_1 = select i1 %tmp_73, i32 %out1_buf_1_1_0_cas, i32 %out1_buf_1_1_3_loa
-  %out1_buf_1_1_2 = select i1 %tmp_73, i32 %out1_buf_1_1_1_loa, i32 %out1_buf_1_1_0_cas
-  %inp1_buf_load_2_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_37_lo, i32 %inp1_buf_0_1_36_lo
-  %tmp_83 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_2_phi, i32 31)
-  %tmp_125_cast_cast = select i1 %tmp_83, i32 -8, i32 8
-  %tmp_119_2 = add i32 %tmp_125_cast_cast, %inp1_buf_load_2_phi
-  %tmp_84 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_2, i32 31)
-  %p_neg_2 = sub i32 0, %tmp_119_2
-  %tmp_85 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_2, i32 4, i32 31)
-  %p_lshr_2_cast = zext i28 %tmp_85 to i29
-  %p_neg_t_2 = sub i29 0, %p_lshr_2_cast
-  %tmp_86 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_2, i32 4, i32 31)
-  %p_lshr_f_2_cast = zext i28 %tmp_86 to i29
-  %out1_buf_2_1_5 = select i1 %tmp_84, i29 %p_neg_t_2, i29 %p_lshr_f_2_cast
-  %out1_buf_2_1_0_cas = sext i29 %out1_buf_2_1_5 to i32
-  %out1_buf_2_1 = select i1 %tmp_73, i32 %out1_buf_2_1_0_cas, i32 %out1_buf_2_1_3_loa
-  %out1_buf_2_1_2 = select i1 %tmp_73, i32 %out1_buf_2_1_1_loa, i32 %out1_buf_2_1_0_cas
-  %inp1_buf_load_3_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_39_lo, i32 %inp1_buf_0_1_38_lo
-  %tmp_87 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_3_phi, i32 31)
-  %tmp_128_cast_cast = select i1 %tmp_87, i32 -8, i32 8
-  %tmp_119_3 = add i32 %tmp_128_cast_cast, %inp1_buf_load_3_phi
-  %tmp_88 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_3, i32 31)
-  %p_neg_3 = sub i32 0, %tmp_119_3
-  %tmp_89 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_3, i32 4, i32 31)
-  %p_lshr_3_cast = zext i28 %tmp_89 to i29
-  %p_neg_t_3 = sub i29 0, %p_lshr_3_cast
-  %tmp_90 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_3, i32 4, i32 31)
-  %p_lshr_f_3_cast = zext i28 %tmp_90 to i29
-  %out1_buf_3_1_5 = select i1 %tmp_88, i29 %p_neg_t_3, i29 %p_lshr_f_3_cast
-  %out1_buf_3_1_0_cas = sext i29 %out1_buf_3_1_5 to i32
-  %out1_buf_3_1 = select i1 %tmp_73, i32 %out1_buf_3_1_0_cas, i32 %out1_buf_3_1_3_loa
-  %out1_buf_3_1_2 = select i1 %tmp_73, i32 %out1_buf_3_1_1_loa, i32 %out1_buf_3_1_0_cas
-  %inp1_buf_load_4_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_41_lo, i32 %inp1_buf_0_1_40_lo
-  %tmp_91 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_4_phi, i32 31)
-  %tmp_131_cast_cast = select i1 %tmp_91, i32 -8, i32 8
-  %tmp_119_4 = add i32 %tmp_131_cast_cast, %inp1_buf_load_4_phi
-  %tmp_92 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_4, i32 31)
-  %p_neg_4 = sub i32 0, %tmp_119_4
-  %tmp_93 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_4, i32 4, i32 31)
-  %p_lshr_4_cast = zext i28 %tmp_93 to i29
-  %p_neg_t_4 = sub i29 0, %p_lshr_4_cast
-  %tmp_94 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_4, i32 4, i32 31)
-  %p_lshr_f_4_cast = zext i28 %tmp_94 to i29
-  %out1_buf_4_1_5 = select i1 %tmp_92, i29 %p_neg_t_4, i29 %p_lshr_f_4_cast
-  %out1_buf_4_1_0_cas = sext i29 %out1_buf_4_1_5 to i32
-  %out1_buf_4_1 = select i1 %tmp_73, i32 %out1_buf_4_1_0_cas, i32 %out1_buf_4_1_3_loa
-  %out1_buf_4_1_2 = select i1 %tmp_73, i32 %out1_buf_4_1_1_loa, i32 %out1_buf_4_1_0_cas
-  %inp1_buf_load_5_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_43_lo, i32 %inp1_buf_0_1_42_lo
-  %tmp_95 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_5_phi, i32 31)
-  %tmp_134_cast_cast = select i1 %tmp_95, i32 -8, i32 8
-  %tmp_119_5 = add i32 %tmp_134_cast_cast, %inp1_buf_load_5_phi
-  %tmp_96 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_5, i32 31)
-  %p_neg_5 = sub i32 0, %tmp_119_5
-  %tmp_97 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_5, i32 4, i32 31)
-  %p_lshr_5_cast = zext i28 %tmp_97 to i29
-  %p_neg_t_5 = sub i29 0, %p_lshr_5_cast
-  %tmp_98 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_5, i32 4, i32 31)
-  %p_lshr_f_5_cast = zext i28 %tmp_98 to i29
-  %out1_buf_5_1_5 = select i1 %tmp_96, i29 %p_neg_t_5, i29 %p_lshr_f_5_cast
-  %out1_buf_5_1_0_cas = sext i29 %out1_buf_5_1_5 to i32
-  %out1_buf_5_1 = select i1 %tmp_73, i32 %out1_buf_5_1_0_cas, i32 %out1_buf_5_1_3_loa
-  %out1_buf_5_1_2 = select i1 %tmp_73, i32 %out1_buf_5_1_1_loa, i32 %out1_buf_5_1_0_cas
-  %inp1_buf_load_6_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_45_lo, i32 %inp1_buf_0_1_44_lo
-  %tmp_99 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_6_phi, i32 31)
-  %tmp_137_cast_cast = select i1 %tmp_99, i32 -8, i32 8
-  %tmp_119_6 = add i32 %tmp_137_cast_cast, %inp1_buf_load_6_phi
-  %tmp_100 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_6, i32 31)
-  %p_neg_6 = sub i32 0, %tmp_119_6
-  %tmp_101 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_6, i32 4, i32 31)
-  %p_lshr_6_cast = zext i28 %tmp_101 to i29
-  %p_neg_t_6 = sub i29 0, %p_lshr_6_cast
-  %tmp_102 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_6, i32 4, i32 31)
-  %p_lshr_f_6_cast = zext i28 %tmp_102 to i29
-  %out1_buf_6_1_5 = select i1 %tmp_100, i29 %p_neg_t_6, i29 %p_lshr_f_6_cast
-  %out1_buf_6_1_0_cas = sext i29 %out1_buf_6_1_5 to i32
-  %out1_buf_6_1 = select i1 %tmp_73, i32 %out1_buf_6_1_0_cas, i32 %out1_buf_6_1_3_loa
-  %out1_buf_6_1_2 = select i1 %tmp_73, i32 %out1_buf_6_1_1_loa, i32 %out1_buf_6_1_0_cas
-  %inp1_buf_load_7_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_47_lo, i32 %inp1_buf_0_1_46_lo
-  %tmp_103 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_7_phi, i32 31)
-  %tmp_140_cast_cast = select i1 %tmp_103, i32 -8, i32 8
-  %tmp_119_7 = add i32 %tmp_140_cast_cast, %inp1_buf_load_7_phi
-  %tmp_104 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_7, i32 31)
-  %p_neg_7 = sub i32 0, %tmp_119_7
-  %tmp_105 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_7, i32 4, i32 31)
-  %p_lshr_7_cast = zext i28 %tmp_105 to i29
-  %p_neg_t_7 = sub i29 0, %p_lshr_7_cast
-  %tmp_106 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_7, i32 4, i32 31)
-  %p_lshr_f_7_cast = zext i28 %tmp_106 to i29
-  %out1_buf_7_1_5 = select i1 %tmp_104, i29 %p_neg_t_7, i29 %p_lshr_f_7_cast
-  %out1_buf_7_1_0_cas = sext i29 %out1_buf_7_1_5 to i32
-  %out1_buf_7_1 = select i1 %tmp_73, i32 %out1_buf_7_1_0_cas, i32 %out1_buf_7_1_3_loa
-  %out1_buf_7_1_2 = select i1 %tmp_73, i32 %out1_buf_7_1_1_loa, i32 %out1_buf_7_1_0_cas
-  %inp1_buf_load_8_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_49_lo, i32 %inp1_buf_0_1_48_lo
-  %tmp_107 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_8_phi, i32 31)
-  %tmp_143_cast_cast = select i1 %tmp_107, i32 -8, i32 8
-  %tmp_119_8 = add i32 %tmp_143_cast_cast, %inp1_buf_load_8_phi
-  %tmp_108 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_8, i32 31)
-  %p_neg_8 = sub i32 0, %tmp_119_8
-  %tmp_109 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_8, i32 4, i32 31)
-  %p_lshr_8_cast = zext i28 %tmp_109 to i29
-  %p_neg_t_8 = sub i29 0, %p_lshr_8_cast
-  %tmp_110 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_8, i32 4, i32 31)
-  %p_lshr_f_8_cast = zext i28 %tmp_110 to i29
-  %out1_buf_8_1_5 = select i1 %tmp_108, i29 %p_neg_t_8, i29 %p_lshr_f_8_cast
-  %out1_buf_8_1_0_cas = sext i29 %out1_buf_8_1_5 to i32
-  %out1_buf_8_1 = select i1 %tmp_73, i32 %out1_buf_8_1_0_cas, i32 %out1_buf_8_1_3_loa
-  %out1_buf_8_1_2 = select i1 %tmp_73, i32 %out1_buf_8_1_1_loa, i32 %out1_buf_8_1_0_cas
-  %inp1_buf_load_9_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_51_lo, i32 %inp1_buf_0_1_50_lo
-  %tmp_111 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_9_phi, i32 31)
-  %tmp_146_cast_cast = select i1 %tmp_111, i32 -8, i32 8
-  %tmp_119_9 = add i32 %tmp_146_cast_cast, %inp1_buf_load_9_phi
-  %tmp_114 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_9, i32 31)
-  %p_neg_9 = sub i32 0, %tmp_119_9
-  %tmp_112 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_9, i32 4, i32 31)
-  %p_lshr_9_cast = zext i28 %tmp_112 to i29
-  %p_neg_t_9 = sub i29 0, %p_lshr_9_cast
-  %tmp_113 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_9, i32 4, i32 31)
-  %p_lshr_f_9_cast = zext i28 %tmp_113 to i29
-  %out1_buf_9_1_5 = select i1 %tmp_114, i29 %p_neg_t_9, i29 %p_lshr_f_9_cast
-  %out1_buf_9_1_0_cas = sext i29 %out1_buf_9_1_5 to i32
-  %out1_buf_9_1 = select i1 %tmp_73, i32 %out1_buf_9_1_0_cas, i32 %out1_buf_9_1_3_loa
-  %out1_buf_9_1_2 = select i1 %tmp_73, i32 %out1_buf_9_1_1_loa, i32 %out1_buf_9_1_0_cas
-  %inp1_buf_load_10_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_53_lo, i32 %inp1_buf_0_1_52_lo
-  %tmp_118 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_10_phi, i32 31)
-  %tmp_149_cast_cast = select i1 %tmp_118, i32 -8, i32 8
-  %tmp_119_s = add i32 %tmp_149_cast_cast, %inp1_buf_load_10_phi
-  %tmp_120 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_s, i32 31)
-  %p_neg_s = sub i32 0, %tmp_119_s
-  %tmp_115 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_s, i32 4, i32 31)
-  %p_lshr_cast_36 = zext i28 %tmp_115 to i29
-  %p_neg_t_s = sub i29 0, %p_lshr_cast_36
-  %tmp_119 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_s, i32 4, i32 31)
-  %p_lshr_f_cast_37 = zext i28 %tmp_119 to i29
-  %out1_buf_10_1_5 = select i1 %tmp_120, i29 %p_neg_t_s, i29 %p_lshr_f_cast_37
-  %out1_buf_10_1_0_ca = sext i29 %out1_buf_10_1_5 to i32
-  %out1_buf_10_1 = select i1 %tmp_73, i32 %out1_buf_10_1_0_ca, i32 %out1_buf_10_1_3_lo
-  %out1_buf_10_1_2 = select i1 %tmp_73, i32 %out1_buf_10_1_1_lo, i32 %out1_buf_10_1_0_ca
-  %inp1_buf_load_11_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_55_lo, i32 %inp1_buf_0_1_54_lo
-  %tmp_123 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_11_phi, i32 31)
-  %tmp_152_cast_cast = select i1 %tmp_123, i32 -8, i32 8
-  %tmp_119_10 = add i32 %tmp_152_cast_cast, %inp1_buf_load_11_phi
-  %tmp_126 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_10, i32 31)
-  %p_neg_10 = sub i32 0, %tmp_119_10
-  %tmp_121 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_10, i32 4, i32 31)
-  %p_lshr_10_cast = zext i28 %tmp_121 to i29
-  %p_neg_t_10 = sub i29 0, %p_lshr_10_cast
-  %tmp_122 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_10, i32 4, i32 31)
-  %p_lshr_f_10_cast = zext i28 %tmp_122 to i29
-  %out1_buf_11_1_5 = select i1 %tmp_126, i29 %p_neg_t_10, i29 %p_lshr_f_10_cast
-  %out1_buf_11_1_0_ca = sext i29 %out1_buf_11_1_5 to i32
-  %out1_buf_11_1 = select i1 %tmp_73, i32 %out1_buf_11_1_0_ca, i32 %out1_buf_11_1_3_lo
-  %out1_buf_11_1_2 = select i1 %tmp_73, i32 %out1_buf_11_1_1_lo, i32 %out1_buf_11_1_0_ca
-  %inp1_buf_load_12_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_57_lo, i32 %inp1_buf_0_1_56_lo
-  %tmp_129 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_12_phi, i32 31)
-  %tmp_155_cast_cast = select i1 %tmp_129, i32 -8, i32 8
-  %tmp_119_11 = add i32 %tmp_155_cast_cast, %inp1_buf_load_12_phi
-  %tmp_132 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_11, i32 31)
-  %p_neg_11 = sub i32 0, %tmp_119_11
-  %tmp_124 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_11, i32 4, i32 31)
-  %p_lshr_11_cast = zext i28 %tmp_124 to i29
-  %p_neg_t_11 = sub i29 0, %p_lshr_11_cast
-  %tmp_125 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_11, i32 4, i32 31)
-  %p_lshr_f_11_cast = zext i28 %tmp_125 to i29
-  %out1_buf_12_1_5 = select i1 %tmp_132, i29 %p_neg_t_11, i29 %p_lshr_f_11_cast
-  %out1_buf_12_1_0_ca = sext i29 %out1_buf_12_1_5 to i32
-  %out1_buf_12_1 = select i1 %tmp_73, i32 %out1_buf_12_1_0_ca, i32 %out1_buf_12_1_3_lo
-  %out1_buf_12_1_2 = select i1 %tmp_73, i32 %out1_buf_12_1_1_lo, i32 %out1_buf_12_1_0_ca
-  %inp1_buf_load_13_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_59_lo, i32 %inp1_buf_0_1_58_lo
-  %tmp_136 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_13_phi, i32 31)
-  %tmp_158_cast_cast = select i1 %tmp_136, i32 -8, i32 8
-  %tmp_119_12 = add i32 %tmp_158_cast_cast, %inp1_buf_load_13_phi
-  %tmp_137 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_12, i32 31)
-  %p_neg_12 = sub i32 0, %tmp_119_12
-  %tmp_127 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_12, i32 4, i32 31)
-  %p_lshr_12_cast = zext i28 %tmp_127 to i29
-  %p_neg_t_12 = sub i29 0, %p_lshr_12_cast
-  %tmp_128 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_12, i32 4, i32 31)
-  %p_lshr_f_12_cast = zext i28 %tmp_128 to i29
-  %out1_buf_13_1_5 = select i1 %tmp_137, i29 %p_neg_t_12, i29 %p_lshr_f_12_cast
-  %out1_buf_13_1_0_ca = sext i29 %out1_buf_13_1_5 to i32
-  %out1_buf_13_1 = select i1 %tmp_73, i32 %out1_buf_13_1_0_ca, i32 %out1_buf_13_1_3_lo
-  %out1_buf_13_1_2 = select i1 %tmp_73, i32 %out1_buf_13_1_1_lo, i32 %out1_buf_13_1_0_ca
-  %inp1_buf_load_14_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_61_lo, i32 %inp1_buf_0_1_60_lo
-  %tmp_138 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_14_phi, i32 31)
-  %tmp_161_cast_cast = select i1 %tmp_138, i32 -8, i32 8
-  %tmp_119_13 = add i32 %tmp_161_cast_cast, %inp1_buf_load_14_phi
-  %tmp_139 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_13, i32 31)
-  %p_neg_13 = sub i32 0, %tmp_119_13
-  %tmp_130 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_13, i32 4, i32 31)
-  %p_lshr_13_cast = zext i28 %tmp_130 to i29
-  %p_neg_t_13 = sub i29 0, %p_lshr_13_cast
-  %tmp_131 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_13, i32 4, i32 31)
-  %p_lshr_f_13_cast = zext i28 %tmp_131 to i29
-  %out1_buf_14_1_5 = select i1 %tmp_139, i29 %p_neg_t_13, i29 %p_lshr_f_13_cast
-  %out1_buf_14_1_0_ca = sext i29 %out1_buf_14_1_5 to i32
-  %out1_buf_14_1 = select i1 %tmp_73, i32 %out1_buf_14_1_0_ca, i32 %out1_buf_14_1_3_lo
-  %out1_buf_14_1_2 = select i1 %tmp_73, i32 %out1_buf_14_1_1_lo, i32 %out1_buf_14_1_0_ca
-  %inp1_buf_load_15_phi = select i1 %tmp_73, i32 %inp1_buf_0_1_63_lo, i32 %inp1_buf_0_1_62_lo
-  %tmp_140 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp1_buf_load_15_phi, i32 31)
-  %tmp_164_cast_cast = select i1 %tmp_140, i32 -8, i32 8
-  %tmp_119_14 = add i32 %tmp_164_cast_cast, %inp1_buf_load_15_phi
-  %tmp_141 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_119_14, i32 31)
-  %p_neg_14 = sub i32 0, %tmp_119_14
-  %tmp_133 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_14, i32 4, i32 31)
-  %p_lshr_14_cast = zext i28 %tmp_133 to i29
-  %p_neg_t_14 = sub i29 0, %p_lshr_14_cast
-  %tmp_134 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_119_14, i32 4, i32 31)
-  %p_lshr_f_14_cast = zext i28 %tmp_134 to i29
-  %out1_buf_15_1_5 = select i1 %tmp_141, i29 %p_neg_t_14, i29 %p_lshr_f_14_cast
-  %out1_buf_15_1_0_ca = sext i29 %out1_buf_15_1_5 to i32
-  %out1_buf_15_1 = select i1 %tmp_73, i32 %out1_buf_15_1_0_ca, i32 %out1_buf_15_1_3_lo
-  %out1_buf_15_1_2 = select i1 %tmp_73, i32 %out1_buf_15_1_1_lo, i32 %out1_buf_15_1_0_ca
-  %k_1_s = add i6 %k, 16
-  store i32 %out1_buf_15_1, i32* %out1_buf_15_1_3
-  store i32 %out1_buf_15_1_2, i32* %out1_buf_15_1_1
-  store i32 %out1_buf_14_1, i32* %out1_buf_14_1_3
-  store i32 %out1_buf_14_1_2, i32* %out1_buf_14_1_1
-  store i32 %out1_buf_13_1, i32* %out1_buf_13_1_3
-  store i32 %out1_buf_13_1_2, i32* %out1_buf_13_1_1
-  store i32 %out1_buf_12_1, i32* %out1_buf_12_1_3
-  store i32 %out1_buf_12_1_2, i32* %out1_buf_12_1_1
-  store i32 %out1_buf_11_1, i32* %out1_buf_11_1_3
-  store i32 %out1_buf_11_1_2, i32* %out1_buf_11_1_1
-  store i32 %out1_buf_10_1, i32* %out1_buf_10_1_3
-  store i32 %out1_buf_10_1_2, i32* %out1_buf_10_1_1
-  store i32 %out1_buf_9_1, i32* %out1_buf_9_1_3
-  store i32 %out1_buf_9_1_2, i32* %out1_buf_9_1_1
-  store i32 %out1_buf_8_1, i32* %out1_buf_8_1_3
-  store i32 %out1_buf_8_1_2, i32* %out1_buf_8_1_1
-  store i32 %out1_buf_7_1, i32* %out1_buf_7_1_3
-  store i32 %out1_buf_7_1_2, i32* %out1_buf_7_1_1
-  store i32 %out1_buf_6_1, i32* %out1_buf_6_1_3
-  store i32 %out1_buf_6_1_2, i32* %out1_buf_6_1_1
-  store i32 %out1_buf_5_1, i32* %out1_buf_5_1_3
-  store i32 %out1_buf_5_1_2, i32* %out1_buf_5_1_1
-  store i32 %out1_buf_4_1, i32* %out1_buf_4_1_3
-  store i32 %out1_buf_4_1_2, i32* %out1_buf_4_1_1
-  store i32 %out1_buf_3_1, i32* %out1_buf_3_1_3
-  store i32 %out1_buf_3_1_2, i32* %out1_buf_3_1_1
-  store i32 %out1_buf_2_1, i32* %out1_buf_2_1_3
-  store i32 %out1_buf_2_1_2, i32* %out1_buf_2_1_1
-  store i32 %out1_buf_1_1, i32* %out1_buf_1_1_3
-  store i32 %out1_buf_1_1_2, i32* %out1_buf_1_1_1
-  store i32 %out1_buf_0_1, i32* %out1_buf_0_1_3
-  store i32 %out1_buf_0_1_2, i32* %out1_buf_0_1_1
-  br label %burst.rd.end.0
+; <label>:2                                       ; preds = %.preheader
+  %tmp_49 = trunc i4 %i_1 to i3
+  %tmp_50 = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %tmp_49, i3 0)
+  %tmp_51 = zext i6 %tmp_50 to i64
+  %aptr = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %tmp_51
+  %aptr_assign_15_sum1 = or i6 %tmp_50, 1
+  %aptr_assign_15_sum1_s = zext i6 %aptr_assign_15_sum1 to i7
+  %aptr_assign_15_sum1_1 = zext i6 %aptr_assign_15_sum1 to i64
+  %aptr_1 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %aptr_assign_15_sum1_1
+  %b0_2 = load i32* %aptr, align 16
+  %aptr_assign_14_sum = add i7 1, %aptr_assign_15_sum1_s
+  %aptr_assign_14_sum_c = zext i7 %aptr_assign_14_sum to i64
+  %aptr_2 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %aptr_assign_14_sum_c
+  %a0_3 = load i32* %aptr_1, align 4
+  %aptr_assign_13_sum2 = or i6 %tmp_50, 3
+  %aptr_assign_13_sum2_s = zext i6 %aptr_assign_13_sum2 to i7
+  %aptr_assign_13_sum2_1 = zext i6 %aptr_assign_13_sum2 to i64
+  %aptr_3 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %aptr_assign_13_sum2_1
+  %b2_2 = load i32* %aptr_2, align 4
+  %aptr_assign_12_sum = add i7 1, %aptr_assign_13_sum2_s
+  %aptr_assign_12_sum_c = zext i7 %aptr_assign_12_sum to i64
+  %aptr_4 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %aptr_assign_12_sum_c
+  %a1_3 = load i32* %aptr_3, align 4
+  %aptr_assign_11_sum = add i7 2, %aptr_assign_13_sum2_s
+  %aptr_assign_11_sum_c = zext i7 %aptr_assign_11_sum to i64
+  %aptr_5 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %aptr_assign_11_sum_c
+  %b1_2 = load i32* %aptr_4, align 4
+  %aptr_assign_10_sum = add i7 3, %aptr_assign_13_sum2_s
+  %aptr_assign_10_sum_c = zext i7 %aptr_assign_10_sum to i64
+  %aptr_6 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %aptr_assign_10_sum_c
+  %a2_3 = load i32* %aptr_5, align 4
+  %aptr_assign_9_sum3 = or i6 %tmp_50, 7
+  %aptr_assign_9_sum3_c = zext i6 %aptr_assign_9_sum3 to i64
+  %aptr_7 = getelementptr inbounds [64 x i32]* %inp2_buf, i64 0, i64 %aptr_assign_9_sum3_c
+  %b3_2 = load i32* %aptr_6, align 4
+  %a3_3 = load i32* %aptr_7, align 4
+  %tmp_72_cast1 = sext i32 %a0_3 to i41
+  %tmp_72_cast = sext i32 %a0_3 to i40
+  %tmp_52 = mul i40 100, %tmp_72_cast
+  %tmp_73_cast = sext i40 %tmp_52 to i41
+  %tmp_74_cast1 = sext i32 %a3_3 to i40
+  %tmp_74_cast = sext i32 %a3_3 to i41
+  %tmp_53 = mul i41 -502, %tmp_74_cast
+  %tmp_54 = add i41 %tmp_53, %tmp_73_cast
+  %c0_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_54, i32 9, i32 40)
+  %tmp_78_cast = sext i32 %a2_3 to i41
+  %tmp_55 = mul i41 426, %tmp_78_cast
+  %tmp_80_cast = sext i32 %a1_3 to i41
+  %tmp_56 = mul i41 -284, %tmp_80_cast
+  %tmp_57 = add i41 %tmp_55, %tmp_56
+  %c1_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_57, i32 9, i32 40)
+  %tmp_58 = mul i41 426, %tmp_80_cast
+  %tmp_59 = mul i41 284, %tmp_78_cast
+  %tmp_60 = add i41 %tmp_59, %tmp_58
+  %c2_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_60, i32 9, i32 40)
+  %tmp_61 = mul i41 502, %tmp_72_cast1
+  %tmp_62 = mul i40 100, %tmp_74_cast1
+  %tmp_89_cast = sext i40 %tmp_62 to i41
+  %tmp_63 = add i41 %tmp_89_cast, %tmp_61
+  %c3_2 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_63, i32 9, i32 40)
+  %tmp_64 = add nsw i32 %b1_2, %b0_2
+  %tmp_93_cast = sext i32 %tmp_64 to i41
+  %tmp_65 = mul i41 362, %tmp_93_cast
+  %a0_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_65, i32 9, i32 40)
+  %tmp_66 = sub nsw i32 %b0_2, %b1_2
+  %tmp_97_cast = sext i32 %tmp_66 to i41
+  %tmp_67 = mul i41 362, %tmp_97_cast
+  %a1_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_67, i32 9, i32 40)
+  %tmp_100_cast = sext i32 %b2_2 to i41
+  %tmp_68 = mul i41 196, %tmp_100_cast
+  %tmp_102_cast = sext i32 %b3_2 to i41
+  %tmp_69 = mul i41 -473, %tmp_102_cast
+  %tmp_70 = add i41 %tmp_69, %tmp_68
+  %a2_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_70, i32 9, i32 40)
+  %tmp_71 = mul i41 473, %tmp_100_cast
+  %tmp_72 = mul i41 196, %tmp_102_cast
+  %tmp_73 = add i41 %tmp_72, %tmp_71
+  %a3_4 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_73, i32 9, i32 40)
+  %b0_3 = add nsw i32 %a3_4, %a0_4
+  %b1_3 = add nsw i32 %a2_4, %a1_4
+  %b2_3 = sub nsw i32 %a1_4, %a2_4
+  %b3_3 = sub nsw i32 %a0_4, %a3_4
+  %a0_7 = add nsw i32 %c0_2, %c1_2
+  %a1_5 = sub nsw i32 %c0_2, %c1_2
+  %a2_5 = sub nsw i32 %c3_2, %c2_2
+  %a3_7 = add nsw i32 %c3_2, %c2_2
+  %tmp_74 = sub nsw i32 %a2_5, %a1_5
+  %tmp_111_cast = sext i32 %tmp_74 to i41
+  %tmp_75 = mul i41 362, %tmp_111_cast
+  %c1_3 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_75, i32 9, i32 40)
+  %tmp_76 = add nsw i32 %a2_5, %a1_5
+  %tmp_115_cast = sext i32 %tmp_76 to i41
+  %tmp_77 = mul i41 362, %tmp_115_cast
+  %c2_3 = call i32 @_ssdm_op_PartSelect.i32.i41.i32.i32(i41 %tmp_77, i32 9, i32 40)
+  %tmp_78 = add nsw i32 %a3_7, %b0_3
+  store i32 %tmp_78, i32* %aptr, align 16
+  %tmp_79 = add nsw i32 %c2_3, %b1_3
+  store i32 %tmp_79, i32* %aptr_1, align 4
+  %tmp_80 = add nsw i32 %c1_3, %b2_3
+  store i32 %tmp_80, i32* %aptr_2, align 4
+  %tmp_81 = add nsw i32 %a0_7, %b3_3
+  store i32 %tmp_81, i32* %aptr_3, align 4
+  %tmp_82 = sub nsw i32 %b3_3, %a0_7
+  store i32 %tmp_82, i32* %aptr_4, align 4
+  %tmp_83 = sub nsw i32 %b2_3, %c1_3
+  store i32 %tmp_83, i32* %aptr_5, align 4
+  %tmp_84 = sub nsw i32 %b1_3, %c2_3
+  store i32 %tmp_84, i32* %aptr_6, align 4
+  %tmp_85 = sub nsw i32 %b0_3, %a3_7
+  store i32 %tmp_85, i32* %aptr_7, align 4
+  br label %.preheader
 
 burst.wr.header:                                  ; preds = %burst.wr.header.preheader, %burst.wr.body
-  %indvar1 = phi i6 [ %indvar_next1, %burst.wr.body ], [ 0, %burst.wr.header.preheader ]
-  %exitcond5 = icmp eq i6 %indvar1, -32
-  %indvar_next1 = add i6 %indvar1, 1
-  br i1 %exitcond5, label %.preheader1006.loopexit, label %burst.wr.body
+  %indvar2 = phi i7 [ %indvar_next2, %burst.wr.body ], [ 0, %burst.wr.header.preheader ]
+  %exitcond3 = icmp eq i7 %indvar2, -64
+  %indvar_next2 = add i7 %indvar2, 1
+  br i1 %exitcond3, label %memcpy.tail.preheader, label %burst.wr.body
+
+memcpy.tail.preheader:                            ; preds = %burst.wr.header
+  %BUS_SRC_DST_addr_wr_1 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_SRC_DST_addr)
+  %BUS_SRC_DST_addr_rd_1 = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 64)
+  %BUS_SRC_DST_addr_wr_2 = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 64)
+  br label %memcpy.tail
 
 burst.wr.body:                                    ; preds = %burst.wr.header
-  %out1_buf_0_1_1_loa_1 = load i32* %out1_buf_0_1_1
-  %out1_buf_0_1_3_loa_1 = load i32* %out1_buf_0_1_3
-  %out1_buf_1_1_1_loa_1 = load i32* %out1_buf_1_1_1
-  %out1_buf_1_1_3_loa_1 = load i32* %out1_buf_1_1_3
-  %out1_buf_2_1_1_loa_1 = load i32* %out1_buf_2_1_1
-  %out1_buf_2_1_3_loa_1 = load i32* %out1_buf_2_1_3
-  %out1_buf_3_1_1_loa_1 = load i32* %out1_buf_3_1_1
-  %out1_buf_3_1_3_loa_1 = load i32* %out1_buf_3_1_3
-  %out1_buf_4_1_1_loa_1 = load i32* %out1_buf_4_1_1
-  %out1_buf_4_1_3_loa_1 = load i32* %out1_buf_4_1_3
-  %out1_buf_5_1_1_loa_1 = load i32* %out1_buf_5_1_1
-  %out1_buf_5_1_3_loa_1 = load i32* %out1_buf_5_1_3
-  %out1_buf_6_1_1_loa_1 = load i32* %out1_buf_6_1_1
-  %out1_buf_6_1_3_loa_1 = load i32* %out1_buf_6_1_3
-  %out1_buf_7_1_1_loa_1 = load i32* %out1_buf_7_1_1
-  %out1_buf_7_1_3_loa_1 = load i32* %out1_buf_7_1_3
-  %out1_buf_8_1_1_loa_1 = load i32* %out1_buf_8_1_1
-  %out1_buf_8_1_3_loa_1 = load i32* %out1_buf_8_1_3
-  %out1_buf_9_1_1_loa_1 = load i32* %out1_buf_9_1_1
-  %out1_buf_9_1_3_loa_1 = load i32* %out1_buf_9_1_3
-  %out1_buf_10_1_1_lo_1 = load i32* %out1_buf_10_1_1
-  %out1_buf_10_1_3_lo_1 = load i32* %out1_buf_10_1_3
-  %out1_buf_11_1_1_lo_1 = load i32* %out1_buf_11_1_1
-  %out1_buf_11_1_3_lo_1 = load i32* %out1_buf_11_1_3
-  %out1_buf_12_1_1_lo_1 = load i32* %out1_buf_12_1_1
-  %out1_buf_12_1_3_lo_1 = load i32* %out1_buf_12_1_3
-  %out1_buf_13_1_1_lo_1 = load i32* %out1_buf_13_1_1
-  %out1_buf_13_1_3_lo_1 = load i32* %out1_buf_13_1_3
-  %out1_buf_14_1_1_lo_1 = load i32* %out1_buf_14_1_1
-  %out1_buf_14_1_3_lo_1 = load i32* %out1_buf_14_1_3
-  %out1_buf_15_1_1_lo_1 = load i32* %out1_buf_15_1_1
-  %out1_buf_15_1_3_lo_1 = load i32* %out1_buf_15_1_3
-  %empty_38 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
+  %empty_36 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 64, i64 64, i64 64) nounwind
   %burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind
-  %empty_39 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
-  %empty_40 = call i32 (...)* @_ssdm_op_SpecLoopName([22 x i8]* @memcpy_OC_y_OC_out1_s) nounwind
-  %tmp_142 = trunc i6 %indvar1 to i4
-  %tmp_143 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar1, i32 4)
-  %tmp_116 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_142, i1 %tmp_143)
-  %tmp_117 = zext i5 %tmp_116 to i6
-  %tmp_135 = call i32 @_ssdm_op_Mux.ap_auto.32i32.i6(i32 %out1_buf_0_1_1_loa_1, i32 %out1_buf_0_1_3_loa_1, i32 %out1_buf_1_1_1_loa_1, i32 %out1_buf_1_1_3_loa_1, i32 %out1_buf_2_1_1_loa_1, i32 %out1_buf_2_1_3_loa_1, i32 %out1_buf_3_1_1_loa_1, i32 %out1_buf_3_1_3_loa_1, i32 %out1_buf_4_1_1_loa_1, i32 %out1_buf_4_1_3_loa_1, i32 %out1_buf_5_1_1_loa_1, i32 %out1_buf_5_1_3_loa_1, i32 %out1_buf_6_1_1_loa_1, i32 %out1_buf_6_1_3_loa_1, i32 %out1_buf_7_1_1_loa_1, i32 %out1_buf_7_1_3_loa_1, i32 %out1_buf_8_1_1_loa_1, i32 %out1_buf_8_1_3_loa_1, i32 %out1_buf_9_1_1_loa_1, i32 %out1_buf_9_1_3_loa_1, i32 %out1_buf_10_1_1_lo_1, i32 %out1_buf_10_1_3_lo_1, i32 %out1_buf_11_1_1_lo_1, i32 %out1_buf_11_1_3_lo_1, i32 %out1_buf_12_1_1_lo_1, i32 %out1_buf_12_1_3_lo_1, i32 %out1_buf_13_1_1_lo_1, i32 %out1_buf_13_1_3_lo_1, i32 %out1_buf_14_1_1_lo_1, i32 %out1_buf_14_1_3_lo_1, i32 %out1_buf_15_1_1_lo_1, i32 %out1_buf_15_1_3_lo_1, i6 %tmp_117) nounwind
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 %tmp_135, i4 -1)
+  %empty_37 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+  %empty_38 = call i32 (...)* @_ssdm_op_SpecLoopName([22 x i8]* @memcpy_OC_y_OC_inp2_s) nounwind
+  %tmp_86 = zext i7 %indvar2 to i64
+  %inp2_buf_addr_17 = getelementptr [64 x i32]* %inp2_buf, i64 0, i64 %tmp_86
+  %inp2_buf_load = load i32* %inp2_buf_addr_17, align 4
+  call void @_ssdm_op_Write.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 %inp2_buf_load, i4 -1)
   %burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin) nounwind
   br label %burst.wr.header
 
-; <label>:5                                       ; preds = %.preheader1006
-  %BUS_SRC_DST_addr_wr_1 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_SRC_DST_addr)
+memcpy.tail.loopexit:                             ; preds = %burst.wr.header50
+  br label %memcpy.tail
+
+memcpy.tail:                                      ; preds = %memcpy.tail.loopexit, %memcpy.tail.preheader
+  %inp3_buf_15_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_15_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_15_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_15_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_14_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_14_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_14_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_14_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_13_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_13_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_13_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_13_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_12_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_12_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_12_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_12_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_11_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_11_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_11_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_11_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_10_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_10_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_10_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_10_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_9_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_9_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_9_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_9_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_8_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_8_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_8_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_8_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_7_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_7_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_7_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_7_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_6_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_6_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_6_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_6_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_5_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_5_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_5_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_5_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_4_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_4_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_4_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_4_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_3_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_3_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_3_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_3_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_2_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_2_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_2_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_2_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_1_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_1_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_1_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_1_0_3, %memcpy.tail.loopexit ]
+  %inp3_buf_0_1 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_0_1_3, %memcpy.tail.loopexit ]
+  %inp3_buf_0_0 = phi i32 [ undef, %memcpy.tail.preheader ], [ %inp3_buf_0_0_s, %memcpy.tail.loopexit ]
+  %i_2 = phi i2 [ 0, %memcpy.tail.preheader ], [ %i_5, %memcpy.tail.loopexit ]
+  %exitcond7 = icmp eq i2 %i_2, -2
+  %i_5 = add i2 %i_2, 1
+  br i1 %exitcond7, label %4, label %3
+
+; <label>:3                                       ; preds = %memcpy.tail
+  %empty_39 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind
+  br label %burst.rd.header36
+
+burst.rd.header36:                                ; preds = %burst.rd.body37368, %3
+  %inp3_buf_15_1_1 = phi i32 [ %inp3_buf_15_1, %3 ], [ %inp3_buf_15_1_2, %burst.rd.body37368 ]
+  %inp3_buf_15_0_1 = phi i32 [ %inp3_buf_15_0, %3 ], [ %inp3_buf_15_0_s, %burst.rd.body37368 ]
+  %inp3_buf_14_1_1 = phi i32 [ %inp3_buf_14_1, %3 ], [ %inp3_buf_14_1_2, %burst.rd.body37368 ]
+  %inp3_buf_14_0_1 = phi i32 [ %inp3_buf_14_0, %3 ], [ %inp3_buf_14_0_s, %burst.rd.body37368 ]
+  %inp3_buf_13_1_1 = phi i32 [ %inp3_buf_13_1, %3 ], [ %inp3_buf_13_1_2, %burst.rd.body37368 ]
+  %inp3_buf_13_0_1 = phi i32 [ %inp3_buf_13_0, %3 ], [ %inp3_buf_13_0_s, %burst.rd.body37368 ]
+  %inp3_buf_12_1_1 = phi i32 [ %inp3_buf_12_1, %3 ], [ %inp3_buf_12_1_2, %burst.rd.body37368 ]
+  %inp3_buf_12_0_1 = phi i32 [ %inp3_buf_12_0, %3 ], [ %inp3_buf_12_0_s, %burst.rd.body37368 ]
+  %inp3_buf_11_1_1 = phi i32 [ %inp3_buf_11_1, %3 ], [ %inp3_buf_11_1_2, %burst.rd.body37368 ]
+  %inp3_buf_11_0_1 = phi i32 [ %inp3_buf_11_0, %3 ], [ %inp3_buf_11_0_s, %burst.rd.body37368 ]
+  %inp3_buf_10_1_1 = phi i32 [ %inp3_buf_10_1, %3 ], [ %inp3_buf_10_1_2, %burst.rd.body37368 ]
+  %inp3_buf_10_0_1 = phi i32 [ %inp3_buf_10_0, %3 ], [ %inp3_buf_10_0_s, %burst.rd.body37368 ]
+  %inp3_buf_9_1_1 = phi i32 [ %inp3_buf_9_1, %3 ], [ %inp3_buf_9_1_2, %burst.rd.body37368 ]
+  %inp3_buf_9_0_1 = phi i32 [ %inp3_buf_9_0, %3 ], [ %inp3_buf_9_0_s, %burst.rd.body37368 ]
+  %inp3_buf_8_1_1 = phi i32 [ %inp3_buf_8_1, %3 ], [ %inp3_buf_8_1_2, %burst.rd.body37368 ]
+  %inp3_buf_8_0_1 = phi i32 [ %inp3_buf_8_0, %3 ], [ %inp3_buf_8_0_s, %burst.rd.body37368 ]
+  %inp3_buf_7_1_1 = phi i32 [ %inp3_buf_7_1, %3 ], [ %inp3_buf_7_1_2, %burst.rd.body37368 ]
+  %inp3_buf_7_0_1 = phi i32 [ %inp3_buf_7_0, %3 ], [ %inp3_buf_7_0_s, %burst.rd.body37368 ]
+  %inp3_buf_6_1_1 = phi i32 [ %inp3_buf_6_1, %3 ], [ %inp3_buf_6_1_2, %burst.rd.body37368 ]
+  %inp3_buf_6_0_1 = phi i32 [ %inp3_buf_6_0, %3 ], [ %inp3_buf_6_0_s, %burst.rd.body37368 ]
+  %inp3_buf_5_1_1 = phi i32 [ %inp3_buf_5_1, %3 ], [ %inp3_buf_5_1_2, %burst.rd.body37368 ]
+  %inp3_buf_5_0_1 = phi i32 [ %inp3_buf_5_0, %3 ], [ %inp3_buf_5_0_s, %burst.rd.body37368 ]
+  %inp3_buf_4_1_1 = phi i32 [ %inp3_buf_4_1, %3 ], [ %inp3_buf_4_1_2, %burst.rd.body37368 ]
+  %inp3_buf_4_0_1 = phi i32 [ %inp3_buf_4_0, %3 ], [ %inp3_buf_4_0_s, %burst.rd.body37368 ]
+  %inp3_buf_3_1_1 = phi i32 [ %inp3_buf_3_1, %3 ], [ %inp3_buf_3_1_2, %burst.rd.body37368 ]
+  %inp3_buf_3_0_1 = phi i32 [ %inp3_buf_3_0, %3 ], [ %inp3_buf_3_0_s, %burst.rd.body37368 ]
+  %inp3_buf_2_1_1 = phi i32 [ %inp3_buf_2_1, %3 ], [ %inp3_buf_2_1_2, %burst.rd.body37368 ]
+  %inp3_buf_2_0_1 = phi i32 [ %inp3_buf_2_0, %3 ], [ %inp3_buf_2_0_s, %burst.rd.body37368 ]
+  %inp3_buf_1_1_1 = phi i32 [ %inp3_buf_1_1, %3 ], [ %inp3_buf_1_1_2, %burst.rd.body37368 ]
+  %inp3_buf_1_0_1 = phi i32 [ %inp3_buf_1_0, %3 ], [ %inp3_buf_1_0_s, %burst.rd.body37368 ]
+  %inp3_buf_0_1_1 = phi i32 [ %inp3_buf_0_1, %3 ], [ %inp3_buf_0_1_2, %burst.rd.body37368 ]
+  %inp3_buf_0_0_1 = phi i32 [ %inp3_buf_0_0, %3 ], [ %inp3_buf_0_0_2, %burst.rd.body37368 ]
+  %indvar3 = phi i6 [ 0, %3 ], [ %indvar_next3, %burst.rd.body37368 ]
+  %exitcond4 = icmp eq i6 %indvar3, -32
+  %indvar_next3 = add i6 %indvar3, 1
+  br i1 %exitcond4, label %burst.rd.end35.0.preheader, label %burst.rd.body37
+
+burst.rd.end35.0.preheader:                       ; preds = %burst.rd.header36
+  br label %burst.rd.end35.0
+
+burst.rd.body37:                                  ; preds = %burst.rd.header36
+  %empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
+  %burstread_rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind
+  %empty_41 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+  %empty_42 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_inp3_buf_O) nounwind
+  %inp3_buf_0_1_10 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_DST_addr)
+  %tmp_87 = trunc i6 %indvar3 to i4
+  %tmp_88 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar3, i32 4)
+  switch i4 %tmp_87, label %branch15_ifconv [
+    i4 0, label %branch0_ifconv
+    i4 1, label %branch1_ifconv
+    i4 2, label %branch2_ifconv
+    i4 3, label %branch3_ifconv
+    i4 4, label %branch4_ifconv
+    i4 5, label %branch5_ifconv
+    i4 6, label %branch6_ifconv
+    i4 7, label %branch7_ifconv
+    i4 -8, label %branch8_ifconv
+    i4 -7, label %branch9_ifconv
+    i4 -6, label %branch10_ifconv
+    i4 -5, label %branch11_ifconv
+    i4 -4, label %branch12_ifconv
+    i4 -3, label %branch13_ifconv
+    i4 -2, label %branch14_ifconv
+  ]
+
+burst.rd.body37368:                               ; preds = %branch15_ifconv, %branch14_ifconv, %branch13_ifconv, %branch12_ifconv, %branch11_ifconv, %branch10_ifconv, %branch9_ifconv, %branch8_ifconv, %branch7_ifconv, %branch6_ifconv, %branch5_ifconv, %branch4_ifconv, %branch3_ifconv, %branch2_ifconv, %branch1_ifconv, %branch0_ifconv
+  %inp3_buf_15_1_2 = phi i32 [ %inp3_buf_15_1_5, %branch15_ifconv ], [ %inp3_buf_15_1_1, %branch14_ifconv ], [ %inp3_buf_15_1_1, %branch13_ifconv ], [ %inp3_buf_15_1_1, %branch12_ifconv ], [ %inp3_buf_15_1_1, %branch11_ifconv ], [ %inp3_buf_15_1_1, %branch10_ifconv ], [ %inp3_buf_15_1_1, %branch9_ifconv ], [ %inp3_buf_15_1_1, %branch8_ifconv ], [ %inp3_buf_15_1_1, %branch7_ifconv ], [ %inp3_buf_15_1_1, %branch6_ifconv ], [ %inp3_buf_15_1_1, %branch5_ifconv ], [ %inp3_buf_15_1_1, %branch4_ifconv ], [ %inp3_buf_15_1_1, %branch3_ifconv ], [ %inp3_buf_15_1_1, %branch2_ifconv ], [ %inp3_buf_15_1_1, %branch1_ifconv ], [ %inp3_buf_15_1_1, %branch0_ifconv ]
+  %inp3_buf_15_0_s = phi i32 [ %inp3_buf_15_1_7, %branch15_ifconv ], [ %inp3_buf_15_0_1, %branch14_ifconv ], [ %inp3_buf_15_0_1, %branch13_ifconv ], [ %inp3_buf_15_0_1, %branch12_ifconv ], [ %inp3_buf_15_0_1, %branch11_ifconv ], [ %inp3_buf_15_0_1, %branch10_ifconv ], [ %inp3_buf_15_0_1, %branch9_ifconv ], [ %inp3_buf_15_0_1, %branch8_ifconv ], [ %inp3_buf_15_0_1, %branch7_ifconv ], [ %inp3_buf_15_0_1, %branch6_ifconv ], [ %inp3_buf_15_0_1, %branch5_ifconv ], [ %inp3_buf_15_0_1, %branch4_ifconv ], [ %inp3_buf_15_0_1, %branch3_ifconv ], [ %inp3_buf_15_0_1, %branch2_ifconv ], [ %inp3_buf_15_0_1, %branch1_ifconv ], [ %inp3_buf_15_0_1, %branch0_ifconv ]
+  %inp3_buf_14_1_2 = phi i32 [ %inp3_buf_14_1_1, %branch15_ifconv ], [ %inp3_buf_14_1_5, %branch14_ifconv ], [ %inp3_buf_14_1_1, %branch13_ifconv ], [ %inp3_buf_14_1_1, %branch12_ifconv ], [ %inp3_buf_14_1_1, %branch11_ifconv ], [ %inp3_buf_14_1_1, %branch10_ifconv ], [ %inp3_buf_14_1_1, %branch9_ifconv ], [ %inp3_buf_14_1_1, %branch8_ifconv ], [ %inp3_buf_14_1_1, %branch7_ifconv ], [ %inp3_buf_14_1_1, %branch6_ifconv ], [ %inp3_buf_14_1_1, %branch5_ifconv ], [ %inp3_buf_14_1_1, %branch4_ifconv ], [ %inp3_buf_14_1_1, %branch3_ifconv ], [ %inp3_buf_14_1_1, %branch2_ifconv ], [ %inp3_buf_14_1_1, %branch1_ifconv ], [ %inp3_buf_14_1_1, %branch0_ifconv ]
+  %inp3_buf_14_0_s = phi i32 [ %inp3_buf_14_0_1, %branch15_ifconv ], [ %inp3_buf_15_1_22, %branch14_ifconv ], [ %inp3_buf_14_0_1, %branch13_ifconv ], [ %inp3_buf_14_0_1, %branch12_ifconv ], [ %inp3_buf_14_0_1, %branch11_ifconv ], [ %inp3_buf_14_0_1, %branch10_ifconv ], [ %inp3_buf_14_0_1, %branch9_ifconv ], [ %inp3_buf_14_0_1, %branch8_ifconv ], [ %inp3_buf_14_0_1, %branch7_ifconv ], [ %inp3_buf_14_0_1, %branch6_ifconv ], [ %inp3_buf_14_0_1, %branch5_ifconv ], [ %inp3_buf_14_0_1, %branch4_ifconv ], [ %inp3_buf_14_0_1, %branch3_ifconv ], [ %inp3_buf_14_0_1, %branch2_ifconv ], [ %inp3_buf_14_0_1, %branch1_ifconv ], [ %inp3_buf_14_0_1, %branch0_ifconv ]
+  %inp3_buf_13_1_2 = phi i32 [ %inp3_buf_13_1_1, %branch15_ifconv ], [ %inp3_buf_13_1_1, %branch14_ifconv ], [ %inp3_buf_13_1_5, %branch13_ifconv ], [ %inp3_buf_13_1_1, %branch12_ifconv ], [ %inp3_buf_13_1_1, %branch11_ifconv ], [ %inp3_buf_13_1_1, %branch10_ifconv ], [ %inp3_buf_13_1_1, %branch9_ifconv ], [ %inp3_buf_13_1_1, %branch8_ifconv ], [ %inp3_buf_13_1_1, %branch7_ifconv ], [ %inp3_buf_13_1_1, %branch6_ifconv ], [ %inp3_buf_13_1_1, %branch5_ifconv ], [ %inp3_buf_13_1_1, %branch4_ifconv ], [ %inp3_buf_13_1_1, %branch3_ifconv ], [ %inp3_buf_13_1_1, %branch2_ifconv ], [ %inp3_buf_13_1_1, %branch1_ifconv ], [ %inp3_buf_13_1_1, %branch0_ifconv ]
+  %inp3_buf_13_0_s = phi i32 [ %inp3_buf_13_0_1, %branch15_ifconv ], [ %inp3_buf_13_0_1, %branch14_ifconv ], [ %inp3_buf_15_1_21, %branch13_ifconv ], [ %inp3_buf_13_0_1, %branch12_ifconv ], [ %inp3_buf_13_0_1, %branch11_ifconv ], [ %inp3_buf_13_0_1, %branch10_ifconv ], [ %inp3_buf_13_0_1, %branch9_ifconv ], [ %inp3_buf_13_0_1, %branch8_ifconv ], [ %inp3_buf_13_0_1, %branch7_ifconv ], [ %inp3_buf_13_0_1, %branch6_ifconv ], [ %inp3_buf_13_0_1, %branch5_ifconv ], [ %inp3_buf_13_0_1, %branch4_ifconv ], [ %inp3_buf_13_0_1, %branch3_ifconv ], [ %inp3_buf_13_0_1, %branch2_ifconv ], [ %inp3_buf_13_0_1, %branch1_ifconv ], [ %inp3_buf_13_0_1, %branch0_ifconv ]
+  %inp3_buf_12_1_2 = phi i32 [ %inp3_buf_12_1_1, %branch15_ifconv ], [ %inp3_buf_12_1_1, %branch14_ifconv ], [ %inp3_buf_12_1_1, %branch13_ifconv ], [ %inp3_buf_12_1_5, %branch12_ifconv ], [ %inp3_buf_12_1_1, %branch11_ifconv ], [ %inp3_buf_12_1_1, %branch10_ifconv ], [ %inp3_buf_12_1_1, %branch9_ifconv ], [ %inp3_buf_12_1_1, %branch8_ifconv ], [ %inp3_buf_12_1_1, %branch7_ifconv ], [ %inp3_buf_12_1_1, %branch6_ifconv ], [ %inp3_buf_12_1_1, %branch5_ifconv ], [ %inp3_buf_12_1_1, %branch4_ifconv ], [ %inp3_buf_12_1_1, %branch3_ifconv ], [ %inp3_buf_12_1_1, %branch2_ifconv ], [ %inp3_buf_12_1_1, %branch1_ifconv ], [ %inp3_buf_12_1_1, %branch0_ifconv ]
+  %inp3_buf_12_0_s = phi i32 [ %inp3_buf_12_0_1, %branch15_ifconv ], [ %inp3_buf_12_0_1, %branch14_ifconv ], [ %inp3_buf_12_0_1, %branch13_ifconv ], [ %inp3_buf_15_1_20, %branch12_ifconv ], [ %inp3_buf_12_0_1, %branch11_ifconv ], [ %inp3_buf_12_0_1, %branch10_ifconv ], [ %inp3_buf_12_0_1, %branch9_ifconv ], [ %inp3_buf_12_0_1, %branch8_ifconv ], [ %inp3_buf_12_0_1, %branch7_ifconv ], [ %inp3_buf_12_0_1, %branch6_ifconv ], [ %inp3_buf_12_0_1, %branch5_ifconv ], [ %inp3_buf_12_0_1, %branch4_ifconv ], [ %inp3_buf_12_0_1, %branch3_ifconv ], [ %inp3_buf_12_0_1, %branch2_ifconv ], [ %inp3_buf_12_0_1, %branch1_ifconv ], [ %inp3_buf_12_0_1, %branch0_ifconv ]
+  %inp3_buf_11_1_2 = phi i32 [ %inp3_buf_11_1_1, %branch15_ifconv ], [ %inp3_buf_11_1_1, %branch14_ifconv ], [ %inp3_buf_11_1_1, %branch13_ifconv ], [ %inp3_buf_11_1_1, %branch12_ifconv ], [ %inp3_buf_11_1_5, %branch11_ifconv ], [ %inp3_buf_11_1_1, %branch10_ifconv ], [ %inp3_buf_11_1_1, %branch9_ifconv ], [ %inp3_buf_11_1_1, %branch8_ifconv ], [ %inp3_buf_11_1_1, %branch7_ifconv ], [ %inp3_buf_11_1_1, %branch6_ifconv ], [ %inp3_buf_11_1_1, %branch5_ifconv ], [ %inp3_buf_11_1_1, %branch4_ifconv ], [ %inp3_buf_11_1_1, %branch3_ifconv ], [ %inp3_buf_11_1_1, %branch2_ifconv ], [ %inp3_buf_11_1_1, %branch1_ifconv ], [ %inp3_buf_11_1_1, %branch0_ifconv ]
+  %inp3_buf_11_0_s = phi i32 [ %inp3_buf_11_0_1, %branch15_ifconv ], [ %inp3_buf_11_0_1, %branch14_ifconv ], [ %inp3_buf_11_0_1, %branch13_ifconv ], [ %inp3_buf_11_0_1, %branch12_ifconv ], [ %inp3_buf_15_1_19, %branch11_ifconv ], [ %inp3_buf_11_0_1, %branch10_ifconv ], [ %inp3_buf_11_0_1, %branch9_ifconv ], [ %inp3_buf_11_0_1, %branch8_ifconv ], [ %inp3_buf_11_0_1, %branch7_ifconv ], [ %inp3_buf_11_0_1, %branch6_ifconv ], [ %inp3_buf_11_0_1, %branch5_ifconv ], [ %inp3_buf_11_0_1, %branch4_ifconv ], [ %inp3_buf_11_0_1, %branch3_ifconv ], [ %inp3_buf_11_0_1, %branch2_ifconv ], [ %inp3_buf_11_0_1, %branch1_ifconv ], [ %inp3_buf_11_0_1, %branch0_ifconv ]
+  %inp3_buf_10_1_2 = phi i32 [ %inp3_buf_10_1_1, %branch15_ifconv ], [ %inp3_buf_10_1_1, %branch14_ifconv ], [ %inp3_buf_10_1_1, %branch13_ifconv ], [ %inp3_buf_10_1_1, %branch12_ifconv ], [ %inp3_buf_10_1_1, %branch11_ifconv ], [ %inp3_buf_10_1_5, %branch10_ifconv ], [ %inp3_buf_10_1_1, %branch9_ifconv ], [ %inp3_buf_10_1_1, %branch8_ifconv ], [ %inp3_buf_10_1_1, %branch7_ifconv ], [ %inp3_buf_10_1_1, %branch6_ifconv ], [ %inp3_buf_10_1_1, %branch5_ifconv ], [ %inp3_buf_10_1_1, %branch4_ifconv ], [ %inp3_buf_10_1_1, %branch3_ifconv ], [ %inp3_buf_10_1_1, %branch2_ifconv ], [ %inp3_buf_10_1_1, %branch1_ifconv ], [ %inp3_buf_10_1_1, %branch0_ifconv ]
+  %inp3_buf_10_0_s = phi i32 [ %inp3_buf_10_0_1, %branch15_ifconv ], [ %inp3_buf_10_0_1, %branch14_ifconv ], [ %inp3_buf_10_0_1, %branch13_ifconv ], [ %inp3_buf_10_0_1, %branch12_ifconv ], [ %inp3_buf_10_0_1, %branch11_ifconv ], [ %inp3_buf_15_1_18, %branch10_ifconv ], [ %inp3_buf_10_0_1, %branch9_ifconv ], [ %inp3_buf_10_0_1, %branch8_ifconv ], [ %inp3_buf_10_0_1, %branch7_ifconv ], [ %inp3_buf_10_0_1, %branch6_ifconv ], [ %inp3_buf_10_0_1, %branch5_ifconv ], [ %inp3_buf_10_0_1, %branch4_ifconv ], [ %inp3_buf_10_0_1, %branch3_ifconv ], [ %inp3_buf_10_0_1, %branch2_ifconv ], [ %inp3_buf_10_0_1, %branch1_ifconv ], [ %inp3_buf_10_0_1, %branch0_ifconv ]
+  %inp3_buf_9_1_2 = phi i32 [ %inp3_buf_9_1_1, %branch15_ifconv ], [ %inp3_buf_9_1_1, %branch14_ifconv ], [ %inp3_buf_9_1_1, %branch13_ifconv ], [ %inp3_buf_9_1_1, %branch12_ifconv ], [ %inp3_buf_9_1_1, %branch11_ifconv ], [ %inp3_buf_9_1_1, %branch10_ifconv ], [ %inp3_buf_9_1_5, %branch9_ifconv ], [ %inp3_buf_9_1_1, %branch8_ifconv ], [ %inp3_buf_9_1_1, %branch7_ifconv ], [ %inp3_buf_9_1_1, %branch6_ifconv ], [ %inp3_buf_9_1_1, %branch5_ifconv ], [ %inp3_buf_9_1_1, %branch4_ifconv ], [ %inp3_buf_9_1_1, %branch3_ifconv ], [ %inp3_buf_9_1_1, %branch2_ifconv ], [ %inp3_buf_9_1_1, %branch1_ifconv ], [ %inp3_buf_9_1_1, %branch0_ifconv ]
+  %inp3_buf_9_0_s = phi i32 [ %inp3_buf_9_0_1, %branch15_ifconv ], [ %inp3_buf_9_0_1, %branch14_ifconv ], [ %inp3_buf_9_0_1, %branch13_ifconv ], [ %inp3_buf_9_0_1, %branch12_ifconv ], [ %inp3_buf_9_0_1, %branch11_ifconv ], [ %inp3_buf_9_0_1, %branch10_ifconv ], [ %inp3_buf_15_1_17, %branch9_ifconv ], [ %inp3_buf_9_0_1, %branch8_ifconv ], [ %inp3_buf_9_0_1, %branch7_ifconv ], [ %inp3_buf_9_0_1, %branch6_ifconv ], [ %inp3_buf_9_0_1, %branch5_ifconv ], [ %inp3_buf_9_0_1, %branch4_ifconv ], [ %inp3_buf_9_0_1, %branch3_ifconv ], [ %inp3_buf_9_0_1, %branch2_ifconv ], [ %inp3_buf_9_0_1, %branch1_ifconv ], [ %inp3_buf_9_0_1, %branch0_ifconv ]
+  %inp3_buf_8_1_2 = phi i32 [ %inp3_buf_8_1_1, %branch15_ifconv ], [ %inp3_buf_8_1_1, %branch14_ifconv ], [ %inp3_buf_8_1_1, %branch13_ifconv ], [ %inp3_buf_8_1_1, %branch12_ifconv ], [ %inp3_buf_8_1_1, %branch11_ifconv ], [ %inp3_buf_8_1_1, %branch10_ifconv ], [ %inp3_buf_8_1_1, %branch9_ifconv ], [ %inp3_buf_8_1_5, %branch8_ifconv ], [ %inp3_buf_8_1_1, %branch7_ifconv ], [ %inp3_buf_8_1_1, %branch6_ifconv ], [ %inp3_buf_8_1_1, %branch5_ifconv ], [ %inp3_buf_8_1_1, %branch4_ifconv ], [ %inp3_buf_8_1_1, %branch3_ifconv ], [ %inp3_buf_8_1_1, %branch2_ifconv ], [ %inp3_buf_8_1_1, %branch1_ifconv ], [ %inp3_buf_8_1_1, %branch0_ifconv ]
+  %inp3_buf_8_0_s = phi i32 [ %inp3_buf_8_0_1, %branch15_ifconv ], [ %inp3_buf_8_0_1, %branch14_ifconv ], [ %inp3_buf_8_0_1, %branch13_ifconv ], [ %inp3_buf_8_0_1, %branch12_ifconv ], [ %inp3_buf_8_0_1, %branch11_ifconv ], [ %inp3_buf_8_0_1, %branch10_ifconv ], [ %inp3_buf_8_0_1, %branch9_ifconv ], [ %inp3_buf_15_1_16, %branch8_ifconv ], [ %inp3_buf_8_0_1, %branch7_ifconv ], [ %inp3_buf_8_0_1, %branch6_ifconv ], [ %inp3_buf_8_0_1, %branch5_ifconv ], [ %inp3_buf_8_0_1, %branch4_ifconv ], [ %inp3_buf_8_0_1, %branch3_ifconv ], [ %inp3_buf_8_0_1, %branch2_ifconv ], [ %inp3_buf_8_0_1, %branch1_ifconv ], [ %inp3_buf_8_0_1, %branch0_ifconv ]
+  %inp3_buf_7_1_2 = phi i32 [ %inp3_buf_7_1_1, %branch15_ifconv ], [ %inp3_buf_7_1_1, %branch14_ifconv ], [ %inp3_buf_7_1_1, %branch13_ifconv ], [ %inp3_buf_7_1_1, %branch12_ifconv ], [ %inp3_buf_7_1_1, %branch11_ifconv ], [ %inp3_buf_7_1_1, %branch10_ifconv ], [ %inp3_buf_7_1_1, %branch9_ifconv ], [ %inp3_buf_7_1_1, %branch8_ifconv ], [ %inp3_buf_7_1_5, %branch7_ifconv ], [ %inp3_buf_7_1_1, %branch6_ifconv ], [ %inp3_buf_7_1_1, %branch5_ifconv ], [ %inp3_buf_7_1_1, %branch4_ifconv ], [ %inp3_buf_7_1_1, %branch3_ifconv ], [ %inp3_buf_7_1_1, %branch2_ifconv ], [ %inp3_buf_7_1_1, %branch1_ifconv ], [ %inp3_buf_7_1_1, %branch0_ifconv ]
+  %inp3_buf_7_0_s = phi i32 [ %inp3_buf_7_0_1, %branch15_ifconv ], [ %inp3_buf_7_0_1, %branch14_ifconv ], [ %inp3_buf_7_0_1, %branch13_ifconv ], [ %inp3_buf_7_0_1, %branch12_ifconv ], [ %inp3_buf_7_0_1, %branch11_ifconv ], [ %inp3_buf_7_0_1, %branch10_ifconv ], [ %inp3_buf_7_0_1, %branch9_ifconv ], [ %inp3_buf_7_0_1, %branch8_ifconv ], [ %inp3_buf_15_1_15, %branch7_ifconv ], [ %inp3_buf_7_0_1, %branch6_ifconv ], [ %inp3_buf_7_0_1, %branch5_ifconv ], [ %inp3_buf_7_0_1, %branch4_ifconv ], [ %inp3_buf_7_0_1, %branch3_ifconv ], [ %inp3_buf_7_0_1, %branch2_ifconv ], [ %inp3_buf_7_0_1, %branch1_ifconv ], [ %inp3_buf_7_0_1, %branch0_ifconv ]
+  %inp3_buf_6_1_2 = phi i32 [ %inp3_buf_6_1_1, %branch15_ifconv ], [ %inp3_buf_6_1_1, %branch14_ifconv ], [ %inp3_buf_6_1_1, %branch13_ifconv ], [ %inp3_buf_6_1_1, %branch12_ifconv ], [ %inp3_buf_6_1_1, %branch11_ifconv ], [ %inp3_buf_6_1_1, %branch10_ifconv ], [ %inp3_buf_6_1_1, %branch9_ifconv ], [ %inp3_buf_6_1_1, %branch8_ifconv ], [ %inp3_buf_6_1_1, %branch7_ifconv ], [ %inp3_buf_6_1_5, %branch6_ifconv ], [ %inp3_buf_6_1_1, %branch5_ifconv ], [ %inp3_buf_6_1_1, %branch4_ifconv ], [ %inp3_buf_6_1_1, %branch3_ifconv ], [ %inp3_buf_6_1_1, %branch2_ifconv ], [ %inp3_buf_6_1_1, %branch1_ifconv ], [ %inp3_buf_6_1_1, %branch0_ifconv ]
+  %inp3_buf_6_0_s = phi i32 [ %inp3_buf_6_0_1, %branch15_ifconv ], [ %inp3_buf_6_0_1, %branch14_ifconv ], [ %inp3_buf_6_0_1, %branch13_ifconv ], [ %inp3_buf_6_0_1, %branch12_ifconv ], [ %inp3_buf_6_0_1, %branch11_ifconv ], [ %inp3_buf_6_0_1, %branch10_ifconv ], [ %inp3_buf_6_0_1, %branch9_ifconv ], [ %inp3_buf_6_0_1, %branch8_ifconv ], [ %inp3_buf_6_0_1, %branch7_ifconv ], [ %inp3_buf_15_1_14, %branch6_ifconv ], [ %inp3_buf_6_0_1, %branch5_ifconv ], [ %inp3_buf_6_0_1, %branch4_ifconv ], [ %inp3_buf_6_0_1, %branch3_ifconv ], [ %inp3_buf_6_0_1, %branch2_ifconv ], [ %inp3_buf_6_0_1, %branch1_ifconv ], [ %inp3_buf_6_0_1, %branch0_ifconv ]
+  %inp3_buf_5_1_2 = phi i32 [ %inp3_buf_5_1_1, %branch15_ifconv ], [ %inp3_buf_5_1_1, %branch14_ifconv ], [ %inp3_buf_5_1_1, %branch13_ifconv ], [ %inp3_buf_5_1_1, %branch12_ifconv ], [ %inp3_buf_5_1_1, %branch11_ifconv ], [ %inp3_buf_5_1_1, %branch10_ifconv ], [ %inp3_buf_5_1_1, %branch9_ifconv ], [ %inp3_buf_5_1_1, %branch8_ifconv ], [ %inp3_buf_5_1_1, %branch7_ifconv ], [ %inp3_buf_5_1_1, %branch6_ifconv ], [ %inp3_buf_5_1_5, %branch5_ifconv ], [ %inp3_buf_5_1_1, %branch4_ifconv ], [ %inp3_buf_5_1_1, %branch3_ifconv ], [ %inp3_buf_5_1_1, %branch2_ifconv ], [ %inp3_buf_5_1_1, %branch1_ifconv ], [ %inp3_buf_5_1_1, %branch0_ifconv ]
+  %inp3_buf_5_0_s = phi i32 [ %inp3_buf_5_0_1, %branch15_ifconv ], [ %inp3_buf_5_0_1, %branch14_ifconv ], [ %inp3_buf_5_0_1, %branch13_ifconv ], [ %inp3_buf_5_0_1, %branch12_ifconv ], [ %inp3_buf_5_0_1, %branch11_ifconv ], [ %inp3_buf_5_0_1, %branch10_ifconv ], [ %inp3_buf_5_0_1, %branch9_ifconv ], [ %inp3_buf_5_0_1, %branch8_ifconv ], [ %inp3_buf_5_0_1, %branch7_ifconv ], [ %inp3_buf_5_0_1, %branch6_ifconv ], [ %inp3_buf_15_1_13, %branch5_ifconv ], [ %inp3_buf_5_0_1, %branch4_ifconv ], [ %inp3_buf_5_0_1, %branch3_ifconv ], [ %inp3_buf_5_0_1, %branch2_ifconv ], [ %inp3_buf_5_0_1, %branch1_ifconv ], [ %inp3_buf_5_0_1, %branch0_ifconv ]
+  %inp3_buf_4_1_2 = phi i32 [ %inp3_buf_4_1_1, %branch15_ifconv ], [ %inp3_buf_4_1_1, %branch14_ifconv ], [ %inp3_buf_4_1_1, %branch13_ifconv ], [ %inp3_buf_4_1_1, %branch12_ifconv ], [ %inp3_buf_4_1_1, %branch11_ifconv ], [ %inp3_buf_4_1_1, %branch10_ifconv ], [ %inp3_buf_4_1_1, %branch9_ifconv ], [ %inp3_buf_4_1_1, %branch8_ifconv ], [ %inp3_buf_4_1_1, %branch7_ifconv ], [ %inp3_buf_4_1_1, %branch6_ifconv ], [ %inp3_buf_4_1_1, %branch5_ifconv ], [ %inp3_buf_4_1_5, %branch4_ifconv ], [ %inp3_buf_4_1_1, %branch3_ifconv ], [ %inp3_buf_4_1_1, %branch2_ifconv ], [ %inp3_buf_4_1_1, %branch1_ifconv ], [ %inp3_buf_4_1_1, %branch0_ifconv ]
+  %inp3_buf_4_0_s = phi i32 [ %inp3_buf_4_0_1, %branch15_ifconv ], [ %inp3_buf_4_0_1, %branch14_ifconv ], [ %inp3_buf_4_0_1, %branch13_ifconv ], [ %inp3_buf_4_0_1, %branch12_ifconv ], [ %inp3_buf_4_0_1, %branch11_ifconv ], [ %inp3_buf_4_0_1, %branch10_ifconv ], [ %inp3_buf_4_0_1, %branch9_ifconv ], [ %inp3_buf_4_0_1, %branch8_ifconv ], [ %inp3_buf_4_0_1, %branch7_ifconv ], [ %inp3_buf_4_0_1, %branch6_ifconv ], [ %inp3_buf_4_0_1, %branch5_ifconv ], [ %inp3_buf_15_1_12, %branch4_ifconv ], [ %inp3_buf_4_0_1, %branch3_ifconv ], [ %inp3_buf_4_0_1, %branch2_ifconv ], [ %inp3_buf_4_0_1, %branch1_ifconv ], [ %inp3_buf_4_0_1, %branch0_ifconv ]
+  %inp3_buf_3_1_2 = phi i32 [ %inp3_buf_3_1_1, %branch15_ifconv ], [ %inp3_buf_3_1_1, %branch14_ifconv ], [ %inp3_buf_3_1_1, %branch13_ifconv ], [ %inp3_buf_3_1_1, %branch12_ifconv ], [ %inp3_buf_3_1_1, %branch11_ifconv ], [ %inp3_buf_3_1_1, %branch10_ifconv ], [ %inp3_buf_3_1_1, %branch9_ifconv ], [ %inp3_buf_3_1_1, %branch8_ifconv ], [ %inp3_buf_3_1_1, %branch7_ifconv ], [ %inp3_buf_3_1_1, %branch6_ifconv ], [ %inp3_buf_3_1_1, %branch5_ifconv ], [ %inp3_buf_3_1_1, %branch4_ifconv ], [ %inp3_buf_3_1_5, %branch3_ifconv ], [ %inp3_buf_3_1_1, %branch2_ifconv ], [ %inp3_buf_3_1_1, %branch1_ifconv ], [ %inp3_buf_3_1_1, %branch0_ifconv ]
+  %inp3_buf_3_0_s = phi i32 [ %inp3_buf_3_0_1, %branch15_ifconv ], [ %inp3_buf_3_0_1, %branch14_ifconv ], [ %inp3_buf_3_0_1, %branch13_ifconv ], [ %inp3_buf_3_0_1, %branch12_ifconv ], [ %inp3_buf_3_0_1, %branch11_ifconv ], [ %inp3_buf_3_0_1, %branch10_ifconv ], [ %inp3_buf_3_0_1, %branch9_ifconv ], [ %inp3_buf_3_0_1, %branch8_ifconv ], [ %inp3_buf_3_0_1, %branch7_ifconv ], [ %inp3_buf_3_0_1, %branch6_ifconv ], [ %inp3_buf_3_0_1, %branch5_ifconv ], [ %inp3_buf_3_0_1, %branch4_ifconv ], [ %inp3_buf_15_1_11, %branch3_ifconv ], [ %inp3_buf_3_0_1, %branch2_ifconv ], [ %inp3_buf_3_0_1, %branch1_ifconv ], [ %inp3_buf_3_0_1, %branch0_ifconv ]
+  %inp3_buf_2_1_2 = phi i32 [ %inp3_buf_2_1_1, %branch15_ifconv ], [ %inp3_buf_2_1_1, %branch14_ifconv ], [ %inp3_buf_2_1_1, %branch13_ifconv ], [ %inp3_buf_2_1_1, %branch12_ifconv ], [ %inp3_buf_2_1_1, %branch11_ifconv ], [ %inp3_buf_2_1_1, %branch10_ifconv ], [ %inp3_buf_2_1_1, %branch9_ifconv ], [ %inp3_buf_2_1_1, %branch8_ifconv ], [ %inp3_buf_2_1_1, %branch7_ifconv ], [ %inp3_buf_2_1_1, %branch6_ifconv ], [ %inp3_buf_2_1_1, %branch5_ifconv ], [ %inp3_buf_2_1_1, %branch4_ifconv ], [ %inp3_buf_2_1_1, %branch3_ifconv ], [ %inp3_buf_2_1_5, %branch2_ifconv ], [ %inp3_buf_2_1_1, %branch1_ifconv ], [ %inp3_buf_2_1_1, %branch0_ifconv ]
+  %inp3_buf_2_0_s = phi i32 [ %inp3_buf_2_0_1, %branch15_ifconv ], [ %inp3_buf_2_0_1, %branch14_ifconv ], [ %inp3_buf_2_0_1, %branch13_ifconv ], [ %inp3_buf_2_0_1, %branch12_ifconv ], [ %inp3_buf_2_0_1, %branch11_ifconv ], [ %inp3_buf_2_0_1, %branch10_ifconv ], [ %inp3_buf_2_0_1, %branch9_ifconv ], [ %inp3_buf_2_0_1, %branch8_ifconv ], [ %inp3_buf_2_0_1, %branch7_ifconv ], [ %inp3_buf_2_0_1, %branch6_ifconv ], [ %inp3_buf_2_0_1, %branch5_ifconv ], [ %inp3_buf_2_0_1, %branch4_ifconv ], [ %inp3_buf_2_0_1, %branch3_ifconv ], [ %inp3_buf_15_1_10, %branch2_ifconv ], [ %inp3_buf_2_0_1, %branch1_ifconv ], [ %inp3_buf_2_0_1, %branch0_ifconv ]
+  %inp3_buf_1_1_2 = phi i32 [ %inp3_buf_1_1_1, %branch15_ifconv ], [ %inp3_buf_1_1_1, %branch14_ifconv ], [ %inp3_buf_1_1_1, %branch13_ifconv ], [ %inp3_buf_1_1_1, %branch12_ifconv ], [ %inp3_buf_1_1_1, %branch11_ifconv ], [ %inp3_buf_1_1_1, %branch10_ifconv ], [ %inp3_buf_1_1_1, %branch9_ifconv ], [ %inp3_buf_1_1_1, %branch8_ifconv ], [ %inp3_buf_1_1_1, %branch7_ifconv ], [ %inp3_buf_1_1_1, %branch6_ifconv ], [ %inp3_buf_1_1_1, %branch5_ifconv ], [ %inp3_buf_1_1_1, %branch4_ifconv ], [ %inp3_buf_1_1_1, %branch3_ifconv ], [ %inp3_buf_1_1_1, %branch2_ifconv ], [ %inp3_buf_1_1_5, %branch1_ifconv ], [ %inp3_buf_1_1_1, %branch0_ifconv ]
+  %inp3_buf_1_0_s = phi i32 [ %inp3_buf_1_0_1, %branch15_ifconv ], [ %inp3_buf_1_0_1, %branch14_ifconv ], [ %inp3_buf_1_0_1, %branch13_ifconv ], [ %inp3_buf_1_0_1, %branch12_ifconv ], [ %inp3_buf_1_0_1, %branch11_ifconv ], [ %inp3_buf_1_0_1, %branch10_ifconv ], [ %inp3_buf_1_0_1, %branch9_ifconv ], [ %inp3_buf_1_0_1, %branch8_ifconv ], [ %inp3_buf_1_0_1, %branch7_ifconv ], [ %inp3_buf_1_0_1, %branch6_ifconv ], [ %inp3_buf_1_0_1, %branch5_ifconv ], [ %inp3_buf_1_0_1, %branch4_ifconv ], [ %inp3_buf_1_0_1, %branch3_ifconv ], [ %inp3_buf_1_0_1, %branch2_ifconv ], [ %inp3_buf_15_1_9, %branch1_ifconv ], [ %inp3_buf_1_0_1, %branch0_ifconv ]
+  %inp3_buf_0_1_2 = phi i32 [ %inp3_buf_0_1_1, %branch15_ifconv ], [ %inp3_buf_0_1_1, %branch14_ifconv ], [ %inp3_buf_0_1_1, %branch13_ifconv ], [ %inp3_buf_0_1_1, %branch12_ifconv ], [ %inp3_buf_0_1_1, %branch11_ifconv ], [ %inp3_buf_0_1_1, %branch10_ifconv ], [ %inp3_buf_0_1_1, %branch9_ifconv ], [ %inp3_buf_0_1_1, %branch8_ifconv ], [ %inp3_buf_0_1_1, %branch7_ifconv ], [ %inp3_buf_0_1_1, %branch6_ifconv ], [ %inp3_buf_0_1_1, %branch5_ifconv ], [ %inp3_buf_0_1_1, %branch4_ifconv ], [ %inp3_buf_0_1_1, %branch3_ifconv ], [ %inp3_buf_0_1_1, %branch2_ifconv ], [ %inp3_buf_0_1_1, %branch1_ifconv ], [ %inp3_buf_0_1_5, %branch0_ifconv ]
+  %inp3_buf_0_0_2 = phi i32 [ %inp3_buf_0_0_1, %branch15_ifconv ], [ %inp3_buf_0_0_1, %branch14_ifconv ], [ %inp3_buf_0_0_1, %branch13_ifconv ], [ %inp3_buf_0_0_1, %branch12_ifconv ], [ %inp3_buf_0_0_1, %branch11_ifconv ], [ %inp3_buf_0_0_1, %branch10_ifconv ], [ %inp3_buf_0_0_1, %branch9_ifconv ], [ %inp3_buf_0_0_1, %branch8_ifconv ], [ %inp3_buf_0_0_1, %branch7_ifconv ], [ %inp3_buf_0_0_1, %branch6_ifconv ], [ %inp3_buf_0_0_1, %branch5_ifconv ], [ %inp3_buf_0_0_1, %branch4_ifconv ], [ %inp3_buf_0_0_1, %branch3_ifconv ], [ %inp3_buf_0_0_1, %branch2_ifconv ], [ %inp3_buf_0_0_1, %branch1_ifconv ], [ %inp3_buf_15_1_8, %branch0_ifconv ]
+  %burstread_rend47 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin2) nounwind
+  br label %burst.rd.header36
+
+burst.rd.end35.0:                                 ; preds = %burst.rd.end35.0.preheader, %burst.rd.end35.1_ifconv
+  %inp3_buf_15_1_3 = phi i32 [ %inp3_buf_15_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_15_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_15_0_3 = phi i32 [ %inp3_buf_15_1_24, %burst.rd.end35.1_ifconv ], [ %inp3_buf_15_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_14_1_3 = phi i32 [ %inp3_buf_14_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_14_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_14_0_3 = phi i32 [ %inp3_buf_14_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_14_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_13_1_3 = phi i32 [ %inp3_buf_13_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_13_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_13_0_3 = phi i32 [ %inp3_buf_13_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_13_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_12_1_3 = phi i32 [ %inp3_buf_12_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_12_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_12_0_3 = phi i32 [ %inp3_buf_12_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_12_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_11_1_3 = phi i32 [ %inp3_buf_11_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_11_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_11_0_3 = phi i32 [ %inp3_buf_11_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_11_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_10_1_3 = phi i32 [ %inp3_buf_10_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_10_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_10_0_3 = phi i32 [ %inp3_buf_10_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_10_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_9_1_3 = phi i32 [ %inp3_buf_9_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_9_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_9_0_3 = phi i32 [ %inp3_buf_9_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_9_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_8_1_3 = phi i32 [ %inp3_buf_8_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_8_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_8_0_3 = phi i32 [ %inp3_buf_8_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_8_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_7_1_3 = phi i32 [ %inp3_buf_7_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_7_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_7_0_3 = phi i32 [ %inp3_buf_7_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_7_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_6_1_3 = phi i32 [ %inp3_buf_6_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_6_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_6_0_3 = phi i32 [ %inp3_buf_6_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_6_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_5_1_3 = phi i32 [ %inp3_buf_5_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_5_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_5_0_3 = phi i32 [ %inp3_buf_5_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_5_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_4_1_3 = phi i32 [ %inp3_buf_4_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_4_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_4_0_3 = phi i32 [ %inp3_buf_4_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_4_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_3_1_3 = phi i32 [ %inp3_buf_3_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_3_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_3_0_3 = phi i32 [ %inp3_buf_3_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_3_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_2_1_3 = phi i32 [ %inp3_buf_2_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_2_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_2_0_3 = phi i32 [ %inp3_buf_2_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_2_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_1_1_3 = phi i32 [ %inp3_buf_1_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_1_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_1_0_3 = phi i32 [ %inp3_buf_1_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_1_0_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_0_1_3 = phi i32 [ %inp3_buf_0_1_4, %burst.rd.end35.1_ifconv ], [ %inp3_buf_0_1_1, %burst.rd.end35.0.preheader ]
+  %inp3_buf_0_0_s = phi i32 [ %inp3_buf_0_1_8, %burst.rd.end35.1_ifconv ], [ %inp3_buf_0_0_1, %burst.rd.end35.0.preheader ]
+  %k1 = phi i6 [ %k_s, %burst.rd.end35.1_ifconv ], [ 0, %burst.rd.end35.0.preheader ]
+  %empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind
+  %exitcond = icmp eq i6 %k1, -32
+  br i1 %exitcond, label %burst.wr.header50.preheader, label %burst.rd.end35.1_ifconv
+
+burst.wr.header50.preheader:                      ; preds = %burst.rd.end35.0
+  br label %burst.wr.header50
+
+burst.rd.end35.1_ifconv:                          ; preds = %burst.rd.end35.0
+  %tmp_89 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %k1, i32 4)
+  %inp3_buf_load_0_phi = select i1 %tmp_89, i32 %inp3_buf_0_1_3, i32 %inp3_buf_0_0_s
+  %tmp_90 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_0_phi, i32 31)
+  %tmp_131_cast_cast = select i1 %tmp_90, i32 -8, i32 8
+  %tmp_91 = add i32 %tmp_131_cast_cast, %inp3_buf_load_0_phi
+  %tmp_92 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_91, i32 31)
+  %p_neg = sub i32 0, %tmp_91
+  %tmp_93 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg, i32 4, i32 31)
+  %p_lshr_cast = zext i28 %tmp_93 to i29
+  %p_neg_t = sub i29 0, %p_lshr_cast
+  %tmp_94 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_91, i32 4, i32 31)
+  %p_lshr_f_cast = zext i28 %tmp_94 to i29
+  %inp3_buf_0_1_9 = select i1 %tmp_92, i29 %p_neg_t, i29 %p_lshr_f_cast
+  %inp3_buf_0_0_3_cas = sext i29 %inp3_buf_0_1_9 to i32
+  %inp3_buf_0_1_4 = select i1 %tmp_89, i32 %inp3_buf_0_0_3_cas, i32 %inp3_buf_0_1_3
+  %inp3_buf_0_1_8 = select i1 %tmp_89, i32 %inp3_buf_0_0_s, i32 %inp3_buf_0_0_3_cas
+  %inp3_buf_load_113_ph = select i1 %tmp_89, i32 %inp3_buf_1_1_3, i32 %inp3_buf_1_0_3
+  %tmp_95 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_113_ph, i32 31)
+  %tmp_139_cast_cast = select i1 %tmp_95, i32 -8, i32 8
+  %tmp_136_1 = add i32 %tmp_139_cast_cast, %inp3_buf_load_113_ph
+  %tmp_96 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_1, i32 31)
+  %p_neg_1 = sub i32 0, %tmp_136_1
+  %tmp_97 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_1, i32 4, i32 31)
+  %p_lshr_1_cast = zext i28 %tmp_97 to i29
+  %p_neg_t_1 = sub i29 0, %p_lshr_1_cast
+  %tmp_98 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_1, i32 4, i32 31)
+  %p_lshr_f_1_cast = zext i28 %tmp_98 to i29
+  %inp3_buf_1_1_9 = select i1 %tmp_96, i29 %p_neg_t_1, i29 %p_lshr_f_1_cast
+  %inp3_buf_1_0_2_cas = sext i29 %inp3_buf_1_1_9 to i32
+  %inp3_buf_1_1_4 = select i1 %tmp_89, i32 %inp3_buf_1_0_2_cas, i32 %inp3_buf_1_1_3
+  %inp3_buf_1_1_8 = select i1 %tmp_89, i32 %inp3_buf_1_0_3, i32 %inp3_buf_1_0_2_cas
+  %inp3_buf_load_2_phi = select i1 %tmp_89, i32 %inp3_buf_2_1_3, i32 %inp3_buf_2_0_3
+  %tmp_99 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_2_phi, i32 31)
+  %tmp_142_cast_cast = select i1 %tmp_99, i32 -8, i32 8
+  %tmp_136_2 = add i32 %tmp_142_cast_cast, %inp3_buf_load_2_phi
+  %tmp_100 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_2, i32 31)
+  %p_neg_2 = sub i32 0, %tmp_136_2
+  %tmp_101 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_2, i32 4, i32 31)
+  %p_lshr_2_cast = zext i28 %tmp_101 to i29
+  %p_neg_t_2 = sub i29 0, %p_lshr_2_cast
+  %tmp_102 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_2, i32 4, i32 31)
+  %p_lshr_f_2_cast = zext i28 %tmp_102 to i29
+  %inp3_buf_2_1_9 = select i1 %tmp_100, i29 %p_neg_t_2, i29 %p_lshr_f_2_cast
+  %inp3_buf_2_0_2_cas = sext i29 %inp3_buf_2_1_9 to i32
+  %inp3_buf_2_1_4 = select i1 %tmp_89, i32 %inp3_buf_2_0_2_cas, i32 %inp3_buf_2_1_3
+  %inp3_buf_2_1_8 = select i1 %tmp_89, i32 %inp3_buf_2_0_3, i32 %inp3_buf_2_0_2_cas
+  %inp3_buf_load_3_phi = select i1 %tmp_89, i32 %inp3_buf_3_1_3, i32 %inp3_buf_3_0_3
+  %tmp_103 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_3_phi, i32 31)
+  %tmp_145_cast_cast = select i1 %tmp_103, i32 -8, i32 8
+  %tmp_136_3 = add i32 %tmp_145_cast_cast, %inp3_buf_load_3_phi
+  %tmp_104 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_3, i32 31)
+  %p_neg_3 = sub i32 0, %tmp_136_3
+  %tmp_105 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_3, i32 4, i32 31)
+  %p_lshr_3_cast = zext i28 %tmp_105 to i29
+  %p_neg_t_3 = sub i29 0, %p_lshr_3_cast
+  %tmp_106 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_3, i32 4, i32 31)
+  %p_lshr_f_3_cast = zext i28 %tmp_106 to i29
+  %inp3_buf_3_1_9 = select i1 %tmp_104, i29 %p_neg_t_3, i29 %p_lshr_f_3_cast
+  %inp3_buf_3_0_2_cas = sext i29 %inp3_buf_3_1_9 to i32
+  %inp3_buf_3_1_4 = select i1 %tmp_89, i32 %inp3_buf_3_0_2_cas, i32 %inp3_buf_3_1_3
+  %inp3_buf_3_1_8 = select i1 %tmp_89, i32 %inp3_buf_3_0_3, i32 %inp3_buf_3_0_2_cas
+  %inp3_buf_load_4_phi = select i1 %tmp_89, i32 %inp3_buf_4_1_3, i32 %inp3_buf_4_0_3
+  %tmp_107 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_4_phi, i32 31)
+  %tmp_148_cast_cast = select i1 %tmp_107, i32 -8, i32 8
+  %tmp_136_4 = add i32 %tmp_148_cast_cast, %inp3_buf_load_4_phi
+  %tmp_108 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_4, i32 31)
+  %p_neg_4 = sub i32 0, %tmp_136_4
+  %tmp_109 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_4, i32 4, i32 31)
+  %p_lshr_4_cast = zext i28 %tmp_109 to i29
+  %p_neg_t_4 = sub i29 0, %p_lshr_4_cast
+  %tmp_110 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_4, i32 4, i32 31)
+  %p_lshr_f_4_cast = zext i28 %tmp_110 to i29
+  %inp3_buf_4_1_9 = select i1 %tmp_108, i29 %p_neg_t_4, i29 %p_lshr_f_4_cast
+  %inp3_buf_4_0_2_cas = sext i29 %inp3_buf_4_1_9 to i32
+  %inp3_buf_4_1_4 = select i1 %tmp_89, i32 %inp3_buf_4_0_2_cas, i32 %inp3_buf_4_1_3
+  %inp3_buf_4_1_8 = select i1 %tmp_89, i32 %inp3_buf_4_0_3, i32 %inp3_buf_4_0_2_cas
+  %inp3_buf_load_5_phi = select i1 %tmp_89, i32 %inp3_buf_5_1_3, i32 %inp3_buf_5_0_3
+  %tmp_111 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_5_phi, i32 31)
+  %tmp_151_cast_cast = select i1 %tmp_111, i32 -8, i32 8
+  %tmp_136_5 = add i32 %tmp_151_cast_cast, %inp3_buf_load_5_phi
+  %tmp_112 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_5, i32 31)
+  %p_neg_5 = sub i32 0, %tmp_136_5
+  %tmp_113 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_5, i32 4, i32 31)
+  %p_lshr_5_cast = zext i28 %tmp_113 to i29
+  %p_neg_t_5 = sub i29 0, %p_lshr_5_cast
+  %tmp_114 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_5, i32 4, i32 31)
+  %p_lshr_f_5_cast = zext i28 %tmp_114 to i29
+  %inp3_buf_5_1_9 = select i1 %tmp_112, i29 %p_neg_t_5, i29 %p_lshr_f_5_cast
+  %inp3_buf_5_0_2_cas = sext i29 %inp3_buf_5_1_9 to i32
+  %inp3_buf_5_1_4 = select i1 %tmp_89, i32 %inp3_buf_5_0_2_cas, i32 %inp3_buf_5_1_3
+  %inp3_buf_5_1_8 = select i1 %tmp_89, i32 %inp3_buf_5_0_3, i32 %inp3_buf_5_0_2_cas
+  %inp3_buf_load_6_phi = select i1 %tmp_89, i32 %inp3_buf_6_1_3, i32 %inp3_buf_6_0_3
+  %tmp_115 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_6_phi, i32 31)
+  %tmp_154_cast_cast = select i1 %tmp_115, i32 -8, i32 8
+  %tmp_136_6 = add i32 %tmp_154_cast_cast, %inp3_buf_load_6_phi
+  %tmp_116 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_6, i32 31)
+  %p_neg_6 = sub i32 0, %tmp_136_6
+  %tmp_117 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_6, i32 4, i32 31)
+  %p_lshr_6_cast = zext i28 %tmp_117 to i29
+  %p_neg_t_6 = sub i29 0, %p_lshr_6_cast
+  %tmp_118 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_6, i32 4, i32 31)
+  %p_lshr_f_6_cast = zext i28 %tmp_118 to i29
+  %inp3_buf_6_1_9 = select i1 %tmp_116, i29 %p_neg_t_6, i29 %p_lshr_f_6_cast
+  %inp3_buf_6_0_2_cas = sext i29 %inp3_buf_6_1_9 to i32
+  %inp3_buf_6_1_4 = select i1 %tmp_89, i32 %inp3_buf_6_0_2_cas, i32 %inp3_buf_6_1_3
+  %inp3_buf_6_1_8 = select i1 %tmp_89, i32 %inp3_buf_6_0_3, i32 %inp3_buf_6_0_2_cas
+  %inp3_buf_load_7_phi = select i1 %tmp_89, i32 %inp3_buf_7_1_3, i32 %inp3_buf_7_0_3
+  %tmp_119 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_7_phi, i32 31)
+  %tmp_157_cast_cast = select i1 %tmp_119, i32 -8, i32 8
+  %tmp_136_7 = add i32 %tmp_157_cast_cast, %inp3_buf_load_7_phi
+  %tmp_122 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_7, i32 31)
+  %p_neg_7 = sub i32 0, %tmp_136_7
+  %tmp_120 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_7, i32 4, i32 31)
+  %p_lshr_7_cast = zext i28 %tmp_120 to i29
+  %p_neg_t_7 = sub i29 0, %p_lshr_7_cast
+  %tmp_121 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_7, i32 4, i32 31)
+  %p_lshr_f_7_cast = zext i28 %tmp_121 to i29
+  %inp3_buf_7_1_9 = select i1 %tmp_122, i29 %p_neg_t_7, i29 %p_lshr_f_7_cast
+  %inp3_buf_7_0_2_cas = sext i29 %inp3_buf_7_1_9 to i32
+  %inp3_buf_7_1_4 = select i1 %tmp_89, i32 %inp3_buf_7_0_2_cas, i32 %inp3_buf_7_1_3
+  %inp3_buf_7_1_8 = select i1 %tmp_89, i32 %inp3_buf_7_0_3, i32 %inp3_buf_7_0_2_cas
+  %inp3_buf_load_8_phi = select i1 %tmp_89, i32 %inp3_buf_8_1_3, i32 %inp3_buf_8_0_3
+  %tmp_125 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_8_phi, i32 31)
+  %tmp_160_cast_cast = select i1 %tmp_125, i32 -8, i32 8
+  %tmp_136_8 = add i32 %tmp_160_cast_cast, %inp3_buf_load_8_phi
+  %tmp_128 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_8, i32 31)
+  %p_neg_8 = sub i32 0, %tmp_136_8
+  %tmp_123 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_8, i32 4, i32 31)
+  %p_lshr_8_cast = zext i28 %tmp_123 to i29
+  %p_neg_t_8 = sub i29 0, %p_lshr_8_cast
+  %tmp_124 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_8, i32 4, i32 31)
+  %p_lshr_f_8_cast = zext i28 %tmp_124 to i29
+  %inp3_buf_8_1_9 = select i1 %tmp_128, i29 %p_neg_t_8, i29 %p_lshr_f_8_cast
+  %inp3_buf_8_0_2_cas = sext i29 %inp3_buf_8_1_9 to i32
+  %inp3_buf_8_1_4 = select i1 %tmp_89, i32 %inp3_buf_8_0_2_cas, i32 %inp3_buf_8_1_3
+  %inp3_buf_8_1_8 = select i1 %tmp_89, i32 %inp3_buf_8_0_3, i32 %inp3_buf_8_0_2_cas
+  %inp3_buf_load_9_phi = select i1 %tmp_89, i32 %inp3_buf_9_1_3, i32 %inp3_buf_9_0_3
+  %tmp_131 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_9_phi, i32 31)
+  %tmp_163_cast_cast = select i1 %tmp_131, i32 -8, i32 8
+  %tmp_136_9 = add i32 %tmp_163_cast_cast, %inp3_buf_load_9_phi
+  %tmp_135 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_9, i32 31)
+  %p_neg_9 = sub i32 0, %tmp_136_9
+  %tmp_126 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_9, i32 4, i32 31)
+  %p_lshr_9_cast = zext i28 %tmp_126 to i29
+  %p_neg_t_9 = sub i29 0, %p_lshr_9_cast
+  %tmp_127 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_9, i32 4, i32 31)
+  %p_lshr_f_9_cast = zext i28 %tmp_127 to i29
+  %inp3_buf_9_1_9 = select i1 %tmp_135, i29 %p_neg_t_9, i29 %p_lshr_f_9_cast
+  %inp3_buf_9_0_2_cas = sext i29 %inp3_buf_9_1_9 to i32
+  %inp3_buf_9_1_4 = select i1 %tmp_89, i32 %inp3_buf_9_0_2_cas, i32 %inp3_buf_9_1_3
+  %inp3_buf_9_1_8 = select i1 %tmp_89, i32 %inp3_buf_9_0_3, i32 %inp3_buf_9_0_2_cas
+  %inp3_buf_load_10_phi = select i1 %tmp_89, i32 %inp3_buf_10_1_3, i32 %inp3_buf_10_0_3
+  %tmp_137 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_10_phi, i32 31)
+  %tmp_166_cast_cast = select i1 %tmp_137, i32 -8, i32 8
+  %tmp_136_s = add i32 %tmp_166_cast_cast, %inp3_buf_load_10_phi
+  %tmp_140 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_s, i32 31)
+  %p_neg_s = sub i32 0, %tmp_136_s
+  %tmp_129 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_s, i32 4, i32 31)
+  %p_lshr_cast_44 = zext i28 %tmp_129 to i29
+  %p_neg_t_s = sub i29 0, %p_lshr_cast_44
+  %tmp_130 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_s, i32 4, i32 31)
+  %p_lshr_f_cast_45 = zext i28 %tmp_130 to i29
+  %inp3_buf_10_1_9 = select i1 %tmp_140, i29 %p_neg_t_s, i29 %p_lshr_f_cast_45
+  %inp3_buf_10_0_2_ca = sext i29 %inp3_buf_10_1_9 to i32
+  %inp3_buf_10_1_4 = select i1 %tmp_89, i32 %inp3_buf_10_0_2_ca, i32 %inp3_buf_10_1_3
+  %inp3_buf_10_1_8 = select i1 %tmp_89, i32 %inp3_buf_10_0_3, i32 %inp3_buf_10_0_2_ca
+  %inp3_buf_load_11_phi = select i1 %tmp_89, i32 %inp3_buf_11_1_3, i32 %inp3_buf_11_0_3
+  %tmp_143 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_11_phi, i32 31)
+  %tmp_169_cast_cast = select i1 %tmp_143, i32 -8, i32 8
+  %tmp_136_10 = add i32 %tmp_169_cast_cast, %inp3_buf_load_11_phi
+  %tmp_146 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_10, i32 31)
+  %p_neg_10 = sub i32 0, %tmp_136_10
+  %tmp_132 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_10, i32 4, i32 31)
+  %p_lshr_10_cast = zext i28 %tmp_132 to i29
+  %p_neg_t_10 = sub i29 0, %p_lshr_10_cast
+  %tmp_136 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_10, i32 4, i32 31)
+  %p_lshr_f_10_cast = zext i28 %tmp_136 to i29
+  %inp3_buf_11_1_9 = select i1 %tmp_146, i29 %p_neg_t_10, i29 %p_lshr_f_10_cast
+  %inp3_buf_11_0_2_ca = sext i29 %inp3_buf_11_1_9 to i32
+  %inp3_buf_11_1_4 = select i1 %tmp_89, i32 %inp3_buf_11_0_2_ca, i32 %inp3_buf_11_1_3
+  %inp3_buf_11_1_8 = select i1 %tmp_89, i32 %inp3_buf_11_0_3, i32 %inp3_buf_11_0_2_ca
+  %inp3_buf_load_12_phi = select i1 %tmp_89, i32 %inp3_buf_12_1_3, i32 %inp3_buf_12_0_3
+  %tmp_150 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_12_phi, i32 31)
+  %tmp_172_cast_cast = select i1 %tmp_150, i32 -8, i32 8
+  %tmp_136_11 = add i32 %tmp_172_cast_cast, %inp3_buf_load_12_phi
+  %tmp_151 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_11, i32 31)
+  %p_neg_11 = sub i32 0, %tmp_136_11
+  %tmp_138 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_11, i32 4, i32 31)
+  %p_lshr_11_cast = zext i28 %tmp_138 to i29
+  %p_neg_t_11 = sub i29 0, %p_lshr_11_cast
+  %tmp_139 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_11, i32 4, i32 31)
+  %p_lshr_f_11_cast = zext i28 %tmp_139 to i29
+  %inp3_buf_12_1_9 = select i1 %tmp_151, i29 %p_neg_t_11, i29 %p_lshr_f_11_cast
+  %inp3_buf_12_0_2_ca = sext i29 %inp3_buf_12_1_9 to i32
+  %inp3_buf_12_1_4 = select i1 %tmp_89, i32 %inp3_buf_12_0_2_ca, i32 %inp3_buf_12_1_3
+  %inp3_buf_12_1_8 = select i1 %tmp_89, i32 %inp3_buf_12_0_3, i32 %inp3_buf_12_0_2_ca
+  %inp3_buf_load_13_phi = select i1 %tmp_89, i32 %inp3_buf_13_1_3, i32 %inp3_buf_13_0_3
+  %tmp_152 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_13_phi, i32 31)
+  %tmp_175_cast_cast = select i1 %tmp_152, i32 -8, i32 8
+  %tmp_136_12 = add i32 %tmp_175_cast_cast, %inp3_buf_load_13_phi
+  %tmp_153 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_12, i32 31)
+  %p_neg_12 = sub i32 0, %tmp_136_12
+  %tmp_141 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_12, i32 4, i32 31)
+  %p_lshr_12_cast = zext i28 %tmp_141 to i29
+  %p_neg_t_12 = sub i29 0, %p_lshr_12_cast
+  %tmp_142 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_12, i32 4, i32 31)
+  %p_lshr_f_12_cast = zext i28 %tmp_142 to i29
+  %inp3_buf_13_1_9 = select i1 %tmp_153, i29 %p_neg_t_12, i29 %p_lshr_f_12_cast
+  %inp3_buf_13_0_2_ca = sext i29 %inp3_buf_13_1_9 to i32
+  %inp3_buf_13_1_4 = select i1 %tmp_89, i32 %inp3_buf_13_0_2_ca, i32 %inp3_buf_13_1_3
+  %inp3_buf_13_1_8 = select i1 %tmp_89, i32 %inp3_buf_13_0_3, i32 %inp3_buf_13_0_2_ca
+  %inp3_buf_load_14_phi = select i1 %tmp_89, i32 %inp3_buf_14_1_3, i32 %inp3_buf_14_0_3
+  %tmp_154 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_14_phi, i32 31)
+  %tmp_178_cast_cast = select i1 %tmp_154, i32 -8, i32 8
+  %tmp_136_13 = add i32 %tmp_178_cast_cast, %inp3_buf_load_14_phi
+  %tmp_155 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_13, i32 31)
+  %p_neg_13 = sub i32 0, %tmp_136_13
+  %tmp_144 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_13, i32 4, i32 31)
+  %p_lshr_13_cast = zext i28 %tmp_144 to i29
+  %p_neg_t_13 = sub i29 0, %p_lshr_13_cast
+  %tmp_145 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_13, i32 4, i32 31)
+  %p_lshr_f_13_cast = zext i28 %tmp_145 to i29
+  %inp3_buf_14_1_9 = select i1 %tmp_155, i29 %p_neg_t_13, i29 %p_lshr_f_13_cast
+  %inp3_buf_14_0_2_ca = sext i29 %inp3_buf_14_1_9 to i32
+  %inp3_buf_14_1_4 = select i1 %tmp_89, i32 %inp3_buf_14_0_2_ca, i32 %inp3_buf_14_1_3
+  %inp3_buf_14_1_8 = select i1 %tmp_89, i32 %inp3_buf_14_0_3, i32 %inp3_buf_14_0_2_ca
+  %inp3_buf_load_15_phi = select i1 %tmp_89, i32 %inp3_buf_15_1_3, i32 %inp3_buf_15_0_3
+  %tmp_156 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %inp3_buf_load_15_phi, i32 31)
+  %tmp_181_cast_cast = select i1 %tmp_156, i32 -8, i32 8
+  %tmp_136_14 = add i32 %tmp_181_cast_cast, %inp3_buf_load_15_phi
+  %tmp_157 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_136_14, i32 31)
+  %p_neg_14 = sub i32 0, %tmp_136_14
+  %tmp_147 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %p_neg_14, i32 4, i32 31)
+  %p_lshr_14_cast = zext i28 %tmp_147 to i29
+  %p_neg_t_14 = sub i29 0, %p_lshr_14_cast
+  %tmp_148 = call i28 @_ssdm_op_PartSelect.i28.i32.i32.i32(i32 %tmp_136_14, i32 4, i32 31)
+  %p_lshr_f_14_cast = zext i28 %tmp_148 to i29
+  %inp3_buf_15_1_25 = select i1 %tmp_157, i29 %p_neg_t_14, i29 %p_lshr_f_14_cast
+  %inp3_buf_15_0_2_ca = sext i29 %inp3_buf_15_1_25 to i32
+  %inp3_buf_15_1_4 = select i1 %tmp_89, i32 %inp3_buf_15_0_2_ca, i32 %inp3_buf_15_1_3
+  %inp3_buf_15_1_24 = select i1 %tmp_89, i32 %inp3_buf_15_0_3, i32 %inp3_buf_15_0_2_ca
+  %k_s = add i6 %k1, 16
+  br label %burst.rd.end35.0
+
+burst.wr.header50:                                ; preds = %burst.wr.header50.preheader, %burst.wr.body51
+  %indvar4 = phi i6 [ %indvar_next4, %burst.wr.body51 ], [ 0, %burst.wr.header50.preheader ]
+  %exitcond5 = icmp eq i6 %indvar4, -32
+  %indvar_next4 = add i6 %indvar4, 1
+  br i1 %exitcond5, label %memcpy.tail.loopexit, label %burst.wr.body51
+
+burst.wr.body51:                                  ; preds = %burst.wr.header50
+  %empty_46 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
+  %burstwrite_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind
+  %empty_47 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+  %empty_48 = call i32 (...)* @_ssdm_op_SpecLoopName([22 x i8]* @memcpy_OC_y_OC_inp3_s) nounwind
+  %tmp_158 = trunc i6 %indvar4 to i4
+  %tmp_159 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar4, i32 4)
+  %tmp_133 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_158, i1 %tmp_159)
+  %tmp_134 = zext i5 %tmp_133 to i6
+  %tmp_149 = call i32 @_ssdm_op_Mux.ap_auto.32i32.i6(i32 %inp3_buf_0_0_s, i32 %inp3_buf_0_1_3, i32 %inp3_buf_1_0_3, i32 %inp3_buf_1_1_3, i32 %inp3_buf_2_0_3, i32 %inp3_buf_2_1_3, i32 %inp3_buf_3_0_3, i32 %inp3_buf_3_1_3, i32 %inp3_buf_4_0_3, i32 %inp3_buf_4_1_3, i32 %inp3_buf_5_0_3, i32 %inp3_buf_5_1_3, i32 %inp3_buf_6_0_3, i32 %inp3_buf_6_1_3, i32 %inp3_buf_7_0_3, i32 %inp3_buf_7_1_3, i32 %inp3_buf_8_0_3, i32 %inp3_buf_8_1_3, i32 %inp3_buf_9_0_3, i32 %inp3_buf_9_1_3, i32 %inp3_buf_10_0_3, i32 %inp3_buf_10_1_3, i32 %inp3_buf_11_0_3, i32 %inp3_buf_11_1_3, i32 %inp3_buf_12_0_3, i32 %inp3_buf_12_1_3, i32 %inp3_buf_13_0_3, i32 %inp3_buf_13_1_3, i32 %inp3_buf_14_0_3, i32 %inp3_buf_14_1_3, i32 %inp3_buf_15_0_3, i32 %inp3_buf_15_1_3, i6 %tmp_134) nounwind
+  call void @_ssdm_op_Write.m_axi.i32P(i32* %BUS_SRC_DST_addr, i32 %tmp_149, i4 -1)
+  %burstwrite_rend61 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin1) nounwind
+  br label %burst.wr.header50
+
+; <label>:4                                       ; preds = %memcpy.tail
+  %BUS_SRC_DST_addr_wr_3 = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_SRC_DST_addr)
   ret void
 
-branch0:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_2_loa_1 = load i32* %inp1_buf_0_1_2
-  %inp1_buf_0_1_33_lo_1 = load i32* %inp1_buf_0_1_33
-  %inp1_buf_0_1_3 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_33_lo_1
-  %inp1_buf_0_1_4 = select i1 %tmp_72, i32 %inp1_buf_0_1_2_loa_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_3, i32* %inp1_buf_0_1_33
-  store i32 %inp1_buf_0_1_4, i32* %inp1_buf_0_1_2
-  br label %burst.rd.body398
+branch0_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_0_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_0_1_1
+  %inp3_buf_15_1_8 = select i1 %tmp_88, i32 %inp3_buf_0_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch1:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_34_lo_1 = load i32* %inp1_buf_0_1_34
-  %inp1_buf_0_1_35_lo_1 = load i32* %inp1_buf_0_1_35
-  %inp1_buf_0_1_5 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_35_lo_1
-  %inp1_buf_0_1_6 = select i1 %tmp_72, i32 %inp1_buf_0_1_34_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_5, i32* %inp1_buf_0_1_35
-  store i32 %inp1_buf_0_1_6, i32* %inp1_buf_0_1_34
-  br label %burst.rd.body398
+branch1_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_1_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_1_1_1
+  %inp3_buf_15_1_9 = select i1 %tmp_88, i32 %inp3_buf_1_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch2:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_36_lo_1 = load i32* %inp1_buf_0_1_36
-  %inp1_buf_0_1_37_lo_1 = load i32* %inp1_buf_0_1_37
-  %inp1_buf_0_1_7 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_37_lo_1
-  %inp1_buf_0_1_8 = select i1 %tmp_72, i32 %inp1_buf_0_1_36_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_7, i32* %inp1_buf_0_1_37
-  store i32 %inp1_buf_0_1_8, i32* %inp1_buf_0_1_36
-  br label %burst.rd.body398
+branch2_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_2_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_2_1_1
+  %inp3_buf_15_1_10 = select i1 %tmp_88, i32 %inp3_buf_2_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch3:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_38_lo_1 = load i32* %inp1_buf_0_1_38
-  %inp1_buf_0_1_39_lo_1 = load i32* %inp1_buf_0_1_39
-  %inp1_buf_0_1_9 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_39_lo_1
-  %inp1_buf_0_1_65 = select i1 %tmp_72, i32 %inp1_buf_0_1_38_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_9, i32* %inp1_buf_0_1_39
-  store i32 %inp1_buf_0_1_65, i32* %inp1_buf_0_1_38
-  br label %burst.rd.body398
+branch3_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_3_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_3_1_1
+  %inp3_buf_15_1_11 = select i1 %tmp_88, i32 %inp3_buf_3_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch4:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_40_lo_1 = load i32* %inp1_buf_0_1_40
-  %inp1_buf_0_1_41_lo_1 = load i32* %inp1_buf_0_1_41
-  %inp1_buf_0_1_66 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_41_lo_1
-  %inp1_buf_0_1_67 = select i1 %tmp_72, i32 %inp1_buf_0_1_40_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_66, i32* %inp1_buf_0_1_41
-  store i32 %inp1_buf_0_1_67, i32* %inp1_buf_0_1_40
-  br label %burst.rd.body398
+branch4_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_4_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_4_1_1
+  %inp3_buf_15_1_12 = select i1 %tmp_88, i32 %inp3_buf_4_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch5:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_42_lo_1 = load i32* %inp1_buf_0_1_42
-  %inp1_buf_0_1_43_lo_1 = load i32* %inp1_buf_0_1_43
-  %inp1_buf_0_1_68 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_43_lo_1
-  %inp1_buf_0_1_69 = select i1 %tmp_72, i32 %inp1_buf_0_1_42_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_68, i32* %inp1_buf_0_1_43
-  store i32 %inp1_buf_0_1_69, i32* %inp1_buf_0_1_42
-  br label %burst.rd.body398
+branch5_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_5_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_5_1_1
+  %inp3_buf_15_1_13 = select i1 %tmp_88, i32 %inp3_buf_5_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch6:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_44_lo_1 = load i32* %inp1_buf_0_1_44
-  %inp1_buf_0_1_45_lo_1 = load i32* %inp1_buf_0_1_45
-  %inp1_buf_0_1_70 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_45_lo_1
-  %inp1_buf_0_1_71 = select i1 %tmp_72, i32 %inp1_buf_0_1_44_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_70, i32* %inp1_buf_0_1_45
-  store i32 %inp1_buf_0_1_71, i32* %inp1_buf_0_1_44
-  br label %burst.rd.body398
+branch6_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_6_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_6_1_1
+  %inp3_buf_15_1_14 = select i1 %tmp_88, i32 %inp3_buf_6_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch7:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_46_lo_1 = load i32* %inp1_buf_0_1_46
-  %inp1_buf_0_1_47_lo_1 = load i32* %inp1_buf_0_1_47
-  %inp1_buf_0_1_72 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_47_lo_1
-  %inp1_buf_0_1_73 = select i1 %tmp_72, i32 %inp1_buf_0_1_46_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_72, i32* %inp1_buf_0_1_47
-  store i32 %inp1_buf_0_1_73, i32* %inp1_buf_0_1_46
-  br label %burst.rd.body398
+branch7_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_7_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_7_1_1
+  %inp3_buf_15_1_15 = select i1 %tmp_88, i32 %inp3_buf_7_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch8:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_48_lo_1 = load i32* %inp1_buf_0_1_48
-  %inp1_buf_0_1_49_lo_1 = load i32* %inp1_buf_0_1_49
-  %inp1_buf_0_1_74 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_49_lo_1
-  %inp1_buf_0_1_75 = select i1 %tmp_72, i32 %inp1_buf_0_1_48_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_74, i32* %inp1_buf_0_1_49
-  store i32 %inp1_buf_0_1_75, i32* %inp1_buf_0_1_48
-  br label %burst.rd.body398
+branch8_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_8_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_8_1_1
+  %inp3_buf_15_1_16 = select i1 %tmp_88, i32 %inp3_buf_8_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch9:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_50_lo_1 = load i32* %inp1_buf_0_1_50
-  %inp1_buf_0_1_51_lo_1 = load i32* %inp1_buf_0_1_51
-  %inp1_buf_0_1_76 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_51_lo_1
-  %inp1_buf_0_1_77 = select i1 %tmp_72, i32 %inp1_buf_0_1_50_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_76, i32* %inp1_buf_0_1_51
-  store i32 %inp1_buf_0_1_77, i32* %inp1_buf_0_1_50
-  br label %burst.rd.body398
+branch9_ifconv:                                   ; preds = %burst.rd.body37
+  %inp3_buf_9_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_9_1_1
+  %inp3_buf_15_1_17 = select i1 %tmp_88, i32 %inp3_buf_9_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch10:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_52_lo_1 = load i32* %inp1_buf_0_1_52
-  %inp1_buf_0_1_53_lo_1 = load i32* %inp1_buf_0_1_53
-  %inp1_buf_0_1_78 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_53_lo_1
-  %inp1_buf_0_1_79 = select i1 %tmp_72, i32 %inp1_buf_0_1_52_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_78, i32* %inp1_buf_0_1_53
-  store i32 %inp1_buf_0_1_79, i32* %inp1_buf_0_1_52
-  br label %burst.rd.body398
+branch10_ifconv:                                  ; preds = %burst.rd.body37
+  %inp3_buf_10_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_10_1_1
+  %inp3_buf_15_1_18 = select i1 %tmp_88, i32 %inp3_buf_10_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch11:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_54_lo_1 = load i32* %inp1_buf_0_1_54
-  %inp1_buf_0_1_55_lo_1 = load i32* %inp1_buf_0_1_55
-  %inp1_buf_0_1_80 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_55_lo_1
-  %inp1_buf_0_1_81 = select i1 %tmp_72, i32 %inp1_buf_0_1_54_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_80, i32* %inp1_buf_0_1_55
-  store i32 %inp1_buf_0_1_81, i32* %inp1_buf_0_1_54
-  br label %burst.rd.body398
+branch11_ifconv:                                  ; preds = %burst.rd.body37
+  %inp3_buf_11_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_11_1_1
+  %inp3_buf_15_1_19 = select i1 %tmp_88, i32 %inp3_buf_11_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch12:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_56_lo_1 = load i32* %inp1_buf_0_1_56
-  %inp1_buf_0_1_57_lo_1 = load i32* %inp1_buf_0_1_57
-  %inp1_buf_0_1_82 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_57_lo_1
-  %inp1_buf_0_1_83 = select i1 %tmp_72, i32 %inp1_buf_0_1_56_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_82, i32* %inp1_buf_0_1_57
-  store i32 %inp1_buf_0_1_83, i32* %inp1_buf_0_1_56
-  br label %burst.rd.body398
+branch12_ifconv:                                  ; preds = %burst.rd.body37
+  %inp3_buf_12_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_12_1_1
+  %inp3_buf_15_1_20 = select i1 %tmp_88, i32 %inp3_buf_12_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch13:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_58_lo_1 = load i32* %inp1_buf_0_1_58
-  %inp1_buf_0_1_59_lo_1 = load i32* %inp1_buf_0_1_59
-  %inp1_buf_0_1_84 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_59_lo_1
-  %inp1_buf_0_1_85 = select i1 %tmp_72, i32 %inp1_buf_0_1_58_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_84, i32* %inp1_buf_0_1_59
-  store i32 %inp1_buf_0_1_85, i32* %inp1_buf_0_1_58
-  br label %burst.rd.body398
+branch13_ifconv:                                  ; preds = %burst.rd.body37
+  %inp3_buf_13_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_13_1_1
+  %inp3_buf_15_1_21 = select i1 %tmp_88, i32 %inp3_buf_13_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch14:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_60_lo_1 = load i32* %inp1_buf_0_1_60
-  %inp1_buf_0_1_61_lo_1 = load i32* %inp1_buf_0_1_61
-  %inp1_buf_0_1_86 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_61_lo_1
-  %inp1_buf_0_1_87 = select i1 %tmp_72, i32 %inp1_buf_0_1_60_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1_86, i32* %inp1_buf_0_1_61
-  store i32 %inp1_buf_0_1_87, i32* %inp1_buf_0_1_60
-  br label %burst.rd.body398
+branch14_ifconv:                                  ; preds = %burst.rd.body37
+  %inp3_buf_14_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_14_1_1
+  %inp3_buf_15_1_22 = select i1 %tmp_88, i32 %inp3_buf_14_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 
-branch15:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_62_lo_1 = load i32* %inp1_buf_0_1_62
-  %inp1_buf_0_1_63_lo_1 = load i32* %inp1_buf_0_1_63
-  %inp1_buf_0_1 = select i1 %tmp_72, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_63_lo_1
-  %inp1_buf_0_1_1 = select i1 %tmp_72, i32 %inp1_buf_0_1_62_lo_1, i32 %inp1_buf_0_0
-  store i32 %inp1_buf_0_1, i32* %inp1_buf_0_1_63
-  store i32 %inp1_buf_0_1_1, i32* %inp1_buf_0_1_62
-  br label %burst.rd.body398
+branch15_ifconv:                                  ; preds = %burst.rd.body37
+  %inp3_buf_15_1_5 = select i1 %tmp_88, i32 %inp3_buf_0_1_10, i32 %inp3_buf_15_1_1
+  %inp3_buf_15_1_7 = select i1 %tmp_88, i32 %inp3_buf_15_0_1, i32 %inp3_buf_0_1_10
+  br label %burst.rd.body37368
 }
 
-!opencl.kernels = !{!0, !7, !10, !14, !16, !22, !28, !34, !40, !43, !49, !52, !58}
+!opencl.kernels = !{!0, !7, !10, !14, !16, !16, !22, !28, !34, !40, !43, !49, !52, !58}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!60, !69, !76, !82, !87, !92, !97, !102, !110, !117, !122, !128, !133, !138, !143, !149, !154, !159, !164, !169, !174, !179, !184, !189, !194, !199, !204, !209, !214, !219, !224, !229, !234, !239, !244, !249, !256, !261, !262, !263, !264, !265, !266, !267, !268, !269, !270, !271, !272, !273}
 !axi4.master.portmap = !{!274}

@@ -76,37 +76,41 @@ void XIzigzagmatrix_f2r_forbody_s2e_forend_DisableAutoRestart(XIzigzagmatrix_f2r
     XIzigzagmatrix_f2r_forbody_s2e_forend_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_AP_CTRL, 0);
 }
 
-void XIzigzagmatrix_f2r_forbody_s2e_forend_Set_imatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr, u32 Data) {
+void XIzigzagmatrix_f2r_forbody_s2e_forend_Set_imatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XIzigzagmatrix_f2r_forbody_s2e_forend_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_IMATRIX_DATA, Data);
+    XIzigzagmatrix_f2r_forbody_s2e_forend_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_IMATRIX_DATA, (u32)(Data));
+    XIzigzagmatrix_f2r_forbody_s2e_forend_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_IMATRIX_DATA + 4, (u32)(Data >> 32));
 }
 
-u32 XIzigzagmatrix_f2r_forbody_s2e_forend_Get_imatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr) {
-    u32 Data;
+u64 XIzigzagmatrix_f2r_forbody_s2e_forend_Get_imatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr) {
+    u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIzigzagmatrix_f2r_forbody_s2e_forend_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_IMATRIX_DATA);
+    Data += (u64)XIzigzagmatrix_f2r_forbody_s2e_forend_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_IMATRIX_DATA + 4) << 32;
     return Data;
 }
 
-void XIzigzagmatrix_f2r_forbody_s2e_forend_Set_omatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr, u32 Data) {
+void XIzigzagmatrix_f2r_forbody_s2e_forend_Set_omatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XIzigzagmatrix_f2r_forbody_s2e_forend_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_OMATRIX_DATA, Data);
+    XIzigzagmatrix_f2r_forbody_s2e_forend_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_OMATRIX_DATA, (u32)(Data));
+    XIzigzagmatrix_f2r_forbody_s2e_forend_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_OMATRIX_DATA + 4, (u32)(Data >> 32));
 }
 
-u32 XIzigzagmatrix_f2r_forbody_s2e_forend_Get_omatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr) {
-    u32 Data;
+u64 XIzigzagmatrix_f2r_forbody_s2e_forend_Get_omatrix(XIzigzagmatrix_f2r_forbody_s2e_forend *InstancePtr) {
+    u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIzigzagmatrix_f2r_forbody_s2e_forend_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_OMATRIX_DATA);
+    Data += (u64)XIzigzagmatrix_f2r_forbody_s2e_forend_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_OMATRIX_DATA + 4) << 32;
     return Data;
 }
 

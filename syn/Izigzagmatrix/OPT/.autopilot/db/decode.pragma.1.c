@@ -2186,24 +2186,47 @@ _ssdm_Unroll(1, 4, 16, "");
   }
 
 }
-
-
-
-
-
-
-
+#164 "../src/decode.c"
 void
-IQuantize (int *matrix, unsigned int *qmatrix)
-{
-  int *mptr;
+IQuantize (int *matrix, unsigned int *qmatrix){
+_ssdm_op_SpecInterface(qmatrix, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(matrix, "m_axi", 0, 0, "", 0, 64, "BUS_DST", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0, 0, 0, "", "");
 
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      *mptr = *mptr * (*qmatrix);
-      qmatrix++;
-    }
+int i;
+ int inp1_buf[32];
+ int inp2_buf[32];
+
+_ssdm_SpecArrayPartition( inp1_buf, 1, "CYCLIC", 16, "");
+_ssdm_SpecArrayPartition( inp2_buf, 1, "CYCLIC", 16, "");
+
+ for (i = 0; i < 64/32; i++){
+#186 "../src/decode.c"
+   unsigned offset = i*32;
+   memcpy(inp1_buf, qmatrix + offset, 32 * sizeof(int));
+   memcpy(inp2_buf, matrix + offset, 32 * sizeof(int));
+
+
+
+
+   for (int k=0; k < 32; k++){
+_ssdm_Unroll(1, 4, 16, "");
+ inp2_buf[k] = inp1_buf[k] * inp2_buf[k];
+   }
+
+
+
+
+
+
+
+     offset = i*32;
+     memcpy(matrix + offset, inp2_buf, 32 * sizeof(int));
+
+ }
+
 }
+
 
 
 
@@ -2225,22 +2248,48 @@ PostshiftIDctMatrix (int *matrix, int shift)
 
 
 
-void
-BoundIDctMatrix (int *matrix, int Bound)
-{
-  int *mptr;
 
-  for (mptr = matrix; mptr < matrix + 64; mptr++)
-    {
-      if (*mptr < 0)
- {
-   *mptr = 0;
+void
+BoundIDctMatrix (int matrix[64], int Bound) {_ssdm_SpecArrayDimSize(matrix,64);
+_ssdm_op_SpecInterface(matrix, "m_axi", 0, 0, "", 0, 64, "BUS_DST", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(Bound, "s_axilite", 0, 0, "", 0, 0, "BUS_SRC", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0, 0, 0, "", "");
+
+ int i;
+ int inp1_buf[32];
+ int out1_buf[32];
+
+_ssdm_SpecArrayPartition( inp1_buf, 1, "CYCLIC", 16, "");
+_ssdm_SpecArrayPartition( out1_buf, 1, "CYCLIC", 16, "");
+
+ for (i = 0; i < 64/32; i++){
+
+
+
+
+
+
+
+   unsigned offset = i*32;
+   memcpy(inp1_buf, matrix + offset, 32 * sizeof(int));
+
+
+
+
+  for (int k=0; k < 32; k++){
+_ssdm_Unroll(1, 4, 16, "");
+ if (inp1_buf[k] < 0)
+    inp1_buf[k] = 0;
+
+   else if (inp1_buf[k] > Bound)
+    inp1_buf[k] = Bound;
+  }
+#278 "../src/decode.c"
+    offset = i*32;
+    memcpy(matrix + offset, inp1_buf, 32 * sizeof(int));
+
  }
-      else if (*mptr > Bound)
- {
-   *mptr = Bound;
- }
-    }
+
 }
 
 
@@ -2349,7 +2398,7 @@ _ssdm_Unroll(1, 4, 4, "");
 
 
 }
-#316 "../src/decode.c"
+#399 "../src/decode.c"
 void
 WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
      unsigned char *p_out_buf)
@@ -2385,15 +2434,23 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
       *p_out_hpos = 0;
     }
 }
-
-
-
-
+#502 "../src/decode.c"
 void
-Write4Blocks (int *store1, int *store2, int *store3, int *store4,
-       int *p_out_vpos, int *p_out_hpos, unsigned char *p_out_buf)
-{
-  int voffs, hoffs;
+Write4Blocks (int store1[64], int store2[64], int store3[64], int store4[64],
+       int *p_out_vpos, int *p_out_hpos, unsigned char p_out_buf[5310]) {_ssdm_SpecArrayDimSize(store1,64);_ssdm_SpecArrayDimSize(store2,64);_ssdm_SpecArrayDimSize(store3,64);_ssdm_SpecArrayDimSize(store4,64);_ssdm_SpecArrayDimSize(p_out_buf,5310);
+
+_ssdm_op_SpecInterface(store1, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(store2, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(store3, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(store4, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(p_out_buf, "m_axi", 0, 0, "", 0, 5310, "BUS_DST", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(p_out_vpos, "s_axilite", 0, 0, "", 0, 0, "CTRL_BUS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(p_out_hpos, "s_axilite", 0, 0, "", 0, 0, "CTRL_BUS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0, 0, 0, "", "");
+
+ int voffs, hoffs;
+
+
 
 
 
@@ -2401,19 +2458,124 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
   voffs = *p_out_vpos * 8;
   hoffs = *p_out_hpos * 8;
+#537 "../src/decode.c"
+    int i=0;
+     int l=0;
+     int j, k, m;
+
+    unsigned char inp1_buf[64];
+    unsigned char out1_buf[5310];
+    int index[64];
+
+_ssdm_SpecArrayPartition( inp1_buf, 1, "CYCLIC", 4, "");
+_ssdm_SpecArrayPartition( out1_buf, 1, "CYCLIC", 4, "");
 
 
 
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store1, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+
+
+ for ( j=0; j < 64; j++){
+_ssdm_Unroll(1, 4, 4, "");
+ unsigned offset = i*32 +j;
+             inp1_buf[j] =(unsigned char) (*(store1++));
+           }
+
+
+
+
+   for ( k = voffs; k < voffs + 8; k++) {
+_ssdm_Unroll(1, 4, 4, "");
+
+ if (k < p_jinfo_image_height) {
+     int diff;
+     diff = p_jinfo_image_width * k;
+
+     for (int e = hoffs; e < hoffs + 8; e++) {
+_ssdm_Unroll(1, 4, 4, "");
+ if (e < p_jinfo_image_width){
+       out1_buf[diff + e] = inp1_buf[l];
+       index[l]=diff+e;
+       l++;
+       }
+      else
+       break;
+     }
+    }
+    else
+     break;
+   }
+
+
+   for ( m=0; m < l; m++) {
+_ssdm_Unroll(1, 4, 4, "");
+ p_out_buf[index[m]] = out1_buf[index[m]];
+   }
+
+
 
 
 
 
 
   hoffs += 8;
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store2, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+
+
+
+
+
+
+  i=0;
+  l=0;
+
+ unsigned char inp2_buf[64];
+ unsigned char out2_buf[5310];
+
+
+_ssdm_SpecArrayPartition( inp2_buf, 1, "CYCLIC", 4, "");
+_ssdm_SpecArrayPartition( out2_buf, 1, "CYCLIC", 4, "");
+
+
+
+
+
+ for ( j=0; j < 64; j++){
+_ssdm_Unroll(1, 4, 4, "");
+ unsigned offset = i*32 +j;
+          inp2_buf[j] =(unsigned char) (*(store2++));
+        }
+
+
+
+
+  for ( k = voffs; k < voffs + 8; k++) {
+_ssdm_Unroll(1, 4, 4, "");
+
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+
+    for (int e = hoffs; e < hoffs + 8; e++) {
+_ssdm_Unroll(1, 4, 4, "");
+ if (e < p_jinfo_image_width){
+      out2_buf[diff + e] = inp2_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+
+
+  for (m=0; m < l; m++) {
+_ssdm_Unroll(1, 4, 4, "");
+ p_out_buf[index[m]] = out2_buf[index[m]];
+  }
+
+
 
 
 
@@ -2421,8 +2583,58 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
   voffs += 8;
   hoffs -= 8;
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store3, p_out_buf,
-   p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+#669 "../src/decode.c"
+  i=0;
+  l=0;
+
+ unsigned char inp3_buf[64];
+ unsigned char out3_buf[5310];
+
+
+_ssdm_SpecArrayPartition( inp3_buf, 1, "CYCLIC", 4, "");
+_ssdm_SpecArrayPartition( out3_buf, 1, "CYCLIC", 4, "");
+
+
+
+
+
+ for ( j=0; j < 64; j++){
+_ssdm_Unroll(1, 4, 4, "");
+ unsigned offset = i*32 +j;
+          inp3_buf[j] =(unsigned char) (*(store3++));
+        }
+
+
+
+
+  for ( k = voffs; k < voffs + 8; k++) {
+_ssdm_Unroll(1, 4, 4, "");
+
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+
+    for (int e = hoffs; e < hoffs + 8; e++) {
+_ssdm_Unroll(1, 4, 4, "");
+ if (e < p_jinfo_image_width){
+      out3_buf[diff + e] = inp3_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+
+
+  for (m=0; m < l; m++) {
+_ssdm_Unroll(1, 4, 4, "");
+ p_out_buf[index[m]] = out3_buf[index[m]];
+  }
+
 
 
 
@@ -2430,9 +2642,60 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
 
   hoffs += 8;
-  WriteOneBlock_f2r_entry_s2e_forEnd13 (store4,
-   p_out_buf, p_jinfo_image_width, p_jinfo_image_height,
-   voffs, hoffs);
+#738 "../src/decode.c"
+  i=0;
+  l=0;
+
+ unsigned char inp4_buf[64];
+ unsigned char out4_buf[5310];
+
+
+_ssdm_SpecArrayPartition( inp4_buf, 1, "CYCLIC", 4, "");
+_ssdm_SpecArrayPartition( out4_buf, 1, "CYCLIC", 4, "");
+
+
+
+
+
+ for ( j=0; j < 64; j++){
+_ssdm_Unroll(1, 4, 4, "");
+ unsigned offset = i*32 +j;
+          inp4_buf[j] =(unsigned char) (*(store4++));
+        }
+
+
+
+
+  for ( k = voffs; k < voffs + 8; k++) {
+_ssdm_Unroll(1, 4, 4, "");
+
+ if (k < p_jinfo_image_height) {
+    int diff;
+    diff = p_jinfo_image_width * k;
+
+    for (int e = hoffs; e < hoffs + 8; e++) {
+_ssdm_Unroll(1, 4, 4, "");
+ if (e < p_jinfo_image_width){
+      out4_buf[diff + e] = inp4_buf[l];
+      index[l]=diff+e;
+      l++;
+      }
+     else
+      break;
+    }
+   }
+   else
+    break;
+  }
+
+
+  for (m=0; m < l; m++) {
+_ssdm_Unroll(1, 4, 4, "");
+ p_out_buf[index[m]] = out4_buf[index[m]];
+  }
+
+
+
 
 
 
@@ -2450,12 +2713,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
       *p_out_hpos = 0;
     }
 }
-
-
-
-
-
-
+#877 "../src/decode.c"
 void YuvToRgb_f2r_entry_s2e_forEnd(int p, int y_buf[64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){_ssdm_SpecArrayDimSize(v_buf,64);_ssdm_SpecArrayDimSize(u_buf,64);_ssdm_SpecArrayDimSize(y_buf,64);_ssdm_SpecArrayDimSize(rgb_buf,4);
 
 _ssdm_op_SpecInterface(y_buf, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
@@ -2481,7 +2739,7 @@ _ssdm_SpecArrayPartition( out3_buf, 1, "CYCLIC", 16, "");
 
 
  for (int i = 0; i < 64/32; i++) {
-#461 "../src/decode.c"
+#916 "../src/decode.c"
         unsigned offset = i*32 ;
         memcpy(inp1_buf, y_buf + offset, 32 * sizeof(int));
         memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
@@ -2512,7 +2770,7 @@ _ssdm_Unroll(1, 4, 16, "");
         else if (out3_buf[k] > 255)
           out3_buf[k] = 255;
       }
-#502 "../src/decode.c"
+#957 "../src/decode.c"
         offset = i*32 ;
         memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
         memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
@@ -2524,7 +2782,7 @@ _ssdm_Unroll(1, 4, 16, "");
 
 
 }
-
+#1068 "../src/decode.c"
 void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][64], int u_buf[64], int v_buf[64], int rgb_buf[4][3][64]){_ssdm_SpecArrayDimSize(v_buf,64);_ssdm_SpecArrayDimSize(u_buf,64);_ssdm_SpecArrayDimSize(y_buf,6);_ssdm_SpecArrayDimSize(rgb_buf,4);
 _ssdm_op_SpecInterface(y_buf, "m_axi", 0, 0, "", 0, 384, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(u_buf, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 16, 16, 16, 16, "", "");
@@ -2532,17 +2790,14 @@ _ssdm_op_SpecInterface(v_buf, "m_axi", 0, 0, "", 0, 64, "BUS_SRC", "slave", "", 
 _ssdm_op_SpecInterface(rgb_buf, "m_axi", 0, 0, "", 0, 768, "BUS_DST", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "BUS_CTRL", "", "", 0, 0, 0, 0, "", "");
 
+ int i;
 
- for (int p = 0; p < 4; (p)++) {
-
-      int i;
-
-      int inp1_buf[32];
-      int inp2_buf[32];
-      int inp3_buf[32];
-      int out1_buf[32];
-      int out2_buf[32];
-      int out3_buf[32];
+    int inp1_buf[32];
+    int inp2_buf[32];
+    int inp3_buf[32];
+    int out1_buf[32];
+    int out2_buf[32];
+    int out3_buf[32];
 
 _ssdm_SpecArrayPartition( inp1_buf, 1, "CYCLIC", 16, "");
 _ssdm_SpecArrayPartition( inp2_buf, 1, "CYCLIC", 16, "");
@@ -2552,9 +2807,9 @@ _ssdm_SpecArrayPartition( out2_buf, 1, "CYCLIC", 16, "");
 _ssdm_SpecArrayPartition( out3_buf, 1, "CYCLIC", 16, "");
 
 
- for (i = 0; i < 64/32; i++)
-      {
-#557 "../src/decode.c"
+ for (i = 0; i < 64/32; i++) {
+  for (int p = 0; p < 4; (p)++) {
+#1107 "../src/decode.c"
         unsigned offset = i*32;
         memcpy(inp1_buf, y_buf[p] + offset, 32 * sizeof(int));
         memcpy(inp2_buf, u_buf + offset, 32 * sizeof(int));
@@ -2585,7 +2840,7 @@ _ssdm_Unroll(1, 4, 16, "");
             else if (out3_buf[k] > 255)
               out3_buf[k] = 255;
         }
-#598 "../src/decode.c"
+#1148 "../src/decode.c"
         offset = i*32;
         memcpy(rgb_buf[p][0] + offset, out1_buf, 32 * sizeof(int));
         memcpy(rgb_buf[p][1] + offset, out2_buf, 32 * sizeof(int));
@@ -2717,12 +2972,12 @@ decode_start (int *out_data_image_width, int *out_data_image_height,
 
 
    decode_block (2, IDCTBuff[5], HuffBuff[2]);
-#738 "../src/decode.c"
+#1288 "../src/decode.c"
     Reg_6:decode_start_f2r_vectorPh_s2e_forBody96Preheader(IDCTBuff, IDCTBuff[4], IDCTBuff[5], rgb_buf);
 
 
-    for ( int k = 0; k < 64; k++)
-        printf ("RGB_BUF %d  %d\n", k, rgb_buf[0][0][k]);
+
+
 
    for (i = 0; i < 3; i++)
      {

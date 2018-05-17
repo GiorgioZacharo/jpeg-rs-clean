@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'IZigzagMatrix_f2r_forBody_s2e_forEnd'
 ================================================================
-* Date:           Fri May  4 19:53:21 2018
+* Date:           Thu May 17 17:49:46 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        Izigzagmatrix
@@ -61,12 +61,12 @@
 |DSP              |        -|      -|       -|       -|    -|
 |Expression       |        -|      -|       0|      18|    -|
 |FIFO             |        -|      -|       -|       -|    -|
-|Instance         |        4|      -|    3691|    3989|    -|
+|Instance         |        4|      -|    4393|    4725|    -|
 |Memory           |        -|      -|       -|       -|    -|
 |Multiplexer      |        -|      -|       -|      18|    -|
 |Register         |        -|      -|       6|       -|    -|
 +-----------------+---------+-------+--------+--------+-----+
-|Total            |        4|      0|    3697|    4025|    0|
+|Total            |        4|      0|    4399|    4761|    0|
 +-----------------+---------+-------+--------+--------+-----+
 |Available        |     1824|   2520|  548160|  274080|    0|
 +-----------------+---------+-------+--------+--------+-----+
@@ -78,12 +78,12 @@
     +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
     |                        Instance                       |                        Module                       | BRAM_18K| DSP48E|  FF  |  LUT |
     +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
-    |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi_U  |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi  |        0|      0|   112|   168|
+    |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi_U  |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi  |        0|      0|   176|   296|
     |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi_U   |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi   |        2|      0|   512|   580|
     |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi_U   |IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi   |        2|      0|   512|   580|
-    |dataflow_in_loop_U0                                    |dataflow_in_loop                                     |        0|      0|  2555|  2661|
+    |dataflow_in_loop_U0                                    |dataflow_in_loop                                     |        0|      0|  3193|  3269|
     +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
-    |Total                                                  |                                                     |        4|      0|  3691|  3989|
+    |Total                                                  |                                                     |        4|      0|  4393|  4725|
     +-------------------------------------------------------+-----------------------------------------------------+---------+-------+------+------+
 
     * DSP48: 
@@ -138,14 +138,14 @@
 +------------------------+-----+-----+------------+--------------------------------------+--------------+
 |s_axi_BUS_CTRL_AWVALID  |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_AWREADY  | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
-|s_axi_BUS_CTRL_AWADDR   |  in |    5|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_AWADDR   |  in |    6|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_WVALID   |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_WREADY   | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_WDATA    |  in |   32|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_WSTRB    |  in |    4|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_ARVALID  |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_ARREADY  | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
-|s_axi_BUS_CTRL_ARADDR   |  in |    5|    s_axi   |               BUS_CTRL               |    scalar    |
+|s_axi_BUS_CTRL_ARADDR   |  in |    6|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_RVALID   | out |    1|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_RREADY   |  in |    1|    s_axi   |               BUS_CTRL               |    scalar    |
 |s_axi_BUS_CTRL_RDATA    | out |   32|    s_axi   |               BUS_CTRL               |    scalar    |
@@ -158,7 +158,7 @@
 |interrupt               | out |    1| ap_ctrl_hs | IZigzagMatrix_f2r_forBody_s2e_forEnd | return value |
 |m_axi_BUS_SRC_AWVALID   | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_AWREADY   |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
-|m_axi_BUS_SRC_AWADDR    | out |   32|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_AWADDR    | out |   64|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_AWID      | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_AWLEN     | out |    8|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_AWSIZE    | out |    3|    m_axi   |                BUS_SRC               |    pointer   |
@@ -178,7 +178,7 @@
 |m_axi_BUS_SRC_WUSER     | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_ARVALID   | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_ARREADY   |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
-|m_axi_BUS_SRC_ARADDR    | out |   32|    m_axi   |                BUS_SRC               |    pointer   |
+|m_axi_BUS_SRC_ARADDR    | out |   64|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_ARID      | out |    1|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_ARLEN     | out |    8|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_SRC_ARSIZE    | out |    3|    m_axi   |                BUS_SRC               |    pointer   |
@@ -203,7 +203,7 @@
 |m_axi_BUS_SRC_BUSER     |  in |    1|    m_axi   |                BUS_SRC               |    pointer   |
 |m_axi_BUS_DST_AWVALID   | out |    1|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_AWREADY   |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
-|m_axi_BUS_DST_AWADDR    | out |   32|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_AWADDR    | out |   64|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_AWID      | out |    1|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_AWLEN     | out |    8|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_AWSIZE    | out |    3|    m_axi   |                BUS_DST               |    pointer   |
@@ -223,7 +223,7 @@
 |m_axi_BUS_DST_WUSER     | out |    1|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_ARVALID   | out |    1|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_ARREADY   |  in |    1|    m_axi   |                BUS_DST               |    pointer   |
-|m_axi_BUS_DST_ARADDR    | out |   32|    m_axi   |                BUS_DST               |    pointer   |
+|m_axi_BUS_DST_ARADDR    | out |   64|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_ARID      | out |    1|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_ARLEN     | out |    8|    m_axi   |                BUS_DST               |    pointer   |
 |m_axi_BUS_DST_ARSIZE    | out |    3|    m_axi   |                BUS_DST               |    pointer   |

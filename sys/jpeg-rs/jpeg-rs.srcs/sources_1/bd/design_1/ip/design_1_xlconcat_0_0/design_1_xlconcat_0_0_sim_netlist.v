@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Mon Apr 30 19:09:30 2018
+// Date        : Thu May 17 18:09:22 2018
 // Host        : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
-// Command     : write_verilog -force -mode funcsim -rename_top design_1_xlconcat_0_0 -prefix
-//               design_1_xlconcat_0_0_ design_1_xlconcat_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/design_1_xlconcat_0_0_sim_netlist.v
 // Design      : design_1_xlconcat_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,14 +17,34 @@
 module design_1_xlconcat_0_0
    (In0,
     In1,
+    In2,
+    In3,
+    In4,
+    In5,
+    In6,
     dout);
   input [0:0]In0;
   input [0:0]In1;
-  output [1:0]dout;
+  input [0:0]In2;
+  input [0:0]In3;
+  input [0:0]In4;
+  input [0:0]In5;
+  input [0:0]In6;
+  output [6:0]dout;
 
   wire [0:0]In0;
   wire [0:0]In1;
+  wire [0:0]In2;
+  wire [0:0]In3;
+  wire [0:0]In4;
+  wire [0:0]In5;
+  wire [0:0]In6;
 
+  assign dout[6] = In6;
+  assign dout[5] = In5;
+  assign dout[4] = In4;
+  assign dout[3] = In3;
+  assign dout[2] = In2;
   assign dout[1] = In1;
   assign dout[0] = In0;
 endmodule

@@ -26,10 +26,14 @@
 //        others - reserved
 // 0x10 : Data signal of imatrix
 //        bit 31~0 - imatrix[31:0] (Read/Write)
-// 0x14 : reserved
-// 0x18 : Data signal of omatrix
+// 0x14 : Data signal of imatrix
+//        bit 31~0 - imatrix[63:32] (Read/Write)
+// 0x18 : reserved
+// 0x1c : Data signal of omatrix
 //        bit 31~0 - omatrix[31:0] (Read/Write)
-// 0x1c : reserved
+// 0x20 : Data signal of omatrix
+//        bit 31~0 - omatrix[63:32] (Read/Write)
+// 0x24 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_AP_CTRL      0x00
@@ -37,7 +41,7 @@
 #define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_IER          0x08
 #define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_ISR          0x0c
 #define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_IMATRIX_DATA 0x10
-#define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_BITS_IMATRIX_DATA 32
-#define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_OMATRIX_DATA 0x18
-#define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_BITS_OMATRIX_DATA 32
+#define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_BITS_IMATRIX_DATA 64
+#define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_ADDR_OMATRIX_DATA 0x1c
+#define XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_BUS_CTRL_BITS_OMATRIX_DATA 64
 

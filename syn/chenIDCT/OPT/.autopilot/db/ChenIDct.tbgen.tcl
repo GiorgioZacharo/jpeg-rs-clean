@@ -158,7 +158,7 @@ set NewPortList {[
  	{ "name": "m_axi_BUS_SRC_DST_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "BUS_SRC_DST", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37"],
 		"CDFG" : "ChenIDct",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -170,65 +170,70 @@ set RtlHierarchyInfo {[
 			{"Name" : "BUS_SRC_DST", "Type" : "MAXI", "Direction" : "IO",
 				"BlockSignal" : [
 					{"Name" : "BUS_SRC_DST_blk_n_AR", "Type" : "RtlSignal"},
-					{"Name" : "BUS_SRC_DST_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "BUS_SRC_DST_blk_n_R", "Type" : "RtlSignal"},
-					{"Name" : "BUS_SRC_DST_blk_n_W", "Type" : "RtlSignal"},
-					{"Name" : "BUS_SRC_DST_blk_n_B", "Type" : "RtlSignal"}]},
+					{"Name" : "BUS_SRC_DST_blk_n_AW", "Type" : "RtlSignal"},
+					{"Name" : "BUS_SRC_DST_blk_n_B", "Type" : "RtlSignal"},
+					{"Name" : "BUS_SRC_DST_blk_n_W", "Type" : "RtlSignal"}]},
 			{"Name" : "x", "Type" : "None", "Direction" : "I"},
 			{"Name" : "y", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_BUS_CTRL_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_BUS_SRC_DST_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U1", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U2", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U3", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U4", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U5", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U6", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U7", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U8", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U9", "Parent" : "0"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U10", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U11", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U12", "Parent" : "0"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U13", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U14", "Parent" : "0"},
-	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U15", "Parent" : "0"},
-	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U16", "Parent" : "0"},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U17", "Parent" : "0"},
-	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U18", "Parent" : "0"},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U19", "Parent" : "0"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U20", "Parent" : "0"},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U21", "Parent" : "0"},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U22", "Parent" : "0"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U23", "Parent" : "0"},
-	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U24", "Parent" : "0"},
-	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U25", "Parent" : "0"},
-	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U26", "Parent" : "0"},
-	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U27", "Parent" : "0"},
-	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U28", "Parent" : "0"},
-	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U29", "Parent" : "0"},
-	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U30", "Parent" : "0"},
-	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U31", "Parent" : "0"},
-	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U32", "Parent" : "0"},
-	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mux_326_fYi_U33", "Parent" : "0"}]}
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.inp1_buf_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.inp2_buf_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U1", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U2", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U3", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U4", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U5", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U6", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U7", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U8", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U9", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U10", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U11", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U12", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U13", "Parent" : "0"},
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U14", "Parent" : "0"},
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U15", "Parent" : "0"},
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U16", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U17", "Parent" : "0"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U18", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U19", "Parent" : "0"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U20", "Parent" : "0"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U21", "Parent" : "0"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U22", "Parent" : "0"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U23", "Parent" : "0"},
+	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_8ns_bkb_U24", "Parent" : "0"},
+	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U25", "Parent" : "0"},
+	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U26", "Parent" : "0"},
+	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10s_cud_U27", "Parent" : "0"},
+	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U28", "Parent" : "0"},
+	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_9ns_eOg_U29", "Parent" : "0"},
+	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U30", "Parent" : "0"},
+	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U31", "Parent" : "0"},
+	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mul_10nsdEe_U32", "Parent" : "0"},
+	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ChenIDct_mux_326_fYi_U33", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	ChenIDct {
-		BUS_SRC_DST {Type IO LastRead 36 FirstWrite 14}
+		BUS_SRC_DST {Type IO LastRead 36 FirstWrite 22}
 		x {Type I LastRead 0 FirstWrite -1}
 		y {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "723", "Max" : "723"}
-	, {"Name" : "Interval", "Min" : "724", "Max" : "724"}
+	{"Name" : "Latency", "Min" : "584", "Max" : "584"}
+	, {"Name" : "Interval", "Min" : "585", "Max" : "585"}
 ]}
 
 set PipelineEnableSignalInfo {[
 	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 	{"Pipeline" : "1", "EnableSignal" : "ap_enable_pp1"}
+	{"Pipeline" : "2", "EnableSignal" : "ap_enable_pp2"}
+	{"Pipeline" : "3", "EnableSignal" : "ap_enable_pp3"}
+	{"Pipeline" : "4", "EnableSignal" : "ap_enable_pp4"}
 ]}
 
 set Spec2ImplPortList { 

@@ -26,10 +26,14 @@
 //        others - reserved
 // 0x10 : Data signal of matrix
 //        bit 31~0 - matrix[31:0] (Read/Write)
-// 0x14 : reserved
-// 0x18 : Data signal of qmatrix
+// 0x14 : Data signal of matrix
+//        bit 31~0 - matrix[63:32] (Read/Write)
+// 0x18 : reserved
+// 0x1c : Data signal of qmatrix
 //        bit 31~0 - qmatrix[31:0] (Read/Write)
-// 0x1c : reserved
+// 0x20 : Data signal of qmatrix
+//        bit 31~0 - qmatrix[63:32] (Read/Write)
+// 0x24 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XIQUANTIZE_BUS_CTRL_ADDR_AP_CTRL      0x00
@@ -37,7 +41,7 @@
 #define XIQUANTIZE_BUS_CTRL_ADDR_IER          0x08
 #define XIQUANTIZE_BUS_CTRL_ADDR_ISR          0x0c
 #define XIQUANTIZE_BUS_CTRL_ADDR_MATRIX_DATA  0x10
-#define XIQUANTIZE_BUS_CTRL_BITS_MATRIX_DATA  32
-#define XIQUANTIZE_BUS_CTRL_ADDR_QMATRIX_DATA 0x18
-#define XIQUANTIZE_BUS_CTRL_BITS_QMATRIX_DATA 32
+#define XIQUANTIZE_BUS_CTRL_BITS_MATRIX_DATA  64
+#define XIQUANTIZE_BUS_CTRL_ADDR_QMATRIX_DATA 0x1c
+#define XIQUANTIZE_BUS_CTRL_BITS_QMATRIX_DATA 64
 

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'IZigzagMatrix_f2r_forBody_s2e_forEnd'
 ================================================================
-* Date:           Fri May  4 19:53:19 2018
+* Date:           Thu May 17 17:49:42 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        Izigzagmatrix
@@ -91,18 +91,18 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
  <State 1> : 1.00ns
-ST_1 : Operation 4 [1/1] (1.00ns)   --->   "%omatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %omatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 5 [1/1] (1.00ns)   --->   "%imatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %imatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%omatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %omatrix_read, i32 2, i32 31)"
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%imatrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %imatrix_read, i32 2, i32 31)"
+ST_1 : Operation 4 [1/1] (1.00ns)   --->   "%omatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %omatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 5 [1/1] (1.00ns)   --->   "%imatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %imatrix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%omatrix3 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %omatrix_read, i32 2, i32 63)"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%imatrix1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %imatrix_read, i32 2, i32 63)"
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_DST), !map !278"
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_SRC), !map !283"
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([37 x i8]* @IZigzagMatrix_f2r_fo) nounwind"
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %imatrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %omatrix, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle10, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:88]
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64 %imatrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64 %omatrix, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle10, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [9 x i8]* @p_str614, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind" [../src/decode.c:88]
 ST_1 : Operation 16 [1/1] (0.65ns)   --->   "br label %0"
 
  <State 2> : 0.55ns
@@ -112,11 +112,11 @@ ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_
 ST_2 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [21 x i8]* @dataflow_parent_loop, i2 %i_0_i_i, i2 -2)" [../src/decode.c:107]
 ST_2 : Operation 21 [1/1] (0.54ns)   --->   "%i = add i2 %i_0_i_i, 1" [../src/decode.c:107]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 22 [1/1] (0.00ns)   --->   "br i1 %exitcond2_i_i, label %IZigzagMatrix_f2r_forBody_s2e_forEnd_.exit, label %codeRepl1035" [../src/decode.c:107]
-ST_2 : Operation 23 [2/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i30 %imatrix1, i32* %BUS_DST, i30 %omatrix3)" [../src/decode.c:107]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 23 [2/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i62 %imatrix1, i32* %BUS_DST, i62 %omatrix3)" [../src/decode.c:107]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_2 : Operation 24 [1/1] (0.00ns)   --->   "ret void" [../src/decode.c:144]
 
  <State 3> : 0.00ns
-ST_3 : Operation 25 [1/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i30 %imatrix1, i32* %BUS_DST, i30 %omatrix3)" [../src/decode.c:107]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 25 [1/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i62 %imatrix1, i32* %BUS_DST, i62 %omatrix3)" [../src/decode.c:107]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br label %0" [../src/decode.c:107]
 
 
@@ -220,7 +220,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="11" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i32"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i64"/></StgValue>
 </bind>
 </comp>
 
@@ -229,7 +229,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="13" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_PartSelect.i30.i32.i32.i32"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i62.i64.i32.i32"/></StgValue>
 </bind>
 </comp>
 
@@ -292,7 +292,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str"/></StgValue>
+<StgValue><ssdm name="p_str8"/></StgValue>
 </bind>
 </comp>
 
@@ -310,7 +310,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1"/></StgValue>
+<StgValue><ssdm name="p_str19"/></StgValue>
 </bind>
 </comp>
 
@@ -328,7 +328,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str2"/></StgValue>
+<StgValue><ssdm name="p_str210"/></StgValue>
 </bind>
 </comp>
 
@@ -337,7 +337,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str3"/></StgValue>
+<StgValue><ssdm name="p_str311"/></StgValue>
 </bind>
 </comp>
 
@@ -373,7 +373,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str4"/></StgValue>
+<StgValue><ssdm name="p_str412"/></StgValue>
 </bind>
 </comp>
 
@@ -400,7 +400,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str5"/></StgValue>
+<StgValue><ssdm name="p_str513"/></StgValue>
 </bind>
 </comp>
 
@@ -409,7 +409,7 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str6"/></StgValue>
+<StgValue><ssdm name="p_str614"/></StgValue>
 </bind>
 </comp>
 
@@ -496,9 +496,9 @@ StgValue_26   (br                  ) [ 0111]
 
 <comp id="72" class="1004" name="omatrix_read_read_fu_72">
 <pin_list>
-<pin id="73" dir="0" index="0" bw="32" slack="0"/>
-<pin id="74" dir="0" index="1" bw="32" slack="0"/>
-<pin id="75" dir="1" index="2" bw="32" slack="0"/>
+<pin id="73" dir="0" index="0" bw="64" slack="0"/>
+<pin id="74" dir="0" index="1" bw="64" slack="0"/>
+<pin id="75" dir="1" index="2" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -508,9 +508,9 @@ StgValue_26   (br                  ) [ 0111]
 
 <comp id="78" class="1004" name="imatrix_read_read_fu_78">
 <pin_list>
-<pin id="79" dir="0" index="0" bw="32" slack="0"/>
-<pin id="80" dir="0" index="1" bw="32" slack="0"/>
-<pin id="81" dir="1" index="2" bw="32" slack="0"/>
+<pin id="79" dir="0" index="0" bw="64" slack="0"/>
+<pin id="80" dir="0" index="1" bw="64" slack="0"/>
+<pin id="81" dir="1" index="2" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -547,9 +547,9 @@ StgValue_26   (br                  ) [ 0111]
 <pin id="97" dir="0" index="0" bw="0" slack="0"/>
 <pin id="98" dir="0" index="1" bw="2" slack="0"/>
 <pin id="99" dir="0" index="2" bw="32" slack="0"/>
-<pin id="100" dir="0" index="3" bw="30" slack="1"/>
+<pin id="100" dir="0" index="3" bw="62" slack="1"/>
 <pin id="101" dir="0" index="4" bw="32" slack="0"/>
-<pin id="102" dir="0" index="5" bw="30" slack="1"/>
+<pin id="102" dir="0" index="5" bw="62" slack="1"/>
 <pin id="103" dir="0" index="6" bw="6" slack="0"/>
 <pin id="104" dir="1" index="7" bw="0" slack="2147483647"/>
 </pin_list>
@@ -561,11 +561,11 @@ StgValue_26   (br                  ) [ 0111]
 
 <comp id="110" class="1004" name="omatrix3_fu_110">
 <pin_list>
-<pin id="111" dir="0" index="0" bw="30" slack="0"/>
-<pin id="112" dir="0" index="1" bw="32" slack="0"/>
+<pin id="111" dir="0" index="0" bw="62" slack="0"/>
+<pin id="112" dir="0" index="1" bw="64" slack="0"/>
 <pin id="113" dir="0" index="2" bw="3" slack="0"/>
-<pin id="114" dir="0" index="3" bw="6" slack="0"/>
-<pin id="115" dir="1" index="4" bw="30" slack="1"/>
+<pin id="114" dir="0" index="3" bw="7" slack="0"/>
+<pin id="115" dir="1" index="4" bw="62" slack="1"/>
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
@@ -575,11 +575,11 @@ StgValue_26   (br                  ) [ 0111]
 
 <comp id="120" class="1004" name="imatrix1_fu_120">
 <pin_list>
-<pin id="121" dir="0" index="0" bw="30" slack="0"/>
-<pin id="122" dir="0" index="1" bw="32" slack="0"/>
+<pin id="121" dir="0" index="0" bw="62" slack="0"/>
+<pin id="122" dir="0" index="1" bw="64" slack="0"/>
 <pin id="123" dir="0" index="2" bw="3" slack="0"/>
-<pin id="124" dir="0" index="3" bw="6" slack="0"/>
-<pin id="125" dir="1" index="4" bw="30" slack="1"/>
+<pin id="124" dir="0" index="3" bw="7" slack="0"/>
+<pin id="125" dir="1" index="4" bw="62" slack="1"/>
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
@@ -613,8 +613,8 @@ StgValue_26   (br                  ) [ 0111]
 
 <comp id="142" class="1005" name="omatrix3_reg_142">
 <pin_list>
-<pin id="143" dir="0" index="0" bw="30" slack="1"/>
-<pin id="144" dir="1" index="1" bw="30" slack="1"/>
+<pin id="143" dir="0" index="0" bw="62" slack="1"/>
+<pin id="144" dir="1" index="1" bw="62" slack="1"/>
 </pin_list>
 <bind>
 <opset="omatrix3 "/>
@@ -623,8 +623,8 @@ StgValue_26   (br                  ) [ 0111]
 
 <comp id="147" class="1005" name="imatrix1_reg_147">
 <pin_list>
-<pin id="148" dir="0" index="0" bw="30" slack="1"/>
-<pin id="149" dir="1" index="1" bw="30" slack="1"/>
+<pin id="148" dir="0" index="0" bw="62" slack="1"/>
+<pin id="149" dir="1" index="1" bw="62" slack="1"/>
 </pin_list>
 <bind>
 <opset="imatrix1 "/>
@@ -748,7 +748,7 @@ StgValue_26   (br                  ) [ 0111]
 |----------|----------------------------|---------|---------|---------|---------|
 | Operation|       Functional Unit      |   BRAM  |  Delay  |    FF   |   LUT   |
 |----------|----------------------------|---------|---------|---------|---------|
-|   call   | grp_dataflow_in_loop_fu_96 |    0    |  45.264 |   3227  |   1431  |
+|   call   | grp_dataflow_in_loop_fu_96 |    0    |  34.112 |   2922  |   1822  |
 |----------|----------------------------|---------|---------|---------|---------|
 |    add   |          i_fu_136          |    0    |    0    |    0    |    9    |
 |----------|----------------------------|---------|---------|---------|---------|
@@ -760,7 +760,7 @@ StgValue_26   (br                  ) [ 0111]
 |partselect|       omatrix3_fu_110      |    0    |    0    |    0    |    0    |
 |          |       imatrix1_fu_120      |    0    |    0    |    0    |    0    |
 |----------|----------------------------|---------|---------|---------|---------|
-|   Total  |                            |    0    |  45.264 |   3227  |   1448  |
+|   Total  |                            |    0    |  34.112 |   2922  |   1839  |
 |----------|----------------------------|---------|---------|---------|---------|
 
 Memories:
@@ -779,10 +779,10 @@ Memories:
 |exitcond2_i_i_reg_152|    1   |
 |    i_0_i_i_reg_84   |    2   |
 |      i_reg_156      |    2   |
-|   imatrix1_reg_147  |   30   |
-|   omatrix3_reg_142  |   30   |
+|   imatrix1_reg_147  |   62   |
+|   omatrix3_reg_142  |   62   |
 +---------------------+--------+
-|        Total        |   65   |
+|        Total        |   129  |
 +---------------------+--------+
 
 * Multiplexer (MUX) list: 
@@ -800,10 +800,10 @@ Memories:
 +-----------+--------+--------+--------+--------+
 |           |  BRAM  |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+
-|  Function |    0   |   45   |  3227  |  1448  |
+|  Function |    0   |   34   |  2922  |  1839  |
 |   Memory  |    0   |    -   |   96   |    6   |
 |Multiplexer|    -   |    0   |    -   |    9   |
-|  Register |    -   |    -   |   65   |    -   |
+|  Register |    -   |    -   |   129  |    -   |
 +-----------+--------+--------+--------+--------+
-|   Total   |    0   |   45   |  3388  |  1463  |
+|   Total   |    0   |   34   |  3147  |  1854  |
 +-----------+--------+--------+--------+--------+

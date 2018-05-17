@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dataflow_in_loop'" level="0">
-<item name = "Date">Fri May  4 19:53:21 2018
+<item name = "Date">Thu May 17 17:49:45 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">Izigzagmatrix</item>
@@ -51,13 +51,13 @@
 <keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 675, -</column>
-<column name="FIFO">0, -, 15, 100, -</column>
-<column name="Instance">0, -, 1286, 1530, -</column>
+<column name="FIFO">0, -, 15, 164, -</column>
+<column name="Instance">0, -, 1924, 2074, -</column>
 <column name="Memory">0, -, 1216, 32, -</column>
 <column name="Multiplexer">-, -, -, 324, -</column>
 <column name="Register">-, -, 38, -, -</column>
 <specialColumn name="Available">1824, 2520, 548160, 274080, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 1, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -65,8 +65,8 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="Loop_0_proc19_U0">Loop_0_proc19, 0, 0, 116, 302</column>
-<column name="Loop_1_proc_U0">Loop_1_proc, 0, 0, 1081, 911</column>
-<column name="memcpy_omatrix_out_b_U0">memcpy_omatrix_out_b, 0, 0, 89, 317</column>
+<column name="Loop_1_proc_U0">Loop_1_proc, 0, 0, 1687, 1423</column>
+<column name="memcpy_omatrix_out_b_U0">memcpy_omatrix_out_b, 0, 0, 121, 349</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -112,8 +112,8 @@
 <item name = "FIFO"><table name="" hasTotal="1">
 <keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
 <column name="i_0_i_i_c_U">0, 5, 16, 2, 1, 2</column>
-<column name="imatrix_offset_c_U">0, 5, 42, 1, 30, 30</column>
-<column name="omatrix_offset_c_U">0, 5, 42, 2, 30, 60</column>
+<column name="imatrix_offset_c_U">0, 5, 74, 1, 62, 62</column>
+<column name="omatrix_offset_c_U">0, 5, 74, 2, 62, 124</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
@@ -293,7 +293,7 @@
 <column name="i_0_i_i_ap_vld">in, 1, ap_none, i_0_i_i, scalar</column>
 <column name="m_axi_imatrix_AWVALID">out, 1, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_AWREADY">in, 1, m_axi, imatrix, pointer</column>
-<column name="m_axi_imatrix_AWADDR">out, 32, m_axi, imatrix, pointer</column>
+<column name="m_axi_imatrix_AWADDR">out, 64, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_AWID">out, 1, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_AWLEN">out, 32, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_AWSIZE">out, 3, m_axi, imatrix, pointer</column>
@@ -313,7 +313,7 @@
 <column name="m_axi_imatrix_WUSER">out, 1, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_ARVALID">out, 1, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_ARREADY">in, 1, m_axi, imatrix, pointer</column>
-<column name="m_axi_imatrix_ARADDR">out, 32, m_axi, imatrix, pointer</column>
+<column name="m_axi_imatrix_ARADDR">out, 64, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_ARID">out, 1, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_ARLEN">out, 32, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_ARSIZE">out, 3, m_axi, imatrix, pointer</column>
@@ -336,11 +336,11 @@
 <column name="m_axi_imatrix_BRESP">in, 2, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_BID">in, 1, m_axi, imatrix, pointer</column>
 <column name="m_axi_imatrix_BUSER">in, 1, m_axi, imatrix, pointer</column>
-<column name="imatrix_offset">in, 30, ap_none, imatrix_offset, scalar</column>
+<column name="imatrix_offset">in, 62, ap_none, imatrix_offset, scalar</column>
 <column name="imatrix_offset_ap_vld">in, 1, ap_none, imatrix_offset, scalar</column>
 <column name="m_axi_omatrix_AWVALID">out, 1, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_AWREADY">in, 1, m_axi, omatrix, pointer</column>
-<column name="m_axi_omatrix_AWADDR">out, 32, m_axi, omatrix, pointer</column>
+<column name="m_axi_omatrix_AWADDR">out, 64, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_AWID">out, 1, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_AWLEN">out, 32, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_AWSIZE">out, 3, m_axi, omatrix, pointer</column>
@@ -360,7 +360,7 @@
 <column name="m_axi_omatrix_WUSER">out, 1, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_ARVALID">out, 1, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_ARREADY">in, 1, m_axi, omatrix, pointer</column>
-<column name="m_axi_omatrix_ARADDR">out, 32, m_axi, omatrix, pointer</column>
+<column name="m_axi_omatrix_ARADDR">out, 64, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_ARID">out, 1, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_ARLEN">out, 32, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_ARSIZE">out, 3, m_axi, omatrix, pointer</column>
@@ -383,7 +383,7 @@
 <column name="m_axi_omatrix_BRESP">in, 2, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_BID">in, 1, m_axi, omatrix, pointer</column>
 <column name="m_axi_omatrix_BUSER">in, 1, m_axi, omatrix, pointer</column>
-<column name="omatrix_offset">in, 30, ap_none, omatrix_offset, scalar</column>
+<column name="omatrix_offset">in, 62, ap_none, omatrix_offset, scalar</column>
 <column name="omatrix_offset_ap_vld">in, 1, ap_none, omatrix_offset, scalar</column>
 </table>
 </item>

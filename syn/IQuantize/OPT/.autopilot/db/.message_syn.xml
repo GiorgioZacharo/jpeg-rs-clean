@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/decode.c&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/chenidct.c&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1378" content="In file included from ../src/chenidct.c:1:
-../src/chenidct.c:82:9: warning: implicitly declaring library function &apos;memcpy&apos; with type &apos;void *(void *, const void *, unsigned long)&apos;
+../src/chenidct.c:83:9: warning: implicitly declaring library function &apos;memcpy&apos; with type &apos;void *(void *, const void *, unsigned long)&apos;
         memcpy(inp1_buf, y + offset, 32 * sizeof(int));
         ^
-../src/chenidct.c:82:9: note: please include the header &lt;string.h&gt; or explicitly provide a declaration for &apos;memcpy&apos;
+../src/chenidct.c:83:9: note: please include the header &lt;string.h&gt; or explicitly provide a declaration for &apos;memcpy&apos;
 1 warning generated." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../src/decode.c&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 4986 ; free virtual = 16615" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 4985 ; free virtual = 16615" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 456.145 ; gain = 19.516 ; free physical = 5599 ; free virtual = 18987" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 456.145 ; gain = 19.516 ; free physical = 5599 ; free virtual = 18986" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 4982 ; free virtual = 16611" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.145 ; gain = 19.516 ; free physical = 5596 ; free virtual = 18985" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.141 ; gain = 19.516 ; free physical = 4982 ; free virtual = 16611" tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="876" content="Unrolling loop &apos;Loop-1.3&apos; (../src/decode.c:192) in function &apos;IQuantize&apos; partially with a factor of 16." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 456.145 ; gain = 19.516 ; free physical = 5596 ; free virtual = 18985" tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="876" content="Unrolling loop &apos;Loop-1.3&apos; (../src/decode.c:193) in function &apos;IQuantize&apos; partially with a factor of 16." tag=""/>
 	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="685" content="Partitioning array &apos;inp1_buf&apos; (../src/decode.c:171) in dimension 1 with a cyclic factor 16." tag=""/>
 	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="685" content="Partitioning array &apos;inp2_buf&apos; (../src/decode.c:172) in dimension 1 with a cyclic factor 16." tag=""/>
 	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="691" content="Automatically partitioning small array &apos;inp1_buf.0&apos; (../src/decode.c:171) completely based on array size." tag=""/>
@@ -82,31 +82,31 @@
 	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp2_buf.13&apos; (../src/decode.c:172) in dimension 1 completely." tag=""/>
 	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp2_buf.14&apos; (../src/decode.c:172) in dimension 1 completely." tag=""/>
 	<Message prefix="[XFORM 203-101]" severity="INFO" keynum="692" content="Partitioning array &apos;inp2_buf.15&apos; (../src/decode.c:172) in dimension 1 completely." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:187:4) to (../src/decode.c:187:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock to (../src/decode.c:192:26) in function &apos;IQuantize&apos;... converting 49 basic blocks." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 584.137 ; gain = 147.512 ; free physical = 4959 ; free virtual = 16589" tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (../src/decode.c:188:4) to (../src/decode.c:188:4) in function &apos;IQuantize&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock to (../src/decode.c:193:26) in function &apos;IQuantize&apos;... converting 49 basic blocks." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 584.141 ; gain = 147.512 ; free physical = 5573 ; free virtual = 18962" tag=""/>
 	<Message prefix="[XFORM 203-542]" severity="WARNING" keynum="790" content="Cannot flatten a loop nest &apos;Loop-1&apos; (../src/decode.c:177:7) in function &apos;IQuantize&apos; : 
 
 more than one sub loop." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst read of length 64 on port &apos;BUS_SRC&apos; (../src/decode.c:186:4)." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst read of length 64 on port &apos;BUS_DST&apos; (../src/decode.c:187:4)." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst write of length 64 on port &apos;BUS_DST&apos; (../src/decode.c:204:6)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 584.137 ; gain = 147.512 ; free physical = 4965 ; free virtual = 16595" tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst read of length 64 on port &apos;BUS_SRC&apos; (../src/decode.c:187:4)." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst read of length 64 on port &apos;BUS_DST&apos; (../src/decode.c:188:4)." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring bus burst write of length 64 on port &apos;BUS_DST&apos; (../src/decode.c:205:6)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 584.141 ; gain = 147.512 ; free physical = 5579 ; free virtual = 18968" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;IQuantize&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -120,13 +120,13 @@ more than one sub loop." tag=""/>
 	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;memcpy.matrix.inp2_buf.gep&apos;." tag=""/>
 	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 12.26 seconds; current allocated memory: 69.207 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 12.48 seconds; current allocated memory: 69.335 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.31 seconds; current allocated memory: 72.653 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.43 seconds; current allocated memory: 72.777 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;IQuantize&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -141,11 +141,11 @@ more than one sub loop." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;IQuantize_mul_32sbkb&apos;: 16 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;IQuantize_mux_326cud&apos;: 1 instance(s)." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;IQuantize&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.54 seconds; current allocated memory: 77.369 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.56 seconds; current allocated memory: 77.476 MB." tag=""/>
 	<Message prefix="[RTMG 210-282]" severity="INFO" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;IQuantize_mul_32sbkb_MulnS_0&apos;" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 586.863 ; gain = 150.238 ; free physical = 4928 ; free virtual = 16568" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 586.867 ; gain = 150.238 ; free physical = 5546 ; free virtual = 18940" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for IQuantize." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for IQuantize." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for IQuantize." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 15.28 seconds; peak allocated memory: 77.369 MB." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 15.77 seconds; peak allocated memory: 77.476 MB." tag=""/>
 </Messages>

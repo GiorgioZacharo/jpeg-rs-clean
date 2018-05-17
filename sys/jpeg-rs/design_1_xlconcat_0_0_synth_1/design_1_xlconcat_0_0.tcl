@@ -16,9 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param power.enableLutRouteBelPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableUnconnectedCarry8PinPower 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xczu9eg-ffvb1156-2-e
@@ -34,8 +31,13 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:zcu102:part0:3.1 [current_project]
 set_property ip_repo_paths {
-  /home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT
   /home/giorgio/workspace/jpeg-rs-clean/syn/decode_start
+  /home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT
+  /home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix
+  /home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize
+  /home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock
+  /home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix
+  /home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1
 } [current_project]
 set_property ip_output_repo /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

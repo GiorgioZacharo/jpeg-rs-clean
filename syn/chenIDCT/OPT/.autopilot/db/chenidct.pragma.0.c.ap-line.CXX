@@ -148,9 +148,9 @@
 #pragma line 47 "../inc/decode.h" 2 ::: 1207
 #pragma line 72 "../inc/decode.h" ::: 1208
 #pragma line 56 "../src/chenidct.c" 2 ::: 1280
-#pragma line 81 "../src/chenidct.c" ::: 1297
-#pragma line 98 "../src/chenidct.c" ::: 1307
-#pragma line 112 "../src/chenidct.c" ::: 1314
-#pragma line 270 "../src/chenidct.c" ::: 1463
-#pragma line 286 "../src/chenidct.c" ::: 1471
-#pragma line 303 "../src/chenidct.c" ::: 1481
+#pragma line 82 "../src/chenidct.c" ::: 1298
+#pragma line 99 "../src/chenidct.c" ::: 1308
+#pragma line 113 "../src/chenidct.c" ::: 1315
+#pragma line 285 "../src/chenidct.c" ::: 1476
+#pragma line 296 "../src/chenidct.c" ::: 1480
+#pragma line 313 "../src/chenidct.c" ::: 1490

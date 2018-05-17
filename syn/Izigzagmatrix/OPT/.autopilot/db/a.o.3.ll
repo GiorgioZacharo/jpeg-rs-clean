@@ -52,87 +52,30 @@ target triple = "x86_64-unknown-linux-gnu"
 @OutData_comp_buf = common global [15930 x i8] zeroinitializer ; [#uses=0 type=[15930 x i8]*]
 @IZigzagMatrix_f2r_fo = internal unnamed_addr constant [37 x i8] c"IZigzagMatrix_f2r_forBody_s2e_forEnd\00" ; [#uses=1 type=[37 x i8]*]
 @CurHuffReadBuf = common global i8* null, align 8 ; [#uses=0 type=i8**]
-@p_str79 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str78 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str77 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str76 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str75 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str74 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str72 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str71 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str70 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str69 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str68 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str67 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str65 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str64 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str63 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str62 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str61 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str60 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str6 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1 ; [#uses=1 type=[9 x i8]*]
-@p_str59 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str58 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str57 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str56 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str55 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str54 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str53 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str52 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str51 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str50 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str5 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=1 type=[10 x i8]*]
-@p_str49 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str48 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str47 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str46 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str45 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str44 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str43 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str42 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str41 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str40 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str4 = private unnamed_addr constant [8 x i8] c"BUS_DST\00", align 1 ; [#uses=4 type=[8 x i8]*]
-@p_str39 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str38 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str37 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str36 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str35 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str34 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str33 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str32 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str31 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str30 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str3 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=10 type=[6 x i8]*]
-@p_str29 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str28 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=2 type=[1 x i8]*]
-@p_str27 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=4 type=[1 x i8]*]
-@p_str26 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=4 type=[1 x i8]*]
-@p_str25 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=4 type=[1 x i8]*]
-@p_str24 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=4 type=[1 x i8]*]
-@p_str23 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=4 type=[1 x i8]*]
-@p_str22 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=4 type=[1 x i8]*]
-@p_str21 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str2 = private unnamed_addr constant [8 x i8] c"BUS_SRC\00", align 1 ; [#uses=4 type=[8 x i8]*]
-@p_str11 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=46 type=[1 x i8]*]
-@p_str = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=8 type=[6 x i8]*]
+@p_str8 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=8 type=[6 x i8]*]
+@p_str614 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1 ; [#uses=1 type=[9 x i8]*]
+@p_str513 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=1 type=[10 x i8]*]
+@p_str412 = private unnamed_addr constant [8 x i8] c"BUS_DST\00", align 1 ; [#uses=4 type=[8 x i8]*]
+@p_str311 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=10 type=[6 x i8]*]
+@p_str210 = private unnamed_addr constant [8 x i8] c"BUS_SRC\00", align 1 ; [#uses=4 type=[8 x i8]*]
+@p_str19 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=46 type=[1 x i8]*]
+@p_str = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=85 type=[1 x i8]*]
 
 ; [#uses=1]
-define internal void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15) {
+define internal void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15) {
 entry:
-  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str36, i32 0, i32 0, [1 x i8]* @p_str37, [1 x i8]* @p_str38, [1 x i8]* @p_str39, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str40, [1 x i8]* @p_str41)
-  call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str74, i32 0, i32 0, [1 x i8]* @p_str75, [1 x i8]* @p_str76, [1 x i8]* @p_str77, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str78, [1 x i8]* @p_str79)
-  %omatrix_offset_read = call i30 @_ssdm_op_Read.ap_fifo.i30P(i30* %omatrix_offset) ; [#uses=1 type=i30]
-  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str36, i32 0, i32 0, [1 x i8]* @p_str37, [1 x i8]* @p_str38, [1 x i8]* @p_str39, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str40, [1 x i8]* @p_str41)
+  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  call void (...)* @_ssdm_op_SpecInterface(i62* %omatrix_offset, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  %omatrix_offset_read = call i62 @_ssdm_op_Read.ap_fifo.i62P(i62* %omatrix_offset) ; [#uses=1 type=i62]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
   %i_0_i_i_c_read = call i1 @_ssdm_op_Read.ap_fifo.i1P(i1* %i_0_i_i_c) ; [#uses=1 type=i1]
   %offset_i_i_i = call i6 @_ssdm_op_BitConcatenate.i6.i1.i5(i1 %i_0_i_i_c_read, i5 0), !dbg !278 ; [#uses=1 type=i6] [debug line = 114:27]
-  %tmp_i_i_cast_i_i = zext i6 %offset_i_i_i to i31 ; [#uses=1 type=i31]
-  %sext_cast_i_i = zext i30 %omatrix_offset_read to i31 ; [#uses=1 type=i31]
-  %sum_i_i = add i31 %tmp_i_i_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum_cast_i_i = zext i31 %sum_i_i to i64        ; [#uses=1 type=i64]
+  %tmp_i_i_cast_i_i = zext i6 %offset_i_i_i to i63 ; [#uses=1 type=i63]
+  %omatrix_offset_cast1 = zext i62 %omatrix_offset_read to i63 ; [#uses=1 type=i63]
+  %sum_i_i = add i63 %omatrix_offset_cast1, %tmp_i_i_cast_i_i ; [#uses=1 type=i63]
+  %sum_cast_i_i = zext i63 %sum_i_i to i64        ; [#uses=1 type=i64]
   %omatrix_addr = getelementptr i32* %omatrix, i64 %sum_cast_i_i ; [#uses=3 type=i32*]
   %omatrix_addr_i_i_wr_s = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %omatrix_addr, i32 32), !dbg !292 ; [#uses=0 type=i1] [debug line = 139:9]
   br label %burst.wr.header.i.i.i.i.i
@@ -146,7 +89,7 @@ burst.wr.header.i.i.i.i.i:                        ; preds = %burst.wr.body.i.i.i
 burst.wr.body.i.i.i.i.i:                          ; preds = %burst.wr.header.i.i.i.i.i
   %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind ; [#uses=0 type=i32]
   %burstwrite_rbegin_i_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind ; [#uses=1 type=i32]
-  %empty_9 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str11) nounwind ; [#uses=0 type=i32]
+  %empty_9 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind ; [#uses=0 type=i32]
   %empty_10 = call i32 (...)* @_ssdm_op_SpecLoopName([27 x i8]* @memcpy_OC_omatrix_OC) nounwind ; [#uses=0 type=i32]
   %newIndex4_i_i_i_i = call i2 @_ssdm_op_PartSelect.i2.i6.i32.i32(i6 %indvar_i_i_i_i_i, i32 4, i32 5) ; [#uses=1 type=i2]
   %newIndex5_i_i_i_i = zext i2 %newIndex4_i_i_i_i to i64 ; [#uses=16 type=i64]
@@ -194,10 +137,10 @@ burst.wr.body.i.i.i.i.i:                          ; preds = %burst.wr.header.i.i
 }
 
 ; [#uses=1]
-declare i6 @llvm.part.select.i6(i6, i32, i32) nounwind readnone
+declare i64 @llvm.part.select.i64(i64, i32, i32) nounwind readnone
 
 ; [#uses=1]
-declare i32 @llvm.part.select.i32(i32, i32, i32) nounwind readnone
+declare i6 @llvm.part.select.i6(i6, i32, i32) nounwind readnone
 
 ; [#uses=5]
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
@@ -206,17 +149,17 @@ declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 declare void @llvm.dbg.declare(metadata, metadata) nounwind readnone
 
 ; [#uses=1]
-define internal fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %imatrix, i30 %imatrix_offset, i32* %omatrix, i30 %omatrix_offset) {
+define internal fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %imatrix, i62 %imatrix_offset, i32* %omatrix, i62 %omatrix_offset) {
 entry:
-  %omatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %omatrix_offset) ; [#uses=1 type=i30]
-  %imatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %imatrix_offset) ; [#uses=1 type=i30]
+  %omatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %omatrix_offset) ; [#uses=1 type=i62]
+  %imatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %imatrix_offset) ; [#uses=1 type=i62]
   %i_0_i_i_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %i_0_i_i) ; [#uses=1 type=i2]
-  %omatrix_offset_c = alloca i30, align 4         ; [#uses=5 type=i30*]
-  %imatrix_offset_c = alloca i30, align 4         ; [#uses=5 type=i30*]
-  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+  %omatrix_offset_c = alloca i62, align 8         ; [#uses=5 type=i62*]
+  %imatrix_offset_c = alloca i62, align 8         ; [#uses=5 type=i62*]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
   %i_0_i_i_c = alloca i1, align 1                 ; [#uses=5 type=i1*]
-  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind, !dbg !293 ; [debug line = 108:1]
+  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str19) nounwind, !dbg !293 ; [debug line = 108:1]
   %in1_buf_0 = alloca [2 x i6], align 1           ; [#uses=2 type=[2 x i6]*]
   call void @llvm.dbg.declare(metadata !{[2 x i6]* %in1_buf_0}, metadata !294), !dbg !300 ; [debug line = 101:7] [debug variable = in1_buf[0]]
   %in1_buf_1 = alloca [2 x i6], align 1           ; [#uses=2 type=[2 x i6]*]
@@ -281,15 +224,15 @@ entry:
   call void @llvm.dbg.declare(metadata !{[2 x i32]* %out_buf_14}, metadata !332), !dbg !318 ; [debug line = 102:7] [debug variable = out_buf[14]]
   %out_buf_15 = alloca [2 x i32], align 4         ; [#uses=2 type=[2 x i32]*]
   call void @llvm.dbg.declare(metadata !{[2 x i32]* %out_buf_15}, metadata !333), !dbg !318 ; [debug line = 102:7] [debug variable = out_buf[15]]
-  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str28, [1 x i8]* @p_str28, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c) ; [#uses=0 type=i32]
-  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str29, i32 0, i32 0, [1 x i8]* @p_str30, [1 x i8]* @p_str31, [1 x i8]* @p_str32, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str33, [1 x i8]* @p_str34)
-  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str52, [1 x i8]* @p_str52, i32 1, i32 0, i30* %imatrix_offset_c, i30* %imatrix_offset_c) ; [#uses=0 type=i32]
-  call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str53, i32 0, i32 0, [1 x i8]* @p_str54, [1 x i8]* @p_str55, [1 x i8]* @p_str56, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str57, [1 x i8]* @p_str58)
-  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str59, [1 x i8]* @p_str59, i32 2, i32 0, i30* %omatrix_offset_c, i30* %omatrix_offset_c) ; [#uses=0 type=i32]
-  call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str60, i32 0, i32 0, [1 x i8]* @p_str61, [1 x i8]* @p_str62, [1 x i8]* @p_str63, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str64, [1 x i8]* @p_str65)
-  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset_read, i30 %omatrix_offset_read, i30* %imatrix_offset_c, i30* %omatrix_offset_c)
-  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
-  call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
+  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c) ; [#uses=0 type=i32]
+  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i62* %imatrix_offset_c, i62* %imatrix_offset_c) ; [#uses=0 type=i32]
+  call void (...)* @_ssdm_op_SpecInterface(i62* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i62* %omatrix_offset_c, i62* %omatrix_offset_c) ; [#uses=0 type=i32]
+  call void (...)* @_ssdm_op_SpecInterface(i62* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset_read, i62 %omatrix_offset_read, i62* %imatrix_offset_c, i62* %omatrix_offset_c)
+  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
+  call void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
   ret void
 }
 
@@ -312,9 +255,9 @@ entry:
 }
 
 ; [#uses=2]
-define weak void @_ssdm_op_Write.ap_fifo.i30P(i30*, i30) {
+define weak void @_ssdm_op_Write.ap_fifo.i62P(i62*, i62) {
 entry:
-  %empty = call i30 @_autotb_FifoWrite_i30(i30* %0, i30 %1) ; [#uses=0 type=i30]
+  %empty = call i62 @_autotb_FifoWrite_i62(i62* %0, i62 %1) ; [#uses=0 type=i62]
   ret void
 }
 
@@ -392,9 +335,9 @@ entry:
 }
 
 ; [#uses=2]
-define weak i32 @_ssdm_op_Read.s_axilite.i32(i32) {
+define weak i64 @_ssdm_op_Read.s_axilite.i64(i64) {
 entry:
-  ret i32 %0
+  ret i64 %0
 }
 
 ; [#uses=16]
@@ -405,10 +348,10 @@ entry:
 }
 
 ; [#uses=2]
-define weak i30 @_ssdm_op_Read.ap_fifo.i30P(i30*) {
+define weak i62 @_ssdm_op_Read.ap_fifo.i62P(i62*) {
 entry:
-  %empty = call i30 @_autotb_FifoRead_i30(i30* %0) ; [#uses=1 type=i30]
-  ret i30 %empty
+  %empty = call i62 @_autotb_FifoRead_i62(i62* %0) ; [#uses=1 type=i62]
+  ret i62 %empty
 }
 
 ; [#uses=1]
@@ -419,9 +362,9 @@ entry:
 }
 
 ; [#uses=4]
-define weak i30 @_ssdm_op_Read.ap_auto.i30(i30) {
+define weak i62 @_ssdm_op_Read.ap_auto.i62(i62) {
 entry:
-  ret i30 %0
+  ret i62 %0
 }
 
 ; [#uses=2]
@@ -430,19 +373,19 @@ entry:
   ret i2 %0
 }
 
+; [#uses=2]
+define weak i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64, i32, i32) nounwind readnone {
+entry:
+  %empty = call i64 @llvm.part.select.i64(i64 %0, i32 %1, i32 %2) ; [#uses=1 type=i64]
+  %empty_13 = trunc i64 %empty to i62             ; [#uses=1 type=i62]
+  ret i62 %empty_13
+}
+
 ; [#uses=0]
 declare i5 @_ssdm_op_PartSelect.i5.i6.i32.i32(i6, i32, i32) nounwind readnone
 
 ; [#uses=0]
 declare i4 @_ssdm_op_PartSelect.i4.i6.i32.i32(i6, i32, i32) nounwind readnone
-
-; [#uses=2]
-define weak i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32, i32, i32) nounwind readnone {
-entry:
-  %empty = call i32 @llvm.part.select.i32(i32 %0, i32 %1, i32 %2) ; [#uses=1 type=i32]
-  %empty_13 = trunc i32 %empty to i30             ; [#uses=1 type=i30]
-  ret i30 %empty_13
-}
 
 ; [#uses=3]
 define weak i2 @_ssdm_op_PartSelect.i2.i6.i32.i32(i6, i32, i32) nounwind readnone {
@@ -537,25 +480,24 @@ entry:
 }
 
 ; [#uses=1]
-declare i30 @_autotb_FifoWrite_i30(i30*, i30)
+declare i62 @_autotb_FifoWrite_i62(i62*, i62)
 
 ; [#uses=1]
 declare i1 @_autotb_FifoWrite_i1(i1*, i1)
 
 ; [#uses=1]
-declare i30 @_autotb_FifoRead_i30(i30*)
+declare i62 @_autotb_FifoRead_i62(i62*)
 
 ; [#uses=1]
 declare i1 @_autotb_FifoRead_i1(i1*)
 
 ; [#uses=1]
-define internal void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15) {
+define internal void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15) {
 entry:
-  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str67, i32 0, i32 0, [1 x i8]* @p_str68, [1 x i8]* @p_str69, [1 x i8]* @p_str70, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str71, [1 x i8]* @p_str72)
-  %imatrix_offset_read = call i30 @_ssdm_op_Read.ap_fifo.i30P(i30* %imatrix_offset) ; [#uses=1 type=i30]
-  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  %sext_cast_i_i = zext i30 %imatrix_offset_read to i31 ; [#uses=16 type=i31]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i62* %imatrix_offset, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  %imatrix_offset_read = call i62 @_ssdm_op_Read.ap_fifo.i62P(i62* %imatrix_offset) ; [#uses=1 type=i62]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
   br label %.preheader.i.i.0.i.i
 
 .preheader.i.i.0.i.i:                             ; preds = %.preheader.i.i.1.i.i, %entry
@@ -569,9 +511,10 @@ entry:
   %newIndex3_i_i = zext i2 %newIndex2_i_i to i64  ; [#uses=32 type=i64]
   %in1_buf_0_addr = getelementptr [2 x i6]* %in1_buf_0, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_0_load = load i6* %in1_buf_0_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_cast_i_i = zext i6 %in1_buf_0_load to i31 ; [#uses=1 type=i31]
-  %sum_i_i = add i31 %tmp_5_i_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum_cast_i_i = zext i31 %sum_i_i to i64        ; [#uses=1 type=i64]
+  %tmp_5_i_cast_i_i = zext i6 %in1_buf_0_load to i63 ; [#uses=1 type=i63]
+  %imatrix_offset_cast2 = zext i62 %imatrix_offset_read to i63 ; [#uses=16 type=i63]
+  %sum_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_cast_i_i ; [#uses=1 type=i63]
+  %sum_cast_i_i = zext i63 %sum_i_i to i64        ; [#uses=1 type=i64]
   %imatrix_addr = getelementptr i32* %imatrix, i64 %sum_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_i_i_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -579,89 +522,89 @@ entry:
   store i32 %imatrix_addr_read, i32* %out_buf_0_addr, align 16, !dbg !336 ; [debug line = 127:2]
   %in1_buf_1_addr = getelementptr [2 x i6]* %in1_buf_1, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_1_load = load i6* %in1_buf_1_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_1_cast_i_i = zext i6 %in1_buf_1_load to i31 ; [#uses=1 type=i31]
-  %sum2_i_i = add i31 %tmp_5_i_1_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum2_cast_i_i = zext i31 %sum2_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_1 = getelementptr i32* %imatrix, i64 %sum2_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_1_cast_i_i = zext i6 %in1_buf_1_load to i63 ; [#uses=1 type=i63]
+  %sum1_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_1_cast_i_i ; [#uses=1 type=i63]
+  %sum1_cast_i_i = zext i63 %sum1_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_1 = getelementptr i32* %imatrix, i64 %sum1_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_1_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_1, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_1_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_1), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_1_addr = getelementptr [2 x i32]* %out_buf_1, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_1_read, i32* %out_buf_1_addr, align 4, !dbg !336 ; [debug line = 127:2]
   %in1_buf_2_addr = getelementptr [2 x i6]* %in1_buf_2, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_2_load = load i6* %in1_buf_2_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_2_cast_i_i = zext i6 %in1_buf_2_load to i31 ; [#uses=1 type=i31]
-  %sum4_i_i = add i31 %tmp_5_i_2_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum4_cast_i_i = zext i31 %sum4_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_2 = getelementptr i32* %imatrix, i64 %sum4_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_2_cast_i_i = zext i6 %in1_buf_2_load to i63 ; [#uses=1 type=i63]
+  %sum2_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_2_cast_i_i ; [#uses=1 type=i63]
+  %sum2_cast_i_i = zext i63 %sum2_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_2 = getelementptr i32* %imatrix, i64 %sum2_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_2_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_2, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_2_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_2), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_2_addr = getelementptr [2 x i32]* %out_buf_2, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_2_read, i32* %out_buf_2_addr, align 8, !dbg !336 ; [debug line = 127:2]
   %in1_buf_3_addr = getelementptr [2 x i6]* %in1_buf_3, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_3_load = load i6* %in1_buf_3_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_3_cast_i_i = zext i6 %in1_buf_3_load to i31 ; [#uses=1 type=i31]
-  %sum6_i_i = add i31 %tmp_5_i_3_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum6_cast_i_i = zext i31 %sum6_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_3 = getelementptr i32* %imatrix, i64 %sum6_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_3_cast_i_i = zext i6 %in1_buf_3_load to i63 ; [#uses=1 type=i63]
+  %sum3_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_3_cast_i_i ; [#uses=1 type=i63]
+  %sum3_cast_i_i = zext i63 %sum3_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_3 = getelementptr i32* %imatrix, i64 %sum3_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_3_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_3, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_3_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_3), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_3_addr = getelementptr [2 x i32]* %out_buf_3, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_3_read, i32* %out_buf_3_addr, align 4, !dbg !336 ; [debug line = 127:2]
   %in1_buf_4_addr = getelementptr [2 x i6]* %in1_buf_4, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_4_load = load i6* %in1_buf_4_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_4_cast_i_i = zext i6 %in1_buf_4_load to i31 ; [#uses=1 type=i31]
-  %sum8_i_i = add i31 %tmp_5_i_4_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum8_cast_i_i = zext i31 %sum8_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_4 = getelementptr i32* %imatrix, i64 %sum8_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_4_cast_i_i = zext i6 %in1_buf_4_load to i63 ; [#uses=1 type=i63]
+  %sum4_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_4_cast_i_i ; [#uses=1 type=i63]
+  %sum4_cast_i_i = zext i63 %sum4_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_4 = getelementptr i32* %imatrix, i64 %sum4_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_4_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_4, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_4_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_4), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_4_addr = getelementptr [2 x i32]* %out_buf_4, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_4_read, i32* %out_buf_4_addr, align 16, !dbg !336 ; [debug line = 127:2]
   %in1_buf_5_addr = getelementptr [2 x i6]* %in1_buf_5, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_5_load = load i6* %in1_buf_5_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_5_cast_i_i = zext i6 %in1_buf_5_load to i31 ; [#uses=1 type=i31]
-  %sum1_i_i = add i31 %tmp_5_i_5_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum1_cast_i_i = zext i31 %sum1_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_5 = getelementptr i32* %imatrix, i64 %sum1_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_5_cast_i_i = zext i6 %in1_buf_5_load to i63 ; [#uses=1 type=i63]
+  %sum5_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_5_cast_i_i ; [#uses=1 type=i63]
+  %sum5_cast_i_i = zext i63 %sum5_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_5 = getelementptr i32* %imatrix, i64 %sum5_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_5_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_5, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_5_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_5), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_5_addr = getelementptr [2 x i32]* %out_buf_5, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_5_read, i32* %out_buf_5_addr, align 4, !dbg !336 ; [debug line = 127:2]
   %in1_buf_6_addr = getelementptr [2 x i6]* %in1_buf_6, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_6_load = load i6* %in1_buf_6_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_6_cast_i_i = zext i6 %in1_buf_6_load to i31 ; [#uses=1 type=i31]
-  %sum3_i_i = add i31 %tmp_5_i_6_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum3_cast_i_i = zext i31 %sum3_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_6 = getelementptr i32* %imatrix, i64 %sum3_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_6_cast_i_i = zext i6 %in1_buf_6_load to i63 ; [#uses=1 type=i63]
+  %sum6_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_6_cast_i_i ; [#uses=1 type=i63]
+  %sum6_cast_i_i = zext i63 %sum6_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_6 = getelementptr i32* %imatrix, i64 %sum6_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_6_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_6, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_6_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_6), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_6_addr = getelementptr [2 x i32]* %out_buf_6, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_6_read, i32* %out_buf_6_addr, align 8, !dbg !336 ; [debug line = 127:2]
   %in1_buf_7_addr = getelementptr [2 x i6]* %in1_buf_7, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_7_load = load i6* %in1_buf_7_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_7_cast_i_i = zext i6 %in1_buf_7_load to i31 ; [#uses=1 type=i31]
-  %sum5_i_i = add i31 %tmp_5_i_7_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum5_cast_i_i = zext i31 %sum5_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_7 = getelementptr i32* %imatrix, i64 %sum5_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_7_cast_i_i = zext i6 %in1_buf_7_load to i63 ; [#uses=1 type=i63]
+  %sum7_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_7_cast_i_i ; [#uses=1 type=i63]
+  %sum7_cast_i_i = zext i63 %sum7_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_7 = getelementptr i32* %imatrix, i64 %sum7_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_7_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_7, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_7_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_7), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_7_addr = getelementptr [2 x i32]* %out_buf_7, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_7_read, i32* %out_buf_7_addr, align 4, !dbg !336 ; [debug line = 127:2]
   %in1_buf_8_addr = getelementptr [2 x i6]* %in1_buf_8, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_8_load = load i6* %in1_buf_8_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_8_cast_i_i = zext i6 %in1_buf_8_load to i31 ; [#uses=1 type=i31]
-  %sum7_i_i = add i31 %tmp_5_i_8_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum7_cast_i_i = zext i31 %sum7_i_i to i64      ; [#uses=1 type=i64]
-  %imatrix_addr_8 = getelementptr i32* %imatrix, i64 %sum7_cast_i_i ; [#uses=2 type=i32*]
+  %tmp_5_i_8_cast_i_i = zext i6 %in1_buf_8_load to i63 ; [#uses=1 type=i63]
+  %sum8_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_8_cast_i_i ; [#uses=1 type=i63]
+  %sum8_cast_i_i = zext i63 %sum8_i_i to i64      ; [#uses=1 type=i64]
+  %imatrix_addr_8 = getelementptr i32* %imatrix, i64 %sum8_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_8_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_8, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_8_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_8), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
   %out_buf_8_addr = getelementptr [2 x i32]* %out_buf_8, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i32*]
   store i32 %imatrix_addr_8_read, i32* %out_buf_8_addr, align 16, !dbg !336 ; [debug line = 127:2]
   %in1_buf_9_addr = getelementptr [2 x i6]* %in1_buf_9, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_9_load = load i6* %in1_buf_9_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_9_cast_i_i = zext i6 %in1_buf_9_load to i31 ; [#uses=1 type=i31]
-  %sum9_i_i = add i31 %tmp_5_i_9_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum9_cast_i_i = zext i31 %sum9_i_i to i64      ; [#uses=1 type=i64]
+  %tmp_5_i_9_cast_i_i = zext i6 %in1_buf_9_load to i63 ; [#uses=1 type=i63]
+  %sum9_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_9_cast_i_i ; [#uses=1 type=i63]
+  %sum9_cast_i_i = zext i63 %sum9_i_i to i64      ; [#uses=1 type=i64]
   %imatrix_addr_9 = getelementptr i32* %imatrix, i64 %sum9_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_9_i_i_r = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_9, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_9_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_9), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -669,9 +612,9 @@ entry:
   store i32 %imatrix_addr_9_read, i32* %out_buf_9_addr, align 4, !dbg !336 ; [debug line = 127:2]
   %in1_buf_10_addr = getelementptr [2 x i6]* %in1_buf_10, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_10_load = load i6* %in1_buf_10_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_cast_i_i_18 = zext i6 %in1_buf_10_load to i31 ; [#uses=1 type=i31]
-  %sum10_i_i = add i31 %tmp_5_i_cast_i_i_18, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum10_cast_i_i = zext i31 %sum10_i_i to i64    ; [#uses=1 type=i64]
+  %tmp_5_i_cast_i_i_18 = zext i6 %in1_buf_10_load to i63 ; [#uses=1 type=i63]
+  %sum10_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_cast_i_i_18 ; [#uses=1 type=i63]
+  %sum10_cast_i_i = zext i63 %sum10_i_i to i64    ; [#uses=1 type=i64]
   %imatrix_addr_10 = getelementptr i32* %imatrix, i64 %sum10_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_10_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_10, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_10_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_10), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -679,9 +622,9 @@ entry:
   store i32 %imatrix_addr_10_read, i32* %out_buf_10_addr, align 8, !dbg !336 ; [debug line = 127:2]
   %in1_buf_11_addr = getelementptr [2 x i6]* %in1_buf_11, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_11_load = load i6* %in1_buf_11_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_10_cast_i_i = zext i6 %in1_buf_11_load to i31 ; [#uses=1 type=i31]
-  %sum11_i_i = add i31 %tmp_5_i_10_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum11_cast_i_i = zext i31 %sum11_i_i to i64    ; [#uses=1 type=i64]
+  %tmp_5_i_10_cast_i_i = zext i6 %in1_buf_11_load to i63 ; [#uses=1 type=i63]
+  %sum11_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_10_cast_i_i ; [#uses=1 type=i63]
+  %sum11_cast_i_i = zext i63 %sum11_i_i to i64    ; [#uses=1 type=i64]
   %imatrix_addr_11 = getelementptr i32* %imatrix, i64 %sum11_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_11_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_11, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_11_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_11), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -689,9 +632,9 @@ entry:
   store i32 %imatrix_addr_11_read, i32* %out_buf_11_addr, align 4, !dbg !336 ; [debug line = 127:2]
   %in1_buf_12_addr = getelementptr [2 x i6]* %in1_buf_12, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_12_load = load i6* %in1_buf_12_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_11_cast_i_i = zext i6 %in1_buf_12_load to i31 ; [#uses=1 type=i31]
-  %sum12_i_i = add i31 %tmp_5_i_11_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum12_cast_i_i = zext i31 %sum12_i_i to i64    ; [#uses=1 type=i64]
+  %tmp_5_i_11_cast_i_i = zext i6 %in1_buf_12_load to i63 ; [#uses=1 type=i63]
+  %sum12_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_11_cast_i_i ; [#uses=1 type=i63]
+  %sum12_cast_i_i = zext i63 %sum12_i_i to i64    ; [#uses=1 type=i64]
   %imatrix_addr_12 = getelementptr i32* %imatrix, i64 %sum12_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_12_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_12, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_12_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_12), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -699,9 +642,9 @@ entry:
   store i32 %imatrix_addr_12_read, i32* %out_buf_12_addr, align 16, !dbg !336 ; [debug line = 127:2]
   %in1_buf_13_addr = getelementptr [2 x i6]* %in1_buf_13, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_13_load = load i6* %in1_buf_13_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_12_cast_i_i = zext i6 %in1_buf_13_load to i31 ; [#uses=1 type=i31]
-  %sum13_i_i = add i31 %tmp_5_i_12_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum13_cast_i_i = zext i31 %sum13_i_i to i64    ; [#uses=1 type=i64]
+  %tmp_5_i_12_cast_i_i = zext i6 %in1_buf_13_load to i63 ; [#uses=1 type=i63]
+  %sum13_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_12_cast_i_i ; [#uses=1 type=i63]
+  %sum13_cast_i_i = zext i63 %sum13_i_i to i64    ; [#uses=1 type=i64]
   %imatrix_addr_13 = getelementptr i32* %imatrix, i64 %sum13_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_13_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_13, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_13_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_13), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -709,9 +652,9 @@ entry:
   store i32 %imatrix_addr_13_read, i32* %out_buf_13_addr, align 4, !dbg !336 ; [debug line = 127:2]
   %in1_buf_14_addr = getelementptr [2 x i6]* %in1_buf_14, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_14_load = load i6* %in1_buf_14_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_13_cast_i_i = zext i6 %in1_buf_14_load to i31 ; [#uses=1 type=i31]
-  %sum14_i_i = add i31 %tmp_5_i_13_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum14_cast_i_i = zext i31 %sum14_i_i to i64    ; [#uses=1 type=i64]
+  %tmp_5_i_13_cast_i_i = zext i6 %in1_buf_14_load to i63 ; [#uses=1 type=i63]
+  %sum14_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_13_cast_i_i ; [#uses=1 type=i63]
+  %sum14_cast_i_i = zext i63 %sum14_i_i to i64    ; [#uses=1 type=i64]
   %imatrix_addr_14 = getelementptr i32* %imatrix, i64 %sum14_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_14_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_14, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_14_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_14), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -719,9 +662,9 @@ entry:
   store i32 %imatrix_addr_14_read, i32* %out_buf_14_addr, align 8, !dbg !336 ; [debug line = 127:2]
   %in1_buf_15_addr = getelementptr [2 x i6]* %in1_buf_15, i64 0, i64 %newIndex3_i_i ; [#uses=1 type=i6*]
   %in1_buf_15_load = load i6* %in1_buf_15_addr, align 1 ; [#uses=1 type=i6]
-  %tmp_5_i_14_cast_i_i = zext i6 %in1_buf_15_load to i31 ; [#uses=1 type=i31]
-  %sum15_i_i = add i31 %tmp_5_i_14_cast_i_i, %sext_cast_i_i ; [#uses=1 type=i31]
-  %sum15_cast_i_i = zext i31 %sum15_i_i to i64    ; [#uses=1 type=i64]
+  %tmp_5_i_14_cast_i_i = zext i6 %in1_buf_15_load to i63 ; [#uses=1 type=i63]
+  %sum15_i_i = add i63 %imatrix_offset_cast2, %tmp_5_i_14_cast_i_i ; [#uses=1 type=i63]
+  %sum15_cast_i_i = zext i63 %sum15_i_i to i64    ; [#uses=1 type=i64]
   %imatrix_addr_15 = getelementptr i32* %imatrix, i64 %sum15_cast_i_i ; [#uses=2 type=i32*]
   %imatrix_load_15_i_i_s = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %imatrix_addr_15, i32 1), !dbg !336 ; [#uses=0 type=i1] [debug line = 127:2]
   %imatrix_addr_15_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %imatrix_addr_15), !dbg !336 ; [#uses=1 type=i32] [debug line = 127:2]
@@ -735,20 +678,20 @@ entry:
 }
 
 ; [#uses=1]
-define internal void @Loop_0_proc19(i2 %i_0_i_i, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset, i30 %omatrix_offset, i30* %imatrix_offset_out, i30* %omatrix_offset_out) {
+define internal void @Loop_0_proc19(i2 %i_0_i_i, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset, i62 %omatrix_offset, i62* %imatrix_offset_out, i62* %omatrix_offset_out) {
 entry:
-  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str22, i32 0, i32 0, [1 x i8]* @p_str23, [1 x i8]* @p_str24, [1 x i8]* @p_str25, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str26, [1 x i8]* @p_str27)
-  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str22, i32 0, i32 0, [1 x i8]* @p_str23, [1 x i8]* @p_str24, [1 x i8]* @p_str25, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str26, [1 x i8]* @p_str27)
-  call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str21, i32 0, i32 0, [1 x i8]* @p_str35, [1 x i8]* @p_str42, [1 x i8]* @p_str43, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str44, [1 x i8]* @p_str45)
-  %omatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %omatrix_offset) ; [#uses=1 type=i30]
-  %imatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %imatrix_offset) ; [#uses=1 type=i30]
+  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  call void (...)* @_ssdm_op_SpecInterface(i62* %imatrix_offset_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  %omatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %omatrix_offset) ; [#uses=1 type=i62]
+  %imatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %imatrix_offset) ; [#uses=1 type=i62]
   %i_0_i_i_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %i_0_i_i) ; [#uses=1 type=i2]
-  call void @_ssdm_op_Write.ap_fifo.i30P(i30* %imatrix_offset_out, i30 %imatrix_offset_read)
-  call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str46, i32 0, i32 0, [1 x i8]* @p_str47, [1 x i8]* @p_str48, [1 x i8]* @p_str49, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str50, [1 x i8]* @p_str51)
-  call void @_ssdm_op_Write.ap_fifo.i30P(i30* %omatrix_offset_out, i30 %omatrix_offset_read)
-  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str22, i32 0, i32 0, [1 x i8]* @p_str23, [1 x i8]* @p_str24, [1 x i8]* @p_str25, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str26, [1 x i8]* @p_str27)
+  call void @_ssdm_op_Write.ap_fifo.i62P(i62* %imatrix_offset_out, i62 %imatrix_offset_read)
+  call void (...)* @_ssdm_op_SpecInterface(i62* %omatrix_offset_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+  call void @_ssdm_op_Write.ap_fifo.i62P(i62* %omatrix_offset_out, i62 %omatrix_offset_read)
+  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
   %tmp = trunc i2 %i_0_i_i_read to i1             ; [#uses=17 type=i1]
-  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str22, i32 0, i32 0, [1 x i8]* @p_str23, [1 x i8]* @p_str24, [1 x i8]* @p_str25, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str26, [1 x i8]* @p_str27)
+  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
   call void @_ssdm_op_Write.ap_fifo.i1P(i1* %i_0_i_i_c, i1 %tmp)
   %offset_i_i_i_i = call i6 @_ssdm_op_BitConcatenate.i6.i1.i5(i1 %tmp, i5 0), !dbg !278 ; [#uses=1 type=i6] [debug line = 114:27]
   br label %0
@@ -882,24 +825,24 @@ entry:
 }
 
 ; [#uses=0]
-define void @IZigzagMatrix_f2r_forBody_s2e_forEnd(i32* %BUS_SRC, i32* %BUS_DST, i32 %imatrix, i32 %omatrix) {
+define void @IZigzagMatrix_f2r_forBody_s2e_forEnd(i32* %BUS_SRC, i32* %BUS_DST, i64 %imatrix, i64 %omatrix) {
 codeRepl:
-  %omatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %omatrix) ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %omatrix_read}, i64 0, metadata !342), !dbg !346 ; [debug line = 85:64] [debug variable = omatrix]
-  %imatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %imatrix) ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %imatrix_read}, i64 0, metadata !347), !dbg !348 ; [debug line = 85:47] [debug variable = imatrix]
-  %omatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %omatrix_read, i32 2, i32 31) ; [#uses=1 type=i30]
-  %imatrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %imatrix_read, i32 2, i32 31) ; [#uses=1 type=i30]
+  %omatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %omatrix) ; [#uses=1 type=i64]
+  call void @llvm.dbg.value(metadata !{i64 %omatrix_read}, i64 0, metadata !342), !dbg !346 ; [debug line = 85:64] [debug variable = omatrix]
+  %imatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %imatrix) ; [#uses=1 type=i64]
+  call void @llvm.dbg.value(metadata !{i64 %imatrix_read}, i64 0, metadata !347), !dbg !348 ; [debug line = 85:47] [debug variable = imatrix]
+  %omatrix3 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %omatrix_read, i32 2, i32 63) ; [#uses=1 type=i62]
+  %imatrix1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %imatrix_read, i32 2, i32 63) ; [#uses=1 type=i62]
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_DST), !map !349
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_SRC), !map !354
   call void (...)* @_ssdm_op_SpecTopModule([37 x i8]* @IZigzagMatrix_f2r_fo) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i32 %imatrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i32 %omatrix, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle10, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
-  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !358 ; [debug line = 88:1]
-  call void @llvm.dbg.value(metadata !{i32 %imatrix}, i64 0, metadata !347), !dbg !348 ; [debug line = 85:47] [debug variable = imatrix]
-  call void @llvm.dbg.value(metadata !{i32 %omatrix}, i64 0, metadata !342), !dbg !346 ; [debug line = 85:64] [debug variable = omatrix]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i64 %imatrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i64 %omatrix, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle10, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [9 x i8]* @p_str614, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind, !dbg !358 ; [debug line = 88:1]
+  call void @llvm.dbg.value(metadata !{i64 %imatrix}, i64 0, metadata !347), !dbg !348 ; [debug line = 85:47] [debug variable = imatrix]
+  call void @llvm.dbg.value(metadata !{i64 %omatrix}, i64 0, metadata !342), !dbg !346 ; [debug line = 85:64] [debug variable = omatrix]
   br label %0
 
 ; <label>:0                                       ; preds = %codeRepl1035, %codeRepl
@@ -911,7 +854,7 @@ codeRepl:
   br i1 %exitcond2_i_i, label %IZigzagMatrix_f2r_forBody_s2e_forEnd_.exit, label %codeRepl1035, !dbg !359 ; [debug line = 107:16]
 
 codeRepl1035:                                     ; preds = %0
-  call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i30 %imatrix1, i32* %BUS_DST, i30 %omatrix3)
+  call fastcc void @dataflow_in_loop(i2 %i_0_i_i, i32* %BUS_SRC, i62 %imatrix1, i32* %BUS_DST, i62 %omatrix3)
   call void @llvm.dbg.value(metadata !{i2 %i}, i64 0, metadata !361) nounwind, !dbg !360 ; [debug line = 107:29] [debug variable = i]
   br label %0, !dbg !360                          ; [debug line = 107:29]
 
@@ -919,72 +862,72 @@ IZigzagMatrix_f2r_forBody_s2e_forEnd_.exit:       ; preds = %0
   ret void, !dbg !362                             ; [debug line = 144:1]
 }
 
-!opencl.kernels = !{!0, !7, !10, !14, !16, !16, !22, !28, !34, !40, !43, !49, !52, !58}
+!opencl.kernels = !{!0, !7, !13, !15, !18, !22, !24, !24, !30, !36, !42, !48, !51, !57}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!60, !69, !76, !82, !87, !92, !97, !102, !110, !117, !122, !128, !133, !138, !143, !149, !154, !159, !164, !169, !174, !179, !184, !189, !194, !199, !204, !209, !214, !219, !224, !229, !234, !239, !244, !249, !256, !261, !262, !263, !264, !265, !266, !267, !268, !269, !270, !271, !272, !273}
 !axi4.master.portmap = !{!274, !275}
 !axi4.slave.bundlemap = !{!276, !277}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"imatrix", metadata !"omatrix"}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1}
+!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"y"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
-!7 = metadata !{null, metadata !1, metadata !2, metadata !8, metadata !4, metadata !9, metadata !6}
-!8 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uint*"}
-!9 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"qmatrix"}
-!10 = metadata !{null, metadata !11, metadata !2, metadata !12, metadata !4, metadata !13, metadata !6}
-!11 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
-!12 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int"}
-!13 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"shift"}
-!14 = metadata !{null, metadata !11, metadata !2, metadata !12, metadata !4, metadata !15, metadata !6}
-!15 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"Bound"}
-!16 = metadata !{null, metadata !17, metadata !18, metadata !19, metadata !20, metadata !21, metadata !6}
-!17 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0, i32 0}
-!18 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!19 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uchar*", metadata !"int", metadata !"int", metadata !"int", metadata !"int"}
-!20 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!21 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"out_buf", metadata !"width", metadata !"height", metadata !"voffs", metadata !"hoffs"}
-!22 = metadata !{null, metadata !23, metadata !24, metadata !25, metadata !26, metadata !27, metadata !6}
-!23 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1}
-!24 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!25 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
-!26 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !""}
-!27 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
-!28 = metadata !{null, metadata !29, metadata !30, metadata !31, metadata !32, metadata !33, metadata !6}
-!29 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1}
-!30 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!31 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
-!32 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!33 = metadata !{metadata !"kernel_arg_name", metadata !"store1", metadata !"store2", metadata !"store3", metadata !"store4", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
-!34 = metadata !{null, metadata !35, metadata !36, metadata !37, metadata !38, metadata !39, metadata !6}
-!35 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1, i32 1, i32 1}
-!36 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!37 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
-!38 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!39 = metadata !{metadata !"kernel_arg_name", metadata !"p", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
-!40 = metadata !{null, metadata !23, metadata !24, metadata !41, metadata !26, metadata !42, metadata !6}
-!41 = metadata !{metadata !"kernel_arg_type", metadata !"int [64]*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
-!42 = metadata !{metadata !"kernel_arg_name", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
-!43 = metadata !{null, metadata !44, metadata !45, metadata !46, metadata !47, metadata !48, metadata !6}
-!44 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1}
-!45 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none"}
-!46 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*"}
-!47 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !""}
-!48 = metadata !{metadata !"kernel_arg_name", metadata !"comp_no", metadata !"out_buf", metadata !"HuffBuff"}
-!49 = metadata !{null, metadata !23, metadata !24, metadata !50, metadata !26, metadata !51, metadata !6}
-!50 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*"}
-!51 = metadata !{metadata !"kernel_arg_name", metadata !"out_data_image_width", metadata !"out_data_image_height", metadata !"out_data_comp_vpos", metadata !"out_data_comp_hpos"}
-!52 = metadata !{null, metadata !53, metadata !54, metadata !55, metadata !56, metadata !57, metadata !6}
-!53 = metadata !{metadata !"kernel_arg_addr_space", i32 1}
-!54 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
-!55 = metadata !{metadata !"kernel_arg_type", metadata !"int*"}
-!56 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
-!57 = metadata !{metadata !"kernel_arg_name", metadata !"y"}
-!58 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !59, metadata !6}
-!59 = metadata !{metadata !"kernel_arg_name", metadata !"x", metadata !"y"}
+!7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
+!8 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
+!9 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
+!10 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*"}
+!11 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
+!12 = metadata !{metadata !"kernel_arg_name", metadata !"x", metadata !"y"}
+!13 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !14, metadata !6}
+!14 = metadata !{metadata !"kernel_arg_name", metadata !"imatrix", metadata !"omatrix"}
+!15 = metadata !{null, metadata !8, metadata !9, metadata !16, metadata !11, metadata !17, metadata !6}
+!16 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uint*"}
+!17 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"qmatrix"}
+!18 = metadata !{null, metadata !19, metadata !9, metadata !20, metadata !11, metadata !21, metadata !6}
+!19 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
+!20 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int"}
+!21 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"shift"}
+!22 = metadata !{null, metadata !19, metadata !9, metadata !20, metadata !11, metadata !23, metadata !6}
+!23 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"Bound"}
+!24 = metadata !{null, metadata !25, metadata !26, metadata !27, metadata !28, metadata !29, metadata !6}
+!25 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0, i32 0}
+!26 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!27 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uchar*", metadata !"int", metadata !"int", metadata !"int", metadata !"int"}
+!28 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!29 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"out_buf", metadata !"width", metadata !"height", metadata !"voffs", metadata !"hoffs"}
+!30 = metadata !{null, metadata !31, metadata !32, metadata !33, metadata !34, metadata !35, metadata !6}
+!31 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1}
+!32 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!33 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
+!34 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !""}
+!35 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
+!36 = metadata !{null, metadata !37, metadata !38, metadata !39, metadata !40, metadata !41, metadata !6}
+!37 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1}
+!38 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!39 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
+!40 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!41 = metadata !{metadata !"kernel_arg_name", metadata !"store1", metadata !"store2", metadata !"store3", metadata !"store4", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
+!42 = metadata !{null, metadata !43, metadata !44, metadata !45, metadata !46, metadata !47, metadata !6}
+!43 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1, i32 1, i32 1}
+!44 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!45 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
+!46 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!47 = metadata !{metadata !"kernel_arg_name", metadata !"p", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
+!48 = metadata !{null, metadata !31, metadata !32, metadata !49, metadata !34, metadata !50, metadata !6}
+!49 = metadata !{metadata !"kernel_arg_type", metadata !"int [64]*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
+!50 = metadata !{metadata !"kernel_arg_name", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
+!51 = metadata !{null, metadata !52, metadata !53, metadata !54, metadata !55, metadata !56, metadata !6}
+!52 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1}
+!53 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none"}
+!54 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*"}
+!55 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !""}
+!56 = metadata !{metadata !"kernel_arg_name", metadata !"comp_no", metadata !"out_buf", metadata !"HuffBuff"}
+!57 = metadata !{null, metadata !31, metadata !32, metadata !58, metadata !34, metadata !59, metadata !6}
+!58 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*"}
+!59 = metadata !{metadata !"kernel_arg_name", metadata !"out_data_image_width", metadata !"out_data_image_height", metadata !"out_data_comp_vpos", metadata !"out_data_comp_hpos"}
 !60 = metadata !{metadata !61, null}
 !61 = metadata !{metadata !62}
 !62 = metadata !{i32 0, i32 31, metadata !63}

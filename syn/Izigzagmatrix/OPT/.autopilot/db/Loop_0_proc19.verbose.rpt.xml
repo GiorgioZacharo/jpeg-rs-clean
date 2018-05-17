@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'Loop_0_proc19'" level="0">
-<item name = "Date">Fri May  4 19:53:20 2018
+<item name = "Date">Thu May 17 17:49:43 2018
 </item>
 <item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
 <item name = "Project">Izigzagmatrix</item>
@@ -79,25 +79,25 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="j_i_15_i_i_i_i_i_fu_902_p2">+, 0, 0, 15, 5, 6</column>
-<column name="offset_i_i_i_i_i_i_fu_608_p2">+, 0, 0, 15, 6, 6</column>
-<column name="exitcond1_i_i_i_i_i_s_fu_602_p2">icmp, 0, 0, 11, 6, 7</column>
+<column name="j_i_15_i_i_i_i_i_fu_868_p2">+, 0, 0, 15, 5, 6</column>
+<column name="offset_i_i_i_i_i_i_fu_574_p2">+, 0, 0, 15, 6, 6</column>
+<column name="exitcond1_i_i_i_i_i_s_fu_568_p2">icmp, 0, 0, 11, 6, 7</column>
 <column name="ap_block_state1">or, 0, 0, 9, 1, 1</column>
-<column name="tmp_10_i_i_i_fu_830_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_11_i_i_i_fu_848_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_12_i_i_i_fu_866_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_13_i_i_i_fu_884_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_1_i_i_i_fu_650_p2">or, 0, 0, 12, 5, 2</column>
-<column name="tmp_2_i_i_i_fu_668_p2">or, 0, 0, 12, 5, 2</column>
-<column name="tmp_3_i_i_i_fu_686_p2">or, 0, 0, 12, 5, 3</column>
-<column name="tmp_4_i_i_i_fu_704_p2">or, 0, 0, 12, 5, 3</column>
-<column name="tmp_5_i_i_i_fu_722_p2">or, 0, 0, 12, 5, 3</column>
-<column name="tmp_6_i_i_i_fu_740_p2">or, 0, 0, 12, 5, 3</column>
-<column name="tmp_7_i_i_i_fu_758_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_8_i_i_i_fu_776_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_9_i_i_i_fu_794_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_i_i_i_21_fu_812_p2">or, 0, 0, 12, 5, 4</column>
-<column name="tmp_i_i_i_fu_632_p2">or, 0, 0, 12, 5, 1</column>
+<column name="tmp_10_i_i_i_fu_796_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_11_i_i_i_fu_814_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_12_i_i_i_fu_832_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_13_i_i_i_fu_850_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_1_i_i_i_fu_616_p2">or, 0, 0, 12, 5, 2</column>
+<column name="tmp_2_i_i_i_fu_634_p2">or, 0, 0, 12, 5, 2</column>
+<column name="tmp_3_i_i_i_fu_652_p2">or, 0, 0, 12, 5, 3</column>
+<column name="tmp_4_i_i_i_fu_670_p2">or, 0, 0, 12, 5, 3</column>
+<column name="tmp_5_i_i_i_fu_688_p2">or, 0, 0, 12, 5, 3</column>
+<column name="tmp_6_i_i_i_fu_706_p2">or, 0, 0, 12, 5, 3</column>
+<column name="tmp_7_i_i_i_fu_724_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_8_i_i_i_fu_742_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_9_i_i_i_fu_760_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_i_i_i_21_fu_778_p2">or, 0, 0, 12, 5, 4</column>
+<column name="tmp_i_i_i_fu_598_p2">or, 0, 0, 12, 5, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -106,7 +106,7 @@
 <column name="ap_done">9, 2, 1, 2</column>
 <column name="i_0_i_i_c_blk_n">9, 2, 1, 2</column>
 <column name="imatrix_offset_out_blk_n">9, 2, 1, 2</column>
-<column name="j_0_i_i_i_i_i_i_i_reg_578">9, 2, 6, 12</column>
+<column name="j_0_i_i_i_i_i_i_i_reg_544">9, 2, 6, 12</column>
 <column name="omatrix_offset_out_blk_n">9, 2, 1, 2</column>
 </table>
 </item>
@@ -114,11 +114,11 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">3, 0, 3, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="j_0_i_i_i_i_i_i_i_reg_578">6, 0, 6, 0</column>
-<column name="j_i_15_i_i_i_i_i_reg_1039">6, 0, 6, 0</column>
-<column name="newIndex_i_i_i_i_i_reg_959">2, 0, 2, 0</column>
-<column name="offset_i_i_i_i_reg_946">1, 0, 6, 5</column>
-<column name="tmp_reg_927">1, 0, 1, 0</column>
+<column name="j_0_i_i_i_i_i_i_i_reg_544">6, 0, 6, 0</column>
+<column name="j_i_15_i_i_i_i_i_reg_1005">6, 0, 6, 0</column>
+<column name="newIndex_i_i_i_i_i_reg_925">2, 0, 2, 0</column>
+<column name="offset_i_i_i_i_reg_912">1, 0, 6, 5</column>
+<column name="tmp_reg_893">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -203,12 +203,12 @@
 <column name="i_0_i_i_c_din">out, 1, ap_fifo, i_0_i_i_c, pointer</column>
 <column name="i_0_i_i_c_full_n">in, 1, ap_fifo, i_0_i_i_c, pointer</column>
 <column name="i_0_i_i_c_write">out, 1, ap_fifo, i_0_i_i_c, pointer</column>
-<column name="imatrix_offset">in, 30, ap_none, imatrix_offset, scalar</column>
-<column name="omatrix_offset">in, 30, ap_none, omatrix_offset, scalar</column>
-<column name="imatrix_offset_out_din">out, 30, ap_fifo, imatrix_offset_out, pointer</column>
+<column name="imatrix_offset">in, 62, ap_none, imatrix_offset, scalar</column>
+<column name="omatrix_offset">in, 62, ap_none, omatrix_offset, scalar</column>
+<column name="imatrix_offset_out_din">out, 62, ap_fifo, imatrix_offset_out, pointer</column>
 <column name="imatrix_offset_out_full_n">in, 1, ap_fifo, imatrix_offset_out, pointer</column>
 <column name="imatrix_offset_out_write">out, 1, ap_fifo, imatrix_offset_out, pointer</column>
-<column name="omatrix_offset_out_din">out, 30, ap_fifo, omatrix_offset_out, pointer</column>
+<column name="omatrix_offset_out_din">out, 62, ap_fifo, omatrix_offset_out, pointer</column>
 <column name="omatrix_offset_out_full_n">in, 1, ap_fifo, omatrix_offset_out, pointer</column>
 <column name="omatrix_offset_out_write">out, 1, ap_fifo, omatrix_offset_out, pointer</column>
 </table>

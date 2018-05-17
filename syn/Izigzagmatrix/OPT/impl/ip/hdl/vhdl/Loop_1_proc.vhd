@@ -23,7 +23,7 @@ port (
     in1_buf_0_q0 : IN STD_LOGIC_VECTOR (5 downto 0);
     m_axi_imatrix_AWVALID : OUT STD_LOGIC;
     m_axi_imatrix_AWREADY : IN STD_LOGIC;
-    m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
     m_axi_imatrix_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
     m_axi_imatrix_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -43,7 +43,7 @@ port (
     m_axi_imatrix_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_ARVALID : OUT STD_LOGIC;
     m_axi_imatrix_ARREADY : IN STD_LOGIC;
-    m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
     m_axi_imatrix_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
     m_axi_imatrix_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -66,7 +66,7 @@ port (
     m_axi_imatrix_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_imatrix_BID : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-    imatrix_offset_dout : IN STD_LOGIC_VECTOR (29 downto 0);
+    imatrix_offset_dout : IN STD_LOGIC_VECTOR (61 downto 0);
     imatrix_offset_empty_n : IN STD_LOGIC;
     imatrix_offset_read : OUT STD_LOGIC;
     out_buf_0_address0 : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -212,6 +212,7 @@ architecture behav of Loop_1_proc is
     constant ap_ST_fsm_state26 : STD_LOGIC_VECTOR (26 downto 0) := "010000000000000000000000000";
     constant ap_ST_fsm_state27 : STD_LOGIC_VECTOR (26 downto 0) := "100000000000000000000000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
+    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
@@ -303,104 +304,105 @@ architecture behav of Loop_1_proc is
     signal ap_CS_fsm_state26 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state26 : signal is "none";
     signal imatrix_offset_blk_n : STD_LOGIC;
-    signal sext_cast_i_i_fu_719_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sext_cast_i_i_reg_1054 : STD_LOGIC_VECTOR (30 downto 0);
+    signal imatrix_offset_read_reg_1044 : STD_LOGIC_VECTOR (61 downto 0);
     signal ap_block_state1 : BOOLEAN;
-    signal newIndex3_i_i_fu_739_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal newIndex3_i_i_reg_1077 : STD_LOGIC_VECTOR (63 downto 0);
+    signal newIndex3_i_i_fu_725_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal newIndex3_i_i_reg_1052 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal exitcond_i_i_i_i_fu_723_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal k_i_i_i_fu_744_p2 : STD_LOGIC_VECTOR (5 downto 0);
-    signal k_i_i_i_reg_1117 : STD_LOGIC_VECTOR (5 downto 0);
-    signal sum_i_i_fu_754_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum_i_i_reg_1122 : STD_LOGIC_VECTOR (30 downto 0);
+    signal exitcond_i_i_i_i_fu_709_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal k_i_i_i_fu_730_p2 : STD_LOGIC_VECTOR (5 downto 0);
+    signal k_i_i_i_reg_1092 : STD_LOGIC_VECTOR (5 downto 0);
+    signal imatrix_offset_cast2_fu_740_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal imatrix_offset_cast2_reg_1097 : STD_LOGIC_VECTOR (62 downto 0);
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
+    signal imatrix_addr_reg_1116 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_1_reg_1127 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_sig_ioackin_m_axi_imatrix_ARREADY : STD_LOGIC;
-    signal sum2_i_i_fu_773_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum2_i_i_reg_1138 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum4_i_i_fu_792_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum4_i_i_reg_1154 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum6_i_i_fu_811_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum6_i_i_reg_1170 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum8_i_i_fu_830_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum8_i_i_reg_1186 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum1_i_i_fu_849_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum1_i_i_reg_1202 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum3_i_i_fu_868_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum3_i_i_reg_1218 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum5_i_i_fu_887_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum5_i_i_reg_1234 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_read_reg_1244 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum7_i_i_fu_906_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum7_i_i_reg_1255 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_1_read_reg_1265 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum9_i_i_fu_925_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum9_i_i_reg_1276 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_2_read_reg_1286 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum10_i_i_fu_944_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum10_i_i_reg_1297 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_3_read_reg_1307 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum11_i_i_fu_963_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum11_i_i_reg_1318 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_4_read_reg_1328 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum12_i_i_fu_982_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum12_i_i_reg_1339 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_5_read_reg_1349 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum13_i_i_fu_1001_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum13_i_i_reg_1360 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_6_read_reg_1370 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum14_i_i_fu_1020_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum14_i_i_reg_1381 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_7_read_reg_1391 : STD_LOGIC_VECTOR (31 downto 0);
-    signal sum15_i_i_fu_1039_p2 : STD_LOGIC_VECTOR (30 downto 0);
-    signal sum15_i_i_reg_1402 : STD_LOGIC_VECTOR (30 downto 0);
-    signal imatrix_addr_8_read_reg_1407 : STD_LOGIC_VECTOR (31 downto 0);
-    signal imatrix_addr_9_read_reg_1418 : STD_LOGIC_VECTOR (31 downto 0);
-    signal imatrix_addr_10_read_reg_1423 : STD_LOGIC_VECTOR (31 downto 0);
-    signal imatrix_addr_11_read_reg_1428 : STD_LOGIC_VECTOR (31 downto 0);
-    signal imatrix_addr_12_read_reg_1433 : STD_LOGIC_VECTOR (31 downto 0);
-    signal imatrix_addr_13_read_reg_1438 : STD_LOGIC_VECTOR (31 downto 0);
-    signal imatrix_addr_14_read_reg_1443 : STD_LOGIC_VECTOR (31 downto 0);
-    signal imatrix_addr_15_read_reg_1448 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k_0_i_i_i_i_reg_708 : STD_LOGIC_VECTOR (5 downto 0);
+    signal imatrix_addr_2_reg_1138 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_3_reg_1149 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_4_reg_1160 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_5_reg_1171 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_6_reg_1182 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_7_reg_1193 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_read_reg_1204 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_8_reg_1209 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_1_read_reg_1220 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_9_reg_1225 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_2_read_reg_1236 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_10_reg_1241 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_3_read_reg_1252 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_11_reg_1257 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_4_read_reg_1268 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_12_reg_1273 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_5_read_reg_1284 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_13_reg_1289 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_6_read_reg_1305 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_14_reg_1310 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_15_reg_1316 : STD_LOGIC_VECTOR (63 downto 0);
+    signal imatrix_addr_7_read_reg_1322 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_8_read_reg_1327 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_9_read_reg_1332 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_10_read_reg_1337 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_11_read_reg_1342 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_12_read_reg_1347 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_13_read_reg_1352 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_14_read_reg_1357 : STD_LOGIC_VECTOR (31 downto 0);
+    signal imatrix_addr_15_read_reg_1362 : STD_LOGIC_VECTOR (31 downto 0);
+    signal k_0_i_i_i_i_reg_698 : STD_LOGIC_VECTOR (5 downto 0);
     signal ap_CS_fsm_state27 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state27 : signal is "none";
-    signal sum_cast_i_i_fu_759_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum2_cast_i_i_fu_778_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum4_cast_i_i_fu_797_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum6_cast_i_i_fu_816_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum8_cast_i_i_fu_835_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum1_cast_i_i_fu_854_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum3_cast_i_i_fu_873_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum5_cast_i_i_fu_892_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum7_cast_i_i_fu_911_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum9_cast_i_i_fu_930_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum10_cast_i_i_fu_949_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum11_cast_i_i_fu_968_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum12_cast_i_i_fu_987_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum13_cast_i_i_fu_1006_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum14_cast_i_i_fu_1025_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal sum15_cast_i_i_fu_1044_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum_cast_i_i_fu_749_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum1_cast_i_i_fu_768_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum2_cast_i_i_fu_787_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum3_cast_i_i_fu_806_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum4_cast_i_i_fu_825_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum5_cast_i_i_fu_844_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum6_cast_i_i_fu_863_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum7_cast_i_i_fu_882_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum8_cast_i_i_fu_901_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum9_cast_i_i_fu_920_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum10_cast_i_i_fu_939_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum11_cast_i_i_fu_958_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum12_cast_i_i_fu_977_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum13_cast_i_i_fu_996_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum14_cast_i_i_fu_1015_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal sum15_cast_i_i_fu_1034_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_reg_ioackin_m_axi_imatrix_ARREADY : STD_LOGIC := '0';
-    signal newIndex2_i_i_fu_729_p4 : STD_LOGIC_VECTOR (1 downto 0);
-    signal tmp_5_i_cast_i_i_fu_750_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_1_cast_i_i_fu_769_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_2_cast_i_i_fu_788_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_3_cast_i_i_fu_807_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_4_cast_i_i_fu_826_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_5_cast_i_i_fu_845_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_6_cast_i_i_fu_864_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_7_cast_i_i_fu_883_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_8_cast_i_i_fu_902_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_9_cast_i_i_fu_921_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_cast_i_i_18_fu_940_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_10_cast_i_i_fu_959_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_11_cast_i_i_fu_978_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_12_cast_i_i_fu_997_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_13_cast_i_i_fu_1016_p1 : STD_LOGIC_VECTOR (30 downto 0);
-    signal tmp_5_i_14_cast_i_i_fu_1035_p1 : STD_LOGIC_VECTOR (30 downto 0);
+    signal newIndex2_i_i_fu_715_p4 : STD_LOGIC_VECTOR (1 downto 0);
+    signal tmp_5_i_cast_i_i_fu_736_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum_i_i_fu_743_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_1_cast_i_i_fu_759_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum1_i_i_fu_763_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_2_cast_i_i_fu_778_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum2_i_i_fu_782_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_3_cast_i_i_fu_797_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum3_i_i_fu_801_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_4_cast_i_i_fu_816_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum4_i_i_fu_820_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_5_cast_i_i_fu_835_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum5_i_i_fu_839_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_6_cast_i_i_fu_854_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum6_i_i_fu_858_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_7_cast_i_i_fu_873_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum7_i_i_fu_877_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_8_cast_i_i_fu_892_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum8_i_i_fu_896_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_9_cast_i_i_fu_911_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum9_i_i_fu_915_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_cast_i_i_18_fu_930_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum10_i_i_fu_934_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_10_cast_i_i_fu_949_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum11_i_i_fu_953_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_11_cast_i_i_fu_968_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum12_i_i_fu_972_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_12_cast_i_i_fu_987_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum13_i_i_fu_991_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_13_cast_i_i_fu_1006_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum14_i_i_fu_1010_p2 : STD_LOGIC_VECTOR (62 downto 0);
+    signal tmp_5_i_14_cast_i_i_fu_1025_p1 : STD_LOGIC_VECTOR (62 downto 0);
+    signal sum15_i_i_fu_1029_p2 : STD_LOGIC_VECTOR (62 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (26 downto 0);
 
 
@@ -429,7 +431,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif (((exitcond_i_i_i_i_fu_723_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                elsif (((exitcond_i_i_i_i_fu_709_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -453,13 +455,13 @@ begin
     end process;
 
 
-    k_0_i_i_i_i_reg_708_assign_proc : process (ap_clk)
+    k_0_i_i_i_i_reg_698_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0) or (imatrix_offset_empty_n = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                k_0_i_i_i_i_reg_708 <= ap_const_lv6_0;
+                k_0_i_i_i_i_reg_698 <= ap_const_lv6_0;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state27)) then 
-                k_0_i_i_i_i_reg_708 <= k_i_i_i_reg_1117;
+                k_0_i_i_i_i_reg_698 <= k_i_i_i_reg_1092;
             end if; 
         end if;
     end process;
@@ -467,56 +469,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state21))) then
-                imatrix_addr_10_read_reg_1423 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state22))) then
-                imatrix_addr_11_read_reg_1428 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23))) then
-                imatrix_addr_12_read_reg_1433 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state24))) then
-                imatrix_addr_13_read_reg_1438 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state25))) then
-                imatrix_addr_14_read_reg_1443 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state26))) then
-                imatrix_addr_15_read_reg_1448 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state12))) then
-                imatrix_addr_1_read_reg_1265 <= m_axi_imatrix_RDATA;
-                sum9_i_i_reg_1276 <= sum9_i_i_fu_925_p2;
+                imatrix_addr_10_read_reg_1337 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
@@ -524,8 +477,16 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state13))) then
-                imatrix_addr_2_read_reg_1286 <= m_axi_imatrix_RDATA;
-                sum10_i_i_reg_1297 <= sum10_i_i_fu_944_p2;
+                    imatrix_addr_10_reg_1241(62 downto 0) <= sum10_cast_i_i_fu_939_p1(62 downto 0);
+                imatrix_addr_2_read_reg_1236 <= m_axi_imatrix_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state22))) then
+                imatrix_addr_11_read_reg_1342 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
@@ -533,8 +494,16 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state14))) then
-                imatrix_addr_3_read_reg_1307 <= m_axi_imatrix_RDATA;
-                sum11_i_i_reg_1318 <= sum11_i_i_fu_963_p2;
+                    imatrix_addr_11_reg_1257(62 downto 0) <= sum11_cast_i_i_fu_958_p1(62 downto 0);
+                imatrix_addr_3_read_reg_1252 <= m_axi_imatrix_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state23))) then
+                imatrix_addr_12_read_reg_1347 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
@@ -542,8 +511,16 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state15))) then
-                imatrix_addr_4_read_reg_1328 <= m_axi_imatrix_RDATA;
-                sum12_i_i_reg_1339 <= sum12_i_i_fu_982_p2;
+                    imatrix_addr_12_reg_1273(62 downto 0) <= sum12_cast_i_i_fu_977_p1(62 downto 0);
+                imatrix_addr_4_read_reg_1268 <= m_axi_imatrix_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state24))) then
+                imatrix_addr_13_read_reg_1352 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
@@ -551,8 +528,16 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state16))) then
-                imatrix_addr_5_read_reg_1349 <= m_axi_imatrix_RDATA;
-                sum13_i_i_reg_1360 <= sum13_i_i_fu_1001_p2;
+                    imatrix_addr_13_reg_1289(62 downto 0) <= sum13_cast_i_i_fu_996_p1(62 downto 0);
+                imatrix_addr_5_read_reg_1284 <= m_axi_imatrix_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state25))) then
+                imatrix_addr_14_read_reg_1357 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
@@ -560,67 +545,26 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state17))) then
-                imatrix_addr_6_read_reg_1370 <= m_axi_imatrix_RDATA;
-                sum14_i_i_reg_1381 <= sum14_i_i_fu_1020_p2;
+                    imatrix_addr_14_reg_1310(62 downto 0) <= sum14_cast_i_i_fu_1015_p1(62 downto 0);
+                    imatrix_addr_15_reg_1316(62 downto 0) <= sum15_cast_i_i_fu_1034_p1(62 downto 0);
+                imatrix_addr_6_read_reg_1305 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state18))) then
-                imatrix_addr_7_read_reg_1391 <= m_axi_imatrix_RDATA;
-                sum15_i_i_reg_1402 <= sum15_i_i_fu_1039_p2;
+            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state26))) then
+                imatrix_addr_15_read_reg_1362 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state19))) then
-                imatrix_addr_8_read_reg_1407 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state20))) then
-                imatrix_addr_9_read_reg_1418 <= m_axi_imatrix_RDATA;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state11))) then
-                imatrix_addr_read_reg_1244 <= m_axi_imatrix_RDATA;
-                sum7_i_i_reg_1255 <= sum7_i_i_fu_906_p2;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_const_logic_1 = ap_CS_fsm_state2) and (exitcond_i_i_i_i_fu_723_p2 = ap_const_lv1_0))) then
-                k_i_i_i_reg_1117 <= k_i_i_i_fu_744_p2;
-                    newIndex3_i_i_reg_1077(1 downto 0) <= newIndex3_i_i_fu_739_p1(1 downto 0);
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((not(((ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0) or (imatrix_offset_empty_n = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
-                    sext_cast_i_i_reg_1054(29 downto 0) <= sext_cast_i_i_fu_719_p1(29 downto 0);
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
-                sum1_i_i_reg_1202 <= sum1_i_i_fu_849_p2;
+            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state12))) then
+                imatrix_addr_1_read_reg_1220 <= m_axi_imatrix_RDATA;
+                    imatrix_addr_9_reg_1225(62 downto 0) <= sum9_cast_i_i_fu_920_p1(62 downto 0);
             end if;
         end if;
     end process;
@@ -628,15 +572,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then
-                sum2_i_i_reg_1138 <= sum2_i_i_fu_773_p2;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9))) then
-                sum3_i_i_reg_1218 <= sum3_i_i_fu_868_p2;
+                    imatrix_addr_1_reg_1127(62 downto 0) <= sum1_cast_i_i_fu_768_p1(62 downto 0);
             end if;
         end if;
     end process;
@@ -644,15 +580,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
-                sum4_i_i_reg_1154 <= sum4_i_i_fu_792_p2;
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state10))) then
-                sum5_i_i_reg_1234 <= sum5_i_i_fu_887_p2;
+                    imatrix_addr_2_reg_1138(62 downto 0) <= sum2_cast_i_i_fu_787_p1(62 downto 0);
             end if;
         end if;
     end process;
@@ -660,7 +588,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
-                sum6_i_i_reg_1170 <= sum6_i_i_fu_811_p2;
+                    imatrix_addr_3_reg_1149(62 downto 0) <= sum3_cast_i_i_fu_806_p1(62 downto 0);
             end if;
         end if;
     end process;
@@ -668,7 +596,64 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state7))) then
-                sum8_i_i_reg_1186 <= sum8_i_i_fu_830_p2;
+                    imatrix_addr_4_reg_1160(62 downto 0) <= sum4_cast_i_i_fu_825_p1(62 downto 0);
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state8))) then
+                    imatrix_addr_5_reg_1171(62 downto 0) <= sum5_cast_i_i_fu_844_p1(62 downto 0);
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state9))) then
+                    imatrix_addr_6_reg_1182(62 downto 0) <= sum6_cast_i_i_fu_863_p1(62 downto 0);
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state18))) then
+                imatrix_addr_7_read_reg_1322 <= m_axi_imatrix_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state10))) then
+                    imatrix_addr_7_reg_1193(62 downto 0) <= sum7_cast_i_i_fu_882_p1(62 downto 0);
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state19))) then
+                imatrix_addr_8_read_reg_1327 <= m_axi_imatrix_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state11))) then
+                    imatrix_addr_8_reg_1209(62 downto 0) <= sum8_cast_i_i_fu_901_p1(62 downto 0);
+                imatrix_addr_read_reg_1204 <= m_axi_imatrix_RDATA;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state20))) then
+                imatrix_addr_9_read_reg_1332 <= m_axi_imatrix_RDATA;
             end if;
         end if;
     end process;
@@ -676,14 +661,48 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state3)) then
-                sum_i_i_reg_1122 <= sum_i_i_fu_754_p2;
+                    imatrix_addr_reg_1116(62 downto 0) <= sum_cast_i_i_fu_749_p1(62 downto 0);
+                    imatrix_offset_cast2_reg_1097(61 downto 0) <= imatrix_offset_cast2_fu_740_p1(61 downto 0);
             end if;
         end if;
     end process;
-    sext_cast_i_i_reg_1054(30) <= '0';
-    newIndex3_i_i_reg_1077(63 downto 2) <= "00000000000000000000000000000000000000000000000000000000000000";
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if ((not(((ap_done_reg = ap_const_logic_1) or (ap_start = ap_const_logic_0) or (imatrix_offset_empty_n = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
+                imatrix_offset_read_reg_1044 <= imatrix_offset_dout;
+            end if;
+        end if;
+    end process;
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if (((ap_const_logic_1 = ap_CS_fsm_state2) and (exitcond_i_i_i_i_fu_709_p2 = ap_const_lv1_0))) then
+                k_i_i_i_reg_1092 <= k_i_i_i_fu_730_p2;
+                    newIndex3_i_i_reg_1052(1 downto 0) <= newIndex3_i_i_fu_725_p1(1 downto 0);
+            end if;
+        end if;
+    end process;
+    newIndex3_i_i_reg_1052(63 downto 2) <= "00000000000000000000000000000000000000000000000000000000000000";
+    imatrix_offset_cast2_reg_1097(62) <= '0';
+    imatrix_addr_reg_1116(63) <= '0';
+    imatrix_addr_1_reg_1127(63) <= '0';
+    imatrix_addr_2_reg_1138(63) <= '0';
+    imatrix_addr_3_reg_1149(63) <= '0';
+    imatrix_addr_4_reg_1160(63) <= '0';
+    imatrix_addr_5_reg_1171(63) <= '0';
+    imatrix_addr_6_reg_1182(63) <= '0';
+    imatrix_addr_7_reg_1193(63) <= '0';
+    imatrix_addr_8_reg_1209(63) <= '0';
+    imatrix_addr_9_reg_1225(63) <= '0';
+    imatrix_addr_10_reg_1241(63) <= '0';
+    imatrix_addr_11_reg_1257(63) <= '0';
+    imatrix_addr_12_reg_1273(63) <= '0';
+    imatrix_addr_13_reg_1289(63) <= '0';
+    imatrix_addr_14_reg_1310(63) <= '0';
+    imatrix_addr_15_reg_1316(63) <= '0';
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, m_axi_imatrix_RVALID, imatrix_offset_empty_n, ap_CS_fsm_state4, ap_CS_fsm_state11, ap_CS_fsm_state5, ap_CS_fsm_state12, ap_CS_fsm_state6, ap_CS_fsm_state13, ap_CS_fsm_state7, ap_CS_fsm_state14, ap_CS_fsm_state8, ap_CS_fsm_state15, ap_CS_fsm_state9, ap_CS_fsm_state16, ap_CS_fsm_state10, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state19, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_CS_fsm_state22, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state25, ap_CS_fsm_state26, ap_CS_fsm_state2, exitcond_i_i_i_i_fu_723_p2, ap_sig_ioackin_m_axi_imatrix_ARREADY)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, m_axi_imatrix_RVALID, imatrix_offset_empty_n, ap_CS_fsm_state4, ap_CS_fsm_state11, ap_CS_fsm_state5, ap_CS_fsm_state12, ap_CS_fsm_state6, ap_CS_fsm_state13, ap_CS_fsm_state7, ap_CS_fsm_state14, ap_CS_fsm_state8, ap_CS_fsm_state15, ap_CS_fsm_state9, ap_CS_fsm_state16, ap_CS_fsm_state10, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state19, ap_CS_fsm_state20, ap_CS_fsm_state21, ap_CS_fsm_state22, ap_CS_fsm_state23, ap_CS_fsm_state24, ap_CS_fsm_state25, ap_CS_fsm_state26, ap_CS_fsm_state2, exitcond_i_i_i_i_fu_709_p2, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -693,7 +712,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                if (((exitcond_i_i_i_i_fu_723_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
+                if (((exitcond_i_i_i_i_fu_709_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state3;
@@ -878,9 +897,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state2, exitcond_i_i_i_i_fu_723_p2)
+    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state2, exitcond_i_i_i_i_fu_709_p2)
     begin
-        if (((exitcond_i_i_i_i_fu_723_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if (((exitcond_i_i_i_i_fu_709_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -898,9 +917,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state2, exitcond_i_i_i_i_fu_723_p2)
+    ap_ready_assign_proc : process(ap_CS_fsm_state2, exitcond_i_i_i_i_fu_709_p2)
     begin
-        if (((exitcond_i_i_i_i_fu_723_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if (((exitcond_i_i_i_i_fu_709_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -917,7 +936,7 @@ begin
         end if; 
     end process;
 
-    exitcond_i_i_i_i_fu_723_p2 <= "1" when (k_0_i_i_i_i_reg_708 = ap_const_lv6_20) else "0";
+    exitcond_i_i_i_i_fu_709_p2 <= "1" when (k_0_i_i_i_i_reg_698 = ap_const_lv6_20) else "0";
 
     imatrix_blk_n_AR_assign_proc : process(m_axi_imatrix_ARREADY, ap_CS_fsm_state4, ap_CS_fsm_state11, ap_CS_fsm_state5, ap_CS_fsm_state12, ap_CS_fsm_state6, ap_CS_fsm_state13, ap_CS_fsm_state7, ap_CS_fsm_state14, ap_CS_fsm_state8, ap_CS_fsm_state15, ap_CS_fsm_state9, ap_CS_fsm_state16, ap_CS_fsm_state10, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state19)
     begin
@@ -948,6 +967,7 @@ begin
         end if; 
     end process;
 
+    imatrix_offset_cast2_fu_740_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(imatrix_offset_read_reg_1044),63));
 
     imatrix_offset_read_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, imatrix_offset_empty_n)
     begin
@@ -958,7 +978,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_0_address0 <= newIndex3_i_i_fu_739_p1(1 - 1 downto 0);
+    in1_buf_0_address0 <= newIndex3_i_i_fu_725_p1(1 - 1 downto 0);
 
     in1_buf_0_ce0_assign_proc : process(ap_CS_fsm_state2)
     begin
@@ -969,7 +989,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_10_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_10_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_10_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state12, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -980,7 +1000,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_11_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_11_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_11_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state13, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -991,7 +1011,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_12_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_12_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_12_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state14, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1002,7 +1022,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_13_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_13_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_13_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state15, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1013,7 +1033,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_14_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_14_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_14_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state16, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1024,18 +1044,18 @@ begin
         end if; 
     end process;
 
-    in1_buf_15_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_15_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
-    in1_buf_15_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state17, ap_sig_ioackin_m_axi_imatrix_ARREADY)
+    in1_buf_15_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state16, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
-        if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state17))) then 
+        if ((not(((m_axi_imatrix_RVALID = ap_const_logic_0) or (ap_sig_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0))) and (ap_const_logic_1 = ap_CS_fsm_state16))) then 
             in1_buf_15_ce0 <= ap_const_logic_1;
         else 
             in1_buf_15_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    in1_buf_1_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_1_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_1_ce0_assign_proc : process(ap_CS_fsm_state3)
     begin
@@ -1046,7 +1066,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_2_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_2_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_2_ce0_assign_proc : process(ap_CS_fsm_state4, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1057,7 +1077,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_3_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_3_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_3_ce0_assign_proc : process(ap_CS_fsm_state5, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1068,7 +1088,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_4_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_4_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_4_ce0_assign_proc : process(ap_CS_fsm_state6, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1079,7 +1099,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_5_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_5_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_5_ce0_assign_proc : process(ap_CS_fsm_state7, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1090,7 +1110,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_6_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_6_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_6_ce0_assign_proc : process(ap_CS_fsm_state8, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1101,7 +1121,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_7_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_7_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_7_ce0_assign_proc : process(ap_CS_fsm_state9, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1112,7 +1132,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_8_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_8_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_8_ce0_assign_proc : process(ap_CS_fsm_state10, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1123,7 +1143,7 @@ begin
         end if; 
     end process;
 
-    in1_buf_9_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    in1_buf_9_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     in1_buf_9_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state11, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1134,48 +1154,48 @@ begin
         end if; 
     end process;
 
-    k_i_i_i_fu_744_p2 <= std_logic_vector(unsigned(k_0_i_i_i_i_reg_708) + unsigned(ap_const_lv6_10));
+    k_i_i_i_fu_730_p2 <= std_logic_vector(unsigned(k_0_i_i_i_i_reg_698) + unsigned(ap_const_lv6_10));
 
-    m_axi_imatrix_ARADDR_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state4, ap_CS_fsm_state11, ap_CS_fsm_state5, ap_CS_fsm_state12, ap_CS_fsm_state6, ap_CS_fsm_state13, ap_CS_fsm_state7, ap_CS_fsm_state14, ap_CS_fsm_state8, ap_CS_fsm_state15, ap_CS_fsm_state9, ap_CS_fsm_state16, ap_CS_fsm_state10, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state19, sum_cast_i_i_fu_759_p1, sum2_cast_i_i_fu_778_p1, sum4_cast_i_i_fu_797_p1, sum6_cast_i_i_fu_816_p1, sum8_cast_i_i_fu_835_p1, sum1_cast_i_i_fu_854_p1, sum3_cast_i_i_fu_873_p1, sum5_cast_i_i_fu_892_p1, sum7_cast_i_i_fu_911_p1, sum9_cast_i_i_fu_930_p1, sum10_cast_i_i_fu_949_p1, sum11_cast_i_i_fu_968_p1, sum12_cast_i_i_fu_987_p1, sum13_cast_i_i_fu_1006_p1, sum14_cast_i_i_fu_1025_p1, sum15_cast_i_i_fu_1044_p1, ap_reg_ioackin_m_axi_imatrix_ARREADY)
+    m_axi_imatrix_ARADDR_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state4, ap_CS_fsm_state11, ap_CS_fsm_state5, ap_CS_fsm_state12, ap_CS_fsm_state6, ap_CS_fsm_state13, ap_CS_fsm_state7, ap_CS_fsm_state14, ap_CS_fsm_state8, ap_CS_fsm_state15, ap_CS_fsm_state9, ap_CS_fsm_state16, ap_CS_fsm_state10, ap_CS_fsm_state17, ap_CS_fsm_state18, ap_CS_fsm_state19, imatrix_addr_reg_1116, imatrix_addr_1_reg_1127, imatrix_addr_2_reg_1138, imatrix_addr_3_reg_1149, imatrix_addr_4_reg_1160, imatrix_addr_5_reg_1171, imatrix_addr_6_reg_1182, imatrix_addr_7_reg_1193, imatrix_addr_8_reg_1209, imatrix_addr_9_reg_1225, imatrix_addr_10_reg_1241, imatrix_addr_11_reg_1257, imatrix_addr_12_reg_1273, imatrix_addr_13_reg_1289, imatrix_addr_14_reg_1310, imatrix_addr_15_reg_1316, ap_reg_ioackin_m_axi_imatrix_ARREADY)
     begin
         if ((ap_reg_ioackin_m_axi_imatrix_ARREADY = ap_const_logic_0)) then
             if (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state19))) then 
-                m_axi_imatrix_ARADDR <= sum15_cast_i_i_fu_1044_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_15_reg_1316;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state18))) then 
-                m_axi_imatrix_ARADDR <= sum14_cast_i_i_fu_1025_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_14_reg_1310;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state17))) then 
-                m_axi_imatrix_ARADDR <= sum13_cast_i_i_fu_1006_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_13_reg_1289;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state16))) then 
-                m_axi_imatrix_ARADDR <= sum12_cast_i_i_fu_987_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_12_reg_1273;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state15))) then 
-                m_axi_imatrix_ARADDR <= sum11_cast_i_i_fu_968_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_11_reg_1257;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state14))) then 
-                m_axi_imatrix_ARADDR <= sum10_cast_i_i_fu_949_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_10_reg_1241;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state13))) then 
-                m_axi_imatrix_ARADDR <= sum9_cast_i_i_fu_930_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_9_reg_1225;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state12))) then 
-                m_axi_imatrix_ARADDR <= sum7_cast_i_i_fu_911_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_8_reg_1209;
             elsif (((m_axi_imatrix_RVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state11))) then 
-                m_axi_imatrix_ARADDR <= sum5_cast_i_i_fu_892_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_7_reg_1193;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state10)) then 
-                m_axi_imatrix_ARADDR <= sum3_cast_i_i_fu_873_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_6_reg_1182;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-                m_axi_imatrix_ARADDR <= sum1_cast_i_i_fu_854_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_5_reg_1171;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-                m_axi_imatrix_ARADDR <= sum8_cast_i_i_fu_835_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_4_reg_1160;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state7)) then 
-                m_axi_imatrix_ARADDR <= sum6_cast_i_i_fu_816_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_3_reg_1149;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-                m_axi_imatrix_ARADDR <= sum4_cast_i_i_fu_797_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_2_reg_1138;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-                m_axi_imatrix_ARADDR <= sum2_cast_i_i_fu_778_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_1_reg_1127;
             elsif ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-                m_axi_imatrix_ARADDR <= sum_cast_i_i_fu_759_p1(32 - 1 downto 0);
+                m_axi_imatrix_ARADDR <= imatrix_addr_reg_1116;
             else 
-                m_axi_imatrix_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+                m_axi_imatrix_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
             end if;
         else 
-            m_axi_imatrix_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+            m_axi_imatrix_ARADDR <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
@@ -1199,7 +1219,7 @@ begin
         end if; 
     end process;
 
-    m_axi_imatrix_AWADDR <= ap_const_lv32_0;
+    m_axi_imatrix_AWADDR <= ap_const_lv64_0;
     m_axi_imatrix_AWBURST <= ap_const_lv2_0;
     m_axi_imatrix_AWCACHE <= ap_const_lv4_0;
     m_axi_imatrix_AWID <= ap_const_lv1_0;
@@ -1228,9 +1248,9 @@ begin
     m_axi_imatrix_WSTRB <= ap_const_lv4_0;
     m_axi_imatrix_WUSER <= ap_const_lv1_0;
     m_axi_imatrix_WVALID <= ap_const_logic_0;
-    newIndex2_i_i_fu_729_p4 <= k_0_i_i_i_i_reg_708(5 downto 4);
-    newIndex3_i_i_fu_739_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(newIndex2_i_i_fu_729_p4),64));
-    out_buf_0_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    newIndex2_i_i_fu_715_p4 <= k_0_i_i_i_i_reg_698(5 downto 4);
+    newIndex3_i_i_fu_725_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(newIndex2_i_i_fu_715_p4),64));
+    out_buf_0_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_0_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state12, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1241,7 +1261,7 @@ begin
         end if; 
     end process;
 
-    out_buf_0_d0 <= imatrix_addr_read_reg_1244;
+    out_buf_0_d0 <= imatrix_addr_read_reg_1204;
 
     out_buf_0_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state12, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1252,7 +1272,7 @@ begin
         end if; 
     end process;
 
-    out_buf_10_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_10_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_10_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state22)
     begin
@@ -1263,7 +1283,7 @@ begin
         end if; 
     end process;
 
-    out_buf_10_d0 <= imatrix_addr_10_read_reg_1423;
+    out_buf_10_d0 <= imatrix_addr_10_read_reg_1337;
 
     out_buf_10_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state22)
     begin
@@ -1274,7 +1294,7 @@ begin
         end if; 
     end process;
 
-    out_buf_11_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_11_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_11_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state23)
     begin
@@ -1285,7 +1305,7 @@ begin
         end if; 
     end process;
 
-    out_buf_11_d0 <= imatrix_addr_11_read_reg_1428;
+    out_buf_11_d0 <= imatrix_addr_11_read_reg_1342;
 
     out_buf_11_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state23)
     begin
@@ -1296,7 +1316,7 @@ begin
         end if; 
     end process;
 
-    out_buf_12_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_12_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_12_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state24)
     begin
@@ -1307,7 +1327,7 @@ begin
         end if; 
     end process;
 
-    out_buf_12_d0 <= imatrix_addr_12_read_reg_1433;
+    out_buf_12_d0 <= imatrix_addr_12_read_reg_1347;
 
     out_buf_12_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state24)
     begin
@@ -1318,7 +1338,7 @@ begin
         end if; 
     end process;
 
-    out_buf_13_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_13_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_13_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state25)
     begin
@@ -1329,7 +1349,7 @@ begin
         end if; 
     end process;
 
-    out_buf_13_d0 <= imatrix_addr_13_read_reg_1438;
+    out_buf_13_d0 <= imatrix_addr_13_read_reg_1352;
 
     out_buf_13_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state25)
     begin
@@ -1340,7 +1360,7 @@ begin
         end if; 
     end process;
 
-    out_buf_14_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_14_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_14_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state26)
     begin
@@ -1351,7 +1371,7 @@ begin
         end if; 
     end process;
 
-    out_buf_14_d0 <= imatrix_addr_14_read_reg_1443;
+    out_buf_14_d0 <= imatrix_addr_14_read_reg_1357;
 
     out_buf_14_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state26)
     begin
@@ -1362,7 +1382,7 @@ begin
         end if; 
     end process;
 
-    out_buf_15_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_15_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_15_ce0_assign_proc : process(ap_CS_fsm_state27)
     begin
@@ -1373,7 +1393,7 @@ begin
         end if; 
     end process;
 
-    out_buf_15_d0 <= imatrix_addr_15_read_reg_1448;
+    out_buf_15_d0 <= imatrix_addr_15_read_reg_1362;
 
     out_buf_15_we0_assign_proc : process(ap_CS_fsm_state27)
     begin
@@ -1384,7 +1404,7 @@ begin
         end if; 
     end process;
 
-    out_buf_1_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_1_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_1_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state13, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1395,7 +1415,7 @@ begin
         end if; 
     end process;
 
-    out_buf_1_d0 <= imatrix_addr_1_read_reg_1265;
+    out_buf_1_d0 <= imatrix_addr_1_read_reg_1220;
 
     out_buf_1_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state13, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1406,7 +1426,7 @@ begin
         end if; 
     end process;
 
-    out_buf_2_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_2_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_2_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state14, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1417,7 +1437,7 @@ begin
         end if; 
     end process;
 
-    out_buf_2_d0 <= imatrix_addr_2_read_reg_1286;
+    out_buf_2_d0 <= imatrix_addr_2_read_reg_1236;
 
     out_buf_2_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state14, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1428,7 +1448,7 @@ begin
         end if; 
     end process;
 
-    out_buf_3_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_3_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_3_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state15, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1439,7 +1459,7 @@ begin
         end if; 
     end process;
 
-    out_buf_3_d0 <= imatrix_addr_3_read_reg_1307;
+    out_buf_3_d0 <= imatrix_addr_3_read_reg_1252;
 
     out_buf_3_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state15, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1450,7 +1470,7 @@ begin
         end if; 
     end process;
 
-    out_buf_4_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_4_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_4_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state16, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1461,7 +1481,7 @@ begin
         end if; 
     end process;
 
-    out_buf_4_d0 <= imatrix_addr_4_read_reg_1328;
+    out_buf_4_d0 <= imatrix_addr_4_read_reg_1268;
 
     out_buf_4_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state16, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1472,7 +1492,7 @@ begin
         end if; 
     end process;
 
-    out_buf_5_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_5_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_5_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state17, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1483,7 +1503,7 @@ begin
         end if; 
     end process;
 
-    out_buf_5_d0 <= imatrix_addr_5_read_reg_1349;
+    out_buf_5_d0 <= imatrix_addr_5_read_reg_1284;
 
     out_buf_5_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state17, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1494,7 +1514,7 @@ begin
         end if; 
     end process;
 
-    out_buf_6_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_6_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_6_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state18, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1505,7 +1525,7 @@ begin
         end if; 
     end process;
 
-    out_buf_6_d0 <= imatrix_addr_6_read_reg_1370;
+    out_buf_6_d0 <= imatrix_addr_6_read_reg_1305;
 
     out_buf_6_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state18, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1516,7 +1536,7 @@ begin
         end if; 
     end process;
 
-    out_buf_7_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_7_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_7_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state19, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1527,7 +1547,7 @@ begin
         end if; 
     end process;
 
-    out_buf_7_d0 <= imatrix_addr_7_read_reg_1391;
+    out_buf_7_d0 <= imatrix_addr_7_read_reg_1322;
 
     out_buf_7_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state19, ap_sig_ioackin_m_axi_imatrix_ARREADY)
     begin
@@ -1538,7 +1558,7 @@ begin
         end if; 
     end process;
 
-    out_buf_8_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_8_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_8_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state20)
     begin
@@ -1549,7 +1569,7 @@ begin
         end if; 
     end process;
 
-    out_buf_8_d0 <= imatrix_addr_8_read_reg_1407;
+    out_buf_8_d0 <= imatrix_addr_8_read_reg_1327;
 
     out_buf_8_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state20)
     begin
@@ -1560,7 +1580,7 @@ begin
         end if; 
     end process;
 
-    out_buf_9_address0 <= newIndex3_i_i_reg_1077(1 - 1 downto 0);
+    out_buf_9_address0 <= newIndex3_i_i_reg_1052(1 - 1 downto 0);
 
     out_buf_9_ce0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state21)
     begin
@@ -1571,7 +1591,7 @@ begin
         end if; 
     end process;
 
-    out_buf_9_d0 <= imatrix_addr_9_read_reg_1418;
+    out_buf_9_d0 <= imatrix_addr_9_read_reg_1332;
 
     out_buf_9_we0_assign_proc : process(m_axi_imatrix_RVALID, ap_CS_fsm_state21)
     begin
@@ -1582,53 +1602,52 @@ begin
         end if; 
     end process;
 
-    sext_cast_i_i_fu_719_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(imatrix_offset_dout),31));
-    sum10_cast_i_i_fu_949_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum10_i_i_reg_1297),64));
-    sum10_i_i_fu_944_p2 <= std_logic_vector(unsigned(tmp_5_i_cast_i_i_18_fu_940_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum11_cast_i_i_fu_968_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum11_i_i_reg_1318),64));
-    sum11_i_i_fu_963_p2 <= std_logic_vector(unsigned(tmp_5_i_10_cast_i_i_fu_959_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum12_cast_i_i_fu_987_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum12_i_i_reg_1339),64));
-    sum12_i_i_fu_982_p2 <= std_logic_vector(unsigned(tmp_5_i_11_cast_i_i_fu_978_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum13_cast_i_i_fu_1006_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum13_i_i_reg_1360),64));
-    sum13_i_i_fu_1001_p2 <= std_logic_vector(unsigned(tmp_5_i_12_cast_i_i_fu_997_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum14_cast_i_i_fu_1025_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum14_i_i_reg_1381),64));
-    sum14_i_i_fu_1020_p2 <= std_logic_vector(unsigned(tmp_5_i_13_cast_i_i_fu_1016_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum15_cast_i_i_fu_1044_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum15_i_i_reg_1402),64));
-    sum15_i_i_fu_1039_p2 <= std_logic_vector(unsigned(tmp_5_i_14_cast_i_i_fu_1035_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum1_cast_i_i_fu_854_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum1_i_i_reg_1202),64));
-    sum1_i_i_fu_849_p2 <= std_logic_vector(unsigned(tmp_5_i_5_cast_i_i_fu_845_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum2_cast_i_i_fu_778_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum2_i_i_reg_1138),64));
-    sum2_i_i_fu_773_p2 <= std_logic_vector(unsigned(tmp_5_i_1_cast_i_i_fu_769_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum3_cast_i_i_fu_873_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum3_i_i_reg_1218),64));
-    sum3_i_i_fu_868_p2 <= std_logic_vector(unsigned(tmp_5_i_6_cast_i_i_fu_864_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum4_cast_i_i_fu_797_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum4_i_i_reg_1154),64));
-    sum4_i_i_fu_792_p2 <= std_logic_vector(unsigned(tmp_5_i_2_cast_i_i_fu_788_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum5_cast_i_i_fu_892_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum5_i_i_reg_1234),64));
-    sum5_i_i_fu_887_p2 <= std_logic_vector(unsigned(tmp_5_i_7_cast_i_i_fu_883_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum6_cast_i_i_fu_816_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum6_i_i_reg_1170),64));
-    sum6_i_i_fu_811_p2 <= std_logic_vector(unsigned(tmp_5_i_3_cast_i_i_fu_807_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum7_cast_i_i_fu_911_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum7_i_i_reg_1255),64));
-    sum7_i_i_fu_906_p2 <= std_logic_vector(unsigned(tmp_5_i_8_cast_i_i_fu_902_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum8_cast_i_i_fu_835_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum8_i_i_reg_1186),64));
-    sum8_i_i_fu_830_p2 <= std_logic_vector(unsigned(tmp_5_i_4_cast_i_i_fu_826_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum9_cast_i_i_fu_930_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum9_i_i_reg_1276),64));
-    sum9_i_i_fu_925_p2 <= std_logic_vector(unsigned(tmp_5_i_9_cast_i_i_fu_921_p1) + unsigned(sext_cast_i_i_reg_1054));
-    sum_cast_i_i_fu_759_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum_i_i_reg_1122),64));
-    sum_i_i_fu_754_p2 <= std_logic_vector(unsigned(tmp_5_i_cast_i_i_fu_750_p1) + unsigned(sext_cast_i_i_reg_1054));
-    tmp_5_i_10_cast_i_i_fu_959_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_11_q0),31));
-    tmp_5_i_11_cast_i_i_fu_978_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_12_q0),31));
-    tmp_5_i_12_cast_i_i_fu_997_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_13_q0),31));
-    tmp_5_i_13_cast_i_i_fu_1016_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_14_q0),31));
-    tmp_5_i_14_cast_i_i_fu_1035_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_15_q0),31));
-    tmp_5_i_1_cast_i_i_fu_769_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_1_q0),31));
-    tmp_5_i_2_cast_i_i_fu_788_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_2_q0),31));
-    tmp_5_i_3_cast_i_i_fu_807_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_3_q0),31));
-    tmp_5_i_4_cast_i_i_fu_826_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_4_q0),31));
-    tmp_5_i_5_cast_i_i_fu_845_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_5_q0),31));
-    tmp_5_i_6_cast_i_i_fu_864_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_6_q0),31));
-    tmp_5_i_7_cast_i_i_fu_883_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_7_q0),31));
-    tmp_5_i_8_cast_i_i_fu_902_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_8_q0),31));
-    tmp_5_i_9_cast_i_i_fu_921_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_9_q0),31));
-    tmp_5_i_cast_i_i_18_fu_940_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_10_q0),31));
-    tmp_5_i_cast_i_i_fu_750_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_0_q0),31));
+    sum10_cast_i_i_fu_939_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum10_i_i_fu_934_p2),64));
+    sum10_i_i_fu_934_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_cast_i_i_18_fu_930_p1));
+    sum11_cast_i_i_fu_958_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum11_i_i_fu_953_p2),64));
+    sum11_i_i_fu_953_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_10_cast_i_i_fu_949_p1));
+    sum12_cast_i_i_fu_977_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum12_i_i_fu_972_p2),64));
+    sum12_i_i_fu_972_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_11_cast_i_i_fu_968_p1));
+    sum13_cast_i_i_fu_996_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum13_i_i_fu_991_p2),64));
+    sum13_i_i_fu_991_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_12_cast_i_i_fu_987_p1));
+    sum14_cast_i_i_fu_1015_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum14_i_i_fu_1010_p2),64));
+    sum14_i_i_fu_1010_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_13_cast_i_i_fu_1006_p1));
+    sum15_cast_i_i_fu_1034_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum15_i_i_fu_1029_p2),64));
+    sum15_i_i_fu_1029_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_14_cast_i_i_fu_1025_p1));
+    sum1_cast_i_i_fu_768_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum1_i_i_fu_763_p2),64));
+    sum1_i_i_fu_763_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_1_cast_i_i_fu_759_p1));
+    sum2_cast_i_i_fu_787_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum2_i_i_fu_782_p2),64));
+    sum2_i_i_fu_782_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_2_cast_i_i_fu_778_p1));
+    sum3_cast_i_i_fu_806_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum3_i_i_fu_801_p2),64));
+    sum3_i_i_fu_801_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_3_cast_i_i_fu_797_p1));
+    sum4_cast_i_i_fu_825_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum4_i_i_fu_820_p2),64));
+    sum4_i_i_fu_820_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_4_cast_i_i_fu_816_p1));
+    sum5_cast_i_i_fu_844_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum5_i_i_fu_839_p2),64));
+    sum5_i_i_fu_839_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_5_cast_i_i_fu_835_p1));
+    sum6_cast_i_i_fu_863_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum6_i_i_fu_858_p2),64));
+    sum6_i_i_fu_858_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_6_cast_i_i_fu_854_p1));
+    sum7_cast_i_i_fu_882_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum7_i_i_fu_877_p2),64));
+    sum7_i_i_fu_877_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_7_cast_i_i_fu_873_p1));
+    sum8_cast_i_i_fu_901_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum8_i_i_fu_896_p2),64));
+    sum8_i_i_fu_896_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_8_cast_i_i_fu_892_p1));
+    sum9_cast_i_i_fu_920_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum9_i_i_fu_915_p2),64));
+    sum9_i_i_fu_915_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_reg_1097) + unsigned(tmp_5_i_9_cast_i_i_fu_911_p1));
+    sum_cast_i_i_fu_749_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sum_i_i_fu_743_p2),64));
+    sum_i_i_fu_743_p2 <= std_logic_vector(unsigned(imatrix_offset_cast2_fu_740_p1) + unsigned(tmp_5_i_cast_i_i_fu_736_p1));
+    tmp_5_i_10_cast_i_i_fu_949_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_11_q0),63));
+    tmp_5_i_11_cast_i_i_fu_968_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_12_q0),63));
+    tmp_5_i_12_cast_i_i_fu_987_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_13_q0),63));
+    tmp_5_i_13_cast_i_i_fu_1006_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_14_q0),63));
+    tmp_5_i_14_cast_i_i_fu_1025_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_15_q0),63));
+    tmp_5_i_1_cast_i_i_fu_759_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_1_q0),63));
+    tmp_5_i_2_cast_i_i_fu_778_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_2_q0),63));
+    tmp_5_i_3_cast_i_i_fu_797_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_3_q0),63));
+    tmp_5_i_4_cast_i_i_fu_816_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_4_q0),63));
+    tmp_5_i_5_cast_i_i_fu_835_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_5_q0),63));
+    tmp_5_i_6_cast_i_i_fu_854_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_6_q0),63));
+    tmp_5_i_7_cast_i_i_fu_873_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_7_q0),63));
+    tmp_5_i_8_cast_i_i_fu_892_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_8_q0),63));
+    tmp_5_i_9_cast_i_i_fu_911_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_9_q0),63));
+    tmp_5_i_cast_i_i_18_fu_930_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_10_q0),63));
+    tmp_5_i_cast_i_i_fu_736_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in1_buf_0_q0),63));
 end behav;

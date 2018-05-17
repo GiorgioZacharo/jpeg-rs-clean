@@ -84,7 +84,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>32</bitwidth>
+            <bitwidth>64</bitwidth>
           </Value>
           <direction>0</direction>
           <if_type>0</if_type>
@@ -112,7 +112,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>32</bitwidth>
+            <bitwidth>64</bitwidth>
           </Value>
           <direction>0</direction>
           <if_type>0</if_type>
@@ -144,7 +144,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>32</bitwidth>
+            <bitwidth>64</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -173,7 +173,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>32</bitwidth>
+            <bitwidth>64</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -202,7 +202,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>30</bitwidth>
+            <bitwidth>62</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -233,7 +233,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>30</bitwidth>
+            <bitwidth>62</bitwidth>
           </Value>
           <oprand_edges>
             <count>4</count>
@@ -614,7 +614,7 @@
             <bitwidth>32</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>31</content>
+          <content>63</content>
         </item>
         <item class_id_reference="16" object_id="_19">
           <Value>
@@ -1403,11 +1403,11 @@
             </item>
             <item>
               <first>FF</first>
-              <second>112</second>
+              <second>176</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>168</second>
+              <second>296</second>
             </item>
           </second>
         </item>
@@ -1460,11 +1460,11 @@
             </item>
             <item>
               <first>FF</first>
-              <second>2555</second>
+              <second>3193</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>2661</second>
+              <second>3269</second>
             </item>
           </second>
         </item>

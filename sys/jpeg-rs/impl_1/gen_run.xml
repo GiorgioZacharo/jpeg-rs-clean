@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1526430688">
+<GenRun Id="impl_1" LaunchPart="xczu9eg-ffvb1156-2-e" LaunchTime="1526594691">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="design_1_wrapper.drc"/>
   <File Type="BG-BGN" Name="design_1_wrapper.bgn"/>
@@ -103,8 +103,16 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_xlconcat_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_proc_sys_reset_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_IQuantize_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_xlconcat_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ChenIDct_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_BoundIDctMatrix_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_0_0"/>
 </GenRun>

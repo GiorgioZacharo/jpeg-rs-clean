@@ -267,11 +267,11 @@ ap_ready { }
 ap_idle { }
 matrix { 
 	dir I
-	width 32
+	width 64
 	depth 1
 	mode ap_none
 	offset 16
-	offset_end 23
+	offset_end 27
 }
 }
 

@@ -41,7 +41,7 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    matrix                :out  STD_LOGIC_VECTOR(31 downto 0)
+    matrix                :out  STD_LOGIC_VECTOR(63 downto 0)
 );
 end entity BoundIDctMatrix_BUS_CTRL_s_axi;
 
@@ -66,7 +66,9 @@ end entity BoundIDctMatrix_BUS_CTRL_s_axi;
 --        others - reserved
 -- 0x10 : Data signal of matrix
 --        bit 31~0 - matrix[31:0] (Read/Write)
--- 0x14 : reserved
+-- 0x14 : Data signal of matrix
+--        bit 31~0 - matrix[63:32] (Read/Write)
+-- 0x18 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of BoundIDctMatrix_BUS_CTRL_s_axi is
@@ -79,7 +81,8 @@ architecture behave of BoundIDctMatrix_BUS_CTRL_s_axi is
     constant ADDR_IER           : INTEGER := 16#08#;
     constant ADDR_ISR           : INTEGER := 16#0c#;
     constant ADDR_MATRIX_DATA_0 : INTEGER := 16#10#;
-    constant ADDR_MATRIX_CTRL   : INTEGER := 16#14#;
+    constant ADDR_MATRIX_DATA_1 : INTEGER := 16#14#;
+    constant ADDR_MATRIX_CTRL   : INTEGER := 16#18#;
     constant ADDR_BITS         : INTEGER := 5;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -102,7 +105,7 @@ architecture behave of BoundIDctMatrix_BUS_CTRL_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_matrix          : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_matrix          : UNSIGNED(63 downto 0) := (others => '0');
 
 
 begin
@@ -226,6 +229,8 @@ begin
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
                     when ADDR_MATRIX_DATA_0 =>
                         rdata_data <= RESIZE(int_matrix(31 downto 0), 32);
+                    when ADDR_MATRIX_DATA_1 =>
+                        rdata_data <= RESIZE(int_matrix(63 downto 32), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -370,6 +375,17 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_MATRIX_DATA_0) then
                     int_matrix(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_matrix(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_MATRIX_DATA_1) then
+                    int_matrix(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_matrix(63 downto 32));
                 end if;
             end if;
         end if;

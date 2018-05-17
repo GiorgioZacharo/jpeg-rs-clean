@@ -7,7 +7,7 @@
 //#define REG_4
 //#define REG_5
 #define REG_6
-//#define REG_7
+#define REG_7
 
 
 #include <xil_cache.h>

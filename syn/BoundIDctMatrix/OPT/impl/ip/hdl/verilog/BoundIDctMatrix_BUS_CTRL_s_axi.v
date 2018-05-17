@@ -38,7 +38,7 @@ module BoundIDctMatrix_BUS_CTRL_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    output wire [31:0]                   matrix
+    output wire [63:0]                   matrix
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -61,7 +61,9 @@ module BoundIDctMatrix_BUS_CTRL_s_axi
 //        others - reserved
 // 0x10 : Data signal of matrix
 //        bit 31~0 - matrix[31:0] (Read/Write)
-// 0x14 : reserved
+// 0x14 : Data signal of matrix
+//        bit 31~0 - matrix[63:32] (Read/Write)
+// 0x18 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -71,7 +73,8 @@ localparam
     ADDR_IER           = 5'h08,
     ADDR_ISR           = 5'h0c,
     ADDR_MATRIX_DATA_0 = 5'h10,
-    ADDR_MATRIX_CTRL   = 5'h14,
+    ADDR_MATRIX_DATA_1 = 5'h14,
+    ADDR_MATRIX_CTRL   = 5'h18,
     WRIDLE             = 2'd0,
     WRDATA             = 2'd1,
     WRRESP             = 2'd2,
@@ -102,7 +105,7 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [31:0]                   int_matrix = 'b0;
+    reg  [63:0]                   int_matrix = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -212,6 +215,9 @@ always @(posedge ACLK) begin
                 end
                 ADDR_MATRIX_DATA_0: begin
                     rdata <= int_matrix[31:0];
+                end
+                ADDR_MATRIX_DATA_1: begin
+                    rdata <= int_matrix[63:32];
                 end
             endcase
         end
@@ -326,6 +332,16 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_MATRIX_DATA_0)
             int_matrix[31:0] <= (WDATA[31:0] & wmask) | (int_matrix[31:0] & ~wmask);
+    end
+end
+
+// int_matrix[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_matrix[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_MATRIX_DATA_1)
+            int_matrix[63:32] <= (WDATA[31:0] & wmask) | (int_matrix[63:32] & ~wmask);
     end
 end
 

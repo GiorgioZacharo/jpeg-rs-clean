@@ -17,8 +17,8 @@
 #include "dataflow_in_loop_dEe.h"
 #include "dataflow_in_loop_tde.h"
 #include "fifo_w1_d2_A.h"
-#include "fifo_w30_d1_A.h"
-#include "fifo_w30_d2_A.h"
+#include "fifo_w62_d1_A.h"
+#include "fifo_w62_d2_A.h"
 
 namespace ap_rtl {
 
@@ -29,7 +29,7 @@ struct dataflow_in_loop : public sc_module {
     sc_in< sc_lv<2> > i_0_i_i;
     sc_out< sc_logic > m_axi_imatrix_AWVALID;
     sc_in< sc_logic > m_axi_imatrix_AWREADY;
-    sc_out< sc_lv<32> > m_axi_imatrix_AWADDR;
+    sc_out< sc_lv<64> > m_axi_imatrix_AWADDR;
     sc_out< sc_lv<1> > m_axi_imatrix_AWID;
     sc_out< sc_lv<32> > m_axi_imatrix_AWLEN;
     sc_out< sc_lv<3> > m_axi_imatrix_AWSIZE;
@@ -49,7 +49,7 @@ struct dataflow_in_loop : public sc_module {
     sc_out< sc_lv<1> > m_axi_imatrix_WUSER;
     sc_out< sc_logic > m_axi_imatrix_ARVALID;
     sc_in< sc_logic > m_axi_imatrix_ARREADY;
-    sc_out< sc_lv<32> > m_axi_imatrix_ARADDR;
+    sc_out< sc_lv<64> > m_axi_imatrix_ARADDR;
     sc_out< sc_lv<1> > m_axi_imatrix_ARID;
     sc_out< sc_lv<32> > m_axi_imatrix_ARLEN;
     sc_out< sc_lv<3> > m_axi_imatrix_ARSIZE;
@@ -72,10 +72,10 @@ struct dataflow_in_loop : public sc_module {
     sc_in< sc_lv<2> > m_axi_imatrix_BRESP;
     sc_in< sc_lv<1> > m_axi_imatrix_BID;
     sc_in< sc_lv<1> > m_axi_imatrix_BUSER;
-    sc_in< sc_lv<30> > imatrix_offset;
+    sc_in< sc_lv<62> > imatrix_offset;
     sc_out< sc_logic > m_axi_omatrix_AWVALID;
     sc_in< sc_logic > m_axi_omatrix_AWREADY;
-    sc_out< sc_lv<32> > m_axi_omatrix_AWADDR;
+    sc_out< sc_lv<64> > m_axi_omatrix_AWADDR;
     sc_out< sc_lv<1> > m_axi_omatrix_AWID;
     sc_out< sc_lv<32> > m_axi_omatrix_AWLEN;
     sc_out< sc_lv<3> > m_axi_omatrix_AWSIZE;
@@ -95,7 +95,7 @@ struct dataflow_in_loop : public sc_module {
     sc_out< sc_lv<1> > m_axi_omatrix_WUSER;
     sc_out< sc_logic > m_axi_omatrix_ARVALID;
     sc_in< sc_logic > m_axi_omatrix_ARREADY;
-    sc_out< sc_lv<32> > m_axi_omatrix_ARADDR;
+    sc_out< sc_lv<64> > m_axi_omatrix_ARADDR;
     sc_out< sc_lv<1> > m_axi_omatrix_ARID;
     sc_out< sc_lv<32> > m_axi_omatrix_ARLEN;
     sc_out< sc_lv<3> > m_axi_omatrix_ARSIZE;
@@ -118,7 +118,7 @@ struct dataflow_in_loop : public sc_module {
     sc_in< sc_lv<2> > m_axi_omatrix_BRESP;
     sc_in< sc_lv<1> > m_axi_omatrix_BID;
     sc_in< sc_lv<1> > m_axi_omatrix_BUSER;
-    sc_in< sc_lv<30> > omatrix_offset;
+    sc_in< sc_lv<62> > omatrix_offset;
     sc_in< sc_logic > i_0_i_i_ap_vld;
     sc_in< sc_logic > imatrix_offset_ap_vld;
     sc_in< sc_logic > omatrix_offset_ap_vld;
@@ -179,8 +179,8 @@ struct dataflow_in_loop : public sc_module {
     Loop_1_proc* Loop_1_proc_U0;
     memcpy_omatrix_out_b* memcpy_omatrix_out_b_U0;
     fifo_w1_d2_A* i_0_i_i_c_U;
-    fifo_w30_d1_A* imatrix_offset_c_U;
-    fifo_w30_d2_A* omatrix_offset_c_U;
+    fifo_w62_d1_A* imatrix_offset_c_U;
+    fifo_w62_d2_A* omatrix_offset_c_U;
     sc_signal< sc_lv<6> > in1_buf_0_i_q0;
     sc_signal< sc_lv<6> > in1_buf_0_t_q0;
     sc_signal< sc_lv<6> > in1_buf_1_i_q0;
@@ -316,9 +316,9 @@ struct dataflow_in_loop : public sc_module {
     sc_signal< sc_lv<6> > Loop_0_proc19_U0_in1_buf_15_d0;
     sc_signal< sc_lv<1> > Loop_0_proc19_U0_i_0_i_i_c_din;
     sc_signal< sc_logic > Loop_0_proc19_U0_i_0_i_i_c_write;
-    sc_signal< sc_lv<30> > Loop_0_proc19_U0_imatrix_offset_out_din;
+    sc_signal< sc_lv<62> > Loop_0_proc19_U0_imatrix_offset_out_din;
     sc_signal< sc_logic > Loop_0_proc19_U0_imatrix_offset_out_write;
-    sc_signal< sc_lv<30> > Loop_0_proc19_U0_omatrix_offset_out_din;
+    sc_signal< sc_lv<62> > Loop_0_proc19_U0_omatrix_offset_out_din;
     sc_signal< sc_logic > Loop_0_proc19_U0_omatrix_offset_out_write;
     sc_signal< sc_logic > ap_channel_done_in1_buf_15;
     sc_signal< sc_logic > Loop_0_proc19_U0_in1_buf_15_full_n;
@@ -392,7 +392,7 @@ struct dataflow_in_loop : public sc_module {
     sc_signal< sc_lv<1> > Loop_1_proc_U0_in1_buf_0_address0;
     sc_signal< sc_logic > Loop_1_proc_U0_in1_buf_0_ce0;
     sc_signal< sc_logic > Loop_1_proc_U0_m_axi_imatrix_AWVALID;
-    sc_signal< sc_lv<32> > Loop_1_proc_U0_m_axi_imatrix_AWADDR;
+    sc_signal< sc_lv<64> > Loop_1_proc_U0_m_axi_imatrix_AWADDR;
     sc_signal< sc_lv<1> > Loop_1_proc_U0_m_axi_imatrix_AWID;
     sc_signal< sc_lv<32> > Loop_1_proc_U0_m_axi_imatrix_AWLEN;
     sc_signal< sc_lv<3> > Loop_1_proc_U0_m_axi_imatrix_AWSIZE;
@@ -410,7 +410,7 @@ struct dataflow_in_loop : public sc_module {
     sc_signal< sc_lv<1> > Loop_1_proc_U0_m_axi_imatrix_WID;
     sc_signal< sc_lv<1> > Loop_1_proc_U0_m_axi_imatrix_WUSER;
     sc_signal< sc_logic > Loop_1_proc_U0_m_axi_imatrix_ARVALID;
-    sc_signal< sc_lv<32> > Loop_1_proc_U0_m_axi_imatrix_ARADDR;
+    sc_signal< sc_lv<64> > Loop_1_proc_U0_m_axi_imatrix_ARADDR;
     sc_signal< sc_lv<1> > Loop_1_proc_U0_m_axi_imatrix_ARID;
     sc_signal< sc_lv<32> > Loop_1_proc_U0_m_axi_imatrix_ARLEN;
     sc_signal< sc_lv<3> > Loop_1_proc_U0_m_axi_imatrix_ARSIZE;
@@ -588,7 +588,7 @@ struct dataflow_in_loop : public sc_module {
     sc_signal< sc_logic > memcpy_omatrix_out_b_U0_ap_idle;
     sc_signal< sc_logic > memcpy_omatrix_out_b_U0_ap_ready;
     sc_signal< sc_logic > memcpy_omatrix_out_b_U0_m_axi_omatrix_AWVALID;
-    sc_signal< sc_lv<32> > memcpy_omatrix_out_b_U0_m_axi_omatrix_AWADDR;
+    sc_signal< sc_lv<64> > memcpy_omatrix_out_b_U0_m_axi_omatrix_AWADDR;
     sc_signal< sc_lv<1> > memcpy_omatrix_out_b_U0_m_axi_omatrix_AWID;
     sc_signal< sc_lv<32> > memcpy_omatrix_out_b_U0_m_axi_omatrix_AWLEN;
     sc_signal< sc_lv<3> > memcpy_omatrix_out_b_U0_m_axi_omatrix_AWSIZE;
@@ -606,7 +606,7 @@ struct dataflow_in_loop : public sc_module {
     sc_signal< sc_lv<1> > memcpy_omatrix_out_b_U0_m_axi_omatrix_WID;
     sc_signal< sc_lv<1> > memcpy_omatrix_out_b_U0_m_axi_omatrix_WUSER;
     sc_signal< sc_logic > memcpy_omatrix_out_b_U0_m_axi_omatrix_ARVALID;
-    sc_signal< sc_lv<32> > memcpy_omatrix_out_b_U0_m_axi_omatrix_ARADDR;
+    sc_signal< sc_lv<64> > memcpy_omatrix_out_b_U0_m_axi_omatrix_ARADDR;
     sc_signal< sc_lv<1> > memcpy_omatrix_out_b_U0_m_axi_omatrix_ARID;
     sc_signal< sc_lv<32> > memcpy_omatrix_out_b_U0_m_axi_omatrix_ARLEN;
     sc_signal< sc_lv<3> > memcpy_omatrix_out_b_U0_m_axi_omatrix_ARSIZE;
@@ -722,10 +722,10 @@ struct dataflow_in_loop : public sc_module {
     sc_signal< sc_lv<1> > i_0_i_i_c_dout;
     sc_signal< sc_logic > i_0_i_i_c_empty_n;
     sc_signal< sc_logic > imatrix_offset_c_full_n;
-    sc_signal< sc_lv<30> > imatrix_offset_c_dout;
+    sc_signal< sc_lv<62> > imatrix_offset_c_dout;
     sc_signal< sc_logic > imatrix_offset_c_empty_n;
     sc_signal< sc_logic > omatrix_offset_c_full_n;
-    sc_signal< sc_lv<30> > omatrix_offset_c_dout;
+    sc_signal< sc_lv<62> > omatrix_offset_c_dout;
     sc_signal< sc_logic > omatrix_offset_c_empty_n;
     sc_signal< sc_logic > ap_sync_done;
     sc_signal< sc_logic > ap_sync_ready;
@@ -751,6 +751,7 @@ struct dataflow_in_loop : public sc_module {
     static const sc_lv<1> ap_const_lv1_0;
     static const sc_lv<1> ap_const_lv1_1;
     static const sc_lv<32> ap_const_lv32_1;
+    static const sc_lv<64> ap_const_lv64_0;
     static const sc_lv<3> ap_const_lv3_0;
     static const sc_lv<4> ap_const_lv4_0;
     // Thread declarations

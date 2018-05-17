@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Tue May  1 18:04:14 2018
+// Date        : Thu May 17 18:11:21 2018
 // Host        : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_xbar_0 -prefix
-//               design_1_xbar_0_ design_1_xbar_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_stub.v
 // Design      : design_1_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xczu9eg-ffvb1156-2-e
@@ -27,47 +27,47 @@ module design_1_xbar_0(aclk, aresetn, s_axi_awid, s_axi_awaddr,
   m_axi_arlen, m_axi_arsize, m_axi_arburst, m_axi_arlock, m_axi_arcache, m_axi_arprot, 
   m_axi_arregion, m_axi_arqos, m_axi_arvalid, m_axi_arready, m_axi_rid, m_axi_rdata, 
   m_axi_rresp, m_axi_rlast, m_axi_rvalid, m_axi_rready)
-/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,s_axi_awid[5:0],s_axi_awaddr[191:0],s_axi_awlen[23:0],s_axi_awsize[8:0],s_axi_awburst[5:0],s_axi_awlock[2:0],s_axi_awcache[11:0],s_axi_awprot[8:0],s_axi_awqos[11:0],s_axi_awvalid[2:0],s_axi_awready[2:0],s_axi_wdata[383:0],s_axi_wstrb[47:0],s_axi_wlast[2:0],s_axi_wvalid[2:0],s_axi_wready[2:0],s_axi_bid[5:0],s_axi_bresp[5:0],s_axi_bvalid[2:0],s_axi_bready[2:0],s_axi_arid[5:0],s_axi_araddr[191:0],s_axi_arlen[23:0],s_axi_arsize[8:0],s_axi_arburst[5:0],s_axi_arlock[2:0],s_axi_arcache[11:0],s_axi_arprot[8:0],s_axi_arqos[11:0],s_axi_arvalid[2:0],s_axi_arready[2:0],s_axi_rid[5:0],s_axi_rdata[383:0],s_axi_rresp[5:0],s_axi_rlast[2:0],s_axi_rvalid[2:0],s_axi_rready[2:0],m_axi_awid[1:0],m_axi_awaddr[63:0],m_axi_awlen[7:0],m_axi_awsize[2:0],m_axi_awburst[1:0],m_axi_awlock[0:0],m_axi_awcache[3:0],m_axi_awprot[2:0],m_axi_awregion[3:0],m_axi_awqos[3:0],m_axi_awvalid[0:0],m_axi_awready[0:0],m_axi_wdata[127:0],m_axi_wstrb[15:0],m_axi_wlast[0:0],m_axi_wvalid[0:0],m_axi_wready[0:0],m_axi_bid[1:0],m_axi_bresp[1:0],m_axi_bvalid[0:0],m_axi_bready[0:0],m_axi_arid[1:0],m_axi_araddr[63:0],m_axi_arlen[7:0],m_axi_arsize[2:0],m_axi_arburst[1:0],m_axi_arlock[0:0],m_axi_arcache[3:0],m_axi_arprot[2:0],m_axi_arregion[3:0],m_axi_arqos[3:0],m_axi_arvalid[0:0],m_axi_arready[0:0],m_axi_rid[1:0],m_axi_rdata[127:0],m_axi_rresp[1:0],m_axi_rlast[0:0],m_axi_rvalid[0:0],m_axi_rready[0:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,s_axi_awid[43:0],s_axi_awaddr[703:0],s_axi_awlen[87:0],s_axi_awsize[32:0],s_axi_awburst[21:0],s_axi_awlock[10:0],s_axi_awcache[43:0],s_axi_awprot[32:0],s_axi_awqos[43:0],s_axi_awvalid[10:0],s_axi_awready[10:0],s_axi_wdata[1407:0],s_axi_wstrb[175:0],s_axi_wlast[10:0],s_axi_wvalid[10:0],s_axi_wready[10:0],s_axi_bid[43:0],s_axi_bresp[21:0],s_axi_bvalid[10:0],s_axi_bready[10:0],s_axi_arid[43:0],s_axi_araddr[703:0],s_axi_arlen[87:0],s_axi_arsize[32:0],s_axi_arburst[21:0],s_axi_arlock[10:0],s_axi_arcache[43:0],s_axi_arprot[32:0],s_axi_arqos[43:0],s_axi_arvalid[10:0],s_axi_arready[10:0],s_axi_rid[43:0],s_axi_rdata[1407:0],s_axi_rresp[21:0],s_axi_rlast[10:0],s_axi_rvalid[10:0],s_axi_rready[10:0],m_axi_awid[3:0],m_axi_awaddr[63:0],m_axi_awlen[7:0],m_axi_awsize[2:0],m_axi_awburst[1:0],m_axi_awlock[0:0],m_axi_awcache[3:0],m_axi_awprot[2:0],m_axi_awregion[3:0],m_axi_awqos[3:0],m_axi_awvalid[0:0],m_axi_awready[0:0],m_axi_wdata[127:0],m_axi_wstrb[15:0],m_axi_wlast[0:0],m_axi_wvalid[0:0],m_axi_wready[0:0],m_axi_bid[3:0],m_axi_bresp[1:0],m_axi_bvalid[0:0],m_axi_bready[0:0],m_axi_arid[3:0],m_axi_araddr[63:0],m_axi_arlen[7:0],m_axi_arsize[2:0],m_axi_arburst[1:0],m_axi_arlock[0:0],m_axi_arcache[3:0],m_axi_arprot[2:0],m_axi_arregion[3:0],m_axi_arqos[3:0],m_axi_arvalid[0:0],m_axi_arready[0:0],m_axi_rid[3:0],m_axi_rdata[127:0],m_axi_rresp[1:0],m_axi_rlast[0:0],m_axi_rvalid[0:0],m_axi_rready[0:0]" */;
   input aclk;
   input aresetn;
-  input [5:0]s_axi_awid;
-  input [191:0]s_axi_awaddr;
-  input [23:0]s_axi_awlen;
-  input [8:0]s_axi_awsize;
-  input [5:0]s_axi_awburst;
-  input [2:0]s_axi_awlock;
-  input [11:0]s_axi_awcache;
-  input [8:0]s_axi_awprot;
-  input [11:0]s_axi_awqos;
-  input [2:0]s_axi_awvalid;
-  output [2:0]s_axi_awready;
-  input [383:0]s_axi_wdata;
-  input [47:0]s_axi_wstrb;
-  input [2:0]s_axi_wlast;
-  input [2:0]s_axi_wvalid;
-  output [2:0]s_axi_wready;
-  output [5:0]s_axi_bid;
-  output [5:0]s_axi_bresp;
-  output [2:0]s_axi_bvalid;
-  input [2:0]s_axi_bready;
-  input [5:0]s_axi_arid;
-  input [191:0]s_axi_araddr;
-  input [23:0]s_axi_arlen;
-  input [8:0]s_axi_arsize;
-  input [5:0]s_axi_arburst;
-  input [2:0]s_axi_arlock;
-  input [11:0]s_axi_arcache;
-  input [8:0]s_axi_arprot;
-  input [11:0]s_axi_arqos;
-  input [2:0]s_axi_arvalid;
-  output [2:0]s_axi_arready;
-  output [5:0]s_axi_rid;
-  output [383:0]s_axi_rdata;
-  output [5:0]s_axi_rresp;
-  output [2:0]s_axi_rlast;
-  output [2:0]s_axi_rvalid;
-  input [2:0]s_axi_rready;
-  output [1:0]m_axi_awid;
+  input [43:0]s_axi_awid;
+  input [703:0]s_axi_awaddr;
+  input [87:0]s_axi_awlen;
+  input [32:0]s_axi_awsize;
+  input [21:0]s_axi_awburst;
+  input [10:0]s_axi_awlock;
+  input [43:0]s_axi_awcache;
+  input [32:0]s_axi_awprot;
+  input [43:0]s_axi_awqos;
+  input [10:0]s_axi_awvalid;
+  output [10:0]s_axi_awready;
+  input [1407:0]s_axi_wdata;
+  input [175:0]s_axi_wstrb;
+  input [10:0]s_axi_wlast;
+  input [10:0]s_axi_wvalid;
+  output [10:0]s_axi_wready;
+  output [43:0]s_axi_bid;
+  output [21:0]s_axi_bresp;
+  output [10:0]s_axi_bvalid;
+  input [10:0]s_axi_bready;
+  input [43:0]s_axi_arid;
+  input [703:0]s_axi_araddr;
+  input [87:0]s_axi_arlen;
+  input [32:0]s_axi_arsize;
+  input [21:0]s_axi_arburst;
+  input [10:0]s_axi_arlock;
+  input [43:0]s_axi_arcache;
+  input [32:0]s_axi_arprot;
+  input [43:0]s_axi_arqos;
+  input [10:0]s_axi_arvalid;
+  output [10:0]s_axi_arready;
+  output [43:0]s_axi_rid;
+  output [1407:0]s_axi_rdata;
+  output [21:0]s_axi_rresp;
+  output [10:0]s_axi_rlast;
+  output [10:0]s_axi_rvalid;
+  input [10:0]s_axi_rready;
+  output [3:0]m_axi_awid;
   output [63:0]m_axi_awaddr;
   output [7:0]m_axi_awlen;
   output [2:0]m_axi_awsize;
@@ -84,11 +84,11 @@ module design_1_xbar_0(aclk, aresetn, s_axi_awid, s_axi_awaddr,
   output [0:0]m_axi_wlast;
   output [0:0]m_axi_wvalid;
   input [0:0]m_axi_wready;
-  input [1:0]m_axi_bid;
+  input [3:0]m_axi_bid;
   input [1:0]m_axi_bresp;
   input [0:0]m_axi_bvalid;
   output [0:0]m_axi_bready;
-  output [1:0]m_axi_arid;
+  output [3:0]m_axi_arid;
   output [63:0]m_axi_araddr;
   output [7:0]m_axi_arlen;
   output [2:0]m_axi_arsize;
@@ -100,7 +100,7 @@ module design_1_xbar_0(aclk, aresetn, s_axi_awid, s_axi_awaddr,
   output [3:0]m_axi_arqos;
   output [0:0]m_axi_arvalid;
   input [0:0]m_axi_arready;
-  input [1:0]m_axi_rid;
+  input [3:0]m_axi_rid;
   input [127:0]m_axi_rdata;
   input [1:0]m_axi_rresp;
   input [0:0]m_axi_rlast;

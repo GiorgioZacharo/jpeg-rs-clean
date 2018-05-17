@@ -47,9 +47,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="30" op_0_bw="30" op_1_bw="30">
+<Node id="7" bw="62" op_0_bw="62" op_1_bw="62">
 <![CDATA[
-entry:0  %omatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %omatrix_offset)
+entry:0  %omatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %omatrix_offset)
 
 ]]></Node>
 <StgValue><ssdm name="omatrix_offset_read"/></StgValue>
@@ -62,9 +62,9 @@ entry:0  %omatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %omatrix
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="30" op_0_bw="30" op_1_bw="30">
+<Node id="8" bw="62" op_0_bw="62" op_1_bw="62">
 <![CDATA[
-entry:1  %imatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %imatrix_offset)
+entry:1  %imatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %imatrix_offset)
 
 ]]></Node>
 <StgValue><ssdm name="imatrix_offset_read"/></StgValue>
@@ -92,9 +92,9 @@ entry:2  %i_0_i_i_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %i_0_i_i)
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="30" op_0_bw="64">
+<Node id="10" bw="62" op_0_bw="64">
 <![CDATA[
-entry:3  %omatrix_offset_c = alloca i30, align 4
+entry:3  %omatrix_offset_c = alloca i62, align 8
 
 ]]></Node>
 <StgValue><ssdm name="omatrix_offset_c"/></StgValue>
@@ -107,9 +107,9 @@ entry:3  %omatrix_offset_c = alloca i30, align 4
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="11" bw="30" op_0_bw="64">
+<Node id="11" bw="62" op_0_bw="64">
 <![CDATA[
-entry:4  %imatrix_offset_c = alloca i30, align 4
+entry:4  %imatrix_offset_c = alloca i62, align 8
 
 ]]></Node>
 <StgValue><ssdm name="imatrix_offset_c"/></StgValue>
@@ -617,9 +617,9 @@ entry:40  %out_buf_15 = alloca [2 x i32], align 4
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="30" op_20_bw="30" op_21_bw="30" op_22_bw="30">
+<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="62" op_20_bw="62" op_21_bw="62" op_22_bw="62">
 <![CDATA[
-entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset_read, i30 %omatrix_offset_read, i30* %imatrix_offset_c, i30* %omatrix_offset_c)
+entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset_read, i62 %omatrix_offset_read, i62* %imatrix_offset_c, i62* %omatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -635,9 +635,9 @@ entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="30" op_20_bw="30" op_21_bw="30" op_22_bw="30">
+<Node id="54" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="6" op_3_bw="6" op_4_bw="6" op_5_bw="6" op_6_bw="6" op_7_bw="6" op_8_bw="6" op_9_bw="6" op_10_bw="6" op_11_bw="6" op_12_bw="6" op_13_bw="6" op_14_bw="6" op_15_bw="6" op_16_bw="6" op_17_bw="6" op_18_bw="1" op_19_bw="62" op_20_bw="62" op_21_bw="62" op_22_bw="62">
 <![CDATA[
-entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset_read, i30 %omatrix_offset_read, i30* %imatrix_offset_c, i30* %omatrix_offset_c)
+entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset_read, i62 %omatrix_offset_read, i62* %imatrix_offset_c, i62* %omatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -653,9 +653,9 @@ entry:47  call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="30" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
+<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="62" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
 <![CDATA[
-entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
+entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -671,9 +671,9 @@ entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocap
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="30" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
+<Node id="55" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="32" op_3_bw="62" op_4_bw="32" op_5_bw="6" op_6_bw="32" op_7_bw="6" op_8_bw="32" op_9_bw="6" op_10_bw="32" op_11_bw="6" op_12_bw="32" op_13_bw="6" op_14_bw="32" op_15_bw="6" op_16_bw="32" op_17_bw="6" op_18_bw="32" op_19_bw="6" op_20_bw="32" op_21_bw="6" op_22_bw="32" op_23_bw="6" op_24_bw="32" op_25_bw="6" op_26_bw="32" op_27_bw="6" op_28_bw="32" op_29_bw="6" op_30_bw="32" op_31_bw="6" op_32_bw="32" op_33_bw="6" op_34_bw="32">
 <![CDATA[
-entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
+entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -689,9 +689,9 @@ entry:48  call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocap
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="62" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
+entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -709,7 +709,7 @@ entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix
 
 <Node id="12" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:5  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+entry:5  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -724,7 +724,7 @@ entry:5  call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_st
 
 <Node id="13" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:6  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+entry:6  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -739,7 +739,7 @@ entry:6  call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_st
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-entry:8  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind
+entry:8  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str19) nounwind
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -754,7 +754,7 @@ entry:8  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_st
 
 <Node id="48" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="1" op_8_bw="1">
 <![CDATA[
-entry:41  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str28, [1 x i8]* @p_str28, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c)
+entry:41  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c)
 
 ]]></Node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -769,7 +769,7 @@ entry:41  %empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i
 
 <Node id="49" bw="0" op_0_bw="0" op_1_bw="1" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:42  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str29, i32 0, i32 0, [1 x i8]* @p_str30, [1 x i8]* @p_str31, [1 x i8]* @p_str32, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str33, [1 x i8]* @p_str34)
+entry:42  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -782,9 +782,9 @@ entry:42  call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="30" op_8_bw="30">
+<Node id="50" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="62" op_8_bw="62">
 <![CDATA[
-entry:43  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str52, [1 x i8]* @p_str52, i32 1, i32 0, i30* %imatrix_offset_c, i30* %imatrix_offset_c)
+entry:43  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i62* %imatrix_offset_c, i62* %imatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name="empty_11"/></StgValue>
@@ -797,9 +797,9 @@ entry:43  %empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="0" op_0_bw="0" op_1_bw="30" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="51" bw="0" op_0_bw="0" op_1_bw="62" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:44  call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str53, i32 0, i32 0, [1 x i8]* @p_str54, [1 x i8]* @p_str55, [1 x i8]* @p_str56, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str57, [1 x i8]* @p_str58)
+entry:44  call void (...)* @_ssdm_op_SpecInterface(i62* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -812,9 +812,9 @@ entry:44  call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset_c, [8 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="30" op_8_bw="30">
+<Node id="52" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="0" op_5_bw="32" op_6_bw="32" op_7_bw="62" op_8_bw="62">
 <![CDATA[
-entry:45  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str59, [1 x i8]* @p_str59, i32 2, i32 0, i30* %omatrix_offset_c, i30* %omatrix_offset_c)
+entry:45  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i62* %omatrix_offset_c, i62* %omatrix_offset_c)
 
 ]]></Node>
 <StgValue><ssdm name="empty_12"/></StgValue>
@@ -827,9 +827,9 @@ entry:45  %empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="0" op_0_bw="0" op_1_bw="30" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="53" bw="0" op_0_bw="0" op_1_bw="62" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:46  call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str60, i32 0, i32 0, [1 x i8]* @p_str61, [1 x i8]* @p_str62, [1 x i8]* @p_str63, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str64, [1 x i8]* @p_str65)
+entry:46  call void (...)* @_ssdm_op_SpecInterface(i62* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>
@@ -842,9 +842,9 @@ entry:46  call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset_c, [8 x 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="56" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="62" op_3_bw="1" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
+entry:49  call void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)
 
 ]]></Node>
 <StgValue><ssdm name=""/></StgValue>

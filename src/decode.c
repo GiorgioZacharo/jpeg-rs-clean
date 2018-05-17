@@ -175,6 +175,7 @@ int i;
 	#pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
 
 	for (i = 0; i < N_CHUNKS; i++){
+//		 #pragma HLS DATAFLOW
 		// Load data
 		#ifdef STANDARD_MODE
 		  for (int j=0; j < CHUNK_SIZE; j++)

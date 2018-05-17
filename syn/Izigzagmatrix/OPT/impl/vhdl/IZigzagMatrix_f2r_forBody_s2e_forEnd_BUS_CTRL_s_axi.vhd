@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 5;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -41,8 +41,8 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    imatrix               :out  STD_LOGIC_VECTOR(31 downto 0);
-    omatrix               :out  STD_LOGIC_VECTOR(31 downto 0)
+    imatrix               :out  STD_LOGIC_VECTOR(63 downto 0);
+    omatrix               :out  STD_LOGIC_VECTOR(63 downto 0)
 );
 end entity IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi;
 
@@ -67,10 +67,14 @@ end entity IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi;
 --        others - reserved
 -- 0x10 : Data signal of imatrix
 --        bit 31~0 - imatrix[31:0] (Read/Write)
--- 0x14 : reserved
--- 0x18 : Data signal of omatrix
+-- 0x14 : Data signal of imatrix
+--        bit 31~0 - imatrix[63:32] (Read/Write)
+-- 0x18 : reserved
+-- 0x1c : Data signal of omatrix
 --        bit 31~0 - omatrix[31:0] (Read/Write)
--- 0x1c : reserved
+-- 0x20 : Data signal of omatrix
+--        bit 31~0 - omatrix[63:32] (Read/Write)
+-- 0x24 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi is
@@ -83,10 +87,12 @@ architecture behave of IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi is
     constant ADDR_IER            : INTEGER := 16#08#;
     constant ADDR_ISR            : INTEGER := 16#0c#;
     constant ADDR_IMATRIX_DATA_0 : INTEGER := 16#10#;
-    constant ADDR_IMATRIX_CTRL   : INTEGER := 16#14#;
-    constant ADDR_OMATRIX_DATA_0 : INTEGER := 16#18#;
-    constant ADDR_OMATRIX_CTRL   : INTEGER := 16#1c#;
-    constant ADDR_BITS         : INTEGER := 5;
+    constant ADDR_IMATRIX_DATA_1 : INTEGER := 16#14#;
+    constant ADDR_IMATRIX_CTRL   : INTEGER := 16#18#;
+    constant ADDR_OMATRIX_DATA_0 : INTEGER := 16#1c#;
+    constant ADDR_OMATRIX_DATA_1 : INTEGER := 16#20#;
+    constant ADDR_OMATRIX_CTRL   : INTEGER := 16#24#;
+    constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -108,8 +114,8 @@ architecture behave of IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_imatrix         : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_omatrix         : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_imatrix         : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_omatrix         : UNSIGNED(63 downto 0) := (others => '0');
 
 
 begin
@@ -233,8 +239,12 @@ begin
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
                     when ADDR_IMATRIX_DATA_0 =>
                         rdata_data <= RESIZE(int_imatrix(31 downto 0), 32);
+                    when ADDR_IMATRIX_DATA_1 =>
+                        rdata_data <= RESIZE(int_imatrix(63 downto 32), 32);
                     when ADDR_OMATRIX_DATA_0 =>
                         rdata_data <= RESIZE(int_omatrix(31 downto 0), 32);
+                    when ADDR_OMATRIX_DATA_1 =>
+                        rdata_data <= RESIZE(int_omatrix(63 downto 32), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -389,8 +399,30 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_IMATRIX_DATA_1) then
+                    int_imatrix(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_imatrix(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_OMATRIX_DATA_0) then
                     int_omatrix(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_omatrix(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OMATRIX_DATA_1) then
+                    int_omatrix(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_omatrix(63 downto 32));
                 end if;
             end if;
         end if;

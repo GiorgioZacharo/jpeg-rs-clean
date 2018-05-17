@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dataflow_in_loop'
 ================================================================
-* Date:           Fri May  4 19:53:20 2018
+* Date:           Thu May 17 17:49:44 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        Izigzagmatrix
@@ -57,30 +57,30 @@
 +-----------------+---------+-------+--------+--------+-----+
 |DSP              |        -|      -|       -|       -|    -|
 |Expression       |        -|      -|       0|     675|    -|
-|FIFO             |        0|      -|      15|     100|    -|
-|Instance         |        0|      -|    1286|    1530|    -|
+|FIFO             |        0|      -|      15|     164|    -|
+|Instance         |        0|      -|    1924|    2074|    -|
 |Memory           |        0|      -|    1216|      32|    -|
 |Multiplexer      |        -|      -|       -|     324|    -|
 |Register         |        -|      -|      38|       -|    -|
 +-----------------+---------+-------+--------+--------+-----+
-|Total            |        0|      0|    2555|    2661|    0|
+|Total            |        0|      0|    3193|    3269|    0|
 +-----------------+---------+-------+--------+--------+-----+
 |Available        |     1824|   2520|  548160|  274080|    0|
 +-----------------+---------+-------+--------+--------+-----+
-|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
+|Utilization (%)  |        0|      0|   ~0   |       1|    0|
 +-----------------+---------+-------+--------+--------+-----+
 
 + Detail: 
     * Instance: 
-    +-------------------------+----------------------+---------+-------+------+-----+
-    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  | LUT |
-    +-------------------------+----------------------+---------+-------+------+-----+
-    |Loop_0_proc19_U0         |Loop_0_proc19         |        0|      0|   116|  302|
-    |Loop_1_proc_U0           |Loop_1_proc           |        0|      0|  1081|  911|
-    |memcpy_omatrix_out_b_U0  |memcpy_omatrix_out_b  |        0|      0|    89|  317|
-    +-------------------------+----------------------+---------+-------+------+-----+
-    |Total                    |                      |        0|      0|  1286| 1530|
-    +-------------------------+----------------------+---------+-------+------+-----+
+    +-------------------------+----------------------+---------+-------+------+------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Loop_0_proc19_U0         |Loop_0_proc19         |        0|      0|   116|   302|
+    |Loop_1_proc_U0           |Loop_1_proc           |        0|      0|  1687|  1423|
+    |memcpy_omatrix_out_b_U0  |memcpy_omatrix_out_b  |        0|      0|   121|   349|
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Total                    |                      |        0|      0|  1924|  2074|
+    +-------------------------+----------------------+---------+-------+------+------+
 
     * DSP48: 
     N/A
@@ -130,10 +130,10 @@
     |        Name        | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
     +--------------------+---------+---+----+------+-----+---------+
     |i_0_i_i_c_U         |        0|  5|  16|     2|    1|        2|
-    |imatrix_offset_c_U  |        0|  5|  42|     1|   30|       30|
-    |omatrix_offset_c_U  |        0|  5|  42|     2|   30|       60|
+    |imatrix_offset_c_U  |        0|  5|  74|     1|   62|       62|
+    |omatrix_offset_c_U  |        0|  5|  74|     2|   62|      124|
     +--------------------+---------+---+----+------+-----+---------+
-    |Total               |        0| 15| 100|     5|   61|       92|
+    |Total               |        0| 15| 164|     5|  125|      188|
     +--------------------+---------+---+----+------+-----+---------+
 
     * Expression: 
@@ -327,7 +327,7 @@
 |i_0_i_i_ap_vld          |  in |    1|   ap_none  |      i_0_i_i     |    scalar    |
 |m_axi_imatrix_AWVALID   | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWREADY   |  in |    1|    m_axi   |      imatrix     |    pointer   |
-|m_axi_imatrix_AWADDR    | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWADDR    | out |   64|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWID      | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWLEN     | out |   32|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWSIZE    | out |    3|    m_axi   |      imatrix     |    pointer   |
@@ -347,7 +347,7 @@
 |m_axi_imatrix_WUSER     | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARVALID   | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARREADY   |  in |    1|    m_axi   |      imatrix     |    pointer   |
-|m_axi_imatrix_ARADDR    | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARADDR    | out |   64|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARID      | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARLEN     | out |   32|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARSIZE    | out |    3|    m_axi   |      imatrix     |    pointer   |
@@ -370,11 +370,11 @@
 |m_axi_imatrix_BRESP     |  in |    2|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_BID       |  in |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_BUSER     |  in |    1|    m_axi   |      imatrix     |    pointer   |
-|imatrix_offset          |  in |   30|   ap_none  |  imatrix_offset  |    scalar    |
+|imatrix_offset          |  in |   62|   ap_none  |  imatrix_offset  |    scalar    |
 |imatrix_offset_ap_vld   |  in |    1|   ap_none  |  imatrix_offset  |    scalar    |
 |m_axi_omatrix_AWVALID   | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWREADY   |  in |    1|    m_axi   |      omatrix     |    pointer   |
-|m_axi_omatrix_AWADDR    | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWADDR    | out |   64|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWID      | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWLEN     | out |   32|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWSIZE    | out |    3|    m_axi   |      omatrix     |    pointer   |
@@ -394,7 +394,7 @@
 |m_axi_omatrix_WUSER     | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARVALID   | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARREADY   |  in |    1|    m_axi   |      omatrix     |    pointer   |
-|m_axi_omatrix_ARADDR    | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARADDR    | out |   64|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARID      | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARLEN     | out |   32|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARSIZE    | out |    3|    m_axi   |      omatrix     |    pointer   |
@@ -417,7 +417,7 @@
 |m_axi_omatrix_BRESP     |  in |    2|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_BID       |  in |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_BUSER     |  in |    1|    m_axi   |      omatrix     |    pointer   |
-|omatrix_offset          |  in |   30|   ap_none  |  omatrix_offset  |    scalar    |
+|omatrix_offset          |  in |   62|   ap_none  |  omatrix_offset  |    scalar    |
 |omatrix_offset_ap_vld   |  in |    1|   ap_none  |  omatrix_offset  |    scalar    |
 +------------------------+-----+-----+------------+------------------+--------------+
 

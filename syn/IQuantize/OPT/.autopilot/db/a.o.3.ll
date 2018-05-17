@@ -49,19 +49,17 @@ target triple = "x86_64-unknown-linux-gnu"
 @OutData_comp_buf = common global [15930 x i8] zeroinitializer ; [#uses=0 type=[15930 x i8]*]
 @IQuantize_str = internal unnamed_addr constant [10 x i8] c"IQuantize\00" ; [#uses=1 type=[10 x i8]*]
 @CurHuffReadBuf = common global i8* null, align 8 ; [#uses=0 type=i8**]
-@p_str9 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str8 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str6 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1 ; [#uses=1 type=[9 x i8]*]
-@p_str5 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=1 type=[10 x i8]*]
-@p_str4 = private unnamed_addr constant [8 x i8] c"BUS_DST\00", align 1 ; [#uses=1 type=[8 x i8]*]
-@p_str3 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=4 type=[6 x i8]*]
-@p_str2 = private unnamed_addr constant [8 x i8] c"BUS_SRC\00", align 1 ; [#uses=1 type=[8 x i8]*]
-@p_str10 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str1 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=21 type=[1 x i8]*]
-@p_str = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=2 type=[6 x i8]*]
+@p_str8 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=2 type=[6 x i8]*]
+@p_str614 = private unnamed_addr constant [9 x i8] c"BUS_CTRL\00", align 1 ; [#uses=1 type=[9 x i8]*]
+@p_str513 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=1 type=[10 x i8]*]
+@p_str412 = private unnamed_addr constant [8 x i8] c"BUS_DST\00", align 1 ; [#uses=1 type=[8 x i8]*]
+@p_str311 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=4 type=[6 x i8]*]
+@p_str210 = private unnamed_addr constant [8 x i8] c"BUS_SRC\00", align 1 ; [#uses=1 type=[8 x i8]*]
+@p_str19 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=21 type=[1 x i8]*]
+@p_str = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=3 type=[1 x i8]*]
 
 ; [#uses=1]
-declare i32 @llvm.part.select.i32(i32, i32, i32) nounwind readnone
+declare i64 @llvm.part.select.i64(i64, i32, i32) nounwind readnone
 
 ; [#uses=197]
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
@@ -142,9 +140,9 @@ entry:
 }
 
 ; [#uses=2]
-define weak i32 @_ssdm_op_Read.s_axilite.i32(i32) {
+define weak i64 @_ssdm_op_Read.s_axilite.i64(i64) {
 entry:
-  ret i32 %0
+  ret i64 %0
 }
 
 ; [#uses=2]
@@ -154,16 +152,16 @@ entry:
   ret i32 %empty
 }
 
+; [#uses=2]
+define weak i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64, i32, i32) nounwind readnone {
+entry:
+  %empty = call i64 @llvm.part.select.i64(i64 %0, i32 %1, i32 %2) ; [#uses=1 type=i64]
+  %empty_5 = trunc i64 %empty to i62              ; [#uses=1 type=i62]
+  ret i62 %empty_5
+}
+
 ; [#uses=0]
 declare i4 @_ssdm_op_PartSelect.i4.i6.i32.i32(i6, i32, i32) nounwind readnone
-
-; [#uses=2]
-define weak i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32, i32, i32) nounwind readnone {
-entry:
-  %empty = call i32 @llvm.part.select.i32(i32 %0, i32 %1, i32 %2) ; [#uses=1 type=i32]
-  %empty_5 = trunc i32 %empty to i30              ; [#uses=1 type=i30]
-  ret i30 %empty_5
-}
 
 ; [#uses=1]
 define weak i32 @_ssdm_op_Mux.ap_auto.32i32.i6(i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i6) {
@@ -321,7 +319,7 @@ entry:
 }
 
 ; [#uses=0]
-define void @IQuantize(i32* %BUS_DST, i32* %BUS_SRC, i32 %matrix, i32 %qmatrix) {
+define void @IQuantize(i32* %BUS_DST, i32* %BUS_SRC, i64 %matrix, i64 %qmatrix) {
   %inp1_buf_0_1_2 = alloca i32                    ; [#uses=3 type=i32*]
   call void @llvm.dbg.declare(metadata !{i32* %inp1_buf_0_1_2}, metadata !278) ; [debug variable = inp1_buf[0][1]]
   %inp1_buf_0_1_33 = alloca i32                   ; [#uses=3 type=i32*]
@@ -386,29 +384,29 @@ define void @IQuantize(i32* %BUS_DST, i32* %BUS_SRC, i32 %matrix, i32 %qmatrix) 
   call void @llvm.dbg.declare(metadata !{i32* %inp1_buf_0_1_62}, metadata !278) ; [debug variable = inp1_buf[0][1]]
   %inp1_buf_0_1_63 = alloca i32                   ; [#uses=3 type=i32*]
   call void @llvm.dbg.declare(metadata !{i32* %inp1_buf_0_1_63}, metadata !278) ; [debug variable = inp1_buf[0][1]]
-  %qmatrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %qmatrix) ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %qmatrix_read}, i64 0, metadata !294), !dbg !295 ; [debug line = 165:39] [debug variable = qmatrix]
-  %matrix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %matrix) ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %matrix_read}, i64 0, metadata !296), !dbg !297 ; [debug line = 165:17] [debug variable = matrix]
-  %qmatrix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %qmatrix_read, i32 2, i32 31) ; [#uses=1 type=i30]
-  %tmp = zext i30 %qmatrix3 to i64                ; [#uses=1 type=i64]
+  %qmatrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %qmatrix) ; [#uses=1 type=i64]
+  call void @llvm.dbg.value(metadata !{i64 %qmatrix_read}, i64 0, metadata !294), !dbg !295 ; [debug line = 165:39] [debug variable = qmatrix]
+  %matrix_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %matrix) ; [#uses=1 type=i64]
+  call void @llvm.dbg.value(metadata !{i64 %matrix_read}, i64 0, metadata !296), !dbg !297 ; [debug line = 165:17] [debug variable = matrix]
+  %qmatrix3 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %qmatrix_read, i32 2, i32 63) ; [#uses=1 type=i62]
+  %tmp = zext i62 %qmatrix3 to i64                ; [#uses=1 type=i64]
   %BUS_SRC_addr = getelementptr i32* %BUS_SRC, i64 %tmp ; [#uses=2 type=i32*]
-  %matrix1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %matrix_read, i32 2, i32 31) ; [#uses=1 type=i30]
-  %tmp_2 = zext i30 %matrix1 to i64               ; [#uses=1 type=i64]
+  %matrix1 = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %matrix_read, i32 2, i32 63) ; [#uses=1 type=i62]
+  %tmp_2 = zext i62 %matrix1 to i64               ; [#uses=1 type=i64]
   %BUS_DST_addr = getelementptr i32* %BUS_DST, i64 %tmp_2 ; [#uses=5 type=i32*]
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_SRC), !map !298
   call void (...)* @_ssdm_op_SpecBitsMap(i32* %BUS_DST), !map !303
   call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @IQuantize_str) nounwind
-  call void @llvm.dbg.value(metadata !{i32 %matrix}, i64 0, metadata !296), !dbg !297 ; [debug line = 165:17] [debug variable = matrix]
-  call void @llvm.dbg.value(metadata !{i32 %qmatrix}, i64 0, metadata !294), !dbg !295 ; [debug line = 165:39] [debug variable = qmatrix]
-  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !307 ; [debug line = 166:1]
-  call void (...)* @_ssdm_op_SpecInterface(i32 %qmatrix, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !307 ; [debug line = 166:1]
-  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !308 ; [debug line = 167:1]
-  call void (...)* @_ssdm_op_SpecInterface(i32 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !308 ; [debug line = 167:1]
-  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str6, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind, !dbg !309 ; [debug line = 168:1]
-  %BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64), !dbg !310 ; [#uses=0 type=i1] [debug line = 186:4]
-  %BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64), !dbg !313 ; [#uses=0 type=i1] [debug line = 187:4]
-  %BUS_DST_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64), !dbg !314 ; [#uses=0 type=i1] [debug line = 204:6]
+  call void @llvm.dbg.value(metadata !{i64 %matrix}, i64 0, metadata !296), !dbg !297 ; [debug line = 165:17] [debug variable = matrix]
+  call void @llvm.dbg.value(metadata !{i64 %qmatrix}, i64 0, metadata !294), !dbg !295 ; [debug line = 165:39] [debug variable = qmatrix]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_SRC, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind, !dbg !307 ; [debug line = 166:1]
+  call void (...)* @_ssdm_op_SpecInterface(i64 %qmatrix, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle2, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind, !dbg !307 ; [debug line = 166:1]
+  call void (...)* @_ssdm_op_SpecInterface(i32* %BUS_DST, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind, !dbg !308 ; [debug line = 167:1]
+  call void (...)* @_ssdm_op_SpecInterface(i64 %matrix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [1 x i8]* @bundle, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind, !dbg !308 ; [debug line = 167:1]
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str513, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 0, [9 x i8]* @p_str614, [1 x i8]* @p_str19, [1 x i8]* @p_str19, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str19, [1 x i8]* @p_str19) nounwind, !dbg !309 ; [debug line = 168:1]
+  %BUS_SRC_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_SRC_addr, i32 64), !dbg !310 ; [#uses=0 type=i1] [debug line = 187:4]
+  %BUS_DST_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64), !dbg !313 ; [#uses=0 type=i1] [debug line = 188:4]
+  %BUS_DST_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %BUS_DST_addr, i32 64), !dbg !314 ; [#uses=0 type=i1] [debug line = 205:6]
   br label %memcpy.tail, !dbg !315                ; [debug line = 177:7]
 
 memcpy.tail.loopexit:                             ; preds = %burst.wr.header
@@ -469,9 +467,9 @@ burst.rd.header6.preheader:                       ; preds = %burst.rd.header
 burst.rd.body:                                    ; preds = %burst.rd.header
   %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind ; [#uses=0 type=i32]
   %burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind ; [#uses=1 type=i32]
-  %empty_13 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str8) nounwind ; [#uses=0 type=i32]
+  %empty_13 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind ; [#uses=0 type=i32]
   %empty_14 = call i32 (...)* @_ssdm_op_SpecLoopName([24 x i8]* @memcpy_OC_inp1_buf_O) nounwind ; [#uses=0 type=i32]
-  %inp1_buf_0_0 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_addr), !dbg !310 ; [#uses=32 type=i32] [debug line = 186:4]
+  %inp1_buf_0_0 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_SRC_addr), !dbg !310 ; [#uses=32 type=i32] [debug line = 187:4]
   %tmp_1 = trunc i6 %indvar to i4                 ; [#uses=1 type=i4]
   %tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar, i32 4) ; [#uses=32 type=i1]
   switch i4 %tmp_1, label %branch15 [
@@ -490,7 +488,7 @@ burst.rd.body:                                    ; preds = %burst.rd.header
     i4 -4, label %branch12
     i4 -3, label %branch13
     i4 -2, label %branch14
-  ], !dbg !310                                    ; [debug line = 186:4]
+  ], !dbg !310                                    ; [debug line = 187:4]
 
 burst.rd.body340:                                 ; preds = %branch15, %branch14, %branch13, %branch12, %branch11, %branch10, %branch9, %branch8, %branch7, %branch6, %branch5, %branch4, %branch3, %branch2, %branch1, %branch0
   %burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin) nounwind ; [#uses=0 type=i32]
@@ -540,9 +538,9 @@ burst.rd.end5.0.preheader:                        ; preds = %burst.rd.header6
 burst.rd.body7:                                   ; preds = %burst.rd.header6
   %empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind ; [#uses=0 type=i32]
   %burstread_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s) nounwind ; [#uses=1 type=i32]
-  %empty_16 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str9) nounwind ; [#uses=0 type=i32]
+  %empty_16 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind ; [#uses=0 type=i32]
   %empty_17 = call i32 (...)* @_ssdm_op_SpecLoopName([23 x i8]* @memcpy_OC_inp2_buf_O) nounwind ; [#uses=0 type=i32]
-  %inp2_buf_0_1_10 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_DST_addr), !dbg !313 ; [#uses=32 type=i32] [debug line = 187:4]
+  %inp2_buf_0_1_10 = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %BUS_DST_addr), !dbg !313 ; [#uses=32 type=i32] [debug line = 188:4]
   %tmp_4 = trunc i6 %indvar8 to i4                ; [#uses=1 type=i4]
   %tmp_6 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar8, i32 4) ; [#uses=32 type=i1]
   switch i4 %tmp_4, label %branch31_ifconv [
@@ -561,7 +559,7 @@ burst.rd.body7:                                   ; preds = %burst.rd.header6
     i4 -4, label %branch28_ifconv
     i4 -3, label %branch29_ifconv
     i4 -2, label %branch30_ifconv
-  ], !dbg !313                                    ; [debug line = 187:4]
+  ], !dbg !313                                    ; [debug line = 188:4]
 
 burst.rd.body7683:                                ; preds = %branch31_ifconv, %branch30_ifconv, %branch29_ifconv, %branch28_ifconv, %branch27_ifconv, %branch26_ifconv, %branch25_ifconv, %branch24_ifconv, %branch23_ifconv, %branch22_ifconv, %branch21_ifconv, %branch20_ifconv, %branch19_ifconv, %branch18_ifconv, %branch17_ifconv, %branch16_ifconv
   %inp2_buf_15_1_2 = phi i32 [ %inp2_buf_15_1_5, %branch31_ifconv ], [ %inp2_buf_15_1_1, %branch30_ifconv ], [ %inp2_buf_15_1_1, %branch29_ifconv ], [ %inp2_buf_15_1_1, %branch28_ifconv ], [ %inp2_buf_15_1_1, %branch27_ifconv ], [ %inp2_buf_15_1_1, %branch26_ifconv ], [ %inp2_buf_15_1_1, %branch25_ifconv ], [ %inp2_buf_15_1_1, %branch24_ifconv ], [ %inp2_buf_15_1_1, %branch23_ifconv ], [ %inp2_buf_15_1_1, %branch22_ifconv ], [ %inp2_buf_15_1_1, %branch21_ifconv ], [ %inp2_buf_15_1_1, %branch20_ifconv ], [ %inp2_buf_15_1_1, %branch19_ifconv ], [ %inp2_buf_15_1_1, %branch18_ifconv ], [ %inp2_buf_15_1_1, %branch17_ifconv ], [ %inp2_buf_15_1_1, %branch16_ifconv ] ; [#uses=1 type=i32]
@@ -634,192 +632,192 @@ burst.rd.end5.0:                                  ; preds = %burst.rd.end5.1_ifc
   %inp2_buf_0_0_s = phi i32 [ %inp2_buf_0_1_8, %burst.rd.end5.1_ifconv ], [ %inp2_buf_0_0_1, %burst.rd.end5.0.preheader ] ; [#uses=4 type=i32]
   %k = phi i6 [ %k_1_s, %burst.rd.end5.1_ifconv ], [ 0, %burst.rd.end5.0.preheader ] ; [#uses=3 type=i6]
   %empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind ; [#uses=0 type=i32]
-  %exitcond = icmp eq i6 %k, -32, !dbg !318       ; [#uses=1 type=i1] [debug line = 192:16]
-  br i1 %exitcond, label %burst.wr.header.preheader, label %burst.rd.end5.1_ifconv, !dbg !318 ; [debug line = 192:16]
+  %exitcond = icmp eq i6 %k, -32, !dbg !318       ; [#uses=1 type=i1] [debug line = 193:16]
+  br i1 %exitcond, label %burst.wr.header.preheader, label %burst.rd.end5.1_ifconv, !dbg !318 ; [debug line = 193:16]
 
 burst.wr.header.preheader:                        ; preds = %burst.rd.end5.0
   br label %burst.wr.header
 
 burst.rd.end5.1_ifconv:                           ; preds = %burst.rd.end5.0
-  %inp1_buf_0_1_2_loa = load i32* %inp1_buf_0_1_2, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_33_lo = load i32* %inp1_buf_0_1_33, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_34_lo = load i32* %inp1_buf_0_1_34, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_35_lo = load i32* %inp1_buf_0_1_35, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_36_lo = load i32* %inp1_buf_0_1_36, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_37_lo = load i32* %inp1_buf_0_1_37, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_38_lo = load i32* %inp1_buf_0_1_38, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_39_lo = load i32* %inp1_buf_0_1_39, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_40_lo = load i32* %inp1_buf_0_1_40, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_41_lo = load i32* %inp1_buf_0_1_41, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_42_lo = load i32* %inp1_buf_0_1_42, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_43_lo = load i32* %inp1_buf_0_1_43, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_44_lo = load i32* %inp1_buf_0_1_44, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_45_lo = load i32* %inp1_buf_0_1_45, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_46_lo = load i32* %inp1_buf_0_1_46, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_47_lo = load i32* %inp1_buf_0_1_47, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_48_lo = load i32* %inp1_buf_0_1_48, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_49_lo = load i32* %inp1_buf_0_1_49, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_50_lo = load i32* %inp1_buf_0_1_50, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_51_lo = load i32* %inp1_buf_0_1_51, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_52_lo = load i32* %inp1_buf_0_1_52, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_53_lo = load i32* %inp1_buf_0_1_53, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_54_lo = load i32* %inp1_buf_0_1_54, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_55_lo = load i32* %inp1_buf_0_1_55, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_56_lo = load i32* %inp1_buf_0_1_56, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_57_lo = load i32* %inp1_buf_0_1_57, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_58_lo = load i32* %inp1_buf_0_1_58, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_59_lo = load i32* %inp1_buf_0_1_59, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_60_lo = load i32* %inp1_buf_0_1_60, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_61_lo = load i32* %inp1_buf_0_1_61, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_62_lo = load i32* %inp1_buf_0_1_62, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp1_buf_0_1_63_lo = load i32* %inp1_buf_0_1_63, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
+  %inp1_buf_0_1_2_loa = load i32* %inp1_buf_0_1_2, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_33_lo = load i32* %inp1_buf_0_1_33, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_34_lo = load i32* %inp1_buf_0_1_34, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_35_lo = load i32* %inp1_buf_0_1_35, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_36_lo = load i32* %inp1_buf_0_1_36, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_37_lo = load i32* %inp1_buf_0_1_37, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_38_lo = load i32* %inp1_buf_0_1_38, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_39_lo = load i32* %inp1_buf_0_1_39, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_40_lo = load i32* %inp1_buf_0_1_40, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_41_lo = load i32* %inp1_buf_0_1_41, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_42_lo = load i32* %inp1_buf_0_1_42, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_43_lo = load i32* %inp1_buf_0_1_43, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_44_lo = load i32* %inp1_buf_0_1_44, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_45_lo = load i32* %inp1_buf_0_1_45, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_46_lo = load i32* %inp1_buf_0_1_46, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_47_lo = load i32* %inp1_buf_0_1_47, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_48_lo = load i32* %inp1_buf_0_1_48, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_49_lo = load i32* %inp1_buf_0_1_49, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_50_lo = load i32* %inp1_buf_0_1_50, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_51_lo = load i32* %inp1_buf_0_1_51, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_52_lo = load i32* %inp1_buf_0_1_52, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_53_lo = load i32* %inp1_buf_0_1_53, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_54_lo = load i32* %inp1_buf_0_1_54, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_55_lo = load i32* %inp1_buf_0_1_55, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_56_lo = load i32* %inp1_buf_0_1_56, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_57_lo = load i32* %inp1_buf_0_1_57, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_58_lo = load i32* %inp1_buf_0_1_58, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_59_lo = load i32* %inp1_buf_0_1_59, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_60_lo = load i32* %inp1_buf_0_1_60, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_61_lo = load i32* %inp1_buf_0_1_61, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_62_lo = load i32* %inp1_buf_0_1_62, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp1_buf_0_1_63_lo = load i32* %inp1_buf_0_1_63, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
   %tmp_7 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %k, i32 4) ; [#uses=64 type=i1]
-  %inp1_buf_load_0_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_33_lo, i32 %inp1_buf_0_1_2_loa, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_0_phi = select i1 %tmp_7, i32 %inp2_buf_0_1_3, i32 %inp2_buf_0_0_s, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_0_1_9 = mul nsw i32 %inp1_buf_load_0_phi, %inp2_buf_load_0_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_9}, i64 0, metadata !322), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[0][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_9}, i64 0, metadata !324), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[0][0]]
+  %inp1_buf_load_0_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_33_lo, i32 %inp1_buf_0_1_2_loa, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_0_phi = select i1 %tmp_7, i32 %inp2_buf_0_1_3, i32 %inp2_buf_0_0_s, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_0_1_9 = mul nsw i32 %inp1_buf_load_0_phi, %inp2_buf_load_0_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_9}, i64 0, metadata !322), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[0][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_9}, i64 0, metadata !324), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[0][0]]
   %inp2_buf_0_1_4 = select i1 %tmp_7, i32 %inp2_buf_0_1_9, i32 %inp2_buf_0_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_4}, i64 0, metadata !322), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[0][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_4}, i64 0, metadata !322), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[0][1]]
   %inp2_buf_0_1_8 = select i1 %tmp_7, i32 %inp2_buf_0_0_s, i32 %inp2_buf_0_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_8}, i64 0, metadata !322), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[0][1]]
-  %inp1_buf_load_1_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_35_lo, i32 %inp1_buf_0_1_34_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_12_phi = select i1 %tmp_7, i32 %inp2_buf_1_1_3, i32 %inp2_buf_1_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_1_1_9 = mul nsw i32 %inp1_buf_load_1_phi, %inp2_buf_load_12_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_9}, i64 0, metadata !325), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[1][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_9}, i64 0, metadata !326), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[1][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_8}, i64 0, metadata !322), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[0][1]]
+  %inp1_buf_load_1_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_35_lo, i32 %inp1_buf_0_1_34_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_12_phi = select i1 %tmp_7, i32 %inp2_buf_1_1_3, i32 %inp2_buf_1_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_1_1_9 = mul nsw i32 %inp1_buf_load_1_phi, %inp2_buf_load_12_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_9}, i64 0, metadata !325), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[1][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_9}, i64 0, metadata !326), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[1][0]]
   %inp2_buf_1_1_4 = select i1 %tmp_7, i32 %inp2_buf_1_1_9, i32 %inp2_buf_1_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_4}, i64 0, metadata !325), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[1][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_4}, i64 0, metadata !325), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[1][1]]
   %inp2_buf_1_1_8 = select i1 %tmp_7, i32 %inp2_buf_1_0_3, i32 %inp2_buf_1_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_8}, i64 0, metadata !325), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[1][1]]
-  %inp1_buf_load_2_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_37_lo, i32 %inp1_buf_0_1_36_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_2_phi = select i1 %tmp_7, i32 %inp2_buf_2_1_3, i32 %inp2_buf_2_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_2_1_9 = mul nsw i32 %inp1_buf_load_2_phi, %inp2_buf_load_2_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_9}, i64 0, metadata !327), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[2][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_9}, i64 0, metadata !328), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[2][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_8}, i64 0, metadata !325), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[1][1]]
+  %inp1_buf_load_2_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_37_lo, i32 %inp1_buf_0_1_36_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_2_phi = select i1 %tmp_7, i32 %inp2_buf_2_1_3, i32 %inp2_buf_2_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_2_1_9 = mul nsw i32 %inp1_buf_load_2_phi, %inp2_buf_load_2_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_9}, i64 0, metadata !327), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[2][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_9}, i64 0, metadata !328), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[2][0]]
   %inp2_buf_2_1_4 = select i1 %tmp_7, i32 %inp2_buf_2_1_9, i32 %inp2_buf_2_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_4}, i64 0, metadata !327), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[2][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_4}, i64 0, metadata !327), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[2][1]]
   %inp2_buf_2_1_8 = select i1 %tmp_7, i32 %inp2_buf_2_0_3, i32 %inp2_buf_2_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_8}, i64 0, metadata !327), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[2][1]]
-  %inp1_buf_load_3_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_39_lo, i32 %inp1_buf_0_1_38_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_3_phi = select i1 %tmp_7, i32 %inp2_buf_3_1_3, i32 %inp2_buf_3_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_3_1_9 = mul nsw i32 %inp1_buf_load_3_phi, %inp2_buf_load_3_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_9}, i64 0, metadata !329), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[3][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_9}, i64 0, metadata !330), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[3][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_8}, i64 0, metadata !327), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[2][1]]
+  %inp1_buf_load_3_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_39_lo, i32 %inp1_buf_0_1_38_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_3_phi = select i1 %tmp_7, i32 %inp2_buf_3_1_3, i32 %inp2_buf_3_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_3_1_9 = mul nsw i32 %inp1_buf_load_3_phi, %inp2_buf_load_3_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_9}, i64 0, metadata !329), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[3][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_9}, i64 0, metadata !330), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[3][0]]
   %inp2_buf_3_1_4 = select i1 %tmp_7, i32 %inp2_buf_3_1_9, i32 %inp2_buf_3_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_4}, i64 0, metadata !329), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[3][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_4}, i64 0, metadata !329), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[3][1]]
   %inp2_buf_3_1_8 = select i1 %tmp_7, i32 %inp2_buf_3_0_3, i32 %inp2_buf_3_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_8}, i64 0, metadata !329), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[3][1]]
-  %inp1_buf_load_4_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_41_lo, i32 %inp1_buf_0_1_40_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_4_phi = select i1 %tmp_7, i32 %inp2_buf_4_1_3, i32 %inp2_buf_4_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_4_1_9 = mul nsw i32 %inp1_buf_load_4_phi, %inp2_buf_load_4_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_9}, i64 0, metadata !331), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[4][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_9}, i64 0, metadata !332), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[4][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_8}, i64 0, metadata !329), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[3][1]]
+  %inp1_buf_load_4_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_41_lo, i32 %inp1_buf_0_1_40_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_4_phi = select i1 %tmp_7, i32 %inp2_buf_4_1_3, i32 %inp2_buf_4_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_4_1_9 = mul nsw i32 %inp1_buf_load_4_phi, %inp2_buf_load_4_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_9}, i64 0, metadata !331), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[4][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_9}, i64 0, metadata !332), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[4][0]]
   %inp2_buf_4_1_4 = select i1 %tmp_7, i32 %inp2_buf_4_1_9, i32 %inp2_buf_4_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_4}, i64 0, metadata !331), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[4][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_4}, i64 0, metadata !331), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[4][1]]
   %inp2_buf_4_1_8 = select i1 %tmp_7, i32 %inp2_buf_4_0_3, i32 %inp2_buf_4_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_8}, i64 0, metadata !331), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[4][1]]
-  %inp1_buf_load_5_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_43_lo, i32 %inp1_buf_0_1_42_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_5_phi = select i1 %tmp_7, i32 %inp2_buf_5_1_3, i32 %inp2_buf_5_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_5_1_9 = mul nsw i32 %inp1_buf_load_5_phi, %inp2_buf_load_5_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_9}, i64 0, metadata !333), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[5][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_9}, i64 0, metadata !334), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[5][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_8}, i64 0, metadata !331), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[4][1]]
+  %inp1_buf_load_5_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_43_lo, i32 %inp1_buf_0_1_42_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_5_phi = select i1 %tmp_7, i32 %inp2_buf_5_1_3, i32 %inp2_buf_5_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_5_1_9 = mul nsw i32 %inp1_buf_load_5_phi, %inp2_buf_load_5_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_9}, i64 0, metadata !333), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[5][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_9}, i64 0, metadata !334), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[5][0]]
   %inp2_buf_5_1_4 = select i1 %tmp_7, i32 %inp2_buf_5_1_9, i32 %inp2_buf_5_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_4}, i64 0, metadata !333), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[5][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_4}, i64 0, metadata !333), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[5][1]]
   %inp2_buf_5_1_8 = select i1 %tmp_7, i32 %inp2_buf_5_0_3, i32 %inp2_buf_5_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_8}, i64 0, metadata !333), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[5][1]]
-  %inp1_buf_load_6_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_45_lo, i32 %inp1_buf_0_1_44_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_6_phi = select i1 %tmp_7, i32 %inp2_buf_6_1_3, i32 %inp2_buf_6_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_6_1_9 = mul nsw i32 %inp1_buf_load_6_phi, %inp2_buf_load_6_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_9}, i64 0, metadata !335), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[6][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_9}, i64 0, metadata !336), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[6][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_8}, i64 0, metadata !333), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[5][1]]
+  %inp1_buf_load_6_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_45_lo, i32 %inp1_buf_0_1_44_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_6_phi = select i1 %tmp_7, i32 %inp2_buf_6_1_3, i32 %inp2_buf_6_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_6_1_9 = mul nsw i32 %inp1_buf_load_6_phi, %inp2_buf_load_6_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_9}, i64 0, metadata !335), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[6][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_9}, i64 0, metadata !336), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[6][0]]
   %inp2_buf_6_1_4 = select i1 %tmp_7, i32 %inp2_buf_6_1_9, i32 %inp2_buf_6_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_4}, i64 0, metadata !335), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[6][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_4}, i64 0, metadata !335), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[6][1]]
   %inp2_buf_6_1_8 = select i1 %tmp_7, i32 %inp2_buf_6_0_3, i32 %inp2_buf_6_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_8}, i64 0, metadata !335), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[6][1]]
-  %inp1_buf_load_7_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_47_lo, i32 %inp1_buf_0_1_46_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_7_phi = select i1 %tmp_7, i32 %inp2_buf_7_1_3, i32 %inp2_buf_7_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_7_1_9 = mul nsw i32 %inp1_buf_load_7_phi, %inp2_buf_load_7_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_9}, i64 0, metadata !337), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[7][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_9}, i64 0, metadata !338), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[7][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_8}, i64 0, metadata !335), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[6][1]]
+  %inp1_buf_load_7_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_47_lo, i32 %inp1_buf_0_1_46_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_7_phi = select i1 %tmp_7, i32 %inp2_buf_7_1_3, i32 %inp2_buf_7_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_7_1_9 = mul nsw i32 %inp1_buf_load_7_phi, %inp2_buf_load_7_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_9}, i64 0, metadata !337), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[7][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_9}, i64 0, metadata !338), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[7][0]]
   %inp2_buf_7_1_4 = select i1 %tmp_7, i32 %inp2_buf_7_1_9, i32 %inp2_buf_7_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_4}, i64 0, metadata !337), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[7][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_4}, i64 0, metadata !337), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[7][1]]
   %inp2_buf_7_1_8 = select i1 %tmp_7, i32 %inp2_buf_7_0_3, i32 %inp2_buf_7_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_8}, i64 0, metadata !337), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[7][1]]
-  %inp1_buf_load_8_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_49_lo, i32 %inp1_buf_0_1_48_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_8_phi = select i1 %tmp_7, i32 %inp2_buf_8_1_3, i32 %inp2_buf_8_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_8_1_9 = mul nsw i32 %inp1_buf_load_8_phi, %inp2_buf_load_8_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_9}, i64 0, metadata !339), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[8][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_9}, i64 0, metadata !340), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[8][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_8}, i64 0, metadata !337), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[7][1]]
+  %inp1_buf_load_8_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_49_lo, i32 %inp1_buf_0_1_48_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_8_phi = select i1 %tmp_7, i32 %inp2_buf_8_1_3, i32 %inp2_buf_8_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_8_1_9 = mul nsw i32 %inp1_buf_load_8_phi, %inp2_buf_load_8_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_9}, i64 0, metadata !339), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[8][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_9}, i64 0, metadata !340), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[8][0]]
   %inp2_buf_8_1_4 = select i1 %tmp_7, i32 %inp2_buf_8_1_9, i32 %inp2_buf_8_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_4}, i64 0, metadata !339), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[8][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_4}, i64 0, metadata !339), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[8][1]]
   %inp2_buf_8_1_8 = select i1 %tmp_7, i32 %inp2_buf_8_0_3, i32 %inp2_buf_8_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_8}, i64 0, metadata !339), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[8][1]]
-  %inp1_buf_load_9_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_51_lo, i32 %inp1_buf_0_1_50_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_9_phi = select i1 %tmp_7, i32 %inp2_buf_9_1_3, i32 %inp2_buf_9_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_9_1_9 = mul nsw i32 %inp1_buf_load_9_phi, %inp2_buf_load_9_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_9}, i64 0, metadata !341), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[9][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_9}, i64 0, metadata !342), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[9][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_8}, i64 0, metadata !339), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[8][1]]
+  %inp1_buf_load_9_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_51_lo, i32 %inp1_buf_0_1_50_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_9_phi = select i1 %tmp_7, i32 %inp2_buf_9_1_3, i32 %inp2_buf_9_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_9_1_9 = mul nsw i32 %inp1_buf_load_9_phi, %inp2_buf_load_9_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_9}, i64 0, metadata !341), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[9][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_9}, i64 0, metadata !342), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[9][0]]
   %inp2_buf_9_1_4 = select i1 %tmp_7, i32 %inp2_buf_9_1_9, i32 %inp2_buf_9_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_4}, i64 0, metadata !341), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[9][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_4}, i64 0, metadata !341), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[9][1]]
   %inp2_buf_9_1_8 = select i1 %tmp_7, i32 %inp2_buf_9_0_3, i32 %inp2_buf_9_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_8}, i64 0, metadata !341), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[9][1]]
-  %inp1_buf_load_10_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_53_lo, i32 %inp1_buf_0_1_52_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_10_phi = select i1 %tmp_7, i32 %inp2_buf_10_1_3, i32 %inp2_buf_10_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_10_1_9 = mul nsw i32 %inp1_buf_load_10_phi, %inp2_buf_load_10_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_9}, i64 0, metadata !343), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[10][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_9}, i64 0, metadata !344), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[10][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_8}, i64 0, metadata !341), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[9][1]]
+  %inp1_buf_load_10_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_53_lo, i32 %inp1_buf_0_1_52_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_10_phi = select i1 %tmp_7, i32 %inp2_buf_10_1_3, i32 %inp2_buf_10_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_10_1_9 = mul nsw i32 %inp1_buf_load_10_phi, %inp2_buf_load_10_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_9}, i64 0, metadata !343), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[10][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_9}, i64 0, metadata !344), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[10][0]]
   %inp2_buf_10_1_4 = select i1 %tmp_7, i32 %inp2_buf_10_1_9, i32 %inp2_buf_10_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_4}, i64 0, metadata !343), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[10][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_4}, i64 0, metadata !343), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[10][1]]
   %inp2_buf_10_1_8 = select i1 %tmp_7, i32 %inp2_buf_10_0_3, i32 %inp2_buf_10_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_8}, i64 0, metadata !343), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[10][1]]
-  %inp1_buf_load_11_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_55_lo, i32 %inp1_buf_0_1_54_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_11_phi = select i1 %tmp_7, i32 %inp2_buf_11_1_3, i32 %inp2_buf_11_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_11_1_9 = mul nsw i32 %inp1_buf_load_11_phi, %inp2_buf_load_11_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_9}, i64 0, metadata !345), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[11][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_9}, i64 0, metadata !346), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[11][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_8}, i64 0, metadata !343), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[10][1]]
+  %inp1_buf_load_11_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_55_lo, i32 %inp1_buf_0_1_54_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_11_phi = select i1 %tmp_7, i32 %inp2_buf_11_1_3, i32 %inp2_buf_11_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_11_1_9 = mul nsw i32 %inp1_buf_load_11_phi, %inp2_buf_load_11_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_9}, i64 0, metadata !345), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[11][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_9}, i64 0, metadata !346), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[11][0]]
   %inp2_buf_11_1_4 = select i1 %tmp_7, i32 %inp2_buf_11_1_9, i32 %inp2_buf_11_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_4}, i64 0, metadata !345), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[11][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_4}, i64 0, metadata !345), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[11][1]]
   %inp2_buf_11_1_8 = select i1 %tmp_7, i32 %inp2_buf_11_0_3, i32 %inp2_buf_11_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_8}, i64 0, metadata !345), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[11][1]]
-  %inp1_buf_load_12_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_57_lo, i32 %inp1_buf_0_1_56_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_124_ph = select i1 %tmp_7, i32 %inp2_buf_12_1_3, i32 %inp2_buf_12_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_12_1_9 = mul nsw i32 %inp1_buf_load_12_phi, %inp2_buf_load_124_ph, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_9}, i64 0, metadata !347), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[12][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_9}, i64 0, metadata !348), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[12][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_8}, i64 0, metadata !345), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[11][1]]
+  %inp1_buf_load_12_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_57_lo, i32 %inp1_buf_0_1_56_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_124_ph = select i1 %tmp_7, i32 %inp2_buf_12_1_3, i32 %inp2_buf_12_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_12_1_9 = mul nsw i32 %inp1_buf_load_12_phi, %inp2_buf_load_124_ph, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_9}, i64 0, metadata !347), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[12][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_9}, i64 0, metadata !348), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[12][0]]
   %inp2_buf_12_1_4 = select i1 %tmp_7, i32 %inp2_buf_12_1_9, i32 %inp2_buf_12_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_4}, i64 0, metadata !347), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[12][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_4}, i64 0, metadata !347), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[12][1]]
   %inp2_buf_12_1_8 = select i1 %tmp_7, i32 %inp2_buf_12_0_3, i32 %inp2_buf_12_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_8}, i64 0, metadata !347), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[12][1]]
-  %inp1_buf_load_13_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_59_lo, i32 %inp1_buf_0_1_58_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_13_phi = select i1 %tmp_7, i32 %inp2_buf_13_1_3, i32 %inp2_buf_13_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_13_1_9 = mul nsw i32 %inp1_buf_load_13_phi, %inp2_buf_load_13_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_9}, i64 0, metadata !349), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[13][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_9}, i64 0, metadata !350), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[13][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_8}, i64 0, metadata !347), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[12][1]]
+  %inp1_buf_load_13_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_59_lo, i32 %inp1_buf_0_1_58_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_13_phi = select i1 %tmp_7, i32 %inp2_buf_13_1_3, i32 %inp2_buf_13_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_13_1_9 = mul nsw i32 %inp1_buf_load_13_phi, %inp2_buf_load_13_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_9}, i64 0, metadata !349), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[13][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_9}, i64 0, metadata !350), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[13][0]]
   %inp2_buf_13_1_4 = select i1 %tmp_7, i32 %inp2_buf_13_1_9, i32 %inp2_buf_13_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_4}, i64 0, metadata !349), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[13][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_4}, i64 0, metadata !349), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[13][1]]
   %inp2_buf_13_1_8 = select i1 %tmp_7, i32 %inp2_buf_13_0_3, i32 %inp2_buf_13_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_8}, i64 0, metadata !349), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[13][1]]
-  %inp1_buf_load_14_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_61_lo, i32 %inp1_buf_0_1_60_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_14_phi = select i1 %tmp_7, i32 %inp2_buf_14_1_3, i32 %inp2_buf_14_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_14_1_9 = mul nsw i32 %inp1_buf_load_14_phi, %inp2_buf_load_14_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_9}, i64 0, metadata !351), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[14][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_9}, i64 0, metadata !352), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[14][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_8}, i64 0, metadata !349), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[13][1]]
+  %inp1_buf_load_14_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_61_lo, i32 %inp1_buf_0_1_60_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_14_phi = select i1 %tmp_7, i32 %inp2_buf_14_1_3, i32 %inp2_buf_14_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_14_1_9 = mul nsw i32 %inp1_buf_load_14_phi, %inp2_buf_load_14_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_9}, i64 0, metadata !351), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[14][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_9}, i64 0, metadata !352), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[14][0]]
   %inp2_buf_14_1_4 = select i1 %tmp_7, i32 %inp2_buf_14_1_9, i32 %inp2_buf_14_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_4}, i64 0, metadata !351), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[14][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_4}, i64 0, metadata !351), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[14][1]]
   %inp2_buf_14_1_8 = select i1 %tmp_7, i32 %inp2_buf_14_0_3, i32 %inp2_buf_14_1_9 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_8}, i64 0, metadata !351), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[14][1]]
-  %inp1_buf_load_15_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_63_lo, i32 %inp1_buf_0_1_62_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_load_15_phi = select i1 %tmp_7, i32 %inp2_buf_15_1_3, i32 %inp2_buf_15_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 194:2]
-  %inp2_buf_15_1_25 = mul nsw i32 %inp1_buf_load_15_phi, %inp2_buf_load_15_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 194:2]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_25}, i64 0, metadata !353), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[15][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_25}, i64 0, metadata !354), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[15][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_8}, i64 0, metadata !351), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[14][1]]
+  %inp1_buf_load_15_phi = select i1 %tmp_7, i32 %inp1_buf_0_1_63_lo, i32 %inp1_buf_0_1_62_lo, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_load_15_phi = select i1 %tmp_7, i32 %inp2_buf_15_1_3, i32 %inp2_buf_15_0_3, !dbg !320 ; [#uses=1 type=i32] [debug line = 195:2]
+  %inp2_buf_15_1_25 = mul nsw i32 %inp1_buf_load_15_phi, %inp2_buf_load_15_phi, !dbg !320 ; [#uses=2 type=i32] [debug line = 195:2]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_25}, i64 0, metadata !353), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[15][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_25}, i64 0, metadata !354), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[15][0]]
   %inp2_buf_15_1_4 = select i1 %tmp_7, i32 %inp2_buf_15_1_25, i32 %inp2_buf_15_1_3 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_4}, i64 0, metadata !353), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[15][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_4}, i64 0, metadata !353), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[15][1]]
   %inp2_buf_15_1_24 = select i1 %tmp_7, i32 %inp2_buf_15_0_3, i32 %inp2_buf_15_1_25 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_24}, i64 0, metadata !353), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[15][1]]
-  %k_1_s = add i6 %k, 16, !dbg !355               ; [#uses=1 type=i6] [debug line = 192:26]
-  br label %burst.rd.end5.0, !dbg !355            ; [debug line = 192:26]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_24}, i64 0, metadata !353), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[15][1]]
+  %k_1_s = add i6 %k, 16, !dbg !355               ; [#uses=1 type=i6] [debug line = 193:26]
+  br label %burst.rd.end5.0, !dbg !355            ; [debug line = 193:26]
 
 burst.wr.header:                                  ; preds = %burst.wr.body, %burst.wr.header.preheader
   %indvar1 = phi i6 [ %indvar_next1, %burst.wr.body ], [ 0, %burst.wr.header.preheader ] ; [#uses=4 type=i6]
@@ -830,440 +828,440 @@ burst.wr.header:                                  ; preds = %burst.wr.body, %bur
 burst.wr.body:                                    ; preds = %burst.wr.header
   %empty_19 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind ; [#uses=0 type=i32]
   %burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region) nounwind ; [#uses=1 type=i32]
-  %empty_20 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str10) nounwind ; [#uses=0 type=i32]
+  %empty_20 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind ; [#uses=0 type=i32]
   %empty_21 = call i32 (...)* @_ssdm_op_SpecLoopName([27 x i8]* @memcpy_OC_matrix_OC_s) nounwind ; [#uses=0 type=i32]
   %tmp_10 = trunc i6 %indvar1 to i4               ; [#uses=1 type=i4]
   %tmp_11 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %indvar1, i32 4) ; [#uses=1 type=i1]
   %tmp_8 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_10, i1 %tmp_11) ; [#uses=1 type=i5]
   %tmp_9 = zext i5 %tmp_8 to i6                   ; [#uses=1 type=i6]
   %tmp_5 = call i32 @_ssdm_op_Mux.ap_auto.32i32.i6(i32 %inp2_buf_0_0_s, i32 %inp2_buf_0_1_3, i32 %inp2_buf_1_0_3, i32 %inp2_buf_1_1_3, i32 %inp2_buf_2_0_3, i32 %inp2_buf_2_1_3, i32 %inp2_buf_3_0_3, i32 %inp2_buf_3_1_3, i32 %inp2_buf_4_0_3, i32 %inp2_buf_4_1_3, i32 %inp2_buf_5_0_3, i32 %inp2_buf_5_1_3, i32 %inp2_buf_6_0_3, i32 %inp2_buf_6_1_3, i32 %inp2_buf_7_0_3, i32 %inp2_buf_7_1_3, i32 %inp2_buf_8_0_3, i32 %inp2_buf_8_1_3, i32 %inp2_buf_9_0_3, i32 %inp2_buf_9_1_3, i32 %inp2_buf_10_0_3, i32 %inp2_buf_10_1_3, i32 %inp2_buf_11_0_3, i32 %inp2_buf_11_1_3, i32 %inp2_buf_12_0_3, i32 %inp2_buf_12_1_3, i32 %inp2_buf_13_0_3, i32 %inp2_buf_13_1_3, i32 %inp2_buf_14_0_3, i32 %inp2_buf_14_1_3, i32 %inp2_buf_15_0_3, i32 %inp2_buf_15_1_3, i6 %tmp_9) nounwind ; [#uses=1 type=i32]
-  call void @_ssdm_op_Write.m_axi.i32P(i32* %BUS_DST_addr, i32 %tmp_5, i4 -1), !dbg !314 ; [debug line = 204:6]
+  call void @_ssdm_op_Write.m_axi.i32P(i32* %BUS_DST_addr, i32 %tmp_5, i4 -1), !dbg !314 ; [debug line = 205:6]
   %burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region, i32 %burstwrite_rbegin) nounwind ; [#uses=0 type=i32]
   br label %burst.wr.header
 
 ; <label>:2                                       ; preds = %memcpy.tail
-  %BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr), !dbg !314 ; [#uses=0 type=i1] [debug line = 204:6]
-  ret void, !dbg !356                             ; [debug line = 208:1]
+  %BUS_DST_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %BUS_DST_addr), !dbg !314 ; [#uses=0 type=i1] [debug line = 205:6]
+  ret void, !dbg !356                             ; [debug line = 209:1]
 
 branch0:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_2_loa_1 = load i32* %inp1_buf_0_1_2, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_33_lo_1 = load i32* %inp1_buf_0_1_33, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !357), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_3 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_33_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_3}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_4 = select i1 %tmp_3, i32 %inp1_buf_0_1_2_loa_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_4}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_3, i32* %inp1_buf_0_1_33, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_4, i32* %inp1_buf_0_1_2, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_2_loa_1 = load i32* %inp1_buf_0_1_2, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_33_lo_1 = load i32* %inp1_buf_0_1_33, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !357), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_3 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_33_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_3}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_4 = select i1 %tmp_3, i32 %inp1_buf_0_1_2_loa_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_4}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_3, i32* %inp1_buf_0_1_33, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_4, i32* %inp1_buf_0_1_2, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch1:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_34_lo_1 = load i32* %inp1_buf_0_1_34, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_35_lo_1 = load i32* %inp1_buf_0_1_35, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !358), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[1][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !359), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[1][1]]
-  %inp1_buf_0_1_5 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_35_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_5}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_6 = select i1 %tmp_3, i32 %inp1_buf_0_1_34_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_6}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_5, i32* %inp1_buf_0_1_35, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_6, i32* %inp1_buf_0_1_34, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_34_lo_1 = load i32* %inp1_buf_0_1_34, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_35_lo_1 = load i32* %inp1_buf_0_1_35, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !358), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[1][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !359), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[1][1]]
+  %inp1_buf_0_1_5 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_35_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_5}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_6 = select i1 %tmp_3, i32 %inp1_buf_0_1_34_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_6}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_5, i32* %inp1_buf_0_1_35, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_6, i32* %inp1_buf_0_1_34, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch2:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_36_lo_1 = load i32* %inp1_buf_0_1_36, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_37_lo_1 = load i32* %inp1_buf_0_1_37, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !360), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[2][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !361), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[2][1]]
-  %inp1_buf_0_1_7 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_37_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_7}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_8 = select i1 %tmp_3, i32 %inp1_buf_0_1_36_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_8}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_7, i32* %inp1_buf_0_1_37, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_8, i32* %inp1_buf_0_1_36, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_36_lo_1 = load i32* %inp1_buf_0_1_36, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_37_lo_1 = load i32* %inp1_buf_0_1_37, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !360), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[2][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !361), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[2][1]]
+  %inp1_buf_0_1_7 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_37_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_7}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_8 = select i1 %tmp_3, i32 %inp1_buf_0_1_36_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_8}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_7, i32* %inp1_buf_0_1_37, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_8, i32* %inp1_buf_0_1_36, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch3:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_38_lo_1 = load i32* %inp1_buf_0_1_38, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_39_lo_1 = load i32* %inp1_buf_0_1_39, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !362), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[3][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !363), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[3][1]]
-  %inp1_buf_0_1_9 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_39_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_9}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_65 = select i1 %tmp_3, i32 %inp1_buf_0_1_38_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_65}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_9, i32* %inp1_buf_0_1_39, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_65, i32* %inp1_buf_0_1_38, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_38_lo_1 = load i32* %inp1_buf_0_1_38, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_39_lo_1 = load i32* %inp1_buf_0_1_39, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !362), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[3][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !363), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[3][1]]
+  %inp1_buf_0_1_9 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_39_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_9}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_65 = select i1 %tmp_3, i32 %inp1_buf_0_1_38_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_65}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_9, i32* %inp1_buf_0_1_39, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_65, i32* %inp1_buf_0_1_38, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch4:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_40_lo_1 = load i32* %inp1_buf_0_1_40, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_41_lo_1 = load i32* %inp1_buf_0_1_41, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !364), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[4][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !365), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[4][1]]
-  %inp1_buf_0_1_66 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_41_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_66}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_67 = select i1 %tmp_3, i32 %inp1_buf_0_1_40_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_67}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_66, i32* %inp1_buf_0_1_41, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_67, i32* %inp1_buf_0_1_40, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_40_lo_1 = load i32* %inp1_buf_0_1_40, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_41_lo_1 = load i32* %inp1_buf_0_1_41, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !364), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[4][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !365), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[4][1]]
+  %inp1_buf_0_1_66 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_41_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_66}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_67 = select i1 %tmp_3, i32 %inp1_buf_0_1_40_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_67}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_66, i32* %inp1_buf_0_1_41, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_67, i32* %inp1_buf_0_1_40, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch5:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_42_lo_1 = load i32* %inp1_buf_0_1_42, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_43_lo_1 = load i32* %inp1_buf_0_1_43, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !366), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[5][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !367), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[5][1]]
-  %inp1_buf_0_1_68 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_43_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_68}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_69 = select i1 %tmp_3, i32 %inp1_buf_0_1_42_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_69}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_68, i32* %inp1_buf_0_1_43, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_69, i32* %inp1_buf_0_1_42, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_42_lo_1 = load i32* %inp1_buf_0_1_42, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_43_lo_1 = load i32* %inp1_buf_0_1_43, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !366), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[5][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !367), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[5][1]]
+  %inp1_buf_0_1_68 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_43_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_68}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_69 = select i1 %tmp_3, i32 %inp1_buf_0_1_42_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_69}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_68, i32* %inp1_buf_0_1_43, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_69, i32* %inp1_buf_0_1_42, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch6:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_44_lo_1 = load i32* %inp1_buf_0_1_44, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_45_lo_1 = load i32* %inp1_buf_0_1_45, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !368), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[6][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !369), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[6][1]]
-  %inp1_buf_0_1_70 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_45_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_70}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_71 = select i1 %tmp_3, i32 %inp1_buf_0_1_44_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_71}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_70, i32* %inp1_buf_0_1_45, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_71, i32* %inp1_buf_0_1_44, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_44_lo_1 = load i32* %inp1_buf_0_1_44, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_45_lo_1 = load i32* %inp1_buf_0_1_45, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !368), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[6][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !369), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[6][1]]
+  %inp1_buf_0_1_70 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_45_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_70}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_71 = select i1 %tmp_3, i32 %inp1_buf_0_1_44_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_71}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_70, i32* %inp1_buf_0_1_45, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_71, i32* %inp1_buf_0_1_44, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch7:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_46_lo_1 = load i32* %inp1_buf_0_1_46, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_47_lo_1 = load i32* %inp1_buf_0_1_47, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !370), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[7][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !371), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[7][1]]
-  %inp1_buf_0_1_72 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_47_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_72}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_73 = select i1 %tmp_3, i32 %inp1_buf_0_1_46_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_73}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_72, i32* %inp1_buf_0_1_47, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_73, i32* %inp1_buf_0_1_46, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_46_lo_1 = load i32* %inp1_buf_0_1_46, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_47_lo_1 = load i32* %inp1_buf_0_1_47, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !370), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[7][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !371), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[7][1]]
+  %inp1_buf_0_1_72 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_47_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_72}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_73 = select i1 %tmp_3, i32 %inp1_buf_0_1_46_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_73}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_72, i32* %inp1_buf_0_1_47, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_73, i32* %inp1_buf_0_1_46, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch8:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_48_lo_1 = load i32* %inp1_buf_0_1_48, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_49_lo_1 = load i32* %inp1_buf_0_1_49, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !372), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[8][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !373), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[8][1]]
-  %inp1_buf_0_1_74 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_49_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_74}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_75 = select i1 %tmp_3, i32 %inp1_buf_0_1_48_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_75}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_74, i32* %inp1_buf_0_1_49, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_75, i32* %inp1_buf_0_1_48, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_48_lo_1 = load i32* %inp1_buf_0_1_48, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_49_lo_1 = load i32* %inp1_buf_0_1_49, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !372), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[8][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !373), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[8][1]]
+  %inp1_buf_0_1_74 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_49_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_74}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_75 = select i1 %tmp_3, i32 %inp1_buf_0_1_48_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_75}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_74, i32* %inp1_buf_0_1_49, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_75, i32* %inp1_buf_0_1_48, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch9:                                          ; preds = %burst.rd.body
-  %inp1_buf_0_1_50_lo_1 = load i32* %inp1_buf_0_1_50, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_51_lo_1 = load i32* %inp1_buf_0_1_51, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !374), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[9][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !375), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[9][1]]
-  %inp1_buf_0_1_76 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_51_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_76}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_77 = select i1 %tmp_3, i32 %inp1_buf_0_1_50_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_77}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_76, i32* %inp1_buf_0_1_51, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_77, i32* %inp1_buf_0_1_50, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_50_lo_1 = load i32* %inp1_buf_0_1_50, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_51_lo_1 = load i32* %inp1_buf_0_1_51, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !374), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[9][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !375), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[9][1]]
+  %inp1_buf_0_1_76 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_51_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_76}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_77 = select i1 %tmp_3, i32 %inp1_buf_0_1_50_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_77}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_76, i32* %inp1_buf_0_1_51, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_77, i32* %inp1_buf_0_1_50, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch10:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_52_lo_1 = load i32* %inp1_buf_0_1_52, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_53_lo_1 = load i32* %inp1_buf_0_1_53, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !376), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[10][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !377), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[10][1]]
-  %inp1_buf_0_1_78 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_53_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_78}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_79 = select i1 %tmp_3, i32 %inp1_buf_0_1_52_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_79}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_78, i32* %inp1_buf_0_1_53, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_79, i32* %inp1_buf_0_1_52, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_52_lo_1 = load i32* %inp1_buf_0_1_52, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_53_lo_1 = load i32* %inp1_buf_0_1_53, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !376), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[10][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !377), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[10][1]]
+  %inp1_buf_0_1_78 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_53_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_78}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_79 = select i1 %tmp_3, i32 %inp1_buf_0_1_52_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_79}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_78, i32* %inp1_buf_0_1_53, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_79, i32* %inp1_buf_0_1_52, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch11:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_54_lo_1 = load i32* %inp1_buf_0_1_54, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_55_lo_1 = load i32* %inp1_buf_0_1_55, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !378), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[11][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !379), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[11][1]]
-  %inp1_buf_0_1_80 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_55_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_80}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_81 = select i1 %tmp_3, i32 %inp1_buf_0_1_54_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_81}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_80, i32* %inp1_buf_0_1_55, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_81, i32* %inp1_buf_0_1_54, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_54_lo_1 = load i32* %inp1_buf_0_1_54, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_55_lo_1 = load i32* %inp1_buf_0_1_55, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !378), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[11][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !379), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[11][1]]
+  %inp1_buf_0_1_80 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_55_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_80}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_81 = select i1 %tmp_3, i32 %inp1_buf_0_1_54_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_81}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_80, i32* %inp1_buf_0_1_55, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_81, i32* %inp1_buf_0_1_54, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch12:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_56_lo_1 = load i32* %inp1_buf_0_1_56, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_57_lo_1 = load i32* %inp1_buf_0_1_57, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !380), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[12][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !381), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[12][1]]
-  %inp1_buf_0_1_82 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_57_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_82}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_83 = select i1 %tmp_3, i32 %inp1_buf_0_1_56_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_83}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_82, i32* %inp1_buf_0_1_57, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_83, i32* %inp1_buf_0_1_56, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_56_lo_1 = load i32* %inp1_buf_0_1_56, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_57_lo_1 = load i32* %inp1_buf_0_1_57, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !380), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[12][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !381), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[12][1]]
+  %inp1_buf_0_1_82 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_57_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_82}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_83 = select i1 %tmp_3, i32 %inp1_buf_0_1_56_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_83}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_82, i32* %inp1_buf_0_1_57, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_83, i32* %inp1_buf_0_1_56, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch13:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_58_lo_1 = load i32* %inp1_buf_0_1_58, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_59_lo_1 = load i32* %inp1_buf_0_1_59, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !382), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[13][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !383), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[13][1]]
-  %inp1_buf_0_1_84 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_59_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_84}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_85 = select i1 %tmp_3, i32 %inp1_buf_0_1_58_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_85}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_84, i32* %inp1_buf_0_1_59, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_85, i32* %inp1_buf_0_1_58, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_58_lo_1 = load i32* %inp1_buf_0_1_58, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_59_lo_1 = load i32* %inp1_buf_0_1_59, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !382), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[13][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !383), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[13][1]]
+  %inp1_buf_0_1_84 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_59_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_84}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_85 = select i1 %tmp_3, i32 %inp1_buf_0_1_58_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_85}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_84, i32* %inp1_buf_0_1_59, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_85, i32* %inp1_buf_0_1_58, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch14:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_60_lo_1 = load i32* %inp1_buf_0_1_60, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_61_lo_1 = load i32* %inp1_buf_0_1_61, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !384), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[14][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !385), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[14][1]]
-  %inp1_buf_0_1_86 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_61_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_86}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_87 = select i1 %tmp_3, i32 %inp1_buf_0_1_60_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_87}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1_86, i32* %inp1_buf_0_1_61, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_87, i32* %inp1_buf_0_1_60, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_60_lo_1 = load i32* %inp1_buf_0_1_60, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_61_lo_1 = load i32* %inp1_buf_0_1_61, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !384), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[14][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !385), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[14][1]]
+  %inp1_buf_0_1_86 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_61_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_86}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_87 = select i1 %tmp_3, i32 %inp1_buf_0_1_60_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_87}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1_86, i32* %inp1_buf_0_1_61, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_87, i32* %inp1_buf_0_1_60, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch15:                                         ; preds = %burst.rd.body
-  %inp1_buf_0_1_62_lo_1 = load i32* %inp1_buf_0_1_62, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  %inp1_buf_0_1_63_lo_1 = load i32* %inp1_buf_0_1_63, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !386), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[15][0]]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !387), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[15][1]]
-  %inp1_buf_0_1 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_63_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  %inp1_buf_0_1_1 = select i1 %tmp_3, i32 %inp1_buf_0_1_62_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 186:4]
-  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_1}, i64 0, metadata !278), !dbg !310 ; [debug line = 186:4] [debug variable = inp1_buf[0][1]]
-  store i32 %inp1_buf_0_1, i32* %inp1_buf_0_1_63, !dbg !310 ; [debug line = 186:4]
-  store i32 %inp1_buf_0_1_1, i32* %inp1_buf_0_1_62, !dbg !310 ; [debug line = 186:4]
-  br label %burst.rd.body340, !dbg !310           ; [debug line = 186:4]
+  %inp1_buf_0_1_62_lo_1 = load i32* %inp1_buf_0_1_62, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  %inp1_buf_0_1_63_lo_1 = load i32* %inp1_buf_0_1_63, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !386), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[15][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_0}, i64 0, metadata !387), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[15][1]]
+  %inp1_buf_0_1 = select i1 %tmp_3, i32 %inp1_buf_0_0, i32 %inp1_buf_0_1_63_lo_1, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  %inp1_buf_0_1_1 = select i1 %tmp_3, i32 %inp1_buf_0_1_62_lo_1, i32 %inp1_buf_0_0, !dbg !310 ; [#uses=1 type=i32] [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp1_buf_0_1_1}, i64 0, metadata !278), !dbg !310 ; [debug line = 187:4] [debug variable = inp1_buf[0][1]]
+  store i32 %inp1_buf_0_1, i32* %inp1_buf_0_1_63, !dbg !310 ; [debug line = 187:4]
+  store i32 %inp1_buf_0_1_1, i32* %inp1_buf_0_1_62, !dbg !310 ; [debug line = 187:4]
+  br label %burst.rd.body340, !dbg !310           ; [debug line = 187:4]
 
 branch16_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !322), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[0][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !324), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[0][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !322), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[0][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !324), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[0][0]]
   %inp2_buf_0_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_0_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_5}, i64 0, metadata !322), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[0][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_5}, i64 0, metadata !322), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[0][1]]
   %inp2_buf_15_1_8 = select i1 %tmp_6, i32 %inp2_buf_0_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_8}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_8}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch17_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !325), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[1][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !326), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[1][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !325), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[1][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !326), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[1][0]]
   %inp2_buf_1_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_1_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_5}, i64 0, metadata !325), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[1][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_1_1_5}, i64 0, metadata !325), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[1][1]]
   %inp2_buf_15_1_9 = select i1 %tmp_6, i32 %inp2_buf_1_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_9}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_9}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch18_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !327), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[2][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !328), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[2][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !327), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[2][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !328), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[2][0]]
   %inp2_buf_2_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_2_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_5}, i64 0, metadata !327), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[2][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_2_1_5}, i64 0, metadata !327), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[2][1]]
   %inp2_buf_15_1_10 = select i1 %tmp_6, i32 %inp2_buf_2_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_10}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_10}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch19_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !329), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[3][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !330), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[3][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !329), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[3][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !330), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[3][0]]
   %inp2_buf_3_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_3_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_5}, i64 0, metadata !329), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[3][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_3_1_5}, i64 0, metadata !329), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[3][1]]
   %inp2_buf_15_1_11 = select i1 %tmp_6, i32 %inp2_buf_3_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_11}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_11}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch20_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !331), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[4][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !332), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[4][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !331), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[4][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !332), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[4][0]]
   %inp2_buf_4_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_4_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_5}, i64 0, metadata !331), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[4][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_4_1_5}, i64 0, metadata !331), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[4][1]]
   %inp2_buf_15_1_12 = select i1 %tmp_6, i32 %inp2_buf_4_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_12}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_12}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch21_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !333), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[5][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !334), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[5][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !333), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[5][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !334), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[5][0]]
   %inp2_buf_5_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_5_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_5}, i64 0, metadata !333), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[5][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_5_1_5}, i64 0, metadata !333), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[5][1]]
   %inp2_buf_15_1_13 = select i1 %tmp_6, i32 %inp2_buf_5_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_13}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_13}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch22_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !335), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[6][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !336), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[6][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !335), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[6][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !336), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[6][0]]
   %inp2_buf_6_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_6_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_5}, i64 0, metadata !335), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[6][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_6_1_5}, i64 0, metadata !335), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[6][1]]
   %inp2_buf_15_1_14 = select i1 %tmp_6, i32 %inp2_buf_6_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_14}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_14}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch23_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !337), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[7][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !338), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[7][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !337), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[7][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !338), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[7][0]]
   %inp2_buf_7_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_7_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_5}, i64 0, metadata !337), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[7][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_7_1_5}, i64 0, metadata !337), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[7][1]]
   %inp2_buf_15_1_15 = select i1 %tmp_6, i32 %inp2_buf_7_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_15}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_15}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch24_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !339), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[8][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !340), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[8][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !339), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[8][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !340), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[8][0]]
   %inp2_buf_8_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_8_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_5}, i64 0, metadata !339), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[8][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_8_1_5}, i64 0, metadata !339), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[8][1]]
   %inp2_buf_15_1_16 = select i1 %tmp_6, i32 %inp2_buf_8_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_16}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_16}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch25_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !341), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[9][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !342), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[9][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !341), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[9][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !342), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[9][0]]
   %inp2_buf_9_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_9_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_5}, i64 0, metadata !341), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[9][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_9_1_5}, i64 0, metadata !341), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[9][1]]
   %inp2_buf_15_1_17 = select i1 %tmp_6, i32 %inp2_buf_9_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_17}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_17}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch26_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !343), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[10][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !344), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[10][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !343), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[10][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !344), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[10][0]]
   %inp2_buf_10_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_10_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_5}, i64 0, metadata !343), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[10][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_10_1_5}, i64 0, metadata !343), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[10][1]]
   %inp2_buf_15_1_18 = select i1 %tmp_6, i32 %inp2_buf_10_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_18}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_18}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch27_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !345), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[11][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !346), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[11][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !345), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[11][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !346), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[11][0]]
   %inp2_buf_11_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_11_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_5}, i64 0, metadata !345), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[11][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_11_1_5}, i64 0, metadata !345), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[11][1]]
   %inp2_buf_15_1_19 = select i1 %tmp_6, i32 %inp2_buf_11_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_19}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_19}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch28_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !347), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[12][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !348), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[12][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !347), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[12][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !348), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[12][0]]
   %inp2_buf_12_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_12_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_5}, i64 0, metadata !347), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[12][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_12_1_5}, i64 0, metadata !347), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[12][1]]
   %inp2_buf_15_1_20 = select i1 %tmp_6, i32 %inp2_buf_12_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_20}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_20}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch29_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !349), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[13][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !350), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[13][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !349), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[13][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !350), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[13][0]]
   %inp2_buf_13_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_13_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_5}, i64 0, metadata !349), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[13][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_13_1_5}, i64 0, metadata !349), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[13][1]]
   %inp2_buf_15_1_21 = select i1 %tmp_6, i32 %inp2_buf_13_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_21}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_21}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch30_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !351), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[14][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !352), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[14][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !351), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[14][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !352), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[14][0]]
   %inp2_buf_14_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_14_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_5}, i64 0, metadata !351), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[14][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_14_1_5}, i64 0, metadata !351), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[14][1]]
   %inp2_buf_15_1_22 = select i1 %tmp_6, i32 %inp2_buf_14_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_22}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_22}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 
 branch31_ifconv:                                  ; preds = %burst.rd.body7
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !354), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][0]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_0_1_10}, i64 0, metadata !354), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][0]]
   %inp2_buf_15_1_5 = select i1 %tmp_6, i32 %inp2_buf_0_1_10, i32 %inp2_buf_15_1_1 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_5}, i64 0, metadata !353), !dbg !320 ; [debug line = 194:2] [debug variable = inp2_buf[15][1]]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_5}, i64 0, metadata !353), !dbg !320 ; [debug line = 195:2] [debug variable = inp2_buf[15][1]]
   %inp2_buf_15_1_7 = select i1 %tmp_6, i32 %inp2_buf_15_0_1, i32 %inp2_buf_0_1_10 ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_7}, i64 0, metadata !353), !dbg !313 ; [debug line = 187:4] [debug variable = inp2_buf[15][1]]
-  br label %burst.rd.body7683, !dbg !313          ; [debug line = 187:4]
+  call void @llvm.dbg.value(metadata !{i32 %inp2_buf_15_1_7}, i64 0, metadata !353), !dbg !313 ; [debug line = 188:4] [debug variable = inp2_buf[15][1]]
+  br label %burst.rd.body7683, !dbg !313          ; [debug line = 188:4]
 }
 
-!opencl.kernels = !{!0, !7, !10, !14, !16, !16, !22, !28, !34, !40, !43, !49, !52, !58}
+!opencl.kernels = !{!0, !7, !13, !15, !18, !22, !24, !24, !30, !36, !42, !48, !51, !57}
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!60, !69, !76, !82, !87, !92, !97, !102, !110, !117, !122, !128, !133, !138, !143, !149, !154, !159, !164, !169, !174, !179, !184, !189, !194, !199, !204, !209, !214, !219, !224, !229, !234, !239, !244, !249, !256, !261, !262, !263, !264, !265, !266, !267, !268, !269, !270, !271, !272, !273}
 !axi4.master.portmap = !{!274, !275}
 !axi4.slave.bundlemap = !{!276, !277}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
-!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
-!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
-!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*"}
-!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
-!5 = metadata !{metadata !"kernel_arg_name", metadata !"imatrix", metadata !"omatrix"}
+!1 = metadata !{metadata !"kernel_arg_addr_space", i32 1}
+!2 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
+!3 = metadata !{metadata !"kernel_arg_type", metadata !"int*"}
+!4 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
+!5 = metadata !{metadata !"kernel_arg_name", metadata !"y"}
 !6 = metadata !{metadata !"reqd_work_group_size", i32 1, i32 1, i32 1}
-!7 = metadata !{null, metadata !1, metadata !2, metadata !8, metadata !4, metadata !9, metadata !6}
-!8 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uint*"}
-!9 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"qmatrix"}
-!10 = metadata !{null, metadata !11, metadata !2, metadata !12, metadata !4, metadata !13, metadata !6}
-!11 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
-!12 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int"}
-!13 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"shift"}
-!14 = metadata !{null, metadata !11, metadata !2, metadata !12, metadata !4, metadata !15, metadata !6}
-!15 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"Bound"}
-!16 = metadata !{null, metadata !17, metadata !18, metadata !19, metadata !20, metadata !21, metadata !6}
-!17 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0, i32 0}
-!18 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!19 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uchar*", metadata !"int", metadata !"int", metadata !"int", metadata !"int"}
-!20 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!21 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"out_buf", metadata !"width", metadata !"height", metadata !"voffs", metadata !"hoffs"}
-!22 = metadata !{null, metadata !23, metadata !24, metadata !25, metadata !26, metadata !27, metadata !6}
-!23 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1}
-!24 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!25 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
-!26 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !""}
-!27 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
-!28 = metadata !{null, metadata !29, metadata !30, metadata !31, metadata !32, metadata !33, metadata !6}
-!29 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1}
-!30 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!31 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
-!32 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!33 = metadata !{metadata !"kernel_arg_name", metadata !"store1", metadata !"store2", metadata !"store3", metadata !"store4", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
-!34 = metadata !{null, metadata !35, metadata !36, metadata !37, metadata !38, metadata !39, metadata !6}
-!35 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1, i32 1, i32 1}
-!36 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
-!37 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
-!38 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
-!39 = metadata !{metadata !"kernel_arg_name", metadata !"p", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
-!40 = metadata !{null, metadata !23, metadata !24, metadata !41, metadata !26, metadata !42, metadata !6}
-!41 = metadata !{metadata !"kernel_arg_type", metadata !"int [64]*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
-!42 = metadata !{metadata !"kernel_arg_name", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
-!43 = metadata !{null, metadata !44, metadata !45, metadata !46, metadata !47, metadata !48, metadata !6}
-!44 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1}
-!45 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none"}
-!46 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*"}
-!47 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !""}
-!48 = metadata !{metadata !"kernel_arg_name", metadata !"comp_no", metadata !"out_buf", metadata !"HuffBuff"}
-!49 = metadata !{null, metadata !23, metadata !24, metadata !50, metadata !26, metadata !51, metadata !6}
-!50 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*"}
-!51 = metadata !{metadata !"kernel_arg_name", metadata !"out_data_image_width", metadata !"out_data_image_height", metadata !"out_data_comp_vpos", metadata !"out_data_comp_hpos"}
-!52 = metadata !{null, metadata !53, metadata !54, metadata !55, metadata !56, metadata !57, metadata !6}
-!53 = metadata !{metadata !"kernel_arg_addr_space", i32 1}
-!54 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none"}
-!55 = metadata !{metadata !"kernel_arg_type", metadata !"int*"}
-!56 = metadata !{metadata !"kernel_arg_type_qual", metadata !""}
-!57 = metadata !{metadata !"kernel_arg_name", metadata !"y"}
-!58 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !59, metadata !6}
-!59 = metadata !{metadata !"kernel_arg_name", metadata !"x", metadata !"y"}
+!7 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !12, metadata !6}
+!8 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1}
+!9 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none"}
+!10 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*"}
+!11 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !""}
+!12 = metadata !{metadata !"kernel_arg_name", metadata !"x", metadata !"y"}
+!13 = metadata !{null, metadata !8, metadata !9, metadata !10, metadata !11, metadata !14, metadata !6}
+!14 = metadata !{metadata !"kernel_arg_name", metadata !"imatrix", metadata !"omatrix"}
+!15 = metadata !{null, metadata !8, metadata !9, metadata !16, metadata !11, metadata !17, metadata !6}
+!16 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uint*"}
+!17 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"qmatrix"}
+!18 = metadata !{null, metadata !19, metadata !9, metadata !20, metadata !11, metadata !21, metadata !6}
+!19 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
+!20 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int"}
+!21 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"shift"}
+!22 = metadata !{null, metadata !19, metadata !9, metadata !20, metadata !11, metadata !23, metadata !6}
+!23 = metadata !{metadata !"kernel_arg_name", metadata !"matrix", metadata !"Bound"}
+!24 = metadata !{null, metadata !25, metadata !26, metadata !27, metadata !28, metadata !29, metadata !6}
+!25 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 0, i32 0, i32 0, i32 0}
+!26 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!27 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"uchar*", metadata !"int", metadata !"int", metadata !"int", metadata !"int"}
+!28 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!29 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"out_buf", metadata !"width", metadata !"height", metadata !"voffs", metadata !"hoffs"}
+!30 = metadata !{null, metadata !31, metadata !32, metadata !33, metadata !34, metadata !35, metadata !6}
+!31 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1}
+!32 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!33 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
+!34 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !""}
+!35 = metadata !{metadata !"kernel_arg_name", metadata !"store", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
+!36 = metadata !{null, metadata !37, metadata !38, metadata !39, metadata !40, metadata !41, metadata !6}
+!37 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1}
+!38 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!39 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"uchar*"}
+!40 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!41 = metadata !{metadata !"kernel_arg_name", metadata !"store1", metadata !"store2", metadata !"store3", metadata !"store4", metadata !"p_out_vpos", metadata !"p_out_hpos", metadata !"p_out_buf"}
+!42 = metadata !{null, metadata !43, metadata !44, metadata !45, metadata !46, metadata !47, metadata !6}
+!43 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1, i32 1, i32 1}
+!44 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none", metadata !"none", metadata !"none"}
+!45 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
+!46 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !"", metadata !"", metadata !""}
+!47 = metadata !{metadata !"kernel_arg_name", metadata !"p", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
+!48 = metadata !{null, metadata !31, metadata !32, metadata !49, metadata !34, metadata !50, metadata !6}
+!49 = metadata !{metadata !"kernel_arg_type", metadata !"int [64]*", metadata !"int*", metadata !"int*", metadata !"int [3][64]*"}
+!50 = metadata !{metadata !"kernel_arg_name", metadata !"y_buf", metadata !"u_buf", metadata !"v_buf", metadata !"rgb_buf"}
+!51 = metadata !{null, metadata !52, metadata !53, metadata !54, metadata !55, metadata !56, metadata !6}
+!52 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 1, i32 1}
+!53 = metadata !{metadata !"kernel_arg_access_qual", metadata !"none", metadata !"none", metadata !"none"}
+!54 = metadata !{metadata !"kernel_arg_type", metadata !"int", metadata !"int*", metadata !"int*"}
+!55 = metadata !{metadata !"kernel_arg_type_qual", metadata !"", metadata !"", metadata !""}
+!56 = metadata !{metadata !"kernel_arg_name", metadata !"comp_no", metadata !"out_buf", metadata !"HuffBuff"}
+!57 = metadata !{null, metadata !31, metadata !32, metadata !58, metadata !34, metadata !59, metadata !6}
+!58 = metadata !{metadata !"kernel_arg_type", metadata !"int*", metadata !"int*", metadata !"int*", metadata !"int*"}
+!59 = metadata !{metadata !"kernel_arg_name", metadata !"out_data_image_width", metadata !"out_data_image_height", metadata !"out_data_comp_vpos", metadata !"out_data_comp_hpos"}
 !60 = metadata !{metadata !61, null}
 !61 = metadata !{metadata !62}
 !62 = metadata !{i32 0, i32 31, metadata !63}
@@ -1514,18 +1512,18 @@ branch31_ifconv:                                  ; preds = %burst.rd.body7
 !307 = metadata !{i32 166, i32 1, metadata !280, null}
 !308 = metadata !{i32 167, i32 1, metadata !280, null}
 !309 = metadata !{i32 168, i32 1, metadata !280, null}
-!310 = metadata !{i32 186, i32 4, metadata !311, null}
+!310 = metadata !{i32 187, i32 4, metadata !311, null}
 !311 = metadata !{i32 786443, metadata !312, i32 177, i32 29, metadata !282, i32 9} ; [ DW_TAG_lexical_block ]
 !312 = metadata !{i32 786443, metadata !280, i32 177, i32 2, metadata !282, i32 8} ; [ DW_TAG_lexical_block ]
-!313 = metadata !{i32 187, i32 4, metadata !311, null}
-!314 = metadata !{i32 204, i32 6, metadata !311, null}
+!313 = metadata !{i32 188, i32 4, metadata !311, null}
+!314 = metadata !{i32 205, i32 6, metadata !311, null}
 !315 = metadata !{i32 177, i32 7, metadata !312, null}
 !316 = metadata !{i32 177, i32 25, metadata !312, null}
 !317 = metadata !{i32 786688, metadata !280, metadata !"i", metadata !282, i32 170, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!318 = metadata !{i32 192, i32 16, metadata !319, null}
-!319 = metadata !{i32 786443, metadata !311, i32 192, i32 4, metadata !282, i32 10} ; [ DW_TAG_lexical_block ]
-!320 = metadata !{i32 194, i32 2, metadata !321, null}
-!321 = metadata !{i32 786443, metadata !319, i32 192, i32 30, metadata !282, i32 11} ; [ DW_TAG_lexical_block ]
+!318 = metadata !{i32 193, i32 16, metadata !319, null}
+!319 = metadata !{i32 786443, metadata !311, i32 193, i32 4, metadata !282, i32 10} ; [ DW_TAG_lexical_block ]
+!320 = metadata !{i32 195, i32 2, metadata !321, null}
+!321 = metadata !{i32 786443, metadata !319, i32 193, i32 30, metadata !282, i32 11} ; [ DW_TAG_lexical_block ]
 !322 = metadata !{i32 790529, metadata !323, metadata !"inp2_buf[0][1]", null, i32 172, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
 !323 = metadata !{i32 786688, metadata !280, metadata !"inp2_buf", metadata !282, i32 172, metadata !291, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
 !324 = metadata !{i32 790529, metadata !323, metadata !"inp2_buf[0][0]", null, i32 172, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
@@ -1559,8 +1557,8 @@ branch31_ifconv:                                  ; preds = %burst.rd.body7
 !352 = metadata !{i32 790529, metadata !323, metadata !"inp2_buf[14][0]", null, i32 172, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
 !353 = metadata !{i32 790529, metadata !323, metadata !"inp2_buf[15][1]", null, i32 172, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
 !354 = metadata !{i32 790529, metadata !323, metadata !"inp2_buf[15][0]", null, i32 172, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
-!355 = metadata !{i32 192, i32 26, metadata !319, null}
-!356 = metadata !{i32 208, i32 1, metadata !280, null}
+!355 = metadata !{i32 193, i32 26, metadata !319, null}
+!356 = metadata !{i32 209, i32 1, metadata !280, null}
 !357 = metadata !{i32 790529, metadata !279, metadata !"inp1_buf[0][0]", null, i32 171, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
 !358 = metadata !{i32 790529, metadata !279, metadata !"inp1_buf[1][0]", null, i32 171, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]
 !359 = metadata !{i32 790529, metadata !279, metadata !"inp1_buf[1][1]", null, i32 171, metadata !286, i32 0, i32 0} ; [ DW_TAG_auto_variable_field ]

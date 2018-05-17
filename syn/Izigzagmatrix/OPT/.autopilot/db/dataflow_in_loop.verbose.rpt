@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dataflow_in_loop'
 ================================================================
-* Date:           Fri May  4 19:53:21 2018
+* Date:           Thu May 17 17:49:45 2018
 
 * Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
 * Project:        Izigzagmatrix
@@ -57,30 +57,30 @@
 +-----------------+---------+-------+--------+--------+-----+
 |DSP              |        -|      -|       -|       -|    -|
 |Expression       |        -|      -|       0|     675|    -|
-|FIFO             |        0|      -|      15|     100|    -|
-|Instance         |        0|      -|    1286|    1530|    -|
+|FIFO             |        0|      -|      15|     164|    -|
+|Instance         |        0|      -|    1924|    2074|    -|
 |Memory           |        0|      -|    1216|      32|    -|
 |Multiplexer      |        -|      -|       -|     324|    -|
 |Register         |        -|      -|      38|       -|    -|
 +-----------------+---------+-------+--------+--------+-----+
-|Total            |        0|      0|    2555|    2661|    0|
+|Total            |        0|      0|    3193|    3269|    0|
 +-----------------+---------+-------+--------+--------+-----+
 |Available        |     1824|   2520|  548160|  274080|    0|
 +-----------------+---------+-------+--------+--------+-----+
-|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
+|Utilization (%)  |        0|      0|   ~0   |       1|    0|
 +-----------------+---------+-------+--------+--------+-----+
 
 + Detail: 
     * Instance: 
-    +-------------------------+----------------------+---------+-------+------+-----+
-    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  | LUT |
-    +-------------------------+----------------------+---------+-------+------+-----+
-    |Loop_0_proc19_U0         |Loop_0_proc19         |        0|      0|   116|  302|
-    |Loop_1_proc_U0           |Loop_1_proc           |        0|      0|  1081|  911|
-    |memcpy_omatrix_out_b_U0  |memcpy_omatrix_out_b  |        0|      0|    89|  317|
-    +-------------------------+----------------------+---------+-------+------+-----+
-    |Total                    |                      |        0|      0|  1286| 1530|
-    +-------------------------+----------------------+---------+-------+------+-----+
+    +-------------------------+----------------------+---------+-------+------+------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Loop_0_proc19_U0         |Loop_0_proc19         |        0|      0|   116|   302|
+    |Loop_1_proc_U0           |Loop_1_proc           |        0|      0|  1687|  1423|
+    |memcpy_omatrix_out_b_U0  |memcpy_omatrix_out_b  |        0|      0|   121|   349|
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Total                    |                      |        0|      0|  1924|  2074|
+    +-------------------------+----------------------+---------+-------+------+------+
 
     * DSP48: 
     N/A
@@ -130,10 +130,10 @@
     |        Name        | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
     +--------------------+---------+---+----+------+-----+---------+
     |i_0_i_i_c_U         |        0|  5|  16|     2|    1|        2|
-    |imatrix_offset_c_U  |        0|  5|  42|     1|   30|       30|
-    |omatrix_offset_c_U  |        0|  5|  42|     2|   30|       60|
+    |imatrix_offset_c_U  |        0|  5|  74|     1|   62|       62|
+    |omatrix_offset_c_U  |        0|  5|  74|     2|   62|      124|
     +--------------------+---------+---+----+------+-----+---------+
-    |Total               |        0| 15| 100|     5|   61|       92|
+    |Total               |        0| 15| 164|     5|  125|      188|
     +--------------------+---------+---+----+------+-----+---------+
 
     * Expression: 
@@ -327,7 +327,7 @@
 |i_0_i_i_ap_vld          |  in |    1|   ap_none  |      i_0_i_i     |    scalar    |
 |m_axi_imatrix_AWVALID   | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWREADY   |  in |    1|    m_axi   |      imatrix     |    pointer   |
-|m_axi_imatrix_AWADDR    | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_AWADDR    | out |   64|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWID      | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWLEN     | out |   32|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_AWSIZE    | out |    3|    m_axi   |      imatrix     |    pointer   |
@@ -347,7 +347,7 @@
 |m_axi_imatrix_WUSER     | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARVALID   | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARREADY   |  in |    1|    m_axi   |      imatrix     |    pointer   |
-|m_axi_imatrix_ARADDR    | out |   32|    m_axi   |      imatrix     |    pointer   |
+|m_axi_imatrix_ARADDR    | out |   64|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARID      | out |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARLEN     | out |   32|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_ARSIZE    | out |    3|    m_axi   |      imatrix     |    pointer   |
@@ -370,11 +370,11 @@
 |m_axi_imatrix_BRESP     |  in |    2|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_BID       |  in |    1|    m_axi   |      imatrix     |    pointer   |
 |m_axi_imatrix_BUSER     |  in |    1|    m_axi   |      imatrix     |    pointer   |
-|imatrix_offset          |  in |   30|   ap_none  |  imatrix_offset  |    scalar    |
+|imatrix_offset          |  in |   62|   ap_none  |  imatrix_offset  |    scalar    |
 |imatrix_offset_ap_vld   |  in |    1|   ap_none  |  imatrix_offset  |    scalar    |
 |m_axi_omatrix_AWVALID   | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWREADY   |  in |    1|    m_axi   |      omatrix     |    pointer   |
-|m_axi_omatrix_AWADDR    | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_AWADDR    | out |   64|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWID      | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWLEN     | out |   32|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_AWSIZE    | out |    3|    m_axi   |      omatrix     |    pointer   |
@@ -394,7 +394,7 @@
 |m_axi_omatrix_WUSER     | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARVALID   | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARREADY   |  in |    1|    m_axi   |      omatrix     |    pointer   |
-|m_axi_omatrix_ARADDR    | out |   32|    m_axi   |      omatrix     |    pointer   |
+|m_axi_omatrix_ARADDR    | out |   64|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARID      | out |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARLEN     | out |   32|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_ARSIZE    | out |    3|    m_axi   |      omatrix     |    pointer   |
@@ -417,7 +417,7 @@
 |m_axi_omatrix_BRESP     |  in |    2|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_BID       |  in |    1|    m_axi   |      omatrix     |    pointer   |
 |m_axi_omatrix_BUSER     |  in |    1|    m_axi   |      omatrix     |    pointer   |
-|omatrix_offset          |  in |   30|   ap_none  |  omatrix_offset  |    scalar    |
+|omatrix_offset          |  in |   62|   ap_none  |  omatrix_offset  |    scalar    |
 |omatrix_offset_ap_vld   |  in |    1|   ap_none  |  omatrix_offset  |    scalar    |
 +------------------------+-----+-----+------------+------------------+--------------+
 
@@ -468,12 +468,12 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
  <State 1> : 1.99ns
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%omatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %omatrix_offset)"
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%imatrix_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %imatrix_offset)"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%omatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %omatrix_offset)"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%imatrix_offset_read = call i62 @_ssdm_op_Read.ap_auto.i62(i62 %imatrix_offset)"
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_0_i_i_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %i_0_i_i)"
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%omatrix_offset_c = alloca i30, align 4"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 30> <Depth = 2> <FIFO>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%imatrix_offset_c = alloca i30, align 4"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 30> <Depth = 2> <FIFO>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%i_0_i_i_c = alloca i1, align 1"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 30> <Depth = 2> <FIFO>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%omatrix_offset_c = alloca i62, align 8"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 62> <Depth = 2> <FIFO>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%imatrix_offset_c = alloca i62, align 8"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 62> <Depth = 2> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%i_0_i_i_c = alloca i1, align 1"   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 62> <Depth = 2> <FIFO>
 ST_1 : Operation 13 [1/1] (0.67ns)   --->   "%in1_buf_0 = alloca [2 x i6], align 1" [../src/decode.c:101]
 ST_1 : Operation 14 [1/1] (0.67ns)   --->   "%in1_buf_1 = alloca [2 x i6], align 1" [../src/decode.c:101]
 ST_1 : Operation 15 [1/1] (0.67ns)   --->   "%in1_buf_2 = alloca [2 x i6], align 1" [../src/decode.c:101]
@@ -506,31 +506,31 @@ ST_1 : Operation 41 [1/1] (0.67ns)   --->   "%out_buf_12 = alloca [2 x i32], ali
 ST_1 : Operation 42 [1/1] (0.67ns)   --->   "%out_buf_13 = alloca [2 x i32], align 4" [../src/decode.c:102]
 ST_1 : Operation 43 [1/1] (0.67ns)   --->   "%out_buf_14 = alloca [2 x i32], align 4" [../src/decode.c:102]
 ST_1 : Operation 44 [1/1] (0.67ns)   --->   "%out_buf_15 = alloca [2 x i32], align 4" [../src/decode.c:102]
-ST_1 : Operation 45 [2/2] (1.31ns)   --->   "call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset_read, i30 %omatrix_offset_read, i30* %imatrix_offset_c, i30* %omatrix_offset_c)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 45 [2/2] (1.31ns)   --->   "call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset_read, i62 %omatrix_offset_read, i62* %imatrix_offset_c, i62* %omatrix_offset_c)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
  <State 2> : 0.00ns
-ST_2 : Operation 46 [1/2] (0.00ns)   --->   "call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i30 %imatrix_offset_read, i30 %omatrix_offset_read, i30* %imatrix_offset_c, i30* %omatrix_offset_c)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 46 [1/2] (0.00ns)   --->   "call void @Loop_0_proc19(i2 %i_0_i_i_read, [2 x i6]* %in1_buf_0, [2 x i6]* %in1_buf_1, [2 x i6]* %in1_buf_2, [2 x i6]* %in1_buf_3, [2 x i6]* %in1_buf_4, [2 x i6]* %in1_buf_5, [2 x i6]* %in1_buf_6, [2 x i6]* %in1_buf_7, [2 x i6]* %in1_buf_8, [2 x i6]* %in1_buf_9, [2 x i6]* %in1_buf_10, [2 x i6]* %in1_buf_11, [2 x i6]* %in1_buf_12, [2 x i6]* %in1_buf_13, [2 x i6]* %in1_buf_14, [2 x i6]* %in1_buf_15, i1* %i_0_i_i_c, i62 %imatrix_offset_read, i62 %omatrix_offset_read, i62* %imatrix_offset_c, i62* %omatrix_offset_c)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
  <State 3> : 0.00ns
-ST_3 : Operation 47 [2/2] (0.00ns)   --->   "call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 47 [2/2] (0.00ns)   --->   "call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
  <State 4> : 0.00ns
-ST_4 : Operation 48 [1/2] (0.00ns)   --->   "call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i30* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 48 [1/2] (0.00ns)   --->   "call void @Loop_1_proc([2 x i6]* %in1_buf_0, i32* %imatrix, i62* nocapture %imatrix_offset_c, [2 x i32]* %out_buf_0, [2 x i6]* %in1_buf_1, [2 x i32]* %out_buf_1, [2 x i6]* %in1_buf_2, [2 x i32]* %out_buf_2, [2 x i6]* %in1_buf_3, [2 x i32]* %out_buf_3, [2 x i6]* %in1_buf_4, [2 x i32]* %out_buf_4, [2 x i6]* %in1_buf_5, [2 x i32]* %out_buf_5, [2 x i6]* %in1_buf_6, [2 x i32]* %out_buf_6, [2 x i6]* %in1_buf_7, [2 x i32]* %out_buf_7, [2 x i6]* %in1_buf_8, [2 x i32]* %out_buf_8, [2 x i6]* %in1_buf_9, [2 x i32]* %out_buf_9, [2 x i6]* %in1_buf_10, [2 x i32]* %out_buf_10, [2 x i6]* %in1_buf_11, [2 x i32]* %out_buf_11, [2 x i6]* %in1_buf_12, [2 x i32]* %out_buf_12, [2 x i6]* %in1_buf_13, [2 x i32]* %out_buf_13, [2 x i6]* %in1_buf_14, [2 x i32]* %out_buf_14, [2 x i6]* %in1_buf_15, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
  <State 5> : 0.00ns
-ST_5 : Operation 49 [2/2] (0.00ns)   --->   "call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 49 [2/2] (0.00ns)   --->   "call void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
  <State 6> : 0.00ns
-ST_6 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str4, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_6 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 64, [8 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"
-ST_6 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind" [../src/decode.c:108]
-ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str28, [1 x i8]* @p_str28, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c)"
-ST_6 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str29, i32 0, i32 0, [1 x i8]* @p_str30, [1 x i8]* @p_str31, [1 x i8]* @p_str32, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str33, [1 x i8]* @p_str34)"
-ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str52, [1 x i8]* @p_str52, i32 1, i32 0, i30* %imatrix_offset_c, i30* %imatrix_offset_c)"
-ST_6 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i30* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str53, i32 0, i32 0, [1 x i8]* @p_str54, [1 x i8]* @p_str55, [1 x i8]* @p_str56, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str57, [1 x i8]* @p_str58)"
-ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str59, [1 x i8]* @p_str59, i32 2, i32 0, i30* %omatrix_offset_c, i30* %omatrix_offset_c)"
-ST_6 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i30* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str60, i32 0, i32 0, [1 x i8]* @p_str61, [1 x i8]* @p_str62, [1 x i8]* @p_str63, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str64, [1 x i8]* @p_str65)"
-ST_6 : Operation 59 [1/2] (0.00ns)   --->   "call void @memcpy.omatrix.out_b(i32* %omatrix, i30* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %omatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str412, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)"
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %imatrix, [6 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str19, i32 0, i32 64, [8 x i8]* @p_str210, [6 x i8]* @p_str311, [1 x i8]* @p_str19, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str19, [1 x i8]* @p_str19)"
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str19) nounwind" [../src/decode.c:108]
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @i_OC_0_OC_i_OC_i_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i1* %i_0_i_i_c, i1* %i_0_i_i_c)"
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* %i_0_i_i_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @imatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i62* %imatrix_offset_c, i62* %imatrix_offset_c)"
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i62* %imatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecChannel([17 x i8]* @omatrix_OC_offset_c_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i62* %omatrix_offset_c, i62* %omatrix_offset_c)"
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i62* %omatrix_offset_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_6 : Operation 59 [1/2] (0.00ns)   --->   "call void @memcpy.omatrix.out_b(i32* %omatrix, i62* nocapture %omatrix_offset_c, i1* %i_0_i_i_c, [2 x i32]* %out_buf_0, [2 x i32]* %out_buf_1, [2 x i32]* %out_buf_2, [2 x i32]* %out_buf_3, [2 x i32]* %out_buf_4, [2 x i32]* %out_buf_5, [2 x i32]* %out_buf_6, [2 x i32]* %out_buf_7, [2 x i32]* %out_buf_8, [2 x i32]* %out_buf_9, [2 x i32]* %out_buf_10, [2 x i32]* %out_buf_11, [2 x i32]* %out_buf_12, [2 x i32]* %out_buf_13, [2 x i32]* %out_buf_14, [2 x i32]* %out_buf_15)"   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_6 : Operation 60 [1/1] (0.00ns)   --->   "ret void"
 
 
@@ -673,7 +673,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="13" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i30"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i62"/></StgValue>
 </bind>
 </comp>
 
@@ -736,7 +736,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str"/></StgValue>
+<StgValue><ssdm name="p_str8"/></StgValue>
 </bind>
 </comp>
 
@@ -754,7 +754,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1"/></StgValue>
+<StgValue><ssdm name="p_str19"/></StgValue>
 </bind>
 </comp>
 
@@ -772,7 +772,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str4"/></StgValue>
+<StgValue><ssdm name="p_str412"/></StgValue>
 </bind>
 </comp>
 
@@ -781,7 +781,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str3"/></StgValue>
+<StgValue><ssdm name="p_str311"/></StgValue>
 </bind>
 </comp>
 
@@ -799,7 +799,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str2"/></StgValue>
+<StgValue><ssdm name="p_str210"/></StgValue>
 </bind>
 </comp>
 
@@ -853,7 +853,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str28"/></StgValue>
+<StgValue><ssdm name="p_str"/></StgValue>
 </bind>
 </comp>
 
@@ -880,7 +880,7 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str29"/></StgValue>
+<StgValue><ssdm name="imatrix_OC_offset_c_s"/></StgValue>
 </bind>
 </comp>
 
@@ -889,194 +889,14 @@ StgValue_60         (ret                 ) [ 0000000]
 <pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str30"/></StgValue>
-</bind>
-</comp>
-
-<comp id="62" class="1001" name="const_62">
-<pin_list>
-<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str31"/></StgValue>
-</bind>
-</comp>
-
-<comp id="64" class="1001" name="const_64">
-<pin_list>
-<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str32"/></StgValue>
-</bind>
-</comp>
-
-<comp id="66" class="1001" name="const_66">
-<pin_list>
-<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str33"/></StgValue>
-</bind>
-</comp>
-
-<comp id="68" class="1001" name="const_68">
-<pin_list>
-<pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str34"/></StgValue>
-</bind>
-</comp>
-
-<comp id="70" class="1001" name="const_70">
-<pin_list>
-<pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="imatrix_OC_offset_c_s"/></StgValue>
-</bind>
-</comp>
-
-<comp id="72" class="1001" name="const_72">
-<pin_list>
-<pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str52"/></StgValue>
-</bind>
-</comp>
-
-<comp id="74" class="1001" name="const_74">
-<pin_list>
-<pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str53"/></StgValue>
-</bind>
-</comp>
-
-<comp id="76" class="1001" name="const_76">
-<pin_list>
-<pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str54"/></StgValue>
-</bind>
-</comp>
-
-<comp id="78" class="1001" name="const_78">
-<pin_list>
-<pin id="79" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str55"/></StgValue>
-</bind>
-</comp>
-
-<comp id="80" class="1001" name="const_80">
-<pin_list>
-<pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str56"/></StgValue>
-</bind>
-</comp>
-
-<comp id="82" class="1001" name="const_82">
-<pin_list>
-<pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str57"/></StgValue>
-</bind>
-</comp>
-
-<comp id="84" class="1001" name="const_84">
-<pin_list>
-<pin id="85" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str58"/></StgValue>
-</bind>
-</comp>
-
-<comp id="86" class="1001" name="const_86">
-<pin_list>
-<pin id="87" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
 <StgValue><ssdm name="omatrix_OC_offset_c_s"/></StgValue>
 </bind>
 </comp>
 
-<comp id="88" class="1001" name="const_88">
+<comp id="62" class="1004" name="omatrix_offset_c_fu_62">
 <pin_list>
-<pin id="89" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str59"/></StgValue>
-</bind>
-</comp>
-
-<comp id="90" class="1001" name="const_90">
-<pin_list>
-<pin id="91" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str60"/></StgValue>
-</bind>
-</comp>
-
-<comp id="92" class="1001" name="const_92">
-<pin_list>
-<pin id="93" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str61"/></StgValue>
-</bind>
-</comp>
-
-<comp id="94" class="1001" name="const_94">
-<pin_list>
-<pin id="95" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str62"/></StgValue>
-</bind>
-</comp>
-
-<comp id="96" class="1001" name="const_96">
-<pin_list>
-<pin id="97" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str63"/></StgValue>
-</bind>
-</comp>
-
-<comp id="98" class="1001" name="const_98">
-<pin_list>
-<pin id="99" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str64"/></StgValue>
-</bind>
-</comp>
-
-<comp id="100" class="1001" name="const_100">
-<pin_list>
-<pin id="101" dir="1" index="0" bw="1" slack="2147483647"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name="p_str65"/></StgValue>
-</bind>
-</comp>
-
-<comp id="102" class="1004" name="omatrix_offset_c_fu_102">
-<pin_list>
-<pin id="103" dir="0" index="0" bw="1" slack="0"/>
-<pin id="104" dir="1" index="1" bw="30" slack="0"/>
+<pin id="63" dir="0" index="0" bw="1" slack="0"/>
+<pin id="64" dir="1" index="1" bw="62" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1084,10 +904,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="106" class="1004" name="imatrix_offset_c_fu_106">
+<comp id="66" class="1004" name="imatrix_offset_c_fu_66">
 <pin_list>
-<pin id="107" dir="0" index="0" bw="1" slack="0"/>
-<pin id="108" dir="1" index="1" bw="30" slack="0"/>
+<pin id="67" dir="0" index="0" bw="1" slack="0"/>
+<pin id="68" dir="1" index="1" bw="62" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1095,10 +915,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="110" class="1004" name="i_0_i_i_c_fu_110">
+<comp id="70" class="1004" name="i_0_i_i_c_fu_70">
 <pin_list>
-<pin id="111" dir="0" index="0" bw="1" slack="0"/>
-<pin id="112" dir="1" index="1" bw="1" slack="0"/>
+<pin id="71" dir="0" index="0" bw="1" slack="0"/>
+<pin id="72" dir="1" index="1" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1106,10 +926,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="114" class="1004" name="in1_buf_0_alloca_fu_114">
+<comp id="74" class="1004" name="in1_buf_0_alloca_fu_74">
 <pin_list>
-<pin id="115" dir="0" index="0" bw="1" slack="0"/>
-<pin id="116" dir="1" index="1" bw="6" slack="0"/>
+<pin id="75" dir="0" index="0" bw="1" slack="0"/>
+<pin id="76" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1117,10 +937,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="118" class="1004" name="in1_buf_1_alloca_fu_118">
+<comp id="78" class="1004" name="in1_buf_1_alloca_fu_78">
 <pin_list>
-<pin id="119" dir="0" index="0" bw="1" slack="0"/>
-<pin id="120" dir="1" index="1" bw="6" slack="0"/>
+<pin id="79" dir="0" index="0" bw="1" slack="0"/>
+<pin id="80" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1128,10 +948,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="122" class="1004" name="in1_buf_2_alloca_fu_122">
+<comp id="82" class="1004" name="in1_buf_2_alloca_fu_82">
 <pin_list>
-<pin id="123" dir="0" index="0" bw="1" slack="0"/>
-<pin id="124" dir="1" index="1" bw="6" slack="0"/>
+<pin id="83" dir="0" index="0" bw="1" slack="0"/>
+<pin id="84" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1139,10 +959,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="126" class="1004" name="in1_buf_3_alloca_fu_126">
+<comp id="86" class="1004" name="in1_buf_3_alloca_fu_86">
 <pin_list>
-<pin id="127" dir="0" index="0" bw="1" slack="0"/>
-<pin id="128" dir="1" index="1" bw="6" slack="0"/>
+<pin id="87" dir="0" index="0" bw="1" slack="0"/>
+<pin id="88" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1150,10 +970,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="130" class="1004" name="in1_buf_4_alloca_fu_130">
+<comp id="90" class="1004" name="in1_buf_4_alloca_fu_90">
 <pin_list>
-<pin id="131" dir="0" index="0" bw="1" slack="0"/>
-<pin id="132" dir="1" index="1" bw="6" slack="0"/>
+<pin id="91" dir="0" index="0" bw="1" slack="0"/>
+<pin id="92" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1161,10 +981,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="134" class="1004" name="in1_buf_5_alloca_fu_134">
+<comp id="94" class="1004" name="in1_buf_5_alloca_fu_94">
 <pin_list>
-<pin id="135" dir="0" index="0" bw="1" slack="0"/>
-<pin id="136" dir="1" index="1" bw="6" slack="0"/>
+<pin id="95" dir="0" index="0" bw="1" slack="0"/>
+<pin id="96" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1172,10 +992,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="138" class="1004" name="in1_buf_6_alloca_fu_138">
+<comp id="98" class="1004" name="in1_buf_6_alloca_fu_98">
 <pin_list>
-<pin id="139" dir="0" index="0" bw="1" slack="0"/>
-<pin id="140" dir="1" index="1" bw="6" slack="0"/>
+<pin id="99" dir="0" index="0" bw="1" slack="0"/>
+<pin id="100" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1183,10 +1003,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="142" class="1004" name="in1_buf_7_alloca_fu_142">
+<comp id="102" class="1004" name="in1_buf_7_alloca_fu_102">
 <pin_list>
-<pin id="143" dir="0" index="0" bw="1" slack="0"/>
-<pin id="144" dir="1" index="1" bw="6" slack="0"/>
+<pin id="103" dir="0" index="0" bw="1" slack="0"/>
+<pin id="104" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1194,10 +1014,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="146" class="1004" name="in1_buf_8_alloca_fu_146">
+<comp id="106" class="1004" name="in1_buf_8_alloca_fu_106">
 <pin_list>
-<pin id="147" dir="0" index="0" bw="1" slack="0"/>
-<pin id="148" dir="1" index="1" bw="6" slack="0"/>
+<pin id="107" dir="0" index="0" bw="1" slack="0"/>
+<pin id="108" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1205,10 +1025,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="150" class="1004" name="in1_buf_9_alloca_fu_150">
+<comp id="110" class="1004" name="in1_buf_9_alloca_fu_110">
 <pin_list>
-<pin id="151" dir="0" index="0" bw="1" slack="0"/>
-<pin id="152" dir="1" index="1" bw="6" slack="0"/>
+<pin id="111" dir="0" index="0" bw="1" slack="0"/>
+<pin id="112" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1216,10 +1036,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="154" class="1004" name="in1_buf_10_alloca_fu_154">
+<comp id="114" class="1004" name="in1_buf_10_alloca_fu_114">
 <pin_list>
-<pin id="155" dir="0" index="0" bw="1" slack="0"/>
-<pin id="156" dir="1" index="1" bw="6" slack="0"/>
+<pin id="115" dir="0" index="0" bw="1" slack="0"/>
+<pin id="116" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1227,10 +1047,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="158" class="1004" name="in1_buf_11_alloca_fu_158">
+<comp id="118" class="1004" name="in1_buf_11_alloca_fu_118">
 <pin_list>
-<pin id="159" dir="0" index="0" bw="1" slack="0"/>
-<pin id="160" dir="1" index="1" bw="6" slack="0"/>
+<pin id="119" dir="0" index="0" bw="1" slack="0"/>
+<pin id="120" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1238,10 +1058,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="162" class="1004" name="in1_buf_12_alloca_fu_162">
+<comp id="122" class="1004" name="in1_buf_12_alloca_fu_122">
 <pin_list>
-<pin id="163" dir="0" index="0" bw="1" slack="0"/>
-<pin id="164" dir="1" index="1" bw="6" slack="0"/>
+<pin id="123" dir="0" index="0" bw="1" slack="0"/>
+<pin id="124" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1249,10 +1069,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="166" class="1004" name="in1_buf_13_alloca_fu_166">
+<comp id="126" class="1004" name="in1_buf_13_alloca_fu_126">
 <pin_list>
-<pin id="167" dir="0" index="0" bw="1" slack="0"/>
-<pin id="168" dir="1" index="1" bw="6" slack="0"/>
+<pin id="127" dir="0" index="0" bw="1" slack="0"/>
+<pin id="128" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1260,10 +1080,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="170" class="1004" name="in1_buf_14_alloca_fu_170">
+<comp id="130" class="1004" name="in1_buf_14_alloca_fu_130">
 <pin_list>
-<pin id="171" dir="0" index="0" bw="1" slack="0"/>
-<pin id="172" dir="1" index="1" bw="6" slack="0"/>
+<pin id="131" dir="0" index="0" bw="1" slack="0"/>
+<pin id="132" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1271,10 +1091,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="174" class="1004" name="in1_buf_15_alloca_fu_174">
+<comp id="134" class="1004" name="in1_buf_15_alloca_fu_134">
 <pin_list>
-<pin id="175" dir="0" index="0" bw="1" slack="0"/>
-<pin id="176" dir="1" index="1" bw="6" slack="0"/>
+<pin id="135" dir="0" index="0" bw="1" slack="0"/>
+<pin id="136" dir="1" index="1" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1282,10 +1102,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="178" class="1004" name="out_buf_0_alloca_fu_178">
+<comp id="138" class="1004" name="out_buf_0_alloca_fu_138">
 <pin_list>
-<pin id="179" dir="0" index="0" bw="1" slack="0"/>
-<pin id="180" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="139" dir="0" index="0" bw="1" slack="0"/>
+<pin id="140" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1293,10 +1113,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="182" class="1004" name="out_buf_1_alloca_fu_182">
+<comp id="142" class="1004" name="out_buf_1_alloca_fu_142">
 <pin_list>
-<pin id="183" dir="0" index="0" bw="1" slack="0"/>
-<pin id="184" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="143" dir="0" index="0" bw="1" slack="0"/>
+<pin id="144" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1304,10 +1124,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="186" class="1004" name="out_buf_2_alloca_fu_186">
+<comp id="146" class="1004" name="out_buf_2_alloca_fu_146">
 <pin_list>
-<pin id="187" dir="0" index="0" bw="1" slack="0"/>
-<pin id="188" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="147" dir="0" index="0" bw="1" slack="0"/>
+<pin id="148" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1315,10 +1135,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="190" class="1004" name="out_buf_3_alloca_fu_190">
+<comp id="150" class="1004" name="out_buf_3_alloca_fu_150">
 <pin_list>
-<pin id="191" dir="0" index="0" bw="1" slack="0"/>
-<pin id="192" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="151" dir="0" index="0" bw="1" slack="0"/>
+<pin id="152" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1326,10 +1146,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="194" class="1004" name="out_buf_4_alloca_fu_194">
+<comp id="154" class="1004" name="out_buf_4_alloca_fu_154">
 <pin_list>
-<pin id="195" dir="0" index="0" bw="1" slack="0"/>
-<pin id="196" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="155" dir="0" index="0" bw="1" slack="0"/>
+<pin id="156" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1337,10 +1157,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="198" class="1004" name="out_buf_5_alloca_fu_198">
+<comp id="158" class="1004" name="out_buf_5_alloca_fu_158">
 <pin_list>
-<pin id="199" dir="0" index="0" bw="1" slack="0"/>
-<pin id="200" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="159" dir="0" index="0" bw="1" slack="0"/>
+<pin id="160" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1348,10 +1168,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="202" class="1004" name="out_buf_6_alloca_fu_202">
+<comp id="162" class="1004" name="out_buf_6_alloca_fu_162">
 <pin_list>
-<pin id="203" dir="0" index="0" bw="1" slack="0"/>
-<pin id="204" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="163" dir="0" index="0" bw="1" slack="0"/>
+<pin id="164" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1359,10 +1179,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="206" class="1004" name="out_buf_7_alloca_fu_206">
+<comp id="166" class="1004" name="out_buf_7_alloca_fu_166">
 <pin_list>
-<pin id="207" dir="0" index="0" bw="1" slack="0"/>
-<pin id="208" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="167" dir="0" index="0" bw="1" slack="0"/>
+<pin id="168" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1370,10 +1190,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="210" class="1004" name="out_buf_8_alloca_fu_210">
+<comp id="170" class="1004" name="out_buf_8_alloca_fu_170">
 <pin_list>
-<pin id="211" dir="0" index="0" bw="1" slack="0"/>
-<pin id="212" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="171" dir="0" index="0" bw="1" slack="0"/>
+<pin id="172" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1381,10 +1201,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="214" class="1004" name="out_buf_9_alloca_fu_214">
+<comp id="174" class="1004" name="out_buf_9_alloca_fu_174">
 <pin_list>
-<pin id="215" dir="0" index="0" bw="1" slack="0"/>
-<pin id="216" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="175" dir="0" index="0" bw="1" slack="0"/>
+<pin id="176" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1392,10 +1212,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="218" class="1004" name="out_buf_10_alloca_fu_218">
+<comp id="178" class="1004" name="out_buf_10_alloca_fu_178">
 <pin_list>
-<pin id="219" dir="0" index="0" bw="1" slack="0"/>
-<pin id="220" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="179" dir="0" index="0" bw="1" slack="0"/>
+<pin id="180" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1403,10 +1223,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="222" class="1004" name="out_buf_11_alloca_fu_222">
+<comp id="182" class="1004" name="out_buf_11_alloca_fu_182">
 <pin_list>
-<pin id="223" dir="0" index="0" bw="1" slack="0"/>
-<pin id="224" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="183" dir="0" index="0" bw="1" slack="0"/>
+<pin id="184" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1414,10 +1234,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="226" class="1004" name="out_buf_12_alloca_fu_226">
+<comp id="186" class="1004" name="out_buf_12_alloca_fu_186">
 <pin_list>
-<pin id="227" dir="0" index="0" bw="1" slack="0"/>
-<pin id="228" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="187" dir="0" index="0" bw="1" slack="0"/>
+<pin id="188" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1425,10 +1245,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="230" class="1004" name="out_buf_13_alloca_fu_230">
+<comp id="190" class="1004" name="out_buf_13_alloca_fu_190">
 <pin_list>
-<pin id="231" dir="0" index="0" bw="1" slack="0"/>
-<pin id="232" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="191" dir="0" index="0" bw="1" slack="0"/>
+<pin id="192" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1436,10 +1256,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="234" class="1004" name="out_buf_14_alloca_fu_234">
+<comp id="194" class="1004" name="out_buf_14_alloca_fu_194">
 <pin_list>
-<pin id="235" dir="0" index="0" bw="1" slack="0"/>
-<pin id="236" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="195" dir="0" index="0" bw="1" slack="0"/>
+<pin id="196" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1447,10 +1267,10 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="238" class="1004" name="out_buf_15_alloca_fu_238">
+<comp id="198" class="1004" name="out_buf_15_alloca_fu_198">
 <pin_list>
-<pin id="239" dir="0" index="0" bw="1" slack="0"/>
-<pin id="240" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="199" dir="0" index="0" bw="1" slack="0"/>
+<pin id="200" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -1458,11 +1278,11 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="242" class="1004" name="omatrix_offset_read_read_fu_242">
+<comp id="202" class="1004" name="omatrix_offset_read_read_fu_202">
 <pin_list>
-<pin id="243" dir="0" index="0" bw="30" slack="0"/>
-<pin id="244" dir="0" index="1" bw="30" slack="0"/>
-<pin id="245" dir="1" index="2" bw="30" slack="0"/>
+<pin id="203" dir="0" index="0" bw="62" slack="0"/>
+<pin id="204" dir="0" index="1" bw="62" slack="0"/>
+<pin id="205" dir="1" index="2" bw="62" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -1470,11 +1290,11 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="248" class="1004" name="imatrix_offset_read_read_fu_248">
+<comp id="208" class="1004" name="imatrix_offset_read_read_fu_208">
 <pin_list>
-<pin id="249" dir="0" index="0" bw="30" slack="0"/>
-<pin id="250" dir="0" index="1" bw="30" slack="0"/>
-<pin id="251" dir="1" index="2" bw="30" slack="0"/>
+<pin id="209" dir="0" index="0" bw="62" slack="0"/>
+<pin id="210" dir="0" index="1" bw="62" slack="0"/>
+<pin id="211" dir="1" index="2" bw="62" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -1482,11 +1302,11 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="254" class="1004" name="i_0_i_i_read_read_fu_254">
+<comp id="214" class="1004" name="i_0_i_i_read_read_fu_214">
 <pin_list>
-<pin id="255" dir="0" index="0" bw="2" slack="0"/>
-<pin id="256" dir="0" index="1" bw="2" slack="0"/>
-<pin id="257" dir="1" index="2" bw="2" slack="0"/>
+<pin id="215" dir="0" index="0" bw="2" slack="0"/>
+<pin id="216" dir="0" index="1" bw="2" slack="0"/>
+<pin id="217" dir="1" index="2" bw="2" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -1494,44 +1314,44 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="260" class="1004" name="grp_Loop_1_proc_fu_260">
+<comp id="220" class="1004" name="grp_Loop_1_proc_fu_220">
 <pin_list>
-<pin id="261" dir="0" index="0" bw="0" slack="0"/>
-<pin id="262" dir="0" index="1" bw="6" slack="2147483647"/>
-<pin id="263" dir="0" index="2" bw="32" slack="0"/>
-<pin id="264" dir="0" index="3" bw="30" slack="2"/>
-<pin id="265" dir="0" index="4" bw="32" slack="2147483647"/>
-<pin id="266" dir="0" index="5" bw="6" slack="2147483647"/>
-<pin id="267" dir="0" index="6" bw="32" slack="2147483647"/>
-<pin id="268" dir="0" index="7" bw="6" slack="2147483647"/>
-<pin id="269" dir="0" index="8" bw="32" slack="2147483647"/>
-<pin id="270" dir="0" index="9" bw="6" slack="2147483647"/>
-<pin id="271" dir="0" index="10" bw="32" slack="2147483647"/>
-<pin id="272" dir="0" index="11" bw="6" slack="2147483647"/>
-<pin id="273" dir="0" index="12" bw="32" slack="2147483647"/>
-<pin id="274" dir="0" index="13" bw="6" slack="2147483647"/>
-<pin id="275" dir="0" index="14" bw="32" slack="2147483647"/>
-<pin id="276" dir="0" index="15" bw="6" slack="2147483647"/>
-<pin id="277" dir="0" index="16" bw="32" slack="2147483647"/>
-<pin id="278" dir="0" index="17" bw="6" slack="2147483647"/>
-<pin id="279" dir="0" index="18" bw="32" slack="2147483647"/>
-<pin id="280" dir="0" index="19" bw="6" slack="2147483647"/>
-<pin id="281" dir="0" index="20" bw="32" slack="2147483647"/>
-<pin id="282" dir="0" index="21" bw="6" slack="2147483647"/>
-<pin id="283" dir="0" index="22" bw="32" slack="2147483647"/>
-<pin id="284" dir="0" index="23" bw="6" slack="2147483647"/>
-<pin id="285" dir="0" index="24" bw="32" slack="2147483647"/>
-<pin id="286" dir="0" index="25" bw="6" slack="2147483647"/>
-<pin id="287" dir="0" index="26" bw="32" slack="2147483647"/>
-<pin id="288" dir="0" index="27" bw="6" slack="2147483647"/>
-<pin id="289" dir="0" index="28" bw="32" slack="2147483647"/>
-<pin id="290" dir="0" index="29" bw="6" slack="2147483647"/>
-<pin id="291" dir="0" index="30" bw="32" slack="2147483647"/>
-<pin id="292" dir="0" index="31" bw="6" slack="2147483647"/>
-<pin id="293" dir="0" index="32" bw="32" slack="2147483647"/>
-<pin id="294" dir="0" index="33" bw="6" slack="2147483647"/>
-<pin id="295" dir="0" index="34" bw="32" slack="2147483647"/>
-<pin id="296" dir="1" index="35" bw="0" slack="2147483647"/>
+<pin id="221" dir="0" index="0" bw="0" slack="0"/>
+<pin id="222" dir="0" index="1" bw="6" slack="2147483647"/>
+<pin id="223" dir="0" index="2" bw="32" slack="0"/>
+<pin id="224" dir="0" index="3" bw="62" slack="2"/>
+<pin id="225" dir="0" index="4" bw="32" slack="2147483647"/>
+<pin id="226" dir="0" index="5" bw="6" slack="2147483647"/>
+<pin id="227" dir="0" index="6" bw="32" slack="2147483647"/>
+<pin id="228" dir="0" index="7" bw="6" slack="2147483647"/>
+<pin id="229" dir="0" index="8" bw="32" slack="2147483647"/>
+<pin id="230" dir="0" index="9" bw="6" slack="2147483647"/>
+<pin id="231" dir="0" index="10" bw="32" slack="2147483647"/>
+<pin id="232" dir="0" index="11" bw="6" slack="2147483647"/>
+<pin id="233" dir="0" index="12" bw="32" slack="2147483647"/>
+<pin id="234" dir="0" index="13" bw="6" slack="2147483647"/>
+<pin id="235" dir="0" index="14" bw="32" slack="2147483647"/>
+<pin id="236" dir="0" index="15" bw="6" slack="2147483647"/>
+<pin id="237" dir="0" index="16" bw="32" slack="2147483647"/>
+<pin id="238" dir="0" index="17" bw="6" slack="2147483647"/>
+<pin id="239" dir="0" index="18" bw="32" slack="2147483647"/>
+<pin id="240" dir="0" index="19" bw="6" slack="2147483647"/>
+<pin id="241" dir="0" index="20" bw="32" slack="2147483647"/>
+<pin id="242" dir="0" index="21" bw="6" slack="2147483647"/>
+<pin id="243" dir="0" index="22" bw="32" slack="2147483647"/>
+<pin id="244" dir="0" index="23" bw="6" slack="2147483647"/>
+<pin id="245" dir="0" index="24" bw="32" slack="2147483647"/>
+<pin id="246" dir="0" index="25" bw="6" slack="2147483647"/>
+<pin id="247" dir="0" index="26" bw="32" slack="2147483647"/>
+<pin id="248" dir="0" index="27" bw="6" slack="2147483647"/>
+<pin id="249" dir="0" index="28" bw="32" slack="2147483647"/>
+<pin id="250" dir="0" index="29" bw="6" slack="2147483647"/>
+<pin id="251" dir="0" index="30" bw="32" slack="2147483647"/>
+<pin id="252" dir="0" index="31" bw="6" slack="2147483647"/>
+<pin id="253" dir="0" index="32" bw="32" slack="2147483647"/>
+<pin id="254" dir="0" index="33" bw="6" slack="2147483647"/>
+<pin id="255" dir="0" index="34" bw="32" slack="2147483647"/>
+<pin id="256" dir="1" index="35" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -1539,29 +1359,29 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="299" class="1004" name="grp_memcpy_omatrix_out_b_fu_299">
+<comp id="259" class="1004" name="grp_memcpy_omatrix_out_b_fu_259">
 <pin_list>
-<pin id="300" dir="0" index="0" bw="0" slack="0"/>
-<pin id="301" dir="0" index="1" bw="32" slack="0"/>
-<pin id="302" dir="0" index="2" bw="30" slack="4"/>
-<pin id="303" dir="0" index="3" bw="1" slack="4"/>
-<pin id="304" dir="0" index="4" bw="32" slack="2147483647"/>
-<pin id="305" dir="0" index="5" bw="32" slack="2147483647"/>
-<pin id="306" dir="0" index="6" bw="32" slack="2147483647"/>
-<pin id="307" dir="0" index="7" bw="32" slack="2147483647"/>
-<pin id="308" dir="0" index="8" bw="32" slack="2147483647"/>
-<pin id="309" dir="0" index="9" bw="32" slack="2147483647"/>
-<pin id="310" dir="0" index="10" bw="32" slack="2147483647"/>
-<pin id="311" dir="0" index="11" bw="32" slack="2147483647"/>
-<pin id="312" dir="0" index="12" bw="32" slack="2147483647"/>
-<pin id="313" dir="0" index="13" bw="32" slack="2147483647"/>
-<pin id="314" dir="0" index="14" bw="32" slack="2147483647"/>
-<pin id="315" dir="0" index="15" bw="32" slack="2147483647"/>
-<pin id="316" dir="0" index="16" bw="32" slack="2147483647"/>
-<pin id="317" dir="0" index="17" bw="32" slack="2147483647"/>
-<pin id="318" dir="0" index="18" bw="32" slack="2147483647"/>
-<pin id="319" dir="0" index="19" bw="32" slack="2147483647"/>
-<pin id="320" dir="1" index="20" bw="0" slack="2147483647"/>
+<pin id="260" dir="0" index="0" bw="0" slack="0"/>
+<pin id="261" dir="0" index="1" bw="32" slack="0"/>
+<pin id="262" dir="0" index="2" bw="62" slack="4"/>
+<pin id="263" dir="0" index="3" bw="1" slack="4"/>
+<pin id="264" dir="0" index="4" bw="32" slack="2147483647"/>
+<pin id="265" dir="0" index="5" bw="32" slack="2147483647"/>
+<pin id="266" dir="0" index="6" bw="32" slack="2147483647"/>
+<pin id="267" dir="0" index="7" bw="32" slack="2147483647"/>
+<pin id="268" dir="0" index="8" bw="32" slack="2147483647"/>
+<pin id="269" dir="0" index="9" bw="32" slack="2147483647"/>
+<pin id="270" dir="0" index="10" bw="32" slack="2147483647"/>
+<pin id="271" dir="0" index="11" bw="32" slack="2147483647"/>
+<pin id="272" dir="0" index="12" bw="32" slack="2147483647"/>
+<pin id="273" dir="0" index="13" bw="32" slack="2147483647"/>
+<pin id="274" dir="0" index="14" bw="32" slack="2147483647"/>
+<pin id="275" dir="0" index="15" bw="32" slack="2147483647"/>
+<pin id="276" dir="0" index="16" bw="32" slack="2147483647"/>
+<pin id="277" dir="0" index="17" bw="32" slack="2147483647"/>
+<pin id="278" dir="0" index="18" bw="32" slack="2147483647"/>
+<pin id="279" dir="0" index="19" bw="32" slack="2147483647"/>
+<pin id="280" dir="1" index="20" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -1569,33 +1389,33 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="323" class="1004" name="grp_Loop_0_proc19_fu_323">
+<comp id="283" class="1004" name="grp_Loop_0_proc19_fu_283">
 <pin_list>
-<pin id="324" dir="0" index="0" bw="0" slack="0"/>
-<pin id="325" dir="0" index="1" bw="2" slack="0"/>
-<pin id="326" dir="0" index="2" bw="6" slack="0"/>
-<pin id="327" dir="0" index="3" bw="6" slack="0"/>
-<pin id="328" dir="0" index="4" bw="6" slack="0"/>
-<pin id="329" dir="0" index="5" bw="6" slack="0"/>
-<pin id="330" dir="0" index="6" bw="6" slack="0"/>
-<pin id="331" dir="0" index="7" bw="6" slack="0"/>
-<pin id="332" dir="0" index="8" bw="6" slack="0"/>
-<pin id="333" dir="0" index="9" bw="6" slack="0"/>
-<pin id="334" dir="0" index="10" bw="6" slack="0"/>
-<pin id="335" dir="0" index="11" bw="6" slack="0"/>
-<pin id="336" dir="0" index="12" bw="6" slack="0"/>
-<pin id="337" dir="0" index="13" bw="6" slack="0"/>
-<pin id="338" dir="0" index="14" bw="6" slack="0"/>
-<pin id="339" dir="0" index="15" bw="6" slack="0"/>
-<pin id="340" dir="0" index="16" bw="6" slack="0"/>
-<pin id="341" dir="0" index="17" bw="6" slack="0"/>
-<pin id="342" dir="0" index="18" bw="1" slack="0"/>
-<pin id="343" dir="0" index="19" bw="30" slack="0"/>
-<pin id="344" dir="0" index="20" bw="30" slack="0"/>
-<pin id="345" dir="0" index="21" bw="30" slack="0"/>
-<pin id="346" dir="0" index="22" bw="30" slack="0"/>
-<pin id="347" dir="0" index="23" bw="6" slack="0"/>
-<pin id="348" dir="1" index="24" bw="0" slack="2147483647"/>
+<pin id="284" dir="0" index="0" bw="0" slack="0"/>
+<pin id="285" dir="0" index="1" bw="2" slack="0"/>
+<pin id="286" dir="0" index="2" bw="6" slack="0"/>
+<pin id="287" dir="0" index="3" bw="6" slack="0"/>
+<pin id="288" dir="0" index="4" bw="6" slack="0"/>
+<pin id="289" dir="0" index="5" bw="6" slack="0"/>
+<pin id="290" dir="0" index="6" bw="6" slack="0"/>
+<pin id="291" dir="0" index="7" bw="6" slack="0"/>
+<pin id="292" dir="0" index="8" bw="6" slack="0"/>
+<pin id="293" dir="0" index="9" bw="6" slack="0"/>
+<pin id="294" dir="0" index="10" bw="6" slack="0"/>
+<pin id="295" dir="0" index="11" bw="6" slack="0"/>
+<pin id="296" dir="0" index="12" bw="6" slack="0"/>
+<pin id="297" dir="0" index="13" bw="6" slack="0"/>
+<pin id="298" dir="0" index="14" bw="6" slack="0"/>
+<pin id="299" dir="0" index="15" bw="6" slack="0"/>
+<pin id="300" dir="0" index="16" bw="6" slack="0"/>
+<pin id="301" dir="0" index="17" bw="6" slack="0"/>
+<pin id="302" dir="0" index="18" bw="1" slack="0"/>
+<pin id="303" dir="0" index="19" bw="62" slack="0"/>
+<pin id="304" dir="0" index="20" bw="62" slack="0"/>
+<pin id="305" dir="0" index="21" bw="62" slack="0"/>
+<pin id="306" dir="0" index="22" bw="62" slack="0"/>
+<pin id="307" dir="0" index="23" bw="6" slack="0"/>
+<pin id="308" dir="1" index="24" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -1603,60 +1423,60 @@ StgValue_60         (ret                 ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="370" class="1005" name="omatrix_offset_read_reg_370">
+<comp id="330" class="1005" name="omatrix_offset_read_reg_330">
 <pin_list>
-<pin id="371" dir="0" index="0" bw="30" slack="1"/>
-<pin id="372" dir="1" index="1" bw="30" slack="1"/>
+<pin id="331" dir="0" index="0" bw="62" slack="1"/>
+<pin id="332" dir="1" index="1" bw="62" slack="1"/>
 </pin_list>
 <bind>
 <opset="omatrix_offset_read "/>
 </bind>
 </comp>
 
-<comp id="375" class="1005" name="imatrix_offset_read_reg_375">
+<comp id="335" class="1005" name="imatrix_offset_read_reg_335">
 <pin_list>
-<pin id="376" dir="0" index="0" bw="30" slack="1"/>
-<pin id="377" dir="1" index="1" bw="30" slack="1"/>
+<pin id="336" dir="0" index="0" bw="62" slack="1"/>
+<pin id="337" dir="1" index="1" bw="62" slack="1"/>
 </pin_list>
 <bind>
 <opset="imatrix_offset_read "/>
 </bind>
 </comp>
 
-<comp id="380" class="1005" name="i_0_i_i_read_reg_380">
+<comp id="340" class="1005" name="i_0_i_i_read_reg_340">
 <pin_list>
-<pin id="381" dir="0" index="0" bw="2" slack="1"/>
-<pin id="382" dir="1" index="1" bw="2" slack="1"/>
+<pin id="341" dir="0" index="0" bw="2" slack="1"/>
+<pin id="342" dir="1" index="1" bw="2" slack="1"/>
 </pin_list>
 <bind>
 <opset="i_0_i_i_read "/>
 </bind>
 </comp>
 
-<comp id="385" class="1005" name="omatrix_offset_c_reg_385">
+<comp id="345" class="1005" name="omatrix_offset_c_reg_345">
 <pin_list>
-<pin id="386" dir="0" index="0" bw="30" slack="0"/>
-<pin id="387" dir="1" index="1" bw="30" slack="0"/>
+<pin id="346" dir="0" index="0" bw="62" slack="0"/>
+<pin id="347" dir="1" index="1" bw="62" slack="0"/>
 </pin_list>
 <bind>
 <opset="omatrix_offset_c "/>
 </bind>
 </comp>
 
-<comp id="391" class="1005" name="imatrix_offset_c_reg_391">
+<comp id="351" class="1005" name="imatrix_offset_c_reg_351">
 <pin_list>
-<pin id="392" dir="0" index="0" bw="30" slack="0"/>
-<pin id="393" dir="1" index="1" bw="30" slack="0"/>
+<pin id="352" dir="0" index="0" bw="62" slack="0"/>
+<pin id="353" dir="1" index="1" bw="62" slack="0"/>
 </pin_list>
 <bind>
 <opset="imatrix_offset_c "/>
 </bind>
 </comp>
 
-<comp id="397" class="1005" name="i_0_i_i_c_reg_397">
+<comp id="357" class="1005" name="i_0_i_i_c_reg_357">
 <pin_list>
-<pin id="398" dir="0" index="0" bw="1" slack="0"/>
-<pin id="399" dir="1" index="1" bw="1" slack="0"/>
+<pin id="358" dir="0" index="0" bw="1" slack="0"/>
+<pin id="359" dir="1" index="1" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opset="i_0_i_i_c "/>
@@ -1666,6 +1486,26 @@ StgValue_60         (ret                 ) [ 0000000]
 </comp_list>
 
 <net_list>
+<net id="65"><net_src comp="16" pin="0"/><net_sink comp="62" pin=0"/></net>
+
+<net id="69"><net_src comp="16" pin="0"/><net_sink comp="66" pin=0"/></net>
+
+<net id="73"><net_src comp="16" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="77"><net_src comp="16" pin="0"/><net_sink comp="74" pin=0"/></net>
+
+<net id="81"><net_src comp="16" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="85"><net_src comp="16" pin="0"/><net_sink comp="82" pin=0"/></net>
+
+<net id="89"><net_src comp="16" pin="0"/><net_sink comp="86" pin=0"/></net>
+
+<net id="93"><net_src comp="16" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="97"><net_src comp="16" pin="0"/><net_sink comp="94" pin=0"/></net>
+
+<net id="101"><net_src comp="16" pin="0"/><net_sink comp="98" pin=0"/></net>
+
 <net id="105"><net_src comp="16" pin="0"/><net_sink comp="102" pin=0"/></net>
 
 <net id="109"><net_src comp="16" pin="0"/><net_sink comp="106" pin=0"/></net>
@@ -1716,117 +1556,97 @@ StgValue_60         (ret                 ) [ 0000000]
 
 <net id="201"><net_src comp="16" pin="0"/><net_sink comp="198" pin=0"/></net>
 
-<net id="205"><net_src comp="16" pin="0"/><net_sink comp="202" pin=0"/></net>
+<net id="206"><net_src comp="12" pin="0"/><net_sink comp="202" pin=0"/></net>
 
-<net id="209"><net_src comp="16" pin="0"/><net_sink comp="206" pin=0"/></net>
+<net id="207"><net_src comp="8" pin="0"/><net_sink comp="202" pin=1"/></net>
 
-<net id="213"><net_src comp="16" pin="0"/><net_sink comp="210" pin=0"/></net>
+<net id="212"><net_src comp="12" pin="0"/><net_sink comp="208" pin=0"/></net>
 
-<net id="217"><net_src comp="16" pin="0"/><net_sink comp="214" pin=0"/></net>
+<net id="213"><net_src comp="4" pin="0"/><net_sink comp="208" pin=1"/></net>
 
-<net id="221"><net_src comp="16" pin="0"/><net_sink comp="218" pin=0"/></net>
+<net id="218"><net_src comp="14" pin="0"/><net_sink comp="214" pin=0"/></net>
 
-<net id="225"><net_src comp="16" pin="0"/><net_sink comp="222" pin=0"/></net>
+<net id="219"><net_src comp="0" pin="0"/><net_sink comp="214" pin=1"/></net>
 
-<net id="229"><net_src comp="16" pin="0"/><net_sink comp="226" pin=0"/></net>
+<net id="257"><net_src comp="20" pin="0"/><net_sink comp="220" pin=0"/></net>
 
-<net id="233"><net_src comp="16" pin="0"/><net_sink comp="230" pin=0"/></net>
+<net id="258"><net_src comp="2" pin="0"/><net_sink comp="220" pin=2"/></net>
 
-<net id="237"><net_src comp="16" pin="0"/><net_sink comp="234" pin=0"/></net>
+<net id="281"><net_src comp="22" pin="0"/><net_sink comp="259" pin=0"/></net>
 
-<net id="241"><net_src comp="16" pin="0"/><net_sink comp="238" pin=0"/></net>
+<net id="282"><net_src comp="6" pin="0"/><net_sink comp="259" pin=1"/></net>
 
-<net id="246"><net_src comp="12" pin="0"/><net_sink comp="242" pin=0"/></net>
+<net id="309"><net_src comp="18" pin="0"/><net_sink comp="283" pin=0"/></net>
 
-<net id="247"><net_src comp="8" pin="0"/><net_sink comp="242" pin=1"/></net>
+<net id="310"><net_src comp="214" pin="2"/><net_sink comp="283" pin=1"/></net>
 
-<net id="252"><net_src comp="12" pin="0"/><net_sink comp="248" pin=0"/></net>
+<net id="311"><net_src comp="74" pin="1"/><net_sink comp="283" pin=2"/></net>
 
-<net id="253"><net_src comp="4" pin="0"/><net_sink comp="248" pin=1"/></net>
+<net id="312"><net_src comp="78" pin="1"/><net_sink comp="283" pin=3"/></net>
 
-<net id="258"><net_src comp="14" pin="0"/><net_sink comp="254" pin=0"/></net>
+<net id="313"><net_src comp="82" pin="1"/><net_sink comp="283" pin=4"/></net>
 
-<net id="259"><net_src comp="0" pin="0"/><net_sink comp="254" pin=1"/></net>
+<net id="314"><net_src comp="86" pin="1"/><net_sink comp="283" pin=5"/></net>
 
-<net id="297"><net_src comp="20" pin="0"/><net_sink comp="260" pin=0"/></net>
+<net id="315"><net_src comp="90" pin="1"/><net_sink comp="283" pin=6"/></net>
 
-<net id="298"><net_src comp="2" pin="0"/><net_sink comp="260" pin=2"/></net>
+<net id="316"><net_src comp="94" pin="1"/><net_sink comp="283" pin=7"/></net>
 
-<net id="321"><net_src comp="22" pin="0"/><net_sink comp="299" pin=0"/></net>
+<net id="317"><net_src comp="98" pin="1"/><net_sink comp="283" pin=8"/></net>
 
-<net id="322"><net_src comp="6" pin="0"/><net_sink comp="299" pin=1"/></net>
+<net id="318"><net_src comp="102" pin="1"/><net_sink comp="283" pin=9"/></net>
 
-<net id="349"><net_src comp="18" pin="0"/><net_sink comp="323" pin=0"/></net>
+<net id="319"><net_src comp="106" pin="1"/><net_sink comp="283" pin=10"/></net>
 
-<net id="350"><net_src comp="254" pin="2"/><net_sink comp="323" pin=1"/></net>
+<net id="320"><net_src comp="110" pin="1"/><net_sink comp="283" pin=11"/></net>
 
-<net id="351"><net_src comp="114" pin="1"/><net_sink comp="323" pin=2"/></net>
+<net id="321"><net_src comp="114" pin="1"/><net_sink comp="283" pin=12"/></net>
 
-<net id="352"><net_src comp="118" pin="1"/><net_sink comp="323" pin=3"/></net>
+<net id="322"><net_src comp="118" pin="1"/><net_sink comp="283" pin=13"/></net>
 
-<net id="353"><net_src comp="122" pin="1"/><net_sink comp="323" pin=4"/></net>
+<net id="323"><net_src comp="122" pin="1"/><net_sink comp="283" pin=14"/></net>
 
-<net id="354"><net_src comp="126" pin="1"/><net_sink comp="323" pin=5"/></net>
+<net id="324"><net_src comp="126" pin="1"/><net_sink comp="283" pin=15"/></net>
 
-<net id="355"><net_src comp="130" pin="1"/><net_sink comp="323" pin=6"/></net>
+<net id="325"><net_src comp="130" pin="1"/><net_sink comp="283" pin=16"/></net>
 
-<net id="356"><net_src comp="134" pin="1"/><net_sink comp="323" pin=7"/></net>
+<net id="326"><net_src comp="134" pin="1"/><net_sink comp="283" pin=17"/></net>
 
-<net id="357"><net_src comp="138" pin="1"/><net_sink comp="323" pin=8"/></net>
+<net id="327"><net_src comp="208" pin="2"/><net_sink comp="283" pin=19"/></net>
 
-<net id="358"><net_src comp="142" pin="1"/><net_sink comp="323" pin=9"/></net>
+<net id="328"><net_src comp="202" pin="2"/><net_sink comp="283" pin=20"/></net>
 
-<net id="359"><net_src comp="146" pin="1"/><net_sink comp="323" pin=10"/></net>
+<net id="329"><net_src comp="10" pin="0"/><net_sink comp="283" pin=23"/></net>
 
-<net id="360"><net_src comp="150" pin="1"/><net_sink comp="323" pin=11"/></net>
+<net id="333"><net_src comp="202" pin="2"/><net_sink comp="330" pin=0"/></net>
 
-<net id="361"><net_src comp="154" pin="1"/><net_sink comp="323" pin=12"/></net>
+<net id="334"><net_src comp="330" pin="1"/><net_sink comp="283" pin=20"/></net>
 
-<net id="362"><net_src comp="158" pin="1"/><net_sink comp="323" pin=13"/></net>
+<net id="338"><net_src comp="208" pin="2"/><net_sink comp="335" pin=0"/></net>
 
-<net id="363"><net_src comp="162" pin="1"/><net_sink comp="323" pin=14"/></net>
+<net id="339"><net_src comp="335" pin="1"/><net_sink comp="283" pin=19"/></net>
 
-<net id="364"><net_src comp="166" pin="1"/><net_sink comp="323" pin=15"/></net>
+<net id="343"><net_src comp="214" pin="2"/><net_sink comp="340" pin=0"/></net>
 
-<net id="365"><net_src comp="170" pin="1"/><net_sink comp="323" pin=16"/></net>
+<net id="344"><net_src comp="340" pin="1"/><net_sink comp="283" pin=1"/></net>
 
-<net id="366"><net_src comp="174" pin="1"/><net_sink comp="323" pin=17"/></net>
+<net id="348"><net_src comp="62" pin="1"/><net_sink comp="345" pin=0"/></net>
 
-<net id="367"><net_src comp="248" pin="2"/><net_sink comp="323" pin=19"/></net>
+<net id="349"><net_src comp="345" pin="1"/><net_sink comp="283" pin=22"/></net>
 
-<net id="368"><net_src comp="242" pin="2"/><net_sink comp="323" pin=20"/></net>
+<net id="350"><net_src comp="345" pin="1"/><net_sink comp="259" pin=2"/></net>
 
-<net id="369"><net_src comp="10" pin="0"/><net_sink comp="323" pin=23"/></net>
+<net id="354"><net_src comp="66" pin="1"/><net_sink comp="351" pin=0"/></net>
 
-<net id="373"><net_src comp="242" pin="2"/><net_sink comp="370" pin=0"/></net>
+<net id="355"><net_src comp="351" pin="1"/><net_sink comp="283" pin=21"/></net>
 
-<net id="374"><net_src comp="370" pin="1"/><net_sink comp="323" pin=20"/></net>
+<net id="356"><net_src comp="351" pin="1"/><net_sink comp="220" pin=3"/></net>
 
-<net id="378"><net_src comp="248" pin="2"/><net_sink comp="375" pin=0"/></net>
+<net id="360"><net_src comp="70" pin="1"/><net_sink comp="357" pin=0"/></net>
 
-<net id="379"><net_src comp="375" pin="1"/><net_sink comp="323" pin=19"/></net>
+<net id="361"><net_src comp="357" pin="1"/><net_sink comp="283" pin=18"/></net>
 
-<net id="383"><net_src comp="254" pin="2"/><net_sink comp="380" pin=0"/></net>
-
-<net id="384"><net_src comp="380" pin="1"/><net_sink comp="323" pin=1"/></net>
-
-<net id="388"><net_src comp="102" pin="1"/><net_sink comp="385" pin=0"/></net>
-
-<net id="389"><net_src comp="385" pin="1"/><net_sink comp="323" pin=22"/></net>
-
-<net id="390"><net_src comp="385" pin="1"/><net_sink comp="299" pin=2"/></net>
-
-<net id="394"><net_src comp="106" pin="1"/><net_sink comp="391" pin=0"/></net>
-
-<net id="395"><net_src comp="391" pin="1"/><net_sink comp="323" pin=21"/></net>
-
-<net id="396"><net_src comp="391" pin="1"/><net_sink comp="260" pin=3"/></net>
-
-<net id="400"><net_src comp="110" pin="1"/><net_sink comp="397" pin=0"/></net>
-
-<net id="401"><net_src comp="397" pin="1"/><net_sink comp="323" pin=18"/></net>
-
-<net id="402"><net_src comp="397" pin="1"/><net_sink comp="299" pin=3"/></net>
+<net id="362"><net_src comp="357" pin="1"/><net_sink comp="259" pin=3"/></net>
 
 </net_list>
 
@@ -1863,15 +1683,15 @@ StgValue_60         (ret                 ) [ 0000000]
 |----------|---------------------------------|---------|---------|---------|
 | Operation|         Functional Unit         |  Delay  |    FF   |   LUT   |
 |----------|---------------------------------|---------|---------|---------|
-|          |      grp_Loop_1_proc_fu_260     |  20.992 |   1643  |   906   |
-|   call   | grp_memcpy_omatrix_out_b_fu_299 |  11.808 |   128   |   281   |
-|          |     grp_Loop_0_proc19_fu_323    |  10.496 |   117   |   185   |
+|          |      grp_Loop_1_proc_fu_220     |  10.496 |   1241  |   1274  |
+|   call   | grp_memcpy_omatrix_out_b_fu_259 |  11.152 |    97   |   304   |
+|          |     grp_Loop_0_proc19_fu_283    |  10.496 |   117   |   185   |
 |----------|---------------------------------|---------|---------|---------|
-|          | omatrix_offset_read_read_fu_242 |    0    |    0    |    0    |
-|   read   | imatrix_offset_read_read_fu_248 |    0    |    0    |    0    |
-|          |     i_0_i_i_read_read_fu_254    |    0    |    0    |    0    |
+|          | omatrix_offset_read_read_fu_202 |    0    |    0    |    0    |
+|   read   | imatrix_offset_read_read_fu_208 |    0    |    0    |    0    |
+|          |     i_0_i_i_read_read_fu_214    |    0    |    0    |    0    |
 |----------|---------------------------------|---------|---------|---------|
-|   Total  |                                 |  43.296 |   1888  |   1372  |
+|   Total  |                                 |  32.144 |   1455  |   1763  |
 |----------|---------------------------------|---------|---------|---------|
 
 Memories:
@@ -1918,25 +1738,25 @@ Memories:
 +---------------------------+--------+
 |                           |   FF   |
 +---------------------------+--------+
-|     i_0_i_i_c_reg_397     |    1   |
-|    i_0_i_i_read_reg_380   |    2   |
-|  imatrix_offset_c_reg_391 |   30   |
-|imatrix_offset_read_reg_375|   30   |
-|  omatrix_offset_c_reg_385 |   30   |
-|omatrix_offset_read_reg_370|   30   |
+|     i_0_i_i_c_reg_357     |    1   |
+|    i_0_i_i_read_reg_340   |    2   |
+|  imatrix_offset_c_reg_351 |   62   |
+|imatrix_offset_read_reg_335|   62   |
+|  omatrix_offset_c_reg_345 |   62   |
+|omatrix_offset_read_reg_330|   62   |
 +---------------------------+--------+
-|           Total           |   123  |
+|           Total           |   251  |
 +---------------------------+--------+
 
 * Multiplexer (MUX) list: 
 |--------------------------|------|------|------|--------||---------||---------|
 |           Comp           |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
 |--------------------------|------|------|------|--------||---------||---------|
-| grp_Loop_0_proc19_fu_323 |  p1  |   2  |   2  |    4   ||    9    |
-| grp_Loop_0_proc19_fu_323 |  p19 |   2  |  30  |   60   ||    9    |
-| grp_Loop_0_proc19_fu_323 |  p20 |   2  |  30  |   60   ||    9    |
+| grp_Loop_0_proc19_fu_283 |  p1  |   2  |   2  |    4   ||    9    |
+| grp_Loop_0_proc19_fu_283 |  p19 |   2  |  62  |   124  ||    9    |
+| grp_Loop_0_proc19_fu_283 |  p20 |   2  |  62  |   124  ||    9    |
 |--------------------------|------|------|------|--------||---------||---------|
-|           Total          |      |      |      |   124  ||  1.968  ||    27   |
+|           Total          |      |      |      |   252  ||  1.968  ||    27   |
 |--------------------------|------|------|------|--------||---------||---------|
 
 
@@ -1945,10 +1765,10 @@ Memories:
 +-----------+--------+--------+--------+--------+
 |           |  BRAM  |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+
-|  Function |    -   |   43   |  1888  |  1372  |
+|  Function |    -   |   32   |  1455  |  1763  |
 |   Memory  |    0   |    -   |  1216  |   32   |
 |Multiplexer|    -   |    1   |    -   |   27   |
-|  Register |    -   |    -   |   123  |    -   |
+|  Register |    -   |    -   |   251  |    -   |
 +-----------+--------+--------+--------+--------+
-|   Total   |    0   |   45   |  3227  |  1431  |
+|   Total   |    0   |   34   |  2922  |  1822  |
 +-----------+--------+--------+--------+--------+

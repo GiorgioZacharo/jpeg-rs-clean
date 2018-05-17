@@ -10,14 +10,690 @@
 
 source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/decode_start'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/chenIDCT'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/BoundIDctMatrix'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/IQuantize'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/WriteOneBlock'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/Izigzagmatrix'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/tools/Xilinx/Vivado/2017.4/data/ip'.
-add_files: Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1582.020 ; gain = 331.000 ; free physical = 6919 ; free virtual = 20354
+add_files: Time (s): cpu = 00:00:16 ; elapsed = 00:00:45 . Memory (MB): peak = 1581.023 ; gain = 330.000 ; free physical = 7443 ; free virtual = 18804
 Command: synth_design -top design_1_wrapper -part xczu9eg-ffvb1156-2-e
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
-INFO: [Common 17-1223] The version limit for your license is '2018.05' and will expire in 16 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2018.05' and will expire in 14 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18637 
+INFO: Helper process launched with PID 19454 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1608.551 ; gain = 0.000 ; free physical = 7310 ; free virtual = 18685
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'design_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-638] synthesizing module 'design_1_BoundIDctMatrix_0_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_BoundIDctMatrix_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_BoundIDctMatrix_0_1' (1#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_BoundIDctMatrix_0_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'BoundIDctMatrix_0' of module 'design_1_BoundIDctMatrix_0_1' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:619]
+INFO: [Synth 8-638] synthesizing module 'design_1_ChenIDct_0_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_ChenIDct_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ChenIDct_0_1' (2#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_ChenIDct_0_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'ChenIDct_0' of module 'design_1_ChenIDct_0_1' requires 55 connections, but only 53 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:690]
+INFO: [Synth 8-638] synthesizing module 'design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1' (3#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'ChenIDct_f2r_vectorBody_s2e_forEnd212_0' of module 'design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1' requires 55 connections, but only 53 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:744]
+INFO: [Synth 8-638] synthesizing module 'design_1_IQuantize_0_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_IQuantize_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_IQuantize_0_1' (4#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_IQuantize_0_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'IQuantize_0' of module 'design_1_IQuantize_0_1' requires 90 connections, but only 86 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:798]
+INFO: [Synth 8-638] synthesizing module 'design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1' (5#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'IZigzagMatrix_f2r_forBody_s2e_forEnd_0' of module 'design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1' requires 90 connections, but only 86 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:885]
+INFO: [Synth 8-638] synthesizing module 'design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0' (6#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'WriteOneBlock_f2r_entry_s2e_forEnd13_0' of module 'design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0' requires 107 connections, but only 103 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:972]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_interconnect_0_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:6070]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1S8P97A' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:7546]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1S8P97A' (7#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:7546]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_2GFYGN' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:7950]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_2GFYGN' (8#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:7950]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_1QT21JP' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8082]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1QT21JP' (9#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8082]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_3MFM44' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8214]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_3MFM44' (10#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8214]
+INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_1TIMAQ8' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8346]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_1TIMAQ8' (11#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8346]
+INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_YFGHD' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8478]
+INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_YFGHD' (12#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8478]
+INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_1SWX6C3' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8610]
+INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_1SWX6C3' (13#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8610]
+INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_1UESAA' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8742]
+INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_1UESAA' (14#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8742]
+INFO: [Synth 8-638] synthesizing module 'm08_couplers_imp_1UTSB8A' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8874]
+INFO: [Synth 8-256] done synthesizing module 'm08_couplers_imp_1UTSB8A' (15#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:8874]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_8ISPLG' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:9358]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_ds_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_ds_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_ds_0' (16#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_ds_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_pc_0' (17#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_8ISPLG' (18#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:9358]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_xbar_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xbar_1' (19#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_xbar_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'xbar' of module 'design_1_xbar_1' requires 40 connections, but only 38 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:7505]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_interconnect_0_1' (20#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:6070]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_interconnect_0_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:1904]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_IXUPW4' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:7678]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_IXUPW4' (21#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:7678]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1GKRXSM' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:9006]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_0' (22#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_0' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:9285]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1GKRXSM' (23#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:9006]
+INFO: [Synth 8-638] synthesizing module 'design_1_s00_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s00_mmu_0' (24#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_MSXCFR' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:9768]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_1' (25#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_1_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_1' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10047]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_MSXCFR' (26#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:9768]
+INFO: [Synth 8-638] synthesizing module 'design_1_s01_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s01_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s01_mmu_0' (27#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s01_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's02_couplers_imp_1F8JMFP' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10120]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_2' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_2_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_2' (28#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_2_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_2' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10399]
+INFO: [Synth 8-256] done synthesizing module 's02_couplers_imp_1F8JMFP' (29#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10120]
+INFO: [Synth 8-638] synthesizing module 'design_1_s02_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s02_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s02_mmu_0' (30#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s02_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's03_couplers_imp_OETE44' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10472]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_3' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_3_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_3' (31#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_3_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_3' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10751]
+INFO: [Synth 8-256] done synthesizing module 's03_couplers_imp_OETE44' (32#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10472]
+INFO: [Synth 8-638] synthesizing module 'design_1_s03_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s03_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s03_mmu_0' (33#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s03_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's04_couplers_imp_1EQ9DXS' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10824]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_4' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_4_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_4' (34#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_4_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_4' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11103]
+INFO: [Synth 8-256] done synthesizing module 's04_couplers_imp_1EQ9DXS' (35#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:10824]
+INFO: [Synth 8-638] synthesizing module 'design_1_s04_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s04_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s04_mmu_0' (36#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s04_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's05_couplers_imp_OUAEK1' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11176]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_5' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_5_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_5' (37#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_5_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_5' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11455]
+INFO: [Synth 8-256] done synthesizing module 's05_couplers_imp_OUAEK1' (38#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11176]
+INFO: [Synth 8-638] synthesizing module 'design_1_s05_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s05_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s05_mmu_0' (39#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s05_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's06_couplers_imp_1DO1EFN' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11528]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_6' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_6_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_6' (40#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_6_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_6' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11807]
+INFO: [Synth 8-256] done synthesizing module 's06_couplers_imp_1DO1EFN' (41#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11528]
+INFO: [Synth 8-638] synthesizing module 'design_1_s06_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s06_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s06_mmu_0' (42#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s06_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's07_couplers_imp_PM8CZ6' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11880]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_7' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_7_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_7' (43#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_7_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_7' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12159]
+INFO: [Synth 8-256] done synthesizing module 's07_couplers_imp_PM8CZ6' (44#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:11880]
+INFO: [Synth 8-638] synthesizing module 'design_1_s07_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s07_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s07_mmu_0' (45#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s07_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's08_couplers_imp_1B7TCYI' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12232]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_8' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_8_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_8' (46#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_8_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_8' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12511]
+INFO: [Synth 8-256] done synthesizing module 's08_couplers_imp_1B7TCYI' (47#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12232]
+INFO: [Synth 8-638] synthesizing module 'design_1_s08_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s08_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s08_mmu_0' (48#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s08_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's09_couplers_imp_JA6723' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12584]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_9' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_9_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_9' (49#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_9_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_9' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12863]
+INFO: [Synth 8-256] done synthesizing module 's09_couplers_imp_JA6723' (50#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12584]
+INFO: [Synth 8-638] synthesizing module 'design_1_s09_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s09_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s09_mmu_0' (51#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s09_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 's10_couplers_imp_TL0OZY' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12936]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_10' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_10_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_auto_us_10' (52#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_auto_us_10_stub.v:6]
+WARNING: [Synth 8-350] instance 'auto_us' of module 'design_1_auto_us_10' requires 72 connections, but only 70 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:13215]
+INFO: [Synth 8-256] done synthesizing module 's10_couplers_imp_TL0OZY' (53#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:12936]
+INFO: [Synth 8-638] synthesizing module 'design_1_s10_mmu_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s10_mmu_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_s10_mmu_0' (54#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_s10_mmu_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xbar_0' (55#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_xbar_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'xbar' of module 'design_1_xbar_0' requires 78 connections, but only 74 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:5993]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_interconnect_0_0' (56#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:1904]
+INFO: [Synth 8-638] synthesizing module 'design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0' (57#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'decode_start_f2r_vectorPh_s2e_forBody96Preheader_1' of module 'design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0' requires 90 connections, but only 86 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:1716]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_proc_sys_reset_0_0' (58#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_proc_sys_reset_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'proc_sys_reset_0' of module 'design_1_proc_sys_reset_0_0' requires 10 connections, but only 7 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:1803]
+INFO: [Synth 8-638] synthesizing module 'design_1_xlconcat_0_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_xlconcat_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xlconcat_0_0' (59#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_xlconcat_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (60#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/realtime/design_1_zynq_ultra_ps_e_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'zynq_ultra_ps_e_0' of module 'design_1_zynq_ultra_ps_e_0_0' requires 83 connections, but only 81 given [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:1820]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (61#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/synth/design_1.v:13]
+WARNING: [Synth 8-115] binding instance 'design_1_i' in module 'design_1_wrapper' to reference 'design_1' which has no pins
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (62#1) [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/jpeg-rs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+WARNING: [Synth 8-3331] design s10_couplers_imp_TL0OZY has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s10_couplers_imp_TL0OZY has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s09_couplers_imp_JA6723 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s09_couplers_imp_JA6723 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s08_couplers_imp_1B7TCYI has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s08_couplers_imp_1B7TCYI has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s07_couplers_imp_PM8CZ6 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s07_couplers_imp_PM8CZ6 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s06_couplers_imp_1DO1EFN has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s06_couplers_imp_1DO1EFN has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s05_couplers_imp_OUAEK1 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s05_couplers_imp_OUAEK1 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s04_couplers_imp_1EQ9DXS has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s04_couplers_imp_1EQ9DXS has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s03_couplers_imp_OETE44 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s03_couplers_imp_OETE44 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s02_couplers_imp_1F8JMFP has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s02_couplers_imp_1F8JMFP has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s01_couplers_imp_MSXCFR has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s01_couplers_imp_MSXCFR has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_1GKRXSM has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1GKRXSM has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_IXUPW4 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_IXUPW4 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_IXUPW4 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_IXUPW4 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S00_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S01_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S01_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S02_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S02_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S03_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S03_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S04_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S04_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S05_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S05_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S06_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S06_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S07_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S07_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S08_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S08_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S09_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S09_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S10_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S10_AXI_awlock[1]
+WARNING: [Synth 8-3331] design s00_couplers_imp_8ISPLG has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_8ISPLG has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m08_couplers_imp_1UTSB8A has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m08_couplers_imp_1UTSB8A has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m08_couplers_imp_1UTSB8A has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m08_couplers_imp_1UTSB8A has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m07_couplers_imp_1UESAA has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m07_couplers_imp_1UESAA has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m07_couplers_imp_1UESAA has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m07_couplers_imp_1UESAA has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m06_couplers_imp_1SWX6C3 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m06_couplers_imp_1SWX6C3 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m06_couplers_imp_1SWX6C3 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m06_couplers_imp_1SWX6C3 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m05_couplers_imp_YFGHD has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m05_couplers_imp_YFGHD has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m05_couplers_imp_YFGHD has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m05_couplers_imp_YFGHD has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m04_couplers_imp_1TIMAQ8 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m04_couplers_imp_1TIMAQ8 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m04_couplers_imp_1TIMAQ8 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m04_couplers_imp_1TIMAQ8 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_3MFM44 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_3MFM44 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_3MFM44 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_3MFM44 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_1QT21JP has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_1QT21JP has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_1QT21JP has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_1QT21JP has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_2GFYGN has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_2GFYGN has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_2GFYGN has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_2GFYGN has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S8P97A has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S8P97A has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S8P97A has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S8P97A has unconnected port S_ARESETN
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1608.551 ; gain = 0.000 ; free physical = 7317 ; free virtual = 18693
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1608.551 ; gain = 0.000 ; free physical = 7315 ; free virtual = 18691
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp36/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp36/design_1_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'design_1_i/zynq_ultra_ps_e_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp37/design_1_xlconcat_0_0_in_context.xdc] for cell 'design_1_i/xlconcat_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp37/design_1_xlconcat_0_0_in_context.xdc] for cell 'design_1_i/xlconcat_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp38/design_1_proc_sys_reset_0_0_in_context.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp38/design_1_proc_sys_reset_0_0_in_context.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp39/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/xbar'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp39/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/xbar'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp40/design_1_xbar_1_in_context.xdc] for cell 'design_1_i/axi_interconnect_master/xbar'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp40/design_1_xbar_1_in_context.xdc] for cell 'design_1_i/axi_interconnect_master/xbar'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp41/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0_in_context.xdc] for cell 'design_1_i/decode_start_f2r_vectorPh_s2e_forBody96Preheader_1'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp41/design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0_in_context.xdc] for cell 'design_1_i/decode_start_f2r_vectorPh_s2e_forBody96Preheader_1'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp42/design_1_ChenIDct_0_1_in_context.xdc] for cell 'design_1_i/ChenIDct_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp42/design_1_ChenIDct_0_1_in_context.xdc] for cell 'design_1_i/ChenIDct_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp43/design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0_in_context.xdc] for cell 'design_1_i/WriteOneBlock_f2r_entry_s2e_forEnd13_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp43/design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0_in_context.xdc] for cell 'design_1_i/WriteOneBlock_f2r_entry_s2e_forEnd13_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp44/design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1_in_context.xdc] for cell 'design_1_i/IZigzagMatrix_f2r_forBody_s2e_forEnd_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp44/design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1_in_context.xdc] for cell 'design_1_i/IZigzagMatrix_f2r_forBody_s2e_forEnd_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp45/design_1_IQuantize_0_1_in_context.xdc] for cell 'design_1_i/IQuantize_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp45/design_1_IQuantize_0_1_in_context.xdc] for cell 'design_1_i/IQuantize_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp46/design_1_BoundIDctMatrix_0_1_in_context.xdc] for cell 'design_1_i/BoundIDctMatrix_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp46/design_1_BoundIDctMatrix_0_1_in_context.xdc] for cell 'design_1_i/BoundIDctMatrix_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp47/design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1_in_context.xdc] for cell 'design_1_i/ChenIDct_f2r_vectorBody_s2e_forEnd212_0'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp47/design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1_in_context.xdc] for cell 'design_1_i/ChenIDct_f2r_vectorBody_s2e_forEnd212_0'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp48/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_master/s00_couplers/auto_ds'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp48/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_master/s00_couplers/auto_ds'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp49/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_master/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp49/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_master/s00_couplers/auto_pc'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp50/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s00_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp50/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s00_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp51/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s01_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp51/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s01_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp52/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s02_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp52/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s02_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp53/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s03_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp53/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s03_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp54/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s04_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp54/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s04_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp55/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s05_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp55/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s05_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp56/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s06_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp56/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s06_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp57/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s07_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp57/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s07_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp58/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s08_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp58/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s08_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp59/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s09_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp59/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s09_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp60/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s10_mmu'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp60/design_1_s02_mmu_0_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s10_mmu'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp61/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s10_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp61/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s10_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp62/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s09_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp62/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s09_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp63/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s08_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp63/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s08_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp64/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s07_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp64/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s07_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp65/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s06_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp65/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s06_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp66/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s05_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp66/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s05_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp67/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s04_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp67/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s04_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp68/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s03_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp68/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s03_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp69/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s02_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp69/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s02_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp70/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s01_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp70/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s01_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp71/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s00_couplers/auto_us'
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/.Xil/Vivado-19427-legolas/dcp71/design_1_auto_us_2_in_context.xdc] for cell 'design_1_i/axi_interconnect_slave/s00_couplers/auto_us'
+Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2297.641 ; gain = 0.996 ; free physical = 6577 ; free virtual = 17950
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:01:06 . Memory (MB): peak = 2297.641 ; gain = 689.090 ; free physical = 6676 ; free virtual = 18057
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-2-e
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:01:06 . Memory (MB): peak = 2297.641 ; gain = 689.090 ; free physical = 6676 ; free virtual = 18057
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/BoundIDctMatrix_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ChenIDct_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ChenIDct_f2r_vectorBody_s2e_forEnd212_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/IQuantize_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/IZigzagMatrix_f2r_forBody_s2e_forEnd_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/WriteOneBlock_f2r_entry_s2e_forEnd13_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_master. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_master/s00_couplers/auto_ds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_master/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_master/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s00_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s00_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s01_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s01_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s02_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s02_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s03_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s03_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s04_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s04_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s05_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s05_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s06_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s06_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s07_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s07_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s08_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s08_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s09_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s09_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s10_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/s10_mmu. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/axi_interconnect_slave/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/decode_start_f2r_vectorPh_s2e_forBody96Preheader_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/proc_sys_reset_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/zynq_ultra_ps_e_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:01:06 . Memory (MB): peak = 2297.641 ; gain = 689.090 ; free physical = 6676 ; free virtual = 18057
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-115] binding instance 'design_1_i' in module 'design_1_wrapper' to reference 'design_1' which has no pins
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:01:07 . Memory (MB): peak = 2297.641 ; gain = 689.090 ; free physical = 6679 ; free virtual = 18060
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port M00_AXI_bid[5]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port M00_AXI_bid[4]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port M00_AXI_rid[5]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port M00_AXI_rid[4]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S00_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S01_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S01_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S02_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S02_AXI_awlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S03_AXI_arlock[1]
+WARNING: [Synth 8-3331] design design_1_axi_interconnect_0_0 has unconnected port S03_AXI_awlock[1]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:01:07 . Memory (MB): peak = 2297.641 ; gain = 689.090 ; free physical = 6668 ; free virtual = 18049
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/zynq_ultra_ps_e_0/pl_clk0' to pin 'design_1_i/zynq_ultra_ps_e_0/bbstub_pl_clk0/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:02:10 . Memory (MB): peak = 2893.621 ; gain = 1285.070 ; free physical = 5547 ; free virtual = 16962
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:02:10 . Memory (MB): peak = 2894.617 ; gain = 1286.066 ; free physical = 5546 ; free virtual = 16961
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:02:11 . Memory (MB): peak = 2915.383 ; gain = 1306.832 ; free physical = 5532 ; free virtual = 16947
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:06 ; elapsed = 00:02:11 . Memory (MB): peak = 2915.387 ; gain = 1306.836 ; free physical = 5473 ; free virtual = 16889
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:06 ; elapsed = 00:02:11 . Memory (MB): peak = 2915.387 ; gain = 1306.836 ; free physical = 5473 ; free virtual = 16889
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:06 ; elapsed = 00:02:11 . Memory (MB): peak = 2915.387 ; gain = 1306.836 ; free physical = 5470 ; free virtual = 16886
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:06 ; elapsed = 00:02:11 . Memory (MB): peak = 2915.387 ; gain = 1306.836 ; free physical = 5470 ; free virtual = 16886
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:06 ; elapsed = 00:02:11 . Memory (MB): peak = 2915.387 ; gain = 1306.836 ; free physical = 5470 ; free virtual = 16886
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:06 ; elapsed = 00:02:12 . Memory (MB): peak = 2915.387 ; gain = 1306.836 ; free physical = 5469 ; free virtual = 16885
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------------------------------------+----------+
+|      |BlackBox name                                                 |Instances |
++------+--------------------------------------------------------------+----------+
+|1     |design_1_xbar_1                                               |         1|
+|2     |design_1_auto_ds_0                                            |         1|
+|3     |design_1_auto_pc_0                                            |         1|
+|4     |design_1_s00_mmu_0                                            |         1|
+|5     |design_1_s01_mmu_0                                            |         1|
+|6     |design_1_s02_mmu_0                                            |         1|
+|7     |design_1_s03_mmu_0                                            |         1|
+|8     |design_1_s04_mmu_0                                            |         1|
+|9     |design_1_s05_mmu_0                                            |         1|
+|10    |design_1_s06_mmu_0                                            |         1|
+|11    |design_1_s07_mmu_0                                            |         1|
+|12    |design_1_s08_mmu_0                                            |         1|
+|13    |design_1_s09_mmu_0                                            |         1|
+|14    |design_1_s10_mmu_0                                            |         1|
+|15    |design_1_xbar_0                                               |         1|
+|16    |design_1_auto_us_0                                            |         1|
+|17    |design_1_auto_us_1                                            |         1|
+|18    |design_1_auto_us_2                                            |         1|
+|19    |design_1_auto_us_3                                            |         1|
+|20    |design_1_auto_us_4                                            |         1|
+|21    |design_1_auto_us_5                                            |         1|
+|22    |design_1_auto_us_6                                            |         1|
+|23    |design_1_auto_us_7                                            |         1|
+|24    |design_1_auto_us_8                                            |         1|
+|25    |design_1_auto_us_9                                            |         1|
+|26    |design_1_auto_us_10                                           |         1|
+|27    |design_1_BoundIDctMatrix_0_1                                  |         1|
+|28    |design_1_ChenIDct_0_1                                         |         1|
+|29    |design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1            |         1|
+|30    |design_1_IQuantize_0_1                                        |         1|
+|31    |design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1             |         1|
+|32    |design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0             |         1|
+|33    |design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0 |         1|
+|34    |design_1_proc_sys_reset_0_0                                   |         1|
+|35    |design_1_xlconcat_0_0                                         |         1|
+|36    |design_1_zynq_ultra_ps_e_0_0                                  |         1|
++------+--------------------------------------------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------------------------------------------+------+
+|      |Cell                                                          |Count |
++------+--------------------------------------------------------------+------+
+|1     |design_1_BoundIDctMatrix_0_1                                  |     1|
+|2     |design_1_ChenIDct_0_1                                         |     1|
+|3     |design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1            |     1|
+|4     |design_1_IQuantize_0_1                                        |     1|
+|5     |design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1             |     1|
+|6     |design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0             |     1|
+|7     |design_1_auto_ds_0                                            |     1|
+|8     |design_1_auto_pc_0                                            |     1|
+|9     |design_1_auto_us_0                                            |     1|
+|10    |design_1_auto_us_1                                            |     1|
+|11    |design_1_auto_us_10                                           |     1|
+|12    |design_1_auto_us_2                                            |     1|
+|13    |design_1_auto_us_3                                            |     1|
+|14    |design_1_auto_us_4                                            |     1|
+|15    |design_1_auto_us_5                                            |     1|
+|16    |design_1_auto_us_6                                            |     1|
+|17    |design_1_auto_us_7                                            |     1|
+|18    |design_1_auto_us_8                                            |     1|
+|19    |design_1_auto_us_9                                            |     1|
+|20    |design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0 |     1|
+|21    |design_1_proc_sys_reset_0_0                                   |     1|
+|22    |design_1_s00_mmu_0                                            |     1|
+|23    |design_1_s01_mmu_0                                            |     1|
+|24    |design_1_s02_mmu_0                                            |     1|
+|25    |design_1_s03_mmu_0                                            |     1|
+|26    |design_1_s04_mmu_0                                            |     1|
+|27    |design_1_s05_mmu_0                                            |     1|
+|28    |design_1_s06_mmu_0                                            |     1|
+|29    |design_1_s07_mmu_0                                            |     1|
+|30    |design_1_s08_mmu_0                                            |     1|
+|31    |design_1_s09_mmu_0                                            |     1|
+|32    |design_1_s10_mmu_0                                            |     1|
+|33    |design_1_xbar_0                                               |     1|
+|34    |design_1_xbar_1                                               |     1|
+|35    |design_1_xlconcat_0_0                                         |     1|
+|36    |design_1_zynq_ultra_ps_e_0_0                                  |     1|
++------+--------------------------------------------------------------+------+
+
+Report Instance Areas: 
++------+----------------------------+------------------------------+------+
+|      |Instance                    |Module                        |Cells |
++------+----------------------------+------------------------------+------+
+|1     |top                         |                              | 14107|
+|2     |  design_1_i                |design_1                      | 14107|
+|3     |    axi_interconnect_master |design_1_axi_interconnect_0_1 |  1703|
+|4     |      s00_couplers          |s00_couplers_imp_8ISPLG       |   519|
+|5     |    axi_interconnect_slave  |design_1_axi_interconnect_0_0 |  8990|
+|6     |      s00_couplers          |s00_couplers_imp_1GKRXSM      |   378|
+|7     |      s01_couplers          |s01_couplers_imp_MSXCFR       |   378|
+|8     |      s02_couplers          |s02_couplers_imp_1F8JMFP      |   378|
+|9     |      s03_couplers          |s03_couplers_imp_OETE44       |   378|
+|10    |      s04_couplers          |s04_couplers_imp_1EQ9DXS      |   378|
+|11    |      s05_couplers          |s05_couplers_imp_OUAEK1       |   378|
+|12    |      s06_couplers          |s06_couplers_imp_1DO1EFN      |   378|
+|13    |      s07_couplers          |s07_couplers_imp_PM8CZ6       |   378|
+|14    |      s08_couplers          |s08_couplers_imp_1B7TCYI      |   378|
+|15    |      s09_couplers          |s09_couplers_imp_JA6723       |   378|
+|16    |      s10_couplers          |s10_couplers_imp_TL0OZY       |   378|
++------+----------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:06 ; elapsed = 00:02:12 . Memory (MB): peak = 2915.387 ; gain = 1306.836 ; free physical = 5469 ; free virtual = 16885
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 47 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:01:28 . Memory (MB): peak = 2915.387 ; gain = 617.746 ; free physical = 5508 ; free virtual = 16924
+Synthesis Optimization Complete : Time (s): cpu = 00:01:06 ; elapsed = 00:02:12 . Memory (MB): peak = 2915.391 ; gain = 1306.836 ; free physical = 5511 ; free virtual = 16926
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+146 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:02:17 . Memory (MB): peak = 2956.020 ; gain = 1374.996 ; free physical = 5477 ; free virtual = 16893
+INFO: [Common 17-1381] The checkpoint '/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2956.023 ; gain = 0.000 ; free physical = 5472 ; free virtual = 16889
+INFO: [Common 17-206] Exiting Vivado at Thu May 17 18:18:48 2018...

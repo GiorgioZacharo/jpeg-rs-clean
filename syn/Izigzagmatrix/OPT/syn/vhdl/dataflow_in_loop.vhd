@@ -16,7 +16,7 @@ port (
     i_0_i_i : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_imatrix_AWVALID : OUT STD_LOGIC;
     m_axi_imatrix_AWREADY : IN STD_LOGIC;
-    m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
     m_axi_imatrix_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
     m_axi_imatrix_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -36,7 +36,7 @@ port (
     m_axi_imatrix_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_ARVALID : OUT STD_LOGIC;
     m_axi_imatrix_ARREADY : IN STD_LOGIC;
-    m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
     m_axi_imatrix_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
     m_axi_imatrix_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -59,10 +59,10 @@ port (
     m_axi_imatrix_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_imatrix_BID : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_imatrix_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-    imatrix_offset : IN STD_LOGIC_VECTOR (29 downto 0);
+    imatrix_offset : IN STD_LOGIC_VECTOR (61 downto 0);
     m_axi_omatrix_AWVALID : OUT STD_LOGIC;
     m_axi_omatrix_AWREADY : IN STD_LOGIC;
-    m_axi_omatrix_AWADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_omatrix_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
     m_axi_omatrix_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_omatrix_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
     m_axi_omatrix_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -82,7 +82,7 @@ port (
     m_axi_omatrix_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_omatrix_ARVALID : OUT STD_LOGIC;
     m_axi_omatrix_ARREADY : IN STD_LOGIC;
-    m_axi_omatrix_ARADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_omatrix_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
     m_axi_omatrix_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
     m_axi_omatrix_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
     m_axi_omatrix_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -105,7 +105,7 @@ port (
     m_axi_omatrix_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_omatrix_BID : IN STD_LOGIC_VECTOR (0 downto 0);
     m_axi_omatrix_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-    omatrix_offset : IN STD_LOGIC_VECTOR (29 downto 0);
+    omatrix_offset : IN STD_LOGIC_VECTOR (61 downto 0);
     i_0_i_i_ap_vld : IN STD_LOGIC;
     imatrix_offset_ap_vld : IN STD_LOGIC;
     omatrix_offset_ap_vld : IN STD_LOGIC;
@@ -128,6 +128,7 @@ architecture behav of dataflow_in_loop is
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
+    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
 
@@ -266,9 +267,9 @@ architecture behav of dataflow_in_loop is
     signal Loop_0_proc19_U0_in1_buf_15_d0 : STD_LOGIC_VECTOR (5 downto 0);
     signal Loop_0_proc19_U0_i_0_i_i_c_din : STD_LOGIC_VECTOR (0 downto 0);
     signal Loop_0_proc19_U0_i_0_i_i_c_write : STD_LOGIC;
-    signal Loop_0_proc19_U0_imatrix_offset_out_din : STD_LOGIC_VECTOR (29 downto 0);
+    signal Loop_0_proc19_U0_imatrix_offset_out_din : STD_LOGIC_VECTOR (61 downto 0);
     signal Loop_0_proc19_U0_imatrix_offset_out_write : STD_LOGIC;
-    signal Loop_0_proc19_U0_omatrix_offset_out_din : STD_LOGIC_VECTOR (29 downto 0);
+    signal Loop_0_proc19_U0_omatrix_offset_out_din : STD_LOGIC_VECTOR (61 downto 0);
     signal Loop_0_proc19_U0_omatrix_offset_out_write : STD_LOGIC;
     signal ap_channel_done_in1_buf_15 : STD_LOGIC;
     signal Loop_0_proc19_U0_in1_buf_15_full_n : STD_LOGIC;
@@ -342,7 +343,7 @@ architecture behav of dataflow_in_loop is
     signal Loop_1_proc_U0_in1_buf_0_address0 : STD_LOGIC_VECTOR (0 downto 0);
     signal Loop_1_proc_U0_in1_buf_0_ce0 : STD_LOGIC;
     signal Loop_1_proc_U0_m_axi_imatrix_AWVALID : STD_LOGIC;
-    signal Loop_1_proc_U0_m_axi_imatrix_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal Loop_1_proc_U0_m_axi_imatrix_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_AWID : STD_LOGIC_VECTOR (0 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -360,7 +361,7 @@ architecture behav of dataflow_in_loop is
     signal Loop_1_proc_U0_m_axi_imatrix_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_WUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_ARVALID : STD_LOGIC;
-    signal Loop_1_proc_U0_m_axi_imatrix_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal Loop_1_proc_U0_m_axi_imatrix_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_ARID : STD_LOGIC_VECTOR (0 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal Loop_1_proc_U0_m_axi_imatrix_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -538,7 +539,7 @@ architecture behav of dataflow_in_loop is
     signal memcpy_omatrix_out_b_U0_ap_idle : STD_LOGIC;
     signal memcpy_omatrix_out_b_U0_ap_ready : STD_LOGIC;
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_AWVALID : STD_LOGIC;
-    signal memcpy_omatrix_out_b_U0_m_axi_omatrix_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal memcpy_omatrix_out_b_U0_m_axi_omatrix_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_AWID : STD_LOGIC_VECTOR (0 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -556,7 +557,7 @@ architecture behav of dataflow_in_loop is
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_WID : STD_LOGIC_VECTOR (0 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_WUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_ARVALID : STD_LOGIC;
-    signal memcpy_omatrix_out_b_U0_m_axi_omatrix_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal memcpy_omatrix_out_b_U0_m_axi_omatrix_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_ARID : STD_LOGIC_VECTOR (0 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
     signal memcpy_omatrix_out_b_U0_m_axi_omatrix_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
@@ -672,10 +673,10 @@ architecture behav of dataflow_in_loop is
     signal i_0_i_i_c_dout : STD_LOGIC_VECTOR (0 downto 0);
     signal i_0_i_i_c_empty_n : STD_LOGIC;
     signal imatrix_offset_c_full_n : STD_LOGIC;
-    signal imatrix_offset_c_dout : STD_LOGIC_VECTOR (29 downto 0);
+    signal imatrix_offset_c_dout : STD_LOGIC_VECTOR (61 downto 0);
     signal imatrix_offset_c_empty_n : STD_LOGIC;
     signal omatrix_offset_c_full_n : STD_LOGIC;
-    signal omatrix_offset_c_dout : STD_LOGIC_VECTOR (29 downto 0);
+    signal omatrix_offset_c_dout : STD_LOGIC_VECTOR (61 downto 0);
     signal omatrix_offset_c_empty_n : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
@@ -769,12 +770,12 @@ architecture behav of dataflow_in_loop is
         i_0_i_i_c_din : OUT STD_LOGIC_VECTOR (0 downto 0);
         i_0_i_i_c_full_n : IN STD_LOGIC;
         i_0_i_i_c_write : OUT STD_LOGIC;
-        imatrix_offset : IN STD_LOGIC_VECTOR (29 downto 0);
-        omatrix_offset : IN STD_LOGIC_VECTOR (29 downto 0);
-        imatrix_offset_out_din : OUT STD_LOGIC_VECTOR (29 downto 0);
+        imatrix_offset : IN STD_LOGIC_VECTOR (61 downto 0);
+        omatrix_offset : IN STD_LOGIC_VECTOR (61 downto 0);
+        imatrix_offset_out_din : OUT STD_LOGIC_VECTOR (61 downto 0);
         imatrix_offset_out_full_n : IN STD_LOGIC;
         imatrix_offset_out_write : OUT STD_LOGIC;
-        omatrix_offset_out_din : OUT STD_LOGIC_VECTOR (29 downto 0);
+        omatrix_offset_out_din : OUT STD_LOGIC_VECTOR (61 downto 0);
         omatrix_offset_out_full_n : IN STD_LOGIC;
         omatrix_offset_out_write : OUT STD_LOGIC );
     end component;
@@ -794,7 +795,7 @@ architecture behav of dataflow_in_loop is
         in1_buf_0_q0 : IN STD_LOGIC_VECTOR (5 downto 0);
         m_axi_imatrix_AWVALID : OUT STD_LOGIC;
         m_axi_imatrix_AWREADY : IN STD_LOGIC;
-        m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_imatrix_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_imatrix_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_imatrix_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -814,7 +815,7 @@ architecture behav of dataflow_in_loop is
         m_axi_imatrix_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_ARVALID : OUT STD_LOGIC;
         m_axi_imatrix_ARREADY : IN STD_LOGIC;
-        m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_imatrix_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_imatrix_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_imatrix_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -837,7 +838,7 @@ architecture behav of dataflow_in_loop is
         m_axi_imatrix_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_imatrix_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_imatrix_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        imatrix_offset_dout : IN STD_LOGIC_VECTOR (29 downto 0);
+        imatrix_offset_dout : IN STD_LOGIC_VECTOR (61 downto 0);
         imatrix_offset_empty_n : IN STD_LOGIC;
         imatrix_offset_read : OUT STD_LOGIC;
         out_buf_0_address0 : OUT STD_LOGIC_VECTOR (0 downto 0);
@@ -963,7 +964,7 @@ architecture behav of dataflow_in_loop is
         ap_ready : OUT STD_LOGIC;
         m_axi_omatrix_AWVALID : OUT STD_LOGIC;
         m_axi_omatrix_AWREADY : IN STD_LOGIC;
-        m_axi_omatrix_AWADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_omatrix_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_omatrix_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_omatrix_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -983,7 +984,7 @@ architecture behav of dataflow_in_loop is
         m_axi_omatrix_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_ARVALID : OUT STD_LOGIC;
         m_axi_omatrix_ARREADY : IN STD_LOGIC;
-        m_axi_omatrix_ARADDR : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_omatrix_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
         m_axi_omatrix_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
         m_axi_omatrix_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
@@ -1006,7 +1007,7 @@ architecture behav of dataflow_in_loop is
         m_axi_omatrix_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_omatrix_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_omatrix_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        omatrix_offset_dout : IN STD_LOGIC_VECTOR (29 downto 0);
+        omatrix_offset_dout : IN STD_LOGIC_VECTOR (61 downto 0);
         omatrix_offset_empty_n : IN STD_LOGIC;
         omatrix_offset_read : OUT STD_LOGIC;
         i_0_i_i_c_dout : IN STD_LOGIC_VECTOR (0 downto 0);
@@ -1132,31 +1133,31 @@ architecture behav of dataflow_in_loop is
     end component;
 
 
-    component fifo_w30_d1_A IS
+    component fifo_w62_d1_A IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (29 downto 0);
+        if_din : IN STD_LOGIC_VECTOR (61 downto 0);
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (29 downto 0);
+        if_dout : OUT STD_LOGIC_VECTOR (61 downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
 
 
-    component fifo_w30_d2_A IS
+    component fifo_w62_d2_A IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (29 downto 0);
+        if_din : IN STD_LOGIC_VECTOR (61 downto 0);
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (29 downto 0);
+        if_dout : OUT STD_LOGIC_VECTOR (61 downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
@@ -2342,7 +2343,7 @@ begin
         if_empty_n => i_0_i_i_c_empty_n,
         if_read => memcpy_omatrix_out_b_U0_i_0_i_i_c_read);
 
-    imatrix_offset_c_U : component fifo_w30_d1_A
+    imatrix_offset_c_U : component fifo_w62_d1_A
     port map (
         clk => ap_clk,
         reset => ap_rst,
@@ -2355,7 +2356,7 @@ begin
         if_empty_n => imatrix_offset_c_empty_n,
         if_read => Loop_1_proc_U0_imatrix_offset_read);
 
-    omatrix_offset_c_U : component fifo_w30_d2_A
+    omatrix_offset_c_U : component fifo_w62_d2_A
     port map (
         clk => ap_clk,
         reset => ap_rst,
@@ -3061,7 +3062,7 @@ begin
     m_axi_imatrix_ARSIZE <= Loop_1_proc_U0_m_axi_imatrix_ARSIZE;
     m_axi_imatrix_ARUSER <= Loop_1_proc_U0_m_axi_imatrix_ARUSER;
     m_axi_imatrix_ARVALID <= Loop_1_proc_U0_m_axi_imatrix_ARVALID;
-    m_axi_imatrix_AWADDR <= ap_const_lv32_0;
+    m_axi_imatrix_AWADDR <= ap_const_lv64_0;
     m_axi_imatrix_AWBURST <= ap_const_lv2_0;
     m_axi_imatrix_AWCACHE <= ap_const_lv4_0;
     m_axi_imatrix_AWID <= ap_const_lv1_0;
@@ -3081,7 +3082,7 @@ begin
     m_axi_imatrix_WSTRB <= ap_const_lv4_0;
     m_axi_imatrix_WUSER <= ap_const_lv1_0;
     m_axi_imatrix_WVALID <= ap_const_logic_0;
-    m_axi_omatrix_ARADDR <= ap_const_lv32_0;
+    m_axi_omatrix_ARADDR <= ap_const_lv64_0;
     m_axi_omatrix_ARBURST <= ap_const_lv2_0;
     m_axi_omatrix_ARCACHE <= ap_const_lv4_0;
     m_axi_omatrix_ARID <= ap_const_lv1_0;

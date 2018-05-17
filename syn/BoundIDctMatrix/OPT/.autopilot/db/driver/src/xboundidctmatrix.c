@@ -77,20 +77,22 @@ void XBoundidctmatrix_DisableAutoRestart(XBoundidctmatrix *InstancePtr) {
     XBoundidctmatrix_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_AP_CTRL, 0);
 }
 
-void XBoundidctmatrix_Set_matrix(XBoundidctmatrix *InstancePtr, u32 Data) {
+void XBoundidctmatrix_Set_matrix(XBoundidctmatrix *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XBoundidctmatrix_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_MATRIX_DATA, Data);
+    XBoundidctmatrix_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_MATRIX_DATA, (u32)(Data));
+    XBoundidctmatrix_WriteReg(InstancePtr->Bus_ctrl_BaseAddress, XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_MATRIX_DATA + 4, (u32)(Data >> 32));
 }
 
-u32 XBoundidctmatrix_Get_matrix(XBoundidctmatrix *InstancePtr) {
-    u32 Data;
+u64 XBoundidctmatrix_Get_matrix(XBoundidctmatrix *InstancePtr) {
+    u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XBoundidctmatrix_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_MATRIX_DATA);
+    Data += (u64)XBoundidctmatrix_ReadReg(InstancePtr->Bus_ctrl_BaseAddress, XBOUNDIDCTMATRIX_BUS_CTRL_ADDR_MATRIX_DATA + 4) << 32;
     return Data;
 }
 

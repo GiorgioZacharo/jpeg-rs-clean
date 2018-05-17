@@ -819,7 +819,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>ADDR_WIDTH</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_BUS_DST.ADDR_WIDTH">32</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_BUS_DST.ADDR_WIDTH">64</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_BURST_LENGTH</spirit:name>
@@ -863,8 +863,8 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
   <spirit:addressSpaces>
     <spirit:addressSpace>
       <spirit:name>Data_m_axi_BUS_DST</spirit:name>
-      <spirit:range>4G</spirit:range>
-      <spirit:width spirit:format="long">32</spirit:width>
+      <spirit:range>16E</spirit:range>
+      <spirit:width spirit:format="long">64</spirit:width>
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>DEPENDENT_ON</spirit:name>
@@ -1139,8 +1139,8 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
           </spirit:field>
         </spirit:register>
         <spirit:register>
-          <spirit:name>matrix</spirit:name>
-          <spirit:displayName>matrix</spirit:displayName>
+          <spirit:name>matrix_1</spirit:name>
+          <spirit:displayName>matrix_1</spirit:displayName>
           <spirit:description>Data signal of matrix</spirit:description>
           <spirit:addressOffset>16</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
@@ -1151,6 +1151,29 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
           <spirit:field>
             <spirit:name>matrix</spirit:name>
             <spirit:description>Bit 31 to 0 Data signal of matrix</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>matrix_2</spirit:name>
+          <spirit:displayName>matrix_2</spirit:displayName>
+          <spirit:description>Data signal of matrix</spirit:description>
+          <spirit:addressOffset>20</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>matrix</spirit:name>
+            <spirit:description>Bit 63 to 32 Data signal of matrix</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
             <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
             <spirit:access>write-only</spirit:access>
@@ -1222,7 +1245,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b71154b3</spirit:value>
+            <spirit:value>95d2ad00</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1238,7 +1261,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4fe2e7ba</spirit:value>
+            <spirit:value>9fb319f0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1254,7 +1277,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c0bf36c2</spirit:value>
+            <spirit:value>e299b2ec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1270,7 +1293,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f016707f</spirit:value>
+            <spirit:value>5b8b27c2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1284,7 +1307,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9dcdcb21</spirit:value>
+            <spirit:value>5c40b595</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1906,7 +1929,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_BUS_DST_ADDR_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_BUS_DST_ADDR_WIDTH&apos;)) - 1)">63</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2348,7 +2371,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_BUS_DST_ADDR_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_BUS_DST_ADDR_WIDTH&apos;)) - 1)">63</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2701,7 +2724,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_BUS_DST_ADDR_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:id="MODELPARAM_VALUE.C_M_AXI_BUS_DST_ADDR_WIDTH">32</spirit:value>
+        <spirit:value spirit:format="long" spirit:id="MODELPARAM_VALUE.C_M_AXI_BUS_DST_ADDR_WIDTH">64</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_BUS_DST_DATA_WIDTH</spirit:name>
@@ -2877,7 +2900,7 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       <spirit:file>
         <spirit:name>hdl/vhdl/BoundIDctMatrix.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_a4a77ff6</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_f15e1b00</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3121,17 +3144,17 @@ format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type im
       </xilinx:taxonomies>
       <xilinx:displayName>Boundidctmatrix</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1805111453</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-05-11T18:53:55Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1805171739</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-05-17T21:39:53Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="3ea2a267"/>
-      <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="7105876c"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="130d4626"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="522266a4"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="67f788a9"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9772caeb"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="e30fb7ee"/>
+      <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="e1ca91d0"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3efaabe7"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="91fae138"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="03848135"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="2a712a55"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="1558dd24"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

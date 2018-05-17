@@ -12,9 +12,7 @@
     "Package": "-ffvb1156",
     "Speed": "-2-i"
   },
-  "HlsSolution": {
-    
-  },
+  "HlsSolution": {"Config": ["config_interface -clock_enable=0 -expose_global=0 -m_axi_addr64=1 -m_axi_offset=off -register_io=off -trim_dangling_port=0"]},
   "ClockInfo": {
     "ClockName": "ap_clk",
     "ClockPeriod": "3",
@@ -35,8 +33,8 @@
   },
   "Files": {
     "CSource": [
-      "..\/..\/..\/src\/decode.c",
-      "..\/..\/..\/src\/chenidct.c"
+      "..\/..\/..\/src\/chenidct.c",
+      "..\/..\/..\/src\/decode.c"
     ],
     "Vhdl": [
       "impl\/vhdl\/BoundIDctMatrix_BUS_CTRL_s_axi.vhd",
@@ -179,7 +177,7 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "32"
+          "Width": "64"
         },
         "AWID": {
           "Type": "integer unsigned",
@@ -207,7 +205,7 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "32"
+          "Width": "64"
         },
         "ARID": {
           "Type": "integer unsigned",
@@ -247,10 +245,10 @@
       "MAX_READ_BURST_LENGTH": "16",
       "MAX_WRITE_BURST_LENGTH": "16",
       "port_width": {
-        "ARADDR": "32",
+        "ARADDR": "64",
         "ARID": "1",
         "ARUSER": "1",
-        "AWADDR": "32",
+        "AWADDR": "64",
         "AWID": "1",
         "AWUSER": "1",
         "BID": "1",
@@ -430,7 +428,7 @@
         },
         {
           "offset": "0x10",
-          "name": "matrix",
+          "name": "matrix_1",
           "access": "W",
           "reset_value": "0x0",
           "description": "Data signal of matrix",
@@ -441,6 +439,21 @@
               "access": "W",
               "reset_value": "0",
               "description": "Bit 31 to 0 Data signal of matrix"
+            }]
+        },
+        {
+          "offset": "0x14",
+          "name": "matrix_2",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of matrix",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "matrix",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 63 to 32 Data signal of matrix"
             }]
         }
       ],
@@ -727,7 +740,7 @@
     },
     "m_axi_BUS_DST_AWADDR": {
       "dir": "out",
-      "width": "32"
+      "width": "64"
     },
     "m_axi_BUS_DST_AWID": {
       "dir": "out",
@@ -811,7 +824,7 @@
     },
     "m_axi_BUS_DST_ARADDR": {
       "dir": "out",
-      "width": "32"
+      "width": "64"
     },
     "m_axi_BUS_DST_ARID": {
       "dir": "out",
@@ -917,7 +930,7 @@
       "handshakeRef": "ap_none",
       "Object": "BUS_CTRL",
       "aximmInterfaceRef": "m_axi_BUS_DST",
-      "dataWidth": "32"
+      "dataWidth": "64"
     },
     "ap_ctrl": {
       "interfaceRef": "s_axi_BUS_CTRL",
@@ -985,8 +998,8 @@
           }],
         "Area": {
           "BRAM_18K": "2",
-          "FF": "3943",
-          "LUT": "8342",
+          "FF": "3977",
+          "LUT": "8406",
           "DSP48E": "0",
           "URAM": "0"
         }
@@ -994,7 +1007,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-05-11 14:46:50 EDT",
+    "Time": "2018-05-17 17:39:01 EDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2017.4"
   }

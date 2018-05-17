@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Wed May  9 11:34:33 2018
+| Date         : Thu May 17 18:18:48 2018
 | Host         : legolas running 64-bit CentOS Linux release 7.3.1611 (Core)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -195,17 +195,38 @@ Table of Contents
 | design_1_xlconcat_0_0                                         |    1 |
 | design_1_xbar_1                                               |    1 |
 | design_1_xbar_0                                               |    1 |
+| design_1_s10_mmu_0                                            |    1 |
+| design_1_s09_mmu_0                                            |    1 |
+| design_1_s08_mmu_0                                            |    1 |
+| design_1_s07_mmu_0                                            |    1 |
+| design_1_s06_mmu_0                                            |    1 |
+| design_1_s05_mmu_0                                            |    1 |
+| design_1_s04_mmu_0                                            |    1 |
+| design_1_s03_mmu_0                                            |    1 |
 | design_1_s02_mmu_0                                            |    1 |
 | design_1_s01_mmu_0                                            |    1 |
 | design_1_s00_mmu_0                                            |    1 |
 | design_1_proc_sys_reset_0_0                                   |    1 |
-| design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_0_0 |    1 |
+| design_1_decode_start_f2r_vectorPh_s2e_forBody96Preheader_1_0 |    1 |
+| design_1_auto_us_9                                            |    1 |
+| design_1_auto_us_8                                            |    1 |
+| design_1_auto_us_7                                            |    1 |
+| design_1_auto_us_6                                            |    1 |
+| design_1_auto_us_5                                            |    1 |
+| design_1_auto_us_4                                            |    1 |
+| design_1_auto_us_3                                            |    1 |
 | design_1_auto_us_2                                            |    1 |
+| design_1_auto_us_10                                           |    1 |
 | design_1_auto_us_1                                            |    1 |
 | design_1_auto_us_0                                            |    1 |
 | design_1_auto_pc_0                                            |    1 |
 | design_1_auto_ds_0                                            |    1 |
-| design_1_ChenIDct_0_0                                         |    1 |
+| design_1_WriteOneBlock_f2r_entry_s2e_forEnd13_0_0             |    1 |
+| design_1_IZigzagMatrix_f2r_forBody_s2e_forEnd_0_1             |    1 |
+| design_1_IQuantize_0_1                                        |    1 |
+| design_1_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_1            |    1 |
+| design_1_ChenIDct_0_1                                         |    1 |
+| design_1_BoundIDctMatrix_0_1                                  |    1 |
 +---------------------------------------------------------------+------+
 
 

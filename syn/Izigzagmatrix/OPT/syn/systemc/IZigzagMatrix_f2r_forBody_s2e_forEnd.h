@@ -18,9 +18,9 @@
 
 namespace ap_rtl {
 
-template<unsigned int C_S_AXI_BUS_CTRL_ADDR_WIDTH = 5,
+template<unsigned int C_S_AXI_BUS_CTRL_ADDR_WIDTH = 6,
          unsigned int C_S_AXI_BUS_CTRL_DATA_WIDTH = 32,
-         unsigned int C_M_AXI_BUS_SRC_ADDR_WIDTH = 32,
+         unsigned int C_M_AXI_BUS_SRC_ADDR_WIDTH = 64,
          unsigned int C_M_AXI_BUS_SRC_ID_WIDTH = 1,
          unsigned int C_M_AXI_BUS_SRC_AWUSER_WIDTH = 1,
          unsigned int C_M_AXI_BUS_SRC_DATA_WIDTH = 32,
@@ -28,7 +28,7 @@ template<unsigned int C_S_AXI_BUS_CTRL_ADDR_WIDTH = 5,
          unsigned int C_M_AXI_BUS_SRC_ARUSER_WIDTH = 1,
          unsigned int C_M_AXI_BUS_SRC_RUSER_WIDTH = 1,
          unsigned int C_M_AXI_BUS_SRC_BUSER_WIDTH = 1,
-         unsigned int C_M_AXI_BUS_DST_ADDR_WIDTH = 32,
+         unsigned int C_M_AXI_BUS_DST_ADDR_WIDTH = 64,
          unsigned int C_M_AXI_BUS_DST_ID_WIDTH = 1,
          unsigned int C_M_AXI_BUS_DST_AWUSER_WIDTH = 1,
          unsigned int C_M_AXI_BUS_DST_DATA_WIDTH = 32,
@@ -150,11 +150,12 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     sc_in< sc_uint<C_M_AXI_BUS_DST_BUSER_WIDTH> > m_axi_BUS_DST_BUSER;
     sc_signal< sc_logic > ap_var_for_const0;
     sc_signal< sc_logic > ap_var_for_const1;
-    sc_signal< sc_lv<2> > ap_var_for_const5;
-    sc_signal< sc_lv<32> > ap_var_for_const2;
+    sc_signal< sc_lv<2> > ap_var_for_const6;
+    sc_signal< sc_lv<64> > ap_var_for_const2;
     sc_signal< sc_lv<1> > ap_var_for_const3;
-    sc_signal< sc_lv<3> > ap_var_for_const4;
-    sc_signal< sc_lv<4> > ap_var_for_const6;
+    sc_signal< sc_lv<32> > ap_var_for_const4;
+    sc_signal< sc_lv<3> > ap_var_for_const5;
+    sc_signal< sc_lv<4> > ap_var_for_const7;
 
 
     // Module declarations
@@ -168,16 +169,16 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
     IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi<C_S_AXI_BUS_CTRL_ADDR_WIDTH,C_S_AXI_BUS_CTRL_DATA_WIDTH>* IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_CTRL_s_axi_U;
-    IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi<32,32,5,16,16,16,16,C_M_AXI_BUS_SRC_ID_WIDTH,C_M_AXI_BUS_SRC_ADDR_WIDTH,C_M_AXI_BUS_SRC_DATA_WIDTH,C_M_AXI_BUS_SRC_AWUSER_WIDTH,C_M_AXI_BUS_SRC_ARUSER_WIDTH,C_M_AXI_BUS_SRC_WUSER_WIDTH,C_M_AXI_BUS_SRC_RUSER_WIDTH,C_M_AXI_BUS_SRC_BUSER_WIDTH,C_M_AXI_BUS_SRC_USER_VALUE,C_M_AXI_BUS_SRC_PROT_VALUE,C_M_AXI_BUS_SRC_CACHE_VALUE>* IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi_U;
-    IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi<32,32,5,16,16,16,16,C_M_AXI_BUS_DST_ID_WIDTH,C_M_AXI_BUS_DST_ADDR_WIDTH,C_M_AXI_BUS_DST_DATA_WIDTH,C_M_AXI_BUS_DST_AWUSER_WIDTH,C_M_AXI_BUS_DST_ARUSER_WIDTH,C_M_AXI_BUS_DST_WUSER_WIDTH,C_M_AXI_BUS_DST_RUSER_WIDTH,C_M_AXI_BUS_DST_BUSER_WIDTH,C_M_AXI_BUS_DST_USER_VALUE,C_M_AXI_BUS_DST_PROT_VALUE,C_M_AXI_BUS_DST_CACHE_VALUE>* IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi_U;
+    IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi<32,64,5,16,16,16,16,C_M_AXI_BUS_SRC_ID_WIDTH,C_M_AXI_BUS_SRC_ADDR_WIDTH,C_M_AXI_BUS_SRC_DATA_WIDTH,C_M_AXI_BUS_SRC_AWUSER_WIDTH,C_M_AXI_BUS_SRC_ARUSER_WIDTH,C_M_AXI_BUS_SRC_WUSER_WIDTH,C_M_AXI_BUS_SRC_RUSER_WIDTH,C_M_AXI_BUS_SRC_BUSER_WIDTH,C_M_AXI_BUS_SRC_USER_VALUE,C_M_AXI_BUS_SRC_PROT_VALUE,C_M_AXI_BUS_SRC_CACHE_VALUE>* IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_SRC_m_axi_U;
+    IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi<32,64,5,16,16,16,16,C_M_AXI_BUS_DST_ID_WIDTH,C_M_AXI_BUS_DST_ADDR_WIDTH,C_M_AXI_BUS_DST_DATA_WIDTH,C_M_AXI_BUS_DST_AWUSER_WIDTH,C_M_AXI_BUS_DST_ARUSER_WIDTH,C_M_AXI_BUS_DST_WUSER_WIDTH,C_M_AXI_BUS_DST_RUSER_WIDTH,C_M_AXI_BUS_DST_BUSER_WIDTH,C_M_AXI_BUS_DST_USER_VALUE,C_M_AXI_BUS_DST_PROT_VALUE,C_M_AXI_BUS_DST_CACHE_VALUE>* IZigzagMatrix_f2r_forBody_s2e_forEnd_BUS_DST_m_axi_U;
     dataflow_in_loop* dataflow_in_loop_U0;
     sc_signal< sc_logic > ap_rst_n_inv;
     sc_signal< sc_logic > ap_start;
     sc_signal< sc_logic > ap_ready;
     sc_signal< sc_logic > ap_done;
     sc_signal< sc_logic > ap_idle;
-    sc_signal< sc_lv<32> > imatrix;
-    sc_signal< sc_lv<32> > omatrix;
+    sc_signal< sc_lv<64> > imatrix;
+    sc_signal< sc_lv<64> > omatrix;
     sc_signal< sc_logic > BUS_SRC_AWREADY;
     sc_signal< sc_logic > BUS_SRC_WREADY;
     sc_signal< sc_logic > BUS_SRC_ARREADY;
@@ -205,7 +206,7 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     sc_signal< sc_lv<1> > BUS_DST_BID;
     sc_signal< sc_lv<1> > BUS_DST_BUSER;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_imatrix_AWVALID;
-    sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_imatrix_AWADDR;
+    sc_signal< sc_lv<64> > dataflow_in_loop_U0_m_axi_imatrix_AWADDR;
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_imatrix_AWID;
     sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_imatrix_AWLEN;
     sc_signal< sc_lv<3> > dataflow_in_loop_U0_m_axi_imatrix_AWSIZE;
@@ -223,7 +224,7 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_imatrix_WID;
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_imatrix_WUSER;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_imatrix_ARVALID;
-    sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_imatrix_ARADDR;
+    sc_signal< sc_lv<64> > dataflow_in_loop_U0_m_axi_imatrix_ARADDR;
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_imatrix_ARID;
     sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_imatrix_ARLEN;
     sc_signal< sc_lv<3> > dataflow_in_loop_U0_m_axi_imatrix_ARSIZE;
@@ -236,9 +237,9 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_imatrix_ARUSER;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_imatrix_RREADY;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_imatrix_BREADY;
-    sc_signal< sc_lv<30> > dataflow_in_loop_U0_imatrix_offset;
+    sc_signal< sc_lv<62> > dataflow_in_loop_U0_imatrix_offset;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_omatrix_AWVALID;
-    sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_omatrix_AWADDR;
+    sc_signal< sc_lv<64> > dataflow_in_loop_U0_m_axi_omatrix_AWADDR;
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_omatrix_AWID;
     sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_omatrix_AWLEN;
     sc_signal< sc_lv<3> > dataflow_in_loop_U0_m_axi_omatrix_AWSIZE;
@@ -256,7 +257,7 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_omatrix_WID;
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_omatrix_WUSER;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_omatrix_ARVALID;
-    sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_omatrix_ARADDR;
+    sc_signal< sc_lv<64> > dataflow_in_loop_U0_m_axi_omatrix_ARADDR;
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_omatrix_ARID;
     sc_signal< sc_lv<32> > dataflow_in_loop_U0_m_axi_omatrix_ARLEN;
     sc_signal< sc_lv<3> > dataflow_in_loop_U0_m_axi_omatrix_ARSIZE;
@@ -269,7 +270,7 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     sc_signal< sc_lv<1> > dataflow_in_loop_U0_m_axi_omatrix_ARUSER;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_omatrix_RREADY;
     sc_signal< sc_logic > dataflow_in_loop_U0_m_axi_omatrix_BREADY;
-    sc_signal< sc_lv<30> > dataflow_in_loop_U0_omatrix_offset;
+    sc_signal< sc_lv<62> > dataflow_in_loop_U0_omatrix_offset;
     sc_signal< sc_logic > dataflow_in_loop_U0_ap_done;
     sc_signal< sc_logic > dataflow_in_loop_U0_ap_start;
     sc_signal< sc_logic > dataflow_in_loop_U0_ap_ready;
@@ -304,16 +305,18 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     static const int C_M_AXI_BUS_DST_PROT_VALUE;
     static const int C_M_AXI_BUS_DST_CACHE_VALUE;
     static const sc_logic ap_const_logic_0;
-    static const sc_lv<32> ap_const_lv32_2;
-    static const sc_lv<32> ap_const_lv32_1F;
+    static const sc_lv<64> ap_const_lv64_2;
+    static const sc_lv<64> ap_const_lv64_3F;
     static const bool ap_const_boolean_1;
     static const sc_lv<2> ap_const_lv2_2;
     static const sc_lv<2> ap_const_lv2_0;
     static const sc_lv<2> ap_const_lv2_1;
-    static const sc_lv<32> ap_const_lv32_0;
-    static const sc_lv<32> ap_const_lv32_1;
+    static const sc_lv<64> ap_const_lv64_0;
+    static const sc_lv<64> ap_const_lv64_1;
     static const sc_lv<1> ap_const_lv1_0;
     static const sc_lv<1> ap_const_lv1_1;
+    static const sc_lv<32> ap_const_lv32_0;
+    static const sc_lv<32> ap_const_lv32_1;
     static const sc_lv<3> ap_const_lv3_0;
     static const sc_lv<3> ap_const_lv3_1;
     static const sc_lv<4> ap_const_lv4_0;
@@ -321,11 +324,12 @@ struct IZigzagMatrix_f2r_forBody_s2e_forEnd : public sc_module {
     // Thread declarations
     void thread_ap_var_for_const0();
     void thread_ap_var_for_const1();
-    void thread_ap_var_for_const5();
+    void thread_ap_var_for_const6();
     void thread_ap_var_for_const2();
     void thread_ap_var_for_const3();
     void thread_ap_var_for_const4();
-    void thread_ap_var_for_const6();
+    void thread_ap_var_for_const5();
+    void thread_ap_var_for_const7();
     void thread_ap_clk_no_reset_();
     void thread_ap_done();
     void thread_ap_idle();

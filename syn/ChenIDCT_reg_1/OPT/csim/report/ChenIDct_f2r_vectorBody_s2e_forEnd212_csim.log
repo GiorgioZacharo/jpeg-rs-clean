@@ -1,0 +1,147 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../../tb/huffman.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:25:51 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/186421526502351596723
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/init.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:25:55 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/187261526502355122832
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/jfif_read.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:25:58 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/188091526502358564229
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/jpeg2bmp.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:26:01 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/189011526502361932038
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/main.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:26:05 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/189861526502365310427
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../tb/marker.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:26:08 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/190721526502368640017
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../src/chenidct.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:26:12 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+../../../../../src/chenidct.c:83:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, CHUNK_SIZE * sizeof(int));
+        ^
+../../../../../src/chenidct.c:83:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+../../../../../src/chenidct.c:83:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'
+        memcpy(inp1_buf, y + offset, CHUNK_SIZE * sizeof(int));
+        ^
+../../../../../src/chenidct.c:83:9: note: please include the header <string.h> or explicitly provide a declaration for 'memcpy'
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/191561526502372245544
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../../src/decode.c in debug mode
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Wed May 16 16:26:15 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/ChenIDCT_reg_1/OPT/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_giorgio/192411526502375803933
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+
+marker = 0xd8
+
+marker = 0xe0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 0
+
+marker = 0xdb
+ length = 65
+ prec = 0
+ num  = 1
+
+marker = 0xc0
+length         = 17
+data_precision = 8
+image_height   = 59
+image_width    = 90
+num_components = 3
+ index         = 0
+ id            = 1
+ h_samp_factor = 2
+ v_samp_factor = 2
+ quant_tbl_no  = 0
+
+ index         = 1
+ id            = 2
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+ index         = 2
+ id            = 3
+ h_samp_factor = 1
+ v_samp_factor = 1
+ quant_tbl_no  = 1
+
+
+Sampling Factor is 4:1:1
+
+marker = 0xc4
+ length = 29
+ index = 0x0
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x10
+ count = 162
+
+marker = 0xc4
+ length = 29
+ index = 0x1
+ count = 12
+
+marker = 0xc4
+ length = 179
+ index = 0x11
+ count = 162
+
+marker = 0xda
+ length = 12
+ num_comp = 3
+ comp_id       = 1
+ dc_tbl_no     = 0
+ ac_tbl_no     = 0
+ comp_id       = 2
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+ comp_id       = 3
+ dc_tbl_no     = 1
+ ac_tbl_no     = 1
+Decode 4:1:1 NumMCU = 96
+0
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
