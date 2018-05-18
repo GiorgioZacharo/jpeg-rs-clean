@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="core_design_pl_ps_irq_bundle_0_synth_1" LaunchDir="/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_pl_ps_irq_bundle_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="core_design_xbar_3_synth_1" LaunchDir="/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_xbar_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="core_design_zynqmp_uscalep_ps_0_synth_1" LaunchDir="/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_zynqmp_uscalep_ps_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="core_design_xbar_2_synth_1" LaunchDir="/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_xbar_2_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="core_design_IQuantize_0_0_synth_1" LaunchDir="/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_IQuantize_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="core_design_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_0_synth_1" LaunchDir="/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="core_design_pl_ps_irq_bundle_0_synth_1"/>
+		<Parent Id="core_design_xbar_3_synth_1"/>
+		<Parent Id="core_design_zynqmp_uscalep_ps_0_synth_1"/>
+		<Parent Id="core_design_xbar_2_synth_1"/>
+		<Parent Id="core_design_IQuantize_0_0_synth_1"/>
+		<Parent Id="core_design_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="core_design_pl_ps_irq_bundle_0_synth_1"/>
+		<Parent Id="core_design_xbar_3_synth_1"/>
+		<Parent Id="core_design_zynqmp_uscalep_ps_0_synth_1"/>
+		<Parent Id="core_design_xbar_2_synth_1"/>
+		<Parent Id="core_design_IQuantize_0_0_synth_1"/>
+		<Parent Id="core_design_ChenIDct_f2r_vectorBody_s2e_forEnd212_0_0_synth_1"/>
+	</Run>
+</Runs>
+

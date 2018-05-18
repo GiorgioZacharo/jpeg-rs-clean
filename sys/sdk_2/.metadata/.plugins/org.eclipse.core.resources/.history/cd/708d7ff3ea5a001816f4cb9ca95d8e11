@@ -1,0 +1,334 @@
+#ifndef _ACC_INIT_H_
+#define _ACC_INIT_H_
+
+
+
+//#ifdef REG_1
+//
+//#include <xchenidct_f2r_vectorbody_s2e_forend212.h>
+//
+//
+//// Peripheral configuration
+//XChenidct_f2r_vectorbody_s2e_forend212 Chenidct_f2r_vectorbody_s2e_forend212;
+//XChenidct_f2r_vectorbody_s2e_forend212_Config *Chenidct_f2r_vectorbody_s2e_forend212_cfg;
+//
+//int initPeripherals1()
+//{
+//	int status;
+//
+//	// Initialize Chenidct_f2r_vectorbody_s2e_forend212 core
+//	Chenidct_f2r_vectorbody_s2e_forend212_cfg = XChenidct_f2r_vectorbody_s2e_forend212_LookupConfig(XPAR_XCHENIDCT_F2R_VECTORBODY_S2E_FOREND212_0_DEVICE_ID);
+//
+//	if (Chenidct_f2r_vectorbody_s2e_forend212_cfg == NULL)
+//	{
+//		printf("ERROR: configuration not found for Chenidct_f2r_vectorbody_s2e_forend212 core (id %d)\n", XPAR_XCHENIDCT_F2R_VECTORBODY_S2E_FOREND212_0_DEVICE_ID);
+//		return XST_FAILURE;
+//	}
+//
+//	status  = XChenidct_f2r_vectorbody_s2e_forend212_CfgInitialize(&Chenidct_f2r_vectorbody_s2e_forend212, Chenidct_f2r_vectorbody_s2e_forend212_cfg);
+//	if (status != XST_SUCCESS)
+//	{
+//		printf("ERROR: initialization failed for Chenidct_f2r_vectorbody_s2e_forend212 core (status %d)\n", status);
+//		return XST_FAILURE;
+//	}
+//
+//	return(XST_SUCCESS);
+//}
+//#endif
+
+
+#ifdef REG_2
+
+
+	#include <xizigzagmatrix_f2r_forbody_s2e_forend.h>
+
+
+	// Peripheral configuration
+	XIzigzagmatrix_f2r_forbody_s2e_forend Izigzagmatrix_f2r_forbody_s2e_forend;
+	XIzigzagmatrix_f2r_forbody_s2e_forend_Config *Izigzagmatrix_f2r_forbody_s2e_forend_cfg;
+
+
+	int initPeripherals2()
+	{
+	    int status;
+
+	    // Initialize Izigzagmatrix_f2r_forbody_s2e_forend core
+	    Izigzagmatrix_f2r_forbody_s2e_forend_cfg = XIzigzagmatrix_f2r_forbody_s2e_forend_LookupConfig(XPAR_XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_0_DEVICE_ID);
+
+	    if (Izigzagmatrix_f2r_forbody_s2e_forend_cfg == NULL)
+	    {
+	        printf("ERROR: configuration not found for Izigzagmatrix_f2r_forbody_s2e_forend core (id %d)\n", XPAR_XIZIGZAGMATRIX_F2R_FORBODY_S2E_FOREND_0_DEVICE_ID);
+	        return XST_FAILURE;
+	    }
+
+	    status  = XIzigzagmatrix_f2r_forbody_s2e_forend_CfgInitialize(&Izigzagmatrix_f2r_forbody_s2e_forend, Izigzagmatrix_f2r_forbody_s2e_forend_cfg);
+	    if (status != XST_SUCCESS)
+	    {
+	        printf("ERROR: initialization failed for Izigzagmatrix_f2r_forbody_s2e_forend core (status %d)\n", status);
+	        return XST_FAILURE;
+	    }
+
+	    return(XST_SUCCESS);
+	}
+
+
+#endif
+
+
+#ifdef REG_3
+
+
+	#include <xyuvtorgb_f2r_entry_s2e_forend.h>
+
+
+	// Peripheral configuration
+	XYuvtorgb_f2r_entry_s2e_forend Yuvtorgb_f2r_entry_s2e_forend;
+	XYuvtorgb_f2r_entry_s2e_forend_Config *Yuvtorgb_f2r_entry_s2e_forend_cfg;
+
+
+	int initPeripherals3()
+	{
+	    int status;
+
+	    // Initialize Izigzagmatrix_f2r_forbody_s2e_forend core
+	   Yuvtorgb_f2r_entry_s2e_forend_cfg = XYuvtorgb_f2r_entry_s2e_forend_LookupConfig(XPAR_XYUVTORGB_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+
+	    if (Yuvtorgb_f2r_entry_s2e_forend_cfg == NULL)
+	    {
+	        printf("ERROR: configuration not found for Yuvtorgb_f2r_entry_s2e_forend core (id %d)\n", XPAR_XYUVTORGB_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+	        return XST_FAILURE;
+	    }
+
+	    status  = XYuvtorgb_f2r_entry_s2e_forend_CfgInitialize(&Yuvtorgb_f2r_entry_s2e_forend, Yuvtorgb_f2r_entry_s2e_forend_cfg);
+	    if (status != XST_SUCCESS)
+	    {
+	        printf("ERROR: initialization failed for Yuvtorgb_f2r_entry_s2e_forend core (status %d)\n", status);
+	        return XST_FAILURE;
+	    }
+
+	    return(XST_SUCCESS);
+	}
+
+
+#endif
+
+#ifdef REG_4
+
+
+	#include <xwriteoneblock_f2r_entry_s2e_forend13.h>
+
+
+	// Peripheral configuration
+	XWriteoneblock_f2r_entry_s2e_forend13 Writeoneblock_f2r_entry_s2e_forend13;
+	XWriteoneblock_f2r_entry_s2e_forend13_Config *Writeoneblock_f2r_entry_s2e_forend13_cfg;
+
+
+	int initPeripherals4()
+	{
+	    int status;
+
+	    // Initialize Izigzagmatrix_f2r_forbody_s2e_forend core
+	   Writeoneblock_f2r_entry_s2e_forend13_cfg = XWriteoneblock_f2r_entry_s2e_forend13_LookupConfig(XPAR_XWRITEONEBLOCK_F2R_ENTRY_S2E_FOREND13_0_DEVICE_ID);
+
+	    if (Writeoneblock_f2r_entry_s2e_forend13_cfg == NULL)
+	    {
+	        printf("ERROR: configuration not found for Writeoneblock_f2r_entry_s2e_forend13 core (id %d)\n", XPAR_XWRITEONEBLOCK_F2R_ENTRY_S2E_FOREND13_0_DEVICE_ID);
+	        return XST_FAILURE;
+	    }
+
+	    status  = XWriteoneblock_f2r_entry_s2e_forend13_CfgInitialize(&Writeoneblock_f2r_entry_s2e_forend13, Writeoneblock_f2r_entry_s2e_forend13_cfg);
+	    if (status != XST_SUCCESS)
+	    {
+	        printf("ERROR: initialization failed for Writeoneblock_f2r_entry_s2e_forend13 core (status %d)\n", status);
+	        return XST_FAILURE;
+	    }
+
+	    return(XST_SUCCESS);
+	}
+
+
+#endif
+
+//#ifdef REG_5
+//
+//
+//	#include <xiquantize_f2r_entry_s2e_forend.h>
+//
+//
+//	// Peripheral configuration
+//	XIquantize_f2r_entry_s2e_forend Iquantize_f2r_entry_s2e_forend;
+//	XIquantize_f2r_entry_s2e_forend_Config *Iquantize_f2r_entry_s2e_forend_cfg;
+//
+//
+//	int initPeripherals5()
+//	{
+//	    int status;
+//
+//	    // Initialize Iquantize_f2r_entry_s2e_forend core
+//	    Iquantize_f2r_entry_s2e_forend_cfg = XIquantize_f2r_entry_s2e_forend_LookupConfig(XPAR_XIQUANTIZE_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+//
+//	    if (Iquantize_f2r_entry_s2e_forend_cfg == NULL)
+//	    {
+//	        printf("ERROR: configuration not found for Iquantize_f2r_entry_s2e_forend core (id %d)\n", XPAR_XIQUANTIZE_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+//	        return XST_FAILURE;
+//	    }
+//
+//	    status  = XIquantize_f2r_entry_s2e_forend_CfgInitialize(&Iquantize_f2r_entry_s2e_forend, Iquantize_f2r_entry_s2e_forend_cfg);
+//	    if (status != XST_SUCCESS)
+//	    {
+//	        printf("ERROR: initialization failed for Iquantize_f2r_entry_s2e_forend core (status %d)\n", status);
+//	        return XST_FAILURE;
+//	    }
+//
+//	    return(XST_SUCCESS);
+//	}
+//
+//
+//#endif
+
+#ifdef REG_5
+
+
+	#include <xiquantize.h>
+
+
+	// Peripheral configuration
+	XIquantize Iquantize;
+	XIquantize_Config *Iquantize_cfg;
+
+
+	int initPeripherals5()
+	{
+	    int status;
+
+	    // Initialize Iquantize core
+	    Iquantize_cfg = XIquantize_LookupConfig(XPAR_XIQUANTIZE_0_DEVICE_ID);
+
+	    if (Iquantize_cfg == NULL)
+	    {
+	        printf("ERROR: configuration not found for Iquantize core (id %d)\n", XPAR_XIQUANTIZE_0_DEVICE_ID);
+	        return XST_FAILURE;
+	    }
+
+	    status  = XIquantize_CfgInitialize(&Iquantize, Iquantize_cfg);
+	    if (status != XST_SUCCESS)
+	    {
+	        printf("ERROR: initialization failed for Iquantize_f2r_entry_s2e_forend core (status %d)\n", status);
+	        return XST_FAILURE;
+	    }
+
+	    return(XST_SUCCESS);
+	}
+
+
+#endif
+
+#ifdef REG_6
+
+
+	#include <xdecode_start_f2r_vectorph_s2e_forbody96preheader.h>
+
+
+	// Peripheral configuration
+	XDecode_start_f2r_vectorph_s2e_forbody96preheader Decode_start_f2r_vectorph_s2e_forbody96preheader;
+	XDecode_start_f2r_vectorph_s2e_forbody96preheader_Config *Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg;
+
+
+	int initPeripherals6()
+	{
+	    int status;
+
+	    // Initialize Izigzagmatrix_f2r_forbody_s2e_forend core
+	   Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg = XDecode_start_f2r_vectorph_s2e_forbody96preheader_LookupConfig(XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+
+	    if (Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg == NULL)
+	    {
+	        printf("ERROR: configuration not found for Decode_start_f2r_vectorph_s2e_forbody96preheader core (id %d)\n", XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+	        return XST_FAILURE;
+	    }
+
+	    status  = XDecode_start_f2r_vectorph_s2e_forbody96preheader_CfgInitialize(&Decode_start_f2r_vectorph_s2e_forbody96preheader, Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg);
+	    if (status != XST_SUCCESS)
+	    {
+	        printf("ERROR: initialization failed for Decode_start_f2r_vectorph_s2e_forbody96preheader core (status %d)\n", status);
+	        return XST_FAILURE;
+	    }
+
+	    return(XST_SUCCESS);
+	}
+
+
+#endif
+
+//#ifdef REG_7
+//
+//#include <xchenidct.h>
+//
+//
+//// Peripheral configuration
+//XChenidct Chenidct;
+//XChenidct_Config *Chenidct_cfg;
+//
+//int initPeripherals7()
+//{
+//	int status;
+//
+//	// Initialize Chenidct core
+//	Chenidct_cfg = XChenidct_LookupConfig(XPAR_XCHENIDCT_0_DEVICE_ID);
+//
+//	if (Chenidct_cfg == NULL)
+//	{
+//		printf("ERROR: configuration not found for Chenidct core (id %d)\n", XPAR_XCHENIDCT_0_DEVICE_ID);
+//		return XST_FAILURE;
+//	}
+//
+//	status  = XChenidct_CfgInitialize(&Chenidct, Chenidct_cfg);
+//	if (status != XST_SUCCESS)
+//	{
+//		printf("ERROR: initialization failed for Chenidct core (status %d)\n", status);
+//		return XST_FAILURE;
+//	}
+//
+//	return(XST_SUCCESS);
+//}
+//#endif
+
+#ifdef REG_8
+
+
+	#include <xboundidctmatrix.h>
+
+
+	// Peripheral configuration
+	XDecode_start_f2r_vectorph_s2e_forbody96preheader Decode_start_f2r_vectorph_s2e_forbody96preheader;
+	XDecode_start_f2r_vectorph_s2e_forbody96preheader_Config *Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg;
+
+
+	int initPeripherals6()
+	{
+	    int status;
+
+	    // Initialize Izigzagmatrix_f2r_forbody_s2e_forend core
+	   Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg = XDecode_start_f2r_vectorph_s2e_forbody96preheader_LookupConfig(XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+
+	    if (Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg == NULL)
+	    {
+	        printf("ERROR: configuration not found for Decode_start_f2r_vectorph_s2e_forbody96preheader core (id %d)\n", XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+	        return XST_FAILURE;
+	    }
+
+	    status  = XDecode_start_f2r_vectorph_s2e_forbody96preheader_CfgInitialize(&Decode_start_f2r_vectorph_s2e_forbody96preheader, Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg);
+	    if (status != XST_SUCCESS)
+	    {
+	        printf("ERROR: initialization failed for Decode_start_f2r_vectorph_s2e_forbody96preheader core (status %d)\n", status);
+	        return XST_FAILURE;
+	    }
+
+	    return(XST_SUCCESS);
+	}
+
+
+#endif
+
+
+#endif /* _ACC_INIT_H_ */

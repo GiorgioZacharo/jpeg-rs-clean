@@ -1,0 +1,16 @@
+//#define VERBOSE
+
+
+#define REG_1
+#define REG_2
+//#define REG_3 // YuvToRGB
+#define REG_4
+#define REG_5
+//
+#define REG_6
+//#define REG_7
+
+
+#include <xil_cache.h>
+#include <xparameters.h>
+#include <unistd.h>

@@ -1,8 +1,143 @@
-17:01:12 **** Incremental Build of configuration Debug for project jpeg_rs ****
+18:31:59 **** Auto Build of configuration Debug for project jpeg_rs ****
 make all 
-make[1]: Entering directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug'
-make[1]: Nothing to be done for `all'.
-make[1]: Leaving directory `/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug'
+Building file: ../src/chenidct.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/chenidct.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/chenidct.d" -MT"src/chenidct.o" -o "src/chenidct.o" "../src/chenidct.c"
+In file included from ../src/chenidct.c:58:0:
+../src/accelerators_init2.h: In function 'initPeripherals7':
+../src/accelerators_init2.h:52:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("ERROR: configuration not found for Chenidct core (id %d)\n", XPAR_XCHENIDCT_0_DEVICE_ID);
+   ^~~~~~
+../src/accelerators_init2.h:52:3: warning: incompatible implicit declaration of built-in function 'printf'
+../src/accelerators_init2.h:52:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/accelerators_init2.h:59:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("ERROR: initialization failed for Chenidct core (status %d)\n", status);
+   ^~~~~~
+../src/accelerators_init2.h:59:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/chenidct.c: In function 'ChenIDct_f2r_vectorBody_s2e_forEnd212':
+../src/chenidct.c:97:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=y offset=slave bundle=BUS_SRC_DST
+ 
+../src/chenidct.c:98:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/chenidct.c:104:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:105:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+   #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/chenidct.c:113:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:124:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c:131:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/chenidct.c: In function 'ChenIDct':
+../src/chenidct.c:181:5: warning: incompatible implicit declaration of built-in function 'printf'
+     printf("ERROR: HW execution failed (status %d)\n", status);
+     ^~~~~~
+../src/chenidct.c:181:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/chenidct.c
+ 
+Building file: ../src/decode.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/decode.o" -I../../jpeg_rs_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/decode.d" -MT"src/decode.o" -o "src/decode.o" "../src/decode.c"
+../src/decode.c: In function 'IZigzagMatrix_f2r_forBody_s2e_forEnd':
+../src/decode.c:86:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=imatrix offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:87:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE m_axi depth=64 port=omatrix offset=slave bundle=BUS_DST
+ 
+../src/decode.c:88:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+ #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/decode.c:106:0: warning: ignoring #pragma HLS DATAFLOW [-Wunknown-pragmas]
+   #pragma HLS DATAFLOW
+ 
+../src/decode.c:110:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:117:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:122:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+     #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:123:16: warning: unused variable 'offset' [-Wunused-variable]
+       unsigned offset = i*CHUNK_SIZE+l;
+                ^~~~~~
+../src/decode.c: In function 'YuvToRgb_f2r_entry_s2e_forEnd':
+../src/decode.c:379:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=y_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:380:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=u_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:381:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=64 port=v_buf offset=slave bundle=BUS_SRC
+ 
+../src/decode.c:382:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE m_axi depth=768 port=rgb_buf offset=slave bundle=BUS_DST
+ 
+../src/decode.c:383:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE s_axilite port=p bundle=CTRL_BUS
+ 
+../src/decode.c:384:0: warning: ignoring #pragma HLS INTERFACE [-Wunknown-pragmas]
+   #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+ 
+../src/decode.c:393:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:394:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:395:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=inp3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:396:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out1_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:397:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out2_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:398:0: warning: ignoring #pragma HLS ARRAY_PARTITION [-Wunknown-pragmas]
+ #pragma HLS ARRAY_PARTITION variable=out3_buf cyclic factor=16 dim=1
+ 
+../src/decode.c:407:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:424:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c:450:0: warning: ignoring #pragma HLS UNROLL [-Wunknown-pragmas]
+       #pragma HLS UNROLL skip_exit_check factor=16
+ 
+../src/decode.c: In function 'decode_block':
+../src/decode.c:629:3: warning: label 'Reg_2' defined but not used [-Wunused-label]
+   Reg_2:IZigzagMatrix_f2r_forBody_s2e_forEnd(HuffBuff, QuantBuff);
+   ^~~~~
+../src/decode.c: In function 'decode_start':
+../src/decode.c:744:5: warning: label 'Reg_6' defined but not used [-Wunused-label]
+     Reg_6:decode_start_f2r_vectorPh_s2e_forBody96Preheader(IDCTBuff, IDCTBuff[4], IDCTBuff[5], rgb_buf);
+     ^~~~~
+Finished building: ../src/decode.c
+ 
+Building target: jpeg_rs.elf
+Invoking: ARM v8 gcc linker
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../jpeg_rs_bsp/psu_cortexa53_0/lib -o "jpeg_rs.elf"  ./src/chenidct.o ./src/decode.o ./src/huffman.o ./src/init.o ./src/jfif_read.o ./src/jpeg2bmp.o ./src/main.o ./src/marker.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: jpeg_rs.elf
+ 
+Invoking: ARM v8 Print Size
+aarch64-none-elf-size jpeg_rs.elf  |tee "jpeg_rs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127068	   4704	  53080	 184852	  2d214	jpeg_rs.elf
+Finished building: jpeg_rs.elf.size
+ 
 
-17:01:12 Build Finished (took 61ms)
+18:31:59 Build Finished (took 363ms)
 

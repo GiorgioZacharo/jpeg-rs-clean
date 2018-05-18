@@ -149,31 +149,68 @@
 
 #endif
 
+//#ifdef REG_5
+//
+//
+//	#include <xiquantize_f2r_entry_s2e_forend.h>
+//
+//
+//	// Peripheral configuration
+//	XIquantize_f2r_entry_s2e_forend Iquantize_f2r_entry_s2e_forend;
+//	XIquantize_f2r_entry_s2e_forend_Config *Iquantize_f2r_entry_s2e_forend_cfg;
+//
+//
+//	int initPeripherals5()
+//	{
+//	    int status;
+//
+//	    // Initialize Iquantize_f2r_entry_s2e_forend core
+//	    Iquantize_f2r_entry_s2e_forend_cfg = XIquantize_f2r_entry_s2e_forend_LookupConfig(XPAR_XIQUANTIZE_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+//
+//	    if (Iquantize_f2r_entry_s2e_forend_cfg == NULL)
+//	    {
+//	        printf("ERROR: configuration not found for Iquantize_f2r_entry_s2e_forend core (id %d)\n", XPAR_XIQUANTIZE_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+//	        return XST_FAILURE;
+//	    }
+//
+//	    status  = XIquantize_f2r_entry_s2e_forend_CfgInitialize(&Iquantize_f2r_entry_s2e_forend, Iquantize_f2r_entry_s2e_forend_cfg);
+//	    if (status != XST_SUCCESS)
+//	    {
+//	        printf("ERROR: initialization failed for Iquantize_f2r_entry_s2e_forend core (status %d)\n", status);
+//	        return XST_FAILURE;
+//	    }
+//
+//	    return(XST_SUCCESS);
+//	}
+//
+//
+//#endif
+
 #ifdef REG_5
 
 
-	#include <xiquantize_f2r_entry_s2e_forend.h>
+	#include <xiquantize.h>
 
 
 	// Peripheral configuration
-	XIquantize_f2r_entry_s2e_forend Iquantize_f2r_entry_s2e_forend;
-	XIquantize_f2r_entry_s2e_forend_Config *Iquantize_f2r_entry_s2e_forend_cfg;
+	XIquantize Iquantize;
+	XIquantize_Config *Iquantize_cfg;
 
 
 	int initPeripherals5()
 	{
 	    int status;
 
-	    // Initialize Iquantize_f2r_entry_s2e_forend core
-	    Iquantize_f2r_entry_s2e_forend_cfg = XIquantize_f2r_entry_s2e_forend_LookupConfig(XPAR_XIQUANTIZE_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+	    // Initialize Iquantize core
+	    Iquantize_cfg = XIquantize_LookupConfig(XPAR_XIQUANTIZE_0_DEVICE_ID);
 
-	    if (Iquantize_f2r_entry_s2e_forend_cfg == NULL)
+	    if (Iquantize_cfg == NULL)
 	    {
-	        printf("ERROR: configuration not found for Iquantize_f2r_entry_s2e_forend core (id %d)\n", XPAR_XIQUANTIZE_F2R_ENTRY_S2E_FOREND_0_DEVICE_ID);
+	        printf("ERROR: configuration not found for Iquantize core (id %d)\n", XPAR_XIQUANTIZE_0_DEVICE_ID);
 	        return XST_FAILURE;
 	    }
 
-	    status  = XIquantize_f2r_entry_s2e_forend_CfgInitialize(&Iquantize_f2r_entry_s2e_forend, Iquantize_f2r_entry_s2e_forend_cfg);
+	    status  = XIquantize_CfgInitialize(&Iquantize, Iquantize_cfg);
 	    if (status != XST_SUCCESS)
 	    {
 	        printf("ERROR: initialization failed for Iquantize_f2r_entry_s2e_forend core (status %d)\n", status);
@@ -255,5 +292,43 @@
 //	return(XST_SUCCESS);
 //}
 //#endif
+
+#ifdef REG_8
+
+
+	#include <xboundidctmatrix.h>
+
+
+	// Peripheral configuration
+	XDecode_start_f2r_vectorph_s2e_forbody96preheader Decode_start_f2r_vectorph_s2e_forbody96preheader;
+	XDecode_start_f2r_vectorph_s2e_forbody96preheader_Config *Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg;
+
+
+	int initPeripherals8()
+	{
+	    int status;
+
+	    // Initialize Izigzagmatrix_f2r_forbody_s2e_forend core
+	   Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg = XDecode_start_f2r_vectorph_s2e_forbody96preheader_LookupConfig(XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+
+	    if (Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg == NULL)
+	    {
+	        printf("ERROR: configuration not found for Decode_start_f2r_vectorph_s2e_forbody96preheader core (id %d)\n", XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+	        return XST_FAILURE;
+	    }
+
+	    status  = XDecode_start_f2r_vectorph_s2e_forbody96preheader_CfgInitialize(&Decode_start_f2r_vectorph_s2e_forbody96preheader, Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg);
+	    if (status != XST_SUCCESS)
+	    {
+	        printf("ERROR: initialization failed for Decode_start_f2r_vectorph_s2e_forbody96preheader core (status %d)\n", status);
+	        return XST_FAILURE;
+	    }
+
+	    return(XST_SUCCESS);
+	}
+
+
+#endif
+
 
 #endif /* _ACC_INIT_H_ */

@@ -72,7 +72,7 @@ void ChenIDct_f2r_vectorBody_s2e_forEnd212(int y[DCTSIZE2]){
 
   int status = 0;
 
-  initPeripherals();
+  initPeripherals1();
 
   // Flush the cache of the buffers
   Xil_DCacheFlushRange((UINTPTR)y, DCTSIZE2 * sizeof(int));
