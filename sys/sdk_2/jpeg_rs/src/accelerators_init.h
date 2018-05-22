@@ -300,27 +300,27 @@
 
 
 	// Peripheral configuration
-	XDecode_start_f2r_vectorph_s2e_forbody96preheader Decode_start_f2r_vectorph_s2e_forbody96preheader;
-	XDecode_start_f2r_vectorph_s2e_forbody96preheader_Config *Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg;
+	XBoundidctmatrix Boundidctmatrix;
+	XBoundidctmatrix_Config *Boundidctmatrix_cfg;
 
 
 	int initPeripherals8()
 	{
 	    int status;
 
-	    // Initialize Izigzagmatrix_f2r_forbody_s2e_forend core
-	   Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg = XDecode_start_f2r_vectorph_s2e_forbody96preheader_LookupConfig(XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+	    // Initialize Boundidctmatrix core
+	   Boundidctmatrix_cfg = XBoundidctmatrix_LookupConfig(XPAR_XBOUNDIDCTMATRIX_0_DEVICE_ID);
 
-	    if (Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg == NULL)
+	    if (Boundidctmatrix_cfg == NULL)
 	    {
-	        printf("ERROR: configuration not found for Decode_start_f2r_vectorph_s2e_forbody96preheader core (id %d)\n", XPAR_XDECODE_START_F2R_VECTORPH_S2E_FORBODY96PREHEADER_0_DEVICE_ID);
+	        printf("ERROR: configuration not found for Boundidctmatrix core (id %d)\n", XPAR_XBOUNDIDCTMATRIX_0_DEVICE_ID);
 	        return XST_FAILURE;
 	    }
 
-	    status  = XDecode_start_f2r_vectorph_s2e_forbody96preheader_CfgInitialize(&Decode_start_f2r_vectorph_s2e_forbody96preheader, Decode_start_f2r_vectorph_s2e_forbody96preheader_cfg);
+	    status  = XBoundidctmatrix_CfgInitialize(&Boundidctmatrix, Boundidctmatrix_cfg);
 	    if (status != XST_SUCCESS)
 	    {
-	        printf("ERROR: initialization failed for Decode_start_f2r_vectorph_s2e_forbody96preheader core (status %d)\n", status);
+	        printf("ERROR: initialization failed for Boundidctmatrix core (status %d)\n", status);
 	        return XST_FAILURE;
 	    }
 

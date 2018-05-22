@@ -134,18 +134,94 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCT
  * IQuantize() takes an input matrix and does an inverse quantization
  * and puts the output int qmatrix.
  */
+//void
+//IQuantize (int *matrix, unsigned int *qmatrix)
+//{
+//  int *mptr;
+//
+//  for (mptr = matrix; mptr < matrix + DCTSIZE2; mptr++)
+//    {
+//      *mptr = *mptr * (*qmatrix);
+//      qmatrix++;
+//    }
+//}
+
 void
-IQuantize (int *matrix, unsigned int *qmatrix)
-{
-  int *mptr;
+IQuantize (int *matrix, unsigned int *qmatrix){
+#ifdef REG_5 //HW ACC
 
-  for (mptr = matrix; mptr < matrix + DCTSIZE2; mptr++)
-    {
-      *mptr = *mptr * (*qmatrix);
-      qmatrix++;
-    }
+  #ifdef VERBOSE
+  printf("Call HW REG_5 - IQuantize\n");
+  #endif
+
+  int status = 0;
+
+  initPeripherals5();
+
+  //No need to Flush or Invalidate the cache with ACP
+  //Xil_DCacheDisable();
+
+  // Flush the cache of the buffers
+  Xil_DCacheFlushRange((UINTPTR)qmatrix, DCTSIZE2 * sizeof(int));
+  Xil_DCacheFlushRange((UINTPTR)matrix, DCTSIZE2 * sizeof(int));
+
+  XIquantize_Set_qmatrix(&Iquantize, (UINTPTR)qmatrix);
+  XIquantize_Set_matrix(&Iquantize, (UINTPTR)matrix);
+
+
+  XIquantize_Start(&Iquantize);
+
+  while (!XIquantize_IsDone(&Iquantize));
+
+  // Invalidate the cache to avoid reading garbage
+  Xil_DCacheInvalidateRange((UINTPTR)matrix, DCTSIZE2 * sizeof(int));
+
+  if (status != 0)
+  {
+  printf("ERROR: HW execution failed (status %d)\n", status);
+  }
+
+#else // SOFTWARE
+
+  int i;
+  int inp1_buf[CHUNK_SIZE];
+  int inp2_buf[CHUNK_SIZE];
+
+
+  for (i = 0; i < N_CHUNKS; i++){
+//     #pragma HLS DATAFLOW
+    // Load data
+    #ifdef STANDARD_MODE
+      for (int j=0; j < CHUNK_SIZE; j++) {
+      inp1_buf[j] = qmatrix[i*CHUNK_SIZE+j];
+      inp2_buf[j] = matrix[i*CHUNK_SIZE+j];
+      }
+    #else
+      /* BURST_MODE */
+      unsigned offset = i*CHUNK_SIZE;
+      memcpy(inp1_buf, qmatrix + offset, CHUNK_SIZE * sizeof(int));
+      memcpy(inp2_buf, matrix + offset, CHUNK_SIZE * sizeof(int));
+    #endif
+
+
+    // Computation
+      for (int k=0; k < CHUNK_SIZE; k++){
+        inp2_buf[k] =  inp1_buf[k] * inp2_buf[k];
+      }
+
+    // Store Data
+      #ifdef STANDARD_MODE
+        for (int l=0; l < CHUNK_SIZE; l++)
+        matrix[i*CHUNK_SIZE+l] = inp2_buf[l];
+      #else
+        offset = i*CHUNK_SIZE;
+        memcpy(matrix + offset, inp2_buf, CHUNK_SIZE * sizeof(int));
+      #endif
+  }
+
+#endif
+
 }
-
 
 /*
  * PostshiftIDctMatrix() adds 128 (2048) to all 64 elements of an 8x8 matrix.

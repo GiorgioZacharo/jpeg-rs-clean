@@ -2999,3 +2999,1302 @@ con
 16:27:42 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
 19:59:20 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
 19:59:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B" && level==0} -index 0' command is executed.
+19:59:35 INFO  : FPGA configured successfully with bitstream "/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+20:00:27 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+20:00:27 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+20:00:27 INFO  : 'jtag frequency' command is executed.
+20:00:27 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+20:00:27 INFO  : Context for 'APU' is selected.
+20:00:27 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+20:00:27 INFO  : 'configparams force-mem-access 1' command is executed.
+20:00:27 INFO  : Context for 'APU' is selected.
+20:00:27 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+20:00:28 INFO  : 'psu_init' command is executed.
+20:00:29 INFO  : 'after 1000' command is executed.
+20:00:30 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+20:00:31 INFO  : 'after 1000' command is executed.
+20:00:31 INFO  : 'psu_ps_pl_reset_config' command is executed.
+20:00:31 INFO  : 'catch {psu_protection}' command is executed.
+20:00:31 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:00:31 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+20:00:31 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+20:00:31 INFO  : 'configparams force-mem-access 0' command is executed.
+20:00:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:00:31 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:00:31 INFO  : 'con' command is executed.
+20:00:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+20:00:31 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+20:01:44 INFO  : Disconnected from the channel tcfchan#1.
+20:01:45 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+20:01:51 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+20:01:51 INFO  : 'jtag frequency' command is executed.
+20:01:51 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+20:01:51 INFO  : Context for 'APU' is selected.
+20:01:51 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+20:01:51 INFO  : 'configparams force-mem-access 1' command is executed.
+20:01:51 INFO  : Context for 'APU' is selected.
+20:01:51 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+20:01:52 INFO  : 'psu_init' command is executed.
+20:01:53 INFO  : 'after 1000' command is executed.
+20:01:54 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+20:01:55 INFO  : 'after 1000' command is executed.
+20:01:55 INFO  : 'psu_ps_pl_reset_config' command is executed.
+20:01:55 INFO  : 'catch {psu_protection}' command is executed.
+20:01:55 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:01:55 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+20:01:55 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+20:01:55 INFO  : 'configparams force-mem-access 0' command is executed.
+20:01:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:01:55 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:01:55 INFO  : 'con' command is executed.
+20:01:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+20:01:55 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+20:02:08 INFO  : Disconnected from the channel tcfchan#2.
+20:02:09 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+20:02:14 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+20:02:14 INFO  : 'jtag frequency' command is executed.
+20:02:14 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+20:02:14 INFO  : Context for 'APU' is selected.
+20:02:15 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+20:02:15 INFO  : 'configparams force-mem-access 1' command is executed.
+20:02:15 INFO  : Context for 'APU' is selected.
+20:02:15 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+20:02:16 INFO  : 'psu_init' command is executed.
+20:02:17 INFO  : 'after 1000' command is executed.
+20:02:17 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+20:02:18 INFO  : 'after 1000' command is executed.
+20:02:18 INFO  : 'psu_ps_pl_reset_config' command is executed.
+20:02:18 INFO  : 'catch {psu_protection}' command is executed.
+20:02:18 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:02:18 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+20:02:19 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+20:02:19 INFO  : 'configparams force-mem-access 0' command is executed.
+20:02:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:02:19 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:02:19 INFO  : 'con' command is executed.
+20:02:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+20:02:19 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+20:02:44 INFO  : Disconnected from the channel tcfchan#3.
+20:02:45 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+20:02:51 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+20:02:51 INFO  : 'jtag frequency' command is executed.
+20:02:51 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+20:02:51 INFO  : Context for 'APU' is selected.
+20:02:51 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+20:02:51 INFO  : 'configparams force-mem-access 1' command is executed.
+20:02:51 INFO  : Context for 'APU' is selected.
+20:02:51 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+20:02:53 INFO  : 'psu_init' command is executed.
+20:02:54 INFO  : 'after 1000' command is executed.
+20:02:54 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+20:02:55 INFO  : 'after 1000' command is executed.
+20:02:55 INFO  : 'psu_ps_pl_reset_config' command is executed.
+20:02:55 INFO  : 'catch {psu_protection}' command is executed.
+20:02:55 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:02:55 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+20:02:55 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+20:02:55 INFO  : 'configparams force-mem-access 0' command is executed.
+20:02:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:02:55 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:02:55 INFO  : 'con' command is executed.
+20:02:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+20:02:55 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+20:12:54 INFO  : Disconnected from the channel tcfchan#4.
+20:12:55 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+20:13:01 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+20:13:01 INFO  : 'jtag frequency' command is executed.
+20:13:01 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+20:13:01 INFO  : Context for 'APU' is selected.
+20:13:01 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+20:13:01 INFO  : 'configparams force-mem-access 1' command is executed.
+20:13:01 INFO  : Context for 'APU' is selected.
+20:13:01 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+20:13:02 INFO  : 'psu_init' command is executed.
+20:13:03 INFO  : 'after 1000' command is executed.
+20:13:03 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+20:13:04 INFO  : 'after 1000' command is executed.
+20:13:04 INFO  : 'psu_ps_pl_reset_config' command is executed.
+20:13:05 INFO  : 'catch {psu_protection}' command is executed.
+20:13:05 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:13:05 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+20:13:05 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+20:13:05 INFO  : 'configparams force-mem-access 0' command is executed.
+20:13:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:13:05 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:13:05 INFO  : 'con' command is executed.
+20:13:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+20:13:05 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+20:13:42 INFO  : Disconnected from the channel tcfchan#5.
+20:13:43 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+20:13:48 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+20:13:48 INFO  : 'jtag frequency' command is executed.
+20:13:48 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+20:13:49 INFO  : Context for 'APU' is selected.
+20:13:49 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+20:13:49 INFO  : 'configparams force-mem-access 1' command is executed.
+20:13:49 INFO  : Context for 'APU' is selected.
+20:13:49 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+20:13:50 INFO  : 'psu_init' command is executed.
+20:13:51 INFO  : 'after 1000' command is executed.
+20:13:52 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+20:13:53 INFO  : 'after 1000' command is executed.
+20:13:53 INFO  : 'psu_ps_pl_reset_config' command is executed.
+20:13:53 INFO  : 'catch {psu_protection}' command is executed.
+20:13:53 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:13:53 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+20:13:53 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+20:13:53 INFO  : 'configparams force-mem-access 0' command is executed.
+20:13:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:13:53 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+20:13:53 INFO  : 'con' command is executed.
+20:13:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+20:13:53 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:07:08 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:07:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B" && level==0} -index 0' command is executed.
+15:07:23 INFO  : FPGA configured successfully with bitstream "/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:07:28 INFO  : Disconnected from the channel tcfchan#6.
+15:07:29 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:07:35 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:07:35 INFO  : 'jtag frequency' command is executed.
+15:07:35 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:07:35 INFO  : Context for 'APU' is selected.
+15:07:35 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:07:35 INFO  : 'configparams force-mem-access 1' command is executed.
+15:07:35 INFO  : Context for 'APU' is selected.
+15:07:35 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:07:36 INFO  : 'psu_init' command is executed.
+15:07:37 INFO  : 'after 1000' command is executed.
+15:07:37 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:07:38 INFO  : 'after 1000' command is executed.
+15:07:38 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:07:39 INFO  : 'catch {psu_protection}' command is executed.
+15:07:39 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:07:39 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:07:39 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:07:39 INFO  : 'configparams force-mem-access 0' command is executed.
+15:07:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:07:39 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:07:39 INFO  : 'con' command is executed.
+15:07:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:07:39 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:07:57 INFO  : Disconnected from the channel tcfchan#7.
+15:07:58 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:08:04 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:08:04 INFO  : 'jtag frequency' command is executed.
+15:08:04 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:08:04 INFO  : Context for 'APU' is selected.
+15:08:04 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:08:04 INFO  : 'configparams force-mem-access 1' command is executed.
+15:08:04 INFO  : Context for 'APU' is selected.
+15:08:04 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:08:06 INFO  : 'psu_init' command is executed.
+15:08:07 INFO  : 'after 1000' command is executed.
+15:08:07 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:08:08 INFO  : 'after 1000' command is executed.
+15:08:08 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:08:08 INFO  : 'catch {psu_protection}' command is executed.
+15:08:08 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:08:08 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:08:08 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:08:08 INFO  : 'configparams force-mem-access 0' command is executed.
+15:08:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:08:08 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:08:08 INFO  : 'con' command is executed.
+15:08:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:08:08 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:08:20 INFO  : Disconnected from the channel tcfchan#8.
+15:08:21 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:08:26 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:08:26 INFO  : 'jtag frequency' command is executed.
+15:08:26 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:08:26 INFO  : Context for 'APU' is selected.
+15:08:26 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:08:26 INFO  : 'configparams force-mem-access 1' command is executed.
+15:08:26 INFO  : Context for 'APU' is selected.
+15:08:26 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:08:28 INFO  : 'psu_init' command is executed.
+15:08:29 INFO  : 'after 1000' command is executed.
+15:08:29 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:08:30 INFO  : 'after 1000' command is executed.
+15:08:30 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:08:30 INFO  : 'catch {psu_protection}' command is executed.
+15:08:30 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:08:30 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:08:31 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:08:31 INFO  : 'configparams force-mem-access 0' command is executed.
+15:08:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:08:31 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:08:31 INFO  : 'con' command is executed.
+15:08:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:08:31 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:08:54 INFO  : Disconnected from the channel tcfchan#9.
+15:08:55 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:09:00 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:09:00 INFO  : 'jtag frequency' command is executed.
+15:09:00 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:09:00 INFO  : Context for 'APU' is selected.
+15:09:01 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:09:01 INFO  : 'configparams force-mem-access 1' command is executed.
+15:09:01 INFO  : Context for 'APU' is selected.
+15:09:01 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:09:02 INFO  : 'psu_init' command is executed.
+15:09:03 INFO  : 'after 1000' command is executed.
+15:09:03 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:09:04 INFO  : 'after 1000' command is executed.
+15:09:04 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:09:04 INFO  : 'catch {psu_protection}' command is executed.
+15:09:04 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:09:04 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:09:05 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:09:05 INFO  : 'configparams force-mem-access 0' command is executed.
+15:09:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:09:05 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:09:05 INFO  : 'con' command is executed.
+15:09:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:09:05 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:09:22 INFO  : Disconnected from the channel tcfchan#10.
+15:09:23 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:09:29 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:09:29 INFO  : 'jtag frequency' command is executed.
+15:09:29 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:09:29 INFO  : Context for 'APU' is selected.
+15:09:29 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:09:29 INFO  : 'configparams force-mem-access 1' command is executed.
+15:09:29 INFO  : Context for 'APU' is selected.
+15:09:29 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:09:31 INFO  : 'psu_init' command is executed.
+15:09:32 INFO  : 'after 1000' command is executed.
+15:09:32 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:09:33 INFO  : 'after 1000' command is executed.
+15:09:33 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:09:33 INFO  : 'catch {psu_protection}' command is executed.
+15:09:33 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:09:33 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:09:33 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:09:33 INFO  : 'configparams force-mem-access 0' command is executed.
+15:09:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:09:33 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:09:34 INFO  : 'con' command is executed.
+15:09:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:09:34 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:31:57 INFO  : Disconnected from the channel tcfchan#11.
+15:31:58 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:32:04 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:32:04 INFO  : 'jtag frequency' command is executed.
+15:32:04 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:32:04 INFO  : Context for 'APU' is selected.
+15:32:04 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:32:04 INFO  : 'configparams force-mem-access 1' command is executed.
+15:32:04 INFO  : Context for 'APU' is selected.
+15:32:04 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:32:05 INFO  : 'psu_init' command is executed.
+15:32:06 INFO  : 'after 1000' command is executed.
+15:32:07 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:32:08 INFO  : 'after 1000' command is executed.
+15:32:08 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:32:08 INFO  : 'catch {psu_protection}' command is executed.
+15:32:08 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:32:08 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:32:08 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:32:08 INFO  : 'configparams force-mem-access 0' command is executed.
+15:32:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:32:08 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:32:08 INFO  : 'con' command is executed.
+15:32:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:32:08 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:32:34 INFO  : Disconnected from the channel tcfchan#12.
+15:32:35 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:32:40 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:32:40 INFO  : 'jtag frequency' command is executed.
+15:32:40 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:32:40 INFO  : Context for 'APU' is selected.
+15:32:41 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:32:41 INFO  : 'configparams force-mem-access 1' command is executed.
+15:32:41 INFO  : Context for 'APU' is selected.
+15:32:41 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:32:42 INFO  : 'psu_init' command is executed.
+15:32:43 INFO  : 'after 1000' command is executed.
+15:32:43 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:32:44 INFO  : 'after 1000' command is executed.
+15:32:44 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:32:44 INFO  : 'catch {psu_protection}' command is executed.
+15:32:44 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:32:44 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:32:45 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:32:45 INFO  : 'configparams force-mem-access 0' command is executed.
+15:32:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:32:45 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:32:45 INFO  : 'con' command is executed.
+15:32:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:32:45 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:33:09 INFO  : Disconnected from the channel tcfchan#13.
+15:33:10 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:33:16 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:33:16 INFO  : 'jtag frequency' command is executed.
+15:33:16 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:33:16 INFO  : Context for 'APU' is selected.
+15:33:16 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:33:16 INFO  : 'configparams force-mem-access 1' command is executed.
+15:33:16 INFO  : Context for 'APU' is selected.
+15:33:16 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:33:18 INFO  : 'psu_init' command is executed.
+15:33:19 INFO  : 'after 1000' command is executed.
+15:33:19 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:33:20 INFO  : 'after 1000' command is executed.
+15:33:20 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:33:20 INFO  : 'catch {psu_protection}' command is executed.
+15:33:20 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:33:20 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:33:21 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:33:21 INFO  : 'configparams force-mem-access 0' command is executed.
+15:33:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:33:21 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:33:21 INFO  : 'con' command is executed.
+15:33:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:33:21 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:35:01 INFO  : Disconnected from the channel tcfchan#14.
+15:35:02 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:35:08 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:35:08 INFO  : 'jtag frequency' command is executed.
+15:35:08 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:35:08 INFO  : Context for 'APU' is selected.
+15:35:08 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:35:08 INFO  : 'configparams force-mem-access 1' command is executed.
+15:35:08 INFO  : Context for 'APU' is selected.
+15:35:08 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:35:10 INFO  : 'psu_init' command is executed.
+15:35:11 INFO  : 'after 1000' command is executed.
+15:35:11 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:35:12 INFO  : 'after 1000' command is executed.
+15:35:12 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:35:12 INFO  : 'catch {psu_protection}' command is executed.
+15:35:12 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:35:12 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:35:12 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:35:12 INFO  : 'configparams force-mem-access 0' command is executed.
+15:35:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:35:12 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:35:13 INFO  : 'con' command is executed.
+15:35:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:35:13 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:35:41 INFO  : Disconnected from the channel tcfchan#15.
+15:35:42 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:35:48 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:35:48 INFO  : 'jtag frequency' command is executed.
+15:35:48 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:35:48 INFO  : Context for 'APU' is selected.
+15:35:48 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:35:48 INFO  : 'configparams force-mem-access 1' command is executed.
+15:35:48 INFO  : Context for 'APU' is selected.
+15:35:48 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:35:49 INFO  : 'psu_init' command is executed.
+15:35:50 INFO  : 'after 1000' command is executed.
+15:35:50 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:35:51 INFO  : 'after 1000' command is executed.
+15:35:51 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:35:51 INFO  : 'catch {psu_protection}' command is executed.
+15:35:51 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:35:51 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:35:52 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:35:52 INFO  : 'configparams force-mem-access 0' command is executed.
+15:35:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:35:52 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:35:52 INFO  : 'con' command is executed.
+15:35:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:35:52 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:36:08 INFO  : Disconnected from the channel tcfchan#16.
+15:36:09 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:36:14 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:36:14 INFO  : 'jtag frequency' command is executed.
+15:36:14 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:36:15 INFO  : Context for 'APU' is selected.
+15:36:15 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:36:15 INFO  : 'configparams force-mem-access 1' command is executed.
+15:36:15 INFO  : Context for 'APU' is selected.
+15:36:15 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:36:16 INFO  : 'psu_init' command is executed.
+15:36:17 INFO  : 'after 1000' command is executed.
+15:36:17 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:36:18 INFO  : 'after 1000' command is executed.
+15:36:19 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:36:19 INFO  : 'catch {psu_protection}' command is executed.
+15:36:19 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:36:19 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:36:19 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:36:19 INFO  : 'configparams force-mem-access 0' command is executed.
+15:36:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:36:19 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:36:19 INFO  : 'con' command is executed.
+15:36:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:36:19 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:36:33 INFO  : Disconnected from the channel tcfchan#17.
+15:36:34 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:36:39 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:36:39 INFO  : 'jtag frequency' command is executed.
+15:36:39 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:36:40 INFO  : Context for 'APU' is selected.
+15:36:40 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:36:40 INFO  : 'configparams force-mem-access 1' command is executed.
+15:36:40 INFO  : Context for 'APU' is selected.
+15:36:40 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:36:41 INFO  : 'psu_init' command is executed.
+15:36:42 INFO  : 'after 1000' command is executed.
+15:36:42 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:36:43 INFO  : 'after 1000' command is executed.
+15:36:43 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:36:43 INFO  : 'catch {psu_protection}' command is executed.
+15:36:43 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:36:44 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:36:44 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:36:44 INFO  : 'configparams force-mem-access 0' command is executed.
+15:36:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:36:44 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:36:44 INFO  : 'con' command is executed.
+15:36:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:36:44 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:37:03 INFO  : Disconnected from the channel tcfchan#18.
+15:37:04 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:37:09 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:37:09 INFO  : 'jtag frequency' command is executed.
+15:37:09 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:37:09 INFO  : Context for 'APU' is selected.
+15:37:10 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:37:10 INFO  : 'configparams force-mem-access 1' command is executed.
+15:37:10 INFO  : Context for 'APU' is selected.
+15:37:10 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:37:11 INFO  : 'psu_init' command is executed.
+15:37:12 INFO  : 'after 1000' command is executed.
+15:37:12 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:37:13 INFO  : 'after 1000' command is executed.
+15:37:13 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:37:13 INFO  : 'catch {psu_protection}' command is executed.
+15:37:13 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:37:13 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:37:14 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:37:14 INFO  : 'configparams force-mem-access 0' command is executed.
+15:37:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:37:14 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:37:14 INFO  : 'con' command is executed.
+15:37:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:37:14 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:38:42 INFO  : Disconnected from the channel tcfchan#19.
+15:38:43 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:38:48 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:38:48 INFO  : 'jtag frequency' command is executed.
+15:38:48 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:38:48 INFO  : Context for 'APU' is selected.
+15:38:49 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:38:49 INFO  : 'configparams force-mem-access 1' command is executed.
+15:38:49 INFO  : Context for 'APU' is selected.
+15:38:49 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:38:50 INFO  : 'psu_init' command is executed.
+15:38:51 INFO  : 'after 1000' command is executed.
+15:38:51 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:38:52 INFO  : 'after 1000' command is executed.
+15:38:52 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:38:52 INFO  : 'catch {psu_protection}' command is executed.
+15:38:52 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:38:52 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:38:53 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:38:53 INFO  : 'configparams force-mem-access 0' command is executed.
+15:38:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:38:53 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:38:53 INFO  : 'con' command is executed.
+15:38:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:38:53 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:39:37 INFO  : Disconnected from the channel tcfchan#20.
+15:39:38 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:39:44 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:39:44 INFO  : 'jtag frequency' command is executed.
+15:39:44 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:39:44 INFO  : Context for 'APU' is selected.
+15:39:44 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:39:44 INFO  : 'configparams force-mem-access 1' command is executed.
+15:39:44 INFO  : Context for 'APU' is selected.
+15:39:44 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:39:46 INFO  : 'psu_init' command is executed.
+15:39:47 INFO  : 'after 1000' command is executed.
+15:39:47 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:39:48 INFO  : 'after 1000' command is executed.
+15:39:48 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:39:48 INFO  : 'catch {psu_protection}' command is executed.
+15:39:48 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:39:48 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:39:49 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:39:49 INFO  : 'configparams force-mem-access 0' command is executed.
+15:39:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:39:49 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:39:49 INFO  : 'con' command is executed.
+15:39:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:39:49 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:40:41 INFO  : Disconnected from the channel tcfchan#21.
+15:40:42 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:40:48 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:40:48 INFO  : 'jtag frequency' command is executed.
+15:40:48 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:40:48 INFO  : Context for 'APU' is selected.
+15:40:48 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:40:48 INFO  : 'configparams force-mem-access 1' command is executed.
+15:40:48 INFO  : Context for 'APU' is selected.
+15:40:48 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:40:50 INFO  : 'psu_init' command is executed.
+15:40:51 INFO  : 'after 1000' command is executed.
+15:40:51 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:40:52 INFO  : 'after 1000' command is executed.
+15:40:52 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:40:52 INFO  : 'catch {psu_protection}' command is executed.
+15:40:52 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:40:52 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:40:53 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:40:53 INFO  : 'configparams force-mem-access 0' command is executed.
+15:40:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:40:53 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:40:53 INFO  : 'con' command is executed.
+15:40:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:40:53 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:41:40 INFO  : Disconnected from the channel tcfchan#22.
+15:41:41 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:41:46 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:41:46 INFO  : 'jtag frequency' command is executed.
+15:41:46 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:41:46 INFO  : Context for 'APU' is selected.
+15:41:47 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:41:47 INFO  : 'configparams force-mem-access 1' command is executed.
+15:41:47 INFO  : Context for 'APU' is selected.
+15:41:47 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:41:48 INFO  : 'psu_init' command is executed.
+15:41:49 INFO  : 'after 1000' command is executed.
+15:41:49 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:41:50 INFO  : 'after 1000' command is executed.
+15:41:50 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:41:50 INFO  : 'catch {psu_protection}' command is executed.
+15:41:50 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:41:50 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:41:51 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:41:51 INFO  : 'configparams force-mem-access 0' command is executed.
+15:41:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:41:51 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:41:51 INFO  : 'con' command is executed.
+15:41:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:41:51 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:42:11 INFO  : Disconnected from the channel tcfchan#23.
+15:42:12 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:42:17 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:42:17 INFO  : 'jtag frequency' command is executed.
+15:42:17 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:42:17 INFO  : Context for 'APU' is selected.
+15:42:18 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:42:18 INFO  : 'configparams force-mem-access 1' command is executed.
+15:42:18 INFO  : Context for 'APU' is selected.
+15:42:18 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:42:19 INFO  : 'psu_init' command is executed.
+15:42:20 INFO  : 'after 1000' command is executed.
+15:42:20 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:42:21 INFO  : 'after 1000' command is executed.
+15:42:21 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:42:21 INFO  : 'catch {psu_protection}' command is executed.
+15:42:21 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:42:21 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:42:22 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:42:22 INFO  : 'configparams force-mem-access 0' command is executed.
+15:42:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:42:22 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:42:22 INFO  : 'con' command is executed.
+15:42:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:42:22 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:42:34 INFO  : Disconnected from the channel tcfchan#24.
+15:42:35 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:42:41 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:42:41 INFO  : 'jtag frequency' command is executed.
+15:42:41 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:42:41 INFO  : Context for 'APU' is selected.
+15:42:41 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:42:41 INFO  : 'configparams force-mem-access 1' command is executed.
+15:42:41 INFO  : Context for 'APU' is selected.
+15:42:41 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:42:42 INFO  : 'psu_init' command is executed.
+15:42:43 INFO  : 'after 1000' command is executed.
+15:42:43 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:42:44 INFO  : 'after 1000' command is executed.
+15:42:44 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:42:44 INFO  : 'catch {psu_protection}' command is executed.
+15:42:44 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:42:45 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:42:45 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:42:45 INFO  : 'configparams force-mem-access 0' command is executed.
+15:42:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:42:45 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:42:45 INFO  : 'con' command is executed.
+15:42:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:42:45 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:43:52 INFO  : Disconnected from the channel tcfchan#25.
+15:43:53 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:43:59 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:43:59 INFO  : 'jtag frequency' command is executed.
+15:43:59 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:43:59 INFO  : Context for 'APU' is selected.
+15:43:59 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:43:59 INFO  : 'configparams force-mem-access 1' command is executed.
+15:43:59 INFO  : Context for 'APU' is selected.
+15:43:59 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:44:01 INFO  : 'psu_init' command is executed.
+15:44:02 INFO  : 'after 1000' command is executed.
+15:44:02 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:44:03 INFO  : 'after 1000' command is executed.
+15:44:03 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:44:03 INFO  : 'catch {psu_protection}' command is executed.
+15:44:03 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:44:03 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:44:04 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:44:04 INFO  : 'configparams force-mem-access 0' command is executed.
+15:44:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:44:04 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:44:04 INFO  : 'con' command is executed.
+15:44:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:44:04 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+15:45:11 INFO  : Disconnected from the channel tcfchan#26.
+15:45:12 INFO  : Connected to target on host 'espdev.cs.columbia.edu' and port '3123'.
+15:45:18 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46A4B' is selected.
+15:45:18 INFO  : 'jtag frequency' command is executed.
+15:45:18 INFO  : Sourcing of '/home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl' is done.
+15:45:18 INFO  : Context for 'APU' is selected.
+15:45:18 INFO  : Hardware design information is loaded from '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf'.
+15:45:18 INFO  : 'configparams force-mem-access 1' command is executed.
+15:45:18 INFO  : Context for 'APU' is selected.
+15:45:18 INFO  : Sourcing of '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+15:45:20 INFO  : 'psu_init' command is executed.
+15:45:21 INFO  : 'after 1000' command is executed.
+15:45:21 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+15:45:22 INFO  : 'after 1000' command is executed.
+15:45:22 INFO  : 'psu_ps_pl_reset_config' command is executed.
+15:45:22 INFO  : 'catch {psu_protection}' command is executed.
+15:45:22 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:45:22 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:45:23 INFO  : The application '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:45:23 INFO  : 'configparams force-mem-access 0' command is executed.
+15:45:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:espdev.cs.columbia.edu:3123
+source /home/tools/Xilinx/SDK/2017.4/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+loadhw -hw /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+source /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+rst -processor
+dow /home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/jpeg_rs/Debug/jpeg_rs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:45:23 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:45:23 INFO  : 'con' command is executed.
+15:45:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46A4B"} -index 1
+con
+----------------End of Script----------------
+
+15:45:23 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
