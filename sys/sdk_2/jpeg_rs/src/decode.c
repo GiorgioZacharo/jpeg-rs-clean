@@ -242,62 +242,228 @@ PostshiftIDctMatrix (int *matrix, int shift)
  * BoundIDctMatrix bounds the inverse dct matrix so that no pixel has a
  * value greater than 255 (4095) or less than 0.
  */
-void
-BoundIDctMatrix (int *matrix, int Bound)
-{
-  int *mptr;
+// void
+// BoundIDctMatrix (int *matrix, int Bound)
+// {
+//   int *mptr;
 
-  for (mptr = matrix; mptr < matrix + DCTSIZE2; mptr++)
-    {
-      if (*mptr < 0)
-	{
-	  *mptr = 0;
-	}
-      else if (*mptr > Bound)
-	{
-	  *mptr = Bound;
-	}
+//   for (mptr = matrix; mptr < matrix + DCTSIZE2; mptr++)
+//     {
+//       if (*mptr < 0)
+// 	{
+// 	  *mptr = 0;
+// 	}
+//       else if (*mptr > Bound)
+// 	{
+// 	  *mptr = Bound;
+// 	}
+//     }
+// }
+
+void
+BoundIDctMatrix (int *matrix, int Bound) {
+#ifdef REG_8 //HW ACC
+
+  #ifdef VERBOSE
+  printf("Call HW REG_8 - BoundIDctMatrix\n");
+  #endif
+
+  int status = 0;
+
+  initPeripherals8();
+
+  // Flush the cache of the buffers
+  Xil_DCacheFlushRange((UINTPTR)matrix, DCTSIZE2 * sizeof(int));
+//  Xil_DCacheFlushRange((UINTPTR)matrix,  sizeof(int));
+
+  XBoundidctmatrix_Set_matrix(&Boundidctmatrix, (UINTPTR)matrix);
+  XBoundidctmatrix_Set_Bound(&Boundidctmatrix, (UINTPTR)Bound);
+
+
+  XBoundidctmatrix_Start(&Boundidctmatrix);
+
+  while (!XBoundidctmatrix_IsDone(&Boundidctmatrix));
+
+  // Invalidate the cache to avoid reading garbage
+  Xil_DCacheInvalidateRange((UINTPTR)matrix, DCTSIZE2 * sizeof(int));
+
+  if (status != 0)
+  {
+  printf("ERROR: HW execution failed (status %d)\n", status);
+  }
+
+#else // SOFTWARE
+
+
+  int i;
+  int inp1_buf[CHUNK_SIZE];
+
+  for (i = 0; i < N_CHUNKS; i++){
+    // Load data
+    #ifdef STANDARD_MODE
+      for (int j=0; j < CHUNK_SIZE; j++)
+      inp1_buf[j] = matrix[i*CHUNK_SIZE+j];
+    #else
+      /* BURST_MODE */
+      unsigned offset = i*CHUNK_SIZE;
+      memcpy(inp1_buf, matrix + offset, CHUNK_SIZE * sizeof(int));
+    #endif
+
+
+    // Computation
+    for (int k=0; k < CHUNK_SIZE; k++){
+      if (inp1_buf[k] < 0)
+        inp1_buf[k] = 0;
+
+      else if (inp1_buf[k] > Bound)
+        inp1_buf[k] = Bound;
     }
+
+
+    // Store Data
+    #ifdef STANDARD_MODE
+      for (int l=0; l < CHUNK_SIZE; l++)
+      #pragma HLS UNROLL skip_exit_check factor=16
+      matrix[i*CHUNK_SIZE+l] = inp1_buf[l];
+    #else
+      offset = i*CHUNK_SIZE;
+      memcpy(matrix + offset, inp1_buf, CHUNK_SIZE * sizeof(int));
+    #endif
+  }
+
+  #endif
 }
 
 
 
-void
-WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
-	       int voffs, int hoffs)
-{
-  int i, e;
+
+// void
+// WriteOneBlock (int *store, unsigned char *out_buf, int width, int height,
+// 	       int voffs, int hoffs)
+// {
+//   int i, e;
 
 
-  /* Find vertical buffer offs. */
-  for (i = voffs; i < voffs + DCTSIZE; i++)
-    {
-      if (i < height)
-	{
-	  int diff;
-	  diff = width * i;
+//   /* Find vertical buffer offs. */
+//   for (i = voffs; i < voffs + DCTSIZE; i++)
+//     {
+//       if (i < height)
+// 	{
+// 	  int diff;
+// 	  diff = width * i;
 
-   // printf("+++++ WriteOneBlock: %d\n", hoffs+DCTSIZE);
-	  for (e = hoffs; e < hoffs + DCTSIZE; e++)
-	    {
-	      if (e < width)
-		{
-		  out_buf[diff + e] = (unsigned char) (*(store++));
-		}
-	      else
-		{
-		  break;
-		}
-	    }
-	}
+//    // printf("+++++ WriteOneBlock: %d\n", hoffs+DCTSIZE);
+// 	  for (e = hoffs; e < hoffs + DCTSIZE; e++)
+// 	    {
+// 	      if (e < width)
+// 		{
+// 		  out_buf[diff + e] = (unsigned char) (*(store++));
+// 		}
+// 	      else
+// 		{
+// 		  break;
+// 		}
+// 	    }
+// 	}
+//       else
+// 	{
+// 	  break;
+// 	}
+//     }
+
+
+// }
+
+void WriteOneBlock_f2r_entry_s2e_forEnd13(int store[DCTSIZE2], unsigned char out_buf[5310], int width, int height,
+        int voffs, int hoffs){
+
+
+#ifdef REG_4 //HW ACC
+
+  #ifdef VERBOSE
+  printf("Call HW REG_4 - WriteOneBlock\n");
+  #endif
+
+  int status = 0;
+
+  initPeripherals4();
+
+  // Flush the cache of the buffers
+  Xil_DCacheFlushRange((UINTPTR)store, DCTSIZE2 * sizeof(int));
+  Xil_DCacheFlushRange((UINTPTR)out_buf, 5310 * sizeof(unsigned char));
+
+  XWriteoneblock_f2r_entry_s2e_forend13_Set_store(&Writeoneblock_f2r_entry_s2e_forend13, (UINTPTR)store);
+  XWriteoneblock_f2r_entry_s2e_forend13_Set_out_buf(&Writeoneblock_f2r_entry_s2e_forend13, (UINTPTR)out_buf);
+  XWriteoneblock_f2r_entry_s2e_forend13_Set_width(&Writeoneblock_f2r_entry_s2e_forend13, (UINTPTR)width);
+  XWriteoneblock_f2r_entry_s2e_forend13_Set_height(&Writeoneblock_f2r_entry_s2e_forend13, (UINTPTR)height);
+  XWriteoneblock_f2r_entry_s2e_forend13_Set_voffs(&Writeoneblock_f2r_entry_s2e_forend13, (UINTPTR)voffs);
+  XWriteoneblock_f2r_entry_s2e_forend13_Set_hoffs(&Writeoneblock_f2r_entry_s2e_forend13, (UINTPTR)hoffs);
+
+
+  XWriteoneblock_f2r_entry_s2e_forend13_Start(&Writeoneblock_f2r_entry_s2e_forend13);
+
+  while (!XWriteoneblock_f2r_entry_s2e_forend13_IsDone(&Writeoneblock_f2r_entry_s2e_forend13));
+
+  // Invalidate the cache to avoid reading garbage
+  Xil_DCacheInvalidateRange((UINTPTR)out_buf, 5310 * sizeof(unsigned char));
+
+  if (status != 0)
+  {
+  printf("ERROR: HW execution failed (status %d)\n", status);
+  }
+
+#else // SOFTWARE
+
+
+
+    int i=0;
+    int l=0; // counter of computation iterations
+
+   unsigned char inp1_buf[64];
+   unsigned char out1_buf[5310];
+   int index[64];
+
+
+
+ // Load data
+    for (int j=0; j < 64; j++){
+      unsigned offset = i*CHUNK_SIZE+j;
+      inp1_buf[j] =(unsigned char) (*(store++));
+    }
+
+
+    // Computation
+    /* Find vertical buffer offs. */
+    for (int k = voffs; k < voffs + DCTSIZE; k++) {
+
+      if (k < height) {
+        int diff;
+        diff = width * k;
+
+        for (int e = hoffs; e < hoffs + DCTSIZE; e++) {
+          if (e < width){
+            out1_buf[diff + e] = inp1_buf[l];   // Compute
+            index[l]=diff+e;          // save index
+            l++;
+            }
+          else
+            break;
+        }
+      }
       else
-	{
-	  break;
-	}
+        break;
     }
 
+    // Store Data
+    for (int m=0; m < l; m++) {
+    #pragma HLS UNROLL skip_exit_check factor=4
+    out_buf[index[m]] = out1_buf[index[m]];
+    }  
 
+    #endif
 }
+
+
 
 /*
  * WriteBlock() writes an array of data in the integer array pointed to
@@ -322,9 +488,13 @@ WriteBlock (int *store, int *p_out_vpos, int *p_out_hpos,
   /*
    * Write block
    */
-  WriteOneBlock (store,
-		 p_out_buf,
-		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+  // WriteOneBlock (store,
+		//  p_out_buf,
+		//  p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
+
+    WriteOneBlock_f2r_entry_s2e_forEnd13 (store,
+     p_out_buf,
+     p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
   /*
    *  Add positions
@@ -360,7 +530,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
 
   // printf("******** Hoffs is : %d\n\n\n", hoffs);
 
-  WriteOneBlock (store1, p_out_buf,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store1, p_out_buf,
 		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
   /*
@@ -368,7 +538,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
    * XX
    */
   hoffs += DCTSIZE;
-  WriteOneBlock (store2, p_out_buf,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store2, p_out_buf,
 		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
   /*
@@ -377,7 +547,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
    */
   voffs += DCTSIZE;
   hoffs -= DCTSIZE;
-  WriteOneBlock (store3, p_out_buf,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store3, p_out_buf,
 		 p_jinfo_image_width, p_jinfo_image_height, voffs, hoffs);
 
 
@@ -386,7 +556,7 @@ Write4Blocks (int *store1, int *store2, int *store3, int *store4,
    * XO
    */
   hoffs += DCTSIZE;
-  WriteOneBlock (store4,
+  WriteOneBlock_f2r_entry_s2e_forEnd13 (store4,
 		 p_out_buf, p_jinfo_image_width, p_jinfo_image_height,
 		 voffs, hoffs);
 
