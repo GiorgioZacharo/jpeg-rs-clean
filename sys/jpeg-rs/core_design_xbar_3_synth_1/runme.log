@@ -13,24 +13,24 @@ Command: synth_design -top core_design_xbar_3 -part xczu9eg-ffvb1156-2-e -mode o
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
-INFO: [Common 17-1223] The version limit for your license is '2018.05' and will expire in 13 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2018.05' and will expire in 6 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 20451 
+INFO: Helper process launched with PID 15354 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:29 . Memory (MB): peak = 1608.539 ; gain = 0.000 ; free physical = 1450 ; free virtual = 13810
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:28 . Memory (MB): peak = 1608.531 ; gain = 0.000 ; free physical = 1374 ; free virtual = 12356
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'core_design_xbar_3' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ip/core_design_xbar_3/synth/core_design_xbar_3.v:59]
+INFO: [Synth 8-638] synthesizing module 'core_design_xbar_3' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ip/core_design_xbar_3/synth/core_design_xbar_3.v:60]
 INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_axi_crossbar' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:4882]
 	Parameter C_FAMILY bound to: zynquplus - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
-	Parameter C_NUM_MASTER_SLOTS bound to: 8 - type: integer 
+	Parameter C_NUM_MASTER_SLOTS bound to: 13 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 40 - type: integer 
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
-	Parameter C_M_AXI_BASE_ADDR bound to: 512'b00000000000000000000000000000000101000000000011100000000000000000000000000000000000000000000000010100000000001100000000000000000000000000000000000000000000000001010000000000101000000000000000000000000000000000000000000000000101000000000000000010000000000000000000000000000000000000000000010100000000000100000000000000000000000000000000000000000000000001010000000000011000000000000000000000000000000000000000000000000101000000000000100000000000000000000000000000000000000000000000010100000000001000000000000000000 
-	Parameter C_M_AXI_ADDR_WIDTH bound to: 256'b0000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000110000000000000000000000000000001100000000000000000000000000000011000000000000000000000000000000110000000000000000000000000000010000 
+	Parameter C_M_AXI_BASE_ADDR bound to: 832'b0000000000000000000000000000000010100000000011000000000000000000000000000000000000000000000000001010000000001011000000000000000000000000000000000000000000000000101000000000101000000000000000000000000000000000000000000000000010100000000010010000000000000000000000000000000000000000000000001010000000001000000000000000000000000000000000000000000000000000101000000000011100000000000000000000000000000000000000000000000010100000000001100000000000000000000000000000000000000000000000001010000000000101000000000000000000000000000000000000000000000000101000000000000000010000000000000000000000000000000000000000000010100000000000100000000000000000000000000000000000000000000000001010000000000011000000000000000000000000000000000000000000000000101000000000000100000000000000000000000000000000000000000000000010100000000001000000000000000000 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 416'b00000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000110000000000000000000000000000001100000000000000000000000000000011000000000000000000000000000000110000000000000000000000000000010000 
 	Parameter C_S_AXI_BASE_ID bound to: 0 - type: integer 
 	Parameter C_S_AXI_THREAD_ID_WIDTH bound to: 0 - type: integer 
 	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
@@ -39,16 +39,16 @@ INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_axi_crossbar' [/ho
 	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_M_AXI_WRITE_CONNECTIVITY bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
-	Parameter C_M_AXI_READ_CONNECTIVITY bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_M_AXI_WRITE_CONNECTIVITY bound to: 416'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_M_AXI_READ_CONNECTIVITY bound to: 416'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
 	Parameter C_R_REGISTER bound to: 1 - type: integer 
 	Parameter C_S_AXI_SINGLE_THREAD bound to: 1 - type: integer 
 	Parameter C_S_AXI_WRITE_ACCEPTANCE bound to: 1 - type: integer 
 	Parameter C_S_AXI_READ_ACCEPTANCE bound to: 1 - type: integer 
-	Parameter C_M_AXI_WRITE_ISSUING bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
-	Parameter C_M_AXI_READ_ISSUING bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_M_AXI_WRITE_ISSUING bound to: 416'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_M_AXI_READ_ISSUING bound to: 416'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
 	Parameter C_S_AXI_ARB_PRIORITY bound to: 0 - type: integer 
-	Parameter C_M_AXI_SECURE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_M_AXI_SECURE bound to: 416'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_CONNECTIVITY_MODE bound to: 0 - type: integer 
 	Parameter P_ONES bound to: 65'b11111111111111111111111111111111111111111111111111111111111111111 
 	Parameter P_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
@@ -58,28 +58,28 @@ INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_axi_crossbar' [/ho
 	Parameter P_AXILITE bound to: 2 - type: integer 
 	Parameter P_AXILITE_SIZE bound to: 3'b010 
 	Parameter P_INCR bound to: 2'b01 
-	Parameter P_M_AXI_SUPPORTS_WRITE bound to: 8'b11111111 
-	Parameter P_M_AXI_SUPPORTS_READ bound to: 8'b11111111 
+	Parameter P_M_AXI_SUPPORTS_WRITE bound to: 13'b1111111111111 
+	Parameter P_M_AXI_SUPPORTS_READ bound to: 13'b1111111111111 
 	Parameter P_S_AXI_SUPPORTS_WRITE bound to: 1'b1 
 	Parameter P_S_AXI_SUPPORTS_READ bound to: 1'b1 
 	Parameter C_DEBUG bound to: 1 - type: integer 
 	Parameter P_RANGE_CHECK bound to: 1 - type: integer 
 	Parameter P_ADDR_DECODE bound to: 1 - type: integer 
-	Parameter P_M_AXI_ERR_MODE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter P_M_AXI_ERR_MODE bound to: 416'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter P_LEN bound to: 8 - type: integer 
 	Parameter P_LOCK bound to: 1 - type: integer 
 	Parameter P_FAMILY bound to: rtl - type: string 
 INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_crossbar_sasd' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
-	Parameter C_NUM_MASTER_SLOTS bound to: 8 - type: integer 
+	Parameter C_NUM_MASTER_SLOTS bound to: 13 - type: integer 
 	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
 	Parameter C_AXI_ADDR_WIDTH bound to: 40 - type: integer 
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
-	Parameter C_M_AXI_BASE_ADDR bound to: 512'b00000000000000000000000000000000101000000000011100000000000000000000000000000000000000000000000010100000000001100000000000000000000000000000000000000000000000001010000000000101000000000000000000000000000000000000000000000000101000000000000000010000000000000000000000000000000000000000000010100000000000100000000000000000000000000000000000000000000000001010000000000011000000000000000000000000000000000000000000000000101000000000000100000000000000000000000000000000000000000000000010100000000001000000000000000000 
-	Parameter C_M_AXI_HIGH_ADDR bound to: 512'b00000000000000000000000000000000101000000000011111111111111111110000000000000000000000000000000010100000000001101111111111111111000000000000000000000000000000001010000000000101111111111111111100000000000000000000000000000000101000000000000000011111111111110000000000000000000000000000000010100000000000100000111111111111000000000000000000000000000000001010000000000011000011111111111100000000000000000000000000000000101000000000000100001111111111110000000000000000000000000000000010100000000001001111111111111111 
+	Parameter C_M_AXI_BASE_ADDR bound to: 832'b0000000000000000000000000000000010100000000011000000000000000000000000000000000000000000000000001010000000001011000000000000000000000000000000000000000000000000101000000000101000000000000000000000000000000000000000000000000010100000000010010000000000000000000000000000000000000000000000001010000000001000000000000000000000000000000000000000000000000000101000000000011100000000000000000000000000000000000000000000000010100000000001100000000000000000000000000000000000000000000000001010000000000101000000000000000000000000000000000000000000000000101000000000000000010000000000000000000000000000000000000000000010100000000000100000000000000000000000000000000000000000000000001010000000000011000000000000000000000000000000000000000000000000101000000000000100000000000000000000000000000000000000000000000010100000000001000000000000000000 
+	Parameter C_M_AXI_HIGH_ADDR bound to: 832'b0000000000000000000000000000000010100000000011001111111111111111000000000000000000000000000000001010000000001011111111111111111100000000000000000000000000000000101000000000101011111111111111110000000000000000000000000000000010100000000010011111111111111111000000000000000000000000000000001010000000001000111111111111111100000000000000000000000000000000101000000000011111111111111111110000000000000000000000000000000010100000000001101111111111111111000000000000000000000000000000001010000000000101111111111111111100000000000000000000000000000000101000000000000000011111111111110000000000000000000000000000000010100000000000100000111111111111000000000000000000000000000000001010000000000011000011111111111100000000000000000000000000000000101000000000000100001111111111110000000000000000000000000000000010100000000001001111111111111111 
 	Parameter C_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_S_AXI_HIGH_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
@@ -90,11 +90,11 @@ INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_crossbar_sasd' [/h
 	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_S_AXI_SUPPORTS_WRITE bound to: 1'b1 
 	Parameter C_S_AXI_SUPPORTS_READ bound to: 1'b1 
-	Parameter C_M_AXI_SUPPORTS_WRITE bound to: 8'b11111111 
-	Parameter C_M_AXI_SUPPORTS_READ bound to: 8'b11111111 
+	Parameter C_M_AXI_SUPPORTS_WRITE bound to: 13'b1111111111111 
+	Parameter C_M_AXI_SUPPORTS_READ bound to: 13'b1111111111111 
 	Parameter C_S_AXI_ARB_PRIORITY bound to: 0 - type: integer 
-	Parameter C_M_AXI_SECURE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter C_M_AXI_ERR_MODE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_M_AXI_SECURE bound to: 416'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_M_AXI_ERR_MODE bound to: 416'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_R_REGISTER bound to: 1 - type: integer 
 	Parameter C_RANGE_CHECK bound to: 1 - type: integer 
 	Parameter C_ADDR_DECODE bound to: 1 - type: integer 
@@ -102,8 +102,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_crossbar_sasd' [/h
 	Parameter P_AXI4 bound to: 0 - type: integer 
 	Parameter P_AXI3 bound to: 1 - type: integer 
 	Parameter P_AXILITE bound to: 2 - type: integer 
-	Parameter P_NUM_MASTER_SLOTS_DE bound to: 9 - type: integer 
-	Parameter P_NUM_MASTER_SLOTS_LOG bound to: 3 - type: integer 
+	Parameter P_NUM_MASTER_SLOTS_DE bound to: 14 - type: integer 
+	Parameter P_NUM_MASTER_SLOTS_LOG bound to: 4 - type: integer 
 	Parameter P_NUM_MASTER_SLOTS_DE_LOG bound to: 4 - type: integer 
 	Parameter P_NUM_SLAVE_SLOTS_LOG bound to: 1 - type: integer 
 	Parameter P_AXI_AUSER_WIDTH bound to: 1 - type: integer 
@@ -114,8 +114,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_crossbar_sasd' [/h
 	Parameter P_WMESG_WIDTH bound to: 39 - type: integer 
 	Parameter P_AXILITE_ERRMODE bound to: 1 - type: integer 
 	Parameter P_NONSECURE_BIT bound to: 1 - type: integer 
-	Parameter P_M_SECURE_MASK bound to: 8'b00000000 
-	Parameter P_M_AXILITE_MASK bound to: 8'b00000000 
+	Parameter P_M_SECURE_MASK bound to: 13'b0000000000000 
+	Parameter P_M_AXILITE_MASK bound to: 13'b0000000000000 
 	Parameter P_FIXED bound to: 2'b00 
 	Parameter P_BYPASS bound to: 0 - type: integer 
 	Parameter P_LIGHTWT bound to: 7 - type: integer 
@@ -124,16 +124,16 @@ INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_crossbar_sasd' [/h
 	Parameter P_DECERR bound to: 2'b11 
 INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_addr_decoder' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
 	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_NUM_TARGETS bound to: 8 - type: integer 
-	Parameter C_NUM_TARGETS_LOG bound to: 3 - type: integer 
+	Parameter C_NUM_TARGETS bound to: 13 - type: integer 
+	Parameter C_NUM_TARGETS_LOG bound to: 4 - type: integer 
 	Parameter C_NUM_RANGES bound to: 1 - type: integer 
 	Parameter C_ADDR_WIDTH bound to: 40 - type: integer 
 	Parameter C_TARGET_ENC bound to: 1 - type: integer 
 	Parameter C_TARGET_HOT bound to: 1 - type: integer 
 	Parameter C_REGION_ENC bound to: 1 - type: integer 
-	Parameter C_BASE_ADDR bound to: 512'b00000000000000000000000000000000101000000000011100000000000000000000000000000000000000000000000010100000000001100000000000000000000000000000000000000000000000001010000000000101000000000000000000000000000000000000000000000000101000000000000000010000000000000000000000000000000000000000000010100000000000100000000000000000000000000000000000000000000000001010000000000011000000000000000000000000000000000000000000000000101000000000000100000000000000000000000000000000000000000000000010100000000001000000000000000000 
-	Parameter C_HIGH_ADDR bound to: 512'b00000000000000000000000000000000101000000000011111111111111111110000000000000000000000000000000010100000000001101111111111111111000000000000000000000000000000001010000000000101111111111111111100000000000000000000000000000000101000000000000000011111111111110000000000000000000000000000000010100000000000100000111111111111000000000000000000000000000000001010000000000011000011111111111100000000000000000000000000000000101000000000000100001111111111110000000000000000000000000000000010100000000001001111111111111111 
-	Parameter C_TARGET_QUAL bound to: 9'b011111111 
+	Parameter C_BASE_ADDR bound to: 832'b0000000000000000000000000000000010100000000011000000000000000000000000000000000000000000000000001010000000001011000000000000000000000000000000000000000000000000101000000000101000000000000000000000000000000000000000000000000010100000000010010000000000000000000000000000000000000000000000001010000000001000000000000000000000000000000000000000000000000000101000000000011100000000000000000000000000000000000000000000000010100000000001100000000000000000000000000000000000000000000000001010000000000101000000000000000000000000000000000000000000000000101000000000000000010000000000000000000000000000000000000000000010100000000000100000000000000000000000000000000000000000000000001010000000000011000000000000000000000000000000000000000000000000101000000000000100000000000000000000000000000000000000000000000010100000000001000000000000000000 
+	Parameter C_HIGH_ADDR bound to: 832'b0000000000000000000000000000000010100000000011001111111111111111000000000000000000000000000000001010000000001011111111111111111100000000000000000000000000000000101000000000101011111111111111110000000000000000000000000000000010100000000010011111111111111111000000000000000000000000000000001010000000001000111111111111111100000000000000000000000000000000101000000000011111111111111111110000000000000000000000000000000010100000000001101111111111111111000000000000000000000000000000001010000000000101111111111111111100000000000000000000000000000000101000000000000000011111111111110000000000000000000000000000000010100000000000100000111111111111000000000000000000000000000000001010000000000011000011111111111100000000000000000000000000000000101000000000000100001111111111110000000000000000000000000000000010100000000001001111111111111111 
+	Parameter C_TARGET_QUAL bound to: 14'b01111111111111 
 	Parameter C_RESOLUTION bound to: 2 - type: integer 
 	Parameter C_COMPARATOR_THRESHOLD bound to: 6 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
@@ -203,6 +203,46 @@ INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_st
 	Parameter C_NUM_LUT bound to: 7 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 42 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized6' (2#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized7' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 38'b00000000101000000000100000000000000000 
+	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 7 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 42 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized7' (2#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized8' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 38'b00000000101000000000100100000000000000 
+	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 7 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 42 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized8' (2#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized9' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 38'b00000000101000000000101000000000000000 
+	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 7 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 42 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized9' (2#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized10' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 38'b00000000101000000000101100000000000000 
+	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 7 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 42 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized10' (2#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized11' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 38'b00000000101000000000110000000000000000 
+	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 7 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 42 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized11' (2#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_16_addr_decoder' (3#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
 INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_decerr_slave' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:3500]
 	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -237,7 +277,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_16_splitter__paramete
 INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_16_splitter__parameterized0' (6#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:4459]
 INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_RATIO bound to: 9 - type: integer 
+	Parameter C_RATIO bound to: 14 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 4 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (7#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
@@ -249,7 +289,7 @@ INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__para
 INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (7#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_RATIO bound to: 9 - type: integer 
+	Parameter C_RATIO bound to: 14 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 4 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (7#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
@@ -260,7 +300,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_15_axic_registe
 INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_15_axic_register_slice' (8#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/3ed1/hdl/axi_register_slice_v2_1_vl_rfs.v:189]
 INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_RATIO bound to: 9 - type: integer 
+	Parameter C_RATIO bound to: 14 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 4 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 3 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (8#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
@@ -270,7 +310,7 @@ WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_w_be
 WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_r_beat_cnt_i_reg was removed.  [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:2091]
 INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_16_crossbar_sasd' (9#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
 INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_16_axi_crossbar' (10#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:4882]
-INFO: [Synth 8-256] done synthesizing module 'core_design_xbar_3' (11#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ip/core_design_xbar_3/synth/core_design_xbar_3.v:59]
+INFO: [Synth 8-256] done synthesizing module 'core_design_xbar_3' (11#1) [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ip/core_design_xbar_3/synth/core_design_xbar_3.v:60]
 WARNING: [Synth 8-3331] design generic_baseblocks_v2_1_0_mux_enc__parameterized0 has unconnected port S[0]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_decerr_slave has unconnected port S_AXI_AWID[0]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_decerr_slave has unconnected port S_AXI_WLAST
@@ -287,6 +327,11 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_addr_decoder has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_addr_decoder has unconnected port ADDR[0]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port S_AXI_AWID[0]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port S_AXI_ARID[0]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[12]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[11]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[10]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[9]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[8]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[7]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[6]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[5]
@@ -295,6 +340,11 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnecte
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[2]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[1]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_BID[0]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[12]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[11]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[10]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[9]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[8]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[7]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[6]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_crossbar_sasd has unconnected port M_AXI_RID[5]
@@ -354,26 +404,16 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port s_axi_arqos[1]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port s_axi_arqos[0]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port s_axi_aruser[0]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[12]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[11]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[10]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[9]
+WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[8]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[7]
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_bid[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_buser[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_16_axi_crossbar has unconnected port m_axi_rid[7]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:57 . Memory (MB): peak = 1608.543 ; gain = 0.004 ; free physical = 384 ; free virtual = 12063
+Finished RTL Elaboration : Time (s): cpu = 00:00:24 ; elapsed = 00:01:01 . Memory (MB): peak = 1608.535 ; gain = 0.004 ; free physical = 270 ; free virtual = 10193
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -383,7 +423,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:58 . Memory (MB): peak = 1608.543 ; gain = 0.004 ; free physical = 381 ; free virtual = 12060
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:01:01 . Memory (MB): peak = 1608.535 ; gain = 0.004 ; free physical = 392 ; free virtual = 10318
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -399,36 +439,32 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2250.555 ; gain = 0.000 ; free physical = 179 ; free virtual = 9761
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2254.543 ; gain = 0.996 ; free physical = 184 ; free virtual = 7984
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:54 ; elapsed = 00:01:55 . Memory (MB): peak = 2250.555 ; gain = 642.016 ; free physical = 187 ; free virtual = 9718
+Finished Constraint Validation : Time (s): cpu = 00:00:57 ; elapsed = 00:02:03 . Memory (MB): peak = 2254.543 ; gain = 646.012 ; free physical = 215 ; free virtual = 8045
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xczu9eg-ffvb1156-2-e
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:54 ; elapsed = 00:01:55 . Memory (MB): peak = 2250.555 ; gain = 642.016 ; free physical = 187 ; free virtual = 9719
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:57 ; elapsed = 00:02:03 . Memory (MB): peak = 2254.543 ; gain = 646.012 ; free physical = 215 ; free virtual = 8045
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_xbar_3_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:01:55 . Memory (MB): peak = 2250.555 ; gain = 642.016 ; free physical = 187 ; free virtual = 9720
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:02:03 . Memory (MB): peak = 2254.543 ; gain = 646.012 ; free physical = 217 ; free virtual = 8047
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4471] merging register 'gen_axilite.s_axi_wready_i_reg' into 'gen_axilite.s_axi_awready_i_reg' [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:3572]
 WARNING: [Synth 8-6014] Unused sequential element gen_axilite.s_axi_wready_i_reg was removed.  [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:3572]
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return7" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return5" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return4" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return12" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return11" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return10" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return9" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return7" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -437,7 +473,26 @@ INFO: [Synth 8-5544] ROM "f_mux_return4" won't be mapped to Block RAM because ad
 INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return12" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return11" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return10" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return9" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return7" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return5" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return4" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return12" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return11" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return10" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "f_mux_return9" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return7" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -447,7 +502,7 @@ INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because ad
 INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:54 ; elapsed = 00:01:56 . Memory (MB): peak = 2250.555 ; gain = 642.016 ; free physical = 176 ; free virtual = 9719
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:58 ; elapsed = 00:02:04 . Memory (MB): peak = 2254.543 ; gain = 646.012 ; free physical = 198 ; free virtual = 8028
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -462,7 +517,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	               72 Bit    Registers := 1     
 	               36 Bit    Registers := 2     
-	                9 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
@@ -470,11 +525,10 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     72 Bit        Muxes := 1     
 	   2 Input     36 Bit        Muxes := 2     
-	   2 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 70    
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 105   
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -485,7 +539,7 @@ Hierarchical RTL Component report
 Module axi_crossbar_v2_1_16_addr_decoder 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
 Module axi_crossbar_v2_1_16_decerr_slave 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -511,11 +565,11 @@ Detailed RTL Component Info :
 Module generic_baseblocks_v2_1_0_mux_enc 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 14    
 Module generic_baseblocks_v2_1_0_mux_enc__parameterized1 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 14    
 Module axi_register_slice_v2_1_15_axic_register_slice 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -527,17 +581,16 @@ Detailed RTL Component Info :
 Module generic_baseblocks_v2_1_0_mux_enc__parameterized2 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 14    
 Module axi_crossbar_v2_1_16_crossbar_sasd 
 Detailed RTL Component Info : 
 +---Registers : 
-	                9 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      9 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -553,8 +606,6 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_grant_enc_i_reg was removed.  [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/c631/hdl/axi_crossbar_v2_1_vl_rfs.v:324]
-INFO: [Synth 8-3936] Found unconnected internal register 'gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [/home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ipshared/3ed1/hdl/axi_register_slice_v2_1_vl_rfs.v:422]
 INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[71]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
 INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[70]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
 INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[69]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
@@ -584,9 +635,11 @@ INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_i
 INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[42]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
 INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[41]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
 INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[0]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_grant_enc_i_reg[0]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
 INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/reg_slice_r/skid_buffer_reg[35]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg[35]) is unused and will be removed from module axi_crossbar_v2_1_16_axi_crossbar.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:01:58 . Memory (MB): peak = 2250.555 ; gain = 642.016 ; free physical = 201 ; free virtual = 9650
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:02:06 . Memory (MB): peak = 2254.543 ; gain = 646.012 ; free physical = 204 ; free virtual = 7965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -598,13 +651,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:20 ; elapsed = 00:03:22 . Memory (MB): peak = 2866.531 ; gain = 1257.992 ; free physical = 2095 ; free virtual = 9080
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:23 ; elapsed = 00:03:31 . Memory (MB): peak = 2870.523 ; gain = 1261.992 ; free physical = 2573 ; free virtual = 7838
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:03:24 . Memory (MB): peak = 2900.559 ; gain = 1292.020 ; free physical = 2046 ; free virtual = 9058
+Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:03:33 . Memory (MB): peak = 2921.559 ; gain = 1313.027 ; free physical = 2535 ; free virtual = 7818
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -616,7 +669,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:03:24 . Memory (MB): peak = 2908.566 ; gain = 1300.027 ; free physical = 2043 ; free virtual = 9057
+Finished Technology Mapping : Time (s): cpu = 00:01:25 ; elapsed = 00:03:33 . Memory (MB): peak = 2921.559 ; gain = 1313.027 ; free physical = 2526 ; free virtual = 7813
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -640,7 +693,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.570 ; gain = 1300.031 ; free physical = 3051 ; free virtual = 10068
+Finished IO Insertion : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.562 ; gain = 1313.031 ; free physical = 2486 ; free virtual = 7801
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -653,7 +706,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.570 ; gain = 1300.031 ; free physical = 3130 ; free virtual = 10147
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.562 ; gain = 1313.031 ; free physical = 2485 ; free virtual = 7801
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -665,25 +718,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.570 ; gain = 1300.031 ; free physical = 3765 ; free virtual = 10782
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.562 ; gain = 1313.031 ; free physical = 2470 ; free virtual = 7789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.570 ; gain = 1300.031 ; free physical = 3773 ; free virtual = 10790
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.562 ; gain = 1313.031 ; free physical = 2467 ; free virtual = 7786
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.570 ; gain = 1300.031 ; free physical = 3773 ; free virtual = 10790
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.562 ; gain = 1313.031 ; free physical = 2444 ; free virtual = 7766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.570 ; gain = 1300.031 ; free physical = 3773 ; free virtual = 10790
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.562 ; gain = 1313.031 ; free physical = 2438 ; free virtual = 7762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -700,33 +753,33 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |LUT1 |     2|
-|2     |LUT2 |    17|
-|3     |LUT3 |    12|
-|4     |LUT4 |   110|
-|5     |LUT5 |    81|
-|6     |LUT6 |   117|
-|7     |FDRE |   146|
+|2     |LUT2 |    24|
+|3     |LUT3 |    41|
+|4     |LUT4 |    90|
+|5     |LUT5 |    95|
+|6     |LUT6 |   249|
+|7     |FDRE |   151|
 +------+-----+------+
 
 Report Instance Areas: 
 +------+-------------------------------------+-----------------------------------------------+------+
 |      |Instance                             |Module                                         |Cells |
 +------+-------------------------------------+-----------------------------------------------+------+
-|1     |top                                  |                                               |   485|
-|2     |  inst                               |axi_crossbar_v2_1_16_axi_crossbar              |   485|
-|3     |    \gen_sasd.crossbar_sasd_0        |axi_crossbar_v2_1_16_crossbar_sasd             |   485|
-|4     |      addr_arbiter_inst              |axi_crossbar_v2_1_16_addr_arbiter_sasd         |   194|
-|5     |      \gen_decerr.decerr_slave_inst  |axi_crossbar_v2_1_16_decerr_slave              |    16|
-|6     |      reg_slice_r                    |axi_register_slice_v2_1_15_axic_register_slice |   232|
-|7     |      splitter_ar                    |axi_crossbar_v2_1_16_splitter__parameterized0  |     5|
-|8     |      splitter_aw                    |axi_crossbar_v2_1_16_splitter                  |    13|
+|1     |top                                  |                                               |   652|
+|2     |  inst                               |axi_crossbar_v2_1_16_axi_crossbar              |   652|
+|3     |    \gen_sasd.crossbar_sasd_0        |axi_crossbar_v2_1_16_crossbar_sasd             |   652|
+|4     |      addr_arbiter_inst              |axi_crossbar_v2_1_16_addr_arbiter_sasd         |   220|
+|5     |      \gen_decerr.decerr_slave_inst  |axi_crossbar_v2_1_16_decerr_slave              |    20|
+|6     |      reg_slice_r                    |axi_register_slice_v2_1_15_axic_register_slice |   347|
+|7     |      splitter_ar                    |axi_crossbar_v2_1_16_splitter__parameterized0  |     7|
+|8     |      splitter_aw                    |axi_crossbar_v2_1_16_splitter                  |    24|
 +------+-------------------------------------+-----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.570 ; gain = 1300.031 ; free physical = 3773 ; free virtual = 10790
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.562 ; gain = 1313.031 ; free physical = 2436 ; free virtual = 7760
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 93 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:59 ; elapsed = 00:02:37 . Memory (MB): peak = 2908.570 ; gain = 658.020 ; free physical = 3811 ; free virtual = 10832
-Synthesis Optimization Complete : Time (s): cpu = 00:01:21 ; elapsed = 00:03:25 . Memory (MB): peak = 2908.574 ; gain = 1300.031 ; free physical = 3811 ; free virtual = 10832
+Synthesis finished with 0 errors, 0 critical warnings and 157 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:02:43 . Memory (MB): peak = 2921.562 ; gain = 667.023 ; free physical = 2427 ; free virtual = 7755
+Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:03:34 . Memory (MB): peak = 2921.566 ; gain = 1313.031 ; free physical = 2424 ; free virtual = 7752
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -734,13 +787,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-114 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+140 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:24 ; elapsed = 00:03:27 . Memory (MB): peak = 2953.582 ; gain = 1372.555 ; free physical = 3723 ; free virtual = 10750
+synth_design: Time (s): cpu = 00:01:29 ; elapsed = 00:03:37 . Memory (MB): peak = 2962.578 ; gain = 1381.559 ; free physical = 2348 ; free virtual = 7748
 INFO: [Common 17-1381] The checkpoint '/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_xbar_3_synth_1/core_design_xbar_3.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/giorgio/workspace/loosely-coupled-accelerators-master/core/sys/core_project/core_project.srcs/sources_1/bd/core_design/ip/core_design_xbar_3/core_design_xbar_3.xci
 INFO: [Coretcl 2-1174] Renamed 7 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/giorgio/workspace/jpeg-rs-clean/sys/jpeg-rs/core_design_xbar_3_synth_1/core_design_xbar_3.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file core_design_xbar_3_utilization_synth.rpt -pb core_design_xbar_3_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2977.602 ; gain = 0.000 ; free physical = 3700 ; free virtual = 10742
-INFO: [Common 17-206] Exiting Vivado at Fri May 18 18:03:15 2018...
+report_utilization: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.30 . Memory (MB): peak = 2986.594 ; gain = 0.000 ; free physical = 2304 ; free virtual = 7707
+INFO: [Common 17-206] Exiting Vivado at Fri May 25 13:33:01 2018...

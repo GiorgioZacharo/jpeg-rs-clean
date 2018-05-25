@@ -82,11 +82,87 @@ int rgb_buf[4][RGB_NUM][DCTSIZE2];
  * IZigzagMatrix() performs an inverse zig-zag translation on the
  * input imatrix and places the output in omatrix.
  */
-void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCTSIZE2]) {
-#pragma HLS INTERFACE m_axi depth=64 port=imatrix offset=slave bundle=BUS_SRC
-#pragma HLS INTERFACE m_axi depth=64 port=omatrix offset=slave bundle=BUS_DST
-#pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
+// void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCTSIZE2]) {
+// #pragma HLS INTERFACE m_axi depth=64 port=imatrix offset=slave bundle=BUS_SRC
+// #pragma HLS INTERFACE m_axi depth=64 port=omatrix offset=slave bundle=BUS_DST
+// #pragma HLS INTERFACE s_axilite port=return bundle=BUS_CTRL
   
+//     const int zigzag_index[64] =  /* Is zig-zag map for matrix -> scan array */
+//     { 0, 1, 5, 6, 14, 15, 27, 28,
+//         2, 4, 7, 13, 16, 26, 29, 42,
+//         3, 8, 12, 17, 25, 30, 41, 43,
+//         9, 11, 18, 24, 31, 40, 44, 53,
+//         10, 19, 23, 32, 39, 45, 52, 54,
+//         20, 22, 33, 38, 46, 51, 55, 60,
+//         21, 34, 37, 47, 50, 56, 59, 61,
+//         35, 36, 48, 49, 57, 58, 62, 63
+//     };
+
+//   int in1_buf[CHUNK_SIZE];
+//   int out_buf[CHUNK_SIZE];
+
+
+//   for (int i = 0; i < N_CHUNKS; i++){
+//   #pragma HLS DATAFLOW
+
+//     // Load data
+//     for (int j=0; j < CHUNK_SIZE; j++){
+//     #pragma HLS UNROLL skip_exit_check factor=16
+//       unsigned offset = i*CHUNK_SIZE+j;
+//       in1_buf[j]= zigzag_index[offset];
+//     }
+
+//     // Computation
+//     for (int k=0; k < CHUNK_SIZE; k++)
+//     #pragma HLS UNROLL skip_exit_check factor=16
+//         out_buf[k]= imatrix[in1_buf[k]];
+
+//     // Store Data
+//     for (int l=0; l < CHUNK_SIZE; l++) {
+//     #pragma HLS UNROLL skip_exit_check factor=16
+//       unsigned offset = i*CHUNK_SIZE+l;
+//       omatrix[i*CHUNK_SIZE+l]= out_buf[l];
+//     }
+  
+//   }
+
+// }
+
+void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCTSIZE2]) {
+
+  
+  #ifdef REG_2 //HW ACC
+
+  #ifdef VERBOSE
+  printf("Call HW REG_2 - IZigzagMatrix_f2r_forBody_s2e_forEnd\n");
+  #endif
+
+  int status = 0;
+
+  initPeripherals2();
+
+  // Flush the cache of the buffers
+  Xil_DCacheFlushRange((UINTPTR)imatrix, DCTSIZE2 * sizeof(int));
+  Xil_DCacheFlushRange((UINTPTR)omatrix, DCTSIZE2 * sizeof(int));
+
+  XIzigzagmatrix_f2r_forbody_s2e_forend_Set_imatrix(&Izigzagmatrix_f2r_forbody_s2e_forend, (UINTPTR)imatrix);
+  XIzigzagmatrix_f2r_forbody_s2e_forend_Set_omatrix(&Izigzagmatrix_f2r_forbody_s2e_forend, (UINTPTR)omatrix);
+
+
+  XIzigzagmatrix_f2r_forbody_s2e_forend_Start(&Izigzagmatrix_f2r_forbody_s2e_forend);
+
+  while (!XIzigzagmatrix_f2r_forbody_s2e_forend_IsDone(&Izigzagmatrix_f2r_forbody_s2e_forend));
+
+  // Invalidate the cache to avoid reading garbage
+  Xil_DCacheInvalidateRange((UINTPTR)omatrix, DCTSIZE2 * sizeof(int));
+
+  if (status != 0)
+  {
+  printf("ERROR: HW execution failed (status %d)\n", status);
+  }
+
+#else // SOFTWARE
+
     const int zigzag_index[64] =  /* Is zig-zag map for matrix -> scan array */
     { 0, 1, 5, 6, 14, 15, 27, 28,
         2, 4, 7, 13, 16, 26, 29, 42,
@@ -103,28 +179,31 @@ void IZigzagMatrix_f2r_forBody_s2e_forEnd(int imatrix[DCTSIZE2], int omatrix[DCT
 
 
   for (int i = 0; i < N_CHUNKS; i++){
-  #pragma HLS DATAFLOW
 
     // Load data
     for (int j=0; j < CHUNK_SIZE; j++){
-    #pragma HLS UNROLL skip_exit_check factor=16
       unsigned offset = i*CHUNK_SIZE+j;
       in1_buf[j]= zigzag_index[offset];
     }
-
     // Computation
     for (int k=0; k < CHUNK_SIZE; k++)
-    #pragma HLS UNROLL skip_exit_check factor=16
         out_buf[k]= imatrix[in1_buf[k]];
 
     // Store Data
+#ifdef STANDARD_MODE
     for (int l=0; l < CHUNK_SIZE; l++) {
-    #pragma HLS UNROLL skip_exit_check factor=16
       unsigned offset = i*CHUNK_SIZE+l;
       omatrix[i*CHUNK_SIZE+l]= out_buf[l];
     }
+
+#else /* BURST_MODE */
+       unsigned offset = i*CHUNK_SIZE ;
+        memcpy(omatrix + offset, out_buf, CHUNK_SIZE  * sizeof(int) );
+#endif
   
   }
+
+#endif
 
 }
 
