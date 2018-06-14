@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;../tb/marker.c&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-40]" severity="WARNING" keynum="HLS_40_1378" content="In file included from ../tb/marker.c:1:
+../tb/marker.c:162:18: error: cannot increment value of type &apos;unsigned char [100]&apos;
+  return *ReadBuf++;
+          ~~~~~~~^
+../tb/marker.c:171:15: error: cannot increment value of type &apos;unsigned char [100]&apos;
+  c = *ReadBuf++ &lt;&lt; 8;
+       ~~~~~~~^
+../tb/marker.c:172:16: error: cannot increment value of type &apos;unsigned char [100]&apos;
+  c |= *ReadBuf++;
+        ~~~~~~~^
+../tb/marker.c:551:11: error: array type &apos;unsigned char [100]&apos; is not assignable
+  ReadBuf = buf;
+  ~~~~~~~ ^
+4 errors generated." tag=""/>
+	<Message prefix="[HLS 200-70]" severity="ERROR" keynum="HLS_70_1454" content="Compilation errors found:
+Pragma processor failed: In file included from ../tb/marker.c:1:
+../tb/marker.c:162:18: error: cannot increment value of type &apos;unsigned char [100]&apos;
+  return *ReadBuf++;
+          ~~~~~~~^
+../tb/marker.c:171:15: error: cannot increment value of type &apos;unsigned char [100]&apos;
+  c = *ReadBuf++ &lt;&lt; 8;
+       ~~~~~~~^
+../tb/marker.c:172:16: error: cannot increment value of type &apos;unsigned char [100]&apos;
+  c |= *ReadBuf++;
+        ~~~~~~~^
+../tb/marker.c:551:11: error: array type &apos;unsigned char [100]&apos; is not assignable
+  ReadBuf = buf;
+  ~~~~~~~ ^
+4 errors generated." tag=""/>
+	<Message prefix="[HLS 200-150]" severity="INFO" keynum="11" content="Failed checking during preprocessing.
+    while executing
+&quot;source /home/giorgio/workspace/jpeg-rs-clean/syn/main/OPT/csynth.tcl&quot;
+    invoked from within
+&quot;hls::main /home/giorgio/workspace/jpeg-rs-clean/syn/main/OPT/csynth.tcl&quot;
+    (&quot;uplevel&quot; body line 1)
+    invoked from within
+&quot;uplevel 1 hls::main {*}$args&quot;
+    (procedure &quot;hls_proc&quot; line 5)
+    invoked from within
+&quot;hls_proc $argv&quot;" tag=""/>
+</Messages>

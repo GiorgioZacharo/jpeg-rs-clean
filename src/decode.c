@@ -1114,6 +1114,7 @@ void decode_start_f2r_vectorPh_s2e_forBody96Preheader( int y_buf[6][DCTSIZE2], i
         for (int k=0; k < CHUNK_SIZE; k++){
           #pragma HLS UNROLL skip_exit_check factor=16
 
+        	// TODO: transform the following multipliers into shifters
             out1_buf[k] = (inp1_buf[k] * 256 + (inp3_buf[k]-128) * 359 + 128) >> 8;
             out2_buf[k] = (inp1_buf[k] * 256 - (inp2_buf[k]-128) * 88 - (inp3_buf[k]-128) * 182 + 128) >> 8;
             out3_buf[k] = (inp1_buf[k] * 256 + (inp2_buf[k]-128) * 454 + 128) >> 8;

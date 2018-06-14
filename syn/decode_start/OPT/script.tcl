@@ -5,30 +5,30 @@
 ############################################################
 open_project decode_start
 set_top decode_start_f2r_vectorPh_s2e_forBody96Preheader
-add_files ../src/chenidct.c -cflags "-I../inc"
-add_files ../inc/chenidct.h
-add_files ../src/decode.c -cflags "-I../inc"
-add_files ../inc/decode.h
-add_files ../inc/global.h
-add_files ../inc/huffman.h
-add_files ../inc/init.h
-add_files ../inc/jfif_read.h
-add_files ../inc/jpeg2bmp.h
 add_files ../inc/marker.h
-add_files -tb ../inc/chenidct.h
-add_files -tb ../inc/decode.h
-add_files -tb ../inc/global.h
-add_files -tb ../tb/huffman.c -cflags "-I../inc"
-add_files -tb ../inc/huffman.h
-add_files -tb ../tb/init.c -cflags "-I../inc"
-add_files -tb ../inc/init.h
-add_files -tb ../tb/jfif_read.c -cflags "-I../inc"
-add_files -tb ../inc/jfif_read.h
-add_files -tb ../tb/jpeg2bmp.c -cflags "-I../inc"
-add_files -tb ../inc/jpeg2bmp.h
-add_files -tb ../tb/main.c -cflags "-I../inc"
-add_files -tb ../tb/marker.c -cflags "-I../inc"
+add_files ../inc/jpeg2bmp.h
+add_files ../inc/jfif_read.h
+add_files ../inc/init.h
+add_files ../inc/huffman.h
+add_files ../inc/global.h
+add_files ../inc/decode.h
+add_files ../src/decode.c -cflags "-I../inc"
+add_files ../inc/chenidct.h
+add_files ../src/chenidct.c -cflags "-I../inc"
 add_files -tb ../inc/marker.h
+add_files -tb ../tb/marker.c -cflags "-I../inc"
+add_files -tb ../tb/main.c -cflags "-I../inc"
+add_files -tb ../inc/jpeg2bmp.h
+add_files -tb ../tb/jpeg2bmp.c -cflags "-I../inc"
+add_files -tb ../inc/jfif_read.h
+add_files -tb ../tb/jfif_read.c -cflags "-I../inc"
+add_files -tb ../inc/init.h
+add_files -tb ../tb/init.c -cflags "-I../inc"
+add_files -tb ../inc/huffman.h
+add_files -tb ../tb/huffman.c -cflags "-I../inc"
+add_files -tb ../inc/global.h
+add_files -tb ../inc/decode.h
+add_files -tb ../inc/chenidct.h
 open_solution "OPT"
 set_part {xczu9eg-ffvb1156-2-i} -tool vivado
 create_clock -period 3 -name default

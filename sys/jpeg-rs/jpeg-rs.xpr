@@ -28,6 +28,7 @@
     <Option Name="IPRepoPath" Val="$PPRDIR/../../syn/WriteOneBlock"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../syn/Izigzagmatrix"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../syn/ChenIDCT_reg_1"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../jpeg-rs-clean_main_test/syn/main"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>

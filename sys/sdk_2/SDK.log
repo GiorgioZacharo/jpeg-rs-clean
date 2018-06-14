@@ -6794,3 +6794,4 @@ con
 ----------------End of Script----------------
 
 14:26:17 INFO  : Launch script is exported to file '/home/giorgio/workspace/jpeg-rs-clean/sys/sdk_2/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_jpeg_rs.elf_on_espdev.cs.columbia.edu.tcl'
+19:45:50 INFO  : Disconnected from the channel tcfchan#79.

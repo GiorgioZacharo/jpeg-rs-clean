@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../../tb/huffman.c ../../../../../tb/init.c ../../../../../tb/jfif_read.c ../../../../../tb/jpeg2bmp.c ../../../../../tb/main.c ../../../../../tb/marker.c ../../../../../src/chenidct.c ../../../../../src/decode.c
+HLS_SOURCES = ../../../../../tb/marker.c ../../../../../tb/main.c ../../../../../tb/jpeg2bmp.c ../../../../../tb/jfif_read.c ../../../../../tb/init.c ../../../../../tb/huffman.c ../../../../../src/decode.c ../../../../../src/chenidct.c
 
 TARGET := csim.exe
 
@@ -75,29 +75,11 @@ all: $(TARGET)
 
 AUTOCC := apcc  
 
-$(ObjDir)/huffman.o: ../../../../../tb/huffman.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../../tb/huffman.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/marker.o: ../../../../../tb/marker.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../../tb/marker.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/huffman.d
-
-$(ObjDir)/init.o: ../../../../../tb/init.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../../tb/init.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/init.d
-
-$(ObjDir)/jfif_read.o: ../../../../../tb/jfif_read.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../../tb/jfif_read.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/jfif_read.d
-
-$(ObjDir)/jpeg2bmp.o: ../../../../../tb/jpeg2bmp.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../../tb/jpeg2bmp.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/jpeg2bmp.d
+-include $(ObjDir)/marker.d
 
 $(ObjDir)/main.o: ../../../../../tb/main.c $(ObjDir)/.dir
 	$(Echo) "   Compiling(apcc) ../../../../../tb/main.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
@@ -105,20 +87,38 @@ $(ObjDir)/main.o: ../../../../../tb/main.c $(ObjDir)/.dir
 
 -include $(ObjDir)/main.d
 
-$(ObjDir)/marker.o: ../../../../../tb/marker.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../../tb/marker.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/jpeg2bmp.o: ../../../../../tb/jpeg2bmp.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../../tb/jpeg2bmp.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/marker.d
+-include $(ObjDir)/jpeg2bmp.d
 
-$(ObjDir)/chenidct.o: ../../../../../src/chenidct.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../../src/chenidct.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/jfif_read.o: ../../../../../tb/jfif_read.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../../tb/jfif_read.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/chenidct.d
+-include $(ObjDir)/jfif_read.d
+
+$(ObjDir)/init.o: ../../../../../tb/init.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../../tb/init.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/init.d
+
+$(ObjDir)/huffman.o: ../../../../../tb/huffman.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../../tb/huffman.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/huffman.d
 
 $(ObjDir)/decode.o: ../../../../../src/decode.c $(ObjDir)/.dir
 	$(Echo) "   Compiling(apcc) ../../../../../src/decode.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/decode.d
+
+$(ObjDir)/chenidct.o: ../../../../../src/chenidct.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../../src/chenidct.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD -I../../../../../inc  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/chenidct.d

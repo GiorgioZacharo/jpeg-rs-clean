@@ -1,0 +1,26 @@
+INFO: [HLS 200-10] Running '/home/tools/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'giorgio' on host 'legolas.cs.columbia.edu' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue Jun 05 14:41:57 EDT 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/home/giorgio/workspace/jpeg-rs-clean/syn/main/OPT/csim/build'
+../../../../../tb/marker.c:163:18: error: cannot increment value of type 'unsigned char [100]'
+  return *ReadBuf++;
+          ~~~~~~~^
+../../../../../tb/marker.c:172:15: error: cannot increment value of type 'unsigned char [100]'
+  c = *ReadBuf++ << 8;
+       ~~~~~~~^
+../../../../../tb/marker.c:173:16: error: cannot increment value of type 'unsigned char [100]'
+  c |= *ReadBuf++;
+        ~~~~~~~^
+../../../../../tb/marker.c:552:11: error: array type 'unsigned char [100]' is not assignable
+  ReadBuf = buf;
+  ~~~~~~~ ^
+4 errors generated.
+ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.
+
+FORMAT
+  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string] [ Tcl message key]
+      <string>
+      <uint>
+      <string>
+      <string>
+

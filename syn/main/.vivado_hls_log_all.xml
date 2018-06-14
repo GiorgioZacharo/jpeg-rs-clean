@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] Compilation errors found:&#xA;Pragma processor failed: In file included from ../tb/marker.c:1:&#xA;../tb/marker.c:162:18: error: cannot increment value of type 'unsigned char [100]'&#xA;  return *ReadBuf++;&#xA;          ~~~~~~~^&#xA;../tb/marker.c:171:15: error: cannot increment value of type 'unsigned char [100]'&#xA;  c = *ReadBuf++ &lt;&lt; 8;&#xA;       ~~~~~~~^&#xA;../tb/marker.c:172:16: error: cannot increment value of type 'unsigned char [100]'&#xA;  c |= *ReadBuf++;&#xA;        ~~~~~~~^&#xA;../tb/marker.c:551:11: error: array type 'unsigned char [100]' is not assignable&#xA;  ReadBuf = buf;&#xA;  ~~~~~~~ ^&#xA;4 errors generated.&#xA;Failed checking during preprocessing.&#xA;    while executing&#xA;&quot;source /home/giorgio/workspace/jpeg-rs-clean/syn/main/OPT/csynth.tcl&quot;&#xA;    invoked from within&#xA;&quot;hls::main /home/giorgio/workspace/jpeg-rs-clean/syn/main/OPT/csynth.tcl&quot;&#xA;    (&quot;uplevel&quot; body line 1)&#xA;    invoked from within&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xA;    invoked from within&#xA;&quot;hls_proc $argv&quot;&#xA;" projectName="main" solutionName="OPT" date="2018-06-05T12:38:02.846-0400"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="main" solutionName="OPT" date="2018-06-05T14:41:58.030-0400"/>
+        <logs message="ERROR: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xA;&#xA;&#xA;FORMAT&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string] [ Tcl message key]&#xA;      &lt;string>&#xA;      &lt;uint>&#xA;      &lt;string>&#xA;      &lt;string>&#xA;&#xA;&#xA;make: *** [obj/marker.o] Error 1" projectName="main" solutionName="OPT" date="2018-06-05T14:41:58.029-0400"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-40] In file included from ../tb/marker.c:1:&#xA;../tb/marker.c:162:18: error: cannot increment value of type 'unsigned char [100]'&#xA;  return *ReadBuf++;&#xA;          ~~~~~~~^&#xA;../tb/marker.c:171:15: error: cannot increment value of type 'unsigned char [100]'&#xA;  c = *ReadBuf++ &lt;&lt; 8;&#xA;       ~~~~~~~^&#xA;../tb/marker.c:172:16: error: cannot increment value of type 'unsigned char [100]'&#xA;  c |= *ReadBuf++;&#xA;        ~~~~~~~^&#xA;../tb/marker.c:551:11: error: array type 'unsigned char [100]' is not assignable&#xA;  ReadBuf = buf;&#xA;  ~~~~~~~ ^&#xA;4 errors generated." projectName="main" solutionName="OPT" date="2018-06-05T12:38:02.830-0400" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
